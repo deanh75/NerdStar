@@ -15,19 +15,22 @@ import numpy.typing
 class LocalConfig:
     device_id: str = ""
     server_ip: str = ""
-    apriltags_stream_port: int = 8000
-    objdetect_stream_port: int = 8001
     capture_impl: str = ""
     obj_detect_model: str = ""
     obj_detect_max_fps: int = -1
+    video_folder: str = ""
+    video_framerate: int = 25
+
+@dataclass
+class CameraConfig:
+    apriltags_stream_port: int = 8000
+    objdetect_stream_port: int = 8001
     apriltags_enable: bool = False
     objdetect_enable: bool = False
     driverCam_enable: bool = False
-    video_folder: str = ""
     has_calibration: bool = False
     camera_matrix: numpy.typing.NDArray[numpy.float64] = None
     distortion_coefficients: numpy.typing.NDArray[numpy.float64] = None
-
 
 @dataclass
 class RemoteConfig:
@@ -35,6 +38,7 @@ class RemoteConfig:
     match_type: int = 0
     match_number: int = 0
     camera_id: str = ""
+    camera_name: str = ""
     camera_resolution_width: int = 0
     camera_resolution_height: int = 0
     camera_auto_exposure: int = 0
@@ -50,4 +54,5 @@ class RemoteConfig:
 @dataclass
 class ConfigStore:
     local_config: LocalConfig
+    camera_config: CameraConfig
     remote_config: RemoteConfig

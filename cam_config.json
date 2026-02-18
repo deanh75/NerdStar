@@ -1,0 +1,7 @@
+{
+    "apriltags_enable": "False",
+    "objdetect_enable": "False",
+    "driverCam_enable": "False",
+    "apriltags_stream_port": "8000",
+    "objdetect_stream_port": "8001"
+}

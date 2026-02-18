@@ -77,6 +77,13 @@ class DefaultCapture(Capture):
 
         retval, image = self._video.read()
         return retval, image
+    
+    def stop(self) -> None:
+        try:
+            if self._video and self._video.isOpened():
+                self._video.release()
+        except:
+            pass
 
 
 class AVFoundationCapture(Capture):
@@ -143,7 +150,74 @@ class AVFoundationCapture(Capture):
                 self._video = None  # Force reconnect
                 sys.exit(1)
             return retval, image
+        
+class AVFoundationMjpegCapture(Capture):
+    """ "Read from camera with OpenCV and AVFoundation through an Mjeg server."""
 
+    def __init__(self) -> None:
+        pass
+
+    _video = None
+    _last_config: ConfigStore
+
+    def get_frame(self, config_store: ConfigStore) -> Tuple[bool, cv2.Mat]:
+        if self._video != None and self._config_changed(self._last_config, config_store):
+            print("Restarting capture session")
+            self._video.release()
+            self._video = None
+            sys.exit(1)
+
+        if self._video == None:
+            camera_id_split = config_store.remote_config.camera_id.split(":")
+            if config_store.remote_config.camera_id == "" or len(camera_id_split) != 3:
+                print("No camera ID, waiting to start capture session")
+            else:
+                devices = list(AVFoundation.AVCaptureDevice.devicesWithMediaType_(AVFoundation.AVMediaTypeVideo))
+                devices.sort(key=lambda x: x.uniqueID())
+                for index, device in enumerate(devices):
+                    if device.uniqueID() == config_store.remote_config.camera_id.replace(":", ""):
+                        camera_location_id = camera_id_split[0]
+                        camera_vendor_id = camera_id_split[1]
+                        camera_product_id = camera_id_split[2]
+
+                        subprocess.run(
+                            [
+                                "./ns-iokit-ctl/build/ns_iokit_ctl",
+                                camera_vendor_id,
+                                camera_product_id,
+                                camera_location_id,
+                                str(config_store.remote_config.camera_auto_exposure),
+                                str(config_store.remote_config.camera_exposure),
+                                str(int(config_store.remote_config.camera_gain)),
+                            ],
+                            check=True,
+                        )
+
+                        self._video = cv2.VideoCapture(index, cv2.CAP_AVFOUNDATION)
+                        self._video.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*'MJPG'))
+                        self._video.set(cv2.CAP_PROP_BUFFERSIZE, 1)
+                        self._video.set(cv2.CAP_PROP_FRAME_WIDTH, config_store.remote_config.camera_resolution_width)
+                        self._video.set(cv2.CAP_PROP_FRAME_HEIGHT, config_store.remote_config.camera_resolution_height)
+                        break
+
+        self._last_config = ConfigStore(
+            dataclasses.replace(config_store.local_config), dataclasses.replace(config_store.remote_config)
+        )
+
+        if self._video == None:
+            if config_store.remote_config.camera_id != "":
+                print("Camera not found, restarting")
+                sys.exit(1)
+            return False, None
+        else:
+            self._video.grab()
+            retval, image = self._video.retrieve()
+            if not retval:
+                print("Capture session failed, restarting")
+                self._video.release()
+                self._video = None  # Force reconnect
+                sys.exit(1)
+            return retval, image
 
 class PylonCapture(Capture):
     """Reads from a Basler camera using pylon."""
@@ -296,6 +370,7 @@ class GStreamerCapture(Capture):
 CAPTURE_IMPLS = {
     "": DefaultCapture,
     "avfoundation": AVFoundationCapture,
+    "avfoundationmjpeg": AVFoundationMjpegCapture,
     "pylon": lambda: PylonCapture(),
     "pylon-flipped": lambda: PylonCapture(is_flipped=True),
     "pylon-color": lambda: PylonCapture("color"),

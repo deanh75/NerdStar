@@ -6,7 +6,9 @@
 # the root directory of this project.
 
 import argparse
+import atexit
 import queue
+import signal
 import sys
 import threading
 import time
@@ -16,7 +18,7 @@ import ntcore
 from apriltag_worker import apriltag_worker
 from calibration.CalibrationCommandSource import CalibrationCommandSource, NTCalibrationCommandSource
 from calibration.CalibrationSession import CalibrationSession
-from config.config import ConfigStore, LocalConfig, RemoteConfig
+from config.config import ConfigStore, LocalConfig, CameraConfig, RemoteConfig
 from config.ConfigSource import ConfigSource, FileConfigSource, NTConfigSource
 from objdetect_worker import objdetect_worker
 from output.OutputPublisher import NTOutputPublisher, OutputPublisher
@@ -29,12 +31,13 @@ from cscore import CameraServer
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--config", default="config.json")
+    parser.add_argument("--mac_config", default="config.json")
+    parser.add_argument("--camera_config", default="cam_config.json")
     parser.add_argument("--calibration", default="calibration.json")
     args = parser.parse_args()
 
-    config = ConfigStore(LocalConfig(), RemoteConfig())
-    local_config_source: ConfigSource = FileConfigSource(args.config, args.calibration)
+    config = ConfigStore(LocalConfig(), CameraConfig, RemoteConfig())
+    local_config_source: ConfigSource = FileConfigSource(args.mac_config, args.camera_config, args.calibration)
     remote_config_source: ConfigSource = NTConfigSource()
     calibration_command_source: CalibrationCommandSource = NTCalibrationCommandSource()
     local_config_source.update(config)
@@ -45,7 +48,7 @@ if __name__ == "__main__":
     calibration_session = CalibrationSession()
     calibration_session_server: Union[StreamServer, None] = None
 
-    if config.local_config.apriltags_enable:
+    if config.camera_config.apriltags_enable:
         apriltag_worker_in = queue.Queue(maxsize=1)
         apriltag_worker_out = queue.Queue(maxsize=1)
         apriltag_worker = threading.Thread(
@@ -55,7 +58,7 @@ if __name__ == "__main__":
         )
         apriltag_worker.start()
 
-    if config.local_config.objdetect_enable:
+    if config.camera_config.objdetect_enable:
         objdetect_worker_in = queue.Queue(maxsize=1)
         objdetect_worker_out = queue.Queue(maxsize=1)
         objdetect_worker = threading.Thread(
@@ -67,6 +70,20 @@ if __name__ == "__main__":
 
     ntcore.NetworkTableInstance.getDefault().setServer(config.local_config.server_ip)
     ntcore.NetworkTableInstance.getDefault().startClient4(config.local_config.device_id)
+
+    def cleanup() -> None:
+        video_writer.stop()
+        capture.stop()
+        ntcore.NetworkTableInstance.disconnect()
+    
+    def _signal_handler(signum, frame) -> None:
+        cleanup()
+        sys.exit(0)
+    
+    signal.signal(signal.SIGINT, _signal_handler)
+    signal.signal(signal.SIGTERM, _signal_handler)
+
+    atexit.register(cleanup)
 
     apriltags_frame_count = 0
     apriltags_last_print = 0
@@ -105,6 +122,18 @@ if __name__ == "__main__":
             time.sleep(0.5)
             continue
 
+        if config.camera_config.driverCam_enable:
+            if not was_streaming:
+                cs = CameraServer.putVideo(
+                    "Driver Cam", 
+                    config.remote_config.camera_resolution_width, 
+                    config.remote_config.camera_resolution_height
+                )
+            
+            processed_frame = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+            processed_frame = cv2.cvtColor(processed_frame, cv2.COLOR_GRAY2BGR)
+            cs.putFrame(processed_frame)
+
         if calibration_command_source.get_calibrating(config):
             # Calibration mode
             if not was_calibrating:
@@ -119,9 +148,9 @@ if __name__ == "__main__":
             calibration_session.finish()
             sys.exit(0)
 
-        elif config.local_config.has_calibration:
+        elif config.camera_config.has_calibration:
             # AprilTag pipeline
-            if config.local_config.apriltags_enable:
+            if config.camera_config.apriltags_enable:
                 try:
                     apriltag_worker_in.put((timestamp, image, config), block=False)
                 except:  # No space in queue
@@ -155,7 +184,7 @@ if __name__ == "__main__":
                         apriltags_frame_count = 0
 
             # Object detection pipeline
-            if config.local_config.objdetect_enable:
+            if config.camera_config.objdetect_enable:
                 # Apply FPS limit for object detection
                 if objdetect_next_frame == -1:
                     objdetect_next_frame = timestamp
@@ -195,18 +224,6 @@ if __name__ == "__main__":
                 video_frame_cache.append(image)
             else:
                 video_frame_cache = []
-
-        elif config.local_config.driverCam_enable:
-            if not was_streaming:
-                cs = CameraServer.putVideo(
-                    "Driver Cam", 
-                    config.remote_config.camera_resolution_width, 
-                    config.remote_config.camera_resolution_height
-                )
-            
-            processed_frame = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-            processed_frame = cv2.cvtColor(processed_frame, cv2.COLOR_GRAY2BGR)
-            cs.putFrame(processed_frame)
 
         else:
             # No calibration

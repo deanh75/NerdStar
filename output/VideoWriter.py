@@ -5,6 +5,7 @@
 # license that can be found in the LICENSE file at
 # the root directory of this project.
 
+import os
 from typing import List
 import cv2
 from datetime import datetime
@@ -15,9 +16,6 @@ import threading
 from config.config import ConfigStore
 from output.overlay_util import overlay_image_observation, overlay_obj_detect_observation
 from vision_types import FiducialImageObservation, ObjDetectObservation
-
-FRAMERATE = 25
-
 
 class VideoWriter:
     def __init__(self) -> None:
@@ -39,7 +37,7 @@ class FFmpegVideoWriter(VideoWriter):
 
     def start(self, config: ConfigStore, is_gray: bool) -> None:
         match_prefixes = ["", "p", "q", "e"]
-        filename_base = (
+        filename_base = os.path.join(
             config.local_config.video_folder
             + config.local_config.device_id
             + "_"
@@ -65,7 +63,7 @@ class FFmpegVideoWriter(VideoWriter):
             "-pixel_format",
             "gray" if is_gray else "rgb24",
             "-r",
-            str(FRAMERATE),
+            str(config.local_config.video_framerate),
             "-re",
             "-f",
             "rawvideo",
@@ -95,8 +93,14 @@ class FFmpegVideoWriter(VideoWriter):
         self._running = False
         self._thread.join()
         self._thread_raw.join()
-        self._ffmpeg.kill()
-        self._ffmpeg_raw.kill()
+        # Close stdin so ffmpeg knows input is finished
+        if self._ffmpeg.stdin:
+            self._ffmpeg.stdin.close()
+        if self._ffmpeg_raw.stdin:
+            self._ffmpeg_raw.stdin.close()
+        # Wait for ffmpeg to finalize file properly
+        self._ffmpeg.wait()
+        self._ffmpeg_raw.wait()
 
     def write_frame(
         self,

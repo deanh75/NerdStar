@@ -19,25 +19,30 @@ class ConfigSource:
 
 
 class FileConfigSource(ConfigSource):
-    def __init__(self, config_filename: str, calibration_filename: str) -> None:
-        self._config_filename = config_filename
+    def __init__(self, mac_config_filename: str, cam_config_filename: str, calibration_filename: str) -> None:
+        self._mac_config_filename = mac_config_filename
+        self._cam_config_filename = cam_config_filename
         self._calibration_filename = calibration_filename
         pass
 
     def update(self, config_store: ConfigStore) -> None:
         # Get config
-        with open(self._config_filename, "r") as config_file:
-            config_data = json.loads(config_file.read())
-            config_store.local_config.device_id = config_data["device_id"]
-            config_store.local_config.server_ip = config_data["server_ip"]
-            config_store.local_config.apriltags_stream_port = config_data["apriltags_stream_port"]
-            config_store.local_config.objdetect_stream_port = config_data["objdetect_stream_port"]
-            config_store.local_config.capture_impl = config_data["capture_impl"]
-            config_store.local_config.obj_detect_model = config_data["obj_detect_model"]
-            config_store.local_config.obj_detect_max_fps = config_data["obj_detect_max_fps"]
-            config_store.local_config.apriltags_enable = config_data["apriltags_enable"]
-            config_store.local_config.objdetect_enable = config_data["objdetect_enable"]
-            config_store.local_config.video_folder = config_data["video_folder"]
+        with open(self._mac_config_filename, "r") as mac_config_file:
+            mac_config_data = json.loads(mac_config_file.read())
+            config_store.local_config.device_id = mac_config_data["device_id"]
+            config_store.local_config.server_ip = mac_config_data["server_ip"]
+            config_store.local_config.capture_impl = mac_config_data["capture_impl"]
+            config_store.local_config.obj_detect_model = mac_config_data["obj_detect_model"]
+            config_store.local_config.obj_detect_max_fps = mac_config_data["obj_detect_max_fps"]
+            config_store.local_config.video_folder = mac_config_data["video_folder"]
+            config_store.local_config.video_framerate = mac_config_data["video_framerate"]
+
+        with open(self._cam_config_filename, "r") as cam_config_file:
+            cam_config_data = json.loads(cam_config_file.read())
+            config_store.camera_config.apriltags_stream_port = cam_config_data["apriltags_stream_port"]
+            config_store.camera_config.objdetect_stream_port = cam_config_data["objdetect_stream_port"]
+            config_store.camera_config.apriltags_enable = cam_config_data["apriltags_enable"]
+            config_store.camera_config.objdetect_enable = cam_config_data["objdetect_enable"]
 
         # Get calibration
         calibration_store = cv2.FileStorage(self._calibration_filename, cv2.FILE_STORAGE_READ)
@@ -53,6 +58,7 @@ class FileConfigSource(ConfigSource):
 class NTConfigSource(ConfigSource):
     _init_complete: bool = False
     _camera_id_sub: ntcore.StringSubscriber
+    _camera_name_sub: ntcore.StringSubscriber
     _camera_resolution_width_sub: ntcore.IntegerSubscriber
     _camera_resolution_height_sub: ntcore.IntegerSubscriber
     _camera_auto_exposure_sub: ntcore.IntegerSubscriber
