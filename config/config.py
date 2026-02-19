@@ -23,6 +23,8 @@ class LocalConfig:
 
 @dataclass
 class CameraConfig:
+    camera_id: str = ""
+    camera_name: str = ""
     apriltags_stream_port: int = 8000
     objdetect_stream_port: int = 8001
     apriltags_enable: bool = False
@@ -37,8 +39,6 @@ class RemoteConfig:
     event_name: str = ""
     match_type: int = 0
     match_number: int = 0
-    camera_id: str = ""
-    camera_name: str = ""
     camera_resolution_width: int = 0
     camera_resolution_height: int = 0
     camera_auto_exposure: int = 0

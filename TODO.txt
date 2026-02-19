@@ -1,3 +1,2 @@
 1. Find camera ids
-2. Add camera names
-3. Use camera names
+2. Use camera names

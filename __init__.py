@@ -36,7 +36,7 @@ if __name__ == "__main__":
     parser.add_argument("--calibration", default="calibration.json")
     args = parser.parse_args()
 
-    config = ConfigStore(LocalConfig(), CameraConfig, RemoteConfig())
+    config = ConfigStore(LocalConfig(), CameraConfig(), RemoteConfig())
     local_config_source: ConfigSource = FileConfigSource(args.mac_config, args.camera_config, args.calibration)
     remote_config_source: ConfigSource = NTConfigSource()
     calibration_command_source: CalibrationCommandSource = NTCalibrationCommandSource()
@@ -53,7 +53,7 @@ if __name__ == "__main__":
         apriltag_worker_out = queue.Queue(maxsize=1)
         apriltag_worker = threading.Thread(
             target=apriltag_worker,
-            args=(apriltag_worker_in, apriltag_worker_out, config.local_config.apriltags_stream_port),
+            args=(apriltag_worker_in, apriltag_worker_out, config.camera_config.apriltags_stream_port),
             daemon=True,
         )
         apriltag_worker.start()
@@ -63,18 +63,21 @@ if __name__ == "__main__":
         objdetect_worker_out = queue.Queue(maxsize=1)
         objdetect_worker = threading.Thread(
             target=objdetect_worker,
-            args=(objdetect_worker_in, objdetect_worker_out, config.local_config.objdetect_stream_port),
+            args=(objdetect_worker_in, objdetect_worker_out, config.camera_config.objdetect_stream_port),
             daemon=True,
         )
         objdetect_worker.start()
 
-    ntcore.NetworkTableInstance.getDefault().setServer(config.local_config.server_ip)
-    ntcore.NetworkTableInstance.getDefault().startClient4(config.local_config.device_id)
+    nt: ntcore.NetworkTableInstance = ntcore.NetworkTableInstance.getDefault()
+    nt.setServer(config.local_config.server_ip)
+    nt.startClient4(config.local_config.device_id + config.camera_config.camera_name)
 
     def cleanup() -> None:
-        video_writer.stop()
+        if was_recording:
+            video_writer.stop()
+        
         capture.stop()
-        ntcore.NetworkTableInstance.disconnect()
+        nt.disconnect()
     
     def _signal_handler(signum, frame) -> None:
         cleanup()

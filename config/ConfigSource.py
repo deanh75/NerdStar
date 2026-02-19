@@ -39,6 +39,8 @@ class FileConfigSource(ConfigSource):
 
         with open(self._cam_config_filename, "r") as cam_config_file:
             cam_config_data = json.loads(cam_config_file.read())
+            config_store.camera_config.camera_id = cam_config_data["camera_id"]
+            config_store.camera_config.camera_name = cam_config_data["camera_name"]
             config_store.camera_config.apriltags_stream_port = cam_config_data["apriltags_stream_port"]
             config_store.camera_config.objdetect_stream_port = cam_config_data["objdetect_stream_port"]
             config_store.camera_config.apriltags_enable = cam_config_data["apriltags_enable"]
@@ -50,15 +52,13 @@ class FileConfigSource(ConfigSource):
         distortion_coefficients = calibration_store.getNode("distortion_coefficients").mat()
         calibration_store.release()
         if type(camera_matrix) == numpy.ndarray and type(distortion_coefficients) == numpy.ndarray:
-            config_store.local_config.camera_matrix = camera_matrix
-            config_store.local_config.distortion_coefficients = distortion_coefficients
-            config_store.local_config.has_calibration = True
+            config_store.camera_config.camera_matrix = camera_matrix
+            config_store.camera_config.distortion_coefficients = distortion_coefficients
+            config_store.camera_config.has_calibration = True
 
 
 class NTConfigSource(ConfigSource):
     _init_complete: bool = False
-    _camera_id_sub: ntcore.StringSubscriber
-    _camera_name_sub: ntcore.StringSubscriber
     _camera_resolution_width_sub: ntcore.IntegerSubscriber
     _camera_resolution_height_sub: ntcore.IntegerSubscriber
     _camera_auto_exposure_sub: ntcore.IntegerSubscriber
@@ -79,7 +79,6 @@ class NTConfigSource(ConfigSource):
             nt_table = ntcore.NetworkTableInstance.getDefault().getTable(
                 "/" + config_store.local_config.device_id + "/config"
             )
-            self._camera_id_sub = nt_table.getStringTopic("camera_id").subscribe(RemoteConfig.camera_id)
             self._camera_resolution_width_sub = nt_table.getIntegerTopic("camera_resolution_width").subscribe(
                 RemoteConfig.camera_resolution_width
             )
@@ -106,7 +105,6 @@ class NTConfigSource(ConfigSource):
             self._init_complete = True
 
         # Read config data
-        config_store.remote_config.camera_id = self._camera_id_sub.get()
         config_store.remote_config.camera_resolution_width = self._camera_resolution_width_sub.get()
         config_store.remote_config.camera_resolution_height = self._camera_resolution_height_sub.get()
         config_store.remote_config.camera_auto_exposure = self._camera_auto_exposure_sub.get()

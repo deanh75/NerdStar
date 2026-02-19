@@ -1,4 +1,6 @@
 {
+    "camera_id": "0x8020000005ac8514",
+    "camera_name": "cam_name",
     "apriltags_enable": "False",
     "objdetect_enable": "False",
     "driverCam_enable": "False",
