@@ -11,7 +11,7 @@ from typing import List, Tuple
 import cv2
 from config.config import ConfigStore
 from output.overlay_util import overlay_obj_detect_observation
-from output.StreamServer import MjpegServer
+from output.StreamServer import MjpegStreamServer
 from pipeline.ObjectDetector import CoreMLObjectDetector
 from vision_types import ObjDetectObservation
 
@@ -22,7 +22,7 @@ def objdetect_worker(
     server_port: int,
 ):
     object_detector = CoreMLObjectDetector()
-    stream_server = MjpegServer()
+    stream_server = MjpegStreamServer()
     stream_server.start(server_port)
 
     while True:

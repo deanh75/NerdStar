@@ -172,10 +172,10 @@ class AVFoundationMjpegCapture(Capture):
             if config_store.camera_config.camera_id == "" or len(camera_id_split) != 3:
                 print("No camera ID, waiting to start capture session")
             else:
-                av = AVFoundation._setup()
                 devices = list(AVFoundation.AVCaptureDevice.devicesWithMediaType_(AVFoundation.AVMediaTypeVideo))
                 devices.sort(key=lambda x: x.uniqueID())
                 for index, device in enumerate(devices):
+                    print(device.uniqueID())
                     if device.uniqueID() == config_store.camera_config.camera_id.replace(":", ""):
                         camera_location_id = camera_id_split[0]
                         camera_vendor_id = camera_id_split[1]

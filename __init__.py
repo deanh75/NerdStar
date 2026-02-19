@@ -22,7 +22,7 @@ from config.config import ConfigStore, LocalConfig, CameraConfig, RemoteConfig
 from config.ConfigSource import ConfigSource, FileConfigSource, NTConfigSource
 from objdetect_worker import objdetect_worker
 from output.OutputPublisher import NTOutputPublisher, OutputPublisher
-from output.StreamServer import MjpegServer, StreamServer
+from output.StreamServer import MjpegStreamServer, StreamServer
 from output.overlay_util import *
 from output.VideoWriter import FFmpegVideoWriter, VideoWriter
 from pipeline.Capture import CAPTURE_IMPLS
@@ -140,7 +140,7 @@ if __name__ == "__main__":
         if calibration_command_source.get_calibrating(config):
             # Calibration mode
             if not was_calibrating:
-                calibration_session_server = MjpegServer()
+                calibration_session_server = MjpegStreamServer()
                 calibration_session_server.start(7999)
             was_calibrating = True
             calibration_session.process_frame(image, calibration_command_source.get_capture_flag(config))

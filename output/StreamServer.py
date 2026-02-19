@@ -33,7 +33,7 @@ class StreamServer:
         raise NotImplementedError
 
 
-class MjpegServer(StreamServer):
+class MjpegStreamServer(StreamServer):
     _frame: cv2.Mat
     _has_frame: bool = False
     _uuid: str = ""
@@ -113,6 +113,7 @@ class MjpegServer(StreamServer):
         daemon_threads = True
 
     def _run(self, port: int) -> None:
+        port = int(port)
         self._uuid = "".join(random.choice(string.ascii_lowercase) for i in range(12))
         CLIENT_COUNTS[self._uuid] = 0
         server = self.StreamingServer(("", port), self._make_handler(self._uuid))

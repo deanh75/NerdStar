@@ -11,7 +11,7 @@ from typing import List, Tuple, Union
 import cv2
 from config.config import ConfigStore
 from output.overlay_util import overlay_image_observation
-from output.StreamServer import MjpegServer
+from output.StreamServer import MjpegStreamServer
 from pipeline.CameraPoseEstimator import MultiTargetCameraPoseEstimator
 from pipeline.FiducialDetector import ArucoFiducialDetector
 from pipeline.PoseEstimator import SquareTargetPoseEstimator
@@ -38,7 +38,7 @@ def apriltag_worker(
     camera_pose_estimator = MultiTargetCameraPoseEstimator()
     tag_angle_calculator = CameraMatrixTagAngleCalculator()
     tag_pose_estimator = SquareTargetPoseEstimator()
-    stream_server = MjpegServer()
+    stream_server = MjpegStreamServer()
     stream_server.start(server_port)
 
     while True:
