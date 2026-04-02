@@ -3,7 +3,7 @@
   "server_ip": "10.93.12.2",
   "capture_impl": "avfoundationmjpeg",
   "obj_detect_model": "",
-  "obj_detect_max_fps": -1,
+  "obj_detect_max_fps": 60,
   "video_folder": ".",
   "video_framerate": 30
 }

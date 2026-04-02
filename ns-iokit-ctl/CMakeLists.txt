@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.1)
+cmake_minimum_required(VERSION 3.6)
 project(ns_iokit_ctl)
 
 set(CMAKE_CXX_STANDARD 20)

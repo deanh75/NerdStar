@@ -4,7 +4,8 @@ opencv-contrib-python==4.10.0.84
 opencv-python==4.10.0.84
 pillow==11.1.0
 pyntcore>=2026.2.1
-pyobjc-framework-AVFoundation==10.3.2
+# pyobjc-framework-AVFoundation==10.3.2
+pyobjc==10.3.2
 pypylon==4.1.0
 robotpy-wpimath>=2026.2.1
 robotpy-cscore>=2026.2.1

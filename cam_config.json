@@ -1,5 +1,5 @@
 {
-    "camera_id": "0x80200000:0x05ac:0x8514",
+    "camera_id": "0x14600000:0c45:6366",
     "camera_name": "cam_name",
     "apriltags_enable": "False",
     "objdetect_enable": "False",

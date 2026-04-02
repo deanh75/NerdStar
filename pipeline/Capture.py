@@ -28,6 +28,9 @@ class Capture:
     def get_frame(self, config_store: ConfigStore) -> Tuple[bool, cv2.Mat]:
         """Return the next frame from the camera."""
         raise NotImplementedError
+    
+    def stop(self) -> None: 
+        raise NotImplementedError
 
     @classmethod
     def _config_changed(cls, config_a: ConfigStore, config_b: ConfigStore) -> bool:
@@ -37,10 +40,12 @@ class Capture:
             return True
 
         remote_a = config_a.remote_config
+        camera_a = config_a.camera_config
         remote_b = config_b.remote_config
+        camera_b = config_b.camera_config
 
         return (
-            remote_a.camera_id != remote_b.camera_id
+            camera_a.camera_id != camera_b.camera_id
             or remote_a.camera_resolution_width != remote_b.camera_resolution_width
             or remote_a.camera_resolution_height != remote_b.camera_resolution_height
             or remote_a.camera_auto_exposure != remote_b.camera_auto_exposure
@@ -175,7 +180,6 @@ class AVFoundationMjpegCapture(Capture):
                 devices = list(AVFoundation.AVCaptureDevice.devicesWithMediaType_(AVFoundation.AVMediaTypeVideo))
                 devices.sort(key=lambda x: x.uniqueID())
                 for index, device in enumerate(devices):
-                    print(device.uniqueID())
                     if device.uniqueID() == config_store.camera_config.camera_id.replace(":", ""):
                         camera_location_id = camera_id_split[0]
                         camera_vendor_id = camera_id_split[1]

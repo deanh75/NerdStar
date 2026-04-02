@@ -1,0 +1,9 @@
+{
+	"InstallScripts" : 
+	[
+		"/Users/dean/northstar/ns-iokit-ctl/build/cmake_install.cmake",
+		"/Users/dean/northstar/ns-iokit-ctl/build/openpnp-capture/cmake_install.cmake",
+		"/Users/dean/northstar/ns-iokit-ctl/build/openpnp-capture/mac/tests/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

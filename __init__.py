@@ -25,15 +25,15 @@ from output.OutputPublisher import NTOutputPublisher, OutputPublisher
 from output.StreamServer import MjpegStreamServer, StreamServer
 from output.overlay_util import *
 from output.VideoWriter import FFmpegVideoWriter, VideoWriter
-from pipeline.Capture import CAPTURE_IMPLS
+from pipeline.Capture import CAPTURE_IMPLS, Capture
 
 from cscore import CameraServer
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--mac_config", default="config.json")
-    parser.add_argument("--camera_config", default="cam_config.json")
-    parser.add_argument("--calibration", default="calibration.json")
+    parser.add_argument("--mac_config", default="config_default.json")
+    parser.add_argument("--camera_config", default="cam_config_default.json")
+    parser.add_argument("--calibration", default="calibration_new.yml")
     args = parser.parse_args()
 
     config = ConfigStore(LocalConfig(), CameraConfig(), RemoteConfig())
@@ -42,7 +42,7 @@ if __name__ == "__main__":
     calibration_command_source: CalibrationCommandSource = NTCalibrationCommandSource()
     local_config_source.update(config)
 
-    capture = CAPTURE_IMPLS[config.local_config.capture_impl]()
+    capture: Capture = CAPTURE_IMPLS[config.local_config.capture_impl]()
     output_publisher: OutputPublisher = NTOutputPublisher()
     video_writer: VideoWriter = FFmpegVideoWriter()
     calibration_session = CalibrationSession()
@@ -73,6 +73,10 @@ if __name__ == "__main__":
     nt.startClient4(config.local_config.device_id + config.camera_config.camera_name)
 
     def cleanup() -> None:
+        print("Cleaning Up And Saving")
+        if was_calibrating:
+            calibration_session.finish()
+
         if was_recording:
             video_writer.stop()
         
@@ -141,8 +145,8 @@ if __name__ == "__main__":
             # Calibration mode
             if not was_calibrating:
                 calibration_session_server = MjpegStreamServer()
-                calibration_session_server.start(7999)
-            was_calibrating = True
+                calibration_session_server.start(9999)
+                was_calibrating = True
             calibration_session.process_frame(image, calibration_command_source.get_capture_flag(config))
             calibration_session_server.set_frame(image)
 

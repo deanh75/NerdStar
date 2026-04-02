@@ -40,7 +40,7 @@ class CalibrationSession:
             (retval, charuco_corners, charuco_ids) = cv2.aruco.interpolateCornersCharuco(
                 corners, ids, image, self._charuco_board
             )
-            if retval:
+            if retval >= 8:
                 cv2.aruco.drawDetectedCornersCharuco(image, charuco_corners, charuco_ids)
 
                 # Save corners
@@ -48,6 +48,8 @@ class CalibrationSession:
                     self._all_charuco_corners.append(charuco_corners)
                     self._all_charuco_ids.append(charuco_ids)
                     print("Saved calibration frame")
+            else: 
+                print("Retval < 8")
 
     def finish(self) -> None:
         if len(self._all_charuco_corners) == 0:
@@ -57,11 +59,14 @@ class CalibrationSession:
         if os.path.exists(self.NEW_CALIBRATION_FILENAME):
             os.remove(self.NEW_CALIBRATION_FILENAME)
 
+        print("Calibrating")
         (retval, camera_matrix, distortion_coefficients, rvecs, tvecs) = cv2.aruco.calibrateCameraCharuco(
             self._all_charuco_corners, self._all_charuco_ids, self._charuco_board, self._imsize, None, None
         )
+        print("Calibrated")
 
         if retval:
+            print("Saving Config")
             calibration_store = cv2.FileStorage(self.NEW_CALIBRATION_FILENAME, cv2.FILE_STORAGE_WRITE)
             calibration_store.write("calibration_date", str(datetime.datetime.now()))
             calibration_store.write("camera_resolution", self._imsize)
