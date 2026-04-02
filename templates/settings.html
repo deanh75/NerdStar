@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Hardware Settings</h1>
+
+<label>Robot IP</label>
+<input id="robotIp">
+
+<label>LED Brightness</label>
+<input id="brightness" type="number">
+
+<button onclick="saveSettings()">Save</button>
+{% endblock %}

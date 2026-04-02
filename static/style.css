@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background: #1e1e1e;
+    color: white;
+}
+
+.sidebar {
+    width: 200px;
+    height: 100vh;
+    background: #2c2c2c;
+    position: fixed;
+    padding: 20px;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    margin: 10px 0;
+    text-decoration: none;
+}
+
+.content {
+    margin-left: 220px;
+    padding: 20px;
+}
+
+input, select, button {
+    display: block;
+    margin: 10px 0;
+}

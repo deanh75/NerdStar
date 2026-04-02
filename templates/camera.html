@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Camera</h1>
+
+<select id="cameraSelect" onchange="changeCamera()"></select>
+
+<h2>Live Stream</h2>
+<img id="stream" width="640">
+
+<p>FPS: <span id="fps">0</span></p>
+
+<h2>Camera Config</h2>
+
+<label>Name</label>
+<input id="camera_name">
+
+<label>AprilTags</label>
+<select id="apriltags_enable">
+    <option>True</option>
+    <option>False</option>
+</select>
+
+<label>Object Detection</label>
+<select id="objdetect_enable">
+    <option>True</option>
+    <option>False</option>
+</select>
+
+<label>Driver Cam</label>
+<select id="driverCam_enable">
+    <option>True</option>
+    <option>False</option>
+</select>
+
+<label>AprilTag Port</label>
+<input id="apriltags_stream_port">
+
+<label>Object Detect Port</label>
+<input id="objdetect_stream_port">
+
+<button onclick="saveConfig()">Save</button>
+{% endblock %}

@@ -43,7 +43,7 @@ class MjpegStreamServer(StreamServer):
             HTML = """
     <html>
         <head>
-            <title>Northstar Debug</title>
+            <title>NerdStar</title>
             <style>
                 body {
                     background-color: black;
