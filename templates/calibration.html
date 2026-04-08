@@ -1,10 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Calibration</h1>
+<h2>Calibration</h2>
 
-<select id="calibCamera"></select>
-<button onclick="runCalibration()">Run Calibration</button>
+<div class="card">
+    <p>Adjust camera alignment and tuning.</p>
+</div>
 
-<pre id="calibResult"></pre>
+<div class="card">
+    <button>Run Calibration</button>
+</div>
 {% endblock %}

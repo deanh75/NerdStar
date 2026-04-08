@@ -1,0 +1,18 @@
+{
+    "camera_id": "0x8020000005ac8514",
+    "camera_name": "iMac",
+    "camera_resolution_width": 1800,
+    "camera_resolution_height": 1200,
+    "camera_auto_white_balance": 0,
+    "camera_auto_exposure": 0,
+    "camera_exposure": 1800,
+    "camera_iso": 200,
+    "apriltags_stream_port": 8000,
+    "objdetect_stream_port": 8001,
+    "apriltags_enable": false,
+    "objdetect_enable": false,
+    "driverCam_enable": false,
+    "has_calibration": false,
+    "camera_matrix": null,
+    "distortion_coefficients": null
+}

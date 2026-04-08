@@ -1,25 +1,51 @@
-from flask import Flask, render_template
-from api import cameras, calibration, settings
+from flask import Flask, jsonify, render_template, Response, url_for, request, redirect
+from backend.wrapper import Wrapper
 
 app = Flask(__name__)
+wrapper = Wrapper()
+selected_camera = None
+camera_supplier = lambda: selected_camera
 
-# Register API blueprints
-app.register_blueprint(cameras.bp)
-app.register_blueprint(calibration.bp)
-app.register_blueprint(settings.bp)
-
-# Pages
 @app.route("/")
-def camera_page():
-    return render_template("camera.html")
+def camera():
+    global cameras, selected_camera
+    cameras = wrapper.get_cameras()
+    if selected_camera not in cameras:
+        selected_camera = cameras[0] if cameras else None
+    return render_template("camera.html", cameras=cameras, selected_index=selected_camera)
+
+@app.route("/set_camera", methods=["POST"])
+def set_camera():
+    global selected_camera
+    cam_name = request.form.get("camera")
+    if cam_name in cameras:
+        selected_camera = cam_name
+    return redirect(url_for("camera"))
+
+@app.route('/video_feed')
+def video_feed():
+    return Response(wrapper.get_raw_frame(camera_supplier), 
+        mimetype='multipart/x-mixed-replace; boundary=frame')
+
+@app.route('/rename_camera', methods=['POST'])
+def rename_camera_route():
+    data = request.get_json()
+    index = int(data.get('index'))
+    new_name: str = data.get('name', '').strip()
+
+    if new_name and wrapper.update_config(index, 'camera_name', new_name):
+        global selected_camera
+        selected_camera = new_name  # Update selected camera to the renamed one
+        return jsonify(success=True)
+    return jsonify(success=False), 400
 
 @app.route("/calibration")
-def calibration_page():
+def calibration():
     return render_template("calibration.html")
 
 @app.route("/settings")
-def settings_page():
+def settings():
     return render_template("settings.html")
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5800, debug=True)
+    app.run(debug=True)

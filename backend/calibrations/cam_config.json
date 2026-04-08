@@ -1,9 +1,0 @@
-{
-    "camera_id": "0x14600000:0c45:6366",
-    "camera_name": "cam_name",
-    "apriltags_enable": "False",
-    "objdetect_enable": "False",
-    "driverCam_enable": "False",
-    "apriltags_stream_port": "8000",
-    "objdetect_stream_port": "8001"
-}

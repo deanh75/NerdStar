@@ -1,9 +1,0 @@
-/Users/dean/northstar/ns-iokit-ctl/build/CMakeFiles/ns_iokit_ctl.dir
-/Users/dean/northstar/ns-iokit-ctl/build/CMakeFiles/edit_cache.dir
-/Users/dean/northstar/ns-iokit-ctl/build/CMakeFiles/rebuild_cache.dir
-/Users/dean/northstar/ns-iokit-ctl/build/openpnp-capture/CMakeFiles/openpnp-capture.dir
-/Users/dean/northstar/ns-iokit-ctl/build/openpnp-capture/CMakeFiles/edit_cache.dir
-/Users/dean/northstar/ns-iokit-ctl/build/openpnp-capture/CMakeFiles/rebuild_cache.dir
-/Users/dean/northstar/ns-iokit-ctl/build/openpnp-capture/mac/tests/CMakeFiles/openpnp-capture-test.dir
-/Users/dean/northstar/ns-iokit-ctl/build/openpnp-capture/mac/tests/CMakeFiles/edit_cache.dir
-/Users/dean/northstar/ns-iokit-ctl/build/openpnp-capture/mac/tests/CMakeFiles/rebuild_cache.dir

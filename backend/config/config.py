@@ -2,6 +2,7 @@
 # license that can be found in the LICENSE file at
 # the root directory of this project.
 
+from __future__ import annotations
 from dataclasses import dataclass
 
 import numpy
@@ -12,16 +13,25 @@ import numpy.typing
 class LocalConfig:
     device_id: str = ""
     server_ip: str = ""
-    capture_impl: str = ""
+    device_ip: str = ""
     obj_detect_model: str = ""
     obj_detect_max_fps: int = -1
     video_folder: str = ""
     video_framerate: int = 25
+    fiducial_size_m: float = 0 
+    tag_layout: any = None
+    should_record: bool = False
 
 @dataclass
 class CameraConfig:
     camera_id: str = ""
     camera_name: str = ""
+    camera_resolution_width: int = 0
+    camera_resolution_height: int = 0
+    camera_auto_white_balance: int = 0
+    camera_auto_exposure: int = 0
+    camera_exposure: int = 0
+    camera_iso: int = 0
     apriltags_stream_port: int = 8000
     objdetect_stream_port: int = 8001
     apriltags_enable: bool = False
@@ -36,14 +46,6 @@ class RemoteConfig:
     event_name: str = ""
     match_type: int = 0
     match_number: int = 0
-    camera_resolution_width: int = 0
-    camera_resolution_height: int = 0
-    camera_auto_exposure: int = 0
-    camera_exposure: int = 0
-    camera_gain: float = 0
-    camera_denoise: float = 0
-    fiducial_size_m: float = 0 
-    tag_layout: any = None
     is_recording: bool = False
     timestamp: int = 0
 
@@ -53,3 +55,4 @@ class ConfigStore:
     local_config: LocalConfig
     camera_config: CameraConfig
     remote_config: RemoteConfig
+    camera_config_source: "FileConfigSource"

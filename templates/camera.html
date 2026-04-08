@@ -1,43 +1,99 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Camera</h1>
+<div style="display: flex; align-items: flex-start; gap: 20px;">
 
-<select id="cameraSelect" onchange="changeCamera()"></select>
+    <!-- Camera Feed -->
+    <div class="card">
+        <img id="cameraFeed" src="{{ url_for('video_feed', cam_name=selected_index) }}" width="640">
+    </div>
 
-<h2>Live Stream</h2>
-<img id="stream" width="640">
+    <!-- Camera Controls -->
+    <div class="card" style="flex-direction: column; display: flex; gap: 10px;">
+        <label for="cameraDropdown" style="color:#39FF14;">Select Camera:</label>
 
-<p>FPS: <span id="fps">0</span></p>
+        <div id="cameraControl" style="display:flex; align-items:center; gap:5px;">
+            <!-- Dropdown -->
+            <select id="cameraDropdown" style="
+                background-color: #000;
+                color: #39FF14;
+                border: 1px solid #39FF14;
+                padding: 5px;
+            ">
+                {% for name in cameras %}
+                    <option value="{{ loop.index0 }}" {% if name == selected_index %}selected{% endif %}>
+                        {{ name }}
+                    </option>
+                {% endfor %}
+            </select>
 
-<h2>Camera Config</h2>
+            <!-- Pencil icon -->
+            <span id="editIcon" style="cursor:pointer; font-size: 18px; color:#39FF14;">✏️</span>
+        </div>
 
-<label>Name</label>
-<input id="camera_name">
+        <!-- Hidden input for renaming -->
+        <div id="renameDiv" style="display:none; gap:5px; align-items:center; margin-top:5px;">
+            <input id="newName" type="text" placeholder="Enter new name"
+                style="background-color:#000; color:#39FF14; border:1px solid #39FF14; padding:5px;">
+            <span id="saveIcon" style="cursor:pointer; font-size:18px; color:#39FF14;">💾</span>
+        </div>
+    </div>
+</div>
 
-<label>AprilTags</label>
-<select id="apriltags_enable">
-    <option>True</option>
-    <option>False</option>
-</select>
+<script>
+const dropdown = document.getElementById('cameraDropdown');
+const img = document.getElementById('cameraFeed');
 
-<label>Object Detection</label>
-<select id="objdetect_enable">
-    <option>True</option>
-    <option>False</option>
-</select>
+dropdown.addEventListener('change', () => {
+    const name = dropdown.options[dropdown.selectedIndex].text;
+    img.src = `/video_feed?cam_name=${encodeURIComponent(name)}&t=${Date.now()}`;
+});
 
-<label>Driver Cam</label>
-<select id="driverCam_enable">
-    <option>True</option>
-    <option>False</option>
-</select>
+// Editable name functionality
+const editIcon = document.getElementById('editIcon');
+const renameDiv = document.getElementById('renameDiv');
+const newNameInput = document.getElementById('newName');
+const saveIcon = document.getElementById('saveIcon');
+const cameraControl = document.getElementById('cameraControl');
 
-<label>AprilTag Port</label>
-<input id="apriltags_stream_port">
+editIcon.addEventListener('click', () => {
+    cameraControl.style.display = 'none';
+    renameDiv.style.display = 'flex';
+    newNameInput.value = dropdown.options[dropdown.selectedIndex].text;
+    newNameInput.focus();
+});
 
-<label>Object Detect Port</label>
-<input id="objdetect_stream_port">
+function saveCameraName() {
+    const index = dropdown.value;
+    const newName = newNameInput.value.trim();
+    if(newName){
+        // Update dropdown text
+        dropdown.options[dropdown.selectedIndex].text = newName;
+        // Hide input, show dropdown + pencil
+        renameDiv.style.display = 'none';
+        cameraControl.style.display = 'flex';
 
-<button onclick="saveConfig()">Save</button>
+        // Send to backend
+        fetch('/rename_camera', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({index: index, name: newName})
+        });
+
+        // Update stream with new camera name
+        img.src = `/video_feed?cam_name=${encodeURIComponent(newName)}&t=${Date.now()}`;
+    }
+}
+
+// Click save icon
+saveIcon.addEventListener('click', saveCameraName);
+
+// Press Enter in input
+newNameInput.addEventListener('keypress', (e) => {
+    if(e.key === 'Enter'){
+        saveCameraName();
+    }
+});
+
+</script>
 {% endblock %}

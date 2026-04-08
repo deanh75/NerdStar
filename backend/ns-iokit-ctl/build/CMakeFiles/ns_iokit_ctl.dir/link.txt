@@ -1,1 +1,0 @@
-/usr/bin/c++ -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/ns_iokit_ctl.dir/main.cpp.o -o ns_iokit_ctl  openpnp-capture/libopenpnp-capture.a -framework AVFoundation -framework Foundation -framework CoreMedia -framework CoreVideo -framework Accelerate -framework IOKit

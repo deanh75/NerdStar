@@ -3,67 +3,94 @@
 # the root directory of this project.
 
 import json
+import shutil
 
 import cv2
 import ntcore
 import numpy
-from config.config import ConfigStore, RemoteConfig
+from backend.config.config import ConfigStore, LocalConfig
 
 
 class ConfigSource:
     def update(self, config_store: ConfigStore) -> None:
         raise NotImplementedError
 
+class LocalConfigSource(ConfigSource):
+    def __init__(self) -> None:
+        self._mac_config_filename = "backend/data/mac.json"
+        pass
+
+    def update(self, local_config: LocalConfig) -> None:
+        with open(self._mac_config_filename, "r") as mac_config_file:
+            mac_config_data = json.loads(mac_config_file.read())
+            local_config.device_id = mac_config_data["device_id"]
+            local_config.server_ip = mac_config_data["server_ip"]
+            local_config.device_ip = mac_config_data["device_ip"]
+            local_config.obj_detect_model = mac_config_data["obj_detect_model"]
+            local_config.obj_detect_max_fps = mac_config_data["obj_detect_max_fps"]
+            local_config.video_folder = mac_config_data["video_folder"]
+            local_config.video_framerate = mac_config_data["video_framerate"]
+            local_config.fiducial_size_m = mac_config_data["fiducial_size_m"]
+            local_config.should_record = mac_config_data["should_record"]
+            try:
+                local_config.tag_layout = json.loads(mac_config_data["tag_layout"])
+            except:
+                local_config.tag_layout = None
+                pass
 
 class FileConfigSource(ConfigSource):
-    def __init__(self, mac_config_filename: str, cam_config_filename: str, calibration_filename: str) -> None:
-        self._mac_config_filename = mac_config_filename
-        self._cam_config_filename = cam_config_filename
-        self._calibration_filename = calibration_filename
+    def __init__(self, cam_id: str) -> None:
+        self._cam_id = cam_id
+        self._cam_config_filename = f"backend/data/{cam_id}_cam.json"
+        self._calibration_filename = f"backend/data/{cam_id}_calibration.yml"
         pass
 
     def update(self, config_store: ConfigStore) -> None:
         # Get config
-        with open(self._mac_config_filename, "r") as mac_config_file:
-            mac_config_data = json.loads(mac_config_file.read())
-            config_store.local_config.device_id = mac_config_data["device_id"]
-            config_store.local_config.server_ip = mac_config_data["server_ip"]
-            config_store.local_config.capture_impl = mac_config_data["capture_impl"]
-            config_store.local_config.obj_detect_model = mac_config_data["obj_detect_model"]
-            config_store.local_config.obj_detect_max_fps = mac_config_data["obj_detect_max_fps"]
-            config_store.local_config.video_folder = mac_config_data["video_folder"]
-            config_store.local_config.video_framerate = mac_config_data["video_framerate"]
+        try:
+            with open(self._cam_config_filename, "r") as cam_config_file:
+                cam_config_data = json.loads(cam_config_file.read())
+                config_store.camera_config.camera_id = self._cam_id
+                cam_config_data["camera_id"] = self._cam_id
+                config_store.camera_config.camera_name = cam_config_data["camera_name"]
+                config_store.camera_config.camera_resolution_width = cam_config_data["camera_resolution_width"]
+                config_store.camera_config.camera_resolution_height = cam_config_data["camera_resolution_height"]
+                config_store.camera_config.camera_auto_white_balance = cam_config_data["camera_auto_white_balance"]
+                config_store.camera_config.camera_auto_exposure = cam_config_data["camera_auto_exposure"]
+                config_store.camera_config.camera_exposure = cam_config_data["camera_exposure"]
+                config_store.camera_config.camera_iso = cam_config_data["camera_iso"]
+                config_store.camera_config.apriltags_stream_port = cam_config_data["apriltags_stream_port"]
+                config_store.camera_config.objdetect_stream_port = cam_config_data["objdetect_stream_port"]
+                config_store.camera_config.apriltags_enable = cam_config_data["apriltags_enable"]
+                config_store.camera_config.objdetect_enable = cam_config_data["objdetect_enable"]
 
+            with open(self._cam_config_filename, "w") as cam_config_file:
+                json.dump(cam_config_data, cam_config_file, indent=4)
+
+            # Get calibration
+            calibration_store = cv2.FileStorage(self._calibration_filename, cv2.FILE_STORAGE_READ)
+            camera_matrix = calibration_store.getNode("camera_matrix").mat()
+            distortion_coefficients = calibration_store.getNode("distortion_coefficients").mat()
+            calibration_store.release()
+            if type(camera_matrix) == numpy.ndarray and type(distortion_coefficients) == numpy.ndarray:
+                config_store.camera_config.camera_matrix = camera_matrix
+                config_store.camera_config.distortion_coefficients = distortion_coefficients
+                config_store.camera_config.has_calibration = True
+        except: 
+            shutil.copy("backend/data/default_cam.json", self._cam_config_filename)
+            self.update(config_store)
+
+    def save(self, obj: str, value) -> None:
         with open(self._cam_config_filename, "r") as cam_config_file:
             cam_config_data = json.loads(cam_config_file.read())
-            config_store.camera_config.camera_id = cam_config_data["camera_id"]
-            config_store.camera_config.camera_name = cam_config_data["camera_name"]
-            config_store.camera_config.apriltags_stream_port = cam_config_data["apriltags_stream_port"]
-            config_store.camera_config.objdetect_stream_port = cam_config_data["objdetect_stream_port"]
-            config_store.camera_config.apriltags_enable = cam_config_data["apriltags_enable"]
-            config_store.camera_config.objdetect_enable = cam_config_data["objdetect_enable"]
+            cam_config_data[obj] = value
 
-        # Get calibration
-        calibration_store = cv2.FileStorage(self._calibration_filename, cv2.FILE_STORAGE_READ)
-        camera_matrix = calibration_store.getNode("camera_matrix").mat()
-        distortion_coefficients = calibration_store.getNode("distortion_coefficients").mat()
-        calibration_store.release()
-        if type(camera_matrix) == numpy.ndarray and type(distortion_coefficients) == numpy.ndarray:
-            config_store.camera_config.camera_matrix = camera_matrix
-            config_store.camera_config.distortion_coefficients = distortion_coefficients
-            config_store.camera_config.has_calibration = True
+        with open(self._cam_config_filename, "w") as cam_config_file:
+            json.dump(cam_config_data, cam_config_file, indent=4)
 
 
 class NTConfigSource(ConfigSource):
     _init_complete: bool = False
-    _camera_resolution_width_sub: ntcore.IntegerSubscriber
-    _camera_resolution_height_sub: ntcore.IntegerSubscriber
-    _camera_auto_exposure_sub: ntcore.IntegerSubscriber
-    _camera_exposure_sub: ntcore.IntegerSubscriber
-    _camera_gain_sub: ntcore.DoubleSubscriber
-    _camera_denoise_sub: ntcore.DoubleSubscriber
-    _fiducial_size_m_sub: ntcore.DoubleSubscriber
-    _tag_layout_sub: ntcore.DoubleSubscriber
     _is_recording_sub: ntcore.BooleanSubscriber
     _timestamp_sub: ntcore.IntegerSubscriber
     _event_name_sub: ntcore.StringSubscriber
@@ -76,24 +103,6 @@ class NTConfigSource(ConfigSource):
             nt_table = ntcore.NetworkTableInstance.getDefault().getTable(
                 "/" + config_store.local_config.device_id + "/config"
             )
-            self._camera_resolution_width_sub = nt_table.getIntegerTopic("camera_resolution_width").subscribe(
-                RemoteConfig.camera_resolution_width
-            )
-            self._camera_resolution_height_sub = nt_table.getIntegerTopic("camera_resolution_height").subscribe(
-                RemoteConfig.camera_resolution_height
-            )
-            self._camera_auto_exposure_sub = nt_table.getIntegerTopic("camera_auto_exposure").subscribe(
-                RemoteConfig.camera_auto_exposure
-            )
-            self._camera_exposure_sub = nt_table.getIntegerTopic("camera_exposure").subscribe(
-                RemoteConfig.camera_exposure
-            )
-            self._camera_gain_sub = nt_table.getDoubleTopic("camera_gain").subscribe(RemoteConfig.camera_gain)
-            self._camera_denoise_sub = nt_table.getDoubleTopic("camera_denoise").subscribe(RemoteConfig.camera_denoise)
-            self._fiducial_size_m_sub = nt_table.getDoubleTopic("fiducial_size_m").subscribe(
-                RemoteConfig.fiducial_size_m
-            )
-            self._tag_layout_sub = nt_table.getStringTopic("tag_layout").subscribe("")
             self._is_recording_sub = nt_table.getBooleanTopic("is_recording").subscribe(False)
             self._timestamp_sub = nt_table.getIntegerTopic("timestamp").subscribe(0)
             self._event_name_sub = nt_table.getStringTopic("event_name").subscribe("")
@@ -101,19 +110,7 @@ class NTConfigSource(ConfigSource):
             self._match_number_sub = nt_table.getIntegerTopic("match_number").subscribe(0)
             self._init_complete = True
 
-        # Read config data
-        config_store.remote_config.camera_resolution_width = self._camera_resolution_width_sub.get()
-        config_store.remote_config.camera_resolution_height = self._camera_resolution_height_sub.get()
-        config_store.remote_config.camera_auto_exposure = self._camera_auto_exposure_sub.get()
-        config_store.remote_config.camera_exposure = self._camera_exposure_sub.get()
-        config_store.remote_config.camera_gain = self._camera_gain_sub.get()
-        config_store.remote_config.camera_denoise = self._camera_denoise_sub.get()
-        config_store.remote_config.fiducial_size_m = self._fiducial_size_m_sub.get()
-        try:
-            config_store.remote_config.tag_layout = json.loads(self._tag_layout_sub.get())
-        except:
-            config_store.remote_config.tag_layout = None
-            pass
+        # Read config data fron NetworkTables
         config_store.remote_config.is_recording = self._is_recording_sub.get()
         config_store.remote_config.timestamp = self._timestamp_sub.get()
         config_store.remote_config.event_name = self._event_name_sub.get()
