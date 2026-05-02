@@ -6,9 +6,9 @@ import queue
 from typing import List, Tuple
 
 import cv2
-from config.config import ConfigStore
-from pipeline.ObjectDetector import CoreMLObjectDetector
-from vision_types import ObjDetectObservation
+from backend.config.config import ConfigStore
+from backend.pipeline.ObjectDetector import CoreMLObjectDetector
+from backend.vision_types import ObjDetectObservation
 
 
 def objdetect_worker(

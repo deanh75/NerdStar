@@ -6,9 +6,9 @@ from typing import List, Union
 
 import cv2
 import numpy
-from config.config import ConfigStore
-from pipeline.coordinate_systems import openCvPoseToWpilib, wpilibTranslationToOpenCv
-from vision_types import CameraPoseObservation, FiducialImageObservation
+from backend.config.config import ConfigStore
+from backend.pipeline.coordinate_systems import openCvPoseToWpilib, wpilibTranslationToOpenCv
+from backend.vision_types import CameraPoseObservation, FiducialImageObservation
 from wpimath.geometry import *
 
 

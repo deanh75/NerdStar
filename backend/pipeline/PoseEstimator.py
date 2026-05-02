@@ -6,9 +6,9 @@ from typing import Union
 
 import cv2
 import numpy
-from config.config import ConfigStore
-from pipeline.coordinate_systems import openCvPoseToWpilib
-from vision_types import FiducialImageObservation, FiducialPoseObservation
+from backend.config.config import ConfigStore
+from backend.pipeline.coordinate_systems import openCvPoseToWpilib
+from backend.vision_types import FiducialImageObservation, FiducialPoseObservation
 
 
 class PoseEstimator:

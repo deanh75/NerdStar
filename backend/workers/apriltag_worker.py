@@ -6,12 +6,12 @@ import queue
 from typing import List, Tuple, Union
 
 import cv2
-from config.config import ConfigStore
-from pipeline.CameraPoseEstimator import MultiTargetCameraPoseEstimator
-from pipeline.FiducialDetector import ArucoFiducialDetector
-from pipeline.PoseEstimator import SquareTargetPoseEstimator
-from pipeline.TagAngleCalculator import CameraMatrixTagAngleCalculator
-from vision_types import CameraPoseObservation, FiducialImageObservation, FiducialPoseObservation, TagAngleObservation
+from backend.config.config import ConfigStore
+from backend.pipeline.CameraPoseEstimator import MultiTargetCameraPoseEstimator
+from backend.pipeline.FiducialDetector import ArucoFiducialDetector
+from backend.pipeline.PoseEstimator import SquareTargetPoseEstimator
+from backend.pipeline.TagAngleCalculator import CameraMatrixTagAngleCalculator
+from backend.vision_types import CameraPoseObservation, FiducialImageObservation, FiducialPoseObservation, TagAngleObservation
 
 DEMO_ID = 42
 

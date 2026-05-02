@@ -24,7 +24,7 @@ def initialize():
 def camera():
     global cameras, selected_camera
     initialize()
-    return render_template("camera.html", cameras=cameras, selected_index=selected_camera)
+    return render_template("camera.html", cameras=cameras, selected_cam=selected_camera)
 
 @app.route("/set_camera", methods=["POST"])
 def set_camera():
@@ -90,7 +90,11 @@ def set_camera_resolution():
 def calibration():
     global cameras, selected_camera
     initialize()
-    return render_template("calibration.html", cameras=cameras, selected_index=selected_camera)
+    return render_template("calibration.html", cameras=cameras, selected_cam=selected_camera)
+
+@app.route('/get_calibration_status')
+def get_calibration_status():
+    return jsonify(done=wrapper.get_done())
 
 @app.route("/settings")
 def settings():

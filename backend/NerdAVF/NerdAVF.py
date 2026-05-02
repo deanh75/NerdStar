@@ -63,7 +63,8 @@ class NerdAVF:
             return self._position
         
         class DiscoverySession:
-            def __init__(self, deviceTypes: list[NerdAVF.NerdCaptureDevice.DeviceType], mediaType: NerdAVF.NerdMediaType, position: NerdAVF.NerdCaptureDevice.Position):
+            def __init__(self, deviceTypes: list["NerdAVF.NerdCaptureDevice.DeviceType"], 
+                         mediaType: "NerdAVF.NerdMediaType", position: "NerdAVF.NerdCaptureDevice.Position"):
                 self._devices: list[NerdAVF.NerdCaptureDevice] = []
                 
                 c_device_types = [dt.value for dt in deviceTypes]

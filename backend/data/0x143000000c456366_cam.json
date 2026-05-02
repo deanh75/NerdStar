@@ -15,5 +15,6 @@
     "process_frames_enable": false,
     "has_calibration": false,
     "camera_matrix": null,
-    "distortion_coefficients": null
+    "distortion_coefficients": null,
+    "is_calibrating": false
 }

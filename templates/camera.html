@@ -14,7 +14,7 @@
                 </label>
             </div>
 
-            <img id="cameraFeed" src="{{ url_for('video_feed', cam_name=selected_index) }}">
+            <img id="cameraFeed" src="{{ url_for('video_feed', cam_name=selected_cam) }}">
         </div>
 
         <!-- Camera Controls -->
@@ -298,10 +298,12 @@ resolutionDropdown.addEventListener("change", () => {
     });
 });
 
-window.onload = () => {
+document.addEventListener("DOMContentLoaded", () => {
     const index = dropdown.value;
+    const name = dropdown.options[dropdown.selectedIndex].text;
+    img.src = `/video_feed?cam_name=${encodeURIComponent(name)}&t=${Date.now()}`;
     loadSettings(index);
-};
+});
 
 </script>
 {% endblock %}

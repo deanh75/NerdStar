@@ -16,6 +16,8 @@ from backend.output.VideoWriter import FFmpegVideoWriter, VideoWriter
 from backend.output.overlay_util import overlay_obj_detect_observation
 from backend.pipeline.Capture import AVFoundationMjpegCapture
 from backend.vision_types import FiducialImageObservation, ObjDetectObservation
+from backend.workers.apriltag_worker import apriltag_worker
+from backend.workers.objdetect_worker import objdetect_worker
 
 class Wrapper:
     def __init__(self):
@@ -39,29 +41,28 @@ class Wrapper:
             self._configs.append(config)
 
         self.latest_frames: list[cv2.Mat] = [None] * len(self._configs)
-        self.frame_lock = threading.Lock()
+        self.lock = threading.Lock()
+        self.done = None
 
     def get_frame(self, cam_name_supplier: callable):
         while True:
-            index = next((i for i, cfg in enumerate(self._configs) if cfg.camera_config.camera_name == cam_name_supplier()), -1)
-            if index < 0 or index >= len(self._configs):
+            try:
+                index = next((i for i, cfg in enumerate(self._configs) if cfg.camera_config.camera_name == cam_name_supplier()), -1)
+                if index < 0 or index >= len(self._configs):
+                    raise ValueError("Invalid camera index")
+                elif self.latest_frames[index] is None:
+                    raise ValueError("No frame available for this camera")
+                    
+                _, frame_buf = cv2.imencode('.jpg', self.latest_frames[index].copy())
+                frame_bytes = frame_buf.tobytes()
+                                
+                yield (b'--frame\r\n'
+                    b'Content-Type: image/jpeg\r\n\r\n' + frame_bytes + b'\r\n')
+            except Exception:
                 with open("static/Cam_Lost.png", "rb") as f:
                     frame_bytes = f.read()
                 yield (b'--frame\r\n'
                     b'Content-Type: image/png\r\n\r\n' + frame_bytes + b'\r\n')
-                continue
-            elif self.latest_frames[index] is None:
-                with open("static/Cam_Lost.png", "rb") as f:
-                    frame_bytes = f.read()
-                yield (b'--frame\r\n'
-                    b'Content-Type: image/png\r\n\r\n' + frame_bytes + b'\r\n')
-                continue
-                
-            _, frame_buf = cv2.imencode('.jpg', self.latest_frames[index].copy())
-            frame_bytes = frame_buf.tobytes()
-                            
-            yield (b'--frame\r\n'
-                b'Content-Type: image/jpeg\r\n\r\n' + frame_bytes + b'\r\n')
                
     def get_cameras(self) -> List[str]:
         cams: List[str] = []
@@ -113,26 +114,30 @@ class Wrapper:
             return getattr(self._configs[index].camera_config, obj, None)
         return None
     
+    def get_done(self):
+        with self.lock:
+            return self.done
+    
     def start_backend(self, index: int):
         if self._configs[index].camera_config.apriltags_enable:
             apriltag_worker_in = queue.Queue(maxsize=1)
             apriltag_worker_out = queue.Queue(maxsize=1)
-            apriltag_worker = threading.Thread(
+            apriltag_work = threading.Thread(
                 target=apriltag_worker,
                 args=(apriltag_worker_in, apriltag_worker_out),
                 daemon=True,
             )
-            apriltag_worker.start()
+            apriltag_work.start()
 
         if self._configs[index].camera_config.objdetect_enable:
             objdetect_worker_in = queue.Queue(maxsize=1)
             objdetect_worker_out = queue.Queue(maxsize=1)
-            objdetect_worker = threading.Thread(
+            objdetect_work = threading.Thread(
                 target=objdetect_worker,
                 args=(objdetect_worker_in, objdetect_worker_out),
                 daemon=True,
             )
-            objdetect_worker.start()
+            objdetect_work.start()
 
         output_publisher: OutputPublisher = NTOutputPublisher()
         calib_session = CalibrationSession()
@@ -189,15 +194,21 @@ class Wrapper:
                 # Calibration mode
                 was_calibrating = True
                 calib_session.process_frame(image)
-                with self.frame_lock:
+                with self.lock:
                     self.latest_frames[index] = image.copy()
 
             elif was_calibrating:
                 # Just finished calibration, save results
                 print("Saving calibration")
-                calib_session.finish(self._configs[index].camera_config.camera_id)
-                self._configs[index].camera_config_source.update(self._configs[index])
-                was_calibrating = False
+                with self.lock:
+                    self.done = calib_session.finish(self._configs[index].camera_config.camera_id)
+                if self.done:
+                    self._configs[index].camera_config_source.update(self._configs[index])
+                    was_calibrating = False
+                else:
+                    was_calibrating = False
+                    with self.lock:
+                        self.done = None
 
             elif self._configs[index].camera_config.has_calibration:
                 # AprilTag pipeline
@@ -281,8 +292,8 @@ class Wrapper:
                 if self._configs[index].camera_config.objdetect_enable:
                     [overlay_obj_detect_observation(img, x) for x in last_objdetect_observations]
                     
-                with self.frame_lock:
+                with self.lock:
                     self.latest_frames[index] = img.copy()
             else:
-                with self.frame_lock:
+                with self.lock:
                     self.latest_frames[index] = image.copy()

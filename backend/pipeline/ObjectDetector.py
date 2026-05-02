@@ -8,9 +8,9 @@ from typing import List, Union
 import coremltools
 import cv2
 import numpy as np
-from config.config import ConfigStore
+from backend.config.config import ConfigStore
 from PIL import Image
-from vision_types import ObjDetectObservation
+from backend.vision_types import ObjDetectObservation
 
 
 class ObjectDetector:
@@ -65,15 +65,15 @@ class CoreMLObjectDetector(ObjectDetector):
             )
             corners_undistorted = cv2.undistortPoints(
                 corners,
-                config.local_config.camera_matrix,
-                config.local_config.distortion_coefficients,
+                config.camera_config.camera_matrix,
+                config.camera_config.distortion_coefficients,
                 None,
-                config.local_config.camera_matrix,
+                config.camera_config.camera_matrix,
             )
 
             corner_angles = np.zeros((4, 2))
             for index, corner in enumerate(corners_undistorted):
-                vec = np.linalg.inv(config.local_config.camera_matrix).dot(np.array([corner[0][0], corner[0][1], 1]).T)
+                vec = np.linalg.inv(config.camera_config.camera_matrix).dot(np.array([corner[0][0], corner[0][1], 1]).T)
                 corner_angles[index][0] = math.atan(vec[0])
                 corner_angles[index][1] = math.atan(vec[1])
 

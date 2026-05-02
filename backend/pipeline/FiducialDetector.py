@@ -5,8 +5,8 @@
 from typing import List
 
 import cv2
-from config.config import ConfigStore
-from vision_types import FiducialImageObservation
+from backend.config.config import ConfigStore
+from backend.vision_types import FiducialImageObservation
 
 
 class FiducialDetector:

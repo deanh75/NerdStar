@@ -7,9 +7,9 @@ from typing import Union
 
 import cv2
 import numpy as np
-from config.config import ConfigStore
-from pipeline.PoseEstimator import SquareTargetPoseEstimator
-from vision_types import FiducialImageObservation, FiducialPoseObservation, TagAngleObservation
+from backend.config.config import ConfigStore
+from backend.pipeline.PoseEstimator import SquareTargetPoseEstimator
+from backend.vision_types import FiducialImageObservation, FiducialPoseObservation, TagAngleObservation
 
 
 class TagAngleCalculator:
