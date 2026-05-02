@@ -1,8 +1,11 @@
+import atexit
+
 from flask import Flask, jsonify, render_template, Response, url_for, request, redirect
 from backend.wrapper import Wrapper
 
 app = Flask(__name__)
 wrapper = Wrapper()
+atexit.register(wrapper._capture.stop)
 selected_camera = None
 camera_supplier = lambda: selected_camera
 
@@ -39,6 +42,22 @@ def rename_camera_route():
         return jsonify(success=True)
     return jsonify(success=False), 400
 
+@app.route('/get_camera_settings')
+def get_camera_settings():
+    index = int(request.args.get('index'))
+    settings = wrapper.get_camera_settings(index)
+    return jsonify(settings)
+
+@app.route('/set_camera_setting', methods=['POST'])
+def set_camera_setting():
+    data = request.get_json()
+    index = int(data.get('index'))
+    key = data.get('key')
+    value = data.get('value')
+
+    success = wrapper.update_config(index, key, value)
+    return jsonify(success=success)
+
 @app.route("/calibration")
 def calibration():
     return render_template("calibration.html")
@@ -48,4 +67,4 @@ def settings():
     return render_template("settings.html")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, use_reloader=False)

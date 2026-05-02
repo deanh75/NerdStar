@@ -1,41 +1,110 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div style="display: flex; align-items: flex-start; gap: 20px;">
+<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 20px; width: 100%;">
 
-    <!-- Camera Feed -->
-    <div class="card">
-        <img id="cameraFeed" src="{{ url_for('video_feed', cam_name=selected_index) }}" width="640">
-    </div>
-
-    <!-- Camera Controls -->
-    <div class="card" style="flex-direction: column; display: flex; gap: 10px;">
-        <label for="cameraDropdown" style="color:#39FF14;">Select Camera:</label>
-
-        <div id="cameraControl" style="display:flex; align-items:center; gap:5px;">
-            <!-- Dropdown -->
-            <select id="cameraDropdown" style="
-                background-color: #000;
-                color: #39FF14;
-                border: 1px solid #39FF14;
-                padding: 5px;
-            ">
-                {% for name in cameras %}
-                    <option value="{{ loop.index0 }}" {% if name == selected_index %}selected{% endif %}>
-                        {{ name }}
-                    </option>
-                {% endfor %}
-            </select>
-
-            <!-- Pencil icon -->
-            <span id="editIcon" style="cursor:pointer; font-size: 18px; color:#39FF14;">✏️</span>
+    <div class="row">
+        <!-- Camera Feed -->
+        <div class="card cameraContainer">
+            <img id="cameraFeed" src="{{ url_for('video_feed', cam_name=selected_index) }}">
         </div>
 
-        <!-- Hidden input for renaming -->
-        <div id="renameDiv" style="display:none; gap:5px; align-items:center; margin-top:5px;">
-            <input id="newName" type="text" placeholder="Enter new name"
-                style="background-color:#000; color:#39FF14; border:1px solid #39FF14; padding:5px;">
-            <span id="saveIcon" style="cursor:pointer; font-size:18px; color:#39FF14;">💾</span>
+        <!-- Camera Controls -->
+        <div class="card" style="width: 260px; flex-shrink: 0;">
+
+            <label for="cameraDropdown" class="bigLabel" style="color:#39FF14;">Select Camera:</label>
+
+            <div id="cameraControl" style="display:flex; align-items:center; gap:8px;">
+                <select id="cameraDropdown">
+                    {% for name in cameras %}
+                        <option value="{{ loop.index0 }}" {% if name == selected_index %}selected{% endif %}>
+                            {{ name }}
+                        </option>
+                    {% endfor %}
+                </select>
+
+                <span id="editIcon" style="cursor:pointer; font-size: 20px; color:#39FF14;">✏️</span>
+            </div>
+
+            <!-- Rename -->
+            <div id="renameDiv" style="display:none; gap:5px; align-items:center;">
+                <input id="newName" type="text"
+                    style="background-color:#000; color:#39FF14; border:2px solid #39FF14; padding:6px; flex:1;">
+                <span id="saveIcon" style="cursor:pointer; font-size:20px; color:#39FF14;">💾</span>
+            </div>
+
+            <!-- Divider -->
+            <div class="divider"></div>
+
+            <!-- Toggles -->
+            <div class="toggleRow">
+                <span>Apriltags Enable</span>
+                <label class="switch">
+                    <input type="checkbox" id="toggle_apriltags">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="toggleRow">
+                <span>Object Detection Enable</span>
+                <label class="switch">
+                    <input type="checkbox" id="toggle_objdetect">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="toggleRow">
+                <span>Driver Camera Enable</span>
+                <label class="switch">
+                    <input type="checkbox" id="toggle_driverCam">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="card cameraContainer" style="flex:1; min-width:300px;">
+
+            <!-- Auto White Balance -->
+            <div class="controlRow">
+                <span>Auto White Balance</span>
+                <label class="switch">
+                    <input type="checkbox" id="toggle_awb">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="sliderRow">
+                <span>White Balance</span>
+                <input type="range" id="wbSlider" min="0" max="6000" step="1">
+                <input type="number" id="wbValue">
+            </div>
+
+            <!-- Auto Exposure -->
+            <div class="controlRow">
+                <span>Auto Exposure</span>
+                <label class="switch">
+                    <input type="checkbox" id="toggle_ae">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <!-- Exposure -->
+            <div class="sliderRow">
+                <span>Exposure</span>
+                <input type="range" id="exposureSlider" min="0" max="1000" step="1">
+                <input type="number" id="exposureValue">
+            </div>
+
+            <!-- Gain -->
+            <div class="sliderRow">
+                <span>Gain</span>
+                <input type="range" id="gainSlider" min="0" max="1800" step="1">
+                <input type="number" id="gainValue">
+            </div>
+
         </div>
     </div>
 </div>
@@ -45,8 +114,10 @@ const dropdown = document.getElementById('cameraDropdown');
 const img = document.getElementById('cameraFeed');
 
 dropdown.addEventListener('change', () => {
+    const index = dropdown.value;
     const name = dropdown.options[dropdown.selectedIndex].text;
     img.src = `/video_feed?cam_name=${encodeURIComponent(name)}&t=${Date.now()}`;
+    loadSettings(index);
 });
 
 // Editable name functionality
@@ -55,6 +126,19 @@ const renameDiv = document.getElementById('renameDiv');
 const newNameInput = document.getElementById('newName');
 const saveIcon = document.getElementById('saveIcon');
 const cameraControl = document.getElementById('cameraControl');
+const toggles = {
+    apriltags_enable: document.getElementById('toggle_apriltags'),
+    objdetect_enable: document.getElementById('toggle_objdetect'),
+    driverCam_enable: document.getElementById('toggle_driverCam'),
+    camera_auto_white_balance: document.getElementById('toggle_awb'),
+    camera_auto_exposure: document.getElementById('toggle_ae')
+};
+const exposureSlider = document.getElementById("exposureSlider");
+const exposureValue = document.getElementById("exposureValue");
+const isoSlider = document.getElementById("isoSlider");
+const isoValue = document.getElementById("isoValue");
+const wbSlider = document.getElementById("wbSlider");
+const wbValue = document.getElementById("wbValue");
 
 editIcon.addEventListener('click', () => {
     cameraControl.style.display = 'none';
@@ -94,6 +178,110 @@ newNameInput.addEventListener('keypress', (e) => {
         saveCameraName();
     }
 });
+
+// Load settings for selected camera
+function loadSettings(index) {
+    fetch(`/get_camera_settings?index=${index}`)
+        .then(res => res.json())
+        .then(data => {
+            toggles.apriltags_enable.checked = data.apriltags_enable;
+            toggles.objdetect_enable.checked = data.objdetect_enable;
+            toggles.driverCam_enable.checked = data.driverCam_enable;
+            toggles.camera_auto_white_balance.checked = data.camera_auto_white_balance;
+            toggles.camera_auto_exposure.checked = data.camera_auto_exposure;
+            exposureValue.value = data.camera_exposure;
+            isoValue.value = data.camera_iso;
+            wbValue.value = data.camera_white_balance;
+        });
+}
+
+// Send update when toggle changes
+Object.keys(toggles).forEach(key => {
+    toggles[key].addEventListener('change', () => {
+        const index = dropdown.value;
+
+        fetch('/set_camera_setting', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                index: index,
+                key: key,
+                value: toggles[key].checked
+            })
+        });
+    });
+});
+
+function sendExposure(value) {
+    fetch('/set_camera_setting', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            index: dropdown.value,
+            key: "camera_exposure",
+            value: Number(value)
+        })
+    });
+}
+
+exposureSlider.addEventListener("change", () => {
+    exposureValue.value = exposureSlider.value;
+    sendExposure(exposureSlider.value);
+});
+
+exposureValue.addEventListener("change", () => {
+    exposureSlider.value = exposureValue.value;
+    sendExposure(exposureValue.value);
+});
+
+function sendGain(value) {
+    fetch('/set_camera_setting', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            index: dropdown.value,
+            key: "camera_gain",
+            value: Number(value)
+        })
+    });
+}
+
+gainSlider.addEventListener("change", () => {
+    gainValue.value = gainSlider.value;
+    sendGain(gainSlider.value)
+});
+
+gainValue.addEventListener("change", () => {
+    gainSlider.value = gainValue.value;
+    sendGain(gainValue.value)
+});
+
+function sendWB(value) {
+    fetch('/set_camera_setting', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            index: dropdown.value,
+            key: "camera_white_balance",
+            value: Number(value)
+        })
+    });
+}
+
+wbSlider.addEventListener("change", () => {
+    wbValue.value = wbSlider.value;
+    sendWB(wbSlider.value);
+});
+
+wbValue.addEventListener("change", () => {
+    wbSlider.value = wbValue.value;
+    sendWB(wbValue.value);
+});
+
+window.onload = () => {
+    const index = dropdown.value;
+    loadSettings(index);
+};
 
 </script>
 {% endblock %}

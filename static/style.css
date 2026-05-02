@@ -47,7 +47,11 @@ body {
     padding: 20px;
     margin-bottom: 15px;
     box-shadow: 0 0 10px #39FF14;
+    display: flex; 
+    flex-direction: column; 
+    gap: 10px;
 }
+
 
 h2 {
     text-shadow: 0 0 10px #39FF14;
@@ -65,9 +69,201 @@ button:hover {
     box-shadow: 0 0 10px #39FF14;
 }
 
+.bigLabel {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#cameraDropdown {
+    background-color: #000;
+    color: #39FF14;
+    border: 2px solid #39FF14;
+    padding: 8px;
+    font-size: 16px;
+    width: 100%;
+}
+
 #cameraDropdown:hover, #newName:hover {
     box-shadow: 0 0 10px #39FF14;
 }
+
 #editIcon:hover, #saveIcon:hover {
     filter: drop-shadow(0 0 5px #39FF14);
+}
+
+/* Switch styling */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 22px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    background-color: #000;
+    border: 1px solid #39FF14;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: .2s;
+}
+
+/* Slider circle */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 3px;
+    bottom: 3px;
+    background-color: #39FF14;
+    transition: .2s;
+}
+
+/* TRUE state */
+input:checked + .slider {
+    background-color: #39FF14;
+}
+
+input:checked + .slider:before {
+    background-color: #000;
+    transform: translateX(22px);
+}
+
+/* Dashed divider */
+.divider {
+    border-top: 2px dashed #39FF14;
+    margin: 15px 0;
+}
+
+/* Toggle layout */
+.toggleRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px; /* spacing between text and slider */
+}
+
+.toggleRow span {
+    flex: 1;
+    text-align: left; /* change to center/right if needed */
+}
+
+/* Camera container keeps 16:9 */
+.cameraContainer {
+    flex: 1;                  /* take remaining space */
+    max-width: 1800px;
+}
+
+.cameraContainer img {
+    width: 100%;
+    aspect-ratio: 16 / 9;     /* keeps 16:9 */
+    object-fit: cover;        /* fills nicely */
+    display: block;
+}
+
+
+.cameraControlsUnder {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Each row: name : slider number */
+.sliderRow {
+    display: flex;
+    justify-content: space-between;
+    /* grid-template-columns: 110px 1fr 55px; */
+    align-items: center;
+    gap: 15px;
+}
+
+.sliderRow input[type="number"] {
+    width: 55px;
+    padding: 2px 2px;
+    font-size: 14px;
+    text-align: center;
+
+    background-color: #000;
+    color: #39FF14;
+    border: 1px solid #39FF14;
+}
+
+.sliderRow input[type="range"] {
+    width: 95%;
+}
+
+/* Remove default look */
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+}
+
+/* Track (the line) */
+input[type="range"]::-webkit-slider-runnable-track {
+    height: 6px;
+    background: #000;
+    border: 1px solid #39FF14;
+}
+
+input[type="range"]::-moz-range-track {
+    height: 6px;
+    background: #000;
+    border: 1px solid #39FF14;
+}
+
+/* Thumb (the draggable circle) */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 14px;
+    width: 14px;
+    background: #39FF14;
+    border: none;
+    margin-top: -4px; /* centers thumb on track */
+    cursor: pointer;
+    box-shadow: 0 0 8px #39FF14;
+}
+
+input[type="range"]::-moz-range-thumb {
+    height: 14px;
+    width: 14px;
+    background: #39FF14;
+    border: none;
+    cursor: pointer;
+}
+
+/* same style as other toggle rows */
+.controlRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.divider {
+    border-top: 2px dashed #39FF14;
+}
+
+select, input {
+    background-color: #000;
+    color: #39FF14;
+    border: 1px solid #39FF14;
+}
+
+.row {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
 }

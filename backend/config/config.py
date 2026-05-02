@@ -2,7 +2,6 @@
 # license that can be found in the LICENSE file at
 # the root directory of this project.
 
-from __future__ import annotations
 from dataclasses import dataclass
 
 import numpy
@@ -26,14 +25,16 @@ class LocalConfig:
 class CameraConfig:
     camera_id: str = ""
     camera_name: str = ""
+    camera_max_fps: int = 120
     camera_resolution_width: int = 0
     camera_resolution_height: int = 0
-    camera_auto_white_balance: int = 0
-    camera_auto_exposure: int = 0
+    camera_auto_white_balance: bool = False
+    camera_white_balance: int = 0
+    camera_auto_exposure: bool = False
     camera_exposure: int = 0
-    camera_iso: int = 0
-    apriltags_stream_port: int = 8000
-    objdetect_stream_port: int = 8001
+    camera_gain: int = 0
+    apriltags_stream_port: int = 8000 # TODO: Need?
+    objdetect_stream_port: int = 8001 # TODO: Need?
     apriltags_enable: bool = False
     objdetect_enable: bool = False
     driverCam_enable: bool = False
@@ -55,4 +56,4 @@ class ConfigStore:
     local_config: LocalConfig
     camera_config: CameraConfig
     remote_config: RemoteConfig
-    camera_config_source: "FileConfigSource"
+    camera_config_source: any

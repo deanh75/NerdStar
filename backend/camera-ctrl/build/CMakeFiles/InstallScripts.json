@@ -1,0 +1,9 @@
+{
+	"InstallScripts" : 
+	[
+		"/Users/dean/NerdStar/backend/camera-ctrl/build/cmake_install.cmake",
+		"/Users/dean/NerdStar/backend/camera-ctrl/build/openpnp-capture/cmake_install.cmake",
+		"/Users/dean/NerdStar/backend/camera-ctrl/build/openpnp-capture/mac/tests/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

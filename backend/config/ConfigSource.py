@@ -6,6 +6,7 @@ import json
 import shutil
 
 import cv2
+from flask import config
 import ntcore
 import numpy
 from backend.config.config import ConfigStore, LocalConfig
@@ -53,12 +54,14 @@ class FileConfigSource(ConfigSource):
                 config_store.camera_config.camera_id = self._cam_id
                 cam_config_data["camera_id"] = self._cam_id
                 config_store.camera_config.camera_name = cam_config_data["camera_name"]
+                config_store.camera_config.camera_max_fps = cam_config_data["camera_max_fps"]
                 config_store.camera_config.camera_resolution_width = cam_config_data["camera_resolution_width"]
                 config_store.camera_config.camera_resolution_height = cam_config_data["camera_resolution_height"]
                 config_store.camera_config.camera_auto_white_balance = cam_config_data["camera_auto_white_balance"]
+                config_store.camera_config.camera_white_balance = cam_config_data["camera_white_balance"]
                 config_store.camera_config.camera_auto_exposure = cam_config_data["camera_auto_exposure"]
                 config_store.camera_config.camera_exposure = cam_config_data["camera_exposure"]
-                config_store.camera_config.camera_iso = cam_config_data["camera_iso"]
+                config_store.camera_config.camera_gain = cam_config_data["camera_gain"]
                 config_store.camera_config.apriltags_stream_port = cam_config_data["apriltags_stream_port"]
                 config_store.camera_config.objdetect_stream_port = cam_config_data["objdetect_stream_port"]
                 config_store.camera_config.apriltags_enable = cam_config_data["apriltags_enable"]

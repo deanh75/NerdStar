@@ -1,0 +1,44 @@
+{
+    "configurations": [
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:NerdStar}/backend/camera-settings",
+            "name": "Debug camera-settings (backend/camera-settings)",
+            "target": "camera-settings",
+            "configuration": "debug",
+            "preLaunchTask": "swift: Build Debug camera-settings (backend/camera-settings)"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:NerdStar}/backend/camera-settings",
+            "name": "Release camera-settings (backend/camera-settings)",
+            "target": "camera-settings",
+            "configuration": "release",
+            "preLaunchTask": "swift: Build Release camera-settings (backend/camera-settings)"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:NerdStar}/backend/camera-ctrl/camera-ctrl",
+            "name": "Debug camera-ctrl (backend/camera-ctrl/camera-ctrl)",
+            "target": "camera-ctrl",
+            "configuration": "debug",
+            "preLaunchTask": "swift: Build Debug camera-ctrl (backend/camera-ctrl/camera-ctrl)"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:NerdStar}/backend/camera-ctrl/camera-ctrl",
+            "name": "Release camera-ctrl (backend/camera-ctrl/camera-ctrl)",
+            "target": "camera-ctrl",
+            "configuration": "release",
+            "preLaunchTask": "swift: Build Release camera-ctrl (backend/camera-ctrl/camera-ctrl)"
+        }
+    ]
+}

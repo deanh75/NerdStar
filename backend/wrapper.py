@@ -22,10 +22,10 @@ class Wrapper:
         self._capture: AVFoundationMjpegCapture = AVFoundationMjpegCapture()
         for cam in self._capture.getCameras():
             camera_config_source: ConfigSource = FileConfigSource(cam.uniqueID())
-            remote_config_source: ConfigSource = NTConfigSource()
+            # remote_config_source: ConfigSource = NTConfigSource()
             config = ConfigStore(loc_config, CameraConfig(), RemoteConfig(), camera_config_source)
             camera_config_source.update(config)
-            remote_config_source.update(config)
+            # remote_config_source.update(config)
             self._configs.append(config)
 
     def get_raw_frame(self, cam_name_supplier: callable):
@@ -43,8 +43,8 @@ class Wrapper:
                     
                     yield (b'--frame\r\n'
                         b'Content-Type: image/jpeg\r\n\r\n' + frame_bytes + b'\r\n')
-        except GeneratorExit:
-            print(f"Stopping stream for {cam_name_supplier()}")
+        finally:
+            self.stop()
     
     def get_cameras(self) -> List[str]:
         cams: List[str] = []
@@ -58,3 +58,25 @@ class Wrapper:
             setattr(self._configs[index].camera_config, obj, value)
             return True
         return False
+    
+    def get_camera_settings(self, index: int):
+        if 0 <= index < len(self._configs):
+            config = self._configs[index].camera_config
+            return {
+                "apriltags_enable": config.apriltags_enable,
+                "objdetect_enable": config.objdetect_enable,
+                "driverCam_enable": config.driverCam_enable,
+                "camera_resolution_width": config.camera_resolution_width,
+                "camera_resolution_height": config.camera_resolution_height,
+                "camera_auto_white_balance": config.camera_auto_white_balance, 
+                "camera_white_balance": config.camera_white_balance,
+                "camera_auto_exposure": config.camera_auto_exposure,
+                "camera_exposure": config.camera_exposure,
+                "camera_gain": config.camera_gain
+            }
+        return None
+    
+    def get_config_value(self, index: int, obj: str):
+        if 0 <= index < len(self._configs):
+            return getattr(self._configs[index].camera_config, obj, None)
+        return None

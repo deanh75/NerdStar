@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,-search_paths_first -Wl,-headerpad_max_install_names "CMakeFiles/camera-ctrl.dir/main.cpp.o" -o camera-ctrl  -Wl,-rpath,/Users/dean/NerdStar/backend/camera-ctrl/build/openpnp-capture openpnp-capture/libopenpnp-capture.0.0.28.dylib -framework AVFoundation -framework Foundation -framework CoreMedia -framework CoreVideo -framework Accelerate -framework IOKit
