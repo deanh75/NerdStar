@@ -8,7 +8,7 @@ body {
 
 /* Sidebar */
 .sidebar {
-    width: 220px;
+    width: 300px;
     height: 100vh;
     background-color: #050505;
     border-right: 2px solid #39FF14;
@@ -21,6 +21,12 @@ body {
     padding: 20px 10px;
     border-bottom: 2px solid #39FF14;
     text-shadow: 0 0 10px #39FF14;
+    margin: 0;
+}
+
+.sidebar h1 img {
+    width: 100%;
+    height: auto;
 }
 
 .sidebar a {
@@ -28,6 +34,7 @@ body {
     text-decoration: none;
     color: #39FF14;
     border-bottom: 1px solid #0a0a0a;
+    font-size: 20px;
 }
 
 .sidebar a:hover {
@@ -156,12 +163,30 @@ input:checked + .slider:before {
 .toggleRow span {
     flex: 1;
     text-align: left; /* change to center/right if needed */
+    font-size: 14px;
+}
+
+/* Toggle layout */
+.camRow {
+    display: flex;
+    justify-content: flex-end;
+    align-items: right;
+    gap: 20px; /* spacing between text and slider */
+    margin-bottom: 8px;
+}
+
+.camRow span {
+    flex: 1;
+    text-align: right; /* change to center/right if needed */
+    font-size: 16px;
 }
 
 /* Camera container keeps 16:9 */
 .cameraContainer {
+    display: flex;
+    flex-direction: column;
     flex: 1;                  /* take remaining space */
-    max-width: 1800px;
+    overflow: hidden;
 }
 
 .cameraContainer img {
@@ -169,8 +194,8 @@ input:checked + .slider:before {
     aspect-ratio: 16 / 9;     /* keeps 16:9 */
     object-fit: cover;        /* fills nicely */
     display: block;
+    max-height: 600px;
 }
-
 
 .cameraControlsUnder {
     width: 100%;
@@ -185,64 +210,19 @@ input:checked + .slider:before {
 .sliderRow {
     display: flex;
     justify-content: space-between;
-    /* grid-template-columns: 110px 1fr 55px; */
     align-items: center;
-    gap: 15px;
+    gap: 10px;
 }
 
 .sliderRow input[type="number"] {
-    width: 55px;
+    width: 60px;
     padding: 2px 2px;
     font-size: 14px;
-    text-align: center;
+    text-align: right;
 
     background-color: #000;
     color: #39FF14;
     border: 1px solid #39FF14;
-}
-
-.sliderRow input[type="range"] {
-    width: 95%;
-}
-
-/* Remove default look */
-input[type="range"] {
-    -webkit-appearance: none;
-    appearance: none;
-    background: transparent;
-}
-
-/* Track (the line) */
-input[type="range"]::-webkit-slider-runnable-track {
-    height: 6px;
-    background: #000;
-    border: 1px solid #39FF14;
-}
-
-input[type="range"]::-moz-range-track {
-    height: 6px;
-    background: #000;
-    border: 1px solid #39FF14;
-}
-
-/* Thumb (the draggable circle) */
-input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    height: 14px;
-    width: 14px;
-    background: #39FF14;
-    border: none;
-    margin-top: -4px; /* centers thumb on track */
-    cursor: pointer;
-    box-shadow: 0 0 8px #39FF14;
-}
-
-input[type="range"]::-moz-range-thumb {
-    height: 14px;
-    width: 14px;
-    background: #39FF14;
-    border: none;
-    cursor: pointer;
 }
 
 /* same style as other toggle rows */
@@ -266,4 +246,10 @@ select, input {
   display: flex;
   gap: 20px;
   align-items: flex-start;
+}
+
+.greyed-out {
+    opacity: 0.35;
+    filter: grayscale(100%) brightness(0.8);
+    pointer-events: none;
 }

@@ -1,13 +1,39 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2>Calibration</h2>
+<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 20px; width: 100%;">
 
-<div class="card">
-    <p>Adjust camera alignment and tuning.</p>
-</div>
+    <!-- Camera Feed -->
+    <div class="card cameraContainer">
+        <img id="cameraFeed" src="{{ url_for('video_feed', cam_name=selected_index) }}">
+    </div>
 
-<div class="card">
-    <button>Run Calibration</button>
+    <div class="card" style="min-width: 260px; flex-shrink: 0;">
+
+        <label for="cameraDropdown" class="bigLabel" style="color:#39FF14;">Select Camera:</label>
+
+        <div id="cameraControl" style="display:flex; align-items:center; gap:8px;">
+            <select id="cameraDropdown">
+                {% for name in cameras %}
+                    <option value="{{ loop.index0 }}" {% if name == selected_index %}selected{% endif %}>
+                        {{ name }}
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="divider"></div>
+
+        <button id="startCalibrationBtn" style="
+            background-color:#000;
+            color:#39FF14;
+            border:2px solid #39FF14;
+            padding:10px 20px;
+            font-size:16px;
+            cursor:pointer;
+        ">
+            Start Calibration
+        </button>
+    </div>
 </div>
 {% endblock %}

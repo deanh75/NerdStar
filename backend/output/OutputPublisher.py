@@ -6,23 +6,12 @@ import math
 from typing import List, Union
 
 import ntcore
-from config.config import ConfigStore
-from vision_types import CameraPoseObservation, FiducialPoseObservation, ObjDetectObservation, TagAngleObservation
+from backend.config.config import ConfigStore
+from backend.vision_types import CameraPoseObservation, FiducialPoseObservation, ObjDetectObservation, TagAngleObservation
 
 
 class OutputPublisher:
-    def send_apriltag_fps(self, config_store: ConfigStore, timestamp: float, fps: int) -> None:
-        raise NotImplementedError
-
-    def send_apriltag_observation(
-        self,
-        config_store: ConfigStore,
-        timestamp: float,
-        observation: Union[CameraPoseObservation, None],
-        tag_angles: List[TagAngleObservation],
-        demo_observation: Union[FiducialPoseObservation, None],
-    ) -> None:
-        raise NotImplementedError
+    
 
     def send_objdetect_fps(self, config_store: ConfigStore, timestamp: float, fps: int) -> None:
         raise NotImplementedError
@@ -60,69 +49,69 @@ class NTOutputPublisher(OutputPublisher):
                 ntcore.PubSubOptions(periodic=0.01, sendAll=True, keepDuplicates=True)
             )
 
-    def send_apriltag_fps(self, config_store: ConfigStore, timestamp: float, fps: int) -> None:
-        self._check_init(config_store)
-        self._apriltags_fps_pub.set(fps)
+    # def send_apriltag_fps(self, config_store: ConfigStore, timestamp: float, fps: int) -> None:
+    #     self._check_init(config_store)
+    #     self._apriltags_fps_pub.set(fps)
 
-    def send_apriltag_observation(
-        self,
-        config_store: ConfigStore,
-        timestamp: float,
-        observation: Union[CameraPoseObservation, None],
-        tag_angles: List[TagAngleObservation],
-        demo_observation: Union[FiducialPoseObservation, None],
-    ) -> None:
-        self._check_init(config_store)
+    # def send_apriltag_observation(
+    #     self,
+    #     config_store: ConfigStore,
+    #     timestamp: float,
+    #     observation: Union[CameraPoseObservation, None],
+    #     tag_angles: List[TagAngleObservation],
+    #     demo_observation: Union[FiducialPoseObservation, None],
+    # ) -> None:
+    #     self._check_init(config_store)
 
-        # Send data
-        observation_data: List[float] = [0]
-        if observation != None:
-            observation_data[0] = 1
-            observation_data.append(observation.error_0)
-            observation_data.append(observation.pose_0.translation().X())
-            observation_data.append(observation.pose_0.translation().Y())
-            observation_data.append(observation.pose_0.translation().Z())
-            observation_data.append(observation.pose_0.rotation().getQuaternion().W())
-            observation_data.append(observation.pose_0.rotation().getQuaternion().X())
-            observation_data.append(observation.pose_0.rotation().getQuaternion().Y())
-            observation_data.append(observation.pose_0.rotation().getQuaternion().Z())
-            if observation.error_1 != None and observation.pose_1 != None:
-                observation_data[0] = 2
-                observation_data.append(observation.error_1)
-                observation_data.append(observation.pose_1.translation().X())
-                observation_data.append(observation.pose_1.translation().Y())
-                observation_data.append(observation.pose_1.translation().Z())
-                observation_data.append(observation.pose_1.rotation().getQuaternion().W())
-                observation_data.append(observation.pose_1.rotation().getQuaternion().X())
-                observation_data.append(observation.pose_1.rotation().getQuaternion().Y())
-                observation_data.append(observation.pose_1.rotation().getQuaternion().Z())
-        for tag_angle_observation in tag_angles:
-            observation_data.append(tag_angle_observation.tag_id)
-            for angle in tag_angle_observation.corners.ravel():
-                observation_data.append(angle)
-            observation_data.append(tag_angle_observation.distance)
+    #     # Send data
+    #     observation_data: List[float] = [0]
+    #     if observation != None:
+    #         observation_data[0] = 1
+    #         observation_data.append(observation.error_0)
+    #         observation_data.append(observation.pose_0.translation().X())
+    #         observation_data.append(observation.pose_0.translation().Y())
+    #         observation_data.append(observation.pose_0.translation().Z())
+    #         observation_data.append(observation.pose_0.rotation().getQuaternion().W())
+    #         observation_data.append(observation.pose_0.rotation().getQuaternion().X())
+    #         observation_data.append(observation.pose_0.rotation().getQuaternion().Y())
+    #         observation_data.append(observation.pose_0.rotation().getQuaternion().Z())
+    #         if observation.error_1 != None and observation.pose_1 != None:
+    #             observation_data[0] = 2
+    #             observation_data.append(observation.error_1)
+    #             observation_data.append(observation.pose_1.translation().X())
+    #             observation_data.append(observation.pose_1.translation().Y())
+    #             observation_data.append(observation.pose_1.translation().Z())
+    #             observation_data.append(observation.pose_1.rotation().getQuaternion().W())
+    #             observation_data.append(observation.pose_1.rotation().getQuaternion().X())
+    #             observation_data.append(observation.pose_1.rotation().getQuaternion().Y())
+    #             observation_data.append(observation.pose_1.rotation().getQuaternion().Z())
+    #     for tag_angle_observation in tag_angles:
+    #         observation_data.append(tag_angle_observation.tag_id)
+    #         for angle in tag_angle_observation.corners.ravel():
+    #             observation_data.append(angle)
+    #         observation_data.append(tag_angle_observation.distance)
 
-        demo_observation_data: List[float] = []
-        if demo_observation != None:
-            demo_observation_data.append(demo_observation.error_0)
-            demo_observation_data.append(demo_observation.pose_0.translation().X())
-            demo_observation_data.append(demo_observation.pose_0.translation().Y())
-            demo_observation_data.append(demo_observation.pose_0.translation().Z())
-            demo_observation_data.append(demo_observation.pose_0.rotation().getQuaternion().W())
-            demo_observation_data.append(demo_observation.pose_0.rotation().getQuaternion().X())
-            demo_observation_data.append(demo_observation.pose_0.rotation().getQuaternion().Y())
-            demo_observation_data.append(demo_observation.pose_0.rotation().getQuaternion().Z())
-            demo_observation_data.append(demo_observation.error_1)
-            demo_observation_data.append(demo_observation.pose_1.translation().X())
-            demo_observation_data.append(demo_observation.pose_1.translation().Y())
-            demo_observation_data.append(demo_observation.pose_1.translation().Z())
-            demo_observation_data.append(demo_observation.pose_1.rotation().getQuaternion().W())
-            demo_observation_data.append(demo_observation.pose_1.rotation().getQuaternion().X())
-            demo_observation_data.append(demo_observation.pose_1.rotation().getQuaternion().Y())
-            demo_observation_data.append(demo_observation.pose_1.rotation().getQuaternion().Z())
+    #     demo_observation_data: List[float] = []
+    #     if demo_observation != None:
+    #         demo_observation_data.append(demo_observation.error_0)
+    #         demo_observation_data.append(demo_observation.pose_0.translation().X())
+    #         demo_observation_data.append(demo_observation.pose_0.translation().Y())
+    #         demo_observation_data.append(demo_observation.pose_0.translation().Z())
+    #         demo_observation_data.append(demo_observation.pose_0.rotation().getQuaternion().W())
+    #         demo_observation_data.append(demo_observation.pose_0.rotation().getQuaternion().X())
+    #         demo_observation_data.append(demo_observation.pose_0.rotation().getQuaternion().Y())
+    #         demo_observation_data.append(demo_observation.pose_0.rotation().getQuaternion().Z())
+    #         demo_observation_data.append(demo_observation.error_1)
+    #         demo_observation_data.append(demo_observation.pose_1.translation().X())
+    #         demo_observation_data.append(demo_observation.pose_1.translation().Y())
+    #         demo_observation_data.append(demo_observation.pose_1.translation().Z())
+    #         demo_observation_data.append(demo_observation.pose_1.rotation().getQuaternion().W())
+    #         demo_observation_data.append(demo_observation.pose_1.rotation().getQuaternion().X())
+    #         demo_observation_data.append(demo_observation.pose_1.rotation().getQuaternion().Y())
+    #         demo_observation_data.append(demo_observation.pose_1.rotation().getQuaternion().Z())
 
-        self._observations_pub.set(observation_data, math.floor(timestamp * 1000000))
-        self._demo_observations_pub.set(demo_observation_data, math.floor(timestamp * 1000000))
+    #     self._observations_pub.set(observation_data, math.floor(timestamp * 1000000))
+    #     self._demo_observations_pub.set(demo_observation_data, math.floor(timestamp * 1000000))
 
     def send_objdetect_fps(self, config_store: ConfigStore, timestamp: float, fps: int) -> None:
         self._check_init(config_store)

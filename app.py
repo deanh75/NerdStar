@@ -1,4 +1,5 @@
 import atexit
+import threading
 
 from flask import Flask, jsonify, render_template, Response, url_for, request, redirect
 from backend.wrapper import Wrapper
@@ -8,13 +9,21 @@ wrapper = Wrapper()
 atexit.register(wrapper._capture.stop)
 selected_camera = None
 camera_supplier = lambda: selected_camera
+init = False
+
+def initialize():
+    global init, cameras, selected_camera
+    if not init:
+        cameras = wrapper.get_cameras()
+        selected_camera = cameras[0] if cameras else None
+        for i in range(len(cameras)):
+            threading.Thread(target=wrapper.start_backend, args=(i,), daemon=True).start()
+        init = True
 
 @app.route("/")
 def camera():
     global cameras, selected_camera
-    cameras = wrapper.get_cameras()
-    if selected_camera not in cameras:
-        selected_camera = cameras[0] if cameras else None
+    initialize()
     return render_template("camera.html", cameras=cameras, selected_index=selected_camera)
 
 @app.route("/set_camera", methods=["POST"])
@@ -27,7 +36,7 @@ def set_camera():
 
 @app.route('/video_feed')
 def video_feed():
-    return Response(wrapper.get_raw_frame(camera_supplier), 
+    return Response(wrapper.get_frame(camera_supplier), 
         mimetype='multipart/x-mixed-replace; boundary=frame')
 
 @app.route('/rename_camera', methods=['POST'])
@@ -51,6 +60,8 @@ def get_camera_settings():
 @app.route('/set_camera_setting', methods=['POST'])
 def set_camera_setting():
     data = request.get_json()
+    if data.get('index') == '':
+        return jsonify(success=False, message="No Cameras")
     index = int(data.get('index'))
     key = data.get('key')
     value = data.get('value')
@@ -58,9 +69,28 @@ def set_camera_setting():
     success = wrapper.update_config(index, key, value)
     return jsonify(success=success)
 
+@app.route('/set_camera_resolution', methods=['POST'])
+def set_camera_resolution():
+    data = request.get_json()
+    if data.get('index') == '':
+        return jsonify(success=False, message="No Cameras")
+    index = int(data.get('index'))
+    value = data.get('value')
+
+    # Split the resolution string into width and height
+    width, height = map(int, value.split('x'))
+
+    success = wrapper.update_config(index, 'camera_resolution_width', width)
+    if success:
+        success = wrapper.update_config(index, 'camera_resolution_height', height)
+
+    return jsonify(success=success)
+
 @app.route("/calibration")
 def calibration():
-    return render_template("calibration.html")
+    global cameras, selected_camera
+    initialize()
+    return render_template("calibration.html", cameras=cameras, selected_index=selected_camera)
 
 @app.route("/settings")
 def settings():

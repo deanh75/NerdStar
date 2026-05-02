@@ -7,8 +7,6 @@ from typing import List, Tuple
 
 import cv2
 from config.config import ConfigStore
-from output.overlay_util import overlay_obj_detect_observation
-from output.StreamServer import MjpegStreamServer
 from pipeline.ObjectDetector import CoreMLObjectDetector
 from vision_types import ObjDetectObservation
 
@@ -16,11 +14,8 @@ from vision_types import ObjDetectObservation
 def objdetect_worker(
     q_in: queue.Queue[Tuple[float, cv2.Mat, ConfigStore]],
     q_out: queue.Queue[Tuple[float, List[ObjDetectObservation]]],
-    server_port: int,
 ):
     object_detector = CoreMLObjectDetector()
-    stream_server = MjpegStreamServer()
-    stream_server.start(server_port)
 
     while True:
         sample = q_in.get()
@@ -31,7 +26,3 @@ def objdetect_worker(
         observations = object_detector.detect(image, config)
 
         q_out.put((timestamp, observations))
-        if stream_server.get_client_count() > 0:
-            image = image.copy()
-            [overlay_obj_detect_observation(image, x) for x in observations]
-            stream_server.set_frame(image)

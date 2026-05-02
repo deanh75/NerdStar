@@ -1,14 +1,11 @@
-# Copyright (c) 2022-2026 Littleton Robotics
-# http://github.com/Mechanical-Advantage
-#
 # Use of this source code is governed by an MIT-style
 # license that can be found in the LICENSE file at
 # the root directory of this project.
 
 import cv2
 import numpy
-from config.config import ConfigStore
-from vision_types import FiducialImageObservation, FiducialPoseObservation, ObjDetectObservation
+from backend.config.config import ConfigStore
+from backend.vision_types import FiducialImageObservation, FiducialPoseObservation, ObjDetectObservation
 
 
 def overlay_image_observation(image: cv2.Mat, observation: FiducialImageObservation) -> None:

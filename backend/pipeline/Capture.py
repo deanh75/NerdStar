@@ -8,8 +8,9 @@ import subprocess
 from typing import Dict, List, Tuple
 
 import cv2
+from flask import session
 from backend.config.config import ConfigStore
-from backend.NerdAVF import NerdAVF
+from backend.NerdAVF.NerdAVF import NerdAVF
 
 
 class Capture:
@@ -26,7 +27,7 @@ class Capture:
         """Return the next frame from the camera."""
         raise NotImplementedError
     
-    def getCameras() -> list[AVFoundation.AVCaptureDevice]: 
+    def getCameras() -> list[NerdAVF.NerdCaptureDevice]: 
         """Return a list of available cameras."""
         raise NotImplementedError
     
@@ -45,6 +46,7 @@ class Capture:
 
         return (
             camera_a.camera_id != camera_b.camera_id
+            or camera_a.camera_max_fps != camera_b.camera_max_fps
             or camera_a.camera_resolution_width != camera_b.camera_resolution_width
             or camera_a.camera_resolution_height != camera_b.camera_resolution_height
             or camera_a.camera_auto_white_balance != camera_b.camera_auto_white_balance
@@ -52,7 +54,6 @@ class Capture:
             or camera_a.camera_auto_exposure != camera_b.camera_auto_exposure
             or camera_a.camera_exposure != camera_b.camera_exposure
             or camera_a.camera_gain != camera_b.camera_gain
-            or camera_a.camera_max_fps != camera_b.camera_max_fps
         )
         
 class AVFoundationMjpegCapture(Capture):
@@ -63,64 +64,72 @@ class AVFoundationMjpegCapture(Capture):
         self._last_configs: Dict[str, ConfigStore] = {}
         pass
 
-    def get_frame(self, cam_name: str, configs: List[ConfigStore]) -> Tuple[bool, cv2.Mat]:
+    def get_frame_from_list(self, cam_name: str, configs: List[ConfigStore]) -> Tuple[bool, cv2.Mat]:
         config_store: ConfigStore = next((c for c in configs if c.camera_config.camera_name == cam_name), None)
+        return self.get_frame(config_store)
+
+    def get_frame(self, config: ConfigStore) -> Tuple[bool, cv2.Mat]:
+        cam_name = config.camera_config.camera_name if config else ""
         last_config: ConfigStore = self._last_configs[cam_name] if cam_name in self._last_configs else None
         video: cv2.VideoCapture = self._videos[cam_name] if self._videos != None and cam_name in self._videos else None
 
-        if config_store == None:
+        if config == None:
             print(f"No config found for camera {cam_name}")
             return False, None
 
-        if video != None and self._config_changed(last_config, config_store):
+        if video != None and self._config_changed(last_config, config):
             print("Restarting capture session")
             video.release()
             video = None
             self._videos[cam_name] = video
 
         if video == None:
-            if config_store.camera_config.camera_id == "":
+            if config.camera_config.camera_id == "":
                 print("No camera ID, waiting to start capture session")
             else:
-                devices = list(AVFoundation.AVCaptureDevice.devicesWithMediaType_(AVFoundation.AVMediaTypeVideo))
-                devices.sort(key=lambda x: x.uniqueID())
+                session = NerdAVF.NerdCaptureDevice.DiscoverySession(
+                    deviceTypes=[NerdAVF.NerdCaptureDevice.DeviceType.external], 
+                    mediaType=NerdAVF.NerdMediaType.video, 
+                    position=NerdAVF.NerdCaptureDevice.Position.unspecified
+                )
+                devices = session.devices
+                devices.sort(key=lambda x: x.uniqueID)
                 for index, device in enumerate(devices):
-                    if device.uniqueID() == config_store.camera_config.camera_id:
-                        s: str = device.uniqueID()
+                    if device.uniqueID == config.camera_config.camera_id:
+                        s: str = device.uniqueID
                         s = s.replace("0x", "")
                         result = subprocess.run([
                             "./backend/camera-ctrl/build/camera-ctrl",
                             "0x" + s[8:12],
                             "0x" + s[12:16],
                             "0x" + s[0:8],
-                            str(int(config_store.camera_config.camera_auto_white_balance)),
-                            str(config_store.camera_config.camera_white_balance),
-                            str(int(config_store.camera_config.camera_auto_exposure)),
-                            str(config_store.camera_config.camera_exposure),
-                            str(config_store.camera_config.camera_gain)
+                            str(int(not config.camera_config.camera_auto_white_balance)),
+                            str(config.camera_config.camera_white_balance),
+                            str(int(not config.camera_config.camera_auto_exposure)),
+                            str(config.camera_config.camera_exposure),
+                            str(config.camera_config.camera_gain)
                         ], capture_output=True, check=False, text=True)
                         print("RETURN CODE:", result.returncode)
                         print("STDOUT:\n", result.stdout)
-                        print("STDERR:\n", result.stderr)
 
                         video = cv2.VideoCapture(index, cv2.CAP_AVFOUNDATION)
                         video.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter.fourcc(*'MJPG'))
                         video.set(cv2.CAP_PROP_BUFFERSIZE, 1)
-                        video.set(cv2.CAP_PROP_FRAME_WIDTH, config_store.camera_config.camera_resolution_width)
-                        video.set(cv2.CAP_PROP_FRAME_HEIGHT, config_store.camera_config.camera_resolution_height)
-                        video.set(cv2.CAP_PROP_FPS, config_store.camera_config.camera_max_fps)
+                        video.set(cv2.CAP_PROP_FRAME_WIDTH, config.camera_config.camera_resolution_width)
+                        video.set(cv2.CAP_PROP_FRAME_HEIGHT, config.camera_config.camera_resolution_height)
+                        video.set(cv2.CAP_PROP_FPS, config.camera_config.camera_max_fps)
 
                         self._videos[cam_name] = video
                         break
 
         last_config = ConfigStore(
-            dataclasses.replace(config_store.local_config), dataclasses.replace(config_store.camera_config), 
-            dataclasses.replace(config_store.remote_config), config_store.camera_config_source
+            dataclasses.replace(config.local_config), dataclasses.replace(config.camera_config), 
+            dataclasses.replace(config.remote_config), config.camera_config_source, config.remote_config_source
         )
         self._last_configs[cam_name] = last_config
 
         if video == None:
-            if config_store.camera_config.camera_id != "":
+            if config.camera_config.camera_id != "":
                 print("Camera not found, restarting")
             return False, None
         else:
@@ -133,9 +142,14 @@ class AVFoundationMjpegCapture(Capture):
                 self._videos[cam_name] = video
             return retval, image
         
-    def getCameras(self) -> list[AVFoundation.AVCaptureDevice]: 
-        cameras = list(AVFoundation.AVCaptureDevice.devicesWithMediaType_(AVFoundation.AVMediaTypeVideo))
-        cameras.sort(key=lambda x: x.uniqueID())
+    def getCameras(self) -> list[NerdAVF.NerdCaptureDevice]: 
+        session = NerdAVF.NerdCaptureDevice.DiscoverySession(
+            deviceTypes=[NerdAVF.NerdCaptureDevice.DeviceType.external], 
+            mediaType=NerdAVF.NerdMediaType.video, 
+            position=NerdAVF.NerdCaptureDevice.Position.unspecified
+        )
+        cameras = session.devices
+        cameras.sort(key=lambda x: x.uniqueID)
         return cameras
         
     def stop(self) -> None:
@@ -148,9 +162,3 @@ class AVFoundationMjpegCapture(Capture):
                 gc.collect()
         except Exception as e:
             print("Stop error:", e)
-
-# CAPTURE_IMPLS = {
-#     "": Capture,
-#     "avfoundation": AVFoundationCapture,
-#     "avfoundationmjpeg": AVFoundationMjpegCapture,
-# }

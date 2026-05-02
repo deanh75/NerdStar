@@ -6,7 +6,7 @@
 
 int main(int argc, char* argv[]) {
     if (argc != 9) {
-        std::cerr << "Usage: camera_ctrl <vid> <pid> <location> <auto wb> <wb> <auto exposure> <exposure> <gain>" <<
+        std::cerr << "Usage: camera_ctrl <vid> <pid> <location> <use_wb> <wb> <use_exposure> <exposure> <gain>" <<
                 std::endl;
         std::cerr << "\tvid: IOKit Vendor ID in hex" << std::endl;
         std::cerr << "\tpid: IOKit Product ID in hex" << std::endl;
@@ -15,6 +15,7 @@ int main(int argc, char* argv[]) {
         std::cerr << "\twb: white balance value, decimal" << std::endl;
         std::cerr << "\tauto exposure: 1 to enable auto exposure, 0 to disable" << std::endl;
         std::cerr << "\texposure: exposure value, decimal" << std::endl;
+        std::cerr << "\tbrightness: brightness value, decimal" << std::endl;
         std::cerr << "\tgain: gain value, decimal" << std::endl;
         return 1;
     }
@@ -22,9 +23,9 @@ int main(int argc, char* argv[]) {
     unsigned int vid = std::stoul(argv[1], nullptr, 16);
     unsigned int pid = std::stoul(argv[2], nullptr, 16);
     unsigned int location = std::stoul(argv[3], nullptr, 16);
-    int autoWB = std::stoi(argv[4], nullptr, 10);
+    int useWB = std::stoi(argv[4], nullptr, 10);
     int wb = std::stoi(argv[5], nullptr, 10);
-    int autoExposure = std::stoi(argv[6], nullptr, 10);
+    int useExposure = std::stoi(argv[6], nullptr, 10);
     int exposure = std::stoi(argv[7], nullptr, 10);
     int gain = std::stoi(argv[8], nullptr, 10);
 
@@ -39,31 +40,36 @@ int main(int argc, char* argv[]) {
     }
 
     // Read out initial settings
-    bool oldAutoWB;
-    int oldWB;
-    bool oldAutoExposure;
-    int oldExposure;
     int oldGain;
 
-    ctrl->getAutoProperty(CAPPROPID_WHITEBALANCE, &oldAutoWB);
-    ctrl->getProperty(CAPPROPID_WHITEBALANCE, &oldWB);
-    ctrl->getAutoProperty(CAPPROPID_EXPOSURE, &oldAutoExposure);
-    ctrl->getProperty(CAPPROPID_EXPOSURE, &oldExposure);
+    if (useWB == 1) {
+        ctrl->setAutoProperty(CAPPROPID_WHITEBALANCE, false);
+        int oldWB;
+        ctrl->getProperty(CAPPROPID_WHITEBALANCE, &oldWB);
+        std::cout << "White balance was " << oldWB << ", will set to " << wb << std::endl;
+        ctrl->setProperty(CAPPROPID_WHITEBALANCE, wb);
+    } else {
+        bool autoWB;
+        ctrl->getAutoProperty(CAPPROPID_WHITEBALANCE, &autoWB);
+        std::cout << "Auto white balance was " << (autoWB ? "enabled" : "disabled") << ", will enable" << std::endl;
+        ctrl->setAutoProperty(CAPPROPID_WHITEBALANCE, true);
+    }
+
+    if (useExposure == 1) {
+        ctrl->setAutoProperty(CAPPROPID_EXPOSURE, false);
+        int oldExposure;
+        ctrl->getProperty(CAPPROPID_EXPOSURE, &oldExposure);
+        std::cout << "Exposure was " << oldExposure << ", will set to " << exposure << std::endl;
+        ctrl->setProperty(CAPPROPID_EXPOSURE, exposure);
+    } else {
+        bool autoExposure;
+        ctrl->getAutoProperty(CAPPROPID_EXPOSURE, &autoExposure);
+        std::cout << "Auto exposure was " << (autoExposure ? "enabled" : "disabled") << ", will enable" << std::endl;
+        ctrl->setAutoProperty(CAPPROPID_EXPOSURE, true);
+    }
+
     ctrl->getProperty(CAPPROPID_GAIN, &oldGain);
-
-    std::cout << "Auto white balance was " << static_cast<int>(oldAutoWB) << ", will set to " <<
-            autoWB << std::endl;
-    std::cout << "White balance was " << oldWB << ", will set to " << wb << std::endl;
-    std::cout << "Auto exposure was " << static_cast<int>(oldAutoExposure) << ", will set to " <<
-            autoExposure << std::endl;
-    std::cout << "Exposure was " << oldExposure << ", will set to " << exposure << std::endl;
     std::cout << "Gain was " << oldGain << ", will set to " << gain << std::endl;
-
-    // Set new settings
-    ctrl->setAutoProperty(CAPPROPID_WHITEBALANCE, autoWB);
-    ctrl->setProperty(CAPPROPID_WHITEBALANCE, wb);
-    ctrl->setAutoProperty(CAPPROPID_EXPOSURE, autoExposure);
-    ctrl->setProperty(CAPPROPID_EXPOSURE, exposure);
     ctrl->setProperty(CAPPROPID_GAIN, gain);
 
     std::cout << "Done" << std::endl;

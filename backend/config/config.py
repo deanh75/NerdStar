@@ -33,11 +33,11 @@ class CameraConfig:
     camera_auto_exposure: bool = False
     camera_exposure: int = 0
     camera_gain: int = 0
-    apriltags_stream_port: int = 8000 # TODO: Need?
-    objdetect_stream_port: int = 8001 # TODO: Need?
     apriltags_enable: bool = False
     objdetect_enable: bool = False
     driverCam_enable: bool = False
+    process_frames_enable: bool = False
+    is_calibrating: bool = False
     has_calibration: bool = False
     camera_matrix: numpy.typing.NDArray[numpy.float64] = None
     distortion_coefficients: numpy.typing.NDArray[numpy.float64] = None
@@ -57,3 +57,4 @@ class ConfigStore:
     camera_config: CameraConfig
     remote_config: RemoteConfig
     camera_config_source: any
+    remote_config_source: any

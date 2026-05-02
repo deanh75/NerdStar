@@ -6,11 +6,19 @@
     <div class="row">
         <!-- Camera Feed -->
         <div class="card cameraContainer">
+            <div class="camRow">
+                <span>Process Frames</span>
+                <label class="switch">
+                    <input type="checkbox" id="toggle_pf">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
             <img id="cameraFeed" src="{{ url_for('video_feed', cam_name=selected_index) }}">
         </div>
 
         <!-- Camera Controls -->
-        <div class="card" style="width: 260px; flex-shrink: 0;">
+        <div class="card" style="min-width: 260px; flex-shrink: 0;">
 
             <label for="cameraDropdown" class="bigLabel" style="color:#39FF14;">Select Camera:</label>
 
@@ -65,10 +73,9 @@
     </div>
 
     <div class="row">
-        <div class="card cameraContainer" style="flex:1; min-width:300px;">
-
+        <div class="card" style="flex:1;">
             <!-- Auto White Balance -->
-            <div class="controlRow">
+            <div class="toggleRow">
                 <span>Auto White Balance</span>
                 <label class="switch">
                     <input type="checkbox" id="toggle_awb">
@@ -76,14 +83,13 @@
                 </label>
             </div>
 
-            <div class="sliderRow">
+            <div class="sliderRow" id="wbRow">
                 <span>White Balance</span>
-                <input type="range" id="wbSlider" min="0" max="6000" step="1">
                 <input type="number" id="wbValue">
             </div>
 
             <!-- Auto Exposure -->
-            <div class="controlRow">
+            <div class="toggleRow">
                 <span>Auto Exposure</span>
                 <label class="switch">
                     <input type="checkbox" id="toggle_ae">
@@ -92,19 +98,31 @@
             </div>
 
             <!-- Exposure -->
-            <div class="sliderRow">
+            <div class="sliderRow" id="exposureRow">
                 <span>Exposure</span>
-                <input type="range" id="exposureSlider" min="0" max="1000" step="1">
                 <input type="number" id="exposureValue">
             </div>
 
             <!-- Gain -->
             <div class="sliderRow">
                 <span>Gain</span>
-                <input type="range" id="gainSlider" min="0" max="1800" step="1">
                 <input type="number" id="gainValue">
             </div>
 
+            <div class="divider"></div>
+
+            <div id="resolutionControl" style="display:flex; justify-content: space-between; gap:20px; width: 100%;">
+                <span>Resolution</span>
+                <select id="resolutionDropdown" style="font-size: 14px;">
+                    <option value="426x240">240p</option>
+                    <option value="640x360">360p</option>
+                    <option value="854x480">480p</option>
+                    <option value="1280x720">720p</option>
+                    <option value="1920x1080">1080p</option>
+                    <option value="2560x1440">1440p</option>
+                    <option value="3840x2160">4K</option>
+                </select>
+            </div>
         </div>
     </div>
 </div>
@@ -127,18 +145,17 @@ const newNameInput = document.getElementById('newName');
 const saveIcon = document.getElementById('saveIcon');
 const cameraControl = document.getElementById('cameraControl');
 const toggles = {
+    process_frames_enable: document.getElementById('toggle_pf'),
     apriltags_enable: document.getElementById('toggle_apriltags'),
     objdetect_enable: document.getElementById('toggle_objdetect'),
     driverCam_enable: document.getElementById('toggle_driverCam'),
     camera_auto_white_balance: document.getElementById('toggle_awb'),
     camera_auto_exposure: document.getElementById('toggle_ae')
 };
-const exposureSlider = document.getElementById("exposureSlider");
 const exposureValue = document.getElementById("exposureValue");
-const isoSlider = document.getElementById("isoSlider");
-const isoValue = document.getElementById("isoValue");
-const wbSlider = document.getElementById("wbSlider");
+const gainValue = document.getElementById("gainValue");
 const wbValue = document.getElementById("wbValue");
+const resolutionDropdown = document.getElementById("resolutionDropdown");
 
 editIcon.addEventListener('click', () => {
     cameraControl.style.display = 'none';
@@ -181,6 +198,9 @@ newNameInput.addEventListener('keypress', (e) => {
 
 // Load settings for selected camera
 function loadSettings(index) {
+    if (index == '') {
+        index = -1;
+    }
     fetch(`/get_camera_settings?index=${index}`)
         .then(res => res.json())
         .then(data => {
@@ -190,8 +210,9 @@ function loadSettings(index) {
             toggles.camera_auto_white_balance.checked = data.camera_auto_white_balance;
             toggles.camera_auto_exposure.checked = data.camera_auto_exposure;
             exposureValue.value = data.camera_exposure;
-            isoValue.value = data.camera_iso;
+            gainValue.value = data.camera_gain;
             wbValue.value = data.camera_white_balance;
+            resolutionDropdown.value = data.camera_resolution_width + 'x' + data.camera_resolution_height;
         });
 }
 
@@ -212,70 +233,69 @@ Object.keys(toggles).forEach(key => {
     });
 });
 
-function sendExposure(value) {
+exposureValue.addEventListener("change", () => {
     fetch('/set_camera_setting', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
             index: dropdown.value,
             key: "camera_exposure",
-            value: Number(value)
+            value: Number(exposureValue.value)
         })
     });
-}
-
-exposureSlider.addEventListener("change", () => {
-    exposureValue.value = exposureSlider.value;
-    sendExposure(exposureSlider.value);
 });
 
-exposureValue.addEventListener("change", () => {
-    exposureSlider.value = exposureValue.value;
-    sendExposure(exposureValue.value);
-});
-
-function sendGain(value) {
+gainValue.addEventListener("change", () => {
     fetch('/set_camera_setting', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
             index: dropdown.value,
             key: "camera_gain",
-            value: Number(value)
+            value: Number(gainValue.value)
         })
     });
-}
-
-gainSlider.addEventListener("change", () => {
-    gainValue.value = gainSlider.value;
-    sendGain(gainSlider.value)
 });
 
-gainValue.addEventListener("change", () => {
-    gainSlider.value = gainValue.value;
-    sendGain(gainValue.value)
-});
-
-function sendWB(value) {
+wbValue.addEventListener("change", () => {
     fetch('/set_camera_setting', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
             index: dropdown.value,
             key: "camera_white_balance",
-            value: Number(value)
+            value: Number(wbValue.value)
         })
     });
-}
-
-wbSlider.addEventListener("change", () => {
-    wbValue.value = wbSlider.value;
-    sendWB(wbSlider.value);
 });
 
-wbValue.addEventListener("change", () => {
-    wbSlider.value = wbValue.value;
-    sendWB(wbValue.value);
+toggles.camera_auto_white_balance.addEventListener("change", () => {
+    if (toggles.camera_auto_white_balance.checked) {
+        document.getElementById("wbRow").classList.add("greyed-out");
+    } else {
+        document.getElementById("wbRow").classList.remove("greyed-out");
+    }
+});
+
+toggles.camera_auto_exposure.addEventListener("change", () => {
+    if (toggles.camera_auto_exposure.checked) {
+        document.getElementById("exposureRow").classList.add("greyed-out");
+        document.getElementById("brightnessRow").classList.add("greyed-out");
+    } else {
+        document.getElementById("exposureRow").classList.remove("greyed-out");
+        document.getElementById("brightnessRow").classList.remove("greyed-out");
+    }
+});
+
+resolutionDropdown.addEventListener("change", () => {
+    fetch('/set_camera_resolution', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            index: dropdown.value,
+            value: resolutionDropdown.value
+        })
+    });
 });
 
 window.onload = () => {

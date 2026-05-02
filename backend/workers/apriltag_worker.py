@@ -7,8 +7,6 @@ from typing import List, Tuple, Union
 
 import cv2
 from config.config import ConfigStore
-from output.overlay_util import overlay_image_observation
-from output.StreamServer import MjpegStreamServer
 from pipeline.CameraPoseEstimator import MultiTargetCameraPoseEstimator
 from pipeline.FiducialDetector import ArucoFiducialDetector
 from pipeline.PoseEstimator import SquareTargetPoseEstimator
@@ -29,14 +27,11 @@ def apriltag_worker(
             Union[FiducialPoseObservation, None],
         ]
     ],
-    server_port: int,
 ):
     fiducial_detector = ArucoFiducialDetector(cv2.aruco.DICT_APRILTAG_36h11)
     camera_pose_estimator = MultiTargetCameraPoseEstimator()
     tag_angle_calculator = CameraMatrixTagAngleCalculator()
     tag_pose_estimator = SquareTargetPoseEstimator()
-    stream_server = MjpegStreamServer()
-    stream_server.start(server_port)
 
     while True:
         sample = q_in.get()
@@ -60,7 +55,3 @@ def apriltag_worker(
         q_out.put(
             (timestamp, image_observations, camera_pose_observation, tag_angle_observations, demo_pose_observation)
         )
-        if stream_server.get_client_count() > 0:
-            image = image.copy()
-            [overlay_image_observation(image, x) for x in image_observations]
-            stream_server.set_frame(image)

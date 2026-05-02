@@ -6,7 +6,6 @@ import json
 import shutil
 
 import cv2
-from flask import config
 import ntcore
 import numpy
 from backend.config.config import ConfigStore, LocalConfig
@@ -62,10 +61,10 @@ class FileConfigSource(ConfigSource):
                 config_store.camera_config.camera_auto_exposure = cam_config_data["camera_auto_exposure"]
                 config_store.camera_config.camera_exposure = cam_config_data["camera_exposure"]
                 config_store.camera_config.camera_gain = cam_config_data["camera_gain"]
-                config_store.camera_config.apriltags_stream_port = cam_config_data["apriltags_stream_port"]
-                config_store.camera_config.objdetect_stream_port = cam_config_data["objdetect_stream_port"]
                 config_store.camera_config.apriltags_enable = cam_config_data["apriltags_enable"]
                 config_store.camera_config.objdetect_enable = cam_config_data["objdetect_enable"]
+                config_store.camera_config.driverCam_enable = cam_config_data["driverCam_enable"]
+                config_store.camera_config.process_frames_enable = cam_config_data["process_frames_enable"]
 
             with open(self._cam_config_filename, "w") as cam_config_file:
                 json.dump(cam_config_data, cam_config_file, indent=4)

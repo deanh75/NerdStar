@@ -1,6 +1,3 @@
-# Copyright (c) 2022-2026 Littleton Robotics
-# http://github.com/Mechanical-Advantage
-#
 # Use of this source code is governed by an MIT-style
 # license that can be found in the LICENSE file at
 # the root directory of this project.
@@ -11,7 +8,6 @@ from typing import List
 
 import cv2
 import numpy
-from config.ConfigSource import FileConfigSource
 
 
 class CalibrationSession:
@@ -19,14 +15,12 @@ class CalibrationSession:
     _all_charuco_ids: List[numpy.ndarray] = []
     _imsize = None
 
-    NEW_CALIBRATION_FILENAME = "calibration_new.yml"
-
     def __init__(self) -> None:
         self._aruco_dict = cv2.aruco.getPredefinedDictionary(cv2.aruco.DICT_5X5_1000)
         self._aruco_params = cv2.aruco.DetectorParameters()
         self._charuco_board = cv2.aruco.CharucoBoard((12, 9), 0.030, 0.023, self._aruco_dict)
 
-    def process_frame(self, image: cv2.Mat, save: bool) -> None:
+    def process_frame(self, image: cv2.Mat) -> None:
         # Get image size
         if self._imsize == None:
             self._imsize = (image.shape[0], image.shape[1])
@@ -43,21 +37,21 @@ class CalibrationSession:
             if retval >= 8:
                 cv2.aruco.drawDetectedCornersCharuco(image, charuco_corners, charuco_ids)
 
-                # Save corners
-                if save:
-                    self._all_charuco_corners.append(charuco_corners)
-                    self._all_charuco_ids.append(charuco_ids)
-                    print("Saved calibration frame")
+                self._all_charuco_corners.append(charuco_corners)
+                self._all_charuco_ids.append(charuco_ids)
+                print("Saved calibration frame")
             else: 
                 print("Retval < 8")
 
-    def finish(self) -> None:
+    def finish(self, cam_id: str) -> None:
         if len(self._all_charuco_corners) == 0:
             print("ERROR: No calibration data")
             return
+        
+        path = f"backend/data/{cam_id}_calibration.yml"
 
-        if os.path.exists(self.NEW_CALIBRATION_FILENAME):
-            os.remove(self.NEW_CALIBRATION_FILENAME)
+        if os.path.exists(path):
+            os.remove(path)
 
         print("Calibrating")
         (retval, camera_matrix, distortion_coefficients, rvecs, tvecs) = cv2.aruco.calibrateCameraCharuco(
@@ -67,7 +61,7 @@ class CalibrationSession:
 
         if retval:
             print("Saving Config")
-            calibration_store = cv2.FileStorage(self.NEW_CALIBRATION_FILENAME, cv2.FILE_STORAGE_WRITE)
+            calibration_store = cv2.FileStorage(path, cv2.FILE_STORAGE_WRITE)
             calibration_store.write("calibration_date", str(datetime.datetime.now()))
             calibration_store.write("camera_resolution", self._imsize)
             calibration_store.write("camera_matrix", camera_matrix)

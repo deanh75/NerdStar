@@ -10,9 +10,9 @@ import subprocess
 import queue
 import threading
 
-from config.config import ConfigStore
-from output.overlay_util import overlay_image_observation, overlay_obj_detect_observation
-from vision_types import FiducialImageObservation, ObjDetectObservation
+from backend.config.config import ConfigStore
+from backend.output.overlay_util import overlay_image_observation, overlay_obj_detect_observation
+from backend.vision_types import FiducialImageObservation, ObjDetectObservation
 
 class VideoWriter:
     def __init__(self) -> None:
