@@ -109,8 +109,7 @@ class AVFoundationMjpegCapture(Capture):
                             str(config.camera_config.camera_exposure),
                             str(config.camera_config.camera_gain)
                         ], capture_output=True, check=False, text=True)
-                        print("RETURN CODE:", result.returncode)
-                        print("STDOUT:\n", result.stdout)
+                        print(result.stdout)
 
                         video = cv2.VideoCapture(index, cv2.CAP_AVFOUNDATION)
                         video.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter.fourcc(*'MJPG'))
@@ -123,8 +122,8 @@ class AVFoundationMjpegCapture(Capture):
                         break
 
         last_config = ConfigStore(
-            dataclasses.replace(config.local_config), dataclasses.replace(config.camera_config), 
-            dataclasses.replace(config.remote_config), config.camera_config_source, config.remote_config_source
+            dataclasses.replace(config.camera_config), dataclasses.replace(config.remote_config), 
+            config.camera_config_source, config.remote_config_source
         )
         self._last_configs[cam_name] = last_config
 

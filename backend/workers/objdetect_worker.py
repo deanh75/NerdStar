@@ -6,13 +6,13 @@ import queue
 from typing import List, Tuple
 
 import cv2
-from backend.config.config import ConfigStore
+from backend.config.config import ConfigStore, LocalConfig
 from backend.pipeline.ObjectDetector import CoreMLObjectDetector
 from backend.vision_types import ObjDetectObservation
 
 
 def objdetect_worker(
-    q_in: queue.Queue[Tuple[float, cv2.Mat, ConfigStore]],
+    q_in: queue.Queue[Tuple[float, cv2.Mat, ConfigStore, LocalConfig]],
     q_out: queue.Queue[Tuple[float, List[ObjDetectObservation]]],
 ):
     object_detector = CoreMLObjectDetector()
@@ -22,7 +22,8 @@ def objdetect_worker(
         timestamp: float = sample[0]
         image: cv2.Mat = sample[1]
         config: ConfigStore = sample[2]
+        local_config: LocalConfig = sample[3]
 
-        observations = object_detector.detect(image, config)
+        observations = object_detector.detect(image, config, local_config)
 
         q_out.put((timestamp, observations))

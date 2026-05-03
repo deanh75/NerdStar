@@ -1,4 +1,3 @@
-import enum
 import queue
 import threading
 import time
@@ -23,26 +22,64 @@ class Wrapper:
     def __init__(self):
         self._nt: ntcore.NetworkTableInstance = ntcore.NetworkTableInstance.getDefault()
 
-        loc_config: LocalConfig = LocalConfig()
-        loc_config_source: ConfigSource = LocalConfigSource()
-        loc_config_source.update(loc_config)
+        self.local_config: LocalConfig = LocalConfig()
+        self.local_config_source: ConfigSource = LocalConfigSource()
+        self.local_config_source.update(self.local_config)
+
         self._configs: List[ConfigStore] = []
 
-        self._nt.setServer(loc_config.server_ip)
-        self._nt.startClient4(loc_config.device_id)
+        self.setup_nt()
 
         self._capture: AVFoundationMjpegCapture = AVFoundationMjpegCapture()
         for cam in self._capture.getCameras():
             camera_config_source: ConfigSource = FileConfigSource(cam.uniqueID)
             remote_config_source: ConfigSource = NTConfigSource()
-            config = ConfigStore(loc_config, CameraConfig(), RemoteConfig(), camera_config_source, remote_config_source)
+            config = ConfigStore(CameraConfig(), RemoteConfig(), camera_config_source, remote_config_source)
             camera_config_source.update(config)
-            remote_config_source.update(config)
+            remote_config_source.update(config, self.local_config)
             self._configs.append(config)
 
         self.latest_frames: list[cv2.Mat] = [None] * len(self._configs)
         self.lock = threading.Lock()
         self.done = None
+
+    def setup_nt(self):
+        team_number = self.local_config.team_number
+        am = team_number % 100
+        te = team_number // 100
+        ip = f"10.{te}.{am}.2"
+        self._nt.setServer(ip)
+        self._nt.startClient4(self.local_config.device_id)
+
+    def restart_nt(self):
+        self._nt.stopClient()
+        self.setup_nt()
+
+    def get_name(self):
+        return self.local_config.device_id
+    
+    def update_local_settings(self, obj: str, value) -> bool:
+        self.local_config_source.save(obj, value)
+        setattr(self.local_config, obj, value)
+        if obj == "tag_layout_name":
+            self.local_config.load_tag_layout()
+        return True
+
+    def get_selected_model(self):
+        return self.local_config.obj_detect_model
+    
+    def get_selected_layout(self):
+        return self.local_config.tag_layout_name
+    
+    def get_local_settings(self):
+        return {
+            "team_number": self.local_config.team_number,
+            "device_id": self.local_config.device_id,
+            "obj_detect_max_fps": self.local_config.obj_detect_max_fps,
+            "video_framerate": self.local_config.video_framerate,
+            "fiducial_size_m": self.local_config.fiducial_size_m,
+            "should_record": self.local_config.should_record
+        }
 
     def get_frame(self, cam_name_supplier: callable):
         while True:
@@ -152,13 +189,14 @@ class Wrapper:
         last_objdetect_observations: List[ObjDetectObservation] = []
         video_frame_cache: List[cv2.Mat] = []
         while True:
-            self._configs[index].remote_config_source.update(self._configs[index])
+            self._configs[index].remote_config_source.update(self._configs[index], self.local_config)
             success, image = self._capture.get_frame(self._configs[index])
             timestamp = time.time()
 
             # Start and stop recording
             should_record = (
                 success
+                and self.local_config.should_record
                 and self._configs[index].remote_config.is_recording
                 and self._configs[index].camera_config.camera_resolution_width > 0
                 and self._configs[index].camera_config.camera_resolution_height > 0
@@ -166,7 +204,7 @@ class Wrapper:
             )
             if should_record and not was_recording:
                 print("Starting recording")
-                video_writer.start(self._configs[index], len(image.shape) == 2)
+                video_writer.start(self._configs[index], self.local_config, len(image.shape) == 2)
             elif not should_record and was_recording:
                 print("Stopping recording")
                 video_writer.stop()
@@ -241,10 +279,10 @@ class Wrapper:
                     # Apply FPS limit for object detection
                     if objdetect_next_frame == -1:
                         objdetect_next_frame = timestamp
-                    if self._configs[index].local_config.obj_detect_max_fps < 0 or timestamp > objdetect_next_frame:
-                        objdetect_next_frame += 1 / self._configs[index].local_config.obj_detect_max_fps
+                    if self.local_config.obj_detect_max_fps < 0 or timestamp > objdetect_next_frame:
+                        objdetect_next_frame += 1 / self.local_config.obj_detect_max_fps
                         try:
-                            objdetect_worker_in.put((timestamp, image, self._configs[index]), block=False)
+                            objdetect_worker_in.put((timestamp, image, self._configs[index], self.local_config), block=False)
                         except:  # No space in queue
                             pass
                     try:
@@ -253,7 +291,7 @@ class Wrapper:
                         pass
                     else:
                         # Publish observation
-                        output_publisher.send_objdetect_observation(self._configs[index], timestamp_out, observations)
+                        output_publisher.send_objdetect_observation(self.local_config, timestamp_out, observations)
 
                         # Store last observations
                         last_objdetect_observations = observations
@@ -264,11 +302,11 @@ class Wrapper:
                         if time.time() - objdetect_last_print > 1:
                             objdetect_last_print = time.time()
                             print("Running object detection pipeline at", objdetect_frame_count, "fps")
-                            output_publisher.send_objdetect_fps(self._configs[index], timestamp, objdetect_frame_count)
+                            output_publisher.send_objdetect_fps(self.local_config, timestamp, objdetect_frame_count)
                             objdetect_frame_count = 0
 
                 # Save frame to video
-                if self._configs[index].remote_config.is_recording:
+                if should_record:
                     if len(video_frame_cache) >= 2:
                         # Delay output by two frames to improve alignment with overlays
                         video_writer.write_frame(

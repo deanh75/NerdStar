@@ -215,14 +215,21 @@ input:checked + .slider:before {
 }
 
 .sliderRow input[type="number"] {
-    width: 60px;
-    padding: 2px 2px;
+    width: 50px;
+    padding: 4px 4px;
     font-size: 14px;
     text-align: right;
 
     background-color: #000;
     color: #39FF14;
     border: 1px solid #39FF14;
+}
+
+/* Remove arrows in Chrome, Safari, Edge */
+.sliderRow input[type="number"]::-webkit-outer-spin-button,
+.sliderRow input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 /* same style as other toggle rows */
@@ -252,4 +259,60 @@ select, input {
     opacity: 0.35;
     filter: grayscale(100%) brightness(0.8);
     pointer-events: none;
+}
+
+.settingsGroup {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Divider now matches group width automatically */
+.settingsGroup .divider {
+    border-top: 2px dashed #39FF14;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Label + value with 30px spacing */
+.settingRow {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Inputs styled to your theme */
+.settingRow input {
+    background-color: #000;
+    color: #39FF14;
+    border: 1px solid #39FF14;
+    width: 75px; 
+    padding: 4px;
+    font-size: 14px;
+}
+
+/* Remove arrows in Chrome, Safari, Edge */
+.settingRow input[type="number"]::-webkit-outer-spin-button,
+.settingRow input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.dropdown {
+    background-color: #000;
+    color: #39FF14;
+    border: 1px solid #39FF14;
+    padding: 8px;
+    font-size: 14px;
+}
+
+.button {
+    background-color:#000;
+    color:#39FF14;
+    border:1px solid #39FF14;
+    padding:4px 10px;
+    cursor:pointer;
+    font-size: 14px;
 }

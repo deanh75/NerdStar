@@ -6,20 +6,29 @@ from dataclasses import dataclass
 
 import numpy
 import numpy.typing
+import json
+
+from backend.config import ConfigSource
 
 
 @dataclass
 class LocalConfig:
     device_id: str = ""
-    server_ip: str = ""
-    device_ip: str = ""
+    team_number: int = 0
     obj_detect_model: str = ""
     obj_detect_max_fps: int = -1
     video_folder: str = ""
     video_framerate: int = 25
     fiducial_size_m: float = 0 
+    tag_layout_name: str = ""
     tag_layout: any = None
     should_record: bool = False
+
+    def load_tag_layout(self):
+        if self.tag_layout_name:
+            with open(f"backend/data/layouts/{self.tag_layout_name}", "r") as tag_layout_file:
+                self.tag_layout = json.load(tag_layout_file)
+                print("Tag layout loaded successfully")
 
 @dataclass
 class CameraConfig:
@@ -53,8 +62,7 @@ class RemoteConfig:
 
 @dataclass
 class ConfigStore:
-    local_config: LocalConfig
     camera_config: CameraConfig
     remote_config: RemoteConfig
-    camera_config_source: any
-    remote_config_source: any
+    camera_config_source: "ConfigSource.FileConfigSource"
+    remote_config_source: "ConfigSource.NTConfigSource"

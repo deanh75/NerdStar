@@ -6,7 +6,7 @@ from typing import List, Union
 
 import cv2
 import numpy
-from backend.config.config import ConfigStore
+from backend.config.config import ConfigStore, LocalConfig
 from backend.pipeline.coordinate_systems import openCvPoseToWpilib, wpilibTranslationToOpenCv
 from backend.vision_types import CameraPoseObservation, FiducialImageObservation
 from wpimath.geometry import *
@@ -17,35 +17,46 @@ class CameraPoseEstimator:
         raise NotImplementedError
 
     def solve_camera_pose(
-        self, image_observations: List[FiducialImageObservation], config_store: ConfigStore
+        self, image_observations: List[FiducialImageObservation], config_store: ConfigStore, local_config: LocalConfig
     ) -> Union[CameraPoseObservation, None]:
         raise NotImplementedError
 
 
 class MultiTargetCameraPoseEstimator(CameraPoseEstimator):
     def __init__(self) -> None:
+        self.last_tag_layout_name = None
         pass
 
     def solve_camera_pose(
-        self, image_observations: List[FiducialImageObservation], config_store: ConfigStore
+        self, image_observations: List[FiducialImageObservation], config_store: ConfigStore,local_config: LocalConfig
     ) -> Union[CameraPoseObservation, None]:
         # Exit if no tag layout available
-        if config_store.remote_config.tag_layout == None:
+        if local_config.tag_layout_name == "":
             return None
+        
+        if local_config.tag_layout_name != self.last_tag_layout_name:
+            print("Loading new tag layout...")
+            local_config.load_tag_layout()
+        
+        if local_config.tag_layout is None:
+            print("Failed to load tag layout")
+            return None
+
+        self.last_tag_layout_name = local_config.tag_layout_name
 
         # Exit if no observations available
         if len(image_observations) == 0:
             return None
 
         # Create set of object and image points
-        fid_size = config_store.remote_config.fiducial_size_m
+        fid_size = local_config.fiducial_size_m
         object_points = []
         image_points = []
         tag_ids = []
         tag_poses = []
         for observation in image_observations:
             tag_pose = None
-            for tag_data in config_store.remote_config.tag_layout["tags"]:
+            for tag_data in local_config.tag_layout["tags"]:
                 if tag_data["ID"] == observation.tag_id:
                     tag_pose = Pose3d(
                         Translation3d(
@@ -101,8 +112,8 @@ class MultiTargetCameraPoseEstimator(CameraPoseEstimator):
                 _, rvecs, tvecs, errors = cv2.solvePnPGeneric(
                     object_points,
                     numpy.array(image_points),
-                    config_store.local_config.camera_matrix,
-                    config_store.local_config.distortion_coefficients,
+                    config_store.camera_config.camera_matrix,
+                    config_store.camera_config.distortion_coefficients,
                     flags=cv2.SOLVEPNP_IPPE_SQUARE,
                 )
             except:
@@ -131,8 +142,8 @@ class MultiTargetCameraPoseEstimator(CameraPoseEstimator):
                 _, rvecs, tvecs, errors = cv2.solvePnPGeneric(
                     numpy.array(object_points),
                     numpy.array(image_points),
-                    config_store.local_config.camera_matrix,
-                    config_store.local_config.distortion_coefficients,
+                    config_store.camera_config.camera_matrix,
+                    config_store.camera_config.distortion_coefficients,
                     flags=cv2.SOLVEPNP_SQPNP,
                 )
             except:

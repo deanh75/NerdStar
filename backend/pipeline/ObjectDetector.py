@@ -8,7 +8,7 @@ from typing import List, Union
 import coremltools
 import cv2
 import numpy as np
-from backend.config.config import ConfigStore
+from backend.config.config import ConfigStore, LocalConfig
 from PIL import Image
 from backend.vision_types import ObjDetectObservation
 
@@ -25,14 +25,21 @@ class CoreMLObjectDetector(ObjectDetector):
     _model: Union[coremltools.models.MLModel, None] = None
 
     def __init__(self) -> None:
+        self.last_model = None
         pass
 
-    def detect(self, image: cv2.Mat, config: ConfigStore) -> List[ObjDetectObservation]:
+    def detect(self, image: cv2.Mat, config: ConfigStore, local_config: LocalConfig) -> List[ObjDetectObservation]:
+        if self._model != None and self.last_model != local_config.obj_detect_model:
+            print("New model detected, reloading...")
+            self._model = None
+
         # Load CoreML model
         if self._model == None:
             print("Loading object detection model")
-            self._model = coremltools.models.MLModel(config.local_config.obj_detect_model)
+            self._model = coremltools.models.MLModel("backend/data/models/" + local_config.obj_detect_model)
             print("Finished loading object detection model")
+
+        self.last_model = local_config.obj_detect_model
 
         # Create scaled frame for model
         if len(image.shape) == 2:

@@ -6,7 +6,7 @@ import math
 from typing import List, Union
 
 import ntcore
-from backend.config.config import ConfigStore
+from backend.config.config import ConfigStore, LocalConfig
 from backend.vision_types import CameraPoseObservation, FiducialPoseObservation, ObjDetectObservation, TagAngleObservation
 
 
@@ -30,12 +30,12 @@ class NTOutputPublisher(OutputPublisher):
     _objdetect_fps_pub: ntcore.IntegerPublisher
     _objdetect_observations_pub: ntcore.DoubleArrayPublisher
 
-    def _check_init(self, config: ConfigStore):
+    def _check_init(self, local_config: LocalConfig):
         # Initialize publishers on first call
         if not self._init_complete:
             self._init_complete = True
             nt_table = ntcore.NetworkTableInstance.getDefault().getTable(
-                "/" + config.local_config.device_id + "/output"
+                "/" + local_config.device_id + "/output"
             )
             self._observations_pub = nt_table.getDoubleArrayTopic("observations").publish(
                 ntcore.PubSubOptions(periodic=0.01, sendAll=True, keepDuplicates=True)
@@ -113,14 +113,14 @@ class NTOutputPublisher(OutputPublisher):
     #     self._observations_pub.set(observation_data, math.floor(timestamp * 1000000))
     #     self._demo_observations_pub.set(demo_observation_data, math.floor(timestamp * 1000000))
 
-    def send_objdetect_fps(self, config_store: ConfigStore, timestamp: float, fps: int) -> None:
-        self._check_init(config_store)
+    def send_objdetect_fps(self, local_config: LocalConfig, timestamp: float, fps: int) -> None:
+        self._check_init(local_config)
         self._objdetect_fps_pub.set(fps)
 
     def send_objdetect_observation(
-        self, config_store: ConfigStore, timestamp: float, observations: List[ObjDetectObservation]
+        self, local_config: LocalConfig, timestamp: float, observations: List[ObjDetectObservation]
     ) -> None:
-        self._check_init(config_store)
+        self._check_init(local_config)
 
         observation_data: List[float] = []
         for observation in observations:

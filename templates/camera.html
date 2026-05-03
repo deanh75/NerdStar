@@ -7,14 +7,14 @@
         <!-- Camera Feed -->
         <div class="card cameraContainer">
             <div class="camRow">
-                <span>Process Frames</span>
+                <span>Show Process Frames</span>
                 <label class="switch">
                     <input type="checkbox" id="toggle_pf">
                     <span class="slider"></span>
                 </label>
             </div>
 
-            <img id="cameraFeed" src="{{ url_for('video_feed', cam_name=selected_cam) }}">
+            <img id="cameraFeed" src="{{ url_for('static', filename='Cam_Lost.png') }}">
         </div>
 
         <!-- Camera Controls -->
@@ -204,6 +204,7 @@ function loadSettings(index) {
     fetch(`/get_camera_settings?index=${index}`)
         .then(res => res.json())
         .then(data => {
+            toggles.process_frames_enable.checked = data.process_frames_enable;
             toggles.apriltags_enable.checked = data.apriltags_enable;
             toggles.objdetect_enable.checked = data.objdetect_enable;
             toggles.driverCam_enable.checked = data.driverCam_enable;
@@ -303,6 +304,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const name = dropdown.options[dropdown.selectedIndex].text;
     img.src = `/video_feed?cam_name=${encodeURIComponent(name)}&t=${Date.now()}`;
     loadSettings(index);
+});
+
+document.querySelectorAll('input[type="number"]').forEach(input => {
+    input.addEventListener('wheel', e => e.preventDefault());
 });
 
 </script>

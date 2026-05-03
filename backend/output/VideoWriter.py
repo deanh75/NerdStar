@@ -10,7 +10,7 @@ import subprocess
 import queue
 import threading
 
-from backend.config.config import ConfigStore
+from backend.config.config import ConfigStore, LocalConfig
 from backend.output.overlay_util import overlay_image_observation, overlay_obj_detect_observation
 from backend.vision_types import FiducialImageObservation, ObjDetectObservation
 
@@ -32,11 +32,11 @@ class FFmpegVideoWriter(VideoWriter):
     def __init__(self) -> None:
         pass
 
-    def start(self, config: ConfigStore, is_gray: bool) -> None:
+    def start(self, config: ConfigStore, local_config: LocalConfig, is_gray: bool) -> None:
         match_prefixes = ["", "p", "q", "e"]
         filename_base = os.path.join(
-            config.local_config.video_folder
-            + config.local_config.device_id
+            local_config.video_folder
+            + local_config.device_id
             + "_"
             + datetime.fromtimestamp(config.remote_config.timestamp).strftime("%Y%m%d_%H%M%S")
         )
@@ -54,13 +54,13 @@ class FFmpegVideoWriter(VideoWriter):
             "ffmpeg",
             "-y",
             "-s",
-            str(config.remote_config.camera_resolution_width)
+            str(config.camera_config.camera_resolution_width)
             + "x"
-            + str(config.remote_config.camera_resolution_height),
+            + str(config.camera_config.camera_resolution_height),
             "-pixel_format",
             "gray" if is_gray else "rgb24",
             "-r",
-            str(config.local_config.video_framerate),
+            str(local_config.video_framerate),
             "-re",
             "-f",
             "rawvideo",

@@ -1,12 +1,12 @@
 {
     "device_id": "NerdStar",
-    "device_ip": "127.0.0.1",
-    "server_ip": "10.93.12.2",
-    "obj_detect_model": "",
+    "team_number": 9312,
+    "obj_detect_model": "algae_v3.mlmodel",
     "obj_detect_max_fps": -1,
-    "video_folder": "",
+    "video_folder": "/Users/dean/NerdStar/backend/data/videos",
     "video_framerate": 25,
     "fiducial_size_m": 0.1651,
+    "tag_layout_name": "2026-rebuilt-andymark.json",
     "tag_layout": null,
     "should_record": false
 }
