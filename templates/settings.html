@@ -218,7 +218,7 @@ objDetectMaxFps.addEventListener('change', () => {
         },
         body: JSON.stringify({
             key: 'obj_detect_max_fps',
-            value: objDetectMaxFps.value
+            value: Number(objDetectMaxFps.value)
         })
     });
 });
@@ -262,7 +262,7 @@ videoFramerate.addEventListener('change', () => {
         },
         body: JSON.stringify({
             key: 'video_framerate',
-            value: videoFramerate.value
+            value: Number(videoFramerate.value)
         })
     });
 });
@@ -275,7 +275,7 @@ fiducialSizeM.addEventListener('change', () => {
         },
         body: JSON.stringify({
             key: 'fiducial_size_m',
-            value: fiducialSizeM.value
+            value: Number(fiducialSizeM.value)
         })
     });
 });

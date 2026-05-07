@@ -6,5 +6,8 @@ pillow
 pyntcore>=2026.2.1
 robotpy-wpimath>=2026.2.1
 robotpy-cscore>=2026.2.1
-flask
-supplier
+fastapi
+uvicorn
+python-multipart
+aiortc
+av

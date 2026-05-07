@@ -1,3 +1,4 @@
 {
-    "swift.swiftEnvironmentVariables": {}
+    "swift.swiftEnvironmentVariables": {},
+    "cmake.sourceDirectory": "/Users/dean/NerdStar/backend/camera-ctrl"
 }

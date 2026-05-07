@@ -1,19 +1,33 @@
+import asyncio
+import subprocess
 import atexit
 import os
-import select
 import threading
 import time
+import json
 
-from ServerThread import ServerThread
-from flask import Flask, jsonify, render_template, Response, url_for, request, redirect
+from fastapi import FastAPI, Query, Request, Form, UploadFile, File, WebSocket, WebSocketDisconnect
+from fastapi.responses import JSONResponse
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
+import uvicorn
+from aiortc import RTCPeerConnection, RTCSessionDescription
+from backend.CameraTrack import CameraTrack
 from backend.wrapper import Wrapper
 
-app = Flask(__name__)
+app = FastAPI()
+app.mount("/static", StaticFiles(directory="static"), name="static")
+templates = Jinja2Templates(directory="templates")
+pcs = set()
+
 wrapper = Wrapper()
 atexit.register(wrapper._capture.stop)
+
 selected_camera = None
 camera_supplier = lambda: selected_camera
 init = False
+
+state = {"index": -1}
 
 def initialize():
     global init, cameras, selected_camera
@@ -25,27 +39,55 @@ def initialize():
             threading.Thread(target=wrapper.start_backend, args=(i,), daemon=True).start()
         init = True
 
-@app.route("/")
-def camera():
+@app.get("/")
+def camera(request: Request):
     global cameras, selected_camera
-    return render_template("camera.html", cameras=cameras, selected_cam=selected_camera)
+    return templates.TemplateResponse(request, "camera.html", {
+        "cameras": cameras, 
+        "selected_cam": selected_camera
+    })
 
-@app.route("/set_camera", methods=["POST"])
-def set_camera():
+@app.post("/set_camera")
+def set_camera(camera: str = Form(...)):
     global selected_camera
-    cam_name = request.form.get("camera")
-    if cam_name in cameras:
-        selected_camera = cam_name
-    return redirect(url_for("camera"))
+    if camera in cameras:
+        selected_camera = camera
+    return JSONResponse({"success": True})
 
-@app.route('/video_feed')
-def video_feed():
-    return Response(wrapper.get_frame(camera_supplier), 
-        mimetype='multipart/x-mixed-replace; boundary=frame')
+@app.post('/offer')
+async def offer(request: Request):
+    params = await request.json()
 
-@app.route('/rename_camera', methods=['POST'])
-def rename_camera_route():
-    data = request.get_json()
+    offer = RTCSessionDescription(
+        sdp=params["sdp"], 
+        type=params["type"]
+    )
+
+    pc = RTCPeerConnection()
+    pcs.add(pc)
+
+    @pc.on("connectionstatechange")
+    async def on_connectionstatechange() -> None:
+        print("Connection state is %s" % pc.connectionState)
+        if pc.connectionState == "failed":
+            await pc.close()
+            pcs.discard(pc)
+
+    track = CameraTrack(wrapper, camera_supplier)
+    pc.addTrack(track)
+
+    await pc.setRemoteDescription(offer)
+    answer = await pc.createAnswer()
+    await pc.setLocalDescription(answer)
+
+    return {
+        "sdp": pc.localDescription.sdp,
+        "type": pc.localDescription.type
+    }
+
+@app.post('/rename_camera')
+async def rename_camera_route(request: Request):
+    data = await request.json()
     index = int(data.get('index'))
     new_name: str = data.get('name', '').strip()
 
@@ -53,32 +95,53 @@ def rename_camera_route():
         global cameras, selected_camera
         selected_camera = new_name  # Update selected camera to the renamed one
         cameras[index] = new_name
-        return jsonify(success=True)
-    return jsonify(success=False), 400
+        return JSONResponse({"success": True})
+    return JSONResponse({"success": False}, status_code=400)
 
-@app.route('/get_camera_settings')
-def get_camera_settings():
-    index = int(request.args.get('index'))
-    settings = wrapper.get_camera_settings(index)
-    return jsonify(settings)
+@app.get('/get_camera_settings')
+def get_camera_settings(index: int = Query(...)):
+    print(f"Getting settings for camera: {index}")
+    return wrapper.get_camera_settings(index)
 
-@app.route('/set_camera_setting', methods=['POST'])
-def set_camera_setting():
-    data = request.get_json()
+@app.post('/set_camera_setting')
+async def set_camera_setting(request: Request):
+    data = await request.json()
     if data.get('index') == '':
-        return jsonify(success=False, message="No Cameras")
+        return JSONResponse({"success": False, "message": "No Cameras"}, status_code=400)
     index = int(data.get('index'))
     key = data.get('key')
     value = data.get('value')
 
     success = wrapper.update_config(index, key, value)
-    return jsonify(success=success)
+    return JSONResponse({"success": success})
 
-@app.route('/set_camera_resolution', methods=['POST'])
-def set_camera_resolution():
-    data = request.get_json()
+@app.websocket("/ws/apriltag_data")
+async def apriltag_data(ws: WebSocket):
+    await ws.accept()
+    try:
+        while True:
+            data = wrapper.get_apriltag_data(camera_supplier)
+            await ws.send_json(data)
+            await asyncio.sleep(1 / 60)
+    except WebSocketDisconnect:
+        pass
+
+@app.websocket("/ws/obj_data")
+async def obj_data(ws: WebSocket):
+    await ws.accept()
+    try:
+        while True:
+            data = wrapper.get_obj_data(camera_supplier)
+            await ws.send_json(data)
+            await asyncio.sleep(1 / 60)
+    except WebSocketDisconnect:
+        pass
+
+@app.post('/set_camera_resolution')
+async def set_camera_resolution(request: Request):
+    data = await request.json()
     if data.get('index') == '':
-        return jsonify(success=False, message="No Cameras")
+        return JSONResponse({"success": False, "message": "No Cameras"}, status_code=400)
     index = int(data.get('index'))
     value = data.get('value')
 
@@ -89,91 +152,96 @@ def set_camera_resolution():
     if success:
         success = wrapper.update_config(index, 'camera_resolution_height', height)
 
-    return jsonify(success=success)
+    return JSONResponse({"success": success})
 
-@app.route("/calibration")
-def calibration():
+@app.get("/calibration")
+def calibration(request: Request):
     global cameras, selected_camera
-    return render_template("calibration.html", cameras=cameras, selected_cam=selected_camera)
+    return templates.TemplateResponse(request, "calibration.html", {
+        "cameras": cameras,
+        "selected_cam": selected_camera
+    })
 
-@app.route('/get_calibration_status')
+@app.get('/get_calibration_status')
 def get_calibration_status():
-    return jsonify(done=wrapper.get_done())
+    return JSONResponse({"done": wrapper.get_done()})
 
-@app.route("/settings")
-def settings():
-    return render_template("settings.html")
+@app.get("/settings")
+def settings(request: Request):
+    return templates.TemplateResponse(request, "settings.html", {})
 
-@app.route('/get_mac_settings')
+@app.get('/get_mac_settings')
 def get_mac_settings():
-    return jsonify(wrapper.get_local_settings())
+    return JSONResponse(wrapper.get_local_settings())
 
-@app.route('/set_mac_settings', methods=['POST'])
-def set_mac_settings():
-    data = request.get_json()
+@app.post('/set_mac_settings')
+async def set_mac_settings(request: Request):
+    data = await request.json()
     if not data:
-        return jsonify(success=False), 400
+        return JSONResponse({"success": False}, status_code=400)
     key = data.get('key')
     value = data.get('value')
 
     success = wrapper.update_local_settings(key, value)
-    return jsonify(success=success)
+    return JSONResponse({"success": success})
 
-@app.route('/upload_model', methods=['POST'])
-def upload_model():
-    file = request.files.get('file')
-
-    if not file:
-        return jsonify(success=False), 400
-
-    # Save the uploaded file or process it as needed
+@app.post('/upload_model')
+async def upload_model(file: UploadFile = File(...)):
     path = f"backend/data/models/{file.filename}"
-    file.save(path)
-    return jsonify(success=True)
 
-@app.route('/get_models')
+    with open(path, "wb") as f:
+        f.write(await file.read())
+
+    return JSONResponse({"success": True})
+
+@app.get('/get_models')
 def get_models():
     models = os.listdir("backend/data/models")
     selected_model = wrapper.get_selected_model()
-    return jsonify(success=True, models=models, selected=selected_model)
+    return JSONResponse({"success": True, "models": models, "selected": selected_model})
 
-@app.route('/upload_tag_layout', methods=['POST'])
-def upload_tag_layout():
-    file = request.files.get('file')
+@app.post('/upload_tag_layout')
+async def upload_tag_layout(file: UploadFile = File(...)):
+    path = f"backend/data/layouts/{file.filename}" 
 
-    if not file:
-        return jsonify(success=False), 400
+    with open(path, "wb") as f:
+        f.write(await file.read())
 
-    # Save the uploaded file or process it as needed
-    path = f"backend/data/layouts/{file.filename}"
-    file.save(path)
-    return jsonify(success=True)
+    return JSONResponse({"success": True})
 
-@app.route('/get_tag_layouts')
+@app.get('/get_tag_layouts')
 def get_tag_layouts():
     layouts = os.listdir("backend/data/layouts")
     selected_layout = wrapper.get_selected_layout()
-    return jsonify(success=True, layouts=layouts, selected=selected_layout)
+    return JSONResponse({"success": True, "layouts": layouts, "selected": selected_layout})
+
+def set_hostname(hostname: str):
+    print(f"Server started: {hostname}")
+    subprocess.run(["sudo", "scutil", "--set", "HostName", hostname], check=True)
+    subprocess.run(["sudo", "scutil", "--set", "LocalHostName", hostname], check=True)
+    subprocess.run(["sudo", "scutil", "--set", "ComputerName", hostname], check=True)
 
 def start_app():
     # app.run(debug=True, use_reloader=False, host='0.0.0.0', port=5800)
-    global server
-    server = ServerThread(app, wrapper.get_name())
-    server.start()
+    global server  
+    config = uvicorn.Config(app=app, host='0.0.0.0', port=5800, log_level="info")
+    server = uvicorn.Server(config)
+    set_hostname(wrapper.get_name())
+    
+    threading.Thread(target=server.run, daemon=True).start()
 
 def stop_app():
     global server
     if server:
-        server.stop()
-        server.join()
+        server.should_exit = True
         server = None
 
-@app.route('/restart', methods=['POST'])
+@app.post('/restart')
 def restart():
     stop_app()
     start_app()
     wrapper.restart_nt()
-    return jsonify(success=True)
+    return JSONResponse({"success": True})
 
 if __name__ == "__main__":
     initialize()

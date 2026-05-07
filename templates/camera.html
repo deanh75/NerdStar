@@ -14,7 +14,7 @@
                 </label>
             </div>
 
-            <img id="cameraFeed" src="{{ url_for('static', filename='Cam_Lost.png') }}">
+            <video id="cameraFeed" autoplay playsinline></video>
         </div>
 
         <!-- Camera Controls -->
@@ -124,21 +124,79 @@
                 </select>
             </div>
         </div>
+
+        <div class="card" style="flex:1;" id="apriltagData">
+            <span style="font-size: 18px ; color:#39FF14; text-align: center;">
+                Apriltag Output
+            </span>
+
+            <div class="divider"></div>
+
+            <div class="outputRow" style="flex-direction: column; gap: 5px;">
+                <span>FPS: <span id="apriltagFPS">0</span></span>
+                <span>Tag IDs: <span id="apriltagIDs">None</span></span>
+                <span>Localization Method: <span id="apriltagMethod">None</span></span>
+                <span>Pose Estimation: <span id="apriltagPose">None</span></span>
+            </div>
+        </div>
+
+        <div class="card" style="flex:1;" id="objectDetectionData">
+            <span style="font-size: 18px ; color:#39FF14; text-align: center;">
+                Object Detection Output
+            </span>
+
+            <div class="divider"></div>
+
+            <div class="outputRow" style="flex-direction: column; gap: 5px;">
+                <span>FPS: <span id="objectDetectionFPS">0</span></span>
+                <span>Objects Detected: <span id="objectDetectionObjects">0</span></span>
+            </div>
+        </div>
     </div>
 </div>
 
 <script>
 const dropdown = document.getElementById('cameraDropdown');
-const img = document.getElementById('cameraFeed');
+const video = document.getElementById('cameraFeed');
+const pc = new RTCPeerConnection({
+    iceServers: [{ urls: 'stun:stun.l.google.com:19302' }]
+});
+
+pc.addTransceiver('video', { direction: 'recvonly' });
+pc.ontrack = (event) => {
+    video.srcObject = event.streams[0];
+}
+
+async function startWebRTC() {
+    const offer = await pc.createOffer();
+
+    await pc.setLocalDescription(offer);
+
+    const res = await fetch("/offer", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(pc.localDescription)
+    });
+
+    const answer = await res.json();
+    await pc.setRemoteDescription(answer);
+}
+startWebRTC();
 
 dropdown.addEventListener('change', () => {
     const index = dropdown.value;
     const name = dropdown.options[dropdown.selectedIndex].text;
-    img.src = `/video_feed?cam_name=${encodeURIComponent(name)}&t=${Date.now()}`;
+    const formData = new FormData();
+    formData.append('camera', name);
+    fetch(`/set_camera`, {
+        method: 'POST',
+        body: formData
+    });
     loadSettings(index);
 });
 
-// Editable name functionality
 const editIcon = document.getElementById('editIcon');
 const renameDiv = document.getElementById('renameDiv');
 const newNameInput = document.getElementById('newName');
@@ -156,6 +214,23 @@ const exposureValue = document.getElementById("exposureValue");
 const gainValue = document.getElementById("gainValue");
 const wbValue = document.getElementById("wbValue");
 const resolutionDropdown = document.getElementById("resolutionDropdown");
+const apriltagData = document.getElementById("apriltagData");
+const tagFPS = document.getElementById("apriltagFPS");
+const tagIDs = document.getElementById("apriltagIDs");
+const tagMethod = document.getElementById("apriltagMethod");
+const tagPose = document.getElementById("apriltagPose");
+const objectDetectionData = document.getElementById("objectDetectionData");
+const objectDetectionFPS = document.getElementById("objectDetectionFPS");
+const objectDetectionLen = document.getElementById("objectDetectionObjects");
+
+let tag_ws = null;
+let obj_ws = null;
+
+let lastTagState = false;
+let lastObjState = false;
+
+let latestTagData = {};
+let latestObjData = {};
 
 editIcon.addEventListener('click', () => {
     cameraControl.style.display = 'none';
@@ -180,9 +255,6 @@ function saveCameraName() {
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({index: index, name: newName})
         });
-
-        // Update stream with new camera name
-        img.src = `/video_feed?cam_name=${encodeURIComponent(newName)}&t=${Date.now()}`;
     }
 }
 
@@ -197,25 +269,111 @@ newNameInput.addEventListener('keypress', (e) => {
 });
 
 // Load settings for selected camera
-function loadSettings(index) {
+async function loadSettings(index) {
     if (index == '') {
         index = -1;
+        console.log("No camera selected");
+        return;
     }
-    fetch(`/get_camera_settings?index=${index}`)
-        .then(res => res.json())
-        .then(data => {
-            toggles.process_frames_enable.checked = data.process_frames_enable;
-            toggles.apriltags_enable.checked = data.apriltags_enable;
-            toggles.objdetect_enable.checked = data.objdetect_enable;
-            toggles.driverCam_enable.checked = data.driverCam_enable;
-            toggles.camera_auto_white_balance.checked = data.camera_auto_white_balance;
-            toggles.camera_auto_exposure.checked = data.camera_auto_exposure;
-            exposureValue.value = data.camera_exposure;
-            gainValue.value = data.camera_gain;
-            wbValue.value = data.camera_white_balance;
-            resolutionDropdown.value = data.camera_resolution_width + 'x' + data.camera_resolution_height;
-        });
+    const res = await fetch(`/get_camera_settings?index=${index}`);
+    const data = await res.json();
+    toggles.process_frames_enable.checked = data.process_frames_enable;
+    toggles.apriltags_enable.checked = data.apriltags_enable;
+    setTagState(toggles.apriltags_enable.checked);
+    toggles.objdetect_enable.checked = data.objdetect_enable;
+    setObjState(toggles.objdetect_enable.checked);
+    toggles.driverCam_enable.checked = data.driverCam_enable;
+    toggles.camera_auto_white_balance.checked = data.camera_auto_white_balance;
+    toggles.camera_auto_exposure.checked = data.camera_auto_exposure;
+    exposureValue.value = data.camera_exposure;
+    gainValue.value = data.camera_gain;
+    wbValue.value = data.camera_white_balance;
+    resolutionDropdown.value = data.camera_resolution_width + 'x' + data.camera_resolution_height;
 }
+
+function setTagState(state) {
+    if (state && !lastTagState) {
+        tagConnect();
+        apriltagData.style.display = "flex";
+    } else {
+        apriltagData.style.display = "none";
+        if (tag_ws) {
+            tag_ws.close();
+        }
+    }
+    lastTagState = state;
+}
+
+function setObjState(state) {
+    if (state && !lastObjState) {
+        objConnect();
+        objectDetectionData.style.display = "flex";
+    } else {
+        objectDetectionData.style.display = "none";
+        if (obj_ws) {
+            obj_ws.close();
+        }
+    }
+    lastObjState = state;
+}
+
+function tagConnect() {
+    tag_ws = new WebSocket(`ws://${location.host}/ws/apriltag_data`);
+
+    tag_ws.onmessage = (event) => {
+        latestTagData = JSON.parse(event.data);
+    };
+}
+
+function tagRender() {
+    if (latestTagData.fps !== undefined) {
+        tagFPS.textContent = latestTagData.fps ? latestTagData.fps : "No FPS Data";
+        if (latestTagData.pose_estimation) {
+            tagIDs.textContent = latestTagData.pose_observation.tag_ids.length > 0 ? latestTagData.pose_observation.tag_ids.join(", ")
+                : "No Tags Detected";
+            if (latestTagData.pose_observation.pose_1) {
+                tagMethod.textContent = "Single Tag Pose Estimation";
+                tagPose.textContent = `x: ${latestTagData.pose_observation.pose_0.x}, 
+                    y: ${latestTagData.pose_observation.pose_1.y}, z: ${latestTagData.pose_observation.pose_1.z}`;
+            } else {
+                tagMethod.textContent = "Multi Tag Pose Estimation";
+                tagPose.textContent = `x: ${latestTagData.pose_observation.pose_0.x}, 
+                    y: ${latestTagData.pose_observation.pose_0.y}, z: ${latestTagData.pose_observation.pose_0.z}`;
+            }
+        } else {
+            tagIDs.textContent = "No Tags Detected";
+            tagMethod.textContent = "No Data";
+            tagPose.textContent = "No Pose Estimation";
+        }
+    } else {
+        tagFPS.textContent = "No FPS Data";
+        tagIDs.textContent = "No Tags Detected";
+        tagMethod.textContent = "No Data";
+        tagPose.textContent = "No Pose Estimation";
+    }
+    requestAnimationFrame(tagRender);
+}
+requestAnimationFrame(tagRender);
+
+function objConnect() {
+    obj_ws = new WebSocket(`ws://${location.host}/ws/obj_data`);
+
+    obj_ws.onmessage = (event) => {
+        latestObjData = JSON.parse(event.data);
+    }
+}
+
+function objRender() {
+    if (latestObjData.fps !== undefined) {
+        objectDetectionFPS.textContent = latestObjData.fps ? latestObjData.fps : "No FPS Data";
+        objectDetectionLen.textContent = latestObjData.observation_num ? latestObjData.observation_num : "No Objects Detected";
+    } else {
+        objectDetectionFPS.textContent = "No FPS Data";
+        objectDetectionLen.textContent = "No Objects Detected";
+    }
+    requestAnimationFrame(objRender);
+}
+requestAnimationFrame(objRender);
 
 // Send update when toggle changes
 Object.keys(toggles).forEach(key => {
@@ -233,6 +391,14 @@ Object.keys(toggles).forEach(key => {
         });
     });
 });
+
+toggles.apriltags_enable.addEventListener("change", () => {
+    setTagState(toggles.apriltags_enable.checked)
+})
+
+toggles.objdetect_enable.addEventListener("change", () => {
+    setObjState(toggles.objdetect_enable.checked)
+})
 
 exposureValue.addEventListener("change", () => {
     fetch('/set_camera_setting', {
@@ -300,15 +466,15 @@ resolutionDropdown.addEventListener("change", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
+    console.log("DOM loaded");
     const index = dropdown.value;
     const name = dropdown.options[dropdown.selectedIndex].text;
-    img.src = `/video_feed?cam_name=${encodeURIComponent(name)}&t=${Date.now()}`;
     loadSettings(index);
 });
 
 document.querySelectorAll('input[type="number"]').forEach(input => {
     input.addEventListener('wheel', e => e.preventDefault());
-});
+})
 
 </script>
 {% endblock %}

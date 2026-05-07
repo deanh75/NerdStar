@@ -6,7 +6,7 @@ import queue
 from typing import List, Tuple, Union
 
 import cv2
-from backend.config.config import ConfigStore
+from backend.config.config import ConfigStore, LocalConfig
 from backend.pipeline.CameraPoseEstimator import MultiTargetCameraPoseEstimator
 from backend.pipeline.FiducialDetector import ArucoFiducialDetector
 from backend.pipeline.PoseEstimator import SquareTargetPoseEstimator
@@ -17,7 +17,7 @@ DEMO_ID = 42
 
 
 def apriltag_worker(
-    q_in: queue.Queue[Tuple[float, cv2.Mat, ConfigStore]],
+    q_in: queue.Queue[Tuple[float, cv2.Mat, ConfigStore, LocalConfig]],
     q_out: queue.Queue[
         Tuple[
             float,
@@ -38,10 +38,11 @@ def apriltag_worker(
         timestamp: float = sample[0]
         image: cv2.Mat = sample[1]
         config: ConfigStore = sample[2]
+        local_config: LocalConfig = sample[3]
 
         image_observations = fiducial_detector.detect_fiducials(image, config)
         camera_pose_observation = camera_pose_estimator.solve_camera_pose(
-            [x for x in image_observations if x.tag_id != DEMO_ID], config
+            [x for x in image_observations if x.tag_id != DEMO_ID], config, local_config
         )
         tag_angle_observations = [
             tag_angle_calculator.calc_tag_angles(x, config) for x in image_observations if x.tag_id != DEMO_ID

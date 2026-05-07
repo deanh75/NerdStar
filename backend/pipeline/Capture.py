@@ -8,7 +8,6 @@ import subprocess
 from typing import Dict, List, Tuple
 
 import cv2
-from flask import session
 from backend.config.config import ConfigStore
 from backend.NerdAVF.NerdAVF import NerdAVF
 

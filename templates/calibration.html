@@ -5,7 +5,7 @@
 
     <!-- Camera Feed -->
     <div class="card cameraContainer">
-        <img id="cameraFeed" src="{{ url_for('static', filename='Cam_Lost.png') }}">
+        <video id="cameraFeed" autoplay playsinline></video>
     </div>
 
     <div id="normalUI">
@@ -74,7 +74,11 @@
 
 <script>
 const dropdown = document.getElementById("cameraDropdown");
-const img = document.getElementById("cameraFeed");
+const canvas = document.getElementById("cameraFeed");
+const video = document.getElementById('cameraFeed');
+const pc = new RTCPeerConnection({
+    iceServers: [{ urls: 'stun:stun.l.google.com:19302' }]
+});
 const startCalibBtn = document.getElementById("startCalibrationBtn");
 const endCalibBtn = document.getElementById("endCalibrationBtn");
 const normalUI = document.getElementById("normalUI");
@@ -84,7 +88,10 @@ const calibrationStatus = document.getElementById("calibrationStatus");
 const endCard = document.getElementById("endCard");
 const calibrationEnd = document.getElementById("calibrationEnd");
 
-let polling = false;
+pc.addTransceiver('video', { direction: 'recvonly' });
+pc.ontrack = (event) => {
+    video.srcObject = event.streams[0];
+}
 
 startCalibBtn.addEventListener("click", function() {
     normalUI.style.display = "none";
@@ -119,48 +126,44 @@ endCalibBtn.addEventListener("click", function() {
     });
 });
 
-function pollCalibrationStatus() {
-    if (!polling) return;
+async function startWebRTC() {
+    const offer = await pc.createOffer();
 
-    fetch('/get_calibration_status')
-        .then(response => response.json())
-        .then(data => {
-            if (data.done === null) {
-                statusCard.style.display = "block";
-                calibrationStatus.textContent = "Saving calibration...";
-                setTimeout(pollCalibrationStatus, 500); // Poll every 500ms
-            } else {
-                polling = false;
+    await pc.setLocalDescription(offer);
 
-                normalUI.style.display = "block";
-                calibUI.style.display = "none";
+    const res = await fetch("/offer", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(pc.localDescription)
+    });
 
-                if (data.done) {
-                    calibrationEnd.textContent = "Calibration successful!";
-                    endCard.style.display = "block";
-                } else {
-                    calibrationEnd.textContent = "Calibration failed. Please try again.";
-                    endCard.style.display = "block";
-                }
-
-                // Hide the status message after 5 seconds
-                setTimeout(() => {
-                    endCard.style.display = "none";
-                }, 5000);
-            }
-        });
+    const answer = await res.json();
+    await pc.setRemoteDescription(answer);
 }
+startWebRTC();
 
 dropdown.addEventListener('change', () => {
     const index = dropdown.value;
     const name = dropdown.options[dropdown.selectedIndex].text;
-    img.src = `/video_feed?cam_name=${encodeURIComponent(name)}&t=${Date.now()}`;
+    const formData = new FormData();
+    formData.append('camera', name);
+    fetch(`/set_camera`, {
+        method: 'POST',
+        body: formData
+    });
 });
 
 document.addEventListener("DOMContentLoaded", () => {
     const index = dropdown.value;
     const name = dropdown.options[dropdown.selectedIndex].text;
-    img.src = `/video_feed?cam_name=${encodeURIComponent(name)}&t=${Date.now()}`;
+    const formData = new FormData();
+    formData.append('camera', name);
+    fetch(`/set_camera`, {
+        method: 'POST',
+        body: formData
+    });
 });
 
 </script>

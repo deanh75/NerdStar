@@ -1,6 +1,3 @@
-# Copyright (c) 2022-2026 Littleton Robotics
-# http://github.com/Mechanical-Advantage
-#
 # Use of this source code is governed by an MIT-style
 # license that can be found in the LICENSE file at
 # the root directory of this project.
@@ -35,6 +32,15 @@ class CameraPoseObservation:
     error_0: float
     pose_1: Union[Pose3d, None]
     error_1: Union[float, None]
+
+    def to_dict(self):
+        return {
+            "tag_ids": self.tag_ids,
+            "pose_0": self.pose_0,
+            "error_0": self.error_0,
+            "pose_1": self.pose_1,
+            "error_1": self.error_1
+        }
 
 
 @dataclass(frozen=True)

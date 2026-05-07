@@ -192,7 +192,13 @@ input:checked + .slider:before {
 .cameraContainer img {
     width: 100%;
     aspect-ratio: 16 / 9;     /* keeps 16:9 */
-    object-fit: cover;        /* fills nicely */
+    display: block;
+    max-height: 600px;
+}
+
+.cameraContainer video {
+    width: 100%;
+    aspect-ratio: 16 / 9;     /* keeps 16:9 */
     display: block;
     max-height: 600px;
 }
@@ -314,5 +320,12 @@ select, input {
     border:1px solid #39FF14;
     padding:4px 10px;
     cursor:pointer;
+    font-size: 14px;
+}
+
+.outputRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-size: 14px;
 }

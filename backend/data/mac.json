@@ -2,7 +2,7 @@
     "device_id": "NerdStar",
     "team_number": 9312,
     "obj_detect_model": "algae_v3.mlmodel",
-    "obj_detect_max_fps": -1,
+    "obj_detect_max_fps": 60,
     "video_folder": "/Users/dean/NerdStar/backend/data/videos",
     "video_framerate": 25,
     "fiducial_size_m": 0.1651,

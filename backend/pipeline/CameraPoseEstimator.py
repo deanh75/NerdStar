@@ -28,7 +28,7 @@ class MultiTargetCameraPoseEstimator(CameraPoseEstimator):
         pass
 
     def solve_camera_pose(
-        self, image_observations: List[FiducialImageObservation], config_store: ConfigStore,local_config: LocalConfig
+        self, image_observations: List[FiducialImageObservation], config_store: ConfigStore, local_config: LocalConfig
     ) -> Union[CameraPoseObservation, None]:
         # Exit if no tag layout available
         if local_config.tag_layout_name == "":
@@ -53,7 +53,7 @@ class MultiTargetCameraPoseEstimator(CameraPoseEstimator):
         object_points = []
         image_points = []
         tag_ids = []
-        tag_poses = []
+        tag_poses: list[Pose3d] = []
         for observation in image_observations:
             tag_pose = None
             for tag_data in local_config.tag_layout["tags"]:
