@@ -8,6 +8,8 @@ from typing import List, Union
 import numpy
 import numpy.typing
 from wpimath.geometry import *
+from wpiutil.wpistruct import make_wpistruct
+import struct as _struct
 
 
 @dataclass(frozen=True)
@@ -33,13 +35,23 @@ class CameraPoseObservation:
     pose_1: Union[Pose3d, None]
     error_1: Union[float, None]
 
+    @staticmethod
+    def _pose_to_dict(pose: Pose3d):
+        return {
+            "x": float(pose.translation().X()),
+            "y": float(pose.translation().Y()),
+            "z": float(pose.translation().Z()),
+            "qw": float(pose.rotation().getQuaternion().W()),
+            "qx": float(pose.rotation().getQuaternion().X()),
+            "qy": float(pose.rotation().getQuaternion().Y()),
+            "qz": float(pose.rotation().getQuaternion().Z()),
+        }
+
     def to_dict(self):
         return {
-            "tag_ids": self.tag_ids,
-            "pose_0": self.pose_0,
-            "error_0": self.error_0,
-            "pose_1": self.pose_1,
-            "error_1": self.error_1
+            "tag_ids": [int(t) for t in self.tag_ids],
+            "pose_0": self._pose_to_dict(self.pose_0) if self.pose_0 else None,
+            "pose_1": self._pose_to_dict(self.pose_1) if self.pose_1 is not None else None,
         }
 
 
@@ -56,3 +68,23 @@ class ObjDetectObservation:
     confidence: float
     corner_angles: numpy.typing.NDArray[numpy.float64]
     corner_pixels: numpy.typing.NDArray[numpy.float64]
+
+@dataclass
+class TimestampedObservation:
+    observation: CameraPoseObservation
+    timestamp: int
+    index: int
+
+@dataclass
+class PoseEstimate:
+    pose: Pose3d
+    xy_std_dev: float
+    theta_std_dev: float
+
+@make_wpistruct(name="RobotPoseEstimation")
+@dataclass(frozen=True)
+class RobotPoseEstimation:
+    pose: Pose2d
+    timestamp: int
+    xy_std_dev: float
+    theta_std_dev: float

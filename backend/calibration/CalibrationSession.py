@@ -4,7 +4,7 @@
 
 import datetime
 import os
-from typing import List
+from typing import List, Union
 
 import cv2
 import numpy
@@ -51,7 +51,6 @@ class CalibrationSession:
 
                 self._all_charuco_corners.append(charuco_corners)
                 self._all_charuco_ids.append(charuco_ids)
-                print(f"Frame accepted: {len(charuco_corners)} corners")
             else: 
                 print("Frame rejected: Not enough corners detected")
 
@@ -121,8 +120,6 @@ class CalibrationSession:
                 numpy.asarray(i, dtype=numpy.int32).reshape(-1, 1)
                 for _, _, i, _ in scored
             ]
-
-            print(f"Using all {len(corners)} frames (no reduction needed)")
             return corners, ids
 
         # -----------------------------
@@ -156,26 +153,20 @@ class CalibrationSession:
             )
             selected_centers.append(center)
 
-        print(f"Selected {len(selected_corners)} / {len(scored)} frames for calibration")
-
         return selected_corners, selected_ids
 
-    def finish(self, cam_id: str) -> bool:
+    def finish(self, cam_id: str) -> Union[bool, str]:
         if len(self._all_charuco_corners) == 0 or len(self._all_charuco_ids) == 0:
-            print("ERROR: No calibration data")
-            return False
+            return "ERROR: No calibration data"
         
         if len(self._all_charuco_corners) < 5:
-            print("ERROR: Not enough data for calibration")
-            return False
+            return "ERROR: Not enough data for calibration"
         
         if self._imsize is None:
-            print("ERROR: Image size not set")
-            return False
+            return "ERROR: Image size not set"
 
         if len(self._all_charuco_corners) != len(self._all_charuco_ids):
-            print("ERROR: Corners/IDs mismatch")
-            return False
+            return "ERROR: Corners/IDs mismatch"
         
         # Filter out bad frames
         valid_corners = []
@@ -184,41 +175,33 @@ class CalibrationSession:
         valid_corners, valid_ids = self.select_best_frames(max_frames=500)
 
         if len(valid_corners) < 250:
-            print("ERROR: Not enough valid frames after filtering")
-            return False
+            return "ERROR: Not enough valid frames after filtering"
         
         path = f"backend/data/{cam_id}_calibration.yml"
 
         if os.path.exists(path):
             os.remove(path)
 
-        print(f"Calibrating with {len(valid_corners)} frames...")
-
         try:
             retval, camera_matrix, distortion_coefficients, rvecs, tvecs = cv2.aruco.calibrateCameraCharuco(
                 valid_corners, valid_ids, self._charuco_board, self._imsize, None, None, flags=self._calib_flags
             )
         except cv2.error as e:
-            print("OpenCV calibration error:", e)
-            return False
+            return "OpenCV calibration error:" + e
 
         # Validate result
         if retval is None or retval <= 0:
-            print("ERROR: Calibration returned invalid retval")
-            return False
+            return "ERROR: Calibration returned invalid retval"
 
         if camera_matrix is None or distortion_coefficients is None:
-            print("ERROR: Calibration returned empty matrices")
-            return False
+            return "ERROR: Calibration returned empty matrices"
 
-        print("Saving Config")
         calibration_store = cv2.FileStorage(path, cv2.FILE_STORAGE_WRITE)
         calibration_store.write("calibration_date", str(datetime.datetime.now()))
         calibration_store.write("camera_resolution", self._imsize)
         calibration_store.write("camera_matrix", camera_matrix)
         calibration_store.write("distortion_coefficients", distortion_coefficients)
         calibration_store.release()
-        print("Calibration finished")
 
         self._all_charuco_corners.clear()
         self._all_charuco_ids.clear()

@@ -1,24 +1,30 @@
+# Use of this source code is governed by an MIT-style
+# license that can be found in the LICENSE file at
+# the root directory of this project.
+
 import queue
 import threading
 import time
 from typing import List
+from collections import defaultdict
 
 from cscore import CameraServer
 import cv2
 import ntcore
-from starlette.responses import ContentStream
 
 from backend.calibration.CalibrationSession import CalibrationSession
 from backend.config.ConfigSource import ConfigSource, FileConfigSource, LocalConfigSource, NTConfigSource
 from backend.config.config import ConfigStore, LocalConfig, CameraConfig, RemoteConfig
 from backend.output.OutputPublisher import NTOutputPublisher, OutputPublisher
 from backend.output.VideoWriter import FFmpegVideoWriter, VideoWriter
-from backend.output.overlay_util import overlay_obj_detect_observation
+from backend.output.overlay_util import overlay_image_observation, overlay_obj_detect_observation
 from backend.output_types import ApriltagOutput, ObjDetectionOutput
 from backend.pipeline.Capture import AVFoundationMjpegCapture
-from backend.vision_types import FiducialImageObservation, ObjDetectObservation
+from backend.pipeline.RobotPoseEstimator import RobotPoseEstimator
+from backend.vision_types import FiducialImageObservation, ObjDetectObservation, TimestampedObservation
 from backend.workers.apriltag_worker import apriltag_worker
 from backend.workers.objdetect_worker import objdetect_worker
+from backend.pipeline.overwrite_queue import OverwriteQueue
 
 class Wrapper:
     def __init__(self):
@@ -52,6 +58,9 @@ class Wrapper:
 
         self.output_apriltag: list[ApriltagOutput] = [None] * len(self._configs)
         self.output_objdetect: list[ObjDetectionOutput] = [None] * len(self._configs)
+
+        self.output_publisher: OutputPublisher = NTOutputPublisher()
+        self.pose_queue: OverwriteQueue[TimestampedObservation] = OverwriteQueue(maxsize=25)
 
     def setup_nt(self):
         team_number = self.local_config.team_number
@@ -160,29 +169,38 @@ class Wrapper:
                 with self.obj_lock:
                     return self.output_objdetect[index].to_dict()
         return {}
+    
+    # def estimate(self, estimator: RobotPoseEstimator):
+    #     while True:
+    #         # Block until at least one observation arrives
+    #         first = self.pose_queue.get()
+
+    #         # Drain everything else currently in the queue
+    #         pending = [first]
+    #         while not self.pose_queue.empty():
+    #             pending.append(self.pose_queue.get_nowait())
+
+    #         # Group by exact timestamp
+    #         by_timestamp: dict[int, list[TimestampedObservation]] = defaultdict(list)
+    #         for p in pending:
+    #             by_timestamp[p.timestamp].append(p)
+
+    #         # Process each timestamp group in chronological order
+    #         for timestamp in sorted(by_timestamp.keys()):
+    #             group = by_timestamp[timestamp]
+
+    #             estimator.update(
+    #                 observations=[p.observation for p in group],
+    #                 camera_transforms=[p.camera_transform for p in group],
+    #                 timestamp=timestamp,
+    #             )
+
+    #             if estimator.final_robot_pose is not None:
+    #                 self.output_publisher.send_pose_estimation(estimator.final_robot_pose)
 
     def start_backend(self, index: int):
-        if self._configs[index].camera_config.apriltags_enable:
-            apriltag_worker_in = queue.Queue(maxsize=1)
-            apriltag_worker_out = queue.Queue(maxsize=1)
-            apriltag_work = threading.Thread(
-                target=apriltag_worker,
-                args=(apriltag_worker_in, apriltag_worker_out),
-                daemon=True,
-            )
-            apriltag_work.start()
-
-        if self._configs[index].camera_config.objdetect_enable:
-            objdetect_worker_in = queue.Queue(maxsize=1)
-            objdetect_worker_out = queue.Queue(maxsize=1)
-            objdetect_work = threading.Thread(
-                target=objdetect_worker,
-                args=(objdetect_worker_in, objdetect_worker_out),
-                daemon=True,
-            )
-            objdetect_work.start()
-
-        output_publisher: OutputPublisher = NTOutputPublisher()
+        was_apriltag = False
+        was_obj_detect = False
         calib_session = CalibrationSession()
         video_writer: VideoWriter = FFmpegVideoWriter()
         apriltags_frame_count = 0
@@ -197,86 +215,100 @@ class Wrapper:
         last_objdetect_observations: List[ObjDetectObservation] = []
         video_frame_cache: List[cv2.Mat] = []
         while True:
-            self._configs[index].remote_config_source.update(self._configs[index], self.local_config)
-            success, image = self._capture.get_frame(self._configs[index])
+            config = self._configs[index]
+            config.remote_config_source.update(config, self.local_config)
+            success, image = self._capture.get_frame(config)
             timestamp = time.time()
+            fpga_timestamp = time.clock_gettime_ns(time.CLOCK_MONOTONIC) // 1000
 
             # Start and stop recording
             should_record = (
                 success
                 and self.local_config.should_record
-                and self._configs[index].remote_config.is_recording
-                and self._configs[index].camera_config.camera_resolution_width > 0
-                and self._configs[index].camera_config.camera_resolution_height > 0
-                and self._configs[index].remote_config.timestamp > 0
+                and config.remote_config.is_recording
+                and config.camera_config.camera_resolution_width > 0
+                and config.camera_config.camera_resolution_height > 0
+                and config.remote_config.timestamp > 0
             )
             if should_record and not was_recording:
                 print("Starting recording")
-                video_writer.start(self._configs[index], self.local_config, len(image.shape) == 2)
+                video_writer.start(config, self.local_config, len(image.shape) == 2)
             elif not should_record and was_recording:
                 print("Stopping recording")
                 video_writer.stop()
             was_recording = should_record
 
-            # Exit if no frame
             if not success:
                 print("No frame available")
                 continue
 
-            if self._configs[index].camera_config.driverCam_enable:
+            if config.camera_config.driverCam_enable:
                 if not was_streaming:
                     cs = CameraServer.putVideo(
-                        "Driver Cam " + self._configs[index].camera_config.camera_name, 
-                        self._configs[index].camera_config.camera_resolution_width, 
-                        self._configs[index].camera_config.camera_resolution_height
+                        "Driver Cam " + config.camera_config.camera_name, 
+                        config.camera_config.camera_resolution_width, 
+                        config.camera_config.camera_resolution_height
                     )
+                    was_streaming = True
                 
-                processed_frame = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-                processed_frame = cv2.cvtColor(processed_frame, cv2.COLOR_GRAY2BGR)
-                cs.putFrame(processed_frame)
+                # processed_frame = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+                # processed_frame = cv2.cvtColor(processed_frame, cv2.COLOR_GRAY2BGR)
+                cs.putFrame(image)
 
-            if self._configs[index].camera_config.is_calibrating:
+            if config.camera_config.is_calibrating:
                 # Calibration mode
                 was_calibrating = True
                 calib_session.process_frame(image)
                 with self.frame_lock:
-                    self.latest_frames[index] = image.copy()
+                    self.latest_frames[index] = image
 
             elif was_calibrating:
                 # Just finished calibration, save results
-                print("Saving calibration")
                 with self.calib_lock:
-                    self.calib_done = calib_session.finish(self._configs[index].camera_config.camera_id)
+                    self.calib_done = calib_session.finish(config.camera_config.camera_id)
                 if self.calib_done:
-                    self._configs[index].camera_config_source.update(self._configs[index])
+                    config.camera_config_source.update(config)
                     was_calibrating = False
                 else:
                     was_calibrating = False
                     with self.calib_lock:
                         self.calib_done = None
 
-            elif self._configs[index].camera_config.has_calibration:
+            elif config.camera_config.has_calibration:
                 # AprilTag pipeline
-                if self._configs[index].camera_config.apriltags_enable:
+                if config.camera_config.apriltags_enable:
+                    if not was_apriltag:
+                        apriltag_worker_in = queue.Queue(maxsize=1)
+                        apriltag_worker_out = queue.Queue(maxsize=1)
+                        apriltag_work = threading.Thread(
+                            target=apriltag_worker,
+                            args=(apriltag_worker_in, apriltag_worker_out),
+                            daemon=True,
+                        )
+                        apriltag_work.start()
+                        was_apriltag = True
+
                     try:
-                        apriltag_worker_in.put((timestamp, image, self._configs[index], self.local_config), block=False)
+                        apriltag_worker_in.put((timestamp, image, config, self.local_config), block=False)
                     except:  # No space in queue
                         pass
+                    
                     try:
                         (
                             timestamp_out,
                             image_observations,
                             pose_observation,
-                            tag_angle_observations,
-                            demo_pose_observation,
                         ) = apriltag_worker_out.get(block=False)
                     except:  # No new frames
                         pass
+                    
                     else:
-                        # Publish observation
-                        # output_publisher.send_apriltag_observation(
-                        #     config, timestamp_out, pose_observation, tag_angle_observations, demo_pose_observation
-                        # )
+                        # Store output
+                        self.pose_queue.put_overwrite(TimestampedObservation(
+                            pose_observation,
+                            fpga_timestamp,
+                            index
+                        ))
 
                         # Store last observations
                         last_image_observations = image_observations
@@ -285,7 +317,6 @@ class Wrapper:
                         apriltags_frame_count += 1
                         if time.time() - apriltags_last_print > 1:
                             apriltags_last_print = time.time()
-                            print("Running AprilTag pipeline at", apriltags_frame_count, "fps")
                             with self.apriltag_lock:
                                 self.output_apriltag[index] = ApriltagOutput(
                                     fps=apriltags_frame_count,
@@ -294,21 +325,34 @@ class Wrapper:
                             apriltags_frame_count = 0
 
                 # Object detection pipeline
-                if self._configs[index].camera_config.objdetect_enable:
+                if config.camera_config.objdetect_enable:
+                    if not was_obj_detect:
+                        objdetect_worker_in = queue.Queue(maxsize=1)
+                        objdetect_worker_out = queue.Queue(maxsize=1)
+                        objdetect_work = threading.Thread(
+                            target=objdetect_worker,
+                            args=(objdetect_worker_in, objdetect_worker_out),
+                            daemon=True,
+                        )
+                        objdetect_work.start()
+                        was_obj_detect = True
+
                     # Apply FPS limit for object detection
                     if self.local_config.obj_detect_max_fps < 0 or (timestamp - objdetect_last_frame_time) >= (1.0 / self.local_config.obj_detect_max_fps):
                         objdetect_last_frame_time = timestamp
                         try:
-                            objdetect_worker_in.put((timestamp, image, self._configs[index], self.local_config), block=False)
+                            objdetect_worker_in.put((timestamp, image, config, self.local_config), block=False)
                         except:  # No space in queue
                             pass
+
                     try:
                         timestamp_out, observations = objdetect_worker_out.get(block=False)
                     except:  # No new frames
                         pass
+
                     else:
                         # Publish observation
-                        output_publisher.send_objdetect_observation(self.local_config, timestamp_out, observations)
+                        self.output_publisher.send_objdetect_observation(self.local_config, timestamp_out, observations)
 
                         # Store last observations
                         last_objdetect_observations = observations
@@ -317,13 +361,12 @@ class Wrapper:
                         objdetect_frame_count += 1
                         if time.time() - objdetect_last_print > 1:
                             objdetect_last_print = time.time()
-                            print("Running object detection pipeline at", objdetect_frame_count, "fps")
                             with self.obj_lock:
                                 self.output_objdetect[index] = ObjDetectionOutput(
                                     fps=objdetect_frame_count,
                                     observations=observations
                                 )
-                            output_publisher.send_objdetect_fps(self.local_config, timestamp, objdetect_frame_count)
+                            self.output_publisher.send_objdetect_fps(self.local_config, timestamp, objdetect_frame_count)
                             objdetect_frame_count = 0
 
                 # Save frame to video
@@ -337,17 +380,18 @@ class Wrapper:
                 else:
                     video_frame_cache = []
 
-            if (self._configs[index].camera_config.process_frames_enable 
-                and (self._configs[index].camera_config.apriltags_enable or self._configs[index].camera_config.objdetect_enable)
-                and self._configs[index].camera_config.has_calibration):
-                img: cv2.Mat = image.copy()
-                if self._configs[index].camera_config.apriltags_enable:
-                    [overlay_obj_detect_observation(img, x) for x in last_image_observations]
-                if self._configs[index].camera_config.objdetect_enable:
+            if (config.camera_config.process_frames_enable 
+                and config.camera_config.has_calibration
+                and (config.camera_config.apriltags_enable 
+                     or config.camera_config.objdetect_enable)):
+                img: cv2.Mat = image
+                if config.camera_config.apriltags_enable:
+                    [overlay_image_observation(img, x) for x in last_image_observations]
+                if config.camera_config.objdetect_enable:
                     [overlay_obj_detect_observation(img, x) for x in last_objdetect_observations]
                     
                 with self.frame_lock:
-                    self.latest_frames[index] = img.copy()
+                    self.latest_frames[index] = img
             else:
                 with self.frame_lock:
-                    self.latest_frames[index] = image.copy()
+                    self.latest_frames[index] = image

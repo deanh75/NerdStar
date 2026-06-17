@@ -13,6 +13,7 @@
     "objdetect_enable": false,
     "driverCam_enable": false,
     "process_frames_enable": false,
+    "camera_offset": null,
     "has_calibration": false,
     "camera_matrix": null,
     "distortion_coefficients": null

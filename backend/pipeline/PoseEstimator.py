@@ -6,7 +6,7 @@ from typing import Union
 
 import cv2
 import numpy
-from backend.config.config import ConfigStore
+from backend.config.config import ConfigStore, LocalConfig
 from backend.pipeline.coordinate_systems import openCvPoseToWpilib
 from backend.vision_types import FiducialImageObservation, FiducialPoseObservation
 
@@ -16,7 +16,7 @@ class PoseEstimator:
         raise NotImplementedError
 
     def solve_fiducial_pose(
-        self, image_observation: FiducialImageObservation, config_store: ConfigStore
+        self, image_observation: FiducialImageObservation, config_store: ConfigStore, local_store: LocalConfig
     ) -> Union[FiducialPoseObservation, None]:
         raise NotImplementedError
 
@@ -26,9 +26,9 @@ class SquareTargetPoseEstimator(PoseEstimator):
         pass
 
     def solve_fiducial_pose(
-        self, image_observation: FiducialImageObservation, config_store: ConfigStore
+        self, image_observation: FiducialImageObservation, config_store: ConfigStore, local_store: LocalConfig
     ) -> Union[FiducialPoseObservation, None]:
-        fid_size = config_store.remote_config.fiducial_size_m
+        fid_size = local_store.fiducial_size_m
         object_points = numpy.array(
             [
                 [-fid_size / 2.0, fid_size / 2.0, 0.0],
@@ -42,8 +42,8 @@ class SquareTargetPoseEstimator(PoseEstimator):
             _, rvecs, tvecs, errors = cv2.solvePnPGeneric(
                 object_points,
                 image_observation.corners,
-                config_store.local_config.camera_matrix,
-                config_store.local_config.distortion_coefficients,
+                config_store.camera_config.camera_matrix,
+                config_store.camera_config.distortion_coefficients,
                 flags=cv2.SOLVEPNP_IPPE_SQUARE,
             )
         except:

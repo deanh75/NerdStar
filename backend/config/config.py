@@ -8,6 +8,8 @@ import numpy
 import numpy.typing
 import json
 
+from wpimath.geometry import Pose3d
+
 from backend.config import ConfigSource
 
 
@@ -46,6 +48,7 @@ class CameraConfig:
     objdetect_enable: bool = False
     driverCam_enable: bool = False
     process_frames_enable: bool = False
+    camera_offset: Pose3d = Pose3d
     is_calibrating: bool = False
     has_calibration: bool = False
     camera_matrix: numpy.typing.NDArray[numpy.float64] = None

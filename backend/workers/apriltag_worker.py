@@ -9,11 +9,7 @@ import cv2
 from backend.config.config import ConfigStore, LocalConfig
 from backend.pipeline.CameraPoseEstimator import MultiTargetCameraPoseEstimator
 from backend.pipeline.FiducialDetector import ArucoFiducialDetector
-from backend.pipeline.PoseEstimator import SquareTargetPoseEstimator
-from backend.pipeline.TagAngleCalculator import CameraMatrixTagAngleCalculator
-from backend.vision_types import CameraPoseObservation, FiducialImageObservation, FiducialPoseObservation, TagAngleObservation
-
-DEMO_ID = 42
+from backend.vision_types import CameraPoseObservation, FiducialImageObservation
 
 
 def apriltag_worker(
@@ -23,15 +19,11 @@ def apriltag_worker(
             float,
             List[FiducialImageObservation],
             Union[CameraPoseObservation, None],
-            List[TagAngleObservation],
-            Union[FiducialPoseObservation, None],
         ]
     ],
 ):
     fiducial_detector = ArucoFiducialDetector(cv2.aruco.DICT_APRILTAG_36h11)
     camera_pose_estimator = MultiTargetCameraPoseEstimator()
-    tag_angle_calculator = CameraMatrixTagAngleCalculator()
-    tag_pose_estimator = SquareTargetPoseEstimator()
 
     while True:
         sample = q_in.get()
@@ -42,17 +34,9 @@ def apriltag_worker(
 
         image_observations = fiducial_detector.detect_fiducials(image, config)
         camera_pose_observation = camera_pose_estimator.solve_camera_pose(
-            [x for x in image_observations if x.tag_id != DEMO_ID], config, local_config
+            image_observations, config, local_config
         )
-        tag_angle_observations = [
-            tag_angle_calculator.calc_tag_angles(x, config) for x in image_observations if x.tag_id != DEMO_ID
-        ]
-        tag_angle_observations = [x for x in tag_angle_observations if x != None]
-        demo_image_observations = [x for x in image_observations if x.tag_id == DEMO_ID]
-        demo_pose_observation: Union[FiducialPoseObservation, None] = None
-        if len(demo_image_observations) > 0:
-            demo_pose_observation = tag_pose_estimator.solve_fiducial_pose(demo_image_observations[0], config)
 
         q_out.put(
-            (timestamp, image_observations, camera_pose_observation, tag_angle_observations, demo_pose_observation)
+            (timestamp, image_observations, camera_pose_observation)
         )

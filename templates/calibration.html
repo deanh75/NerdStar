@@ -126,6 +126,28 @@ endCalibBtn.addEventListener("click", function() {
     });
 });
 
+async function pollCalibrationStatus() {
+    while (polling) {
+        const res = await fetch('/get_calibration_status');
+        const data = await res.json();
+        if (!data.done) {
+            calibrationStatus.textContent = "Saving calibration...";
+        } else if (data.done == true) {
+            calibrationStatus.textContent = "Calibration saved!";
+            polling = false;
+            setTimeout(() => {
+                statusCard.style.display = "none"; // Hide it after 5s
+            }, 5000);
+        } else {
+            calibrationStatus.textContent = data.done;
+            polling = false;
+            setTimeout(() => {
+                statusCard.style.display = "none"; // Hide it after 5s
+            }, 5000);
+        }
+    }
+}
+
 async function startWebRTC() {
     const offer = await pc.createOffer();
 

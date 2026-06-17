@@ -72,6 +72,8 @@ class FileConfigSource(ConfigSource):
                 config_store.camera_config.objdetect_enable = cam_config_data["objdetect_enable"]
                 config_store.camera_config.driverCam_enable = cam_config_data["driverCam_enable"]
                 config_store.camera_config.process_frames_enable = cam_config_data["process_frames_enable"]
+                if cam_config_data["camera_offset"] is not None :
+                    config_store.camera_config.camera_offset = cam_config_data["camera_offset"]
 
             with open(self._cam_config_filename, "w") as cam_config_file:
                 json.dump(cam_config_data, cam_config_file, indent=4)

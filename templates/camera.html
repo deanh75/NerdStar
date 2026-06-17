@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block head %}
+    <script src="/static/cviz-component.js?v=2" defer></script>
+{% endblock %}
+
 {% block content %}
 <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 20px; width: 100%;">
 
@@ -152,6 +156,13 @@
                 <span>Objects Detected: <span id="objectDetectionObjects">0</span></span>
             </div>
         </div>
+    </div>
+
+    <div class="row" style="width: 100%;">
+        <cam-viz></cam-viz>
+        <!-- <div class="card" style="flex:1;">
+            <cam-viz></cam-viz>
+        </div> -->
     </div>
 </div>
 
@@ -327,18 +338,21 @@ function tagConnect() {
 
 function tagRender() {
     if (latestTagData.fps !== undefined) {
-        tagFPS.textContent = latestTagData.fps ? latestTagData.fps : "No FPS Data";
-        if (latestTagData.pose_estimation) {
-            tagIDs.textContent = latestTagData.pose_observation.tag_ids.length > 0 ? latestTagData.pose_observation.tag_ids.join(", ")
-                : "No Tags Detected";
-            if (latestTagData.pose_observation.pose_1) {
+        const { fps, pose_observation } = latestTagData;
+        const { tag_ids, pose_0, pose_1 } = pose_observation ?? {};
+
+        tagFPS.textContent = fps ? fps : "No FPS Data";
+
+        if (pose_observation) {
+            tagIDs.textContent = tag_ids.length > 0 ? tag_ids.join(", ") : "No Tags Detected";
+
+            if (pose_1) {
                 tagMethod.textContent = "Single Tag Pose Estimation";
-                tagPose.textContent = `x: ${latestTagData.pose_observation.pose_0.x}, 
-                    y: ${latestTagData.pose_observation.pose_1.y}, z: ${latestTagData.pose_observation.pose_1.z}`;
+                tagPose.textContent = `x0: ${pose_0.x}, y0: ${pose_0.y}, z0: ${pose_0.z},
+                    x1: ${pose_1.x}, y1: ${pose_1.y}, z1: ${pose_1.z}`;
             } else {
                 tagMethod.textContent = "Multi Tag Pose Estimation";
-                tagPose.textContent = `x: ${latestTagData.pose_observation.pose_0.x}, 
-                    y: ${latestTagData.pose_observation.pose_0.y}, z: ${latestTagData.pose_observation.pose_0.z}`;
+                tagPose.textContent = `x: ${pose_0.x}, y: ${pose_0.y}, z: ${pose_0.z}`;
             }
         } else {
             tagIDs.textContent = "No Tags Detected";
@@ -365,8 +379,10 @@ function objConnect() {
 
 function objRender() {
     if (latestObjData.fps !== undefined) {
-        objectDetectionFPS.textContent = latestObjData.fps ? latestObjData.fps : "No FPS Data";
-        objectDetectionLen.textContent = latestObjData.observation_num ? latestObjData.observation_num : "No Objects Detected";
+        const {fps, observation_num} = latestObjData;
+
+        objectDetectionFPS.textContent = fps ? fps : "No FPS Data";
+        objectDetectionLen.textContent = observation_num > 0 ? observation_num : "No Objects Detected";
     } else {
         objectDetectionFPS.textContent = "No FPS Data";
         objectDetectionLen.textContent = "No Objects Detected";
@@ -466,7 +482,6 @@ resolutionDropdown.addEventListener("change", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("DOM loaded");
     const index = dropdown.value;
     const name = dropdown.options[dropdown.selectedIndex].text;
     loadSettings(index);

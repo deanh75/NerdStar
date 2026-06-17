@@ -7,7 +7,7 @@ from typing import Union
 
 import cv2
 import numpy as np
-from backend.config.config import ConfigStore
+from backend.config.config import ConfigStore, LocalConfig
 from backend.pipeline.PoseEstimator import SquareTargetPoseEstimator
 from backend.vision_types import FiducialImageObservation, FiducialPoseObservation, TagAngleObservation
 
@@ -17,7 +17,7 @@ class TagAngleCalculator:
         raise NotImplementedError
 
     def calc_tag_angles(
-        self, image_observation: FiducialImageObservation, config_store: ConfigStore
+        self, image_observation: FiducialImageObservation, config_store: ConfigStore, local_store: LocalConfig
     ) -> Union[TagAngleObservation, None]:
         raise NotImplementedError
 
@@ -29,21 +29,21 @@ class CameraMatrixTagAngleCalculator(TagAngleCalculator):
         pass
 
     def calc_tag_angles(
-        self, image_observation: FiducialImageObservation, config_store: ConfigStore
+        self, image_observation: FiducialImageObservation, config_store: ConfigStore, local_store: LocalConfig
     ) -> Union[TagAngleObservation, None]:
         # Undistort corners
         corners_undistorted = cv2.undistortPoints(
             image_observation.corners,
-            config_store.local_config.camera_matrix,
-            config_store.local_config.distortion_coefficients,
+            config_store.camera_config.camera_matrix,
+            config_store.camera_config.distortion_coefficients,
             None,
-            config_store.local_config.camera_matrix,
+            config_store.camera_config.camera_matrix,
         )
 
         # Calculate angles
         corners = np.zeros((4, 2))
         for index, corner in enumerate(corners_undistorted):
-            vec = np.linalg.inv(config_store.local_config.camera_matrix).dot(
+            vec = np.linalg.inv(config_store.camera_config.camera_matrix).dot(
                 np.array([corner[0][0], corner[0][1], 1]).T
             )
             corners[index][0] = math.atan(vec[0])
@@ -51,7 +51,7 @@ class CameraMatrixTagAngleCalculator(TagAngleCalculator):
 
         # Get distance
         pose_observation: FiducialPoseObservation = self._tag_pose_estimator.solve_fiducial_pose(
-            image_observation, config_store
+            image_observation, config_store, local_store
         )
         if pose_observation == None:
             return None
