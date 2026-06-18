@@ -20,30 +20,31 @@ class ConfigSource:
 
 class LocalConfigSource(ConfigSource):
     def __init__(self) -> None:
-        self._mac_config_filename = "backend/data/mac.json"
+        self._local_config_filename = "backend/data/local.json"
         pass
 
     def update(self, local_config: LocalConfig) -> None:
-        with open(self._mac_config_filename, "r") as mac_config_file:
-            mac_config_data = json.loads(mac_config_file.read())
-            local_config.device_id = mac_config_data["device_id"]
-            local_config.team_number = mac_config_data["team_number"]
-            local_config.obj_detect_model = mac_config_data["obj_detect_model"]
-            local_config.obj_detect_max_fps = mac_config_data["obj_detect_max_fps"]
-            local_config.video_folder = mac_config_data["video_folder"]
-            local_config.video_framerate = mac_config_data["video_framerate"]
-            local_config.fiducial_size_m = mac_config_data["fiducial_size_m"]
-            local_config.should_record = mac_config_data["should_record"]
-            local_config.tag_layout_name = mac_config_data["tag_layout_name"]
+        with open(self._local_config_filename, "r") as local_config_file:
+            local_config_data = json.loads(local_config_file.read())
+            local_config.device_id = local_config_data["device_id"]
+            local_config.team_number = local_config_data["team_number"]
+            local_config.obj_detect_model = local_config_data["obj_detect_model"]
+            local_config.obj_detect_max_fps = local_config_data["obj_detect_max_fps"]
+            local_config.video_folder = local_config_data["video_folder"]
+            local_config.video_framerate = local_config_data["video_framerate"]
+            local_config.fiducial_size_m = local_config_data["fiducial_size_m"]
+            local_config.should_record = local_config_data["should_record"]
+            local_config.tag_layout_name = local_config_data["tag_layout_name"]
             local_config.load_tag_layout()
+            local_config.robot_size = local_config_data["robot_size"]
 
     def save(self, obj: str, value) -> None:
-        with open(self._mac_config_filename, "r") as mac_config_file:
-            mac_config_data = json.loads(mac_config_file.read())
-            mac_config_data[obj] = value
+        with open(self._local_config_filename, "r") as local_config_file:
+            local_config_data = json.loads(local_config_file.read())
+            local_config_data[obj] = value
 
-        with open(self._mac_config_filename, "w") as mac_config_file:
-            json.dump(mac_config_data, mac_config_file, indent=4)
+        with open(self._local_config_filename, "w") as local_config_file:
+            json.dump(local_config_data, local_config_file, indent=4)
 
 class FileConfigSource(ConfigSource):
     def __init__(self, cam_id: str) -> None:
@@ -72,8 +73,8 @@ class FileConfigSource(ConfigSource):
                 config_store.camera_config.objdetect_enable = cam_config_data["objdetect_enable"]
                 config_store.camera_config.driverCam_enable = cam_config_data["driverCam_enable"]
                 config_store.camera_config.process_frames_enable = cam_config_data["process_frames_enable"]
-                if cam_config_data["camera_offset"] is not None :
-                    config_store.camera_config.camera_offset = cam_config_data["camera_offset"]
+                if cam_config_data["camera_transform"] is not None :
+                    config_store.camera_config.camera_transform = cam_config_data["camera_transform"]
 
             with open(self._cam_config_filename, "w") as cam_config_file:
                 json.dump(cam_config_data, cam_config_file, indent=4)

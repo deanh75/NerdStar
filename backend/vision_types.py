@@ -72,8 +72,8 @@ class ObjDetectObservation:
 @dataclass
 class TimestampedObservation:
     observation: CameraPoseObservation
+    camera_transform: Pose3d
     timestamp: int
-    index: int
 
 @dataclass
 class PoseEstimate:
@@ -82,7 +82,6 @@ class PoseEstimate:
     theta_std_dev: float
 
 @make_wpistruct(name="RobotPoseEstimation")
-@dataclass(frozen=True)
 class RobotPoseEstimation:
     pose: Pose2d
     timestamp: int

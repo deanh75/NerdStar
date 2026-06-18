@@ -3,7 +3,7 @@
 # the root directory of this project.
 
 import numpy as np
-from wpimath.geometry import Pose3d, Quaternion, Rotation2d, Rotation3d, Transform3d, Translation3d
+from wpimath.geometry import Pose3d, Quaternion, Rotation3d, Transform3d, Translation3d
 
 from backend.config.config import LocalConfig
 from backend.vision_types import CameraPoseObservation, PoseEstimate, RobotPoseEstimation
@@ -19,7 +19,7 @@ class RobotPoseEstimator:
         self.z_min = z_min
         self.z_max = z_max
 
-        self.final_robot_pose: PoseEstimate | None = None
+        self.final_robot_pose: RobotPoseEstimation | None = None
     
     @staticmethod
     def _to_transform3d(pose: Pose3d) -> Transform3d:

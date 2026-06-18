@@ -8,7 +8,7 @@ import numpy
 import numpy.typing
 import json
 
-from wpimath.geometry import Pose3d
+from wpimath.geometry import Pose3d, Translation3d
 
 from backend.config import ConfigSource
 
@@ -25,6 +25,7 @@ class LocalConfig:
     tag_layout_name: str = ""
     tag_layout: any = None
     should_record: bool = False
+    robot_size: Translation3d = Translation3d()
 
     def load_tag_layout(self):
         if self.tag_layout_name:
@@ -48,7 +49,7 @@ class CameraConfig:
     objdetect_enable: bool = False
     driverCam_enable: bool = False
     process_frames_enable: bool = False
-    camera_offset: Pose3d = Pose3d
+    camera_transform: Pose3d = Pose3d
     is_calibrating: bool = False
     has_calibration: bool = False
     camera_matrix: numpy.typing.NDArray[numpy.float64] = None

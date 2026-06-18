@@ -64,10 +64,7 @@ class Wrapper:
 
     def setup_nt(self):
         team_number = self.local_config.team_number
-        am = team_number % 100
-        te = team_number // 100
-        ip = f"10.{te}.{am}.2"
-        self._nt.setServer(ip)
+        self._nt.setServerTeam(team_number)
         self._nt.startClient4(self.local_config.device_id)
 
     def restart_nt(self):
@@ -170,33 +167,33 @@ class Wrapper:
                     return self.output_objdetect[index].to_dict()
         return {}
     
-    # def estimate(self, estimator: RobotPoseEstimator):
-    #     while True:
-    #         # Block until at least one observation arrives
-    #         first = self.pose_queue.get()
+    def estimate(self, estimator: RobotPoseEstimator):
+        while True:
+            # Block until at least one observation arrives
+            first = self.pose_queue.get()
 
-    #         # Drain everything else currently in the queue
-    #         pending = [first]
-    #         while not self.pose_queue.empty():
-    #             pending.append(self.pose_queue.get_nowait())
+            # Drain everything else currently in the queue
+            pending = [first]
+            while not self.pose_queue.empty():
+                pending.append(self.pose_queue.get_nowait())
 
-    #         # Group by exact timestamp
-    #         by_timestamp: dict[int, list[TimestampedObservation]] = defaultdict(list)
-    #         for p in pending:
-    #             by_timestamp[p.timestamp].append(p)
+            # Group by exact timestamp
+            by_timestamp: dict[int, list[TimestampedObservation]] = defaultdict(list)
+            for p in pending:
+                by_timestamp[p.timestamp].append(p)
 
-    #         # Process each timestamp group in chronological order
-    #         for timestamp in sorted(by_timestamp.keys()):
-    #             group = by_timestamp[timestamp]
+            # Process each timestamp group in chronological order
+            for timestamp in sorted(by_timestamp.keys()):
+                group = by_timestamp[timestamp]
 
-    #             estimator.update(
-    #                 observations=[p.observation for p in group],
-    #                 camera_transforms=[p.camera_transform for p in group],
-    #                 timestamp=timestamp,
-    #             )
+                estimator.update(
+                    observations=[p.observation for p in group],
+                    camera_transforms=[p.camera_transform for p in group],
+                    timestamp=timestamp,
+                )
 
-    #             if estimator.final_robot_pose is not None:
-    #                 self.output_publisher.send_pose_estimation(estimator.final_robot_pose)
+                if estimator.get_last_pose() is not None:
+                    self.output_publisher.send_pose_estimation(self.local_config, estimator.get_last_pose())
 
     def start_backend(self, index: int):
         was_apriltag = False
@@ -219,7 +216,8 @@ class Wrapper:
             config.remote_config_source.update(config, self.local_config)
             success, image = self._capture.get_frame(config)
             timestamp = time.time()
-            fpga_timestamp = time.clock_gettime_ns(time.CLOCK_MONOTONIC) // 1000
+            # fpga_timestamp = time.clock_gettime_ns(time.CLOCK_MONOTONIC) // 1000
+            fpga_timestamp = time.get_clock_info('monotonic') // 1000
 
             # Start and stop recording
             should_record = (
@@ -306,8 +304,8 @@ class Wrapper:
                         # Store output
                         self.pose_queue.put_overwrite(TimestampedObservation(
                             pose_observation,
-                            fpga_timestamp,
-                            index
+                            config.camera_config.camera_transform,
+                            fpga_timestamp
                         ))
 
                         # Store last observations

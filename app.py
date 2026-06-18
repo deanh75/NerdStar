@@ -1,10 +1,13 @@
+# Use of this source code is governed by an MIT-style
+# license that can be found in the LICENSE file at
+# the root directory of this project.
+
 import asyncio
 import subprocess
 import atexit
 import os
 import threading
 import time
-import json
 
 from fastapi import FastAPI, Query, Request, Form, UploadFile, File, WebSocket, WebSocketDisconnect
 from fastapi.responses import JSONResponse
@@ -13,6 +16,7 @@ from fastapi.templating import Jinja2Templates
 import uvicorn
 from aiortc import RTCPeerConnection, RTCSessionDescription
 from backend.CameraTrack import CameraTrack
+from backend.pipeline.RobotPoseEstimator import RobotPoseEstimator
 from backend.wrapper import Wrapper
 
 app = FastAPI()
@@ -34,9 +38,13 @@ def initialize():
     if not init:
         cameras = wrapper.get_cameras()
         selected_camera = cameras[0] if cameras else None
+        estimator = RobotPoseEstimator(wrapper.local_config)
         
         for i in range(len(cameras)):
             threading.Thread(target=wrapper.start_backend, args=(i,), daemon=True).start()
+
+        threading.Thread(target=wrapper.estimate, args=(estimator,), daemon=True).start()
+
         init = True
 
 @app.get("/")

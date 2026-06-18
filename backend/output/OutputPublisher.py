@@ -30,6 +30,7 @@ class NTOutputPublisher(OutputPublisher):
     _observations_pub: ntcore.DoubleArrayPublisher
     _objdetect_fps_pub: ntcore.IntegerPublisher
     _objdetect_observations_pub: ntcore.DoubleArrayPublisher
+    _ctre_time_sub: ntcore.DoubleSubscriber
 
     def _check_init(self, local_config: LocalConfig):
         # Initialize publishers on first call
@@ -46,6 +47,7 @@ class NTOutputPublisher(OutputPublisher):
             self._objdetect_observations_pub = nt_table.getDoubleArrayTopic("objdetect_observations").publish(
                 ntcore.PubSubOptions(periodic=0.01, sendAll=True, keepDuplicates=True)
             )
+            self._ctre_time_sub = nt_table.getDoubleTopic("ctre_time").subscribe(0.0)
 
     def send_pose_estimation(self, local_config: LocalConfig, pose: RobotPoseEstimation) -> None:
         self._check_init(local_config)

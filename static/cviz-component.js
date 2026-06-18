@@ -4,8 +4,6 @@ class CamViz extends HTMLElement {
         this.style.width = '100%';
         this.style.height = 'auto';
 
-        console.log('CamViz connectedCallback firing');
-
         this.innerHTML = `
             <!-- Panel -->
             <aside class="panel">
@@ -133,9 +131,7 @@ class CamViz extends HTMLElement {
             }
 
             loadThree(function(T) {
-                console.log('Three loaded, T =', T);
                 const canvas = document.getElementById('cv-canvas');
-                console.log('canvas element:', canvas);
                 const vpEl = document.getElementById('cv-vp');
                 const readout = document.getElementById('cv-readout');
                 const NEON = 0x39FF14;
@@ -427,7 +423,6 @@ class CamViz extends HTMLElement {
                 function resize() {
                     const w = vpEl.clientWidth; 
                     const h = vpEl.clientHeight;
-                    console.log('resize:', w, h, vpEl.getBoundingClientRect());
                     if (!w || !h) return;
                     renderer.setSize(w, h, false);
                     vcam.aspect = w / h;
