@@ -140,10 +140,33 @@ class Wrapper:
             "camera_gain": 0
         }
     
-    def get_config_value(self, index: int, obj: str):
+    def get_cviz_settings(self, index: int):
         if 0 <= index < len(self._configs):
-            return getattr(self._configs[index].camera_config, obj, None)
-        return None
+            config = self._configs[index].camera_config
+            return {
+                "robot_length_x": self.local_config.robot_size.X,
+                "robot_width_y": self.local_config.robot_size.Y,
+                "robot_height_z": self.local_config.robot_size.Z,
+                "camera_fwd_x": config.camera_transform.X,
+                "camera_right_y": config.camera_transform.Y,
+                "camera_up_z": config.camera_transform.Z,
+                "camera_yaw": config.camera_transform.rotation().z_degrees,
+                "camera_pitch": config.camera_transform.rotation().y_degrees,
+                "camera_roll": config.camera_transform.rotation().x_degrees,
+                "camera_horiz_fov": config.camera_horiz_fov
+            }
+        return {
+            "robot_length_x": 0.86,
+            "robot_width_y": 0.86,
+            "robot_height_z": 0.25,
+            "camera_fwd_x": 0.30,
+            "camera_right_y": 0.0,
+            "camera_up_z": 0.05,
+            "camera_yaw": 0,
+            "camera_pitch": 0,
+            "camera_roll": 0,
+            "camera_horiz_fov": 70
+        }
     
     def get_done(self):
         with self.calib_lock:
@@ -169,7 +192,6 @@ class Wrapper:
     
     def estimate(self, estimator: RobotPoseEstimator):
         while True:
-            # Block until at least one observation arrives
             first = self.pose_queue.get()
 
             # Drain everything else currently in the queue
@@ -216,9 +238,7 @@ class Wrapper:
             config.remote_config_source.update(config, self.local_config)
             success, image = self._capture.get_frame(config)
             timestamp = time.time()
-            # fpga_timestamp = time.clock_gettime_ns(time.CLOCK_MONOTONIC) // 1000
-            fpga_timestamp = time.get_clock_info('monotonic') // 1000
-
+    
             # Start and stop recording
             should_record = (
                 success
@@ -305,7 +325,7 @@ class Wrapper:
                         self.pose_queue.put_overwrite(TimestampedObservation(
                             pose_observation,
                             config.camera_config.camera_transform,
-                            fpga_timestamp
+                            timestamp
                         ))
 
                         # Store last observations

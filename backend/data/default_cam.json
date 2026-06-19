@@ -14,6 +14,7 @@
     "driverCam_enable": false,
     "process_frames_enable": false,
     "camera_transform": null,
+    "camera_horiz_fov": 70,
     "has_calibration": false,
     "camera_matrix": null,
     "distortion_coefficients": null

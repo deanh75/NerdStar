@@ -111,6 +111,11 @@ def get_camera_settings(index: int = Query(...)):
     print(f"Getting settings for camera: {index}")
     return wrapper.get_camera_settings(index)
 
+@app.get('/get_cviz_settings')
+def get_cviz_settings(index: int = Query(...)):
+    print(f"Getting cam-viz settings for camera: {index}")
+    return wrapper.get_cviz_settings(index)
+
 @app.post('/set_camera_setting')
 async def set_camera_setting(request: Request):
     data = await request.json()
@@ -178,12 +183,12 @@ def get_calibration_status():
 def settings(request: Request):
     return templates.TemplateResponse(request, "settings.html", {})
 
-@app.get('/get_mac_settings')
-def get_mac_settings():
+@app.get('/get_local_settings')
+def get_local_settings():
     return JSONResponse(wrapper.get_local_settings())
 
-@app.post('/set_mac_settings')
-async def set_mac_settings(request: Request):
+@app.post('/set_local_settings')
+async def set_local_settings(request: Request):
     data = await request.json()
     if not data:
         return JSONResponse({"success": False}, status_code=400)
@@ -210,7 +215,7 @@ def get_models():
 
 @app.post('/upload_tag_layout')
 async def upload_tag_layout(file: UploadFile = File(...)):
-    path = f"backend/data/layouts/{file.filename}" 
+    path = f"backend/data/layouts/{file.filename}"
 
     with open(path, "wb") as f:
         f.write(await file.read())

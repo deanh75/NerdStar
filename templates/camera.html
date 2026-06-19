@@ -159,13 +159,14 @@
     </div>
 
     <div class="row" style="width: 100%;">
-        <cam-viz></cam-viz>
+        <cam-viz id="camVizComponent"></cam-viz>
     </div>
 </div>
 
 <script>
 const dropdown = document.getElementById('cameraDropdown');
 const video = document.getElementById('cameraFeed');
+const camVizComponent = document.getElementById('camVizComponent');
 const pc = new RTCPeerConnection({
     iceServers: [{ urls: 'stun:stun.l.google.com:19302' }]
 });
@@ -173,7 +174,7 @@ const pc = new RTCPeerConnection({
 pc.addTransceiver('video', { direction: 'recvonly' });
 pc.ontrack = (event) => {
     video.srcObject = event.streams[0];
-}
+};
 
 async function startWebRTC() {
     const offer = await pc.createOffer();
@@ -297,6 +298,27 @@ async function loadSettings(index) {
     gainValue.value = data.camera_gain;
     wbValue.value = data.camera_white_balance;
     resolutionDropdown.value = data.camera_resolution_width + 'x' + data.camera_resolution_height;
+
+    const cvizRes = await fetch(`/get_cviz_settings?index=${index}`);
+    const cvizData = await cvizRes.json();
+    
+    // Update the cam-viz component with camera settings
+    if (camVizComponent && camVizComponent.updateFromSettings) {
+        const vizSettings = {
+            // Map camera settings to component dimensions
+            'length_x': cvizData.robot_length_x,
+            'width_y': cvizData.robot_width_y,
+            'height_z': cvizData.robot_height_z,
+            'fwd_x': cvizData.camera_fwd_x,
+            'right_y': cvizData.camera_right_y,
+            'up_z': cvizData.camera_up_z,
+            'yaw': cvizData.camera_yaw,
+            'pitch': cvizData.camera_pitch,
+            'roll': cvizData.camera_roll,
+            'horiz_fov': cvizData.camera_horiz_fov
+        };
+        camVizComponent.updateFromSettings(vizSettings);
+    }
 }
 
 function setTagState(state) {
@@ -371,7 +393,7 @@ function objConnect() {
 
     obj_ws.onmessage = (event) => {
         latestObjData = JSON.parse(event.data);
-    }
+    };
 }
 
 function objRender() {
@@ -407,11 +429,11 @@ Object.keys(toggles).forEach(key => {
 
 toggles.apriltags_enable.addEventListener("change", () => {
     setTagState(toggles.apriltags_enable.checked)
-})
+});
 
 toggles.objdetect_enable.addEventListener("change", () => {
     setObjState(toggles.objdetect_enable.checked)
-})
+});
 
 exposureValue.addEventListener("change", () => {
     fetch('/set_camera_setting', {
@@ -486,7 +508,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.querySelectorAll('input[type="number"]').forEach(input => {
     input.addEventListener('wheel', e => e.preventDefault());
-})
-
+});
 </script>
 {% endblock %}

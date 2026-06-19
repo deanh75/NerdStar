@@ -102,7 +102,7 @@ const tagLayoutFileInput = document.getElementById('tagLayoutFileInput');
 const shouldRecord = document.getElementById('should_record');
 
 function loadSettings() {
-    fetch(`/get_mac_settings`)
+    fetch(`/get_local_settings`)
         .then(res => res.json())
         .then(data => {
             teamNumber.value = data.team_number;
@@ -175,7 +175,7 @@ function loadTagLayouts() {
 }
 
 teamNumber.addEventListener('change', () => {
-    fetch('/set_mac_settings', {
+    fetch('/set_local_settings', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -193,7 +193,7 @@ teamNumber.addEventListener('change', () => {
 });
 
 deviceId.addEventListener('change', () => {
-    fetch('/set_mac_settings', {
+    fetch('/set_local_settings', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -211,7 +211,7 @@ deviceId.addEventListener('change', () => {
 });
 
 objDetectMaxFps.addEventListener('change', () => {
-    fetch('/set_mac_settings', {
+    fetch('/set_local_settings', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -224,7 +224,7 @@ objDetectMaxFps.addEventListener('change', () => {
 });
 
 modelDropdown.addEventListener('change', () => {
-    fetch('/set_mac_settings', {
+    fetch('/set_local_settings', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -255,7 +255,7 @@ objFileInput.addEventListener('change', (e) => {
 });
 
 videoFramerate.addEventListener('change', () => {
-    fetch('/set_mac_settings', {
+    fetch('/set_local_settings', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -268,7 +268,7 @@ videoFramerate.addEventListener('change', () => {
 });
 
 fiducialSizeM.addEventListener('change', () => {
-    fetch('/set_mac_settings', {
+    fetch('/set_local_settings', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -281,7 +281,7 @@ fiducialSizeM.addEventListener('change', () => {
 });
 
 tagLayoutDropdown.addEventListener('change', () => {
-    fetch('/set_mac_settings', {
+    fetch('/set_local_settings', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -312,7 +312,7 @@ tagLayoutFileInput.addEventListener('change', (e) => {
 });
 
 shouldRecord.addEventListener('change', () => {
-    fetch('/set_mac_settings', {
+    fetch('/set_local_settings', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

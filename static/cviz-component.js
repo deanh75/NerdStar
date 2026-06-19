@@ -317,7 +317,7 @@ class CamViz extends HTMLElement {
 
                     const pts = [
                     [-nW,-nH,n],[nW,-nH,n],[nW,nH,n],[-nW,nH,n],
-                    [-fW,-fH,f],[fW,-fH,f],[fW,fH,f],[-fW,fH,f],
+                    [-fW,-fH,f],[fW-fH,f],[fW,fH,f],[-fW,fH,f],
                     [0,0,0]
                     ];
                     const segs = [
@@ -342,7 +342,7 @@ class CamViz extends HTMLElement {
                     CG.add(fp);
 
                     // Far-plane corner brackets
-                    [[-fW,-fH],[fW,-fH],[fW,fH],[-fW,fH]].forEach(([cx,cy]) => {
+                    [[-fW,-fH],[fW-fH],[fW,fH],[-fW,fH]].forEach(([cx,cy]) => {
                     const mk = 0.065;
                     CG.add(new T.Line(
                         new T.BufferGeometry().setFromPoints([
@@ -357,6 +357,20 @@ class CamViz extends HTMLElement {
 
                 /* Read input value */
                 const gv = id => parseFloat(document.getElementById(id).value);
+
+                // Track previous values to only save when changed
+                const prevValues = {
+                    'cv-rl': null,
+                    'cv-rw': null,
+                    'cv-rh': null,
+                    'cv-tx': null,
+                    'cv-ty': null,
+                    'cv-tz': null,
+                    'cv-yaw': null,
+                    'cv-pitch': null,
+                    'cv-roll': null,
+                    'cv-fov': null
+                };
 
                 /* Main update */
                 function update() {
@@ -407,6 +421,68 @@ class CamViz extends HTMLElement {
                     readout.innerHTML =
                     `X:${fmt(tx)} &nbsp;Y:${fmt(ty)} &nbsp;Z:${fmt(tz)}<br>` +
                     `P:${pitch.toFixed(1)}° &nbsp;Yaw:${yaw.toFixed(1)}° &nbsp;R:${roll.toFixed(1)}°`;
+                    
+                    // Save only changed settings
+                    saveChangedSettings({
+                        'cv-rl': rl,
+                        'cv-rw': rw,
+                        'cv-rh': rh,
+                        'cv-tx': tx,
+                        'cv-ty': ty,
+                        'cv-tz': tz,
+                        'cv-yaw': yaw,
+                        'cv-pitch': pitch,
+                        'cv-roll': roll,
+                        'cv-fov': fov
+                    });
+                }
+
+                // Save only changed settings to appropriate endpoints
+                function saveChangedSettings(currentValues) {
+                    const changes = [];
+                    
+                    // Check each value for changes
+                    for (const [id, currentValue] of Object.entries(currentValues)) {
+                        if (prevValues[id] !== currentValue) {
+                            prevValues[id] = currentValue; // Update the stored value
+                            changes.push({ id, value: currentValue });
+                        }
+                    }
+                    
+                    // If there are changes, save them
+                    if (changes.length > 0) {
+                        const cameraIndex = document.getElementById('cameraDropdown')?.value || 0;
+                        
+                        changes.forEach(change => {
+                            const mapping = {
+                                // Robot settings -> /set_local_settings (from self.local_config in get_cviz_settings)
+                                'cv-rl': { endpoint: '/set_local_settings', key: 'robot_size.x' },
+                                'cv-rw': { endpoint: '/set_local_settings', key: 'robot_size.y' },
+                                'cv-rh': { endpoint: '/set_local_settings', key: 'robot_size.z' },
+                                // Camera settings -> /set_camera_setting (from config in get_cviz_settings)
+                                'cv-tx': { endpoint: '/set_camera_setting', key: 'camera_transform.x' },
+                                'cv-ty': { endpoint: '/set_camera_setting', key: 'camera_transform.y' },
+                                'cv-tz': { endpoint: '/set_camera_setting', key: 'camera_transform.z' },
+                                'cv-yaw': { endpoint: '/set_camera_setting', key: 'camera_transform.rotation().z_degrees' },
+                                'cv-pitch': { endpoint: '/set_camera_setting', key: 'camera_transform.rotation().y_degrees' },
+                                'cv-roll': { endpoint: '/set_camera_setting', key: 'camera_transform.rotation().x_degrees' },
+                                'cv-fov': { endpoint: '/set_camera_setting', key: 'camera_horiz_fov' }
+                            };
+                            
+                            const map = mapping[change.id];
+                            if (map) {
+                                const payload = map.endpoint === '/set_local_settings'
+                                    ? { key: map.key, value: change.value }
+                                    : { index: cameraIndex, key: map.key, value: change.value };
+                                
+                                fetch(map.endpoint, {
+                                    method: 'POST',
+                                    headers: { 'Content-Type': 'application/json' },
+                                    body: JSON.stringify(payload)
+                                }).catch(console.error);
+                            }
+                        });
+                    }
                 }
 
                 /* Bind inputs */
@@ -449,6 +525,56 @@ class CamViz extends HTMLElement {
                 (function loop() { requestAnimationFrame(loop); renderer.render(scene, vcam); })();
             });
         })();
+    }
+
+    // Public method to update component settings from outside
+    updateFromSettings(settings) {
+        // Map settings to component input IDs
+        const settingMap = {
+            // Robot dimensions
+            'length_x': ['cv-rl', 'cv-rl-n'],
+            'width_y': ['cv-rw', 'cv-rw-n'],
+            'height_z': ['cv-rh', 'cv-rh-n'],
+            
+            // Camera offset
+            'fwd_x': ['cv-tz', 'cv-tz-n'],
+            'right_y': ['cv-tx', 'cv-tx-n'],
+            'up_z': ['cv-ty', 'cv-ty-n'],
+            
+            // Rotation
+            'yaw': ['cv-yaw', 'cv-yaw-n'],
+            'pitch': ['cv-pitch', 'cv-pitch-n'],
+            'roll': ['cv-roll', 'cv-roll-n'],
+            
+            // Camera FOV
+            'horiz_fov': ['cv-fov', 'cv-fov-n']
+        };
+
+        // Update each setting if provided
+        for (const [key, [rangeId, numberId]] of Object.entries(settingMap)) {
+            if (settings[key] !== undefined && settings[key] !== null) {
+                const rangeInput = document.getElementById(rangeId);
+                const numberInput = document.getElementById(numberId);
+                
+                if (rangeInput && numberInput) {
+                    rangeInput.value = settings[key];
+                    numberInput.value = settings[key];
+                }
+            }
+        }
+        
+        // Trigger update to refresh the visualization
+        this.querySelector('.view-wrap') && this.updateBindings_();
+    }
+
+    // Helper method to trigger update (since update() is private in the IIFE)
+    updateBindings_() {
+        // We need to call the update function from the IIFE
+        // Since we can't access it directly, we'll trigger input events on all range inputs
+        const inputs = this.querySelectorAll('input[type="range"]');
+        inputs.forEach(input => {
+            input.dispatchEvent(new Event('input'));
+        });
     }
 }
 

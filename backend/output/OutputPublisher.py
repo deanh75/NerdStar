@@ -30,7 +30,8 @@ class NTOutputPublisher(OutputPublisher):
     _observations_pub: ntcore.DoubleArrayPublisher
     _objdetect_fps_pub: ntcore.IntegerPublisher
     _objdetect_observations_pub: ntcore.DoubleArrayPublisher
-    _ctre_time_sub: ntcore.DoubleSubscriber
+    _ctre_sub: ntcore.DoubleSubscriber
+    _offset: float = None
 
     def _check_init(self, local_config: LocalConfig):
         # Initialize publishers on first call
@@ -47,14 +48,28 @@ class NTOutputPublisher(OutputPublisher):
             self._objdetect_observations_pub = nt_table.getDoubleArrayTopic("objdetect_observations").publish(
                 ntcore.PubSubOptions(periodic=0.01, sendAll=True, keepDuplicates=True)
             )
-            self._ctre_time_sub = nt_table.getDoubleTopic("ctre_time").subscribe(0.0)
+            self._ctre_sub = nt_table.getDoubleTopic("ctre_time").subscribe(0.0, 
+                ntcore.PubSubOptions(keepDuplicates=True, pollStorage=10))
 
     def send_pose_estimation(self, local_config: LocalConfig, pose: RobotPoseEstimation) -> None:
         self._check_init(local_config)
-        offset = self._nt.getServerTimeOffset()
-        if offset is None:
+        
+        for ts_val in self._ctre_sub.readQueue():
+            ctre_t = ts_val.value
+            tx_sys_t: float = ts_val.serverTime / 1e6
+
+            sample_offset = ctre_t - tx_sys_t
+
+            if self._offset is None:
+                self._offset = sample_offset
+            else:
+                # Exponential moving average to filter jitter
+                self._offset += 0.05 * (sample_offset - self._offset)
+
+        if self._offset is None:
             return
-        pose.timestamp = (pose.timestamp + offset) / 1e6
+
+        pose.timestamp += self._offset
         self._pose_pub.set(pose)
 
     def send_objdetect_fps(self, local_config: LocalConfig, timestamp: float, fps: int) -> None:
