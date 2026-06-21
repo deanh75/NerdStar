@@ -128,6 +128,18 @@ async def set_camera_setting(request: Request):
     success = wrapper.update_config(index, key, value)
     return JSONResponse({"success": success})
 
+@app.post('/set_cviz_setting')
+async def set_cviz_setting(request: Request):
+    data = await request.json()
+    if data.get('index') == '':
+        return JSONResponse({"success": False, "message": "No Cameras"}, status_code=400)
+    index = int(data.get('index'))
+    key = data.get('key')
+    value = data.get('value')
+
+    success = wrapper.update_cviz_config(index, key, value)
+    return JSONResponse({"success": success})
+
 @app.websocket("/ws/apriltag_data")
 async def apriltag_data(ws: WebSocket):
     await ws.accept()

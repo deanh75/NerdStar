@@ -2,7 +2,7 @@
 # license that can be found in the LICENSE file at
 # the root directory of this project.
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 import numpy
 import numpy.typing
@@ -25,7 +25,9 @@ class LocalConfig:
     tag_layout_name: str = ""
     tag_layout: any = None
     should_record: bool = False
-    robot_size: Translation3d = Translation3d(0.86, 0.86, 0.25)
+    robot_size_x: float = 0.86
+    robot_size_y: float = 0.86
+    robot_size_z: float = 0.25
 
     def load_tag_layout(self):
         if self.tag_layout_name:
@@ -49,7 +51,7 @@ class CameraConfig:
     objdetect_enable: bool = False
     driverCam_enable: bool = False
     process_frames_enable: bool = False
-    camera_transform: Pose3d = Pose3d(0.3, 0.0, 0.05, Rotation3d(0, 0, 0))
+    camera_transform: Pose3d = field(default_factory=lambda: Pose3d(0.3, 0.0, 0.05, Rotation3d(0, 0, 0)))
     camera_horiz_fov: float = 70
     is_calibrating: bool = False
     has_calibration: bool = False

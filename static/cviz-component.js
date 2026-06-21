@@ -1,5 +1,8 @@
 class CamViz extends HTMLElement {
+    loadedSettings = false; // To prevent saving settings back to backend on initial load
+
     connectedCallback() {
+        const self = this;
         this.style.display = 'flex';
         this.style.width = '100%';
         this.style.height = 'auto';
@@ -13,22 +16,19 @@ class CamViz extends HTMLElement {
                 <div class="field">
                     <div class="lbl">Length X<span>m</span></div>
                     <div class="ctrl">
-                        <input type="range"  id="cv-rl" min="0.2" max="1.5" step="0.01" value="0.86">
-                        <input type="number" id="cv-rl-n" value="0.86" step="0.01">
+                        <input type="number" id="cv-rl" value="0.86" step="0.01">
                     </div>
                 </div>
                 <div class="field">
                     <div class="lbl">Width Y<span>m</span></div>
                     <div class="ctrl">
-                        <input type="range"  id="cv-rw" min="0.2" max="1.5" step="0.01" value="0.86">
-                        <input type="number" id="cv-rw-n" value="0.86" step="0.01">
+                        <input type="number" id="cv-rw" value="0.86" step="0.01">
                     </div>
                 </div>
                 <div class="field">
                     <div class="lbl">Height Z <span>m</span></div>
                     <div class="ctrl">
-                        <input type="range"  id="cv-rh" min="0.05" max="1.5" step="0.01" value="0.25">
-                        <input type="number" id="cv-rh-n" value="0.25" step="0.01">
+                        <input type="number" id="cv-rh" value="0.25" step="0.01">
                     </div>
                 </div>
             </div>
@@ -38,22 +38,19 @@ class CamViz extends HTMLElement {
                 <div class="field">
                     <div class="lbl">Fwd X <span>m</span></div>
                     <div class="ctrl">
-                        <input type="range"  id="cv-tz" min="-0.75" max="0.75" step="0.005" value="0.30">
-                        <input type="number" id="cv-tz-n" value="0.30" step="0.005">
+                        <input type="number" id="cv-tz" value="0.30" step="0.005">
                     </div>
                 </div>
                 <div class="field">
                     <div class="lbl">Right Y <span>m</span></div>
                     <div class="ctrl">
-                        <input type="range"  id="cv-tx" min="-0.75" max="0.75" step="0.005" value="0">
-                        <input type="number" id="cv-tx-n" value="0" step="0.005">
+                        <input type="number" id="cv-tx" value="0" step="0.005">
                     </div>
                 </div>
                 <div class="field">
                     <div class="lbl">Up Z <span>m</span></div>
                     <div class="ctrl">
-                        <input type="range"  id="cv-ty" min="-0.3" max="0.5" step="0.005" value="0.05">
-                        <input type="number" id="cv-ty-n" value="0.05" step="0.005">
+                        <input type="number" id="cv-ty" value="0.05" step="0.005">
                     </div>
                 </div>
             </div>
@@ -61,24 +58,21 @@ class CamViz extends HTMLElement {
             <div class="sec">
                 <div class="sec-h">Rotation</div>
                 <div class="field">
-                    <div class="lbl">Yaw <span>°</span></div>
+                    <div class="lbl">Yaw <span>Deg</span></div>
                     <div class="ctrl">
-                        <input type="range"  id="cv-yaw" min="-180" max="180" step="0.5" value="0">
-                        <input type="number" id="cv-yaw-n" value="0" step="0.5">
+                        <input type="number" id="cv-yaw" value="0" step="0.5">
                     </div>
                 </div>
                 <div class="field">
-                    <div class="lbl">Pitch <span>°</span></div>
+                    <div class="lbl">Pitch <span>Deg</span></div>
                     <div class="ctrl">
-                        <input type="range"  id="cv-pitch" min="-90" max="90" step="0.5" value="0">
-                        <input type="number" id="cv-pitch-n" value="0" step="0.5">
+                        <input type="number" id="cv-pitch" value="0" step="0.5">
                     </div>
                 </div>
                 <div class="field">
-                    <div class="lbl">Roll <span>°</span></div>
+                    <div class="lbl">Roll <span>Deg</span></div>
                     <div class="ctrl">
-                        <input type="range"  id="cv-roll" min="-180" max="180" step="0.5" value="0">
-                        <input type="number" id="cv-roll-n" value="0" step="0.5">
+                        <input type="number" id="cv-roll" value="0" step="0.5">
                     </div>
                 </div>
             </div>
@@ -86,10 +80,9 @@ class CamViz extends HTMLElement {
             <div class="sec">
                 <div class="sec-h">Camera FOV</div>
                 <div class="field">
-                    <div class="lbl">Horiz <span>°</span></div>
+                    <div class="lbl">Horiz <span>Deg</span></div>
                     <div class="ctrl">
-                        <input type="range"  id="cv-fov" min="20" max="170" step="1" value="70">
-                        <input type="number" id="cv-fov-n" value="70" step="1">
+                        <input type="number" id="cv-fov" value="70" step="1">
                     </div>
                 </div>
             </div>
@@ -103,7 +96,7 @@ class CamViz extends HTMLElement {
 
                     <div class="ov ov-tr" id="cv-readout">
                         X: 0.000 &nbsp;Y: 0.050 &nbsp;Z: 0.300<br>
-                        P: 0.0°  &nbsp;Yaw: 0.0° &nbsp;R: 0.0°
+                        Yaw: 0.0° &nbsp;Pitch: 0.0°  &nbsp;Roll: 0.0°
                     </div>
                     <div class="ov ov-br">LMB·ORBIT &nbsp;·&nbsp; RMB·PAN &nbsp;·&nbsp; SCROLL·ZOOM</div>
                     <div class="ov ov-bl">
@@ -119,7 +112,7 @@ class CamViz extends HTMLElement {
             </div>
         `;
 
-        (function() {
+        (() => {
             'use strict';
 
             function loadThree(cb) {
@@ -130,7 +123,7 @@ class CamViz extends HTMLElement {
                 document.head.appendChild(s);
             }
 
-            loadThree(function(T) {
+            loadThree((T) => {
                 const canvas = document.getElementById('cv-canvas');
                 const vpEl = document.getElementById('cv-vp');
                 const readout = document.getElementById('cv-readout');
@@ -317,7 +310,7 @@ class CamViz extends HTMLElement {
 
                     const pts = [
                     [-nW,-nH,n],[nW,-nH,n],[nW,nH,n],[-nW,nH,n],
-                    [-fW,-fH,f],[fW-fH,f],[fW,fH,f],[-fW,fH,f],
+                    [-fW,-fH,f],[fW,-fH,f],[fW,fH,f],[-fW,fH,f],
                     [0,0,0]
                     ];
                     const segs = [
@@ -342,7 +335,7 @@ class CamViz extends HTMLElement {
                     CG.add(fp);
 
                     // Far-plane corner brackets
-                    [[-fW,-fH],[fW-fH],[fW,fH],[-fW,fH]].forEach(([cx,cy]) => {
+                    [[-fW,-fH],[fW,-fH],[fW,fH],[-fW,fH]].forEach(([cx,cy]) => {
                     const mk = 0.065;
                     CG.add(new T.Line(
                         new T.BufferGeometry().setFromPoints([
@@ -378,6 +371,10 @@ class CamViz extends HTMLElement {
                     const tx    = gv('cv-tx'),  ty   = gv('cv-ty'),   tz = gv('cv-tz');
                     const pitch = gv('cv-pitch'), yaw = gv('cv-yaw'), roll = gv('cv-roll');
                     const fov   = gv('cv-fov');
+
+                    [rw, rl, rh, tx, ty, tz, pitch, yaw, roll, fov].forEach(v => {
+                        if (Number.isFinite(v)) return;
+                    });
 
                     // Camera world position:
                     // X,Z from robot horizontal center
@@ -420,7 +417,7 @@ class CamViz extends HTMLElement {
                     const fmt = v => (v >= 0 ? '+' : '') + v.toFixed(3);
                     readout.innerHTML =
                     `X:${fmt(tx)} &nbsp;Y:${fmt(ty)} &nbsp;Z:${fmt(tz)}<br>` +
-                    `P:${pitch.toFixed(1)}° &nbsp;Yaw:${yaw.toFixed(1)}° &nbsp;R:${roll.toFixed(1)}°`;
+                    `Yaw:${yaw.toFixed(1)}° &nbsp;Pitch:${pitch.toFixed(1)}° &nbsp;Roll:${roll.toFixed(1)}°`;
                     
                     // Save only changed settings
                     saveChangedSettings({
@@ -439,6 +436,8 @@ class CamViz extends HTMLElement {
 
                 // Save only changed settings to appropriate endpoints
                 function saveChangedSettings(currentValues) {
+                    if (!self.loadedSettings) return; // Don't save on initial load
+
                     const changes = [];
                     
                     // Check each value for changes
@@ -451,21 +450,22 @@ class CamViz extends HTMLElement {
                     
                     // If there are changes, save them
                     if (changes.length > 0) {
-                        const cameraIndex = document.getElementById('cameraDropdown')?.value || 0;
+                        const cameraIndex = document.getElementById('cameraDropdown')?.value || null; // Get selected camera index if available
                         
                         changes.forEach(change => {
                             const mapping = {
                                 // Robot settings -> /set_local_settings (from self.local_config in get_cviz_settings)
-                                'cv-rl': { endpoint: '/set_local_settings', key: 'robot_size.x' },
-                                'cv-rw': { endpoint: '/set_local_settings', key: 'robot_size.y' },
-                                'cv-rh': { endpoint: '/set_local_settings', key: 'robot_size.z' },
-                                // Camera settings -> /set_camera_setting (from config in get_cviz_settings)
-                                'cv-tx': { endpoint: '/set_camera_setting', key: 'camera_transform.x' },
-                                'cv-ty': { endpoint: '/set_camera_setting', key: 'camera_transform.y' },
-                                'cv-tz': { endpoint: '/set_camera_setting', key: 'camera_transform.z' },
-                                'cv-yaw': { endpoint: '/set_camera_setting', key: 'camera_transform.rotation().z_degrees' },
-                                'cv-pitch': { endpoint: '/set_camera_setting', key: 'camera_transform.rotation().y_degrees' },
-                                'cv-roll': { endpoint: '/set_camera_setting', key: 'camera_transform.rotation().x_degrees' },
+                                'cv-rl': { endpoint: '/set_local_settings', key: 'robot_size_x' },
+                                'cv-rw': { endpoint: '/set_local_settings', key: 'robot_size_y' },
+                                'cv-rh': { endpoint: '/set_local_settings', key: 'robot_size_z' },
+                                // Cviz settings -> /set_cviz_setting (from config in get_cviz_settings)
+                                'cv-tx': { endpoint: '/set_cviz_setting', key: 'y' },
+                                'cv-ty': { endpoint: '/set_cviz_setting', key: 'z' },
+                                'cv-tz': { endpoint: '/set_cviz_setting', key: 'x' },
+                                'cv-yaw': { endpoint: '/set_cviz_setting', key: 'yaw_degrees' },
+                                'cv-pitch': { endpoint: '/set_cviz_setting', key: 'pitch_degrees' },
+                                'cv-roll': { endpoint: '/set_cviz_setting', key: 'roll_degrees' },
+                                // Camera FOV is a direct camera setting
                                 'cv-fov': { endpoint: '/set_camera_setting', key: 'camera_horiz_fov' }
                             };
                             
@@ -483,16 +483,13 @@ class CamViz extends HTMLElement {
                             }
                         });
                     }
-                }
+                };
 
                 /* Bind inputs */
                 ['rw','rl','rh','tx','ty','tz','pitch','yaw','roll','fov'].forEach(k => {
-                    const s = document.getElementById('cv-' + k);
-                    const n = document.getElementById('cv-' + k + '-n');
-                    if (!s || !n) return;
-                    s.addEventListener('input',  () => { n.value = s.value; update(); });
-                    n.addEventListener('input',  () => { s.value = n.value; update(); });
-                    n.addEventListener('change', () => { s.value = n.value; update(); });
+                    const el = document.getElementById('cv-' + k);
+                    if (!el) return;
+                    el.addEventListener('input', update);
                 });
 
                 /* Resize */
@@ -525,39 +522,37 @@ class CamViz extends HTMLElement {
                 (function loop() { requestAnimationFrame(loop); renderer.render(scene, vcam); })();
             });
         })();
-    }
+    };
 
     // Public method to update component settings from outside
     updateFromSettings(settings) {
         // Map settings to component input IDs
         const settingMap = {
             // Robot dimensions
-            'length_x': ['cv-rl', 'cv-rl-n'],
-            'width_y': ['cv-rw', 'cv-rw-n'],
-            'height_z': ['cv-rh', 'cv-rh-n'],
+            'length_x': 'cv-rl',
+            'width_y': 'cv-rw',
+            'height_z': 'cv-rh',
             
             // Camera offset
-            'fwd_x': ['cv-tz', 'cv-tz-n'],
-            'right_y': ['cv-tx', 'cv-tx-n'],
-            'up_z': ['cv-ty', 'cv-ty-n'],
+            'fwd_x': 'cv-tz',
+            'right_y': 'cv-tx',
+            'up_z': 'cv-ty',
             
             // Rotation
-            'yaw': ['cv-yaw', 'cv-yaw-n'],
-            'pitch': ['cv-pitch', 'cv-pitch-n'],
-            'roll': ['cv-roll', 'cv-roll-n'],
+            'yaw': 'cv-yaw',
+            'pitch': 'cv-pitch',
+            'roll': 'cv-roll',
             
             // Camera FOV
-            'horiz_fov': ['cv-fov', 'cv-fov-n']
+            'horiz_fov': 'cv-fov'
         };
 
         // Update each setting if provided
-        for (const [key, [rangeId, numberId]] of Object.entries(settingMap)) {
+        for (const [key, numberId] of Object.entries(settingMap)) {
             if (settings[key] !== undefined && settings[key] !== null) {
-                const rangeInput = document.getElementById(rangeId);
                 const numberInput = document.getElementById(numberId);
                 
-                if (rangeInput && numberInput) {
-                    rangeInput.value = settings[key];
+                if (numberInput) {
                     numberInput.value = settings[key];
                 }
             }
@@ -565,6 +560,8 @@ class CamViz extends HTMLElement {
         
         // Trigger update to refresh the visualization
         this.querySelector('.view-wrap') && this.updateBindings_();
+
+        this.loadedSettings = true; // Allow saving changes after initial load
     }
 
     // Helper method to trigger update (since update() is private in the IIFE)

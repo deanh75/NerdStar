@@ -8,6 +8,7 @@ import shutil
 import cv2
 import ntcore
 import numpy
+from wpimath.geometry import Rotation3d, Translation3d, Pose3d
 from backend.config.config import ConfigStore, LocalConfig
 
 
@@ -36,7 +37,9 @@ class LocalConfigSource(ConfigSource):
             local_config.should_record = local_config_data["should_record"]
             local_config.tag_layout_name = local_config_data["tag_layout_name"]
             local_config.load_tag_layout()
-            local_config.robot_size = local_config_data["robot_size"]
+            local_config.robot_size_x = local_config_data["robot_size_x"]
+            local_config.robot_size_y = local_config_data["robot_size_y"]
+            local_config.robot_size_z = local_config_data["robot_size_z"]
 
     def save(self, obj: str, value) -> None:
         with open(self._local_config_filename, "r") as local_config_file:
@@ -74,7 +77,8 @@ class FileConfigSource(ConfigSource):
                 config_store.camera_config.driverCam_enable = cam_config_data["driverCam_enable"]
                 config_store.camera_config.process_frames_enable = cam_config_data["process_frames_enable"]
                 if cam_config_data["camera_transform"] is not None:
-                    config_store.camera_config.camera_transform = cam_config_data["camera_transform"]
+                    config_store.camera_config.camera_transform = self.dict_to_pose3d(
+                        cam_config_data["camera_transform"])
                 config_store.camera_config.camera_horiz_fov = cam_config_data["camera_horiz_fov"]
 
             with open(self._cam_config_filename, "w") as cam_config_file:
@@ -100,6 +104,14 @@ class FileConfigSource(ConfigSource):
 
         with open(self._cam_config_filename, "w") as cam_config_file:
             json.dump(cam_config_data, cam_config_file, indent=4)
+
+    def dict_to_pose3d(self, d: dict) -> Pose3d:
+        t = d["translation"]
+        r = d["rotation"]
+        return Pose3d(
+            Translation3d(t["x"], t["y"], t["z"]),
+            Rotation3d(r["roll"], r["pitch"], r["yaw"]),
+        )
 
 
 class NTConfigSource(ConfigSource):

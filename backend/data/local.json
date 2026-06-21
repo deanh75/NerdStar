@@ -9,5 +9,7 @@
     "tag_layout_name": "2026-rebuilt-andymark.json",
     "tag_layout": null,
     "should_record": false,
-    "robot_size": null
+    "robot_size_x": 0.86,
+    "robot_size_y": 0.86,
+    "robot_size_z": 0.25
 }

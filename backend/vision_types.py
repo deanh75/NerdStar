@@ -82,6 +82,7 @@ class PoseEstimate:
     theta_std_dev: float
 
 @make_wpistruct(name="RobotPoseEstimation")
+@dataclass
 class RobotPoseEstimation:
     pose: Pose2d
     timestamp: int

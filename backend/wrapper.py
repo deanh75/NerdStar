@@ -2,6 +2,7 @@
 # license that can be found in the LICENSE file at
 # the root directory of this project.
 
+import math
 import queue
 import threading
 import time
@@ -11,6 +12,7 @@ from collections import defaultdict
 from cscore import CameraServer
 import cv2
 import ntcore
+from wpimath.geometry import Pose3d, Translation3d, Rotation3d
 
 from backend.calibration.CalibrationSession import CalibrationSession
 from backend.config.ConfigSource import ConfigSource, FileConfigSource, LocalConfigSource, NTConfigSource
@@ -110,6 +112,62 @@ class Wrapper:
             return True
         return False
     
+    def update_cviz_config(self, index: int, obj: str, value) -> bool:
+        if 0 <= index < len(self._configs):
+            t = self._configs[index].camera_config.camera_transform.translation()
+            r = self._configs[index].camera_config.camera_transform.rotation()
+
+            x, y, z = t.X(), t.Y(), t.Z()
+            roll, pitch, yaw = r.X(), r.Y(), r.Z()
+
+            new_value = float(value)
+            key = obj.strip().lower()
+
+            # --- translation ---
+            if key == "x":
+                x = new_value
+            elif key == "y":
+                y = new_value
+            elif key == "z":
+                z = new_value
+
+            # --- rotation, degrees ---
+            elif key == "roll_degrees":
+                roll = math.radians(new_value)
+            elif key == "pitch_degrees":
+                pitch = math.radians(new_value)
+            elif key == "yaw_degrees":
+                yaw = math.radians(new_value)
+
+            # --- rotation, radians ---
+            elif key == "roll":
+                roll = new_value
+            elif key == "pitch":
+                pitch = new_value
+            elif key == "yaw":
+                yaw = new_value
+
+            else:
+                raise ValueError(f"Unknown field_name: '{obj}'")
+
+            self._configs[index].camera_config.camera_transform = Pose3d(Translation3d(x, y, z), 
+                Rotation3d(roll, pitch, yaw))
+            transform_dict = {
+                "translation": {
+                    "x": t.X(),
+                    "y": t.Y(),
+                    "z": t.Z(),
+                },
+                "rotation": {
+                    "roll":  r.X(),
+                    "pitch": r.Y(),
+                    "yaw":   r.Z(),
+                },
+            }
+            self._configs[index].camera_config_source.save("camera_transform", transform_dict)
+            return True
+        return False
+    
     def get_camera_settings(self, index: int):
         if 0 <= index < len(self._configs):
             config = self._configs[index].camera_config
@@ -144,15 +202,15 @@ class Wrapper:
         if 0 <= index < len(self._configs):
             config = self._configs[index].camera_config
             return {
-                "robot_length_x": self.local_config.robot_size.X,
-                "robot_width_y": self.local_config.robot_size.Y,
-                "robot_height_z": self.local_config.robot_size.Z,
-                "camera_fwd_x": config.camera_transform.X,
-                "camera_right_y": config.camera_transform.Y,
-                "camera_up_z": config.camera_transform.Z,
-                "camera_yaw": config.camera_transform.rotation().z_degrees,
-                "camera_pitch": config.camera_transform.rotation().y_degrees,
-                "camera_roll": config.camera_transform.rotation().x_degrees,
+                "robot_length_x": self.local_config.robot_size_x,
+                "robot_width_y": self.local_config.robot_size_y,
+                "robot_height_z": self.local_config.robot_size_z,
+                "camera_fwd_x": config.camera_transform.X(),
+                "camera_right_y": config.camera_transform.Y(),
+                "camera_up_z": config.camera_transform.Z(),
+                "camera_yaw": math.degrees(config.camera_transform.rotation().Z()),
+                "camera_pitch": math.degrees(config.camera_transform.rotation().Y()),
+                "camera_roll": math.degrees(config.camera_transform.rotation().X()),
                 "camera_horiz_fov": config.camera_horiz_fov
             }
         return {
