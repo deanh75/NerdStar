@@ -1,5 +1,17 @@
 class CamViz extends HTMLElement {
     loadedSettings = false; // To prevent saving settings back to backend on initial load
+    _prevValues = {
+        'cv-rl': null,
+        'cv-rw': null,
+        'cv-rh': null,
+        'cv-tx': null,
+        'cv-ty': null,
+        'cv-tz': null,
+        'cv-yaw': null,
+        'cv-pitch': null,
+        'cv-roll': null,
+        'cv-fov': null
+    };
 
     connectedCallback() {
         const self = this;
@@ -351,20 +363,6 @@ class CamViz extends HTMLElement {
                 /* Read input value */
                 const gv = id => parseFloat(document.getElementById(id).value);
 
-                // Track previous values to only save when changed
-                const prevValues = {
-                    'cv-rl': null,
-                    'cv-rw': null,
-                    'cv-rh': null,
-                    'cv-tx': null,
-                    'cv-ty': null,
-                    'cv-tz': null,
-                    'cv-yaw': null,
-                    'cv-pitch': null,
-                    'cv-roll': null,
-                    'cv-fov': null
-                };
-
                 /* Main update */
                 function update() {
                     const rw    = gv('cv-rw'),  rl   = gv('cv-rl'),   rh = gv('cv-rh');
@@ -418,7 +416,7 @@ class CamViz extends HTMLElement {
                     readout.innerHTML =
                     `X:${fmt(tx)} &nbsp;Y:${fmt(ty)} &nbsp;Z:${fmt(tz)}<br>` +
                     `Yaw:${yaw.toFixed(1)}° &nbsp;Pitch:${pitch.toFixed(1)}° &nbsp;Roll:${roll.toFixed(1)}°`;
-                    
+
                     // Save only changed settings
                     saveChangedSettings({
                         'cv-rl': rl,
@@ -436,22 +434,22 @@ class CamViz extends HTMLElement {
 
                 // Save only changed settings to appropriate endpoints
                 function saveChangedSettings(currentValues) {
-                    if (!self.loadedSettings) return; // Don't save on initial load
-
                     const changes = [];
-                    
+
                     // Check each value for changes
                     for (const [id, currentValue] of Object.entries(currentValues)) {
-                        if (prevValues[id] !== currentValue) {
-                            prevValues[id] = currentValue; // Update the stored value
+                        if (self._prevValues[id] !== currentValue) {
+                            self._prevValues[id] = currentValue; // Update the stored value
                             changes.push({ id, value: currentValue });
                         }
                     }
-                    
+
+                    if (!self.loadedSettings) return; // Don't save on initial load
+
                     // If there are changes, save them
                     if (changes.length > 0) {
                         const cameraIndex = document.getElementById('cameraDropdown')?.value || null; // Get selected camera index if available
-                        
+
                         changes.forEach(change => {
                             const mapping = {
                                 // Robot settings -> /set_local_settings (from self.local_config in get_cviz_settings)
@@ -468,13 +466,13 @@ class CamViz extends HTMLElement {
                                 // Camera FOV is a direct camera setting
                                 'cv-fov': { endpoint: '/set_camera_setting', key: 'camera_horiz_fov' }
                             };
-                            
+
                             const map = mapping[change.id];
                             if (map) {
                                 const payload = map.endpoint === '/set_local_settings'
                                     ? { key: map.key, value: change.value }
                                     : { index: cameraIndex, key: map.key, value: change.value };
-                                
+
                                 fetch(map.endpoint, {
                                     method: 'POST',
                                     headers: { 'Content-Type': 'application/json' },
@@ -494,7 +492,7 @@ class CamViz extends HTMLElement {
 
                 /* Resize */
                 function resize() {
-                    const w = vpEl.clientWidth; 
+                    const w = vpEl.clientWidth;
                     const h = vpEl.clientHeight;
                     if (!w || !h) return;
                     renderer.setSize(w, h, false);
@@ -522,7 +520,7 @@ class CamViz extends HTMLElement {
                 (function loop() { requestAnimationFrame(loop); renderer.render(scene, vcam); })();
             });
         })();
-    };
+    }
 
     // Public method to update component settings from outside
     updateFromSettings(settings) {
@@ -532,17 +530,17 @@ class CamViz extends HTMLElement {
             'length_x': 'cv-rl',
             'width_y': 'cv-rw',
             'height_z': 'cv-rh',
-            
+
             // Camera offset
             'fwd_x': 'cv-tz',
             'right_y': 'cv-tx',
             'up_z': 'cv-ty',
-            
+
             // Rotation
             'yaw': 'cv-yaw',
             'pitch': 'cv-pitch',
             'roll': 'cv-roll',
-            
+
             // Camera FOV
             'horiz_fov': 'cv-fov'
         };
@@ -551,13 +549,19 @@ class CamViz extends HTMLElement {
         for (const [key, numberId] of Object.entries(settingMap)) {
             if (settings[key] !== undefined && settings[key] !== null) {
                 const numberInput = document.getElementById(numberId);
-                
                 if (numberInput) {
                     numberInput.value = settings[key];
                 }
             }
         }
-        
+
+        // Update _prevValues to match current settings to prevent false change detection
+        for (const [key, numberId] of Object.entries(settingMap)) {
+            if (settings[key] !== undefined && settings[key] !== null) {
+                this._prevValues[numberId] = settings[key];
+            }
+        }
+
         // Trigger update to refresh the visualization
         this.querySelector('.view-wrap') && this.updateBindings_();
 
@@ -567,8 +571,8 @@ class CamViz extends HTMLElement {
     // Helper method to trigger update (since update() is private in the IIFE)
     updateBindings_() {
         // We need to call the update function from the IIFE
-        // Since we can't access it directly, we'll trigger input events on all range inputs
-        const inputs = this.querySelectorAll('input[type="range"]');
+        // Since we can't access it directly, we'll trigger input events on all number inputs
+        const inputs = this.querySelectorAll('input[type="number"]');
         inputs.forEach(input => {
             input.dispatchEvent(new Event('input'));
         });
