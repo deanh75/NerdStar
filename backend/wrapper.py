@@ -6,6 +6,7 @@ import math
 import queue
 import threading
 import time
+from types import NoneType
 from typing import List
 from collections import defaultdict
 
@@ -120,6 +121,8 @@ class Wrapper:
             x, y, z = t.X(), t.Y(), t.Z()
             roll, pitch, yaw = r.X(), r.Y(), r.Z()
 
+            if value is None:
+                return False
             new_value = float(value)
             key = obj.strip().lower()
 

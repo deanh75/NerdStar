@@ -15,7 +15,7 @@
     "process_frames_enable": false,
     "camera_transform": {
         "translation": {
-            "x": 0.25,
+            "x": 0.23,
             "y": 0.25,
             "z": 0.1
         },

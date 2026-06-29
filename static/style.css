@@ -345,7 +345,7 @@ cam-viz * { box-sizing: border-box; margin: 0; padding: 0; font-family: inherit;
 .panel {
   display: flex;
   flex-direction: column;
-  width: 140px;
+  width: 95px;
   flex-shrink: 0;
   background: #010901;
   border-right: 1px solid #0d2a05;
