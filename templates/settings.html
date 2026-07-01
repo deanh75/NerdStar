@@ -125,6 +125,7 @@ function loadModels() {
                 option.textContent = 'No models available';
                 option.disabled = true;
                 modelDropdown.appendChild(option);
+                modelDropdown.dispatchEvent(new Event('change', { bubbles: true }));
                 return;
             }
 
@@ -155,6 +156,7 @@ function loadTagLayouts() {
                 option.textContent = 'No layouts available';
                 option.disabled = true;
                 tagLayoutDropdown.appendChild(option);
+                tagLayoutDropdown.dispatchEvent(new Event('change', { bubbles: true }));
                 return;
             }
 
@@ -224,6 +226,7 @@ objDetectMaxFps.addEventListener('change', () => {
 });
 
 modelDropdown.addEventListener('change', () => {
+    const value = modelDropdown.value !== 'No models available' ? modelDropdown.value : "";
     fetch('/set_local_settings', {
         method: 'POST',
         headers: {
@@ -231,7 +234,7 @@ modelDropdown.addEventListener('change', () => {
         },
         body: JSON.stringify({
             key: 'obj_detect_model',
-            value: modelDropdown.value
+            value: value
         })
     });
 });
@@ -281,6 +284,7 @@ fiducialSizeM.addEventListener('change', () => {
 });
 
 tagLayoutDropdown.addEventListener('change', () => {
+    const value = tagLayoutDropdown.value !== 'No layouts available' ? tagLayoutDropdown.value : "";
     fetch('/set_local_settings', {
         method: 'POST',
         headers: {
@@ -288,7 +292,7 @@ tagLayoutDropdown.addEventListener('change', () => {
         },
         body: JSON.stringify({
             key: 'tag_layout_name',
-            value: tagLayoutDropdown.value
+            value: value
         })
     });
 });

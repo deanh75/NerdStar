@@ -1,6 +1,6 @@
 {
     "camera_id": "0x143000000c456366",
-    "camera_name": "New Camera",
+    "camera_name": "Desk Cam",
     "camera_max_fps": 120,
     "camera_resolution_width": 2560,
     "camera_resolution_height": 1440,
@@ -22,11 +22,12 @@
         "rotation": {
             "roll": 0.0,
             "pitch": 0.0,
-            "yaw": 0.06981317007977318
+            "yaw": 0.7853981633974485
         }
     },
     "camera_horiz_fov": 70,
     "has_calibration": false,
     "camera_matrix": null,
-    "distortion_coefficients": null
+    "distortion_coefficients": null,
+    "is_calibrating": false
 }

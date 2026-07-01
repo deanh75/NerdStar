@@ -531,7 +531,7 @@ class CamViz extends HTMLElement {
             if (settings[key] !== undefined && settings[key] !== null) {
                 const numberInput = document.getElementById(numberId);
                 if (numberInput) {
-                    if (settings[key].toString().split('.').length > 3) {
+                    if (settings[key]?.toString().split('.')[1]?.length > 3) {
                         settings[key] = parseFloat(settings[key].toFixed(3));
                     }
                     numberInput.value = settings[key];
@@ -542,7 +542,7 @@ class CamViz extends HTMLElement {
         // Update _prevValues to match current settings to prevent false change detection
         for (const [key, numberId] of Object.entries(settingMap)) {
             if (settings[key] !== undefined && settings[key] !== null) {
-                if (settings[key].toString().split('.').length > 3) {
+                if (settings[key]?.toString().split('.')[1]?.length > 3) {
                     settings[key] = parseFloat(settings[key].toFixed(3));
                 }
                 this._prevValues[numberId] = settings[key].toFixed(3);
