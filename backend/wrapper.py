@@ -27,6 +27,7 @@ from backend.vision_types import FiducialImageObservation, ObjDetectObservation,
 from backend.workers.apriltag_worker import apriltag_worker
 from backend.workers.objdetect_worker import objdetect_worker
 from backend.pipeline.overwrite_queue import OverwriteQueue
+from backend.pipeline.latest_queue import LatestQueue
 
 class Wrapper:
     def __init__(self):
@@ -354,7 +355,7 @@ class Wrapper:
                 # AprilTag pipeline
                 if config.camera_config.apriltags_enable:
                     if not was_apriltag:
-                        apriltag_worker_in = queue.Queue(maxsize=1)
+                        apriltag_worker_in = LatestQueue(maxsize=1)
                         apriltag_worker_out = queue.Queue(maxsize=1)
                         apriltag_work = threading.Thread(
                             target=apriltag_worker,
@@ -365,7 +366,7 @@ class Wrapper:
                         was_apriltag = True
 
                     try:
-                        apriltag_worker_in.put((timestamp, image, config, self.local_config), block=False)
+                        apriltag_worker_in.put_latest((timestamp, image, config, self.local_config))
                     except:  # No space in queue
                         pass
                     
@@ -403,7 +404,7 @@ class Wrapper:
                 # Object detection pipeline
                 if config.camera_config.objdetect_enable:
                     if not was_obj_detect:
-                        objdetect_worker_in = queue.Queue(maxsize=1)
+                        objdetect_worker_in = LatestQueue(maxsize=1)
                         objdetect_worker_out = queue.Queue(maxsize=1)
                         objdetect_work = threading.Thread(
                             target=objdetect_worker,
@@ -417,33 +418,33 @@ class Wrapper:
                     if self.local_config.obj_detect_max_fps < 0 or (timestamp - objdetect_last_frame_time) >= (1.0 / self.local_config.obj_detect_max_fps):
                         objdetect_last_frame_time = timestamp
                         try:
-                            objdetect_worker_in.put((timestamp, image, config, self.local_config), block=False)
+                            objdetect_worker_in.put_latest((timestamp, image, config, self.local_config))
                         except:  # No space in queue
                             pass
 
-                    try:
-                        timestamp_out, observations = objdetect_worker_out.get(block=False)
-                    except:  # No new frames
-                        pass
+                        try:
+                            timestamp_out, observations = objdetect_worker_out.get(block=False)
+                        except:  # No new frames
+                            pass
 
-                    else:
-                        # Publish observation
-                        self.output_publisher.send_objdetect_observation(self.local_config, timestamp_out, observations)
+                        else:
+                            # Publish observation
+                            self.output_publisher.send_objdetect_observation(self.local_config, timestamp_out, observations)
 
-                        # Store last observations
-                        last_objdetect_observations = observations
+                            # Store last observations
+                            last_objdetect_observations = observations
 
-                        # Measure FPS
-                        objdetect_frame_count += 1
-                        if time.time() - objdetect_last_print > 1:
-                            objdetect_last_print = time.time()
-                            with self.obj_lock:
-                                self.output_objdetect[index] = ObjDetectionOutput(
-                                    fps=objdetect_frame_count,
-                                    observations=observations
-                                )
-                            self.output_publisher.send_objdetect_fps(self.local_config, timestamp, objdetect_frame_count)
-                            objdetect_frame_count = 0
+                            # Measure FPS
+                            objdetect_frame_count += 1
+                            if time.time() - objdetect_last_print > 1:
+                                objdetect_last_print = time.time()
+                                with self.obj_lock:
+                                    self.output_objdetect[index] = ObjDetectionOutput(
+                                        fps=objdetect_frame_count,
+                                        observations=observations
+                                    )
+                                self.output_publisher.send_objdetect_fps(self.local_config, timestamp, objdetect_frame_count)
+                                objdetect_frame_count = 0
 
                 # Save frame to video
                 if should_record:
@@ -458,16 +459,13 @@ class Wrapper:
 
             if (config.camera_config.process_frames_enable 
                 and config.camera_config.has_calibration
-                and (config.camera_config.apriltags_enable 
-                     or config.camera_config.objdetect_enable)):
-                img: cv2.Mat = image
+                and (config.camera_config.apriltags_enable or config.camera_config.objdetect_enable)):
                 if config.camera_config.apriltags_enable:
-                    [overlay_image_observation(img, x) for x in last_image_observations]
+                    [overlay_image_observation(image, x) for x in last_image_observations]
                 if config.camera_config.objdetect_enable:
-                    [overlay_obj_detect_observation(img, x) for x in last_objdetect_observations]
-                    
+                    [overlay_obj_detect_observation(image, x) for x in last_objdetect_observations]
                 with self.frame_lock:
-                    self.latest_frames[index] = img
+                    self.latest_frames[index] = image
             else:
                 with self.frame_lock:
                     self.latest_frames[index] = image

@@ -4,6 +4,7 @@
 
 import queue
 from typing import List, Tuple, Union
+import os
 
 import cv2
 from backend.config.config import ConfigStore, LocalConfig
@@ -22,6 +23,7 @@ def apriltag_worker(
         ]
     ],
 ):
+    os.sched_setaffinity(0, {1, 2})
     fiducial_detector = ArucoFiducialDetector(cv2.aruco.DICT_APRILTAG_36h11)
     camera_pose_estimator = MultiTargetCameraPoseEstimator()
 

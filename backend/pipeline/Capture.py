@@ -63,10 +63,6 @@ class AVFoundationMjpegCapture(Capture):
         self._last_configs: Dict[str, ConfigStore] = {}
         pass
 
-    def get_frame_from_list(self, cam_name: str, configs: List[ConfigStore]) -> Tuple[bool, cv2.Mat]:
-        config_store: ConfigStore = next((c for c in configs if c.camera_config.camera_name == cam_name), None)
-        return self.get_frame(config_store)
-
     def get_frame(self, config: ConfigStore) -> Tuple[bool, cv2.Mat]:
         cam_name = config.camera_config.camera_name if config else ""
         last_config: ConfigStore = self._last_configs[cam_name] if cam_name in self._last_configs else None
@@ -81,6 +77,11 @@ class AVFoundationMjpegCapture(Capture):
             video.release()
             video = None
             self._videos[cam_name] = video
+            last_config = ConfigStore(
+                dataclasses.replace(config.camera_config), dataclasses.replace(config.remote_config), 
+                config.camera_config_source, config.remote_config_source
+            )
+            self._last_configs[cam_name] = last_config
 
         if video == None:
             if config.camera_config.camera_id == "":
@@ -120,11 +121,12 @@ class AVFoundationMjpegCapture(Capture):
                         self._videos[cam_name] = video
                         break
 
-        last_config = ConfigStore(
-            dataclasses.replace(config.camera_config), dataclasses.replace(config.remote_config), 
-            config.camera_config_source, config.remote_config_source
-        )
-        self._last_configs[cam_name] = last_config
+        if last_config == None:
+            last_config = ConfigStore(
+                dataclasses.replace(config.camera_config), dataclasses.replace(config.remote_config), 
+                config.camera_config_source, config.remote_config_source
+            )
+            self._last_configs[cam_name] = last_config
 
         if video == None:
             if config.camera_config.camera_id != "":
@@ -160,3 +162,19 @@ class AVFoundationMjpegCapture(Capture):
                 gc.collect()
         except Exception as e:
             print("Stop error:", e)
+
+class GStreamerCapture(Capture):
+    """ "Read from camera with OpenCV and GStreamer."""
+
+    def __init__(self) -> None:
+        
+        pass
+
+    def get_frame(self, config: ConfigStore) -> Tuple[bool, cv2.Mat]:
+        raise NotImplementedError
+
+    def getCameras(self) -> list[NerdAVF.NerdCaptureDevice]: 
+        raise NotImplementedError
+        
+    def stop(self) -> None:
+        raise NotImplementedError
