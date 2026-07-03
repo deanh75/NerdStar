@@ -29,6 +29,9 @@ class CoreMLObjectDetector(ObjectDetector):
         pass
 
     def detect(self, image: cv2.Mat, config: ConfigStore, local_config: LocalConfig) -> List[ObjDetectObservation]:
+        if local_config.obj_detect_model == "":
+            return []
+
         if self._model != None and self.last_model != local_config.obj_detect_model:
             print("New model detected, reloading...")
             self._model = None
@@ -36,8 +39,13 @@ class CoreMLObjectDetector(ObjectDetector):
         # Load CoreML model
         if self._model == None:
             print("Loading object detection model")
-            self._model = coremltools.models.MLModel("backend/data/models/" + local_config.obj_detect_model)
-            print("Finished loading object detection model")
+            try:
+                self._model = coremltools.models.MLModel("backend/data/models/" + local_config.obj_detect_model)
+                print("Finished loading object detection model")
+            except Exception as e:
+                self._model = None
+                print(f"Error loading object detection model: {e}")
+                return []
 
         self.last_model = local_config.obj_detect_model
 

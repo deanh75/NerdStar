@@ -112,9 +112,9 @@ class CamViz extends HTMLElement {
                     </div>
                     <div class="ov ov-br">LMB·ORBIT &nbsp;·&nbsp; RMB·PAN &nbsp;·&nbsp; SCROLL·ZOOM</div>
                     <div class="ov ov-bl">
-                        <div class="ax"><div class="ax-bar" style="background:#ff4444"></div>X RIGHT</div>
-                        <div class="ax"><div class="ax-bar" style="background:#44ee44"></div>Y UP</div>
-                        <div class="ax"><div class="ax-bar" style="background:#4488ff"></div>Z FORWARD</div>
+                        <div class="ax"><div class="ax-bar" style="background:#4488ff"></div>X FWD</div>
+                        <div class="ax"><div class="ax-bar" style="background:#ff4444"></div>Y RIGHT</div>
+                        <div class="ax"><div class="ax-bar" style="background:#44ee44"></div>Z UP</div>
                         <div class="ax" style="margin-top:3px">
                         <div class="ax-bar" style="background:#39FF14;box-shadow:0 0 4px #39FF14"></div>
                         <span style="color:#39FF14">CAM FOV</span>
@@ -261,13 +261,13 @@ class CamViz extends HTMLElement {
 
                     // Bumper outline (slightly larger)
                     const bEdges = new T.LineSegments(
-                    new T.EdgesGeometry(new T.BoxGeometry(rw + 0.065, 0.075, rl + 0.065)),
+                    new T.EdgesGeometry(new T.BoxGeometry(rw + 0.0889, 0.1143, rl + 0.0889)),
                     lm(0x1a6608, 0.6)
                     );
                     bEdges.position.y = 0.038;
                     RG.add(bEdges);
 
-                    // Forward chevron on top (pointing +Z)
+                    // Forward chevron on top (pointing +Z, which is Z-forward)
                     const fw = Math.min(rw, rl) * 0.32;
                     RG.add(new T.Line(
                     new T.BufferGeometry().setFromPoints([
@@ -363,16 +363,19 @@ class CamViz extends HTMLElement {
                 /* Read input value */
                 const gv = id => parseFloat(document.getElementById(id).value);
 
+                /* Bind inputs */
+                ['rw','rl','rh','tx','ty','tz','pitch','yaw','roll','fov'].forEach(k => {
+                    const el = document.getElementById('cv-' + k);
+                    if (!el) return;
+                    el.addEventListener('input', update);
+                });
+
                 /* Main update */
                 function update() {
                     const rw    = gv('cv-rw'),  rl   = gv('cv-rl'),   rh = gv('cv-rh');
                     const tx    = gv('cv-tx'),  ty   = gv('cv-ty'),   tz = gv('cv-tz');
                     const pitch = gv('cv-pitch'), yaw = gv('cv-yaw'), roll = gv('cv-roll');
                     const fov   = gv('cv-fov');
-
-                    [rw, rl, rh, tx, ty, tz, pitch, yaw, roll, fov].forEach(v => {
-                        if (Number.isFinite(v)) return;
-                    });
 
                     // Camera world position:
                     // X,Z from robot horizontal center
@@ -414,7 +417,7 @@ class CamViz extends HTMLElement {
                     // Readout
                     const fmt = v => (v >= 0 ? '+' : '') + v.toFixed(3);
                     readout.innerHTML =
-                    `X:${fmt(tx)} &nbsp;Y:${fmt(ty)} &nbsp;Z:${fmt(tz)}<br>` +
+                    `X:${fmt(tz)} &nbsp;Y:${fmt(tx)} &nbsp;Z:${fmt(ty)}<br>` +
                     `Yaw:${yaw.toFixed(1)}° &nbsp;Pitch:${pitch.toFixed(1)}° &nbsp;Roll:${roll.toFixed(1)}°`;
 
                     // Save only changed settings
@@ -483,13 +486,6 @@ class CamViz extends HTMLElement {
                     }
                 };
 
-                /* Bind inputs */
-                ['rw','rl','rh','tx','ty','tz','pitch','yaw','roll','fov'].forEach(k => {
-                    const el = document.getElementById('cv-' + k);
-                    if (!el) return;
-                    el.addEventListener('input', update);
-                });
-
                 /* Resize */
                 function resize() {
                     const w = vpEl.clientWidth;
@@ -550,6 +546,9 @@ class CamViz extends HTMLElement {
             if (settings[key] !== undefined && settings[key] !== null) {
                 const numberInput = document.getElementById(numberId);
                 if (numberInput) {
+                    if (settings[key]?.toString().split('.')[1]?.length > 3) {
+                        settings[key] = parseFloat(settings[key].toFixed(3));
+                    }
                     numberInput.value = settings[key];
                 }
             }
@@ -558,7 +557,10 @@ class CamViz extends HTMLElement {
         // Update _prevValues to match current settings to prevent false change detection
         for (const [key, numberId] of Object.entries(settingMap)) {
             if (settings[key] !== undefined && settings[key] !== null) {
-                this._prevValues[numberId] = settings[key];
+                if (settings[key]?.toString().split('.')[1]?.length > 3) {
+                    settings[key] = parseFloat(settings[key].toFixed(3));
+                }
+                this._prevValues[numberId] = settings[key].toFixed(3);
             }
         }
 

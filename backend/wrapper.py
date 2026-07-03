@@ -115,12 +115,15 @@ class Wrapper:
     
     def update_cviz_config(self, index: int, obj: str, value) -> bool:
         if 0 <= index < len(self._configs):
-            t = self._configs[index].camera_config.camera_transform.translation()
-            r = self._configs[index].camera_config.camera_transform.rotation()
+            config = self._configs[index]
+            t = config.camera_config.camera_transform.translation()
+            r = config.camera_config.camera_transform.rotation()
 
             x, y, z = t.X(), t.Y(), t.Z()
             roll, pitch, yaw = r.X(), r.Y(), r.Z()
 
+            if value is None:
+                return False
             new_value = float(value)
             key = obj.strip().lower()
 
@@ -151,21 +154,21 @@ class Wrapper:
             else:
                 raise ValueError(f"Unknown field_name: '{obj}'")
 
-            self._configs[index].camera_config.camera_transform = Pose3d(Translation3d(x, y, z), 
+            config.camera_config.camera_transform = Pose3d(Translation3d(x, y, z), 
                 Rotation3d(roll, pitch, yaw))
             transform_dict = {
                 "translation": {
-                    "x": t.X(),
-                    "y": t.Y(),
-                    "z": t.Z(),
+                    "x": x,
+                    "y": y,
+                    "z": z,
                 },
                 "rotation": {
-                    "roll":  r.X(),
-                    "pitch": r.Y(),
-                    "yaw":   r.Z(),
+                    "roll":  roll,
+                    "pitch": pitch,
+                    "yaw":   yaw,
                 },
             }
-            self._configs[index].camera_config_source.save("camera_transform", transform_dict)
+            config.camera_config_source.save("camera_transform", transform_dict)
             return True
         return False
     
@@ -232,7 +235,8 @@ class Wrapper:
             return self.calib_done
         
     def get_apriltag_data(self, cam_supplier: callable) -> dict[str, any]:
-        index = next((i for i, cam in enumerate(self._configs) if cam.camera_config.camera_name == cam_supplier()), -1)
+        target = cam_supplier().strip()
+        index = next((i for i, cam in enumerate(self._configs) if cam.camera_config.camera_name == target), -1)
     
         if 0 <= index < len(self.output_apriltag):
             if self.output_apriltag[index] is not None:
@@ -241,7 +245,8 @@ class Wrapper:
         return {}
     
     def get_obj_data(self, cam_supplier: callable) -> dict[str, any]:
-        index = next((i for i, cam in enumerate(self._configs) if cam.camera_config.camera_name == cam_supplier()), -1)
+        target = cam_supplier().strip()
+        index = next((i for i, cam in enumerate(self._configs) if cam.camera_config.camera_name == target), -1)
 
         if 0 <= index < len(self.output_objdetect):
             if self.output_objdetect[index] is not None:
@@ -460,12 +465,13 @@ class Wrapper:
             if (config.camera_config.process_frames_enable 
                 and config.camera_config.has_calibration
                 and (config.camera_config.apriltags_enable or config.camera_config.objdetect_enable)):
+                img: cv2.Mat = image
                 if config.camera_config.apriltags_enable:
-                    [overlay_image_observation(image, x) for x in last_image_observations]
+                    [overlay_image_observation(img, x) for x in last_image_observations]
                 if config.camera_config.objdetect_enable:
-                    [overlay_obj_detect_observation(image, x) for x in last_objdetect_observations]
+                    [overlay_obj_detect_observation(img, x) for x in last_objdetect_observations]
                 with self.frame_lock:
-                    self.latest_frames[index] = image
+                    self.latest_frames[index] = img
             else:
                 with self.frame_lock:
                     self.latest_frames[index] = image

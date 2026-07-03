@@ -28,5 +28,6 @@
     "camera_horiz_fov": 70,
     "has_calibration": false,
     "camera_matrix": null,
-    "distortion_coefficients": null
+    "distortion_coefficients": null,
+    "is_calibrating": false
 }
