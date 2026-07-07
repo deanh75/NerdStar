@@ -1,0 +1,2 @@
+/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CheckASM/CMakeFiles/edit_cache.dir
+/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CheckASM/CMakeFiles/rebuild_cache.dir

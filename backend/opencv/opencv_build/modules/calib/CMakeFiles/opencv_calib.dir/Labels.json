@@ -1,0 +1,111 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/calib/include/opencv2/calib.hpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_calib",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/calib/include/opencv2/calib3d.hpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_calib",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/calib/src/calibration.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_calib",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/calib/src/calibration_handeye.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_calib",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/calib/src/fisheye.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_calib",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/calib/src/main.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_calib",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/calib/src/multiview_calibration.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_calib",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/calib/src/distortion_model.hpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_calib",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/calib/src/fisheye.hpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_calib",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/calib/src/precomp.hpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_calib",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_build/cvconfig.h"
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_build/opencv2/opencv_modules.hpp"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Main",
+			"opencv_calib",
+			"Module"
+		],
+		"name" : "opencv_calib"
+	}
+}

@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../3rdparty/lib/libkleidicv_hal.a "CMakeFiles/kleidicv_hal.dir/__/__/3rdparty/kleidicv/kleidicv-26.03/adapters/opencv/kleidicv_hal.cpp.o"
+/usr/bin/ranlib ../../3rdparty/lib/libkleidicv_hal.a

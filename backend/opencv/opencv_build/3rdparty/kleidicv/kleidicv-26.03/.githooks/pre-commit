@@ -1,0 +1,16 @@
+#!/usr/bin/env -S LC_ALL=C LANG=C bash
+
+# SPDX-FileCopyrightText: 2026 Arm Limited and/or its affiliates <open-source-office@arm.com>
+#
+# SPDX-License-Identifier: Apache-2.0
+
+set -euo pipefail
+
+# Check licences
+./scripts/annotate-license.sh
+
+# Verifies that source files are formatted
+CHECK_ONLY=ON ./scripts/format.sh
+
+# Verifies that scripts are somewhat correct
+shellcheck $(find scripts -name '*.sh' | tr '\n' ' ')

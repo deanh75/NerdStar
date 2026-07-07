@@ -1,0 +1,96 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/photo/perf/opencl/perf_denoising.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_photo",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/photo/perf/perf_ccm.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_photo",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/photo/perf/perf_chromatic_aberration.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_photo",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/photo/perf/perf_cuda.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_photo",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/photo/perf/perf_hdr.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_photo",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/photo/perf/perf_inpaint.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_photo",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/photo/perf/perf_intelligent_scissors.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_photo",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/photo/perf/perf_main.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_photo",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/photo/perf/perf_precomp.hpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_photo",
+				"PerfTest"
+			]
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Main",
+			"opencv_photo",
+			"PerfTest"
+		],
+		"name" : "opencv_perf_photo"
+	}
+}

@@ -1,0 +1,6 @@
+# SPDX-FileCopyrightText: 2023 Arm Limited and/or its affiliates <open-source-office@arm.com>
+#
+# SPDX-License-Identifier: Apache-2.0
+
+BasedOnStyle: Google
+CommentPragmas: 'SPDX'

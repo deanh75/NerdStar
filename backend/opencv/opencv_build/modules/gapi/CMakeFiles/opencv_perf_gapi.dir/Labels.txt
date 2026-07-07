@@ -1,0 +1,105 @@
+# Target labels
+ Extra
+ opencv_gapi
+ PerfTest
+# Source files and their labels
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/perf/common/gapi_core_perf_tests.cpp
+ Extra
+ opencv_gapi
+ PerfTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/perf/common/gapi_imgproc_perf_tests.cpp
+ Extra
+ opencv_gapi
+ PerfTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/perf/common/gapi_render_perf_tests.cpp
+ Extra
+ opencv_gapi
+ PerfTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/perf/common/gapi_video_perf_tests.cpp
+ Extra
+ opencv_gapi
+ PerfTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/perf/cpu/gapi_core_perf_tests_cpu.cpp
+ Extra
+ opencv_gapi
+ PerfTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/perf/cpu/gapi_core_perf_tests_fluid.cpp
+ Extra
+ opencv_gapi
+ PerfTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/perf/cpu/gapi_imgproc_perf_tests_cpu.cpp
+ Extra
+ opencv_gapi
+ PerfTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/perf/cpu/gapi_imgproc_perf_tests_fluid.cpp
+ Extra
+ opencv_gapi
+ PerfTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/perf/cpu/gapi_video_perf_tests_cpu.cpp
+ Extra
+ opencv_gapi
+ PerfTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/perf/gpu/gapi_core_perf_tests_gpu.cpp
+ Extra
+ opencv_gapi
+ PerfTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/perf/gpu/gapi_imgproc_perf_tests_gpu.cpp
+ Extra
+ opencv_gapi
+ PerfTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/perf/internal/gapi_compiler_perf_tests.cpp
+ Extra
+ opencv_gapi
+ PerfTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/perf/perf_bench.cpp
+ Extra
+ opencv_gapi
+ PerfTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/perf/perf_main.cpp
+ Extra
+ opencv_gapi
+ PerfTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/perf/render/gapi_render_perf_tests_ocv.cpp
+ Extra
+ opencv_gapi
+ PerfTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/perf/streaming/gapi_streaming_source_perf_tests.cpp
+ Extra
+ opencv_gapi
+ PerfTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/perf/common/gapi_core_perf_tests.hpp
+ Extra
+ opencv_gapi
+ PerfTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/perf/common/gapi_core_perf_tests_inl.hpp
+ Extra
+ opencv_gapi
+ PerfTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/perf/common/gapi_imgproc_perf_tests.hpp
+ Extra
+ opencv_gapi
+ PerfTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/perf/common/gapi_imgproc_perf_tests_inl.hpp
+ Extra
+ opencv_gapi
+ PerfTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/perf/common/gapi_render_perf_tests.hpp
+ Extra
+ opencv_gapi
+ PerfTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/perf/common/gapi_render_perf_tests_inl.hpp
+ Extra
+ opencv_gapi
+ PerfTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/perf/common/gapi_video_perf_tests.hpp
+ Extra
+ opencv_gapi
+ PerfTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/perf/common/gapi_video_perf_tests_inl.hpp
+ Extra
+ opencv_gapi
+ PerfTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/perf/perf_precomp.hpp
+ Extra
+ opencv_gapi
+ PerfTest

@@ -1,0 +1,21 @@
+# Target labels
+ Extra
+ opencv_xobjdetect
+ PerfTest
+# Source files and their labels
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xobjdetect/perf/opencl/perf_cascades.cpp
+ Extra
+ opencv_xobjdetect
+ PerfTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xobjdetect/perf/opencl/perf_hogdetect.cpp
+ Extra
+ opencv_xobjdetect
+ PerfTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xobjdetect/perf/perf_main.cpp
+ Extra
+ opencv_xobjdetect
+ PerfTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xobjdetect/perf/perf_precomp.hpp
+ Extra
+ opencv_xobjdetect
+ PerfTest

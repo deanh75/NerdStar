@@ -1,0 +1,42 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/calib/perf/perf_calibratecamera.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_calib",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/calib/perf/perf_main.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_calib",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/calib/perf/perf_precomp.hpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_calib",
+				"PerfTest"
+			]
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Main",
+			"opencv_calib",
+			"PerfTest"
+		],
+		"name" : "opencv_perf_calib"
+	}
+}

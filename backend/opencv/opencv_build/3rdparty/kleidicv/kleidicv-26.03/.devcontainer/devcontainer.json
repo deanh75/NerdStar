@@ -1,0 +1,58 @@
+{
+  "build" : {
+    "dockerfile": "Dockerfile",
+    "args": {
+      "USERNAME": "${localEnv:USER}"
+    },
+    "options" : [
+      "--network=host"
+    ]
+  },
+  "onCreateCommand" : ".devcontainer/oncreate.sh",
+  "containerEnv": {
+    "CCACHE_DIR": "/persist/ccache",
+    "CMAKE_CXX_COMPILER_LAUNCHER": "ccache",
+    // Default editor is nano. If you prefer vim then add "export EDITOR=vim"
+    // to your .profile, .bash_profile, .bashrc or .zshrc then log out and log
+    // in again before rebuilding the dev container from scratch.
+    "EDITOR": "${localEnv:EDITOR:nano}",
+    "LC_ALL": "C"
+  },
+  "mounts": [
+    // Volume to persist data between sessions
+    "source=${localEnv:USER}-kleidicv-persist,target=/persist,type=volume"
+  ],
+  "portsAttributes": {
+    "2345": {
+      "label": "QEMU GDB port",
+      "onAutoForward": "ignore"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "eamodio.gitlens",
+        "llvm-vs-code-extensions.vscode-clangd",
+        "ms-azuretools.vscode-docker",
+        "ms-vscode.cpptools",
+        "ms-vscode.cmake-tools",
+        "mhutchie.git-graph"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "terminal.integrated.profiles.linux": {
+          "zsh": {
+            "path": "zsh"
+          }
+        }
+      }
+    }
+  },
+  "runArgs" : [
+    "--network=host"
+  ],
+  "remoteUser": "${localEnv:USER}",
+  // Use real path names inside the container, instead of mapping them to /workspace.
+  "workspaceMount": "source=${localWorkspaceFolder},target=${localWorkspaceFolder},type=bind,consistency=cached",
+  "workspaceFolder": "${localWorkspaceFolder}"
+}

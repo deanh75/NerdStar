@@ -1,0 +1,839 @@
+Build output check failed:
+    Regex: 'command[- ]line option .* is valid for .* but not for C'
+    Output line: 'cc1: warning: command-line option ‘-Wnon-virtual-dtor’ is valid for C++/ObjC++ but not for C'
+Compilation failed:
+    source file: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.c'
+    check option: ' -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type  -Wnon-virtual-dtor'
+===== BUILD LOG =====
+Change Dir: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_aa5cb/fast
+/usr/bin/gmake  -f CMakeFiles/cmTC_aa5cb.dir/build.make CMakeFiles/cmTC_aa5cb.dir/build
+gmake[1]: Entering directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_aa5cb.dir/src.c.o
+/usr/bin/cc   -O3 -DNDEBUG -fPIE    -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type  -Wnon-virtual-dtor -o CMakeFiles/cmTC_aa5cb.dir/src.c.o -c /home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.c
+cc1: warning: command-line option ‘-Wnon-virtual-dtor’ is valid for C++/ObjC++ but not for C
+/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.c:1: warning: ignoring ‘#pragma  ’ [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+Linking C executable cmTC_aa5cb
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_aa5cb.dir/link.txt --verbose=1
+/usr/bin/cc -O3 -DNDEBUG CMakeFiles/cmTC_aa5cb.dir/src.c.o -o cmTC_aa5cb 
+gmake[1]: Leaving directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+
+===== END =====
+
+Build output check failed:
+    Regex: 'command[- ]line option .* is valid for .* but not for C\+\+'
+    Output line: 'cc1plus: warning: command-line option ‘-Wmissing-prototypes’ is valid for C/ObjC but not for C++'
+Compilation failed:
+    source file: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.cxx'
+    check option: ' -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations  -Wmissing-prototypes'
+===== BUILD LOG =====
+Change Dir: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ee4d4/fast
+/usr/bin/gmake  -f CMakeFiles/cmTC_ee4d4.dir/build.make CMakeFiles/cmTC_ee4d4.dir/build
+gmake[1]: Entering directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_ee4d4.dir/src.cxx.o
+/usr/bin/c++   -O3 -DNDEBUG -std=c++17 -fPIE    -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations  -Wmissing-prototypes -o CMakeFiles/cmTC_ee4d4.dir/src.cxx.o -c /home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: warning: command-line option ‘-Wmissing-prototypes’ is valid for C/ObjC but not for C++
+/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.cxx:1: warning: ignoring ‘#pragma  ’ [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+Linking CXX executable cmTC_ee4d4
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ee4d4.dir/link.txt --verbose=1
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/cmTC_ee4d4.dir/src.cxx.o -o cmTC_ee4d4 
+gmake[1]: Leaving directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+
+===== END =====
+
+Build output check failed:
+    Regex: 'command[- ]line option .* is valid for .* but not for C\+\+'
+    Output line: 'cc1plus: warning: command-line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++'
+Compilation failed:
+    source file: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.cxx'
+    check option: ' -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations  -Wstrict-prototypes'
+===== BUILD LOG =====
+Change Dir: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_56160/fast
+/usr/bin/gmake  -f CMakeFiles/cmTC_56160.dir/build.make CMakeFiles/cmTC_56160.dir/build
+gmake[1]: Entering directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_56160.dir/src.cxx.o
+/usr/bin/c++   -O3 -DNDEBUG -std=c++17 -fPIE    -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations  -Wstrict-prototypes -o CMakeFiles/cmTC_56160.dir/src.cxx.o -c /home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: warning: command-line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.cxx:1: warning: ignoring ‘#pragma  ’ [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+Linking CXX executable cmTC_56160
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_56160.dir/link.txt --verbose=1
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/cmTC_56160.dir/src.cxx.o -o cmTC_56160 
+gmake[1]: Leaving directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+
+===== END =====
+
+Build output check failed:
+    Regex: 'command[- ]line option .* is valid for .* but not for C'
+    Output line: 'cc1: warning: command-line option ‘-Wsign-promo’ is valid for C++/ObjC++ but not for C'
+Compilation failed:
+    source file: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.c'
+    check option: ' -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow  -Wsign-promo'
+===== BUILD LOG =====
+Change Dir: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_2756d/fast
+/usr/bin/gmake  -f CMakeFiles/cmTC_2756d.dir/build.make CMakeFiles/cmTC_2756d.dir/build
+gmake[1]: Entering directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2756d.dir/src.c.o
+/usr/bin/cc   -O3 -DNDEBUG -fPIE    -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow  -Wsign-promo -o CMakeFiles/cmTC_2756d.dir/src.c.o -c /home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.c
+cc1: warning: command-line option ‘-Wsign-promo’ is valid for C++/ObjC++ but not for C
+/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.c:1: warning: ignoring ‘#pragma  ’ [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+Linking C executable cmTC_2756d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2756d.dir/link.txt --verbose=1
+/usr/bin/cc -O3 -DNDEBUG CMakeFiles/cmTC_2756d.dir/src.c.o -o cmTC_2756d 
+gmake[1]: Leaving directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+
+===== END =====
+
+Build output check failed:
+    Regex: 'command[- ]line option .* is valid for .* but not for C'
+    Output line: 'cc1: warning: command-line option ‘-Wsuggest-override’ is valid for C++/ObjC++ but not for C'
+Compilation failed:
+    source file: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.c'
+    check option: ' -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized  -Wsuggest-override'
+===== BUILD LOG =====
+Change Dir: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_0e900/fast
+/usr/bin/gmake  -f CMakeFiles/cmTC_0e900.dir/build.make CMakeFiles/cmTC_0e900.dir/build
+gmake[1]: Entering directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0e900.dir/src.c.o
+/usr/bin/cc   -O3 -DNDEBUG -fPIE    -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized  -Wsuggest-override -o CMakeFiles/cmTC_0e900.dir/src.c.o -c /home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.c
+cc1: warning: command-line option ‘-Wsuggest-override’ is valid for C++/ObjC++ but not for C
+/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.c:1: warning: ignoring ‘#pragma  ’ [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+Linking C executable cmTC_0e900
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0e900.dir/link.txt --verbose=1
+/usr/bin/cc -O3 -DNDEBUG CMakeFiles/cmTC_0e900.dir/src.c.o -o cmTC_0e900 
+gmake[1]: Leaving directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+
+===== END =====
+
+Build output check failed:
+    Regex: 'command[- ]line option .* is valid for .* but not for C'
+    Output line: 'cc1: warning: command-line option ‘-Wno-delete-non-virtual-dtor’ is valid for C++/ObjC++ but not for C'
+Compilation failed:
+    source file: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.c'
+    check option: ' -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized  -Wno-delete-non-virtual-dtor'
+===== BUILD LOG =====
+Change Dir: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_50970/fast
+/usr/bin/gmake  -f CMakeFiles/cmTC_50970.dir/build.make CMakeFiles/cmTC_50970.dir/build
+gmake[1]: Entering directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_50970.dir/src.c.o
+/usr/bin/cc   -O3 -DNDEBUG -fPIE    -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized  -Wno-delete-non-virtual-dtor -o CMakeFiles/cmTC_50970.dir/src.c.o -c /home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.c
+cc1: warning: command-line option ‘-Wno-delete-non-virtual-dtor’ is valid for C++/ObjC++ but not for C
+/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.c:1: warning: ignoring ‘#pragma  ’ [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+Linking C executable cmTC_50970
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_50970.dir/link.txt --verbose=1
+/usr/bin/cc -O3 -DNDEBUG CMakeFiles/cmTC_50970.dir/src.c.o -o cmTC_50970 
+gmake[1]: Leaving directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+
+===== END =====
+
+Build output check failed:
+    Regex: 'unrecognized .*option'
+    Output line: 'cc1plus: note: unrecognized command-line option ‘-Wno-unnamed-type-template-args’ may have been intended to silence earlier diagnostics'
+Compilation failed:
+    source file: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.cxx'
+    check option: ' -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wuninitialized -Wsuggest-override -Wno-delete-non-virtual-dtor  -Wno-unnamed-type-template-args'
+===== BUILD LOG =====
+Change Dir: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_69495/fast
+/usr/bin/gmake  -f CMakeFiles/cmTC_69495.dir/build.make CMakeFiles/cmTC_69495.dir/build
+gmake[1]: Entering directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_69495.dir/src.cxx.o
+/usr/bin/c++   -O3 -DNDEBUG -std=c++17 -fPIE    -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wuninitialized -Wsuggest-override -Wno-delete-non-virtual-dtor  -Wno-unnamed-type-template-args -o CMakeFiles/cmTC_69495.dir/src.cxx.o -c /home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.cxx
+/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.cxx:1: warning: ignoring ‘#pragma  ’ [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+cc1plus: note: unrecognized command-line option ‘-Wno-unnamed-type-template-args’ may have been intended to silence earlier diagnostics
+Linking CXX executable cmTC_69495
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_69495.dir/link.txt --verbose=1
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/cmTC_69495.dir/src.cxx.o -o cmTC_69495 
+gmake[1]: Leaving directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+
+===== END =====
+
+Build output check failed:
+    Regex: 'unrecognized .*option'
+    Output line: 'cc1: note: unrecognized command-line option ‘-Wno-unnamed-type-template-args’ may have been intended to silence earlier diagnostics'
+Compilation failed:
+    source file: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.c'
+    check option: ' -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized  -Wno-unnamed-type-template-args'
+===== BUILD LOG =====
+Change Dir: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_fe656/fast
+/usr/bin/gmake  -f CMakeFiles/cmTC_fe656.dir/build.make CMakeFiles/cmTC_fe656.dir/build
+gmake[1]: Entering directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fe656.dir/src.c.o
+/usr/bin/cc   -O3 -DNDEBUG -fPIE    -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized  -Wno-unnamed-type-template-args -o CMakeFiles/cmTC_fe656.dir/src.c.o -c /home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.c
+/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.c:1: warning: ignoring ‘#pragma  ’ [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+cc1: note: unrecognized command-line option ‘-Wno-unnamed-type-template-args’ may have been intended to silence earlier diagnostics
+Linking C executable cmTC_fe656
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fe656.dir/link.txt --verbose=1
+/usr/bin/cc -O3 -DNDEBUG CMakeFiles/cmTC_fe656.dir/src.c.o -o cmTC_fe656 
+gmake[1]: Leaving directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+
+===== END =====
+
+Compilation failed:
+    source file: '/home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/cpu_sve.cpp'
+    check option: ''
+===== BUILD LOG =====
+Change Dir: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_7f734/fast
+/usr/bin/gmake  -f CMakeFiles/cmTC_7f734.dir/build.make CMakeFiles/cmTC_7f734.dir/build
+gmake[1]: Entering directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_7f734.dir/cpu_sve.cpp.o
+/usr/bin/c++   -O3 -DNDEBUG -std=c++17 -fPIE -o CMakeFiles/cmTC_7f734.dir/cpu_sve.cpp.o -c /home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/cpu_sve.cpp
+/home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/cpu_sve.cpp:17:2: error: #error "SVE is not supported"
+   17 | #error "SVE is not supported"
+      |  ^~~~~
+/home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/cpu_sve.cpp: In function ‘int main()’:
+/home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/cpu_sve.cpp:22:18: error: ‘test’ was not declared in this scope
+   22 |   printf("%d\n", test());
+      |                  ^~~~
+gmake[1]: *** [CMakeFiles/cmTC_7f734.dir/build.make:78: CMakeFiles/cmTC_7f734.dir/cpu_sve.cpp.o] Error 1
+gmake[1]: Leaving directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_7f734/fast] Error 2
+
+
+===== END =====
+
+Compilation failed:
+    source file: '/home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/cpu_neon_dotprod.cpp'
+    check option: ''
+===== BUILD LOG =====
+Change Dir: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_6db14/fast
+/usr/bin/gmake  -f CMakeFiles/cmTC_6db14.dir/build.make CMakeFiles/cmTC_6db14.dir/build
+gmake[1]: Entering directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_6db14.dir/cpu_neon_dotprod.cpp.o
+/usr/bin/c++   -O3 -DNDEBUG -std=c++17 -fPIE -o CMakeFiles/cmTC_6db14.dir/cpu_neon_dotprod.cpp.o -c /home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/cpu_neon_dotprod.cpp
+In file included from /home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/cpu_neon_dotprod.cpp:6:
+/usr/lib/gcc/aarch64-linux-gnu/13/include/arm_neon.h: In function ‘int test()’:
+/usr/lib/gcc/aarch64-linux-gnu/13/include/arm_neon.h:26767:1: error: inlining failed in call to ‘always_inline’ ‘uint32x4_t vdotq_u32(uint32x4_t, uint8x16_t, uint8x16_t)’: target specific option mismatch
+26767 | vdotq_u32 (uint32x4_t __r, uint8x16_t __a, uint8x16_t __b)
+      | ^~~~~~~~~
+/home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/cpu_neon_dotprod.cpp:14:33: note: called from here
+   14 |     uint32x4_t v_dst = vdotq_u32(v_src, v_m0, v_m1);
+      |                        ~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+gmake[1]: *** [CMakeFiles/cmTC_6db14.dir/build.make:78: CMakeFiles/cmTC_6db14.dir/cpu_neon_dotprod.cpp.o] Error 1
+gmake[1]: Leaving directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_6db14/fast] Error 2
+
+
+===== END =====
+
+Compilation failed:
+    source file: '/home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/cpu_neon_fp16.cpp'
+    check option: ''
+===== BUILD LOG =====
+Change Dir: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_0a9a5/fast
+/usr/bin/gmake  -f CMakeFiles/cmTC_0a9a5.dir/build.make CMakeFiles/cmTC_0a9a5.dir/build
+gmake[1]: Entering directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_0a9a5.dir/cpu_neon_fp16.cpp.o
+/usr/bin/c++   -O3 -DNDEBUG -std=c++17 -fPIE -o CMakeFiles/cmTC_0a9a5.dir/cpu_neon_fp16.cpp.o -c /home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/cpu_neon_fp16.cpp
+In file included from /home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/cpu_neon_fp16.cpp:5:
+/usr/lib/gcc/aarch64-linux-gnu/13/include/arm_neon.h: In function ‘void test()’:
+/usr/lib/gcc/aarch64-linux-gnu/13/include/arm_neon.h:26499:1: error: inlining failed in call to ‘always_inline’ ‘float16x8_t vfmaq_laneq_f16(float16x8_t, float16x8_t, float16x8_t, int)’: target specific option mismatch
+26499 | vfmaq_laneq_f16 (float16x8_t __a, float16x8_t __b,
+      | ^~~~~~~~~~~~~~~
+/home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/cpu_neon_fp16.cpp:29:24: note: called from here
+   29 |     d = vfmaq_laneq_f16(d, s1, s2, 0);
+      |         ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/usr/lib/gcc/aarch64-linux-gnu/13/include/arm_neon.h:26420:1: error: inlining failed in call to ‘always_inline’ ‘float16x8_t vsubq_f16(float16x8_t, float16x8_t)’: target specific option mismatch
+26420 | vsubq_f16 (float16x8_t __a, float16x8_t __b)
+      | ^~~~~~~~~
+/home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/cpu_neon_fp16.cpp:28:30: note: called from here
+   28 |     float16x8_t d = vsubq_f16(s1, s1);
+      |                     ~~~~~~~~~^~~~~~~~
+/usr/lib/gcc/aarch64-linux-gnu/13/include/arm_neon.h:26499:1: error: inlining failed in call to ‘always_inline’ ‘float16x8_t vfmaq_laneq_f16(float16x8_t, float16x8_t, float16x8_t, int)’: target specific option mismatch
+26499 | vfmaq_laneq_f16 (float16x8_t __a, float16x8_t __b,
+      | ^~~~~~~~~~~~~~~
+/home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/cpu_neon_fp16.cpp:30:24: note: called from here
+   30 |     d = vfmaq_laneq_f16(d, s1, s2, 1);
+      |         ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/usr/lib/gcc/aarch64-linux-gnu/13/include/arm_neon.h:26499:1: error: inlining failed in call to ‘always_inline’ ‘float16x8_t vfmaq_laneq_f16(float16x8_t, float16x8_t, float16x8_t, int)’: target specific option mismatch
+26499 | vfmaq_laneq_f16 (float16x8_t __a, float16x8_t __b,
+      | ^~~~~~~~~~~~~~~
+/home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/cpu_neon_fp16.cpp:31:24: note: called from here
+   31 |     d = vfmaq_laneq_f16(d, s1, s2, 2);
+      |         ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/usr/lib/gcc/aarch64-linux-gnu/13/include/arm_neon.h:26499:1: error: inlining failed in call to ‘always_inline’ ‘float16x8_t vfmaq_laneq_f16(float16x8_t, float16x8_t, float16x8_t, int)’: target specific option mismatch
+26499 | vfmaq_laneq_f16 (float16x8_t __a, float16x8_t __b,
+      | ^~~~~~~~~~~~~~~
+/home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/cpu_neon_fp16.cpp:32:24: note: called from here
+   32 |     d = vfmaq_laneq_f16(d, s1, s2, 3);
+      |         ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/usr/lib/gcc/aarch64-linux-gnu/13/include/arm_neon.h:26499:1: error: inlining failed in call to ‘always_inline’ ‘float16x8_t vfmaq_laneq_f16(float16x8_t, float16x8_t, float16x8_t, int)’: target specific option mismatch
+26499 | vfmaq_laneq_f16 (float16x8_t __a, float16x8_t __b,
+      | ^~~~~~~~~~~~~~~
+/home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/cpu_neon_fp16.cpp:33:24: note: called from here
+   33 |     d = vfmaq_laneq_f16(d, s1, s2, 4);
+      |         ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/usr/lib/gcc/aarch64-linux-gnu/13/include/arm_neon.h:26499:1: error: inlining failed in call to ‘always_inline’ ‘float16x8_t vfmaq_laneq_f16(float16x8_t, float16x8_t, float16x8_t, int)’: target specific option mismatch
+26499 | vfmaq_laneq_f16 (float16x8_t __a, float16x8_t __b,
+      | ^~~~~~~~~~~~~~~
+/home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/cpu_neon_fp16.cpp:34:24: note: called from here
+   34 |     d = vfmaq_laneq_f16(d, s1, s2, 5);
+      |         ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/usr/lib/gcc/aarch64-linux-gnu/13/include/arm_neon.h:26499:1: error: inlining failed in call to ‘always_inline’ ‘float16x8_t vfmaq_laneq_f16(float16x8_t, float16x8_t, float16x8_t, int)’: target specific option mismatch
+26499 | vfmaq_laneq_f16 (float16x8_t __a, float16x8_t __b,
+      | ^~~~~~~~~~~~~~~
+/home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/cpu_neon_fp16.cpp:35:24: note: called from here
+   35 |     d = vfmaq_laneq_f16(d, s1, s2, 6);
+      |         ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/usr/lib/gcc/aarch64-linux-gnu/13/include/arm_neon.h:26499:1: error: inlining failed in call to ‘always_inline’ ‘float16x8_t vfmaq_laneq_f16(float16x8_t, float16x8_t, float16x8_t, int)’: target specific option mismatch
+26499 | vfmaq_laneq_f16 (float16x8_t __a, float16x8_t __b,
+      | ^~~~~~~~~~~~~~~
+/home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/cpu_neon_fp16.cpp:36:24: note: called from here
+   36 |     d = vfmaq_laneq_f16(d, s1, s2, 7);
+      |         ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/usr/lib/gcc/aarch64-linux-gnu/13/include/arm_neon.h:26499:1: error: inlining failed in call to ‘always_inline’ ‘float16x8_t vfmaq_laneq_f16(float16x8_t, float16x8_t, float16x8_t, int)’: target specific option mismatch
+26499 | vfmaq_laneq_f16 (float16x8_t __a, float16x8_t __b,
+      | ^~~~~~~~~~~~~~~
+/home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/cpu_neon_fp16.cpp:29:24: note: called from here
+   29 |     d = vfmaq_laneq_f16(d, s1, s2, 0);
+      |         ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/usr/lib/gcc/aarch64-linux-gnu/13/include/arm_neon.h:26420:1: error: inlining failed in call to ‘always_inline’ ‘float16x8_t vsubq_f16(float16x8_t, float16x8_t)’: target specific option mismatch
+26420 | vsubq_f16 (float16x8_t __a, float16x8_t __b)
+      | ^~~~~~~~~
+/home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/cpu_neon_fp16.cpp:28:30: note: called from here
+   28 |     float16x8_t d = vsubq_f16(s1, s1);
+      |                     ~~~~~~~~~^~~~~~~~
+/usr/lib/gcc/aarch64-linux-gnu/13/include/arm_neon.h:26499:1: error: inlining failed in call to ‘always_inline’ ‘float16x8_t vfmaq_laneq_f16(float16x8_t, float16x8_t, float16x8_t, int)’: target specific option mismatch
+26499 | vfmaq_laneq_f16 (float16x8_t __a, float16x8_t __b,
+      | ^~~~~~~~~~~~~~~
+/home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/cpu_neon_fp16.cpp:29:24: note: called from here
+   29 |     d = vfmaq_laneq_f16(d, s1, s2, 0);
+      |         ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/usr/lib/gcc/aarch64-linux-gnu/13/include/arm_neon.h:26420:1: error: inlining failed in call to ‘always_inline’ ‘float16x8_t vsubq_f16(float16x8_t, float16x8_t)’: target specific option mismatch
+26420 | vsubq_f16 (float16x8_t __a, float16x8_t __b)
+      | ^~~~~~~~~
+/home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/cpu_neon_fp16.cpp:28:30: note: called from here
+   28 |     float16x8_t d = vsubq_f16(s1, s1);
+      |                     ~~~~~~~~~^~~~~~~~
+/usr/lib/gcc/aarch64-linux-gnu/13/include/arm_neon.h:26499:1: error: inlining failed in call to ‘always_inline’ ‘float16x8_t vfmaq_laneq_f16(float16x8_t, float16x8_t, float16x8_t, int)’: target specific option mismatch
+26499 | vfmaq_laneq_f16 (float16x8_t __a, float16x8_t __b,
+      | ^~~~~~~~~~~~~~~
+/home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/cpu_neon_fp16.cpp:30:24: note: called from here
+   30 |     d = vfmaq_laneq_f16(d, s1, s2, 1);
+      |         ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/usr/lib/gcc/aarch64-linux-gnu/13/include/arm_neon.h:26499:1: error: inlining failed in call to ‘always_inline’ ‘float16x8_t vfmaq_laneq_f16(float16x8_t, float16x8_t, float16x8_t, int)’: target specific option mismatch
+26499 | vfmaq_laneq_f16 (float16x8_t __a, float16x8_t __b,
+      | ^~~~~~~~~~~~~~~
+/home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/cpu_neon_fp16.cpp:31:24: note: called from here
+   31 |     d = vfmaq_laneq_f16(d, s1, s2, 2);
+      |         ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/usr/lib/gcc/aarch64-linux-gnu/13/include/arm_neon.h:26499:1: error: inlining failed in call to ‘always_inline’ ‘float16x8_t vfmaq_laneq_f16(float16x8_t, float16x8_t, float16x8_t, int)’: target specific option mismatch
+26499 | vfmaq_laneq_f16 (float16x8_t __a, float16x8_t __b,
+      | ^~~~~~~~~~~~~~~
+/home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/cpu_neon_fp16.cpp:32:24: note: called from here
+   32 |     d = vfmaq_laneq_f16(d, s1, s2, 3);
+      |         ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/usr/lib/gcc/aarch64-linux-gnu/13/include/arm_neon.h:26499:1: error: inlining failed in call to ‘always_inline’ ‘float16x8_t vfmaq_laneq_f16(float16x8_t, float16x8_t, float16x8_t, int)’: target specific option mismatch
+26499 | vfmaq_laneq_f16 (float16x8_t __a, float16x8_t __b,
+      | ^~~~~~~~~~~~~~~
+/home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/cpu_neon_fp16.cpp:33:24: note: called from here
+   33 |     d = vfmaq_laneq_f16(d, s1, s2, 4);
+      |         ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/usr/lib/gcc/aarch64-linux-gnu/13/include/arm_neon.h:26499:1: error: inlining failed in call to ‘always_inline’ ‘float16x8_t vfmaq_laneq_f16(float16x8_t, float16x8_t, float16x8_t, int)’: target specific option mismatch
+26499 | vfmaq_laneq_f16 (float16x8_t __a, float16x8_t __b,
+      | ^~~~~~~~~~~~~~~
+/home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/cpu_neon_fp16.cpp:34:24: note: called from here
+   34 |     d = vfmaq_laneq_f16(d, s1, s2, 5);
+      |         ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/usr/lib/gcc/aarch64-linux-gnu/13/include/arm_neon.h:26499:1: error: inlining failed in call to ‘always_inline’ ‘float16x8_t vfmaq_laneq_f16(float16x8_t, float16x8_t, float16x8_t, int)’: target specific option mismatch
+26499 | vfmaq_laneq_f16 (float16x8_t __a, float16x8_t __b,
+      | ^~~~~~~~~~~~~~~
+/home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/cpu_neon_fp16.cpp:35:24: note: called from here
+   35 |     d = vfmaq_laneq_f16(d, s1, s2, 6);
+      |         ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/usr/lib/gcc/aarch64-linux-gnu/13/include/arm_neon.h:26499:1: error: inlining failed in call to ‘always_inline’ ‘float16x8_t vfmaq_laneq_f16(float16x8_t, float16x8_t, float16x8_t, int)’: target specific option mismatch
+26499 | vfmaq_laneq_f16 (float16x8_t __a, float16x8_t __b,
+      | ^~~~~~~~~~~~~~~
+/home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/cpu_neon_fp16.cpp:36:24: note: called from here
+   36 |     d = vfmaq_laneq_f16(d, s1, s2, 7);
+      |         ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+gmake[1]: *** [CMakeFiles/cmTC_0a9a5.dir/build.make:78: CMakeFiles/cmTC_0a9a5.dir/cpu_neon_fp16.cpp.o] Error 1
+gmake[1]: Leaving directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_0a9a5/fast] Error 2
+
+
+===== END =====
+
+Compilation failed:
+    source file: '/home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/cpu_neon_bf16.cpp'
+    check option: ''
+===== BUILD LOG =====
+Change Dir: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_0f5bc/fast
+/usr/bin/gmake  -f CMakeFiles/cmTC_0f5bc.dir/build.make CMakeFiles/cmTC_0f5bc.dir/build
+gmake[1]: Entering directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_0f5bc.dir/cpu_neon_bf16.cpp.o
+/usr/bin/c++   -O3 -DNDEBUG -std=c++17 -fPIE -o CMakeFiles/cmTC_0f5bc.dir/cpu_neon_bf16.cpp.o -c /home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/cpu_neon_bf16.cpp
+In file included from /home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/cpu_neon_bf16.cpp:3:
+/usr/lib/gcc/aarch64-linux-gnu/13/include/arm_neon.h: In function ‘bfloat16x8_t vld1q_as_bf16(const float*)’:
+/usr/lib/gcc/aarch64-linux-gnu/13/include/arm_neon.h:27898:1: error: inlining failed in call to ‘always_inline’ ‘bfloat16x8_t vcombine_bf16(bfloat16x4_t, bfloat16x4_t)’: target specific option mismatch
+27898 | vcombine_bf16 (bfloat16x4_t __a, bfloat16x4_t __b)
+      | ^~~~~~~~~~~~~
+/home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/cpu_neon_bf16.cpp:14:25: note: called from here
+   14 |     return vcombine_bf16(vcvt_bf16_f32(s0), vcvt_bf16_f32(s1));
+      |            ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/aarch64-linux-gnu/13/include/arm_neon.h:28382:1: error: inlining failed in call to ‘always_inline’ ‘bfloat16x4_t vcvt_bf16_f32(float32x4_t)’: target specific option mismatch
+28382 | vcvt_bf16_f32 (float32x4_t __a)
+      | ^~~~~~~~~~~~~
+/home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/cpu_neon_bf16.cpp:14:25: note: called from here
+   14 |     return vcombine_bf16(vcvt_bf16_f32(s0), vcvt_bf16_f32(s1));
+      |            ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/aarch64-linux-gnu/13/include/arm_neon.h:28382:1: error: inlining failed in call to ‘always_inline’ ‘bfloat16x4_t vcvt_bf16_f32(float32x4_t)’: target specific option mismatch
+28382 | vcvt_bf16_f32 (float32x4_t __a)
+      | ^~~~~~~~~~~~~
+/home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/cpu_neon_bf16.cpp:14:25: note: called from here
+   14 |     return vcombine_bf16(vcvt_bf16_f32(s0), vcvt_bf16_f32(s1));
+      |            ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/aarch64-linux-gnu/13/include/arm_neon.h:27898:1: error: inlining failed in call to ‘always_inline’ ‘bfloat16x8_t vcombine_bf16(bfloat16x4_t, bfloat16x4_t)’: target specific option mismatch
+27898 | vcombine_bf16 (bfloat16x4_t __a, bfloat16x4_t __b)
+      | ^~~~~~~~~~~~~
+/home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/cpu_neon_bf16.cpp:14:25: note: called from here
+   14 |     return vcombine_bf16(vcvt_bf16_f32(s0), vcvt_bf16_f32(s1));
+      |            ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/aarch64-linux-gnu/13/include/arm_neon.h:28382:1: error: inlining failed in call to ‘always_inline’ ‘bfloat16x4_t vcvt_bf16_f32(float32x4_t)’: target specific option mismatch
+28382 | vcvt_bf16_f32 (float32x4_t __a)
+      | ^~~~~~~~~~~~~
+/home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/cpu_neon_bf16.cpp:14:25: note: called from here
+   14 |     return vcombine_bf16(vcvt_bf16_f32(s0), vcvt_bf16_f32(s1));
+      |            ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/aarch64-linux-gnu/13/include/arm_neon.h:28382:1: error: inlining failed in call to ‘always_inline’ ‘bfloat16x4_t vcvt_bf16_f32(float32x4_t)’: target specific option mismatch
+28382 | vcvt_bf16_f32 (float32x4_t __a)
+      | ^~~~~~~~~~~~~
+/home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/cpu_neon_bf16.cpp:14:25: note: called from here
+   14 |     return vcombine_bf16(vcvt_bf16_f32(s0), vcvt_bf16_f32(s1));
+      |            ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gmake[1]: *** [CMakeFiles/cmTC_0f5bc.dir/build.make:78: CMakeFiles/cmTC_0f5bc.dir/cpu_neon_bf16.cpp.o] Error 1
+gmake[1]: Leaving directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_0f5bc/fast] Error 2
+
+
+===== END =====
+
+Build output check failed:
+    Regex: 'command[- ]line option .* is valid for .* but not for C'
+    Output line: 'cc1: warning: command-line option ‘-fvisibility-inlines-hidden’ is valid for C++/ObjC++ but not for C'
+Compilation failed:
+    source file: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.c'
+    check option: ' -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -fvisibility=hidden  -fvisibility-inlines-hidden'
+===== BUILD LOG =====
+Change Dir: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_5a56c/fast
+/usr/bin/gmake  -f CMakeFiles/cmTC_5a56c.dir/build.make CMakeFiles/cmTC_5a56c.dir/build
+gmake[1]: Entering directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5a56c.dir/src.c.o
+/usr/bin/cc   -O3 -DNDEBUG -fPIE    -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -fvisibility=hidden  -fvisibility-inlines-hidden -o CMakeFiles/cmTC_5a56c.dir/src.c.o -c /home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.c
+cc1: warning: command-line option ‘-fvisibility-inlines-hidden’ is valid for C++/ObjC++ but not for C
+/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.c:1: warning: ignoring ‘#pragma  ’ [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+Linking C executable cmTC_5a56c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5a56c.dir/link.txt --verbose=1
+/usr/bin/cc -O3 -DNDEBUG CMakeFiles/cmTC_5a56c.dir/src.c.o -o cmTC_5a56c 
+gmake[1]: Leaving directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+
+===== END =====
+
+Build output check failed:
+    Regex: 'unrecognized .*option'
+    Output line: 'cc1: note: unrecognized command-line option ‘-Wno-implicit-const-int-float-conversion’ may have been intended to silence earlier diagnostics'
+Compilation failed:
+    source file: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.c'
+    check option: ' -Wno-implicit-const-int-float-conversion'
+===== BUILD LOG =====
+Change Dir: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_4dc30/fast
+/usr/bin/gmake  -f CMakeFiles/cmTC_4dc30.dir/build.make CMakeFiles/cmTC_4dc30.dir/build
+gmake[1]: Entering directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4dc30.dir/src.c.o
+/usr/bin/cc   -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -fvisibility=hidden  -O3 -DNDEBUG  -DNDEBUG -fPIE    -Wno-implicit-const-int-float-conversion -o CMakeFiles/cmTC_4dc30.dir/src.c.o -c /home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.c
+/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.c:1: warning: ignoring ‘#pragma  ’ [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+cc1: note: unrecognized command-line option ‘-Wno-implicit-const-int-float-conversion’ may have been intended to silence earlier diagnostics
+Linking C executable cmTC_4dc30
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4dc30.dir/link.txt --verbose=1
+/usr/bin/cc    -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -fvisibility=hidden  -O3 -DNDEBUG  -DNDEBUG   -Wl,--gc-sections -Wl,--as-needed -Wl,--no-undefined  CMakeFiles/cmTC_4dc30.dir/src.c.o -o cmTC_4dc30 
+gmake[1]: Leaving directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+
+===== END =====
+
+Build output check failed:
+    Regex: 'unrecognized .*option'
+    Output line: 'cc1: note: unrecognized command-line option ‘-Wno-documentation’ may have been intended to silence earlier diagnostics'
+Compilation failed:
+    source file: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.c'
+    check option: ' -Wno-documentation'
+===== BUILD LOG =====
+Change Dir: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_4f82b/fast
+/usr/bin/gmake  -f CMakeFiles/cmTC_4f82b.dir/build.make CMakeFiles/cmTC_4f82b.dir/build
+gmake[1]: Entering directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4f82b.dir/src.c.o
+/usr/bin/cc   -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Waddress -Wsequence-point -Wformat -Wformat-security -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -fvisibility=hidden -Wno-unused-but-set-variable -Wno-missing-prototypes -Wno-missing-declarations  -O3 -DNDEBUG  -DNDEBUG -fPIE    -Wno-documentation -o CMakeFiles/cmTC_4f82b.dir/src.c.o -c /home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.c
+/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.c:1: warning: ignoring ‘#pragma  ’ [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+cc1: note: unrecognized command-line option ‘-Wno-documentation’ may have been intended to silence earlier diagnostics
+Linking C executable cmTC_4f82b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4f82b.dir/link.txt --verbose=1
+/usr/bin/cc    -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Waddress -Wsequence-point -Wformat -Wformat-security -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -fvisibility=hidden -Wno-unused-but-set-variable -Wno-missing-prototypes -Wno-missing-declarations  -O3 -DNDEBUG  -DNDEBUG   -Wl,--gc-sections -Wl,--as-needed -Wl,--no-undefined  CMakeFiles/cmTC_4f82b.dir/src.c.o -o cmTC_4f82b 
+gmake[1]: Leaving directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+
+===== END =====
+
+Build output check failed:
+    Regex: 'command[- ]line option .* is valid for .* but not for C\+\+'
+    Output line: 'cc1plus: warning: command-line option ‘-Wno-missing-prototypes’ is valid for C/ObjC but not for C++'
+Compilation failed:
+    source file: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.cxx'
+    check option: ' -Wno-missing-prototypes'
+===== BUILD LOG =====
+Change Dir: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_5e414/fast
+/usr/bin/gmake  -f CMakeFiles/cmTC_5e414.dir/build.make CMakeFiles/cmTC_5e414.dir/build
+gmake[1]: Entering directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_5e414.dir/src.cxx.o
+/usr/bin/c++   -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Wundef -Winit-self -Wpointer-arith -Wsign-promo -Wuninitialized -Wsuggest-override -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -fvisibility=hidden -fvisibility-inlines-hidden -Wno-unused-variable -Wno-unused-function -Wno-unused-parameter -Wno-unused-but-set-variable -Wno-shadow -Wno-missing-declarations  -O3 -DNDEBUG  -DNDEBUG -std=c++17 -fPIE    -Wno-missing-prototypes -o CMakeFiles/cmTC_5e414.dir/src.cxx.o -c /home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: warning: command-line option ‘-Wno-missing-prototypes’ is valid for C/ObjC but not for C++
+/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.cxx:1: warning: ignoring ‘#pragma  ’ [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+Linking CXX executable cmTC_5e414
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5e414.dir/link.txt --verbose=1
+/usr/bin/c++    -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Wundef -Winit-self -Wpointer-arith -Wsign-promo -Wuninitialized -Wsuggest-override -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -fvisibility=hidden -fvisibility-inlines-hidden -Wno-unused-variable -Wno-unused-function -Wno-unused-parameter -Wno-unused-but-set-variable -Wno-shadow -Wno-missing-declarations  -O3 -DNDEBUG  -DNDEBUG   -Wl,--gc-sections -Wl,--as-needed -Wl,--no-undefined  CMakeFiles/cmTC_5e414.dir/src.cxx.o -o cmTC_5e414 
+gmake[1]: Leaving directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+
+===== END =====
+
+Build output check failed:
+    Regex: 'unrecognized .*option'
+    Output line: 'cc1: note: unrecognized command-line option ‘-Wno-tautological-negation-compare’ may have been intended to silence earlier diagnostics'
+Compilation failed:
+    source file: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.c'
+    check option: ' -Wno-tautological-negation-compare'
+===== BUILD LOG =====
+Change Dir: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ff12f/fast
+/usr/bin/gmake  -f CMakeFiles/cmTC_ff12f.dir/build.make CMakeFiles/cmTC_ff12f.dir/build
+gmake[1]: Entering directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ff12f.dir/src.c.o
+/usr/bin/cc   -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -fvisibility=hidden -Wno-parentheses -Wno-uninitialized -Wno-array-bounds -Wno-implicit-function-declaration -Wno-unused -Wno-unused-parameter -Wno-stringop-truncation  -O3 -DNDEBUG  -DNDEBUG -fPIE    -Wno-tautological-negation-compare -o CMakeFiles/cmTC_ff12f.dir/src.c.o -c /home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.c
+/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.c:1: warning: ignoring ‘#pragma  ’ [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+cc1: note: unrecognized command-line option ‘-Wno-tautological-negation-compare’ may have been intended to silence earlier diagnostics
+Linking C executable cmTC_ff12f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ff12f.dir/link.txt --verbose=1
+/usr/bin/cc    -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -fvisibility=hidden -Wno-parentheses -Wno-uninitialized -Wno-array-bounds -Wno-implicit-function-declaration -Wno-unused -Wno-unused-parameter -Wno-stringop-truncation  -O3 -DNDEBUG  -DNDEBUG   -Wl,--gc-sections -Wl,--as-needed -Wl,--no-undefined  CMakeFiles/cmTC_ff12f.dir/src.c.o -o cmTC_ff12f 
+gmake[1]: Leaving directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+
+===== END =====
+
+Build output check failed:
+    Regex: 'unrecognized .*option'
+    Output line: 'cc1plus: note: unrecognized command-line option ‘-Wno-tautological-undefined-compare’ may have been intended to silence earlier diagnostics'
+Compilation failed:
+    source file: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.cxx'
+    check option: ' -Wno-tautological-undefined-compare'
+===== BUILD LOG =====
+Change Dir: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_228ad/fast
+/usr/bin/gmake  -f CMakeFiles/cmTC_228ad.dir/build.make CMakeFiles/cmTC_228ad.dir/build
+gmake[1]: Entering directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_228ad.dir/src.cxx.o
+/usr/bin/c++   -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Winit-self -Wpointer-arith -Wuninitialized -Wsuggest-override -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -fvisibility=hidden -fvisibility-inlines-hidden -Wno-deprecated -Wno-missing-declarations -Wno-shadow -Wno-unused-parameter -Wno-unused-local-typedefs -Wno-sign-compare -Wno-sign-promo -Wno-undef  -O3 -DNDEBUG  -DNDEBUG -std=c++17 -fPIE    -Wno-tautological-undefined-compare -o CMakeFiles/cmTC_228ad.dir/src.cxx.o -c /home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.cxx
+/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.cxx:1: warning: ignoring ‘#pragma  ’ [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+cc1plus: note: unrecognized command-line option ‘-Wno-tautological-undefined-compare’ may have been intended to silence earlier diagnostics
+Linking CXX executable cmTC_228ad
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_228ad.dir/link.txt --verbose=1
+/usr/bin/c++    -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Winit-self -Wpointer-arith -Wuninitialized -Wsuggest-override -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -fvisibility=hidden -fvisibility-inlines-hidden -Wno-deprecated -Wno-missing-declarations -Wno-shadow -Wno-unused-parameter -Wno-unused-local-typedefs -Wno-sign-compare -Wno-sign-promo -Wno-undef  -O3 -DNDEBUG  -DNDEBUG   -Wl,--gc-sections -Wl,--as-needed -Wl,--no-undefined  CMakeFiles/cmTC_228ad.dir/src.cxx.o -o cmTC_228ad 
+gmake[1]: Leaving directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+
+===== END =====
+
+Build output check failed:
+    Regex: 'unrecognized .*option'
+    Output line: 'cc1plus: note: unrecognized command-line option ‘-Wno-shorten-64-to-32’ may have been intended to silence earlier diagnostics'
+Compilation failed:
+    source file: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.cxx'
+    check option: ' -Wno-shorten-64-to-32'
+===== BUILD LOG =====
+Change Dir: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_befb7/fast
+/usr/bin/gmake  -f CMakeFiles/cmTC_befb7.dir/build.make CMakeFiles/cmTC_befb7.dir/build
+gmake[1]: Entering directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_befb7.dir/src.cxx.o
+/usr/bin/c++   -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Winit-self -Wpointer-arith -Wuninitialized -Wsuggest-override -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -fvisibility=hidden -fvisibility-inlines-hidden -Wno-deprecated -Wno-missing-declarations -Wno-shadow -Wno-unused-parameter -Wno-unused-local-typedefs -Wno-sign-compare -Wno-sign-promo -Wno-undef -Wno-ignored-qualifiers -Wno-extra -Wno-unused-function -Wno-unused-const-variable  -O3 -DNDEBUG  -DNDEBUG -std=c++17 -fPIE    -Wno-shorten-64-to-32 -o CMakeFiles/cmTC_befb7.dir/src.cxx.o -c /home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.cxx
+/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.cxx:1: warning: ignoring ‘#pragma  ’ [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+cc1plus: note: unrecognized command-line option ‘-Wno-shorten-64-to-32’ may have been intended to silence earlier diagnostics
+Linking CXX executable cmTC_befb7
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_befb7.dir/link.txt --verbose=1
+/usr/bin/c++    -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Winit-self -Wpointer-arith -Wuninitialized -Wsuggest-override -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -fvisibility=hidden -fvisibility-inlines-hidden -Wno-deprecated -Wno-missing-declarations -Wno-shadow -Wno-unused-parameter -Wno-unused-local-typedefs -Wno-sign-compare -Wno-sign-promo -Wno-undef -Wno-ignored-qualifiers -Wno-extra -Wno-unused-function -Wno-unused-const-variable  -O3 -DNDEBUG  -DNDEBUG   -Wl,--gc-sections -Wl,--as-needed -Wl,--no-undefined  CMakeFiles/cmTC_befb7.dir/src.cxx.o -o cmTC_befb7 
+gmake[1]: Leaving directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+
+===== END =====
+
+Build output check failed:
+    Regex: 'unrecognized .*option'
+    Output line: 'cc1plus: note: unrecognized command-line option ‘-Wno-enum-compare-switch’ may have been intended to silence earlier diagnostics'
+Compilation failed:
+    source file: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.cxx'
+    check option: ' -Wno-enum-compare-switch'
+===== BUILD LOG =====
+Change Dir: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_66376/fast
+/usr/bin/gmake  -f CMakeFiles/cmTC_66376.dir/build.make CMakeFiles/cmTC_66376.dir/build
+gmake[1]: Entering directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_66376.dir/src.cxx.o
+/usr/bin/c++   -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Winit-self -Wpointer-arith -Wuninitialized -Wsuggest-override -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -fvisibility=hidden -fvisibility-inlines-hidden -Wno-deprecated -Wno-missing-declarations -Wno-shadow -Wno-unused-parameter -Wno-unused-local-typedefs -Wno-sign-compare -Wno-sign-promo -Wno-undef -Wno-ignored-qualifiers -Wno-extra -Wno-unused-function -Wno-unused-const-variable -Wno-invalid-offsetof  -O3 -DNDEBUG  -DNDEBUG -std=c++17 -fPIE    -Wno-enum-compare-switch -o CMakeFiles/cmTC_66376.dir/src.cxx.o -c /home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.cxx
+/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.cxx:1: warning: ignoring ‘#pragma  ’ [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+cc1plus: note: unrecognized command-line option ‘-Wno-enum-compare-switch’ may have been intended to silence earlier diagnostics
+Linking CXX executable cmTC_66376
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_66376.dir/link.txt --verbose=1
+/usr/bin/c++    -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Winit-self -Wpointer-arith -Wuninitialized -Wsuggest-override -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -fvisibility=hidden -fvisibility-inlines-hidden -Wno-deprecated -Wno-missing-declarations -Wno-shadow -Wno-unused-parameter -Wno-unused-local-typedefs -Wno-sign-compare -Wno-sign-promo -Wno-undef -Wno-ignored-qualifiers -Wno-extra -Wno-unused-function -Wno-unused-const-variable -Wno-invalid-offsetof  -O3 -DNDEBUG  -DNDEBUG   -Wl,--gc-sections -Wl,--as-needed -Wl,--no-undefined  CMakeFiles/cmTC_66376.dir/src.cxx.o -o cmTC_66376 
+gmake[1]: Leaving directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+
+===== END =====
+
+Build output check failed:
+    Regex: 'unrecognized .*option'
+    Output line: 'cc1plus: note: unrecognized command-line option ‘-Wno-inconsistent-missing-override’ may have been intended to silence earlier diagnostics'
+Compilation failed:
+    source file: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.cxx'
+    check option: ' -Wno-inconsistent-missing-override'
+===== BUILD LOG =====
+Change Dir: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_0f699/fast
+/usr/bin/gmake  -f CMakeFiles/cmTC_0f699.dir/build.make CMakeFiles/cmTC_0f699.dir/build
+gmake[1]: Entering directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_0f699.dir/src.cxx.o
+/usr/bin/c++   -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Winit-self -Wpointer-arith -Wuninitialized -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -fvisibility=hidden -fvisibility-inlines-hidden -Wno-deprecated -Wno-missing-declarations -Wno-shadow -Wno-unused-parameter -Wno-unused-local-typedefs -Wno-sign-compare -Wno-sign-promo -Wno-undef -Wno-ignored-qualifiers -Wno-extra -Wno-unused-function -Wno-unused-const-variable -Wno-invalid-offsetof -Wno-suggest-override  -O3 -DNDEBUG  -DNDEBUG -std=c++17 -fPIE    -Wno-inconsistent-missing-override -o CMakeFiles/cmTC_0f699.dir/src.cxx.o -c /home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.cxx
+/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.cxx:1: warning: ignoring ‘#pragma  ’ [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+cc1plus: note: unrecognized command-line option ‘-Wno-inconsistent-missing-override’ may have been intended to silence earlier diagnostics
+Linking CXX executable cmTC_0f699
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0f699.dir/link.txt --verbose=1
+/usr/bin/c++    -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Winit-self -Wpointer-arith -Wuninitialized -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -fvisibility=hidden -fvisibility-inlines-hidden -Wno-deprecated -Wno-missing-declarations -Wno-shadow -Wno-unused-parameter -Wno-unused-local-typedefs -Wno-sign-compare -Wno-sign-promo -Wno-undef -Wno-ignored-qualifiers -Wno-extra -Wno-unused-function -Wno-unused-const-variable -Wno-invalid-offsetof -Wno-suggest-override  -O3 -DNDEBUG  -DNDEBUG   -Wl,--gc-sections -Wl,--as-needed -Wl,--no-undefined  CMakeFiles/cmTC_0f699.dir/src.cxx.o -o cmTC_0f699 
+gmake[1]: Leaving directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+
+===== END =====
+
+Build output check failed:
+    Regex: 'unrecognized .*option'
+    Output line: 'cc1plus: note: unrecognized command-line option ‘-Wno-comma’ may have been intended to silence earlier diagnostics'
+Compilation failed:
+    source file: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.cxx'
+    check option: ' -Wno-comma'
+===== BUILD LOG =====
+Change Dir: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_616ce/fast
+/usr/bin/gmake  -f CMakeFiles/cmTC_616ce.dir/build.make CMakeFiles/cmTC_616ce.dir/build
+gmake[1]: Entering directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_616ce.dir/src.cxx.o
+/usr/bin/c++   -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Winit-self -Wpointer-arith -Wuninitialized -Wno-delete-non-virtual-dtor -Wno-comment -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -fvisibility=hidden -fvisibility-inlines-hidden -Wno-deprecated -Wno-missing-declarations -Wno-shadow -Wno-unused-parameter -Wno-unused-local-typedefs -Wno-sign-compare -Wno-sign-promo -Wno-undef -Wno-ignored-qualifiers -Wno-extra -Wno-unused-function -Wno-unused-const-variable -Wno-invalid-offsetof -Wno-suggest-override -Wno-implicit-fallthrough -Wno-array-bounds -Wno-stringop-overflow -Wno-stringop-overread -Wno-extra-semi  -O3 -DNDEBUG  -DNDEBUG -std=c++17 -fPIE    -Wno-comma -o CMakeFiles/cmTC_616ce.dir/src.cxx.o -c /home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.cxx
+/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.cxx:1: warning: ignoring ‘#pragma  ’ [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+cc1plus: note: unrecognized command-line option ‘-Wno-comma’ may have been intended to silence earlier diagnostics
+Linking CXX executable cmTC_616ce
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_616ce.dir/link.txt --verbose=1
+/usr/bin/c++    -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Winit-self -Wpointer-arith -Wuninitialized -Wno-delete-non-virtual-dtor -Wno-comment -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -fvisibility=hidden -fvisibility-inlines-hidden -Wno-deprecated -Wno-missing-declarations -Wno-shadow -Wno-unused-parameter -Wno-unused-local-typedefs -Wno-sign-compare -Wno-sign-promo -Wno-undef -Wno-ignored-qualifiers -Wno-extra -Wno-unused-function -Wno-unused-const-variable -Wno-invalid-offsetof -Wno-suggest-override -Wno-implicit-fallthrough -Wno-array-bounds -Wno-stringop-overflow -Wno-stringop-overread -Wno-extra-semi  -O3 -DNDEBUG  -DNDEBUG   -Wl,--gc-sections -Wl,--as-needed -Wl,--no-undefined  CMakeFiles/cmTC_616ce.dir/src.cxx.o -o cmTC_616ce 
+gmake[1]: Leaving directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+
+===== END =====
+
+
+LAPACK(Unknown) check FAILED:
+    LAPACK_INCLUDE_DIR: '/home/nerdstar/NerdStar/backend/opencv/opencv/3rdparty/clapack/include'
+    LAPACK_LIBRARIES: 'libclapack'
+    LAPACK_LINK_LIBRARIES: '/usr/local/cuda-13.2/lib64;/usr/lib/aarch64-linux-gnu'
+    Output:
+Change Dir: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_f03d4/fast
+/usr/bin/gmake  -f CMakeFiles/cmTC_f03d4.dir/build.make CMakeFiles/cmTC_f03d4.dir/build
+gmake[1]: Entering directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_f03d4.dir/lapack_check.cpp.o
+/usr/bin/c++  -I/home/nerdstar/NerdStar/backend/opencv/opencv/3rdparty/clapack/include -I/home/nerdstar/NerdStar/backend/opencv/opencv_build -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wuninitialized -Wsuggest-override -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -fvisibility=hidden -fvisibility-inlines-hidden  -O3 -DNDEBUG  -DNDEBUG -std=c++17 -fPIE -o CMakeFiles/cmTC_f03d4.dir/lapack_check.cpp.o -c /home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/lapack_check.cpp
+Linking CXX executable cmTC_f03d4
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f03d4.dir/link.txt --verbose=1
+/usr/bin/c++    -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wuninitialized -Wsuggest-override -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -fvisibility=hidden -fvisibility-inlines-hidden  -O3 -DNDEBUG  -DNDEBUG   -Wl,--gc-sections -Wl,--as-needed -Wl,--no-undefined  CMakeFiles/cmTC_f03d4.dir/lapack_check.cpp.o -o cmTC_f03d4   -L/usr/local/cuda-13.2/lib64  -Wl,-rpath,/usr/local/cuda-13.2/lib64 -llibclapack 
+/usr/bin/ld: cannot find -llibclapack: No such file or directory
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_f03d4.dir/build.make:99: cmTC_f03d4] Error 1
+gmake[1]: Leaving directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_f03d4/fast] Error 2
+
+
+
+
+LAPACK(Unknown) check FAILED:
+    LAPACK_INCLUDE_DIR: '/home/nerdstar/NerdStar/backend/opencv/opencv/3rdparty/clapack/include'
+    LAPACK_LIBRARIES: 'libclapack'
+    LAPACK_LINK_LIBRARIES: '/usr/local/cuda-13.2/lib64;/usr/lib/aarch64-linux-gnu'
+    Output:
+Change Dir: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_89883/fast
+/usr/bin/gmake  -f CMakeFiles/cmTC_89883.dir/build.make CMakeFiles/cmTC_89883.dir/build
+gmake[1]: Entering directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_89883.dir/lapack_check.cpp.o
+/usr/bin/c++  -I/home/nerdstar/NerdStar/backend/opencv/opencv/3rdparty/clapack/include -I/home/nerdstar/NerdStar/backend/opencv/opencv_build -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wuninitialized -Wsuggest-override -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -fvisibility=hidden -fvisibility-inlines-hidden  -O3 -DNDEBUG  -DNDEBUG -std=c++17 -fPIE -o CMakeFiles/cmTC_89883.dir/lapack_check.cpp.o -c /home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/lapack_check.cpp
+Linking CXX executable cmTC_89883
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_89883.dir/link.txt --verbose=1
+/usr/bin/c++    -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wuninitialized -Wsuggest-override -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -fvisibility=hidden -fvisibility-inlines-hidden  -O3 -DNDEBUG  -DNDEBUG   -Wl,--gc-sections -Wl,--as-needed -Wl,--no-undefined  CMakeFiles/cmTC_89883.dir/lapack_check.cpp.o -o cmTC_89883   -L/usr/local/cuda-13.2/lib64  -Wl,-rpath,/usr/local/cuda-13.2/lib64 -llibclapack 
+/usr/bin/ld: cannot find -llibclapack: No such file or directory
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_89883.dir/build.make:99: cmTC_89883] Error 1
+gmake[1]: Leaving directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_89883/fast] Error 2
+
+
+
+
+LAPACK(Unknown) check FAILED:
+    LAPACK_INCLUDE_DIR: '/home/nerdstar/NerdStar/backend/opencv/opencv/3rdparty/clapack/include'
+    LAPACK_LIBRARIES: 'libclapack'
+    LAPACK_LINK_LIBRARIES: '/usr/local/cuda-13.2/lib64;/usr/lib/aarch64-linux-gnu'
+    Output:
+Change Dir: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_d62dd/fast
+/usr/bin/gmake  -f CMakeFiles/cmTC_d62dd.dir/build.make CMakeFiles/cmTC_d62dd.dir/build
+gmake[1]: Entering directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_d62dd.dir/lapack_check.cpp.o
+/usr/bin/c++  -I/home/nerdstar/NerdStar/backend/opencv/opencv/3rdparty/clapack/include -I/home/nerdstar/NerdStar/backend/opencv/opencv_build -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wuninitialized -Wsuggest-override -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -fvisibility=hidden -fvisibility-inlines-hidden  -O3 -DNDEBUG  -DNDEBUG -std=c++17 -fPIE -o CMakeFiles/cmTC_d62dd.dir/lapack_check.cpp.o -c /home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/lapack_check.cpp
+Linking CXX executable cmTC_d62dd
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d62dd.dir/link.txt --verbose=1
+/usr/bin/c++    -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wuninitialized -Wsuggest-override -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -fvisibility=hidden -fvisibility-inlines-hidden  -O3 -DNDEBUG  -DNDEBUG   -Wl,--gc-sections -Wl,--as-needed -Wl,--no-undefined  CMakeFiles/cmTC_d62dd.dir/lapack_check.cpp.o -o cmTC_d62dd   -L/usr/local/cuda-13.2/lib64  -Wl,-rpath,/usr/local/cuda-13.2/lib64 -llibclapack 
+/usr/bin/ld: cannot find -llibclapack: No such file or directory
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_d62dd.dir/build.make:99: cmTC_d62dd] Error 1
+gmake[1]: Leaving directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_d62dd/fast] Error 2
+
+
+
+Build output check failed:
+    Regex: 'unrecognized .*option'
+    Output line: 'cc1plus: note: unrecognized command-line option ‘-Wno-unused-private-field’ may have been intended to silence earlier diagnostics'
+Compilation failed:
+    source file: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.cxx'
+    check option: ' -Wno-unused-private-field'
+===== BUILD LOG =====
+Change Dir: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ae012/fast
+/usr/bin/gmake  -f CMakeFiles/cmTC_ae012.dir/build.make CMakeFiles/cmTC_ae012.dir/build
+gmake[1]: Entering directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_ae012.dir/src.cxx.o
+/usr/bin/c++   -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wuninitialized -Wsuggest-override -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -fvisibility=hidden -fvisibility-inlines-hidden -Wno-unused-function -Wno-deprecated-declarations -Wno-overloaded-virtual  -O3 -DNDEBUG  -DNDEBUG -std=c++17 -fPIE    -Wno-unused-private-field -o CMakeFiles/cmTC_ae012.dir/src.cxx.o -c /home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.cxx
+/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp/src.cxx:1: warning: ignoring ‘#pragma  ’ [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+cc1plus: note: unrecognized command-line option ‘-Wno-unused-private-field’ may have been intended to silence earlier diagnostics
+Linking CXX executable cmTC_ae012
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ae012.dir/link.txt --verbose=1
+/usr/bin/c++    -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wuninitialized -Wsuggest-override -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -fvisibility=hidden -fvisibility-inlines-hidden -Wno-unused-function -Wno-deprecated-declarations -Wno-overloaded-virtual  -O3 -DNDEBUG  -DNDEBUG   -Wl,--gc-sections -Wl,--as-needed -Wl,--no-undefined  CMakeFiles/cmTC_ae012.dir/src.cxx.o -o cmTC_ae012 
+gmake[1]: Leaving directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+
+===== END =====
+
+
+LAPACK(Unknown) check FAILED:
+    LAPACK_INCLUDE_DIR: '/home/nerdstar/NerdStar/backend/opencv/opencv/3rdparty/clapack/include'
+    LAPACK_LIBRARIES: 'libclapack'
+    LAPACK_LINK_LIBRARIES: '/usr/local/cuda-13.2/lib64;/usr/lib/aarch64-linux-gnu'
+    Output:
+Change Dir: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_124b8/fast
+gmake[1]: Entering directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_124b8.dir/build.make CMakeFiles/cmTC_124b8.dir/build
+gmake[2]: Entering directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_124b8.dir/lapack_check.cpp.o
+/usr/bin/c++  -I/home/nerdstar/NerdStar/backend/opencv/opencv/3rdparty/clapack/include -I/home/nerdstar/NerdStar/backend/opencv/opencv_build -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wuninitialized -Wsuggest-override -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -fvisibility=hidden -fvisibility-inlines-hidden  -O3 -DNDEBUG  -DNDEBUG -std=c++17 -fPIE -o CMakeFiles/cmTC_124b8.dir/lapack_check.cpp.o -c /home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/lapack_check.cpp
+Linking CXX executable cmTC_124b8
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_124b8.dir/link.txt --verbose=1
+/usr/bin/c++    -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wuninitialized -Wsuggest-override -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -fvisibility=hidden -fvisibility-inlines-hidden  -O3 -DNDEBUG  -DNDEBUG   -Wl,--gc-sections -Wl,--as-needed -Wl,--no-undefined  CMakeFiles/cmTC_124b8.dir/lapack_check.cpp.o -o cmTC_124b8   -L/usr/local/cuda-13.2/lib64  -Wl,-rpath,/usr/local/cuda-13.2/lib64 -llibclapack 
+/usr/bin/ld: cannot find -llibclapack: No such file or directory
+collect2: error: ld returned 1 exit status
+gmake[2]: *** [CMakeFiles/cmTC_124b8.dir/build.make:99: cmTC_124b8] Error 1
+gmake[2]: Leaving directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+gmake[1]: *** [Makefile:127: cmTC_124b8/fast] Error 2
+gmake[1]: Leaving directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
+
+
+

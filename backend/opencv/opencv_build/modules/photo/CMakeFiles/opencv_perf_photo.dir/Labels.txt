@@ -1,0 +1,41 @@
+# Target labels
+ Main
+ opencv_photo
+ PerfTest
+# Source files and their labels
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/photo/perf/opencl/perf_denoising.cpp
+ Main
+ opencv_photo
+ PerfTest
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/photo/perf/perf_ccm.cpp
+ Main
+ opencv_photo
+ PerfTest
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/photo/perf/perf_chromatic_aberration.cpp
+ Main
+ opencv_photo
+ PerfTest
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/photo/perf/perf_cuda.cpp
+ Main
+ opencv_photo
+ PerfTest
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/photo/perf/perf_hdr.cpp
+ Main
+ opencv_photo
+ PerfTest
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/photo/perf/perf_inpaint.cpp
+ Main
+ opencv_photo
+ PerfTest
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/photo/perf/perf_intelligent_scissors.cpp
+ Main
+ opencv_photo
+ PerfTest
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/photo/perf/perf_main.cpp
+ Main
+ opencv_photo
+ PerfTest
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/photo/perf/perf_precomp.hpp
+ Main
+ opencv_photo
+ PerfTest

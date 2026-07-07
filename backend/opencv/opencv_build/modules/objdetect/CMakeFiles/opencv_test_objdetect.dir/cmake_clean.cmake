@@ -1,0 +1,41 @@
+file(REMOVE_RECURSE
+  "../../bin/opencv_test_objdetect"
+  "../../bin/opencv_test_objdetect.pdb"
+  "CMakeFiles/opencv_test_objdetect.dir/test/test_aruco_tutorial.cpp.o"
+  "CMakeFiles/opencv_test_objdetect.dir/test/test_aruco_tutorial.cpp.o.d"
+  "CMakeFiles/opencv_test_objdetect.dir/test/test_aruco_utils.cpp.o"
+  "CMakeFiles/opencv_test_objdetect.dir/test/test_aruco_utils.cpp.o.d"
+  "CMakeFiles/opencv_test_objdetect.dir/test/test_arucodetection.cpp.o"
+  "CMakeFiles/opencv_test_objdetect.dir/test/test_arucodetection.cpp.o.d"
+  "CMakeFiles/opencv_test_objdetect.dir/test/test_barcode.cpp.o"
+  "CMakeFiles/opencv_test_objdetect.dir/test/test_barcode.cpp.o.d"
+  "CMakeFiles/opencv_test_objdetect.dir/test/test_boarddetection.cpp.o"
+  "CMakeFiles/opencv_test_objdetect.dir/test/test_boarddetection.cpp.o.d"
+  "CMakeFiles/opencv_test_objdetect.dir/test/test_charucodetection.cpp.o"
+  "CMakeFiles/opencv_test_objdetect.dir/test/test_charucodetection.cpp.o.d"
+  "CMakeFiles/opencv_test_objdetect.dir/test/test_chessboardgenerator.cpp.o"
+  "CMakeFiles/opencv_test_objdetect.dir/test/test_chessboardgenerator.cpp.o.d"
+  "CMakeFiles/opencv_test_objdetect.dir/test/test_chesscorners.cpp.o"
+  "CMakeFiles/opencv_test_objdetect.dir/test/test_chesscorners.cpp.o.d"
+  "CMakeFiles/opencv_test_objdetect.dir/test/test_chesscorners_badarg.cpp.o"
+  "CMakeFiles/opencv_test_objdetect.dir/test/test_chesscorners_badarg.cpp.o.d"
+  "CMakeFiles/opencv_test_objdetect.dir/test/test_chesscorners_timing.cpp.o"
+  "CMakeFiles/opencv_test_objdetect.dir/test/test_chesscorners_timing.cpp.o.d"
+  "CMakeFiles/opencv_test_objdetect.dir/test/test_cornerssubpix.cpp.o"
+  "CMakeFiles/opencv_test_objdetect.dir/test/test_cornerssubpix.cpp.o.d"
+  "CMakeFiles/opencv_test_objdetect.dir/test/test_face.cpp.o"
+  "CMakeFiles/opencv_test_objdetect.dir/test/test_face.cpp.o.d"
+  "CMakeFiles/opencv_test_objdetect.dir/test/test_main.cpp.o"
+  "CMakeFiles/opencv_test_objdetect.dir/test/test_main.cpp.o.d"
+  "CMakeFiles/opencv_test_objdetect.dir/test/test_mcc.cpp.o"
+  "CMakeFiles/opencv_test_objdetect.dir/test/test_mcc.cpp.o.d"
+  "CMakeFiles/opencv_test_objdetect.dir/test/test_qrcode.cpp.o"
+  "CMakeFiles/opencv_test_objdetect.dir/test/test_qrcode.cpp.o.d"
+  "CMakeFiles/opencv_test_objdetect.dir/test/test_qrcode_encode.cpp.o"
+  "CMakeFiles/opencv_test_objdetect.dir/test/test_qrcode_encode.cpp.o.d"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/opencv_test_objdetect.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

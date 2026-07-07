@@ -1,0 +1,41 @@
+# Target labels
+ Extra
+ opencv_cudawarping
+ AccuracyTest
+# Source files and their labels
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudawarping/test/test_lanczos.cpp
+ Extra
+ opencv_cudawarping
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudawarping/test/test_main.cpp
+ Extra
+ opencv_cudawarping
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudawarping/test/test_pyramids.cpp
+ Extra
+ opencv_cudawarping
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudawarping/test/test_remap.cpp
+ Extra
+ opencv_cudawarping
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudawarping/test/test_resize.cpp
+ Extra
+ opencv_cudawarping
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudawarping/test/test_warp_affine.cpp
+ Extra
+ opencv_cudawarping
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudawarping/test/test_warp_perspective.cpp
+ Extra
+ opencv_cudawarping
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudawarping/test/interpolation.hpp
+ Extra
+ opencv_cudawarping
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudawarping/test/test_precomp.hpp
+ Extra
+ opencv_cudawarping
+ AccuracyTest

@@ -1,0 +1,105 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/features/perf/opencl/perf_brute_force_matcher.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_features",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/features/perf/opencl/perf_feature2d.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_features",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/features/perf/opencl/perf_gftt.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_features",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/features/perf/perf_batchDistance.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_features",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/features/perf/perf_fast.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_features",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/features/perf/perf_feature2d.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_features",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/features/perf/perf_goodFeaturesToTrack.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_features",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/features/perf/perf_main.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_features",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/features/perf/perf_feature2d.hpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_features",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/features/perf/perf_precomp.hpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_features",
+				"PerfTest"
+			]
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Main",
+			"opencv_features",
+			"PerfTest"
+		],
+		"name" : "opencv_perf_features"
+	}
+}

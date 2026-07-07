@@ -1,0 +1,78 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/geometry/perf/perf_2d.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_geometry",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/geometry/perf/perf_affine2d.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_geometry",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/geometry/perf/perf_main.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_geometry",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/geometry/perf/perf_moments.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_geometry",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/geometry/perf/perf_pnp.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_geometry",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/geometry/perf/perf_undistort.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_geometry",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/geometry/perf/perf_precomp.hpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_geometry",
+				"PerfTest"
+			]
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Main",
+			"opencv_geometry",
+			"PerfTest"
+		],
+		"name" : "opencv_perf_geometry"
+	}
+}

@@ -1,0 +1,105 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/test/test_main.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/test/test_normal.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/test/test_octree.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/test/test_odometry.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/test/test_pointcloud_io.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/test/test_pose_graph.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/test/test_registration.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/test/test_rendering.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/test/test_tsdf.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/test/test_precomp.hpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"AccuracyTest"
+			]
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Main",
+			"opencv_ptcloud",
+			"AccuracyTest"
+		],
+		"name" : "opencv_test_ptcloud"
+	}
+}

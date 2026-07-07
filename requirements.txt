@@ -1,6 +1,4 @@
-numpy
-opencv-contrib-python
-opencv-python
+numpy==1.26.4
 pillow
 pyntcore>=2026.2.1
 robotpy-wpimath>=2026.2.1
@@ -12,4 +10,3 @@ av
 jinja2
 python-multipart
 websockets
-# jetson-utils

@@ -1,0 +1,249 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/include/opencv2/cudacodec.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudacodec",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/NvEncoder.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudacodec",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/NvEncoderCuda.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudacodec",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/cuvid_video_source.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudacodec",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/ffmpeg_video_source.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudacodec",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/frame_queue.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudacodec",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/nvidia_surface_format_to_color_converter.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudacodec",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/thread.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudacodec",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/video_decoder.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudacodec",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/video_parser.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudacodec",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/video_reader.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudacodec",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/video_source.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudacodec",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/video_writer.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudacodec",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/NvEncoder.h",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudacodec",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/NvEncoderCuda.h",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudacodec",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/cuda/ColorSpace.h",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudacodec",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/cuvid_video_source.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudacodec",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/ffmpeg_video_source.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudacodec",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/frame_queue.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudacodec",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/precomp.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudacodec",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/thread.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudacodec",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/video_decoder.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudacodec",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/video_parser.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudacodec",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/video_source.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudacodec",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/cuda/ColorSpace.cu",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_cudacodec",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_build/cvconfig.h"
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_build/opencv2/opencv_modules.hpp"
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudacodec/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_ColorSpace.cu.o"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Extra",
+			"opencv_cudacodec",
+			"Module"
+		],
+		"name" : "opencv_cudacodec"
+	}
+}

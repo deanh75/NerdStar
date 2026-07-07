@@ -1,0 +1,19 @@
+# Target labels
+ Extra
+ opencv_freetype
+ Module
+# Source files and their labels
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/freetype/include/opencv2/freetype.hpp
+ Extra
+ opencv_freetype
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/freetype/src/freetype.cpp
+ Extra
+ opencv_freetype
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/freetype/src/precomp.hpp
+ Extra
+ opencv_freetype
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_build/cvconfig.h
+/home/nerdstar/NerdStar/backend/opencv/opencv_build/opencv2/opencv_modules.hpp

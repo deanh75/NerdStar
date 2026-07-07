@@ -1,0 +1,111 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xstereo/include/opencv2/xstereo.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_xstereo",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xstereo/include/opencv2/xstereo/descriptor.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_xstereo",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xstereo/include/opencv2/xstereo/quasi_dense_stereo.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_xstereo",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xstereo/src/descriptor.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_xstereo",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xstereo/src/quasi_dense_stereo.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_xstereo",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xstereo/src/stereo_binary_bm.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_xstereo",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xstereo/src/stereo_binary_sgbm.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_xstereo",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xstereo/src/descriptor.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_xstereo",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xstereo/src/matching.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_xstereo",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xstereo/src/precomp.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_xstereo",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_build/cvconfig.h"
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_build/opencv2/opencv_modules.hpp"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Extra",
+			"opencv_xstereo",
+			"Module"
+		],
+		"name" : "opencv_xstereo"
+	}
+}

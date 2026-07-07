@@ -1,0 +1,14 @@
+# SPDX-FileCopyrightText: 2024 Arm Limited and/or its affiliates <open-source-office@arm.com>
+#
+# SPDX-License-Identifier: Apache-2.0
+
+---
+# Modify default clang-tidy settings for test code.
+# * GTEST macros have a lot of conditionals that means even trivial
+#   tests will exceed the cognitive complexity limit.
+# * Using endl is fine in test code.
+Checks: >-
+  -readability-function-cognitive-complexity,
+  -performance-avoid-endl
+InheritParentConfig: true
+...

@@ -1,0 +1,228 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/rgbd/include/opencv2/rgbd.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_rgbd",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/rgbd/include/opencv2/rgbd/colored_kinfu.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_rgbd",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/rgbd/include/opencv2/rgbd/dynafu.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_rgbd",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/rgbd/include/opencv2/rgbd/kinfu.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_rgbd",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/rgbd/include/opencv2/rgbd/large_kinfu.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_rgbd",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/rgbd/include/opencv2/rgbd/linemod.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_rgbd",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/rgbd/src/colored_kinfu.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_rgbd",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/rgbd/src/dqb.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_rgbd",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/rgbd/src/dynafu.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_rgbd",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/rgbd/src/dynafu_tsdf.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_rgbd",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/rgbd/src/kinfu.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_rgbd",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/rgbd/src/large_kinfu.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_rgbd",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/rgbd/src/linemod.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_rgbd",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/rgbd/src/nonrigid_icp.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_rgbd",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/rgbd/src/warpfield.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_rgbd",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/rgbd/src/dqb.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_rgbd",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/rgbd/src/dynafu_tsdf.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_rgbd",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/rgbd/src/marchingcubes.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_rgbd",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/rgbd/src/nonrigid_icp.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_rgbd",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/rgbd/src/normal_lut.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_rgbd",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/rgbd/src/precomp.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_rgbd",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/rgbd/src/utils.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_rgbd",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/rgbd/src/warpfield.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_rgbd",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_build/cvconfig.h"
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_build/opencv2/opencv_modules.hpp"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Extra",
+			"opencv_rgbd",
+			"Module"
+		],
+		"name" : "opencv_rgbd"
+	}
+}

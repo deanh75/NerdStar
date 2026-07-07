@@ -1,0 +1,192 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/ml/include/opencv2/ml.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_ml",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/ml/include/opencv2/ml/ml.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_ml",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/ml/include/opencv2/ml/ml.inl.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_ml",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/ml/src/ann_mlp.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_ml",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/ml/src/boost.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_ml",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/ml/src/data.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_ml",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/ml/src/em.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_ml",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/ml/src/inner_functions.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_ml",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/ml/src/kdtree.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_ml",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/ml/src/knearest.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_ml",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/ml/src/lr.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_ml",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/ml/src/nbayes.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_ml",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/ml/src/rtrees.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_ml",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/ml/src/svm.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_ml",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/ml/src/svmsgd.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_ml",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/ml/src/testset.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_ml",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/ml/src/tree.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_ml",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/ml/src/kdtree.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_ml",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/ml/src/precomp.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_ml",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_build/cvconfig.h"
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_build/opencv2/opencv_modules.hpp"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Extra",
+			"opencv_ml",
+			"Module"
+		],
+		"name" : "opencv_ml"
+	}
+}

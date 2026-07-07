@@ -1,0 +1,21 @@
+# Target labels
+ Main
+ opencv_ptcloud
+ PerfTest
+# Source files and their labels
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/perf/perf_main.cpp
+ Main
+ opencv_ptcloud
+ PerfTest
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/perf/perf_rendering.cpp
+ Main
+ opencv_ptcloud
+ PerfTest
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/perf/perf_tsdf.cpp
+ Main
+ opencv_ptcloud
+ PerfTest
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/perf/perf_precomp.hpp
+ Main
+ opencv_ptcloud
+ PerfTest

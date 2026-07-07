@@ -1,0 +1,51 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xobjdetect/perf/opencl/perf_cascades.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_xobjdetect",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xobjdetect/perf/opencl/perf_hogdetect.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_xobjdetect",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xobjdetect/perf/perf_main.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_xobjdetect",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xobjdetect/perf/perf_precomp.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_xobjdetect",
+				"PerfTest"
+			]
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Extra",
+			"opencv_xobjdetect",
+			"PerfTest"
+		],
+		"name" : "opencv_perf_xobjdetect"
+	}
+}

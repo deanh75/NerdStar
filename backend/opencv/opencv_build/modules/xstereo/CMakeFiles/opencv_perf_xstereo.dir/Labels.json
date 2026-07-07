@@ -1,0 +1,51 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xstereo/perf/perf_bm.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_xstereo",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xstereo/perf/perf_descriptor.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_xstereo",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xstereo/perf/perf_main.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_xstereo",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xstereo/perf/perf_precomp.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_xstereo",
+				"PerfTest"
+			]
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Extra",
+			"opencv_xstereo",
+			"PerfTest"
+		],
+		"name" : "opencv_perf_xstereo"
+	}
+}

@@ -1,0 +1,85 @@
+# Target labels
+ Main
+ opencv_objdetect
+ AccuracyTest
+# Source files and their labels
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/objdetect/test/test_aruco_tutorial.cpp
+ Main
+ opencv_objdetect
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/objdetect/test/test_aruco_utils.cpp
+ Main
+ opencv_objdetect
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/objdetect/test/test_arucodetection.cpp
+ Main
+ opencv_objdetect
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/objdetect/test/test_barcode.cpp
+ Main
+ opencv_objdetect
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/objdetect/test/test_boarddetection.cpp
+ Main
+ opencv_objdetect
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/objdetect/test/test_charucodetection.cpp
+ Main
+ opencv_objdetect
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/objdetect/test/test_chessboardgenerator.cpp
+ Main
+ opencv_objdetect
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/objdetect/test/test_chesscorners.cpp
+ Main
+ opencv_objdetect
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/objdetect/test/test_chesscorners_badarg.cpp
+ Main
+ opencv_objdetect
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/objdetect/test/test_chesscorners_timing.cpp
+ Main
+ opencv_objdetect
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/objdetect/test/test_cornerssubpix.cpp
+ Main
+ opencv_objdetect
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/objdetect/test/test_face.cpp
+ Main
+ opencv_objdetect
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/objdetect/test/test_main.cpp
+ Main
+ opencv_objdetect
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/objdetect/test/test_mcc.cpp
+ Main
+ opencv_objdetect
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/objdetect/test/test_qrcode.cpp
+ Main
+ opencv_objdetect
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/objdetect/test/test_qrcode_encode.cpp
+ Main
+ opencv_objdetect
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/objdetect/test/test_aruco_utils.hpp
+ Main
+ opencv_objdetect
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/objdetect/test/test_chessboardgenerator.hpp
+ Main
+ opencv_objdetect
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/objdetect/test/test_precomp.hpp
+ Main
+ opencv_objdetect
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/objdetect/test/test_qr_utils.hpp
+ Main
+ opencv_objdetect
+ AccuracyTest

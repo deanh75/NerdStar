@@ -1,0 +1,23 @@
+# Target labels
+ Extra
+ opencv_signal
+ Module
+# Source files and their labels
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/signal/include/opencv2/signal.hpp
+ Extra
+ opencv_signal
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/signal/include/opencv2/signal/signal_resample.hpp
+ Extra
+ opencv_signal
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/signal/src/signal_resample.cpp
+ Extra
+ opencv_signal
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/signal/src/precomp.hpp
+ Extra
+ opencv_signal
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_build/cvconfig.h
+/home/nerdstar/NerdStar/backend/opencv/opencv_build/opencv2/opencv_modules.hpp

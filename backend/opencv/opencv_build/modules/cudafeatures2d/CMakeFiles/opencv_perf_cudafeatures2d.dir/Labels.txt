@@ -1,0 +1,21 @@
+# Target labels
+ Extra
+ opencv_cudafeatures2d
+ PerfTest
+# Source files and their labels
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudafeatures2d/perf/perf_features2d.cpp
+ Extra
+ opencv_cudafeatures2d
+ PerfTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudafeatures2d/perf/perf_gftt.cpp
+ Extra
+ opencv_cudafeatures2d
+ PerfTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudafeatures2d/perf/perf_main.cpp
+ Extra
+ opencv_cudafeatures2d
+ PerfTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudafeatures2d/perf/perf_precomp.hpp
+ Extra
+ opencv_cudafeatures2d
+ PerfTest

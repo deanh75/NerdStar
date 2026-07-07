@@ -1,0 +1,54 @@
+# SPDX-FileCopyrightText: 2024 Arm Limited and/or its affiliates <open-source-office@arm.com>
+#
+# SPDX-License-Identifier: Apache-2.0
+
+---
+Checks: >-
+  -*,
+  bugprone-*,
+  -bugprone-easily-swappable-parameters,
+  -bugprone-macro-parentheses,
+  cert-*,
+  clang-analyzer-core*,
+  clang-analyzer-cplusplus*,
+  clang-analyzer-security*,
+  clang-analyzer-unix.*,
+  cppcoreguidelines-*,
+  -cppcoreguidelines-avoid-c-arrays,
+  -cppcoreguidelines-avoid-const-or-ref-data-members,
+  -cppcoreguidelines-avoid-do-while,
+  -cppcoreguidelines-avoid-magic-numbers,
+  -cppcoreguidelines-macro-to-enum,
+  -cppcoreguidelines-macro-usage,
+  -cppcoreguidelines-no-malloc,
+  -cppcoreguidelines-non-private-member-variables-in-classes,
+  -cppcoreguidelines-owning-memory,
+  -cppcoreguidelines-pro-*,
+  -cppcoreguidelines-special-member-functions,
+  -cppcoreguidelines-use-default-member-init,
+  -cppcoreguidelines-virtual-class-destructor,
+  hicpp-*,
+  -hicpp-avoid-c-arrays,
+  -hicpp-named-parameter,
+  -hicpp-no-array-decay,
+  -hicpp-no-assembler,
+  -hicpp-no-malloc,
+  -hicpp-signed-bitwise,
+  -hicpp-special-member-functions,
+  -hicpp-use-auto,
+  misc-new-delete-overloads,
+  performance-*,
+  -performance-enum-size,
+  readability-*,
+  -readability-convert-member-functions-to-static,
+  -readability-identifier-length,
+  -readability-implicit-bool-conversion,
+  -readability-isolate-declaration,
+  -readability-magic-numbers,
+  -readability-math-missing-parentheses,
+  -readability-named-parameter,
+  -readability-redundant-inline-specifier
+WarningsAsErrors: '*'
+HeaderFilterRegex: '.*'
+FormatStyle: google
+...

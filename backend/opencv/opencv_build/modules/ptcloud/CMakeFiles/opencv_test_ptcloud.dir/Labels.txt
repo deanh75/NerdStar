@@ -1,0 +1,45 @@
+# Target labels
+ Main
+ opencv_ptcloud
+ AccuracyTest
+# Source files and their labels
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/test/test_main.cpp
+ Main
+ opencv_ptcloud
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/test/test_normal.cpp
+ Main
+ opencv_ptcloud
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/test/test_octree.cpp
+ Main
+ opencv_ptcloud
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/test/test_odometry.cpp
+ Main
+ opencv_ptcloud
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/test/test_pointcloud_io.cpp
+ Main
+ opencv_ptcloud
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/test/test_pose_graph.cpp
+ Main
+ opencv_ptcloud
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/test/test_registration.cpp
+ Main
+ opencv_ptcloud
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/test/test_rendering.cpp
+ Main
+ opencv_ptcloud
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/test/test_tsdf.cpp
+ Main
+ opencv_ptcloud
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/test/test_precomp.hpp
+ Main
+ opencv_ptcloud
+ AccuracyTest

@@ -1,0 +1,51 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xobjdetect/test/opencl/test_hogdetector.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_xobjdetect",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xobjdetect/test/test_cascadeandhog.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_xobjdetect",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xobjdetect/test/test_main.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_xobjdetect",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xobjdetect/test/test_precomp.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_xobjdetect",
+				"AccuracyTest"
+			]
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Extra",
+			"opencv_xobjdetect",
+			"AccuracyTest"
+		],
+		"name" : "opencv_test_xobjdetect"
+	}
+}

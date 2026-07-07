@@ -1,0 +1,483 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/include/opencv2/ptcloud.hpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/include/opencv2/ptcloud/depth.hpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/include/opencv2/ptcloud/detail/kinfu_frame.hpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/include/opencv2/ptcloud/detail/pose_graph.hpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/include/opencv2/ptcloud/detail/submap.hpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/include/opencv2/ptcloud/odometry.hpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/include/opencv2/ptcloud/odometry_frame.hpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/include/opencv2/ptcloud/odometry_settings.hpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/include/opencv2/ptcloud/volume.hpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/include/opencv2/ptcloud/volume_settings.hpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/color_tsdf_functions.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/depth_registration.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/depth_to_3d.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/hash_tsdf_functions.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/io_base.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/io_obj.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/io_ply.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/kinfu_frame.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/load_point_cloud.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/normal.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/octree.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/odometry.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/odometry_frame_impl.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/odometry_functions.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/odometry_settings_impl.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/plane.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/pose_graph.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/rendering.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/tsdf_functions.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/utils.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/volume_impl.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/volume_settings_impl.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/opencl/hash_tsdf.cl",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/opencl/icp.cl",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/opencl/kinfu_frame.cl",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/opencl/tsdf.cl",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/ptcloud/opencl_kernels_ptcloud.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/ptcloud/opencl_kernels_ptcloud.hpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/color_tsdf_functions.hpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/depth_to_3d.hpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/hash_tsdf_functions.hpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/io_base.hpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/io_obj.hpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/io_ply.hpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/octree.hpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/odometry_functions.hpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/precomp.hpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/sparse_block_matrix.hpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/tsdf_functions.hpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/utils.hpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/volume_impl.hpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_ptcloud",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_build/cvconfig.h"
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_build/opencv2/opencv_modules.hpp"
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/ptcloud/opencl_kernels_ptcloud.cpp.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Main",
+			"opencv_ptcloud",
+			"Module"
+		],
+		"name" : "opencv_ptcloud"
+	}
+}

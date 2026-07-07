@@ -1,0 +1,21 @@
+# Target labels
+ Extra
+ opencv_xobjdetect
+ AccuracyTest
+# Source files and their labels
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xobjdetect/test/opencl/test_hogdetector.cpp
+ Extra
+ opencv_xobjdetect
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xobjdetect/test/test_cascadeandhog.cpp
+ Extra
+ opencv_xobjdetect
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xobjdetect/test/test_main.cpp
+ Extra
+ opencv_xobjdetect
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xobjdetect/test/test_precomp.hpp
+ Extra
+ opencv_xobjdetect
+ AccuracyTest

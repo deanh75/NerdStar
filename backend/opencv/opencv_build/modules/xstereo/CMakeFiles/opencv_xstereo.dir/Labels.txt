@@ -1,0 +1,47 @@
+# Target labels
+ Extra
+ opencv_xstereo
+ Module
+# Source files and their labels
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xstereo/include/opencv2/xstereo.hpp
+ Extra
+ opencv_xstereo
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xstereo/include/opencv2/xstereo/descriptor.hpp
+ Extra
+ opencv_xstereo
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xstereo/include/opencv2/xstereo/quasi_dense_stereo.hpp
+ Extra
+ opencv_xstereo
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xstereo/src/descriptor.cpp
+ Extra
+ opencv_xstereo
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xstereo/src/quasi_dense_stereo.cpp
+ Extra
+ opencv_xstereo
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xstereo/src/stereo_binary_bm.cpp
+ Extra
+ opencv_xstereo
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xstereo/src/stereo_binary_sgbm.cpp
+ Extra
+ opencv_xstereo
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xstereo/src/descriptor.hpp
+ Extra
+ opencv_xstereo
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xstereo/src/matching.hpp
+ Extra
+ opencv_xstereo
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xstereo/src/precomp.hpp
+ Extra
+ opencv_xstereo
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_build/cvconfig.h
+/home/nerdstar/NerdStar/backend/opencv/opencv_build/opencv2/opencv_modules.hpp

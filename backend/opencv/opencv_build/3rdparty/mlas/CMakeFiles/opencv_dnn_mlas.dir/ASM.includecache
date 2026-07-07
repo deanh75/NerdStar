@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/nerdstar/NerdStar/backend/opencv/opencv/3rdparty/mlas/lib/aarch64/SgemmKernelNeon.S
+asmmacro.h
+/home/nerdstar/NerdStar/backend/opencv/opencv/3rdparty/mlas/lib/aarch64/asmmacro.h
+
+/home/nerdstar/NerdStar/backend/opencv/opencv/3rdparty/mlas/lib/aarch64/SgemvKernelNeon.S
+asmmacro.h
+/home/nerdstar/NerdStar/backend/opencv/opencv/3rdparty/mlas/lib/aarch64/asmmacro.h
+
+/home/nerdstar/NerdStar/backend/opencv/opencv/3rdparty/mlas/lib/aarch64/asmmacro.h
+

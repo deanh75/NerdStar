@@ -1,0 +1,28 @@
+// SPDX-FileCopyrightText: 2026: Arm Limited and/or its affiliates <open-source-office@arm.com>
+// SPDX-FileCopyrightText: Copyright (C) 2000-2022, Intel Corporation, all rights reserved.
+// SPDX-FileCopyrightText: Copyright (C) 2009-2011, Willow Garage Inc., all rights reserved.
+// SPDX-FileCopyrightText: Copyright (C) 2009-2016, NVIDIA Corporation, all rights reserved.
+// SPDX-FileCopyrightText: Copyright (C) 2010-2013, Advanced Micro Devices, Inc., all rights reserved.
+// SPDX-FileCopyrightText: Copyright (C) 2015-2023, OpenCV Foundation, all rights reserved.
+// SPDX-FileCopyrightText: Copyright (C) 2008-2016, Itseez Inc., all rights reserved.
+// SPDX-FileCopyrightText: Copyright (C) 2019-2023, Xperience AI, all rights reserved.
+// SPDX-FileCopyrightText: Copyright (C) 2019-2022, Shenzhen Institute of Artificial Intelligence and Robotics for Society, all rights reserved.
+// SPDX-FileCopyrightText: Copyright (C) 2022-2023, Southern University of Science And Technology, all rights reserved.
+// SPDX-FileCopyrightText: Copyright (C) 2023-2025, OpenCV AI, all rights reserved.
+// SPDX-FileCopyrightText: Third party copyrights are property of their respective owners.
+//
+// SPDX-License-Identifier: Apache-2.0
+
+diff --git a/modules/core/include/opencv2/core/fast_math.hpp b/modules/core/include/opencv2/core/fast_math.hpp
+index 370f5b439b..9d209320a3 100644
+--- a/modules/core/include/opencv2/core/fast_math.hpp
++++ b/modules/core/include/opencv2/core/fast_math.hpp
+@@ -346,7 +346,8 @@ CV_INLINE int cvRound(float value)
+       defined CV__FASTMATH_ENABLE_CLANG_MATH_BUILTINS
+     return (int)__builtin_lrintf(value);
+ #else
+-    return (int)lrintf(value);
++    return static_cast<int>(
++    std::clamp(lrintf(value), (long)INT_MIN, (long)INT_MAX));
+ #endif
+ }

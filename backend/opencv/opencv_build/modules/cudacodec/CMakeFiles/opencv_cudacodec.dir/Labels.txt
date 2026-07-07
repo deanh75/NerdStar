@@ -1,0 +1,108 @@
+# Target labels
+ Extra
+ opencv_cudacodec
+ Module
+# Source files and their labels
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/include/opencv2/cudacodec.hpp
+ Extra
+ opencv_cudacodec
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/NvEncoder.cpp
+ Extra
+ opencv_cudacodec
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/NvEncoderCuda.cpp
+ Extra
+ opencv_cudacodec
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/cuvid_video_source.cpp
+ Extra
+ opencv_cudacodec
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/ffmpeg_video_source.cpp
+ Extra
+ opencv_cudacodec
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/frame_queue.cpp
+ Extra
+ opencv_cudacodec
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/nvidia_surface_format_to_color_converter.cpp
+ Extra
+ opencv_cudacodec
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/thread.cpp
+ Extra
+ opencv_cudacodec
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/video_decoder.cpp
+ Extra
+ opencv_cudacodec
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/video_parser.cpp
+ Extra
+ opencv_cudacodec
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/video_reader.cpp
+ Extra
+ opencv_cudacodec
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/video_source.cpp
+ Extra
+ opencv_cudacodec
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/video_writer.cpp
+ Extra
+ opencv_cudacodec
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/NvEncoder.h
+ Extra
+ opencv_cudacodec
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/NvEncoderCuda.h
+ Extra
+ opencv_cudacodec
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/cuda/ColorSpace.h
+ Extra
+ opencv_cudacodec
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/cuvid_video_source.hpp
+ Extra
+ opencv_cudacodec
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/ffmpeg_video_source.hpp
+ Extra
+ opencv_cudacodec
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/frame_queue.hpp
+ Extra
+ opencv_cudacodec
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/precomp.hpp
+ Extra
+ opencv_cudacodec
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/thread.hpp
+ Extra
+ opencv_cudacodec
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/video_decoder.hpp
+ Extra
+ opencv_cudacodec
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/video_parser.hpp
+ Extra
+ opencv_cudacodec
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/video_source.hpp
+ Extra
+ opencv_cudacodec
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/src/cuda/ColorSpace.cu
+ Extra
+ opencv_cudacodec
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_build/cvconfig.h
+/home/nerdstar/NerdStar/backend/opencv/opencv_build/opencv2/opencv_modules.hpp
+/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudacodec/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_ColorSpace.cu.o

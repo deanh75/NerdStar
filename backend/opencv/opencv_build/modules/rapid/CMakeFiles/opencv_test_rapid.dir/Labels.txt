@@ -1,0 +1,13 @@
+# Target labels
+ Extra
+ opencv_rapid
+ AccuracyTest
+# Source files and their labels
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/rapid/test/test_main.cpp
+ Extra
+ opencv_rapid
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/rapid/test/test_precomp.hpp
+ Extra
+ opencv_rapid
+ AccuracyTest

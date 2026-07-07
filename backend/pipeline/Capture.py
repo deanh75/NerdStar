@@ -9,8 +9,6 @@ from typing import Dict, List, Tuple
 
 import cv2
 from backend.config.config import ConfigStore
-from backend.NerdAVF.NerdAVF import NerdAVF
-
 
 class Capture:
     """Interface for receiving camera frames."""
@@ -163,14 +161,14 @@ class AVFoundationMjpegCapture(Capture):
         except Exception as e:
             print("Stop error:", e)
 
-class GStreamerCapture(Capture):
-    """ "Read from camera with OpenCV and GStreamer."""
-
+class JetsonCapture(Capture):
     def __init__(self) -> None:
-        
+        self._videos: Dict[str, ] = {}
+        self._last_configs: Dict[str, ConfigStore] = {}
         pass
 
     def get_frame(self, config: ConfigStore) -> Tuple[bool, cv2.Mat]:
+
         raise NotImplementedError
 
     def getCameras(self) -> list[NerdAVF.NerdCaptureDevice]: 

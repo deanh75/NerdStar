@@ -1,0 +1,104 @@
+# SPDX-FileCopyrightText: 2024 - 2026 Arm Limited and/or its affiliates <open-source-office@arm.com>
+#
+# SPDX-License-Identifier: Apache-2.0
+
+# If changing this image ID, please also change it in .devcontainer/Dockerfile
+image: registry.gitlab.arm.com/kleidi/kleidicv:22
+
+variables:
+  KUBERNETES_CPU_REQUEST: "16"
+  KUBERNETES_MEMORY_REQUEST: "16Gi"
+
+# Only run CI for main branch & merge requests
+workflow:
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+
+.common:
+  tags:
+    - arm64
+
+lint-docs:
+  extends: .common
+  variables:
+    KUBERNETES_CPU_REQUEST: "2"
+    KUBERNETES_MEMORY_REQUEST: "4Gi"
+  script:
+    - scripts/ci-lint-docs.sh
+
+clang-build-test:
+  extends: .common
+  script:
+    - scripts/ci-clang.sh
+  artifacts:
+    when: always
+    expire_in: 1 day
+    reports:
+      junit: build/ci/test-results/**/*.xml
+      coverage_report:
+        coverage_format: cobertura
+        path: build/ci/cobertura-coverage.xml
+    paths:
+      - build/ci/html
+  coverage: /^line and branch coverage:\s+([\d\.]+\%)/
+
+gcc-build-test:
+  extends: .common
+  variables:
+    KUBERNETES_CPU_REQUEST: "8"
+    KUBERNETES_MEMORY_REQUEST: "8Gi"
+  script:
+    - scripts/ci-gcc.sh
+  artifacts:
+    when: always
+    expire_in: 1 day
+    reports:
+      junit: build/ci/test-results/**/*.xml
+
+opencv-conformity-neon:
+  extends: .common
+  variables:
+    KUBERNETES_CPU_REQUEST: "8"
+    KUBERNETES_MEMORY_REQUEST: "8Gi"
+  script:
+    - scripts/ci-opencv-conformity-neon.sh
+
+opencv-conformity-sve128:
+  extends: .common
+  variables:
+    KUBERNETES_CPU_REQUEST: "8"
+    KUBERNETES_MEMORY_REQUEST: "8Gi"
+  script:
+    - scripts/ci-opencv-conformity-sve128.sh
+
+opencv-conformity-sme:
+  extends: .common
+  variables:
+    KUBERNETES_CPU_REQUEST: "8"
+    KUBERNETES_MEMORY_REQUEST: "8Gi"
+  script:
+    - scripts/ci-opencv-conformity-sme.sh
+
+opencv-tests:
+  extends: .common
+  variables:
+    KUBERNETES_CPU_REQUEST: "8"
+    KUBERNETES_MEMORY_REQUEST: "8Gi"
+  script:
+    - scripts/ci-opencv-tests.sh
+
+# On the main branch publish pages.
+pages:
+  extends: .common
+  variables:
+    KUBERNETES_CPU_REQUEST: "2"
+    KUBERNETES_MEMORY_REQUEST: "4Gi"
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+  needs:
+    - job: clang-build-test
+      artifacts: true
+  script:
+    - echo "Publishing pages"
+  publish: build/ci/html

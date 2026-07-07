@@ -1,0 +1,341 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build KleidiCV",
+      "type": "shell",
+      "command": "${workspaceFolder}/scripts/build.sh",
+      "problemMatcher": "$gcc",
+      "args": [
+        "kleidicv-test",
+        "kleidicv-c-example"
+      ],
+      "options": {
+        "env": {
+          "CMAKE_CXX_FLAGS": "--target=aarch64-linux-gnu",
+          "CMAKE_C_FLAGS": "--target=aarch64-linux-gnu",
+          "CMAKE_EXE_LINKER_FLAGS": "--rtlib=compiler-rt -static -fuse-ld=lld",
+          "EXTRA_CMAKE_ARGS": "-DKLEIDICV_ENABLE_SME2=ON -DKLEIDICV_LIMIT_SME2_TO_SELECTED_ALGORITHMS=OFF -DKLEIDICV_ENABLE_SME=ON -DKLEIDICV_LIMIT_SVE2_TO_SELECTED_ALGORITHMS=OFF -DCMAKE_EXPORT_COMPILE_COMMANDS=1"
+        }
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Build KleidiCV for debug",
+      "type": "shell",
+      "command": "${workspaceFolder}/scripts/build.sh",
+      "problemMatcher": "$gcc",
+      "args": [
+        "kleidicv-test"
+      ],
+      "options": {
+        "env": {
+          "BUILD_ID": "kleidicv-debug",
+          "CMAKE_BUILD_TYPE": "Debug",
+          "CMAKE_CXX_FLAGS": "--target=aarch64-linux-gnu",
+          "CMAKE_EXE_LINKER_FLAGS": "--rtlib=compiler-rt -static -fuse-ld=lld",
+          "EXTRA_CMAKE_ARGS": "-DKLEIDICV_ENABLE_SME=ON -DKLEIDICV_LIMIT_SVE2_TO_SELECTED_ALGORITHMS=OFF"
+        }
+      },
+      "group": {
+        "kind": "build"
+      }
+    },
+    {
+      "label": "Build KleidiCV with GCC",
+      "type": "shell",
+      "command": "${workspaceFolder}/scripts/build.sh",
+      "problemMatcher": "$gcc",
+      "args": [
+        "kleidicv-test",
+        "kleidicv-c-example"
+      ],
+      "options": {
+        "env": {
+          "BUILD_ID": "kleidicv-gcc",
+          "CMAKE_EXE_LINKER_FLAGS": "-static",
+          "EXTRA_CMAKE_ARGS": "-DKLEIDICV_LIMIT_SVE2_TO_SELECTED_ALGORITHMS=OFF",
+          "CC": "aarch64-linux-gnu-gcc",
+          "CXX": "aarch64-linux-gnu-g++"
+        }
+      },
+      "group": {
+        "kind": "build"
+      }
+    },
+    {
+      "label": "Build KleidiCV benchmarks",
+      "type": "shell",
+      "command": "${workspaceFolder}/scripts/build.sh",
+      "problemMatcher": "$gcc",
+      "args": [
+        "kleidicv-benchmark"
+      ],
+      "options": {
+        "env": {
+          "BUILD_ID": "kleidicv-benchmark",
+          "CMAKE_CXX_FLAGS": "--target=aarch64-linux-gnu",
+          "CMAKE_EXE_LINKER_FLAGS": "--rtlib=compiler-rt -static -fuse-ld=lld",
+          "EXTRA_CMAKE_ARGS": "-DCMAKE_CROSSCOMPILING_EMULATOR=qemu-aarch64 -DKLEIDICV_ENABLE_SME2=ON -DKLEIDICV_LIMIT_SME2_TO_SELECTED_ALGORITHMS=OFF -DKLEIDICV_ENABLE_SME=ON -DKLEIDICV_LIMIT_SVE2_TO_SELECTED_ALGORITHMS=OFF -DKLEIDICV_BENCHMARK=ON"
+        }
+      },
+      "group": {
+        "kind": "build"
+      }
+    },
+    {
+      "label": "Clean build directory",
+      "type": "shell",
+      "command": "rm -rf ${workspaceFolder}/build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Clear ccache cache",
+      "type": "shell",
+      "command": "ccache --clear",
+      "problemMatcher": []
+    },
+    {
+      "label": "Framework tests",
+      "type": "process",
+      "command": "qemu-aarch64",
+      "args": [
+        "${workspaceFolder}/build/kleidicv/test/framework/kleidicv-framework-test"
+      ],
+      "dependsOn": [
+        "Build KleidiCV"
+      ],
+      "group": {
+        "kind": "test"
+      }
+    },
+    {
+      "label": "Neon API tests",
+      "type": "process",
+      "command": "qemu-aarch64",
+      "args": [
+        "-cpu",
+        "cortex-a35",
+        "${workspaceFolder}/build/kleidicv/test/api/kleidicv-api-test",
+        "--vector-length=16"
+      ],
+      "dependsOn": [
+        "Build KleidiCV"
+      ],
+      "group": {
+        "kind": "test"
+      }
+    },
+    {
+      "label": "SVE2 API tests, 128 bits",
+      "type": "process",
+      "command": "qemu-aarch64",
+      "args": [
+        "-cpu",
+        "max,sve128=on,sme=off",
+        "${workspaceFolder}/build/kleidicv/test/api/kleidicv-api-test",
+        "--vector-length=16"
+      ],
+      "dependsOn": [
+        "Build KleidiCV"
+      ],
+      "group": {
+        "kind": "test"
+      }
+    },
+    {
+      "label": "SVE2 API tests, 2048 bits",
+      "type": "process",
+      "command": "qemu-aarch64",
+      "args": [
+        "-cpu",
+        "max,sve2048=on,sve-default-vector-length=256,sme=off",
+        "${workspaceFolder}/build/kleidicv/test/api/kleidicv-api-test",
+        "--vector-length=256"
+      ],
+      "dependsOn": [
+        "Build KleidiCV"
+      ],
+      "group": {
+        "kind": "test"
+      }
+    },
+    {
+      "label": "SME API tests",
+      "type": "process",
+      "command": "env",
+      "args": [
+        "KLEIDICV_PREFER_SME_BACKEND=ON",
+        "qemu-aarch64",
+        "-cpu",
+        "max,sve128=on,sme512=on",
+        "${workspaceFolder}/build/kleidicv/test/api/kleidicv-api-test",
+        "--vector-length=64"
+      ],
+      "dependsOn": [
+        "Build KleidiCV"
+      ],
+      "group": {
+        "kind": "test"
+      }
+    },
+    {
+      "label": "SME2 API tests",
+      "type": "process",
+      "command": "env",
+      "args": [
+        "KLEIDICV_PREFER_SME_BACKEND=ON",
+        "armie",
+        "-mvl=16",
+        "-msvl=64",
+        "-mfeatures=${workspaceFolder}/scripts/armie_features.txt",
+        "${workspaceFolder}/build/kleidicv/test/api/kleidicv-api-test",
+        "--vector-length=64"
+      ],
+      "dependsOn": [
+        "Build KleidiCV"
+      ],
+      "group": {
+        "kind": "test"
+      }
+    },
+    {
+      "label": "All API tests",
+      "dependsOn": [
+        "Neon API tests",
+        "SVE2 API tests, 128 bits",
+        "SVE2 API tests, 2048 bits",
+        "SME API tests",
+        "SME2 API tests"
+      ],
+      "group": {
+        "kind": "test"
+      }
+    },
+    {
+      "label": "Neon unit tests",
+      "type": "process",
+      "command": "qemu-aarch64",
+      "args": [
+        "-cpu",
+        "cortex-a35",
+        "${workspaceFolder}/build/kleidicv/test/unit_neon/kleidicv-neon-unit-test",
+        "--vector-length=16"
+      ],
+      "dependsOn": [
+        "Build KleidiCV"
+      ],
+      "group": {
+        "kind": "test"
+      }
+    },
+    {
+      "label": "Format source",
+      "type": "shell",
+      "command": "${workspaceFolder}/scripts/format.sh",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Full CI",
+      "type": "shell",
+      "command": "${workspaceFolder}/scripts/ci.sh",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Clang CI",
+      "type": "shell",
+      "command": "${workspaceFolder}/scripts/ci-clang.sh",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run GCC CI",
+      "type": "shell",
+      "command": "${workspaceFolder}/scripts/ci-gcc.sh",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Lint & Docs CI",
+      "type": "shell",
+      "command": "${workspaceFolder}/scripts/ci-lint-docs.sh",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run OpenCV CI",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-c",
+        "CLEAN=ON \"${workspaceFolder}/scripts/ci-opencv-tests.sh\" && \"${workspaceFolder}/scripts/run_opencv_conformity_checks.sh\""
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Run OpenCV conformity checks",
+      "type": "shell",
+      "command": "${workspaceFolder}/scripts/run_opencv_conformity_checks.sh",
+      "problemMatcher": "$gcc",
+      "options": {
+        "env": {
+          "CMAKE_TOOLCHAIN_FILE": "${workspaceFolder}/.devcontainer/clang_toolchain.cmake",
+          "OPENCV_VERSION": "4.13.0",
+          "OPENCV_URL": "/opt/opencv-4.13.0.tar.gz"
+        }
+      },
+      "group": {
+        "kind": "test"
+      }
+    },
+    {
+      "label": "Disassemble KleidiCV",
+      "type": "shell",
+      "command": "${workspaceFolder}/.devcontainer/disassemble.sh",
+      "args": [
+        "${relativeFile}"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "dependsOn": [
+        "Build KleidiCV"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Disassemble KleidiCV GCC build",
+      "type": "shell",
+      "command": "${workspaceFolder}/.devcontainer/disassemble.sh",
+      "args": [
+        "${relativeFile}"
+      ],
+      "options": {
+        "env": {
+          "COMPILER": "gcc",
+        },
+        "cwd": "${workspaceFolder}"
+      },
+      "dependsOn": [
+        "Build KleidiCV with GCC"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Generate coverage",
+      "type": "shell",
+      "command": "${workspaceFolder}/.devcontainer/coverage.sh",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ]
+    }
+  ],
+  "options": {
+    "env": {
+      "GTEST_FILTER" : "*"
+    }
+  }
+}

@@ -1,0 +1,975 @@
+# Target labels
+ Extra
+ opencv_gapi
+ Module
+# Source files and their labels
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/core.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/cpu/core.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/cpu/gcpukernel.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/cpu/imgproc.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/cpu/ot.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/cpu/stereo.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/cpu/video.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/fluid/core.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/fluid/gfluidbuffer.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/fluid/gfluidkernel.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/fluid/imgproc.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/garg.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/garray.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/gasync_context.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/gcall.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/gcommon.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/gcompiled.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/gcompiled_async.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/gcompoundkernel.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/gcomputation.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/gcomputation_async.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/gframe.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/gkernel.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/gmat.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/gmetaarg.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/gopaque.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/gproto.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/gpu/core.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/gpu/ggpukernel.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/gpu/imgproc.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/gscalar.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/gstreaming.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/gtransform.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/gtype_traits.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/gtyped.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/imgproc.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/infer.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/infer/bindings_ie.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/infer/bindings_onnx.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/infer/bindings_ov.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/infer/ie.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/infer/onnx.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/infer/ov.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/infer/parsers.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/infer/workload_type.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/media.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/oak/infer.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/oak/oak.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/ocl/core.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/ocl/goclkernel.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/ocl/imgproc.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/opencv_includes.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/operators.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/ot.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/own/assert.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/own/convert.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/own/cvdefs.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/own/exports.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/own/mat.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/own/saturate.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/own/scalar.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/own/types.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/plaidml/core.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/plaidml/gplaidmlkernel.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/plaidml/plaidml.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/pysrc/python_stream_source.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/python/python.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/render.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/render/render.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/render/render_types.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/rmat.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/s11n.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/s11n/base.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/stereo.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/streaming/cap.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/streaming/desync.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/streaming/format.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/streaming/gstreamer/gstreamerpipeline.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/streaming/gstreamer/gstreamersource.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/streaming/meta.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/streaming/onevpl/accel_types.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/streaming/onevpl/cfg_params.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/streaming/onevpl/data_provider_interface.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/streaming/onevpl/default.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/streaming/onevpl/device_selector_interface.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/streaming/onevpl/source.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/streaming/queue_source.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/streaming/source.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/streaming/sync.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/util/any.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/util/compiler_hints.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/util/copy_through_move.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/util/optional.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/util/throw.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/util/type_traits.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/util/util.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/util/variant.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/video.hpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/grunarg.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/gorigin.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/gmat.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/garray.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/gopaque.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/gscalar.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/gframe.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/gkernel.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/gbackend.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/gcommon.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/gproto.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/gnode.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/gcall.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/gcomputation.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/operators.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/kernels_core.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/kernels_imgproc.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/kernels_video.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/kernels_nnparsers.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/kernels_ot.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/kernels_streaming.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/kernels_stereo.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/render.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/render_ocv.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/ginfer.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/media.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/rmat.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/compiler/gmodel.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/compiler/gmodelbuilder.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/compiler/gislandmodel.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/compiler/gcompiler.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/compiler/gcompiled.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/compiler/gstreaming.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/compiler/passes/helpers.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/compiler/passes/dump_dot.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/compiler/passes/islands.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/compiler/passes/meta.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/compiler/passes/kernels.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/compiler/passes/exec.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/compiler/passes/transformations.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/compiler/passes/pattern_matching.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/compiler/passes/perform_substitution.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/compiler/passes/streaming.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/compiler/passes/intrin.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/executor/gabstractexecutor.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/executor/gabstractstreamingexecutor.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/executor/gexecutor.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/executor/gtbbexecutor.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/executor/gthreadedexecutor.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/executor/gstreamingexecutor.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/executor/gasync.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/executor/thread_pool.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/cpu/gcpubackend.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/cpu/gcpukernel.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/cpu/gcpuimgproc.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/cpu/gcpustereo.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/cpu/gcpuvideo.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/cpu/gcpucore.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/cpu/gcpuot.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/cpu/gnnparsers.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/fluid/gfluidbuffer.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/fluid/gfluidbackend.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/fluid/gfluidimgproc.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/fluid/gfluidimgproc_func.dispatch.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/fluid/gfluidcore.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/fluid/gfluidcore_func.dispatch.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/oak/goak.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/oak/goakbackend.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/oak/goak_memory_adapters.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/ocl/goclbackend.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/ocl/goclkernel.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/ocl/goclimgproc.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/ocl/goclcore.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/ie/giebackend.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/ie/giebackend/giewrapper.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/ov/govbackend.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/onnx/gonnxbackend.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/onnx/dml_ep.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/onnx/coreml_ep.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/render/grenderocv.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/render/ft_render.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/plaidml/gplaidmlcore.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/plaidml/gplaidmlbackend.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/common/gmetabackend.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/common/gcompoundbackend.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/common/gcompoundkernel.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/s11n.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/common/serialization.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/streaming/gstreamingbackend.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/ie/bindings_ie.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/onnx/bindings_onnx.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/ov/bindings_ov.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/python/gpythonbackend.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/queue_source.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/source.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/source_priv.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/file_data_provider.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/cfg_params.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/cfg_params_parser.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/utils.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/default.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/data_provider_interface_exception.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/accelerators/surface/base_frame_adapter.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/accelerators/surface/cpu_frame_adapter.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/accelerators/surface/dx11_frame_adapter.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/accelerators/surface/surface.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/accelerators/surface/surface_pool.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/accelerators/utils/shared_lock.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/accelerators/accel_policy_cpu.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/accelerators/accel_policy_dx11.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/accelerators/accel_policy_va_api.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/accelerators/dx11_alloc_resource.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/engine/engine_session.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/engine/processing_engine_base.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/engine/decode/decode_engine_legacy.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/engine/decode/decode_session.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/engine/transcode/transcode_engine_legacy.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/engine/transcode/transcode_session.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/engine/preproc/preproc_engine.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/engine/preproc/preproc_session.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/engine/preproc/preproc_dispatcher.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/engine/preproc_engine_interface.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/demux/async_mfp_demux_data_provider.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/data_provider_dispatcher.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/cfg_param_device_selector.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/device_selector_interface.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/gstreamer/gstreamer_pipeline_facade.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/gstreamer/gstreamerpipeline.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/gstreamer/gstreamersource.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/gstreamer/gstreamer_buffer_utils.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/gstreamer/gstreamer_media_adapter.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/gstreamer/gstreamerenv.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/pysrc/python_stream_source.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/utils/itt.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/3rdparty/vasot/src/components/ot/kalman_filter/kalman_filter_no_opencv.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/3rdparty/vasot/src/components/ot/mtt/hungarian_wrap.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/3rdparty/vasot/src/components/ot/mtt/objects_associator.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/3rdparty/vasot/src/components/ot/mtt/rgb_histogram.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/3rdparty/vasot/src/components/ot/object_tracker.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/3rdparty/vasot/src/components/ot/short_term_imageless_tracker.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/3rdparty/vasot/src/components/ot/tracker.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/3rdparty/vasot/src/components/ot/tracklet.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/3rdparty/vasot/src/components/ot/zero_term_imageless_tracker.cpp
+ Extra
+ opencv_gapi
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_build/cvconfig.h
+/home/nerdstar/NerdStar/backend/opencv/opencv_build/opencv2/opencv_modules.hpp

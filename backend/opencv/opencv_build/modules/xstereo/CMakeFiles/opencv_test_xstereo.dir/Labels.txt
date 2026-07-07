@@ -1,0 +1,25 @@
+# Target labels
+ Extra
+ opencv_xstereo
+ AccuracyTest
+# Source files and their labels
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xstereo/test/test_block_matching.cpp
+ Extra
+ opencv_xstereo
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xstereo/test/test_descriptors.cpp
+ Extra
+ opencv_xstereo
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xstereo/test/test_main.cpp
+ Extra
+ opencv_xstereo
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xstereo/test/test_qds_matching.cpp
+ Extra
+ opencv_xstereo
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xstereo/test/test_precomp.hpp
+ Extra
+ opencv_xstereo
+ AccuracyTest

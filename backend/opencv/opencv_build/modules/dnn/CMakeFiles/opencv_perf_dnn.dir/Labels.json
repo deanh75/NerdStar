@@ -1,0 +1,267 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/dnn/test/test_common.hpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_dnn",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/dnn/test/test_common.impl.hpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_dnn",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/dnn/perf/perf_common.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_dnn",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/dnn/perf/perf_convolution.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_dnn",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/dnn/perf/perf_convolution1d.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_dnn",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/dnn/perf/perf_convolution3d.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_dnn",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/dnn/perf/perf_einsum.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_dnn",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/dnn/perf/perf_gemm.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_dnn",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/dnn/perf/perf_layer.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_dnn",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/dnn/perf/perf_main.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_dnn",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/dnn/perf/perf_net.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_dnn",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/dnn/perf/perf_recurrent.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_dnn",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/dnn/perf/perf_resize.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_dnn",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/dnn/perf/perf_slice.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_dnn",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/dnn/perf/perf_utils.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_dnn",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/dnn/perf/perf_precomp.hpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_dnn",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/layers/layers_common.neon.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_dnn",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/int8layers/layers_common.neon.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_dnn",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/layers/cpu_kernels/conv_block.neon.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_dnn",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/layers/cpu_kernels/conv_winograd_f63.neon.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_dnn",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/layers/cpu_kernels/fast_gemm_kernels.neon.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_dnn",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/layers/cpu_kernels/conv2_depthwise.neon.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_dnn",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/layers/cpu_kernels/conv2_kernels.neon.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_dnn",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/layers/cpu_kernels/activation_kernels.neon.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_dnn",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/layers/cpu_kernels/reduce2_kernels.neon.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_dnn",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/layers/cpu_kernels/transpose_kernels.neon.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_dnn",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/layers/cpu_kernels/gridsample_kernels.neon.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_dnn",
+				"PerfTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/layers/cpu_kernels/nary_eltwise_kernels.neon.cpp",
+			"labels" : 
+			[
+				"Main",
+				"opencv_dnn",
+				"PerfTest"
+			]
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Main",
+			"opencv_dnn",
+			"PerfTest"
+		],
+		"name" : "opencv_perf_dnn"
+	}
+}

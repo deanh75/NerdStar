@@ -1,0 +1,25 @@
+# Target labels
+ Extra
+ opencv_rgbd
+ AccuracyTest
+# Source files and their labels
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/rgbd/test/test_colored_kinfu.cpp
+ Extra
+ opencv_rgbd
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/rgbd/test/test_dynafu.cpp
+ Extra
+ opencv_rgbd
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/rgbd/test/test_kinfu.cpp
+ Extra
+ opencv_rgbd
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/rgbd/test/test_main.cpp
+ Extra
+ opencv_rgbd
+ AccuracyTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/rgbd/test/test_precomp.hpp
+ Extra
+ opencv_rgbd
+ AccuracyTest

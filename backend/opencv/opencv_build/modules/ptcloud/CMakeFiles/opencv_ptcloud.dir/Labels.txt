@@ -1,0 +1,212 @@
+# Target labels
+ Main
+ opencv_ptcloud
+ Module
+# Source files and their labels
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/include/opencv2/ptcloud.hpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/include/opencv2/ptcloud/depth.hpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/include/opencv2/ptcloud/detail/kinfu_frame.hpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/include/opencv2/ptcloud/detail/pose_graph.hpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/include/opencv2/ptcloud/detail/submap.hpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/include/opencv2/ptcloud/odometry.hpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/include/opencv2/ptcloud/odometry_frame.hpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/include/opencv2/ptcloud/odometry_settings.hpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/include/opencv2/ptcloud/volume.hpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/include/opencv2/ptcloud/volume_settings.hpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/color_tsdf_functions.cpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/depth_registration.cpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/depth_to_3d.cpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/hash_tsdf_functions.cpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/io_base.cpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/io_obj.cpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/io_ply.cpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/kinfu_frame.cpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/load_point_cloud.cpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/normal.cpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/octree.cpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/odometry.cpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/odometry_frame_impl.cpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/odometry_functions.cpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/odometry_settings_impl.cpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/plane.cpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/pose_graph.cpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/rendering.cpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/tsdf_functions.cpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/utils.cpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/volume_impl.cpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/volume_settings_impl.cpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/opencl/hash_tsdf.cl
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/opencl/icp.cl
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/opencl/kinfu_frame.cl
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/opencl/tsdf.cl
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/ptcloud/opencl_kernels_ptcloud.cpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/ptcloud/opencl_kernels_ptcloud.hpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/color_tsdf_functions.hpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/depth_to_3d.hpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/hash_tsdf_functions.hpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/io_base.hpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/io_obj.hpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/io_ply.hpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/octree.hpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/odometry_functions.hpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/precomp.hpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/sparse_block_matrix.hpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/tsdf_functions.hpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/utils.hpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ptcloud/src/volume_impl.hpp
+ Main
+ opencv_ptcloud
+ Module
+/home/nerdstar/NerdStar/backend/opencv/opencv_build/cvconfig.h
+/home/nerdstar/NerdStar/backend/opencv/opencv_build/opencv2/opencv_modules.hpp
+/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/ptcloud/opencl_kernels_ptcloud.cpp.rule

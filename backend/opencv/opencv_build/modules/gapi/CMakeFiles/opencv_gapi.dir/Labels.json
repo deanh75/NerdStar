@@ -1,0 +1,2199 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/core.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/cpu/core.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/cpu/gcpukernel.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/cpu/imgproc.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/cpu/ot.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/cpu/stereo.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/cpu/video.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/fluid/core.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/fluid/gfluidbuffer.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/fluid/gfluidkernel.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/fluid/imgproc.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/garg.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/garray.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/gasync_context.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/gcall.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/gcommon.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/gcompiled.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/gcompiled_async.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/gcompoundkernel.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/gcomputation.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/gcomputation_async.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/gframe.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/gkernel.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/gmat.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/gmetaarg.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/gopaque.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/gproto.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/gpu/core.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/gpu/ggpukernel.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/gpu/imgproc.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/gscalar.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/gstreaming.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/gtransform.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/gtype_traits.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/gtyped.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/imgproc.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/infer.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/infer/bindings_ie.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/infer/bindings_onnx.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/infer/bindings_ov.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/infer/ie.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/infer/onnx.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/infer/ov.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/infer/parsers.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/infer/workload_type.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/media.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/oak/infer.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/oak/oak.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/ocl/core.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/ocl/goclkernel.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/ocl/imgproc.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/opencv_includes.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/operators.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/ot.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/own/assert.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/own/convert.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/own/cvdefs.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/own/exports.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/own/mat.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/own/saturate.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/own/scalar.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/own/types.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/plaidml/core.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/plaidml/gplaidmlkernel.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/plaidml/plaidml.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/pysrc/python_stream_source.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/python/python.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/render.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/render/render.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/render/render_types.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/rmat.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/s11n.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/s11n/base.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/stereo.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/streaming/cap.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/streaming/desync.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/streaming/format.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/streaming/gstreamer/gstreamerpipeline.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/streaming/gstreamer/gstreamersource.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/streaming/meta.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/streaming/onevpl/accel_types.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/streaming/onevpl/cfg_params.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/streaming/onevpl/data_provider_interface.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/streaming/onevpl/default.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/streaming/onevpl/device_selector_interface.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/streaming/onevpl/source.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/streaming/queue_source.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/streaming/source.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/streaming/sync.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/util/any.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/util/compiler_hints.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/util/copy_through_move.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/util/optional.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/util/throw.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/util/type_traits.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/util/util.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/util/variant.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/include/opencv2/gapi/video.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/grunarg.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/gorigin.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/gmat.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/garray.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/gopaque.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/gscalar.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/gframe.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/gkernel.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/gbackend.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/gcommon.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/gproto.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/gnode.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/gcall.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/gcomputation.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/operators.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/kernels_core.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/kernels_imgproc.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/kernels_video.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/kernels_nnparsers.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/kernels_ot.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/kernels_streaming.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/kernels_stereo.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/render.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/render_ocv.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/ginfer.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/media.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/rmat.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/compiler/gmodel.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/compiler/gmodelbuilder.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/compiler/gislandmodel.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/compiler/gcompiler.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/compiler/gcompiled.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/compiler/gstreaming.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/compiler/passes/helpers.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/compiler/passes/dump_dot.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/compiler/passes/islands.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/compiler/passes/meta.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/compiler/passes/kernels.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/compiler/passes/exec.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/compiler/passes/transformations.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/compiler/passes/pattern_matching.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/compiler/passes/perform_substitution.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/compiler/passes/streaming.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/compiler/passes/intrin.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/executor/gabstractexecutor.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/executor/gabstractstreamingexecutor.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/executor/gexecutor.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/executor/gtbbexecutor.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/executor/gthreadedexecutor.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/executor/gstreamingexecutor.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/executor/gasync.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/executor/thread_pool.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/cpu/gcpubackend.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/cpu/gcpukernel.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/cpu/gcpuimgproc.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/cpu/gcpustereo.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/cpu/gcpuvideo.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/cpu/gcpucore.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/cpu/gcpuot.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/cpu/gnnparsers.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/fluid/gfluidbuffer.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/fluid/gfluidbackend.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/fluid/gfluidimgproc.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/fluid/gfluidimgproc_func.dispatch.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/fluid/gfluidcore.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/fluid/gfluidcore_func.dispatch.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/oak/goak.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/oak/goakbackend.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/oak/goak_memory_adapters.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/ocl/goclbackend.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/ocl/goclkernel.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/ocl/goclimgproc.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/ocl/goclcore.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/ie/giebackend.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/ie/giebackend/giewrapper.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/ov/govbackend.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/onnx/gonnxbackend.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/onnx/dml_ep.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/onnx/coreml_ep.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/render/grenderocv.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/render/ft_render.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/plaidml/gplaidmlcore.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/plaidml/gplaidmlbackend.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/common/gmetabackend.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/common/gcompoundbackend.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/common/gcompoundkernel.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/api/s11n.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/common/serialization.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/streaming/gstreamingbackend.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/ie/bindings_ie.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/onnx/bindings_onnx.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/ov/bindings_ov.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/backends/python/gpythonbackend.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/queue_source.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/source.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/source_priv.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/file_data_provider.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/cfg_params.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/cfg_params_parser.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/utils.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/default.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/data_provider_interface_exception.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/accelerators/surface/base_frame_adapter.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/accelerators/surface/cpu_frame_adapter.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/accelerators/surface/dx11_frame_adapter.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/accelerators/surface/surface.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/accelerators/surface/surface_pool.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/accelerators/utils/shared_lock.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/accelerators/accel_policy_cpu.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/accelerators/accel_policy_dx11.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/accelerators/accel_policy_va_api.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/accelerators/dx11_alloc_resource.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/engine/engine_session.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/engine/processing_engine_base.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/engine/decode/decode_engine_legacy.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/engine/decode/decode_session.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/engine/transcode/transcode_engine_legacy.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/engine/transcode/transcode_session.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/engine/preproc/preproc_engine.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/engine/preproc/preproc_session.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/engine/preproc/preproc_dispatcher.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/engine/preproc_engine_interface.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/demux/async_mfp_demux_data_provider.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/data_provider_dispatcher.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/cfg_param_device_selector.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/onevpl/device_selector_interface.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/gstreamer/gstreamer_pipeline_facade.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/gstreamer/gstreamerpipeline.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/gstreamer/gstreamersource.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/gstreamer/gstreamer_buffer_utils.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/gstreamer/gstreamer_media_adapter.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/streaming/gstreamer/gstreamerenv.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/pysrc/python_stream_source.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/utils/itt.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/3rdparty/vasot/src/components/ot/kalman_filter/kalman_filter_no_opencv.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/3rdparty/vasot/src/components/ot/mtt/hungarian_wrap.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/3rdparty/vasot/src/components/ot/mtt/objects_associator.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/3rdparty/vasot/src/components/ot/mtt/rgb_histogram.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/3rdparty/vasot/src/components/ot/object_tracker.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/3rdparty/vasot/src/components/ot/short_term_imageless_tracker.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/3rdparty/vasot/src/components/ot/tracker.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/3rdparty/vasot/src/components/ot/tracklet.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/src/3rdparty/vasot/src/components/ot/zero_term_imageless_tracker.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_gapi",
+				"Module"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_build/cvconfig.h"
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_build/opencv2/opencv_modules.hpp"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Extra",
+			"opencv_gapi",
+			"Module"
+		],
+		"name" : "opencv_gapi"
+	}
+}

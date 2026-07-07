@@ -1,0 +1,60 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xstereo/test/test_block_matching.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_xstereo",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xstereo/test/test_descriptors.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_xstereo",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xstereo/test/test_main.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_xstereo",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xstereo/test/test_qds_matching.cpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_xstereo",
+				"AccuracyTest"
+			]
+		},
+		{
+			"file" : "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xstereo/test/test_precomp.hpp",
+			"labels" : 
+			[
+				"Extra",
+				"opencv_xstereo",
+				"AccuracyTest"
+			]
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Extra",
+			"opencv_xstereo",
+			"AccuracyTest"
+		],
+		"name" : "opencv_test_xstereo"
+	}
+}

@@ -1,0 +1,17 @@
+# Target labels
+ Extra
+ opencv_signal
+ PerfTest
+# Source files and their labels
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/signal/perf/perf_main.cpp
+ Extra
+ opencv_signal
+ PerfTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/signal/perf/perf_resample.cpp
+ Extra
+ opencv_signal
+ PerfTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/signal/perf/perf_precomp.hpp
+ Extra
+ opencv_signal
+ PerfTest

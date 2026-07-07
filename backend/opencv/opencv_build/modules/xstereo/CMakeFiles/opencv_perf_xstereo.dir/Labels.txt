@@ -1,0 +1,21 @@
+# Target labels
+ Extra
+ opencv_xstereo
+ PerfTest
+# Source files and their labels
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xstereo/perf/perf_bm.cpp
+ Extra
+ opencv_xstereo
+ PerfTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xstereo/perf/perf_descriptor.cpp
+ Extra
+ opencv_xstereo
+ PerfTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xstereo/perf/perf_main.cpp
+ Extra
+ opencv_xstereo
+ PerfTest
+/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xstereo/perf/perf_precomp.hpp
+ Extra
+ opencv_xstereo
+ PerfTest

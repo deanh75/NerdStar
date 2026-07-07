@@ -1,0 +1,215 @@
+// SPDX-FileCopyrightText: 2026 Arm Limited and/or its affiliates <open-source-office@arm.com>
+//
+// SPDX-License-Identifier: Apache-2.0
+
+#ifndef KLEIDICV_SEPARABLE_FILTER_9X9_SC_H
+#define KLEIDICV_SEPARABLE_FILTER_9X9_SC_H
+
+#include "kleidicv/sve2.h"
+#include "kleidicv/workspace/border_9x9.h"
+
+// It is used by SVE2 and SME, the actual namespace will reflect it.
+namespace KLEIDICV_TARGET_NAMESPACE {
+
+// Template for drivers of separable NxM filters.
+template <typename FilterType, const size_t S>
+class SeparableFilter;
+
+// Driver for a separable 9x9 filter.
+template <typename FilterType>
+class SeparableFilter<FilterType, 9UL> {
+ public:
+  using SourceType = typename FilterType::SourceType;
+  using BufferType = typename FilterType::BufferType;
+  using DestinationType = typename FilterType::DestinationType;
+  using SourceVecTraits =
+      typename ::KLEIDICV_TARGET_NAMESPACE::VecTraits<SourceType>;
+  using SourceVectorType = typename SourceVecTraits::VectorType;
+  using BufferVecTraits =
+      typename ::KLEIDICV_TARGET_NAMESPACE::VecTraits<BufferType>;
+  using BufferVectorType = typename BufferVecTraits::VectorType;
+  using BorderInfoType =
+      typename ::KLEIDICV_TARGET_NAMESPACE::FixedBorderInfo9x9<SourceType>;
+  using BorderType = FixedBorderType;
+  using BorderOffsets = typename BorderInfoType::Offsets;
+
+  explicit SeparableFilter(FilterType filter) KLEIDICV_STREAMING
+      : filter_{filter} {}
+
+  static constexpr size_t margin = 4UL;
+
+  void process_vertical(size_t width, Rows<const SourceType> src_rows,
+                        Rows<BufferType> dst_rows,
+                        BorderOffsets border_offsets) const KLEIDICV_STREAMING {
+    LoopUnroll2 loop{width * src_rows.channels(), SourceVecTraits::num_lanes()};
+
+    loop.unroll_once([&](size_t index) KLEIDICV_STREAMING {
+      svbool_t pg_all = SourceVecTraits::svptrue();
+      vertical_vector_path(pg_all, src_rows, dst_rows, border_offsets, index);
+    });
+
+    loop.remaining([&](size_t index, size_t length) KLEIDICV_STREAMING {
+      svbool_t pg = SourceVecTraits::svwhilelt(index, length);
+      vertical_vector_path(pg, src_rows, dst_rows, border_offsets, index);
+    });
+  }
+
+  void process_horizontal(size_t width, Rows<const BufferType> src_rows,
+                          Rows<DestinationType> dst_rows,
+                          BorderOffsets border_offsets) const
+      KLEIDICV_STREAMING {
+    svbool_t pg_all = BufferVecTraits::svptrue();
+    LoopUnroll2 loop{width * src_rows.channels(), BufferVecTraits::num_lanes()};
+
+    loop.unroll_twice([&](size_t index) KLEIDICV_STREAMING {
+      horizontal_vector_path_2x(pg_all, src_rows, dst_rows, border_offsets,
+                                index);
+    });
+
+    loop.unroll_once([&](size_t index) KLEIDICV_STREAMING {
+      horizontal_vector_path(pg_all, src_rows, dst_rows, border_offsets, index);
+    });
+
+    loop.remaining([&](size_t index, size_t length) KLEIDICV_STREAMING {
+      svbool_t pg = BufferVecTraits::svwhilelt(index, length);
+      horizontal_vector_path(pg, src_rows, dst_rows, border_offsets, index);
+    });
+  }
+
+  // Processing of horizontal borders is always scalar because border offsets
+  // change for each and every element in the border.
+  void process_horizontal_borders(
+      Rows<const BufferType> src_rows, Rows<DestinationType> dst_rows,
+      BorderOffsets border_offsets) const KLEIDICV_STREAMING {
+    for (size_t index = 0; index < src_rows.channels(); ++index) {
+      disable_loop_vectorization();
+      process_horizontal_border(src_rows, dst_rows, border_offsets, index);
+    }
+  }
+
+ private:
+  void vertical_vector_path(svbool_t pg, Rows<const SourceType> src_rows,
+                            Rows<BufferType> dst_rows,
+                            BorderOffsets border_offsets,
+                            size_t index) const KLEIDICV_STREAMING {
+    SourceVectorType src_0 =
+        svld1(pg, &src_rows.at(border_offsets.c0())[index]);
+    SourceVectorType src_1 =
+        svld1(pg, &src_rows.at(border_offsets.c1())[index]);
+    SourceVectorType src_2 =
+        svld1(pg, &src_rows.at(border_offsets.c2())[index]);
+    SourceVectorType src_3 =
+        svld1(pg, &src_rows.at(border_offsets.c3())[index]);
+    SourceVectorType src_4 =
+        svld1(pg, &src_rows.at(border_offsets.c4())[index]);
+    SourceVectorType src_5 =
+        svld1(pg, &src_rows.at(border_offsets.c5())[index]);
+    SourceVectorType src_6 =
+        svld1(pg, &src_rows.at(border_offsets.c6())[index]);
+    SourceVectorType src_7 =
+        svld1(pg, &src_rows.at(border_offsets.c7())[index]);
+    SourceVectorType src_8 =
+        svld1(pg, &src_rows.at(border_offsets.c8())[index]);
+    std::reference_wrapper<SourceVectorType> sources[9] = {
+        src_0, src_1, src_2, src_3, src_4, src_5, src_6, src_7, src_8};
+    filter_.vertical_vector_path(pg, sources, &dst_rows[index]);
+  }
+
+  void horizontal_vector_path_2x(svbool_t pg, Rows<const BufferType> src_rows,
+                                 Rows<DestinationType> dst_rows,
+                                 BorderOffsets border_offsets,
+                                 size_t index) const KLEIDICV_STREAMING {
+    auto src_0 = &src_rows.at(0, border_offsets.c0())[index];
+    auto src_1 = &src_rows.at(0, border_offsets.c1())[index];
+    auto src_2 = &src_rows.at(0, border_offsets.c2())[index];
+    auto src_3 = &src_rows.at(0, border_offsets.c3())[index];
+    auto src_4 = &src_rows.at(0, border_offsets.c4())[index];
+    auto src_5 = &src_rows.at(0, border_offsets.c5())[index];
+    auto src_6 = &src_rows.at(0, border_offsets.c6())[index];
+    auto src_7 = &src_rows.at(0, border_offsets.c7())[index];
+    auto src_8 = &src_rows.at(0, border_offsets.c8())[index];
+
+    BufferVectorType src_0_0 = svld1(pg, &src_0[0]);
+    BufferVectorType src_1_0 = svld1_vnum(pg, &src_0[0], 1);
+    BufferVectorType src_0_1 = svld1(pg, &src_1[0]);
+    BufferVectorType src_1_1 = svld1_vnum(pg, &src_1[0], 1);
+    BufferVectorType src_0_2 = svld1(pg, &src_2[0]);
+    BufferVectorType src_1_2 = svld1_vnum(pg, &src_2[0], 1);
+    BufferVectorType src_0_3 = svld1(pg, &src_3[0]);
+    BufferVectorType src_1_3 = svld1_vnum(pg, &src_3[0], 1);
+    BufferVectorType src_0_4 = svld1(pg, &src_4[0]);
+    BufferVectorType src_1_4 = svld1_vnum(pg, &src_4[0], 1);
+    BufferVectorType src_0_5 = svld1(pg, &src_5[0]);
+    BufferVectorType src_1_5 = svld1_vnum(pg, &src_5[0], 1);
+    BufferVectorType src_0_6 = svld1(pg, &src_6[0]);
+    BufferVectorType src_1_6 = svld1_vnum(pg, &src_6[0], 1);
+    BufferVectorType src_0_7 = svld1(pg, &src_7[0]);
+    BufferVectorType src_1_7 = svld1_vnum(pg, &src_7[0], 1);
+    BufferVectorType src_0_8 = svld1(pg, &src_8[0]);
+    BufferVectorType src_1_8 = svld1_vnum(pg, &src_8[0], 1);
+    std::reference_wrapper<BufferVectorType> sources_0[9] = {
+        src_0_0, src_0_1, src_0_2, src_0_3, src_0_4,
+        src_0_5, src_0_6, src_0_7, src_0_8};
+    filter_.horizontal_vector_path(pg, sources_0, &dst_rows[index]);
+    std::reference_wrapper<BufferVectorType> sources_1[9] = {
+        src_1_0, src_1_1, src_1_2, src_1_3, src_1_4,
+        src_1_5, src_1_6, src_1_7, src_1_8};
+    filter_.horizontal_vector_path(
+        pg, sources_1, &dst_rows[index + BufferVecTraits::num_lanes()]);
+  }
+
+  void horizontal_vector_path(svbool_t pg, Rows<const BufferType> src_rows,
+                              Rows<DestinationType> dst_rows,
+                              BorderOffsets border_offsets,
+                              size_t index) const KLEIDICV_STREAMING {
+    BufferVectorType src_0 =
+        svld1(pg, &src_rows.at(0, border_offsets.c0())[index]);
+    BufferVectorType src_1 =
+        svld1(pg, &src_rows.at(0, border_offsets.c1())[index]);
+    BufferVectorType src_2 =
+        svld1(pg, &src_rows.at(0, border_offsets.c2())[index]);
+    BufferVectorType src_3 =
+        svld1(pg, &src_rows.at(0, border_offsets.c3())[index]);
+    BufferVectorType src_4 =
+        svld1(pg, &src_rows.at(0, border_offsets.c4())[index]);
+    BufferVectorType src_5 =
+        svld1(pg, &src_rows.at(0, border_offsets.c5())[index]);
+    BufferVectorType src_6 =
+        svld1(pg, &src_rows.at(0, border_offsets.c6())[index]);
+    BufferVectorType src_7 =
+        svld1(pg, &src_rows.at(0, border_offsets.c7())[index]);
+    BufferVectorType src_8 =
+        svld1(pg, &src_rows.at(0, border_offsets.c8())[index]);
+
+    std::reference_wrapper<BufferVectorType> sources[9] = {
+        src_0, src_1, src_2, src_3, src_4, src_5, src_6, src_7, src_8};
+    filter_.horizontal_vector_path(pg, sources, &dst_rows[index]);
+  }
+
+  void process_horizontal_border(Rows<const BufferType> src_rows,
+                                 Rows<DestinationType> dst_rows,
+                                 BorderOffsets border_offsets,
+                                 size_t index) const KLEIDICV_STREAMING {
+    BufferType src[9];
+    src[0] = src_rows.at(0, border_offsets.c0())[index];
+    src[1] = src_rows.at(0, border_offsets.c1())[index];
+    src[2] = src_rows.at(0, border_offsets.c2())[index];
+    src[3] = src_rows.at(0, border_offsets.c3())[index];
+    src[4] = src_rows.at(0, border_offsets.c4())[index];
+    src[5] = src_rows.at(0, border_offsets.c5())[index];
+    src[6] = src_rows.at(0, border_offsets.c6())[index];
+    src[7] = src_rows.at(0, border_offsets.c7())[index];
+    src[8] = src_rows.at(0, border_offsets.c8())[index];
+    filter_.horizontal_scalar_path(src, &dst_rows[index]);
+  }
+
+  FilterType filter_;
+};  // end of class SeparableFilter<FilterType, 9UL>
+
+// Shorthand for 9x9 separable filters driver type.
+template <class FilterType>
+using SeparableFilter9x9 = SeparableFilter<FilterType, 9UL>;
+
+}  // namespace KLEIDICV_TARGET_NAMESPACE
+
+#endif  // KLEIDICV_SEPARABLE_FILTER_9X9_SC_H
