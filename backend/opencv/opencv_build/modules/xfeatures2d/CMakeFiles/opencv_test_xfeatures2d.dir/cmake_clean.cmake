@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../bin/opencv_test_xfeatures2d"
   "../../bin/opencv_test_xfeatures2d.pdb"
+  "CMakeFiles/opencv_test_xfeatures2d.dir/link.d"
   "CMakeFiles/opencv_test_xfeatures2d.dir/test/test_agast.cpp.o"
   "CMakeFiles/opencv_test_xfeatures2d.dir/test/test_agast.cpp.o.d"
   "CMakeFiles/opencv_test_xfeatures2d.dir/test/test_akaze.cpp.o"

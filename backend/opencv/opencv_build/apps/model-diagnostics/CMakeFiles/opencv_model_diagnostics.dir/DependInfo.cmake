@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/nerdstar/NerdStar/backend/opencv/opencv/apps/model-diagnostics/model_diagnostics.cpp" "apps/model-diagnostics/CMakeFiles/opencv_model_diagnostics.dir/model_diagnostics.cpp.o" "gcc" "apps/model-diagnostics/CMakeFiles/opencv_model_diagnostics.dir/model_diagnostics.cpp.o.d"
+  "" "bin/opencv_model_diagnostics" "gcc" "apps/model-diagnostics/CMakeFiles/opencv_model_diagnostics.dir/link.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

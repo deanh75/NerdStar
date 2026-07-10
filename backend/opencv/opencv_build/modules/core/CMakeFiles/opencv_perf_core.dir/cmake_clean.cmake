@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../bin/opencv_perf_core"
   "../../bin/opencv_perf_core.pdb"
+  "CMakeFiles/opencv_perf_core.dir/link.d"
   "CMakeFiles/opencv_perf_core.dir/perf/cuda/perf_gpumat.cpp.o"
   "CMakeFiles/opencv_perf_core.dir/perf/cuda/perf_gpumat.cpp.o.d"
   "CMakeFiles/opencv_perf_core.dir/perf/opencl/perf_arithm.cpp.o"

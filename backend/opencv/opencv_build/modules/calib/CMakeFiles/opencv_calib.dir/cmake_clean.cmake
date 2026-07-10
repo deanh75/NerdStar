@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_calib.so"
   "../../lib/libopencv_calib.so.5.1.0"
   "../../lib/libopencv_calib.so.501"
+  "CMakeFiles/opencv_calib.dir/link.d"
   "CMakeFiles/opencv_calib.dir/src/calibration.cpp.o"
   "CMakeFiles/opencv_calib.dir/src/calibration.cpp.o.d"
   "CMakeFiles/opencv_calib.dir/src/calibration_handeye.cpp.o"

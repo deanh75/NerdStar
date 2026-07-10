@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../bin/opencv_test_xstereo"
   "../../bin/opencv_test_xstereo.pdb"
+  "CMakeFiles/opencv_test_xstereo.dir/link.d"
   "CMakeFiles/opencv_test_xstereo.dir/test/test_block_matching.cpp.o"
   "CMakeFiles/opencv_test_xstereo.dir/test/test_block_matching.cpp.o.d"
   "CMakeFiles/opencv_test_xstereo.dir/test/test_descriptors.cpp.o"

@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_img_hash.so"
   "../../lib/libopencv_img_hash.so.5.1.0"
   "../../lib/libopencv_img_hash.so.501"
+  "CMakeFiles/opencv_img_hash.dir/link.d"
   "CMakeFiles/opencv_img_hash.dir/src/average_hash.cpp.o"
   "CMakeFiles/opencv_img_hash.dir/src/average_hash.cpp.o.d"
   "CMakeFiles/opencv_img_hash.dir/src/block_mean_hash.cpp.o"

@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../bin/opencv_test_line_descriptor"
   "../../bin/opencv_test_line_descriptor.pdb"
+  "CMakeFiles/opencv_test_line_descriptor.dir/link.d"
   "CMakeFiles/opencv_test_line_descriptor.dir/test/test_descriptors_regression.cpp.o"
   "CMakeFiles/opencv_test_line_descriptor.dir/test/test_descriptors_regression.cpp.o.d"
   "CMakeFiles/opencv_test_line_descriptor.dir/test/test_detector_regression.cpp.o"

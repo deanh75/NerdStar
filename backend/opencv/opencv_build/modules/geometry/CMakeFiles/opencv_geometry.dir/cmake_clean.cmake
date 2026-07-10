@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_geometry.so"
   "../../lib/libopencv_geometry.so.5.1.0"
   "../../lib/libopencv_geometry.so.501"
+  "CMakeFiles/opencv_geometry.dir/link.d"
   "CMakeFiles/opencv_geometry.dir/opencl_kernels_geometry.cpp.o"
   "CMakeFiles/opencv_geometry.dir/opencl_kernels_geometry.cpp.o.d"
   "CMakeFiles/opencv_geometry.dir/src/ap3p.cpp.o"

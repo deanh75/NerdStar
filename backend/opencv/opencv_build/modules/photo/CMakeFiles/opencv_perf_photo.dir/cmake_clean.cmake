@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../bin/opencv_perf_photo"
   "../../bin/opencv_perf_photo.pdb"
+  "CMakeFiles/opencv_perf_photo.dir/link.d"
   "CMakeFiles/opencv_perf_photo.dir/perf/opencl/perf_denoising.cpp.o"
   "CMakeFiles/opencv_perf_photo.dir/perf/opencl/perf_denoising.cpp.o.d"
   "CMakeFiles/opencv_perf_photo.dir/perf/perf_ccm.cpp.o"

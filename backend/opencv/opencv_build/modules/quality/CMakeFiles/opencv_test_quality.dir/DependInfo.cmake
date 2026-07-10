@@ -14,6 +14,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/quality/test/test_mse.cpp" "modules/quality/CMakeFiles/opencv_test_quality.dir/test/test_mse.cpp.o" "gcc" "modules/quality/CMakeFiles/opencv_test_quality.dir/test/test_mse.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/quality/test/test_psnr.cpp" "modules/quality/CMakeFiles/opencv_test_quality.dir/test/test_psnr.cpp.o" "gcc" "modules/quality/CMakeFiles/opencv_test_quality.dir/test/test_psnr.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/quality/test/test_ssim.cpp" "modules/quality/CMakeFiles/opencv_test_quality.dir/test/test_ssim.cpp.o" "gcc" "modules/quality/CMakeFiles/opencv_test_quality.dir/test/test_ssim.cpp.o.d"
+  "" "bin/opencv_test_quality" "gcc" "modules/quality/CMakeFiles/opencv_test_quality.dir/link.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

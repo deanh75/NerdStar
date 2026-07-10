@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudastereo/test/test_main.cpp" "modules/cudastereo/CMakeFiles/opencv_test_cudastereo.dir/test/test_main.cpp.o" "gcc" "modules/cudastereo/CMakeFiles/opencv_test_cudastereo.dir/test/test_main.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudastereo/test/test_sgm_funcs.cpp" "modules/cudastereo/CMakeFiles/opencv_test_cudastereo.dir/test/test_sgm_funcs.cpp.o" "gcc" "modules/cudastereo/CMakeFiles/opencv_test_cudastereo.dir/test/test_sgm_funcs.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudastereo/test/test_stereo.cpp" "modules/cudastereo/CMakeFiles/opencv_test_cudastereo.dir/test/test_stereo.cpp.o" "gcc" "modules/cudastereo/CMakeFiles/opencv_test_cudastereo.dir/test/test_stereo.cpp.o.d"
+  "" "bin/opencv_test_cudastereo" "gcc" "modules/cudastereo/CMakeFiles/opencv_test_cudastereo.dir/link.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

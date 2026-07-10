@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_superres.so"
   "../../lib/libopencv_superres.so.5.1.0"
   "../../lib/libopencv_superres.so.501"
+  "CMakeFiles/opencv_superres.dir/link.d"
   "CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_btv_l1_gpu.cu.o"
   "CMakeFiles/opencv_superres.dir/opencl_kernels_superres.cpp.o"
   "CMakeFiles/opencv_superres.dir/opencl_kernels_superres.cpp.o.d"

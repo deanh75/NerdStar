@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../bin/opencv_perf_tracking"
   "../../bin/opencv_perf_tracking.pdb"
+  "CMakeFiles/opencv_perf_tracking.dir/link.d"
   "CMakeFiles/opencv_perf_tracking.dir/perf/perf_main.cpp.o"
   "CMakeFiles/opencv_perf_tracking.dir/perf/perf_main.cpp.o.d"
   "CMakeFiles/opencv_perf_tracking.dir/perf/perf_trackers.cpp.o"

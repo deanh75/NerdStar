@@ -14,6 +14,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/stitching/perf/perf_main.cpp" "modules/stitching/CMakeFiles/opencv_perf_stitching.dir/perf/perf_main.cpp.o" "gcc" "modules/stitching/CMakeFiles/opencv_perf_stitching.dir/perf/perf_main.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/stitching/perf/perf_matchers.cpp" "modules/stitching/CMakeFiles/opencv_perf_stitching.dir/perf/perf_matchers.cpp.o" "gcc" "modules/stitching/CMakeFiles/opencv_perf_stitching.dir/perf/perf_matchers.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/stitching/perf/perf_stich.cpp" "modules/stitching/CMakeFiles/opencv_perf_stitching.dir/perf/perf_stich.cpp.o" "gcc" "modules/stitching/CMakeFiles/opencv_perf_stitching.dir/perf/perf_stich.cpp.o.d"
+  "" "bin/opencv_perf_stitching" "gcc" "modules/stitching/CMakeFiles/opencv_perf_stitching.dir/link.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

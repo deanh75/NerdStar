@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_videostab.so"
   "../../lib/libopencv_videostab.so.5.1.0"
   "../../lib/libopencv_videostab.so.501"
+  "CMakeFiles/opencv_videostab.dir/link.d"
   "CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_global_motion.cu.o"
   "CMakeFiles/opencv_videostab.dir/src/deblurring.cpp.o"
   "CMakeFiles/opencv_videostab.dir/src/deblurring.cpp.o.d"

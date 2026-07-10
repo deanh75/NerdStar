@@ -4,8 +4,14 @@ import cv2
 import time
 import av
 from aiortc import VideoStreamTrack
+from aiortc.codecs import h264
 
 from backend.wrapper import Wrapper
+
+h264.MAX_BITRATE = 5_000_000       # raise ceiling above our target
+h264.DEFAULT_BITRATE = 3_500_000   # 5 Mbps target
+h264.MIN_BITRATE = 500_000         # floor, unchanged from aiortc default
+h264.MAX_FRAME_RATE = 120
 
 class CameraTrack(VideoStreamTrack):
     def __init__(self, wrapper: Wrapper, camera_supplier: callable):
@@ -16,20 +22,20 @@ class CameraTrack(VideoStreamTrack):
         self.last_cam_name = None
         self.index = -1
 
-        self.frame_interval = 1 / 120
+        self.frame_interval = 1 / 70
         self.last_time = 0
 
         self.fallback_frame = cv2.imread("static/Cam_Lost.png")
 
     async def recv(self):
-        pts, time_base = await self.next_timestamp()
-
         now = time.time()
-
-        if now - self.last_time < self.frame_interval:
-            return await self.recv()
-
+        elapsed = now - self.last_time
+        wait = self.frame_interval - elapsed
+        if wait > 0:
+            await asyncio.sleep(wait)
         self.last_time = time.time()
+
+        pts, time_base = await self.next_timestamp()
 
         cam_name = self.camera_supplier()
         if cam_name != self.last_cam_name:
@@ -51,8 +57,6 @@ class CameraTrack(VideoStreamTrack):
         
         except Exception:
             frame = self.fallback_frame
-
-        frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
         video_frame = av.VideoFrame.from_ndarray(frame, format='rgb24')
         video_frame.pts = pts

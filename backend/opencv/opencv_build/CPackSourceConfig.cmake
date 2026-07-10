@@ -10,6 +10,8 @@
 # usually begin with CPACK_<GENNAME>_xxxx.
 
 
+set(CPACK_ARCHIVE_GID "-1")
+set(CPACK_ARCHIVE_UID "-1")
 set(CPACK_BINARY_DEB "OFF")
 set(CPACK_BINARY_FREEBSD "OFF")
 set(CPACK_BINARY_IFW "OFF")
@@ -77,7 +79,7 @@ set(CPACK_DEB_COMPONENT_INSTALL "TRUE")
 set(CPACK_DEB_DEV_PACKAGE_DEPENDS "libtbb-dev")
 set(CPACK_DEB_dev_PACKAGE_DEPENDS "cuda-cudart-dev-13-2, cuda-npp-dev-13-2, cuda-cufft-dev-13-2, cuda-cublas-dev-13-2")
 set(CPACK_DEB_libs_PACKAGE_DEPENDS "cuda-cudart-13-2, cuda-npp-13-2, cuda-cufft-13-2, cuda-cublas-13-2")
-set(CPACK_DEFAULT_PACKAGE_DESCRIPTION_FILE "/usr/share/cmake-3.28/Templates/CPack.GenericDescription.txt")
+set(CPACK_DEFAULT_PACKAGE_DESCRIPTION_FILE "/usr/share/cmake-4.3/Templates/CPack.GenericDescription.txt")
 set(CPACK_DEFAULT_PACKAGE_DESCRIPTION_SUMMARY "OpenCV built using CMake")
 set(CPACK_DMG_SLA_USE_RESOURCE_FILE_LICENSE "ON")
 set(CPACK_GENERATOR "TBZ2;TGZ;TXZ;TZ")
@@ -103,7 +105,7 @@ and machine learning software library. OpenCV was built to provide a common
 infrastructure for computer vision applications and to accelerate the use of
 machine perception in the commercial products. Being a Apache 2.0 -licensed product,
 OpenCV makes it easy for businesses to utilize and modify the code.")
-set(CPACK_PACKAGE_DESCRIPTION_FILE "/usr/share/cmake-3.28/Templates/CPack.GenericDescription.txt")
+set(CPACK_PACKAGE_DESCRIPTION_FILE "/usr/share/cmake-4.3/Templates/CPack.GenericDescription.txt")
 set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Open Computer Vision Library")
 set(CPACK_PACKAGE_FILE_NAME "OpenCV-5.0.0-71-g4ce2389a62-aarch64")
 set(CPACK_PACKAGE_INSTALL_DIRECTORY "OpenCV 5.0.0-71-g4ce2389a62")
@@ -117,8 +119,8 @@ set(CPACK_PACKAGE_VERSION_MINOR "1")
 set(CPACK_PACKAGE_VERSION_PATCH "0")
 set(CPACK_READELF_EXECUTABLE "/usr/bin/readelf")
 set(CPACK_RESOURCE_FILE_LICENSE "/home/nerdstar/NerdStar/backend/opencv/opencv/LICENSE")
-set(CPACK_RESOURCE_FILE_README "/usr/share/cmake-3.28/Templates/CPack.GenericDescription.txt")
-set(CPACK_RESOURCE_FILE_WELCOME "/usr/share/cmake-3.28/Templates/CPack.GenericWelcome.txt")
+set(CPACK_RESOURCE_FILE_README "/usr/share/cmake-4.3/Templates/CPack.GenericDescription.txt")
+set(CPACK_RESOURCE_FILE_WELCOME "/usr/share/cmake-4.3/Templates/CPack.GenericWelcome.txt")
 set(CPACK_RPM_COMPONENT_INSTALL "TRUE")
 set(CPACK_RPM_PACKAGE_ARCHITECTURE "aarch64")
 set(CPACK_RPM_PACKAGE_DESCRIPTION "OpenCV (Open Source Computer Vision Library) is an open source computer vision

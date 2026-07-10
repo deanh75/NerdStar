@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../bin/opencv_test_xphoto"
   "../../bin/opencv_test_xphoto.pdb"
+  "CMakeFiles/opencv_test_xphoto.dir/link.d"
   "CMakeFiles/opencv_test_xphoto.dir/test/dct_image_denoising.cpp.o"
   "CMakeFiles/opencv_test_xphoto.dir/test/dct_image_denoising.cpp.o.d"
   "CMakeFiles/opencv_test_xphoto.dir/test/simple_color_balance.cpp.o"

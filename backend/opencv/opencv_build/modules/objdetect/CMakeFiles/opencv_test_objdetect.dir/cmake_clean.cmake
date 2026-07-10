@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../bin/opencv_test_objdetect"
   "../../bin/opencv_test_objdetect.pdb"
+  "CMakeFiles/opencv_test_objdetect.dir/link.d"
   "CMakeFiles/opencv_test_objdetect.dir/test/test_aruco_tutorial.cpp.o"
   "CMakeFiles/opencv_test_objdetect.dir/test/test_aruco_tutorial.cpp.o.d"
   "CMakeFiles/opencv_test_objdetect.dir/test/test_aruco_utils.cpp.o"

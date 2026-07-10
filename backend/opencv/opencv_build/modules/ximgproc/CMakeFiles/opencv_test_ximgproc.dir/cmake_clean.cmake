@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../bin/opencv_test_ximgproc"
   "../../bin/opencv_test_ximgproc.pdb"
+  "CMakeFiles/opencv_test_ximgproc.dir/link.d"
   "CMakeFiles/opencv_test_ximgproc.dir/test/test_adaptive_manifold.cpp.o"
   "CMakeFiles/opencv_test_ximgproc.dir/test/test_adaptive_manifold.cpp.o.d"
   "CMakeFiles/opencv_test_ximgproc.dir/test/test_adaptive_manifold_ref_impl.cpp.o"

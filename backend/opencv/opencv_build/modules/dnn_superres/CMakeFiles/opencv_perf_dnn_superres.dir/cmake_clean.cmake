@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../bin/opencv_perf_dnn_superres"
   "../../bin/opencv_perf_dnn_superres.pdb"
+  "CMakeFiles/opencv_perf_dnn_superres.dir/link.d"
   "CMakeFiles/opencv_perf_dnn_superres.dir/perf/perf_dnn_superres.cpp.o"
   "CMakeFiles/opencv_perf_dnn_superres.dir/perf/perf_dnn_superres.cpp.o.d"
   "CMakeFiles/opencv_perf_dnn_superres.dir/perf/perf_main.cpp.o"

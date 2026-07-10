@@ -22,6 +22,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/video/perf/perf_optflowpyrlk.cpp" "modules/video/CMakeFiles/opencv_perf_video.dir/perf/perf_optflowpyrlk.cpp.o" "gcc" "modules/video/CMakeFiles/opencv_perf_video.dir/perf/perf_optflowpyrlk.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/video/perf/perf_trackers.cpp" "modules/video/CMakeFiles/opencv_perf_video.dir/perf/perf_trackers.cpp.o" "gcc" "modules/video/CMakeFiles/opencv_perf_video.dir/perf/perf_trackers.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/video/perf/perf_variational_refinement.cpp" "modules/video/CMakeFiles/opencv_perf_video.dir/perf/perf_variational_refinement.cpp.o" "gcc" "modules/video/CMakeFiles/opencv_perf_video.dir/perf/perf_variational_refinement.cpp.o.d"
+  "" "bin/opencv_perf_video" "gcc" "modules/video/CMakeFiles/opencv_perf_video.dir/link.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

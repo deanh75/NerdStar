@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_xobjdetect.so"
   "../../lib/libopencv_xobjdetect.so.5.1.0"
   "../../lib/libopencv_xobjdetect.so.501"
+  "CMakeFiles/opencv_xobjdetect.dir/link.d"
   "CMakeFiles/opencv_xobjdetect.dir/opencl_kernels_xobjdetect.cpp.o"
   "CMakeFiles/opencv_xobjdetect.dir/opencl_kernels_xobjdetect.cpp.o.d"
   "CMakeFiles/opencv_xobjdetect.dir/src/cascadedetect.cpp.o"

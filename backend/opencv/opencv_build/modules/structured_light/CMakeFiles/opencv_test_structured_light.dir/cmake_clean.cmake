@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../bin/opencv_test_structured_light"
   "../../bin/opencv_test_structured_light.pdb"
+  "CMakeFiles/opencv_test_structured_light.dir/link.d"
   "CMakeFiles/opencv_test_structured_light.dir/test/test_faps.cpp.o"
   "CMakeFiles/opencv_test_structured_light.dir/test/test_faps.cpp.o.d"
   "CMakeFiles/opencv_test_structured_light.dir/test/test_getProjPixel.cpp.o"

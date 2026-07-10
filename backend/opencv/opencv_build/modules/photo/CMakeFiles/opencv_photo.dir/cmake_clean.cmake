@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_photo.so"
   "../../lib/libopencv_photo.so.5.1.0"
   "../../lib/libopencv_photo.so.501"
+  "CMakeFiles/opencv_photo.dir/link.d"
   "CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_nlm.cu.o"
   "CMakeFiles/opencv_photo.dir/opencl_kernels_photo.cpp.o"
   "CMakeFiles/opencv_photo.dir/opencl_kernels_photo.cpp.o.d"

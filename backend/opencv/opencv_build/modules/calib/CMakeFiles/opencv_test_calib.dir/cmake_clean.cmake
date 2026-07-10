@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../bin/opencv_test_calib"
   "../../bin/opencv_test_calib.pdb"
+  "CMakeFiles/opencv_test_calib.dir/link.d"
   "CMakeFiles/opencv_test_calib.dir/test/test_calibration_hand_eye.cpp.o"
   "CMakeFiles/opencv_test_calib.dir/test/test_calibration_hand_eye.cpp.o.d"
   "CMakeFiles/opencv_test_calib.dir/test/test_cameracalibration.cpp.o"

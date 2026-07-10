@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_saliency.so"
   "../../lib/libopencv_saliency.so.5.1.0"
   "../../lib/libopencv_saliency.so.501"
+  "CMakeFiles/opencv_saliency.dir/link.d"
   "CMakeFiles/opencv_saliency.dir/src/BING/CmFile.cpp.o"
   "CMakeFiles/opencv_saliency.dir/src/BING/CmFile.cpp.o.d"
   "CMakeFiles/opencv_saliency.dir/src/BING/CmShow.cpp.o"

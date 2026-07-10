@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/python/src2/cv2_highgui.cpp" "modules/python3/CMakeFiles/opencv_python3.dir/__/src2/cv2_highgui.cpp.o" "gcc" "modules/python3/CMakeFiles/opencv_python3.dir/__/src2/cv2_highgui.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/python/src2/cv2_numpy.cpp" "modules/python3/CMakeFiles/opencv_python3.dir/__/src2/cv2_numpy.cpp.o" "gcc" "modules/python3/CMakeFiles/opencv_python3.dir/__/src2/cv2_numpy.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/python/src2/cv2_util.cpp" "modules/python3/CMakeFiles/opencv_python3.dir/__/src2/cv2_util.cpp.o" "gcc" "modules/python3/CMakeFiles/opencv_python3.dir/__/src2/cv2_util.cpp.o.d"
+  "" "lib/python3/cv2.cpython-312-aarch64-linux-gnu.so" "gcc" "modules/python3/CMakeFiles/opencv_python3.dir/link.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

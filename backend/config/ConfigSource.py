@@ -52,8 +52,8 @@ class LocalConfigSource(ConfigSource):
 class FileConfigSource(ConfigSource):
     def __init__(self, cam_id: str) -> None:
         self._cam_id = cam_id
-        self._cam_config_filename = f"backend/data/{cam_id}_cam.json"
-        self._calibration_filename = f"backend/data/{cam_id}_calibration.yml"
+        self._cam_config_filename = f"/home/nerdstar/NerdStar/backend/data/{cam_id}_cam.json"
+        self._calibration_filename = f"/home/nerdstar/NerdStar/backend/data/{cam_id}_calibration.yml"
         pass
 
     def update(self, config_store: ConfigStore) -> None:

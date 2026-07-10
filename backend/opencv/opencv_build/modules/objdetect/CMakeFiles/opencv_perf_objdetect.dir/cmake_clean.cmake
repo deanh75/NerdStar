@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../bin/opencv_perf_objdetect"
   "../../bin/opencv_perf_objdetect.pdb"
+  "CMakeFiles/opencv_perf_objdetect.dir/link.d"
   "CMakeFiles/opencv_perf_objdetect.dir/perf/perf_aruco.cpp.o"
   "CMakeFiles/opencv_perf_objdetect.dir/perf/perf_aruco.cpp.o.d"
   "CMakeFiles/opencv_perf_objdetect.dir/perf/perf_barcode.cpp.o"

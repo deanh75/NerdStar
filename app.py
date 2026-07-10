@@ -88,6 +88,9 @@ async def offer(request: Request):
     answer = await pc.createAnswer()
     await pc.setLocalDescription(answer)
 
+    while pc.iceGatheringState != "complete":
+        await asyncio.sleep(0.1)
+
     return {
         "sdp": pc.localDescription.sdp,
         "type": pc.localDescription.type
@@ -240,14 +243,16 @@ def get_tag_layouts():
     selected_layout = wrapper.get_selected_layout()
     return JSONResponse({"success": True, "layouts": layouts, "selected": selected_layout})
 
+@app.get('/hardware')
+def hardware(request: Request):
+    return templates.TemplateResponse(request, "hardware.html", {})
+
 def set_hostname(hostname: str):
     print(f"Server started: {hostname}")
-    subprocess.run(["sudo", "scutil", "--set", "HostName", hostname], check=True)
-    subprocess.run(["sudo", "scutil", "--set", "LocalHostName", hostname], check=True)
-    subprocess.run(["sudo", "scutil", "--set", "ComputerName", hostname], check=True)
+    subprocess.run(["sudo", "hostnamectl", "set-hostname", hostname], check=True)
+    subprocess.run(["sudo", "ufw", "disable"], check=True)
 
 def start_app():
-    # app.run(debug=True, use_reloader=False, host='0.0.0.0', port=5800)
     global server  
     config = uvicorn.Config(app=app, host='0.0.0.0', port=5800, log_level="info")
     server = uvicorn.Server(config)

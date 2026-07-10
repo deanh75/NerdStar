@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_datasets.so"
   "../../lib/libopencv_datasets.so.5.1.0"
   "../../lib/libopencv_datasets.so.501"
+  "CMakeFiles/opencv_datasets.dir/link.d"
   "CMakeFiles/opencv_datasets.dir/src/ar_hmdb.cpp.o"
   "CMakeFiles/opencv_datasets.dir/src/ar_hmdb.cpp.o.d"
   "CMakeFiles/opencv_datasets.dir/src/ar_sports.cpp.o"

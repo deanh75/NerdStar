@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_xphoto.so"
   "../../lib/libopencv_xphoto.so.5.1.0"
   "../../lib/libopencv_xphoto.so.501"
+  "CMakeFiles/opencv_xphoto.dir/link.d"
   "CMakeFiles/opencv_xphoto.dir/src/bm3d_image_denoising.cpp.o"
   "CMakeFiles/opencv_xphoto.dir/src/bm3d_image_denoising.cpp.o.d"
   "CMakeFiles/opencv_xphoto.dir/src/dct_image_denoising.cpp.o"

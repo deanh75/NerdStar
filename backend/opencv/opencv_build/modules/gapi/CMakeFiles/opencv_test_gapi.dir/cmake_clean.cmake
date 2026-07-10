@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../bin/opencv_test_gapi"
   "../../bin/opencv_test_gapi.pdb"
+  "CMakeFiles/opencv_test_gapi.dir/link.d"
   "CMakeFiles/opencv_test_gapi.dir/test/common/gapi_compoundkernel_tests.cpp.o"
   "CMakeFiles/opencv_test_gapi.dir/test/common/gapi_compoundkernel_tests.cpp.o.d"
   "CMakeFiles/opencv_test_gapi.dir/test/common/gapi_core_tests.cpp.o"

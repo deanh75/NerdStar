@@ -21,6 +21,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/photo/test/test_intelligent_scissors.cpp" "modules/photo/CMakeFiles/opencv_test_photo.dir/test/test_intelligent_scissors.cpp.o" "gcc" "modules/photo/CMakeFiles/opencv_test_photo.dir/test/test_intelligent_scissors.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/photo/test/test_main.cpp" "modules/photo/CMakeFiles/opencv_test_photo.dir/test/test_main.cpp.o" "gcc" "modules/photo/CMakeFiles/opencv_test_photo.dir/test/test_main.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/photo/test/test_npr.cpp" "modules/photo/CMakeFiles/opencv_test_photo.dir/test/test_npr.cpp.o" "gcc" "modules/photo/CMakeFiles/opencv_test_photo.dir/test/test_npr.cpp.o.d"
+  "" "bin/opencv_test_photo" "gcc" "modules/photo/CMakeFiles/opencv_test_photo.dir/link.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

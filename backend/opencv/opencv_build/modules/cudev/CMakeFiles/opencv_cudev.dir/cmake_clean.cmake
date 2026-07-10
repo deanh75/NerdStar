@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_cudev.so"
   "../../lib/libopencv_cudev.so.5.1.0"
   "../../lib/libopencv_cudev.so.501"
+  "CMakeFiles/opencv_cudev.dir/link.d"
   "CMakeFiles/opencv_cudev.dir/src/stub.cpp.o"
   "CMakeFiles/opencv_cudev.dir/src/stub.cpp.o.d"
 )

@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xobjdetect/tools/annotation/opencv_annotation.cpp" "modules/xobjdetect/tools/annotation/CMakeFiles/opencv_annotation.dir/opencv_annotation.cpp.o" "gcc" "modules/xobjdetect/tools/annotation/CMakeFiles/opencv_annotation.dir/opencv_annotation.cpp.o.d"
+  "" "bin/opencv_annotation" "gcc" "modules/xobjdetect/tools/annotation/CMakeFiles/opencv_annotation.dir/link.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

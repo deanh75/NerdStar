@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_shape.so"
   "../../lib/libopencv_shape.so.5.1.0"
   "../../lib/libopencv_shape.so.501"
+  "CMakeFiles/opencv_shape.dir/link.d"
   "CMakeFiles/opencv_shape.dir/src/aff_trans.cpp.o"
   "CMakeFiles/opencv_shape.dir/src/aff_trans.cpp.o.d"
   "CMakeFiles/opencv_shape.dir/src/emdL1.cpp.o"

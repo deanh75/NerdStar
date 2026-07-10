@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../../../bin/opencv_annotation"
   "../../../../bin/opencv_annotation.pdb"
+  "CMakeFiles/opencv_annotation.dir/link.d"
   "CMakeFiles/opencv_annotation.dir/opencv_annotation.cpp.o"
   "CMakeFiles/opencv_annotation.dir/opencv_annotation.cpp.o.d"
 )

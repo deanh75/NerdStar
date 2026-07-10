@@ -4,6 +4,7 @@ body {
     background-color: #000;
     color: #39FF14;
     display: flex;
+    align-items: stretch;
 }
 
 /* Sidebar */
@@ -187,6 +188,7 @@ input:checked + .slider:before {
     flex-direction: column;
     flex: 1;                  /* take remaining space */
     overflow: hidden;
+    gap: 10px;
 }
 
 .cameraContainer img {
@@ -362,7 +364,7 @@ cam-viz * { box-sizing: border-box; margin: 0; padding: 0; font-family: inherit;
   flex-shrink: 0;
 }
 .sec-h {
-  font-size: 7px;
+  font-size: 16px;
   letter-spacing: 2px;
   color: #1a6608;
   text-transform: uppercase;
@@ -376,20 +378,20 @@ cam-viz * { box-sizing: border-box; margin: 0; padding: 0; font-family: inherit;
 .lbl {
   display: flex;
   justify-content: space-between;
-  font-size: 7px;
+  font-size: 16px;
   color: #2a9a14;
   letter-spacing: 1px;
   text-transform: uppercase;
   margin-bottom: 3px;
 }
-.lbl span { color: #1a5508; font-size: 6px; }
+.lbl span { color: #1a5508; font-size: 16px; }
 
 .ctrl { display: flex; align-items: center; gap: 4px; }
 
 cam-viz input[type=number] {
   width: 50px; flex-shrink: 0;
   background: #000; border: 1px solid #0d2a05;
-  color: #39FF14; font-size: 8px;
+  color: #39FF14; font-size: 12px;
   padding: 2px 4px; text-align: right; outline: none;
   appearance: textfield;
   -moz-appearance: textfield;
@@ -422,11 +424,11 @@ cam-viz input[type=number]:focus { border-color: #39FF14; }
 /* overlays */
 .ov {
   position: absolute; pointer-events: none;
-  font-size: 7px; letter-spacing: 1px;
+  font-size: 10px; letter-spacing: 1px;
   line-height: 2; text-transform: uppercase;
 }
 .ov-tr { top: 10px; right: 12px; text-align: right; color: #2a9a14; }
 .ov-br { bottom: 10px; right: 12px; color: #0d2205; }
 .ov-bl { bottom: 10px; left: 12px; }
-.ax { display: flex; align-items: center; gap: 5px; font-size: 6px; color: #1a5508; margin-bottom: 3px; }
+.ax { display: flex; align-items: center; gap: 5px; font-size: 10px; color: #1a5508; margin-bottom: 3px; }
 .ax-bar { width: 12px; height: 2px; border-radius: 1px; flex-shrink: 0; }

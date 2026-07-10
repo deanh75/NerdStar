@@ -24,6 +24,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/objdetect/test/test_mcc.cpp" "modules/objdetect/CMakeFiles/opencv_test_objdetect.dir/test/test_mcc.cpp.o" "gcc" "modules/objdetect/CMakeFiles/opencv_test_objdetect.dir/test/test_mcc.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/objdetect/test/test_qrcode.cpp" "modules/objdetect/CMakeFiles/opencv_test_objdetect.dir/test/test_qrcode.cpp.o" "gcc" "modules/objdetect/CMakeFiles/opencv_test_objdetect.dir/test/test_qrcode.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/objdetect/test/test_qrcode_encode.cpp" "modules/objdetect/CMakeFiles/opencv_test_objdetect.dir/test/test_qrcode_encode.cpp.o" "gcc" "modules/objdetect/CMakeFiles/opencv_test_objdetect.dir/test/test_qrcode_encode.cpp.o.d"
+  "" "bin/opencv_test_objdetect" "gcc" "modules/objdetect/CMakeFiles/opencv_test_objdetect.dir/link.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

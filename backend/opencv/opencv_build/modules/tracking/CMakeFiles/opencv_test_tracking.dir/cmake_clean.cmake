@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../bin/opencv_test_tracking"
   "../../bin/opencv_test_tracking.pdb"
+  "CMakeFiles/opencv_test_tracking.dir/link.d"
   "CMakeFiles/opencv_test_tracking.dir/test/test_aukf.cpp.o"
   "CMakeFiles/opencv_test_tracking.dir/test/test_aukf.cpp.o.d"
   "CMakeFiles/opencv_test_tracking.dir/test/test_main.cpp.o"

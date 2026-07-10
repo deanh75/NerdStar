@@ -17,6 +17,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xphoto/test/test_learning_based_color_balance.cpp" "modules/xphoto/CMakeFiles/opencv_test_xphoto.dir/test/test_learning_based_color_balance.cpp.o" "gcc" "modules/xphoto/CMakeFiles/opencv_test_xphoto.dir/test/test_learning_based_color_balance.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xphoto/test/test_main.cpp" "modules/xphoto/CMakeFiles/opencv_test_xphoto.dir/test/test_main.cpp.o" "gcc" "modules/xphoto/CMakeFiles/opencv_test_xphoto.dir/test/test_main.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xphoto/test/test_oil_painting.cpp" "modules/xphoto/CMakeFiles/opencv_test_xphoto.dir/test/test_oil_painting.cpp.o" "gcc" "modules/xphoto/CMakeFiles/opencv_test_xphoto.dir/test/test_oil_painting.cpp.o.d"
+  "" "bin/opencv_test_xphoto" "gcc" "modules/xphoto/CMakeFiles/opencv_test_xphoto.dir/link.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

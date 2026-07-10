@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_text.so"
   "../../lib/libopencv_text.so.5.1.0"
   "../../lib/libopencv_text.so.501"
+  "CMakeFiles/opencv_text.dir/link.d"
   "CMakeFiles/opencv_text.dir/src/erfilter.cpp.o"
   "CMakeFiles/opencv_text.dir/src/erfilter.cpp.o.d"
   "CMakeFiles/opencv_text.dir/src/ocr_beamsearch_decoder.cpp.o"

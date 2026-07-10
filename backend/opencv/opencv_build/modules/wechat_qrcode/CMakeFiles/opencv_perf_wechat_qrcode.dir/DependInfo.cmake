@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/wechat_qrcode/perf/perf_main.cpp" "modules/wechat_qrcode/CMakeFiles/opencv_perf_wechat_qrcode.dir/perf/perf_main.cpp.o" "gcc" "modules/wechat_qrcode/CMakeFiles/opencv_perf_wechat_qrcode.dir/perf/perf_main.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/wechat_qrcode/perf/perf_wechat_qrcode_pipeline.cpp" "modules/wechat_qrcode/CMakeFiles/opencv_perf_wechat_qrcode.dir/perf/perf_wechat_qrcode_pipeline.cpp.o" "gcc" "modules/wechat_qrcode/CMakeFiles/opencv_perf_wechat_qrcode.dir/perf/perf_wechat_qrcode_pipeline.cpp.o.d"
+  "" "bin/opencv_perf_wechat_qrcode" "gcc" "modules/wechat_qrcode/CMakeFiles/opencv_perf_wechat_qrcode.dir/link.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../bin/opencv_test_xobjdetect"
   "../../bin/opencv_test_xobjdetect.pdb"
+  "CMakeFiles/opencv_test_xobjdetect.dir/link.d"
   "CMakeFiles/opencv_test_xobjdetect.dir/test/opencl/test_hogdetector.cpp.o"
   "CMakeFiles/opencv_test_xobjdetect.dir/test/opencl/test_hogdetector.cpp.o.d"
   "CMakeFiles/opencv_test_xobjdetect.dir/test/test_cascadeandhog.cpp.o"

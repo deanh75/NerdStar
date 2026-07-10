@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/freetype/test/test_basic.cpp" "modules/freetype/CMakeFiles/opencv_test_freetype.dir/test/test_basic.cpp.o" "gcc" "modules/freetype/CMakeFiles/opencv_test_freetype.dir/test/test_basic.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/freetype/test/test_main.cpp" "modules/freetype/CMakeFiles/opencv_test_freetype.dir/test/test_main.cpp.o" "gcc" "modules/freetype/CMakeFiles/opencv_test_freetype.dir/test/test_main.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/freetype/test/test_putText.cpp" "modules/freetype/CMakeFiles/opencv_test_freetype.dir/test/test_putText.cpp.o" "gcc" "modules/freetype/CMakeFiles/opencv_test_freetype.dir/test/test_putText.cpp.o.d"
+  "" "bin/opencv_test_freetype" "gcc" "modules/freetype/CMakeFiles/opencv_test_freetype.dir/link.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

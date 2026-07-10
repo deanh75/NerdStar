@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/text/test/test_detection.cpp" "modules/text/CMakeFiles/opencv_test_text.dir/test/test_detection.cpp.o" "gcc" "modules/text/CMakeFiles/opencv_test_text.dir/test/test_detection.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/text/test/test_detection_swt.cpp" "modules/text/CMakeFiles/opencv_test_text.dir/test/test_detection_swt.cpp.o" "gcc" "modules/text/CMakeFiles/opencv_test_text.dir/test/test_detection_swt.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/text/test/test_main.cpp" "modules/text/CMakeFiles/opencv_test_text.dir/test/test_main.cpp.o" "gcc" "modules/text/CMakeFiles/opencv_test_text.dir/test/test_main.cpp.o.d"
+  "" "bin/opencv_test_text" "gcc" "modules/text/CMakeFiles/opencv_test_text.dir/link.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

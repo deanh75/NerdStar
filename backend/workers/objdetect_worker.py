@@ -7,15 +7,15 @@ from typing import List, Tuple
 
 import cv2
 from backend.config.config import ConfigStore, LocalConfig
-from backend.pipeline.ObjectDetector import CoreMLObjectDetector
+from backend.pipeline.ObjectDetector import YOLOObjectDetector
 from backend.vision_types import ObjDetectObservation
 
 
 def objdetect_worker(
-    q_in: queue.Queue[Tuple[float, cv2.Mat, ConfigStore, LocalConfig]],
+    q_in: queue.Queue[Tuple[float, cv2.cuda.GpuMat, ConfigStore, LocalConfig]],
     q_out: queue.Queue[Tuple[float, List[ObjDetectObservation]]],
 ):
-    object_detector = CoreMLObjectDetector()
+    object_detector = YOLOObjectDetector()
 
     while True:
         sample = q_in.get()

@@ -18,6 +18,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudaarithm/test/test_opengl.cpp" "modules/cudaarithm/CMakeFiles/opencv_test_cudaarithm.dir/test/test_opengl.cpp.o" "gcc" "modules/cudaarithm/CMakeFiles/opencv_test_cudaarithm.dir/test/test_opengl.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudaarithm/test/test_reductions.cpp" "modules/cudaarithm/CMakeFiles/opencv_test_cudaarithm.dir/test/test_reductions.cpp.o" "gcc" "modules/cudaarithm/CMakeFiles/opencv_test_cudaarithm.dir/test/test_reductions.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudaarithm/test/test_stream.cpp" "modules/cudaarithm/CMakeFiles/opencv_test_cudaarithm.dir/test/test_stream.cpp.o" "gcc" "modules/cudaarithm/CMakeFiles/opencv_test_cudaarithm.dir/test/test_stream.cpp.o.d"
+  "" "bin/opencv_test_cudaarithm" "gcc" "modules/cudaarithm/CMakeFiles/opencv_test_cudaarithm.dir/link.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

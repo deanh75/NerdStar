@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../bin/opencv_perf_features"
   "../../bin/opencv_perf_features.pdb"
+  "CMakeFiles/opencv_perf_features.dir/link.d"
   "CMakeFiles/opencv_perf_features.dir/perf/opencl/perf_brute_force_matcher.cpp.o"
   "CMakeFiles/opencv_perf_features.dir/perf/opencl/perf_brute_force_matcher.cpp.o.d"
   "CMakeFiles/opencv_perf_features.dir/perf/opencl/perf_feature2d.cpp.o"

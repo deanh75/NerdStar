@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_ccalib.so"
   "../../lib/libopencv_ccalib.so.5.1.0"
   "../../lib/libopencv_ccalib.so.501"
+  "CMakeFiles/opencv_ccalib.dir/link.d"
   "CMakeFiles/opencv_ccalib.dir/src/ccalib.cpp.o"
   "CMakeFiles/opencv_ccalib.dir/src/ccalib.cpp.o.d"
   "CMakeFiles/opencv_ccalib.dir/src/multicalib.cpp.o"

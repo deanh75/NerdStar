@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../bin/opencv_perf_xfeatures2d"
   "../../bin/opencv_perf_xfeatures2d.pdb"
+  "CMakeFiles/opencv_perf_xfeatures2d.dir/link.d"
   "CMakeFiles/opencv_perf_xfeatures2d.dir/perf/perf_beblid.cpp.o"
   "CMakeFiles/opencv_perf_xfeatures2d.dir/perf/perf_beblid.cpp.o.d"
   "CMakeFiles/opencv_perf_xfeatures2d.dir/perf/perf_daisy.cpp.o"

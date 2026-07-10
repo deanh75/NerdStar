@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../bin/opencv_perf_video"
   "../../bin/opencv_perf_video.pdb"
+  "CMakeFiles/opencv_perf_video.dir/link.d"
   "CMakeFiles/opencv_perf_video.dir/perf/opencl/perf_bgfg_knn.cpp.o"
   "CMakeFiles/opencv_perf_video.dir/perf/opencl/perf_bgfg_knn.cpp.o.d"
   "CMakeFiles/opencv_perf_video.dir/perf/opencl/perf_bgfg_mog2.cpp.o"

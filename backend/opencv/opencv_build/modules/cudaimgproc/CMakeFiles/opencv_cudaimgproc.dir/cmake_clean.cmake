@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_cudaimgproc.so"
   "../../lib/libopencv_cudaimgproc.so.5.1.0"
   "../../lib/libopencv_cudaimgproc.so.501"
+  "CMakeFiles/opencv_cudaimgproc.dir/link.d"
   "CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_bilateral_filter.cu.o"
   "CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_blend.cu.o"
   "CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_build_point_list.cu.o"

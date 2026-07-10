@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_cudawarping.so"
   "../../lib/libopencv_cudawarping.so.5.1.0"
   "../../lib/libopencv_cudawarping.so.501"
+  "CMakeFiles/opencv_cudawarping.dir/link.d"
   "CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_pyr_down.cu.o"
   "CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_pyr_up.cu.o"
   "CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_remap.cu.o"

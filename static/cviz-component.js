@@ -115,10 +115,6 @@ class CamViz extends HTMLElement {
                         <div class="ax"><div class="ax-bar" style="background:#4488ff"></div>X FWD</div>
                         <div class="ax"><div class="ax-bar" style="background:#ff4444"></div>Y RIGHT</div>
                         <div class="ax"><div class="ax-bar" style="background:#44ee44"></div>Z UP</div>
-                        <div class="ax" style="margin-top:3px">
-                        <div class="ax-bar" style="background:#39FF14;box-shadow:0 0 4px #39FF14"></div>
-                        <span style="color:#39FF14">CAM FOV</span>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -266,17 +262,6 @@ class CamViz extends HTMLElement {
                     );
                     bEdges.position.y = 0.038;
                     RG.add(bEdges);
-
-                    // Forward chevron on top (pointing +Z, which is Z-forward)
-                    const fw = Math.min(rw, rl) * 0.32;
-                    RG.add(new T.Line(
-                    new T.BufferGeometry().setFromPoints([
-                        new T.Vector3(-fw * 0.45, rh + 0.003, -rl * 0.18),
-                        new T.Vector3(0,           rh + 0.003,  rl * 0.32),
-                        new T.Vector3( fw * 0.45, rh + 0.003, -rl * 0.18),
-                    ]),
-                    lm(NEON, 0.9)
-                    ));
 
                     // Top center crosshair (X=red, Z=blue)
                     const cl = Math.min(rw, rl) * 0.27;

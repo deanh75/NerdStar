@@ -39,6 +39,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/ximgproc/test/test_structured_edge_detection.cpp" "modules/ximgproc/CMakeFiles/opencv_test_ximgproc.dir/test/test_structured_edge_detection.cpp.o" "gcc" "modules/ximgproc/CMakeFiles/opencv_test_ximgproc.dir/test/test_structured_edge_detection.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/ximgproc/test/test_thinning.cpp" "modules/ximgproc/CMakeFiles/opencv_test_ximgproc.dir/test/test_thinning.cpp.o" "gcc" "modules/ximgproc/CMakeFiles/opencv_test_ximgproc.dir/test/test_thinning.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/ximgproc/test/test_weighted_median_filter.cpp" "modules/ximgproc/CMakeFiles/opencv_test_ximgproc.dir/test/test_weighted_median_filter.cpp.o" "gcc" "modules/ximgproc/CMakeFiles/opencv_test_ximgproc.dir/test/test_weighted_median_filter.cpp.o.d"
+  "" "bin/opencv_test_ximgproc" "gcc" "modules/ximgproc/CMakeFiles/opencv_test_ximgproc.dir/link.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

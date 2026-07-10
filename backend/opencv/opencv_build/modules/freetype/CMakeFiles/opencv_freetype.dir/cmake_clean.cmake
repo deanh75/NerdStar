@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_freetype.so"
   "../../lib/libopencv_freetype.so.5.1.0"
   "../../lib/libopencv_freetype.so.501"
+  "CMakeFiles/opencv_freetype.dir/link.d"
   "CMakeFiles/opencv_freetype.dir/src/freetype.cpp.o"
   "CMakeFiles/opencv_freetype.dir/src/freetype.cpp.o.d"
 )

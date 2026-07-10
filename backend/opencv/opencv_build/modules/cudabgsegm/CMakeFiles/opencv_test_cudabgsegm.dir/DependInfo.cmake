@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudabgsegm/test/test_bgsegm.cpp" "modules/cudabgsegm/CMakeFiles/opencv_test_cudabgsegm.dir/test/test_bgsegm.cpp.o" "gcc" "modules/cudabgsegm/CMakeFiles/opencv_test_cudabgsegm.dir/test/test_bgsegm.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudabgsegm/test/test_main.cpp" "modules/cudabgsegm/CMakeFiles/opencv_test_cudabgsegm.dir/test/test_main.cpp.o" "gcc" "modules/cudabgsegm/CMakeFiles/opencv_test_cudabgsegm.dir/test/test_main.cpp.o.d"
+  "" "bin/opencv_test_cudabgsegm" "gcc" "modules/cudabgsegm/CMakeFiles/opencv_test_cudabgsegm.dir/link.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

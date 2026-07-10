@@ -12,6 +12,7 @@ from collections import defaultdict
 from cscore import CameraServer
 import cv2
 import ntcore
+from numpy import dtype, ndarray, uint8
 from wpimath.geometry import Pose3d, Translation3d, Rotation3d
 
 from backend.calibration.CalibrationSession import CalibrationSession
@@ -21,7 +22,7 @@ from backend.output.OutputPublisher import NTOutputPublisher, OutputPublisher
 from backend.output.VideoWriter import FFmpegVideoWriter, VideoWriter
 from backend.output.overlay_util import overlay_image_observation, overlay_obj_detect_observation
 from backend.output_types import ApriltagOutput, ObjDetectionOutput
-from backend.pipeline.Capture import AVFoundationMjpegCapture
+from backend.pipeline.Capture import JetsonCapture
 from backend.pipeline.RobotPoseEstimator import RobotPoseEstimator
 from backend.vision_types import FiducialImageObservation, ObjDetectObservation, TimestampedObservation
 from backend.workers.apriltag_worker import apriltag_worker
@@ -41,9 +42,9 @@ class Wrapper:
 
         self.setup_nt()
 
-        self._capture: AVFoundationMjpegCapture = AVFoundationMjpegCapture()
+        self._capture: JetsonCapture = JetsonCapture()
         for cam in self._capture.getCameras():
-            camera_config_source: ConfigSource = FileConfigSource(cam.uniqueID)
+            camera_config_source: ConfigSource = FileConfigSource(cam)
             remote_config_source: ConfigSource = NTConfigSource()
             config = ConfigStore(CameraConfig(), RemoteConfig(), camera_config_source, remote_config_source)
             camera_config_source.update(config)
@@ -55,7 +56,7 @@ class Wrapper:
         self.calib_lock = threading.Lock()
         self.frame_lock = threading.Lock()
 
-        self.latest_frames: list[cv2.Mat] = [None] * len(self._configs)
+        self.latest_frames: list[ndarray[any, dtype[uint8]]] = [None] * len(self._configs)
 
         self.calib_done = None
 
@@ -300,13 +301,19 @@ class Wrapper:
         while True:
             config = self._configs[index]
             config.remote_config_source.update(config, self.local_config)
-            success, image = self._capture.get_frame(config)
+            self._capture.get_frame(config)
+            image = self._capture.get_cpu(config.camera_config.camera_name)
+            gpu_image = self._capture.get_gpu(config.camera_config.camera_name)
+            if image is None or gpu_image is None:
+                time.sleep(0.1)
+                print("No image found")
+                continue
+            rgbImg = gpu_image.download()
             timestamp = time.time()
     
             # Start and stop recording
             should_record = (
-                success
-                and self.local_config.should_record
+                self.local_config.should_record
                 and config.remote_config.is_recording
                 and config.camera_config.camera_resolution_width > 0
                 and config.camera_config.camera_resolution_height > 0
@@ -320,10 +327,6 @@ class Wrapper:
                 video_writer.stop()
             was_recording = should_record
 
-            if not success:
-                print("No frame available")
-                continue
-
             if config.camera_config.driverCam_enable:
                 if not was_streaming:
                     cs = CameraServer.putVideo(
@@ -332,16 +335,15 @@ class Wrapper:
                         config.camera_config.camera_resolution_height
                     )
                     was_streaming = True
-                
-                # processed_frame = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-                # processed_frame = cv2.cvtColor(processed_frame, cv2.COLOR_GRAY2BGR)
-                cs.putFrame(image)
+                #TODO: May need to compress on gpu to save bandwidth
+                cs.putFrame(rgbImg)
 
             if config.camera_config.is_calibrating:
                 # Calibration mode
                 was_calibrating = True
                 calib_session.process_frame(image)
                 with self.frame_lock:
+                    #TODO: May need to compress on gpu to save bandwidth
                     self.latest_frames[index] = image
 
             elif was_calibrating:
@@ -423,7 +425,7 @@ class Wrapper:
                     if self.local_config.obj_detect_max_fps < 0 or (timestamp - objdetect_last_frame_time) >= (1.0 / self.local_config.obj_detect_max_fps):
                         objdetect_last_frame_time = timestamp
                         try:
-                            objdetect_worker_in.put_latest((timestamp, image, config, self.local_config))
+                            objdetect_worker_in.put_latest((timestamp, gpu_image, config, self.local_config))
                         except:  # No space in queue
                             pass
 
@@ -462,10 +464,10 @@ class Wrapper:
                 else:
                     video_frame_cache = []
 
-            if (config.camera_config.process_frames_enable 
+            elif (config.camera_config.process_frames_enable 
                 and config.camera_config.has_calibration
                 and (config.camera_config.apriltags_enable or config.camera_config.objdetect_enable)):
-                img: cv2.Mat = image
+                img: cv2.Mat = rgbImg
                 if config.camera_config.apriltags_enable:
                     [overlay_image_observation(img, x) for x in last_image_observations]
                 if config.camera_config.objdetect_enable:
@@ -474,4 +476,4 @@ class Wrapper:
                     self.latest_frames[index] = img
             else:
                 with self.frame_lock:
-                    self.latest_frames[index] = image
+                    self.latest_frames[index] = rgbImg

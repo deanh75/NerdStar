@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../../../bin/opencv_waldboost_detector"
   "../../../../bin/opencv_waldboost_detector.pdb"
+  "CMakeFiles/opencv_waldboost_detector.dir/link.d"
   "CMakeFiles/opencv_waldboost_detector.dir/waldboost_detector.cpp.o"
   "CMakeFiles/opencv_waldboost_detector.dir/waldboost_detector.cpp.o.d"
 )

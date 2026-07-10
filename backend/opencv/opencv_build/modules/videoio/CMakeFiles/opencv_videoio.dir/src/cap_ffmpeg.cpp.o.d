@@ -541,9 +541,9 @@ modules/videoio/CMakeFiles/opencv_videoio.dir/src/cap_ffmpeg.cpp.o: \
  /usr/include/inttypes.h \
  /usr/include/aarch64-linux-gnu/libavutil/attributes.h \
  /usr/include/aarch64-linux-gnu/libavutil/error.h \
+ /usr/include/aarch64-linux-gnu/libavutil/version.h \
  /usr/include/aarch64-linux-gnu/libavutil/mem.h \
  /usr/include/aarch64-linux-gnu/libavutil/rational.h \
- /usr/include/aarch64-linux-gnu/libavutil/version.h \
  /usr/include/aarch64-linux-gnu/libavutil/mathematics.h \
  /usr/include/aarch64-linux-gnu/libavutil/intfloat.h \
  /usr/include/aarch64-linux-gnu/libavutil/log.h \
@@ -589,6 +589,9 @@ modules/videoio/CMakeFiles/opencv_videoio.dir/src/cap_ffmpeg.cpp.o: \
  /usr/include/aarch64-linux-gnu/libswscale/swscale.h \
  /usr/include/aarch64-linux-gnu/libswscale/version_major.h \
  /usr/include/aarch64-linux-gnu/libswscale/version.h \
+ /usr/include/aarch64-linux-gnu/libavdevice/avdevice.h \
+ /usr/include/aarch64-linux-gnu/libavdevice/version_major.h \
+ /usr/include/aarch64-linux-gnu/libavdevice/version.h \
  /usr/include/aarch64-linux-gnu/libavcodec/bsf.h \
  /usr/include/aarch64-linux-gnu/libavutil/pixdesc.h \
  /home/nerdstar/NerdStar/backend/opencv/opencv/modules/videoio/src/cap_ffmpeg_hw.hpp \

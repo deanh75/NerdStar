@@ -169,12 +169,61 @@ CMAKE_ASM_COMPILER=/usr/bin/cc
 CMAKE_ASM_COMPILER=/usr/bin/cc
 CMAKE_ASM_COMPILER_AR=/usr/bin/gcc-ar
 CMAKE_ASM_COMPILER_AR=/usr/bin/gcc-ar
+CMAKE_ASM_COMPILER_ARCHITECTURE_ID=
 CMAKE_ASM_COMPILER_ARG1=
 CMAKE_ASM_COMPILER_ENV_VAR=ASM
 CMAKE_ASM_COMPILER_ID=GNU
+CMAKE_ASM_COMPILER_ID_VENDORS=GNU;AppleClang;Clang;ARMClang;OrangeC;HP;Intel;IntelLLVM;SunPro;XL;MSVC;TI;TIClang;IAR;Diab;ARMCC;NASM;YASM;ADSP;QCC;Tasking;Renesas
+CMAKE_ASM_COMPILER_ID_VENDOR_FLAGS_ADSP=-version
+CMAKE_ASM_COMPILER_ID_VENDOR_FLAGS_ARMClang=--version
+CMAKE_ASM_COMPILER_ID_VENDOR_FLAGS_AppleClang=--version
+CMAKE_ASM_COMPILER_ID_VENDOR_FLAGS_Clang=--version
+CMAKE_ASM_COMPILER_ID_VENDOR_FLAGS_Diab=-V
+CMAKE_ASM_COMPILER_ID_VENDOR_FLAGS_GNU=--version
+CMAKE_ASM_COMPILER_ID_VENDOR_FLAGS_HP=-V
+CMAKE_ASM_COMPILER_ID_VENDOR_FLAGS_Intel=--version
+CMAKE_ASM_COMPILER_ID_VENDOR_FLAGS_IntelLLVM=--version
+CMAKE_ASM_COMPILER_ID_VENDOR_FLAGS_MSVC=-?
+CMAKE_ASM_COMPILER_ID_VENDOR_FLAGS_NASM=-v
+CMAKE_ASM_COMPILER_ID_VENDOR_FLAGS_OrangeC=--version
+CMAKE_ASM_COMPILER_ID_VENDOR_FLAGS_QCC=-V
+CMAKE_ASM_COMPILER_ID_VENDOR_FLAGS_Renesas=-v
+CMAKE_ASM_COMPILER_ID_VENDOR_FLAGS_SunPro=-V
+CMAKE_ASM_COMPILER_ID_VENDOR_FLAGS_TI=-h
+CMAKE_ASM_COMPILER_ID_VENDOR_FLAGS_TIClang=--version
+CMAKE_ASM_COMPILER_ID_VENDOR_FLAGS_Tasking=--version
+CMAKE_ASM_COMPILER_ID_VENDOR_FLAGS_XL=-qversion
+CMAKE_ASM_COMPILER_ID_VENDOR_FLAGS_YASM=--version
+CMAKE_ASM_COMPILER_ID_VENDOR_MATCH=
+CMAKE_ASM_COMPILER_ID_VENDOR_REGEX_ADSP=Analog Devices
+CMAKE_ASM_COMPILER_ID_VENDOR_REGEX_ARMCC=(ARM Compiler)|(ARM Assembler)|(Arm Compiler)
+CMAKE_ASM_COMPILER_ID_VENDOR_REGEX_ARMClang=armclang
+CMAKE_ASM_COMPILER_ID_VENDOR_REGEX_AppleClang=(Apple (clang|LLVM) version)
+CMAKE_ASM_COMPILER_ID_VENDOR_REGEX_Clang=(clang version)
+CMAKE_ASM_COMPILER_ID_VENDOR_REGEX_Diab=Wind River Systems
+CMAKE_ASM_COMPILER_ID_VENDOR_REGEX_GNU=(GNU assembler)|(GCC)|(Free Software Foundation)
+CMAKE_ASM_COMPILER_ID_VENDOR_REGEX_HP=HP C
+CMAKE_ASM_COMPILER_ID_VENDOR_REGEX_IAR=IAR Assembler
+CMAKE_ASM_COMPILER_ID_VENDOR_REGEX_Intel=(ICC)
+CMAKE_ASM_COMPILER_ID_VENDOR_REGEX_IntelLLVM=(Intel[^
+]+oneAPI)
+CMAKE_ASM_COMPILER_ID_VENDOR_REGEX_MSVC=Microsoft
+CMAKE_ASM_COMPILER_ID_VENDOR_REGEX_NASM=(NASM version)
+CMAKE_ASM_COMPILER_ID_VENDOR_REGEX_OrangeC=occ \(OrangeC\) Version
+CMAKE_ASM_COMPILER_ID_VENDOR_REGEX_QCC=gcc_nto
+CMAKE_ASM_COMPILER_ID_VENDOR_REGEX_Renesas=(RX Family C/C\+\+ Compiler)|(RL78 Family Compiler)|(RH850 Family Compiler)
+CMAKE_ASM_COMPILER_ID_VENDOR_REGEX_SunPro=Sun C
+CMAKE_ASM_COMPILER_ID_VENDOR_REGEX_TI=Texas Instruments
+CMAKE_ASM_COMPILER_ID_VENDOR_REGEX_TIClang=(TI (.*) Clang Compiler)
+CMAKE_ASM_COMPILER_ID_VENDOR_REGEX_Tasking=TASKING
+CMAKE_ASM_COMPILER_ID_VENDOR_REGEX_XL=XL C
+CMAKE_ASM_COMPILER_ID_VENDOR_REGEX_YASM=(yasm)
+CMAKE_ASM_COMPILER_LINKER=
+CMAKE_ASM_COMPILER_LINKER_ID=
 CMAKE_ASM_COMPILER_LOADED=1
 CMAKE_ASM_COMPILER_RANLIB=/usr/bin/gcc-ranlib
 CMAKE_ASM_COMPILER_RANLIB=/usr/bin/gcc-ranlib
+CMAKE_ASM_COMPILER_SYSROOT=
 CMAKE_ASM_COMPILER_VERSION=
 CMAKE_ASM_COMPILER_WORKS=1
 CMAKE_ASM_COMPILE_OBJECT=<CMAKE_ASM_COMPILER> <DEFINES> <INCLUDES> <FLAGS> -o <OBJECT> -c <SOURCE>
@@ -198,17 +247,17 @@ CMAKE_ASM_FLAGS_RELEASE_INIT= -O3 -DNDEBUG
 CMAKE_ASM_FLAGS_RELWITHDEBINFO=-O2 -g -DNDEBUG
 CMAKE_ASM_FLAGS_RELWITHDEBINFO_INIT= -O2 -g -DNDEBUG
 CMAKE_ASM_IGNORE_EXTENSIONS=h;H;o;O;obj;OBJ;def;DEF;rc;RC
-CMAKE_ASM_INFOMATION_LOADED=1
-CMAKE_ASM_LINKER_DEPFILE_FLAGS=LINKER:--dependency-file,<DEP_FILE>
-CMAKE_ASM_LINKER_DEPFILE_FORMAT=gcc
-CMAKE_ASM_LINKER_DEPFILE_SUPPORTED=TRUE
+CMAKE_ASM_INFORMATION_LOADED=1
+CMAKE_ASM_LINKER_INFORMATION_LOADED=1
 CMAKE_ASM_LINKER_PREFERENCE=0
 CMAKE_ASM_LINKER_WRAPPER_FLAG=-Wl,
 CMAKE_ASM_LINKER_WRAPPER_FLAG_SEP=,
-CMAKE_ASM_LINK_DEPENDS_USE_LINKER=TRUE
-CMAKE_ASM_LINK_EXECUTABLE=<CMAKE_ASM_COMPILER> <FLAGS> <CMAKE_ASM_LINK_FLAGS> <LINK_FLAGS> <OBJECTS> -o <TARGET> <LINK_LIBRARIES>
+CMAKE_ASM_LINK_EXECUTABLE=<CMAKE_ASM_COMPILER> <FLAGS> <LINK_FLAGS> <OBJECTS> -o <TARGET> <LINK_LIBRARIES>
+CMAKE_ASM_LINK_MODE=DRIVER
 CMAKE_ASM_OUTPUT_EXTENSION=.o
+CMAKE_ASM_PLATFORM_LINKER_ID=GNU
 CMAKE_ASM_SOURCE_FILE_EXTENSIONS=s;S;asm
+CMAKE_ASM_USE_LINKER_INFORMATION=TRUE
 CMAKE_ASM_VERBOSE_FLAG=-v
 CMAKE_AUTOGEN_ORIGIN_DEPENDS=ON
 CMAKE_AUTOMOC_COMPILER_PREDEFINES=ON
@@ -274,15 +323,16 @@ CMAKE_CXX20_STANDARD_COMPILE_OPTION=-std=c++20
 CMAKE_CXX23_COMPILE_FEATURES=cxx_std_23
 CMAKE_CXX23_EXTENSION_COMPILE_OPTION=-std=gnu++23
 CMAKE_CXX23_STANDARD_COMPILE_OPTION=-std=c++23
+CMAKE_CXX26_COMPILE_FEATURES=
 CMAKE_CXX98_COMPILE_FEATURES=cxx_std_98;cxx_template_template_parameters
 CMAKE_CXX98_EXTENSION_COMPILE_OPTION=-std=gnu++98
 CMAKE_CXX98_STANDARD_COMPILE_OPTION=-std=c++98
 CMAKE_CXX98_STANDARD__HAS_FULL_SUPPORT=ON
 CMAKE_CXX_ABI_COMPILED=TRUE
 CMAKE_CXX_ARCHIVE_APPEND=<CMAKE_AR> q <TARGET> <LINK_FLAGS> <OBJECTS>
-CMAKE_CXX_ARCHIVE_APPEND_IPO="/usr/bin/gcc-ar-13" r <TARGET> <LINK_FLAGS> <OBJECTS>
+CMAKE_CXX_ARCHIVE_APPEND_IPO="/usr/bin/gcc-ar-13" q <TARGET> <LINK_FLAGS> <OBJECTS>
 CMAKE_CXX_ARCHIVE_CREATE=<CMAKE_AR> qc <TARGET> <LINK_FLAGS> <OBJECTS>
-CMAKE_CXX_ARCHIVE_CREATE_IPO="/usr/bin/gcc-ar-13" cr <TARGET> <LINK_FLAGS> <OBJECTS>
+CMAKE_CXX_ARCHIVE_CREATE_IPO="/usr/bin/gcc-ar-13" qc <TARGET> <LINK_FLAGS> <OBJECTS>
 CMAKE_CXX_ARCHIVE_FINISH=<CMAKE_RANLIB> <TARGET>
 CMAKE_CXX_ARCHIVE_FINISH_IPO="/usr/bin/gcc-ranlib-13" <TARGET>
 CMAKE_CXX_BYTE_ORDER=LITTLE_ENDIAN
@@ -290,17 +340,419 @@ CMAKE_CXX_CL_SHOWINCLUDES_PREFIX=
 CMAKE_CXX_COMPILER=/usr/bin/c++
 CMAKE_CXX_COMPILER=/usr/bin/c++
 CMAKE_CXX_COMPILER_ABI=ELF
+CMAKE_CXX_COMPILER_APPLE_SYSROOT=
 CMAKE_CXX_COMPILER_AR=/usr/bin/gcc-ar-13
 CMAKE_CXX_COMPILER_AR=/usr/bin/gcc-ar-13
+CMAKE_CXX_COMPILER_ARCHITECTURE_ID=aarch64
 CMAKE_CXX_COMPILER_ARG1=
+CMAKE_CXX_COMPILER_CLANG_RESOURCE_DIR=
 CMAKE_CXX_COMPILER_ENV_VAR=CXX
 CMAKE_CXX_COMPILER_FRONTEND_VARIANT=GNU
 CMAKE_CXX_COMPILER_ID=GNU
+CMAKE_CXX_COMPILER_ID_PLATFORM_CONTENT=#define STRINGIFY_HELPER(X) #X
+#define STRINGIFY(X) STRINGIFY_HELPER(X)
+
+/* Identify known platforms by name.  */
+#if defined(__linux) || defined(__linux__) || defined(linux)
+# define PLATFORM_ID "Linux"
+
+#elif defined(__MSYS__)
+# define PLATFORM_ID "MSYS"
+
+#elif defined(__CYGWIN__)
+# define PLATFORM_ID "Cygwin"
+
+#elif defined(__MINGW32__)
+# define PLATFORM_ID "MinGW"
+
+#elif defined(__APPLE__)
+# define PLATFORM_ID "Darwin"
+
+#elif defined(_WIN32) || defined(__WIN32__) || defined(WIN32)
+# define PLATFORM_ID "Windows"
+
+#elif defined(__FreeBSD__) || defined(__FreeBSD)
+# define PLATFORM_ID "FreeBSD"
+
+#elif defined(__NetBSD__) || defined(__NetBSD)
+# define PLATFORM_ID "NetBSD"
+
+#elif defined(__OpenBSD__) || defined(__OPENBSD)
+# define PLATFORM_ID "OpenBSD"
+
+#elif defined(__sun) || defined(sun)
+# define PLATFORM_ID "SunOS"
+
+#elif defined(_AIX) || defined(__AIX) || defined(__AIX__) || defined(__aix) || defined(__aix__)
+# define PLATFORM_ID "AIX"
+
+#elif defined(__hpux) || defined(__hpux__)
+# define PLATFORM_ID "HP-UX"
+
+#elif defined(__HAIKU__)
+# define PLATFORM_ID "Haiku"
+
+#elif defined(__BeOS) || defined(__BEOS__) || defined(_BEOS)
+# define PLATFORM_ID "BeOS"
+
+#elif defined(__QNX__) || defined(__QNXNTO__)
+# define PLATFORM_ID "QNX"
+
+#elif defined(__tru64) || defined(_tru64) || defined(__TRU64__)
+# define PLATFORM_ID "Tru64"
+
+#elif defined(__riscos) || defined(__riscos__)
+# define PLATFORM_ID "RISCos"
+
+#elif defined(__sinix) || defined(__sinix__) || defined(__SINIX__)
+# define PLATFORM_ID "SINIX"
+
+#elif defined(__UNIX_SV__)
+# define PLATFORM_ID "UNIX_SV"
+
+#elif defined(__bsdos__)
+# define PLATFORM_ID "BSDOS"
+
+#elif defined(_MPRAS) || defined(MPRAS)
+# define PLATFORM_ID "MP-RAS"
+
+#elif defined(__osf) || defined(__osf__)
+# define PLATFORM_ID "OSF1"
+
+#elif defined(_SCO_SV) || defined(SCO_SV) || defined(sco_sv)
+# define PLATFORM_ID "SCO_SV"
+
+#elif defined(__ultrix) || defined(__ultrix__) || defined(_ULTRIX)
+# define PLATFORM_ID "ULTRIX"
+
+#elif defined(__XENIX__) || defined(_XENIX) || defined(XENIX)
+# define PLATFORM_ID "Xenix"
+
+#elif defined(__WATCOMC__)
+# if defined(__LINUX__)
+#  define PLATFORM_ID "Linux"
+
+# elif defined(__DOS__)
+#  define PLATFORM_ID "DOS"
+
+# elif defined(__OS2__)
+#  define PLATFORM_ID "OS2"
+
+# elif defined(__WINDOWS__)
+#  define PLATFORM_ID "Windows3x"
+
+# elif defined(__VXWORKS__)
+#  define PLATFORM_ID "VxWorks"
+
+# else /* unknown platform */
+#  define PLATFORM_ID
+# endif
+
+#elif defined(__INTEGRITY)
+# if defined(INT_178B)
+#  define PLATFORM_ID "Integrity178"
+
+# else /* regular Integrity */
+#  define PLATFORM_ID "Integrity"
+# endif
+
+# elif defined(_ADI_COMPILER)
+#  define PLATFORM_ID "ADSP"
+
+#else /* unknown platform */
+# define PLATFORM_ID
+
+#endif
+
+/* For windows compilers MSVC and Intel we can determine
+   the architecture of the compiler being used.  This is because
+   the compilers do not have flags that can change the architecture,
+   but rather depend on which compiler is being used
+*/
+#if defined(_WIN32) && defined(_MSC_VER)
+# if defined(_M_IA64)
+#  define ARCHITECTURE_ID "IA64"
+
+# elif defined(_M_ARM64EC)
+#  define ARCHITECTURE_ID "ARM64EC"
+
+# elif defined(_M_X64) || defined(_M_AMD64)
+#  define ARCHITECTURE_ID "x64"
+
+# elif defined(_M_IX86)
+#  define ARCHITECTURE_ID "X86"
+
+# elif defined(_M_ARM64)
+#  define ARCHITECTURE_ID "ARM64"
+
+# elif defined(_M_ARM)
+#  if _M_ARM == 4
+#   define ARCHITECTURE_ID "ARMV4I"
+#  elif _M_ARM == 5
+#   define ARCHITECTURE_ID "ARMV5I"
+#  else
+#   define ARCHITECTURE_ID "ARMV" STRINGIFY(_M_ARM)
+#  endif
+
+# elif defined(_M_MIPS)
+#  define ARCHITECTURE_ID "MIPS"
+
+# elif defined(_M_SH)
+#  define ARCHITECTURE_ID "SHx"
+
+# else /* unknown architecture */
+#  define ARCHITECTURE_ID ""
+# endif
+
+#elif defined(__WATCOMC__)
+# if defined(_M_I86)
+#  define ARCHITECTURE_ID "I86"
+
+# elif defined(_M_IX86)
+#  define ARCHITECTURE_ID "X86"
+
+# else /* unknown architecture */
+#  define ARCHITECTURE_ID ""
+# endif
+
+#elif defined(__IAR_SYSTEMS_ICC__) || defined(__IAR_SYSTEMS_ICC)
+# if defined(__ICCARM__)
+#  define ARCHITECTURE_ID "ARM"
+
+# elif defined(__ICCRX__)
+#  define ARCHITECTURE_ID "RX"
+
+# elif defined(__ICCRH850__)
+#  define ARCHITECTURE_ID "RH850"
+
+# elif defined(__ICCRL78__)
+#  define ARCHITECTURE_ID "RL78"
+
+# elif defined(__ICCRISCV__)
+#  define ARCHITECTURE_ID "RISCV"
+
+# elif defined(__ICCAVR__)
+#  define ARCHITECTURE_ID "AVR"
+
+# elif defined(__ICC430__)
+#  define ARCHITECTURE_ID "MSP430"
+
+# elif defined(__ICCV850__)
+#  define ARCHITECTURE_ID "V850"
+
+# elif defined(__ICC8051__)
+#  define ARCHITECTURE_ID "8051"
+
+# elif defined(__ICCSTM8__)
+#  define ARCHITECTURE_ID "STM8"
+
+# else /* unknown architecture */
+#  define ARCHITECTURE_ID ""
+# endif
+
+#elif defined(__ghs__)
+# if defined(__PPC64__)
+#  define ARCHITECTURE_ID "PPC64"
+
+# elif defined(__ppc__)
+#  define ARCHITECTURE_ID "PPC"
+
+# elif defined(__ARM__)
+#  define ARCHITECTURE_ID "ARM"
+
+# elif defined(__x86_64__)
+#  define ARCHITECTURE_ID "x64"
+
+# elif defined(__i386__)
+#  define ARCHITECTURE_ID "X86"
+
+# else /* unknown architecture */
+#  define ARCHITECTURE_ID ""
+# endif
+
+#elif defined(__clang__) && defined(__ti__)
+# if defined(__ARM_ARCH)
+#  define ARCHITECTURE_ID "ARM"
+
+# else /* unknown architecture */
+#  define ARCHITECTURE_ID ""
+# endif
+
+#elif defined(__TI_COMPILER_VERSION__)
+# if defined(__TI_ARM__)
+#  define ARCHITECTURE_ID "ARM"
+
+# elif defined(__MSP430__)
+#  define ARCHITECTURE_ID "MSP430"
+
+# elif defined(__TMS320C28XX__)
+#  define ARCHITECTURE_ID "TMS320C28x"
+
+# elif defined(__TMS320C6X__) || defined(_TMS320C6X)
+#  define ARCHITECTURE_ID "TMS320C6x"
+
+# else /* unknown architecture */
+#  define ARCHITECTURE_ID ""
+# endif
+
+# elif defined(__ADSPSHARC__)
+#  define ARCHITECTURE_ID "SHARC"
+
+# elif defined(__ADSPBLACKFIN__)
+#  define ARCHITECTURE_ID "Blackfin"
+
+#elif defined(__TASKING__)
+
+# if defined(__CTC__) || defined(__CPTC__)
+#  define ARCHITECTURE_ID "TriCore"
+
+# elif defined(__CMCS__)
+#  define ARCHITECTURE_ID "MCS"
+
+# elif defined(__CARM__) || defined(__CPARM__)
+#  define ARCHITECTURE_ID "ARM"
+
+# elif defined(__CARC__)
+#  define ARCHITECTURE_ID "ARC"
+
+# elif defined(__C51__)
+#  define ARCHITECTURE_ID "8051"
+
+# elif defined(__CPCP__)
+#  define ARCHITECTURE_ID "PCP"
+
+# else
+#  define ARCHITECTURE_ID ""
+# endif
+
+#elif defined(__RENESAS__)
+# if defined(__CCRX__)
+#  define ARCHITECTURE_ID "RX"
+
+# elif defined(__CCRL__)
+#  define ARCHITECTURE_ID "RL78"
+
+# elif defined(__CCRH__)
+#  define ARCHITECTURE_ID "RH850"
+
+# else
+#  define ARCHITECTURE_ID ""
+# endif
+
+#else
+#  define ARCHITECTURE_ID
+#endif
+
+/* Convert integer to decimal digit literals.  */
+#define DEC(n)                   \
+  ('0' + (((n) / 10000000)%10)), \
+  ('0' + (((n) / 1000000)%10)),  \
+  ('0' + (((n) / 100000)%10)),   \
+  ('0' + (((n) / 10000)%10)),    \
+  ('0' + (((n) / 1000)%10)),     \
+  ('0' + (((n) / 100)%10)),      \
+  ('0' + (((n) / 10)%10)),       \
+  ('0' +  ((n) % 10))
+
+/* Convert integer to hex digit literals.  */
+#define HEX(n)             \
+  ('0' + ((n)>>28 & 0xF)), \
+  ('0' + ((n)>>24 & 0xF)), \
+  ('0' + ((n)>>20 & 0xF)), \
+  ('0' + ((n)>>16 & 0xF)), \
+  ('0' + ((n)>>12 & 0xF)), \
+  ('0' + ((n)>>8  & 0xF)), \
+  ('0' + ((n)>>4  & 0xF)), \
+  ('0' + ((n)     & 0xF))
+
+/* Construct a string literal encoding the version number. */
+#ifdef COMPILER_VERSION
+char const* info_version = "INFO" ":" "compiler_version[" COMPILER_VERSION "]";
+
+/* Construct a string literal encoding the version number components. */
+#elif defined(COMPILER_VERSION_MAJOR)
+char const info_version[] = {
+  'I', 'N', 'F', 'O', ':',
+  'c','o','m','p','i','l','e','r','_','v','e','r','s','i','o','n','[',
+  COMPILER_VERSION_MAJOR,
+# ifdef COMPILER_VERSION_MINOR
+  '.', COMPILER_VERSION_MINOR,
+#  ifdef COMPILER_VERSION_PATCH
+   '.', COMPILER_VERSION_PATCH,
+#   ifdef COMPILER_VERSION_TWEAK
+    '.', COMPILER_VERSION_TWEAK,
+#   endif
+#  endif
+# endif
+  ']','\0'};
+#endif
+
+/* Construct a string literal encoding the internal version number. */
+#ifdef COMPILER_VERSION_INTERNAL
+char const info_version_internal[] = {
+  'I', 'N', 'F', 'O', ':',
+  'c','o','m','p','i','l','e','r','_','v','e','r','s','i','o','n','_',
+  'i','n','t','e','r','n','a','l','[',
+  COMPILER_VERSION_INTERNAL,']','\0'};
+#elif defined(COMPILER_VERSION_INTERNAL_STR)
+char const* info_version_internal = "INFO" ":" "compiler_version_internal[" COMPILER_VERSION_INTERNAL_STR "]";
+#endif
+
+/* Construct a string literal encoding the version number components. */
+#ifdef SIMULATE_VERSION_MAJOR
+char const info_simulate_version[] = {
+  'I', 'N', 'F', 'O', ':',
+  's','i','m','u','l','a','t','e','_','v','e','r','s','i','o','n','[',
+  SIMULATE_VERSION_MAJOR,
+# ifdef SIMULATE_VERSION_MINOR
+  '.', SIMULATE_VERSION_MINOR,
+#  ifdef SIMULATE_VERSION_PATCH
+   '.', SIMULATE_VERSION_PATCH,
+#   ifdef SIMULATE_VERSION_TWEAK
+    '.', SIMULATE_VERSION_TWEAK,
+#   endif
+#  endif
+# endif
+  ']','\0'};
+#endif
+
+/* Construct the string literal in pieces to prevent the source from
+   getting matched.  Store it in a pointer rather than an array
+   because some compilers will just produce instructions to fill the
+   array rather than assigning a pointer to a static array.  */
+char const* info_platform = "INFO" ":" "platform[" PLATFORM_ID "]";
+char const* info_arch = "INFO" ":" "arch[" ARCHITECTURE_ID "]";
+
 CMAKE_CXX_COMPILER_ID_RUN=1
+CMAKE_CXX_COMPILER_ID_TEST_FLAGS=-c;--c++;--ec++;--target=arm-arm-none-eabi -mcpu=cortex-m3;-c -I__does_not_exist__
+CMAKE_CXX_COMPILER_ID_TOOL_MATCH_INDEX=2
+CMAKE_CXX_COMPILER_ID_TOOL_MATCH_REGEX=
+Ld[^
+]*(
+[ 	]+[^
+]*)*
+[ 	]+([^ 	
+]+)[^
+]*-o[^
+]*CompilerIdCXX/(\./)?(CompilerIdCXX.(framework|xctest|build/[^ 	
+]+)/)?CompilerIdCXX[ 	
+\"]
+CMAKE_CXX_COMPILER_ID_VENDORS=IAR
+CMAKE_CXX_COMPILER_ID_VENDOR_REGEX_IAR=IAR .+ Compiler
+CMAKE_CXX_COMPILER_IMPORT_STD=
+CMAKE_CXX_COMPILER_IMPORT_STD_ERROR_MESSAGE=Unsupported generator: Unix Makefiles
+CMAKE_CXX_COMPILER_LINKER=/usr/bin/ld
+CMAKE_CXX_COMPILER_LINKER_FRONTEND_VARIANT=GNU
+CMAKE_CXX_COMPILER_LINKER_ID=GNU
+CMAKE_CXX_COMPILER_LINKER_VERSION=2.42
 CMAKE_CXX_COMPILER_LOADED=1
-CMAKE_CXX_COMPILER_PREDEFINES_COMMAND=/usr/bin/c++;-dM;-E;-c;/usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
+CMAKE_CXX_COMPILER_NAMES=c++
+CMAKE_CXX_COMPILER_PREDEFINES_COMMAND=/usr/bin/c++;-w;-dM;-E;/usr/share/cmake-4.3/Modules/CMakeCXXCompilerABI.cpp
+CMAKE_CXX_COMPILER_PRODUCED_FILES=a.out
+CMAKE_CXX_COMPILER_PRODUCED_OUTPUT=
 CMAKE_CXX_COMPILER_RANLIB=/usr/bin/gcc-ranlib-13
 CMAKE_CXX_COMPILER_RANLIB=/usr/bin/gcc-ranlib-13
+CMAKE_CXX_COMPILER_SYSROOT=
 CMAKE_CXX_COMPILER_VERSION=13.3.0
 CMAKE_CXX_COMPILER_VERSION_INTERNAL=
 CMAKE_CXX_COMPILER_WORKS=TRUE
@@ -322,8 +774,8 @@ CMAKE_CXX_COMPILE_OPTIONS_VISIBILITY_INLINES_HIDDEN=-fvisibility-inlines-hidden
 CMAKE_CXX_COMPILE_OPTIONS_WARNING_AS_ERROR=-Werror
 CMAKE_CXX_CREATE_ASSEMBLY_SOURCE=<CMAKE_CXX_COMPILER> <DEFINES> <INCLUDES> <FLAGS> -S <SOURCE> -o <ASSEMBLY_SOURCE>
 CMAKE_CXX_CREATE_PREPROCESSED_SOURCE=<CMAKE_CXX_COMPILER> <DEFINES> <INCLUDES> <FLAGS> -E <SOURCE> > <PREPROCESSED_SOURCE>
-CMAKE_CXX_CREATE_SHARED_LIBRARY=<CMAKE_CXX_COMPILER> <CMAKE_SHARED_LIBRARY_CXX_FLAGS> <LANGUAGE_COMPILE_FLAGS> <LINK_FLAGS> <CMAKE_SHARED_LIBRARY_CREATE_CXX_FLAGS> <SONAME_FLAG><TARGET_SONAME> -o <TARGET> <OBJECTS> <LINK_LIBRARIES>
-CMAKE_CXX_CREATE_SHARED_MODULE=<CMAKE_CXX_COMPILER> <CMAKE_SHARED_LIBRARY_CXX_FLAGS> <LANGUAGE_COMPILE_FLAGS> <LINK_FLAGS> <CMAKE_SHARED_LIBRARY_CREATE_CXX_FLAGS> <SONAME_FLAG><TARGET_SONAME> -o <TARGET> <OBJECTS> <LINK_LIBRARIES>
+CMAKE_CXX_CREATE_SHARED_LIBRARY=<CMAKE_CXX_COMPILER> <CMAKE_SHARED_LIBRARY_CXX_FLAGS> <LANGUAGE_COMPILE_FLAGS> <LINK_FLAGS> <SONAME_FLAG><TARGET_SONAME> -o <TARGET> <OBJECTS> <LINK_LIBRARIES>
+CMAKE_CXX_CREATE_SHARED_MODULE=<CMAKE_CXX_COMPILER> <CMAKE_SHARED_LIBRARY_CXX_FLAGS> <LANGUAGE_COMPILE_FLAGS> <LINK_FLAGS> <SONAME_FLAG><TARGET_SONAME> -o <TARGET> <OBJECTS> <LINK_LIBRARIES>
 CMAKE_CXX_DEPENDS_USE_COMPILER=TRUE
 CMAKE_CXX_DEPFILE_FORMAT=gcc
 CMAKE_CXX_EXTENSIONS=OFF
@@ -342,6 +794,8 @@ CMAKE_CXX_FLAGS_RELEASE=-O3 -DNDEBUG  -DNDEBUG
 CMAKE_CXX_FLAGS_RELEASE_INIT= -O3 -DNDEBUG
 CMAKE_CXX_FLAGS_RELWITHDEBINFO=-O2 -g -DNDEBUG
 CMAKE_CXX_FLAGS_RELWITHDEBINFO_INIT= -O2 -g -DNDEBUG
+CMAKE_CXX_HOST_COMPILER_ID=
+CMAKE_CXX_HOST_COMPILER_VERSION=
 CMAKE_CXX_IGNORE_EXTENSIONS=inl;h;hpp;HPP;H;o;O;obj;OBJ;def;DEF;rc;RC
 CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES=/usr/include/c++/13;/usr/include/aarch64-linux-gnu/c++/13;/usr/include/c++/13/backward;/usr/lib/gcc/aarch64-linux-gnu/13/include;/usr/local/include;/usr/include/aarch64-linux-gnu;/usr/include
 CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES=/usr/lib/gcc/aarch64-linux-gnu/13;/usr/aarch64-linux-gnu/lib;/usr/lib/aarch64-linux-gnu;/usr/lib;/lib/aarch64-linux-gnu;/lib
@@ -349,34 +803,53 @@ CMAKE_CXX_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES=
 CMAKE_CXX_IMPLICIT_LINK_LIBRARIES=stdc++;m;gcc_s;gcc;c;gcc_s;gcc
 CMAKE_CXX_INFORMATION_LOADED=1
 CMAKE_CXX_LIBRARY_ARCHITECTURE=aarch64-linux-gnu
-CMAKE_CXX_LINKER_DEPFILE_FLAGS=LINKER:--dependency-file,<DEP_FILE>
+CMAKE_CXX_LINKER_DEPFILE_FLAGS=LINKER:--dependency-file=<DEP_FILE>
 CMAKE_CXX_LINKER_DEPFILE_FORMAT=gcc
 CMAKE_CXX_LINKER_DEPFILE_SUPPORTED=TRUE
+CMAKE_CXX_LINKER_INFORMATION_LOADED=1
 CMAKE_CXX_LINKER_PREFERENCE=30
 CMAKE_CXX_LINKER_PREFERENCE_PROPAGATES=1
+CMAKE_CXX_LINKER_PUSHPOP_STATE_SUPPORTED=TRUE
 CMAKE_CXX_LINKER_WRAPPER_FLAG=-Wl,
 CMAKE_CXX_LINKER_WRAPPER_FLAG_SEP=,
 CMAKE_CXX_LINK_DEPENDS_USE_LINKER=TRUE
-CMAKE_CXX_LINK_EXECUTABLE=<CMAKE_CXX_COMPILER> <FLAGS> <CMAKE_CXX_LINK_FLAGS> <LINK_FLAGS> <OBJECTS> -o <TARGET> <LINK_LIBRARIES>
+CMAKE_CXX_LINK_EXECUTABLE=<CMAKE_CXX_COMPILER> <FLAGS> <LINK_FLAGS> <OBJECTS> -o <TARGET> <LINK_LIBRARIES>
+CMAKE_CXX_LINK_LIBRARY_USING_WHOLE_ARCHIVE=LINKER:--push-state,--whole-archive;<LINK_ITEM>;LINKER:--pop-state
+CMAKE_CXX_LINK_LIBRARY_USING_WHOLE_ARCHIVE_SUPPORTED=TRUE
+CMAKE_CXX_LINK_LIBRARY_WHOLE_ARCHIVE_ATTRIBUTES=LIBRARY_TYPE=STATIC;DEDUPLICATION=YES;OVERRIDE=DEFAULT
+CMAKE_CXX_LINK_MODE=DRIVER
 CMAKE_CXX_LINK_OPTIONS_NO_PIE=-no-pie
 CMAKE_CXX_LINK_OPTIONS_PIE=-fPIE;-pie
+CMAKE_CXX_LINK_OPTIONS_WARNING_AS_ERROR=LINKER:--fatal-warnings
 CMAKE_CXX_LINK_WHAT_YOU_USE_FLAG=LINKER:--no-as-needed
 CMAKE_CXX_OUTPUT_EXTENSION=.o
 CMAKE_CXX_PLATFORM_ID=Linux
+CMAKE_CXX_PLATFORM_LINKER_ID=GNU
 CMAKE_CXX_SIMULATE_ID=
 CMAKE_CXX_SIMULATE_VERSION=
 CMAKE_CXX_SIZEOF_DATA_PTR=8
-CMAKE_CXX_SOURCE_FILE_EXTENSIONS=C;M;c++;cc;cpp;cxx;m;mm;mpp;CPP;ixx;cppm;ccm;cxxm;c++m
+CMAKE_CXX_SOURCE_FILE_EXTENSIONS=C;M;c++;cc;cpp;cxx;mm;mpp;CPP;ixx;cppm;ccm;cxxm;c++m
 CMAKE_CXX_STANDARD=17
 CMAKE_CXX_STANDARD_COMPUTED_DEFAULT=17
 CMAKE_CXX_STANDARD_DEFAULT=17
+CMAKE_CXX_STANDARD_LATEST=23
+CMAKE_CXX_STANDARD_LIBRARY=libstdc++
 CMAKE_CXX_STANDARD_REQUIRED=TRUE
+CMAKE_CXX_STDLIB_MODULES_JSON=
+CMAKE_CXX_USE_LINKER_INFORMATION=TRUE
+CMAKE_CXX_USING_LINKER_BFD=-fuse-ld=bfd
+CMAKE_CXX_USING_LINKER_GOLD=-fuse-ld=gold
+CMAKE_CXX_USING_LINKER_LLD=-fuse-ld=lld
+CMAKE_CXX_USING_LINKER_MOLD=-fuse-ld=mold
+CMAKE_CXX_USING_LINKER_SYSTEM=
 CMAKE_CXX_VERBOSE_FLAG=-v
+CMAKE_CXX_VERBOSE_LINK_FLAG=-Wl,-v
+CMAKE_CXX_XCODE_ARCHS=
 CMAKE_C_ABI_COMPILED=TRUE
 CMAKE_C_ARCHIVE_APPEND=<CMAKE_AR> q <TARGET> <LINK_FLAGS> <OBJECTS>
-CMAKE_C_ARCHIVE_APPEND_IPO="/usr/bin/gcc-ar-13" r <TARGET> <LINK_FLAGS> <OBJECTS>
+CMAKE_C_ARCHIVE_APPEND_IPO="/usr/bin/gcc-ar-13" q <TARGET> <LINK_FLAGS> <OBJECTS>
 CMAKE_C_ARCHIVE_CREATE=<CMAKE_AR> qc <TARGET> <LINK_FLAGS> <OBJECTS>
-CMAKE_C_ARCHIVE_CREATE_IPO="/usr/bin/gcc-ar-13" cr <TARGET> <LINK_FLAGS> <OBJECTS>
+CMAKE_C_ARCHIVE_CREATE_IPO="/usr/bin/gcc-ar-13" qc <TARGET> <LINK_FLAGS> <OBJECTS>
 CMAKE_C_ARCHIVE_FINISH=<CMAKE_RANLIB> <TARGET>
 CMAKE_C_ARCHIVE_FINISH_IPO="/usr/bin/gcc-ranlib-13" <TARGET>
 CMAKE_C_BYTE_ORDER=LITTLE_ENDIAN
@@ -384,16 +857,416 @@ CMAKE_C_CL_SHOWINCLUDES_PREFIX=
 CMAKE_C_COMPILER=/usr/bin/cc
 CMAKE_C_COMPILER=/usr/bin/cc
 CMAKE_C_COMPILER_ABI=ELF
+CMAKE_C_COMPILER_APPLE_SYSROOT=
 CMAKE_C_COMPILER_AR=/usr/bin/gcc-ar-13
 CMAKE_C_COMPILER_AR=/usr/bin/gcc-ar-13
+CMAKE_C_COMPILER_ARCHITECTURE_ID=aarch64
 CMAKE_C_COMPILER_ARG1=
+CMAKE_C_COMPILER_CLANG_RESOURCE_DIR=
 CMAKE_C_COMPILER_ENV_VAR=CC
 CMAKE_C_COMPILER_FRONTEND_VARIANT=GNU
 CMAKE_C_COMPILER_ID=GNU
+CMAKE_C_COMPILER_ID_PLATFORM_CONTENT=#define STRINGIFY_HELPER(X) #X
+#define STRINGIFY(X) STRINGIFY_HELPER(X)
+
+/* Identify known platforms by name.  */
+#if defined(__linux) || defined(__linux__) || defined(linux)
+# define PLATFORM_ID "Linux"
+
+#elif defined(__MSYS__)
+# define PLATFORM_ID "MSYS"
+
+#elif defined(__CYGWIN__)
+# define PLATFORM_ID "Cygwin"
+
+#elif defined(__MINGW32__)
+# define PLATFORM_ID "MinGW"
+
+#elif defined(__APPLE__)
+# define PLATFORM_ID "Darwin"
+
+#elif defined(_WIN32) || defined(__WIN32__) || defined(WIN32)
+# define PLATFORM_ID "Windows"
+
+#elif defined(__FreeBSD__) || defined(__FreeBSD)
+# define PLATFORM_ID "FreeBSD"
+
+#elif defined(__NetBSD__) || defined(__NetBSD)
+# define PLATFORM_ID "NetBSD"
+
+#elif defined(__OpenBSD__) || defined(__OPENBSD)
+# define PLATFORM_ID "OpenBSD"
+
+#elif defined(__sun) || defined(sun)
+# define PLATFORM_ID "SunOS"
+
+#elif defined(_AIX) || defined(__AIX) || defined(__AIX__) || defined(__aix) || defined(__aix__)
+# define PLATFORM_ID "AIX"
+
+#elif defined(__hpux) || defined(__hpux__)
+# define PLATFORM_ID "HP-UX"
+
+#elif defined(__HAIKU__)
+# define PLATFORM_ID "Haiku"
+
+#elif defined(__BeOS) || defined(__BEOS__) || defined(_BEOS)
+# define PLATFORM_ID "BeOS"
+
+#elif defined(__QNX__) || defined(__QNXNTO__)
+# define PLATFORM_ID "QNX"
+
+#elif defined(__tru64) || defined(_tru64) || defined(__TRU64__)
+# define PLATFORM_ID "Tru64"
+
+#elif defined(__riscos) || defined(__riscos__)
+# define PLATFORM_ID "RISCos"
+
+#elif defined(__sinix) || defined(__sinix__) || defined(__SINIX__)
+# define PLATFORM_ID "SINIX"
+
+#elif defined(__UNIX_SV__)
+# define PLATFORM_ID "UNIX_SV"
+
+#elif defined(__bsdos__)
+# define PLATFORM_ID "BSDOS"
+
+#elif defined(_MPRAS) || defined(MPRAS)
+# define PLATFORM_ID "MP-RAS"
+
+#elif defined(__osf) || defined(__osf__)
+# define PLATFORM_ID "OSF1"
+
+#elif defined(_SCO_SV) || defined(SCO_SV) || defined(sco_sv)
+# define PLATFORM_ID "SCO_SV"
+
+#elif defined(__ultrix) || defined(__ultrix__) || defined(_ULTRIX)
+# define PLATFORM_ID "ULTRIX"
+
+#elif defined(__XENIX__) || defined(_XENIX) || defined(XENIX)
+# define PLATFORM_ID "Xenix"
+
+#elif defined(__WATCOMC__)
+# if defined(__LINUX__)
+#  define PLATFORM_ID "Linux"
+
+# elif defined(__DOS__)
+#  define PLATFORM_ID "DOS"
+
+# elif defined(__OS2__)
+#  define PLATFORM_ID "OS2"
+
+# elif defined(__WINDOWS__)
+#  define PLATFORM_ID "Windows3x"
+
+# elif defined(__VXWORKS__)
+#  define PLATFORM_ID "VxWorks"
+
+# else /* unknown platform */
+#  define PLATFORM_ID
+# endif
+
+#elif defined(__INTEGRITY)
+# if defined(INT_178B)
+#  define PLATFORM_ID "Integrity178"
+
+# else /* regular Integrity */
+#  define PLATFORM_ID "Integrity"
+# endif
+
+# elif defined(_ADI_COMPILER)
+#  define PLATFORM_ID "ADSP"
+
+#else /* unknown platform */
+# define PLATFORM_ID
+
+#endif
+
+/* For windows compilers MSVC and Intel we can determine
+   the architecture of the compiler being used.  This is because
+   the compilers do not have flags that can change the architecture,
+   but rather depend on which compiler is being used
+*/
+#if defined(_WIN32) && defined(_MSC_VER)
+# if defined(_M_IA64)
+#  define ARCHITECTURE_ID "IA64"
+
+# elif defined(_M_ARM64EC)
+#  define ARCHITECTURE_ID "ARM64EC"
+
+# elif defined(_M_X64) || defined(_M_AMD64)
+#  define ARCHITECTURE_ID "x64"
+
+# elif defined(_M_IX86)
+#  define ARCHITECTURE_ID "X86"
+
+# elif defined(_M_ARM64)
+#  define ARCHITECTURE_ID "ARM64"
+
+# elif defined(_M_ARM)
+#  if _M_ARM == 4
+#   define ARCHITECTURE_ID "ARMV4I"
+#  elif _M_ARM == 5
+#   define ARCHITECTURE_ID "ARMV5I"
+#  else
+#   define ARCHITECTURE_ID "ARMV" STRINGIFY(_M_ARM)
+#  endif
+
+# elif defined(_M_MIPS)
+#  define ARCHITECTURE_ID "MIPS"
+
+# elif defined(_M_SH)
+#  define ARCHITECTURE_ID "SHx"
+
+# else /* unknown architecture */
+#  define ARCHITECTURE_ID ""
+# endif
+
+#elif defined(__WATCOMC__)
+# if defined(_M_I86)
+#  define ARCHITECTURE_ID "I86"
+
+# elif defined(_M_IX86)
+#  define ARCHITECTURE_ID "X86"
+
+# else /* unknown architecture */
+#  define ARCHITECTURE_ID ""
+# endif
+
+#elif defined(__IAR_SYSTEMS_ICC__) || defined(__IAR_SYSTEMS_ICC)
+# if defined(__ICCARM__)
+#  define ARCHITECTURE_ID "ARM"
+
+# elif defined(__ICCRX__)
+#  define ARCHITECTURE_ID "RX"
+
+# elif defined(__ICCRH850__)
+#  define ARCHITECTURE_ID "RH850"
+
+# elif defined(__ICCRL78__)
+#  define ARCHITECTURE_ID "RL78"
+
+# elif defined(__ICCRISCV__)
+#  define ARCHITECTURE_ID "RISCV"
+
+# elif defined(__ICCAVR__)
+#  define ARCHITECTURE_ID "AVR"
+
+# elif defined(__ICC430__)
+#  define ARCHITECTURE_ID "MSP430"
+
+# elif defined(__ICCV850__)
+#  define ARCHITECTURE_ID "V850"
+
+# elif defined(__ICC8051__)
+#  define ARCHITECTURE_ID "8051"
+
+# elif defined(__ICCSTM8__)
+#  define ARCHITECTURE_ID "STM8"
+
+# else /* unknown architecture */
+#  define ARCHITECTURE_ID ""
+# endif
+
+#elif defined(__ghs__)
+# if defined(__PPC64__)
+#  define ARCHITECTURE_ID "PPC64"
+
+# elif defined(__ppc__)
+#  define ARCHITECTURE_ID "PPC"
+
+# elif defined(__ARM__)
+#  define ARCHITECTURE_ID "ARM"
+
+# elif defined(__x86_64__)
+#  define ARCHITECTURE_ID "x64"
+
+# elif defined(__i386__)
+#  define ARCHITECTURE_ID "X86"
+
+# else /* unknown architecture */
+#  define ARCHITECTURE_ID ""
+# endif
+
+#elif defined(__clang__) && defined(__ti__)
+# if defined(__ARM_ARCH)
+#  define ARCHITECTURE_ID "ARM"
+
+# else /* unknown architecture */
+#  define ARCHITECTURE_ID ""
+# endif
+
+#elif defined(__TI_COMPILER_VERSION__)
+# if defined(__TI_ARM__)
+#  define ARCHITECTURE_ID "ARM"
+
+# elif defined(__MSP430__)
+#  define ARCHITECTURE_ID "MSP430"
+
+# elif defined(__TMS320C28XX__)
+#  define ARCHITECTURE_ID "TMS320C28x"
+
+# elif defined(__TMS320C6X__) || defined(_TMS320C6X)
+#  define ARCHITECTURE_ID "TMS320C6x"
+
+# else /* unknown architecture */
+#  define ARCHITECTURE_ID ""
+# endif
+
+# elif defined(__ADSPSHARC__)
+#  define ARCHITECTURE_ID "SHARC"
+
+# elif defined(__ADSPBLACKFIN__)
+#  define ARCHITECTURE_ID "Blackfin"
+
+#elif defined(__TASKING__)
+
+# if defined(__CTC__) || defined(__CPTC__)
+#  define ARCHITECTURE_ID "TriCore"
+
+# elif defined(__CMCS__)
+#  define ARCHITECTURE_ID "MCS"
+
+# elif defined(__CARM__) || defined(__CPARM__)
+#  define ARCHITECTURE_ID "ARM"
+
+# elif defined(__CARC__)
+#  define ARCHITECTURE_ID "ARC"
+
+# elif defined(__C51__)
+#  define ARCHITECTURE_ID "8051"
+
+# elif defined(__CPCP__)
+#  define ARCHITECTURE_ID "PCP"
+
+# else
+#  define ARCHITECTURE_ID ""
+# endif
+
+#elif defined(__RENESAS__)
+# if defined(__CCRX__)
+#  define ARCHITECTURE_ID "RX"
+
+# elif defined(__CCRL__)
+#  define ARCHITECTURE_ID "RL78"
+
+# elif defined(__CCRH__)
+#  define ARCHITECTURE_ID "RH850"
+
+# else
+#  define ARCHITECTURE_ID ""
+# endif
+
+#else
+#  define ARCHITECTURE_ID
+#endif
+
+/* Convert integer to decimal digit literals.  */
+#define DEC(n)                   \
+  ('0' + (((n) / 10000000)%10)), \
+  ('0' + (((n) / 1000000)%10)),  \
+  ('0' + (((n) / 100000)%10)),   \
+  ('0' + (((n) / 10000)%10)),    \
+  ('0' + (((n) / 1000)%10)),     \
+  ('0' + (((n) / 100)%10)),      \
+  ('0' + (((n) / 10)%10)),       \
+  ('0' +  ((n) % 10))
+
+/* Convert integer to hex digit literals.  */
+#define HEX(n)             \
+  ('0' + ((n)>>28 & 0xF)), \
+  ('0' + ((n)>>24 & 0xF)), \
+  ('0' + ((n)>>20 & 0xF)), \
+  ('0' + ((n)>>16 & 0xF)), \
+  ('0' + ((n)>>12 & 0xF)), \
+  ('0' + ((n)>>8  & 0xF)), \
+  ('0' + ((n)>>4  & 0xF)), \
+  ('0' + ((n)     & 0xF))
+
+/* Construct a string literal encoding the version number. */
+#ifdef COMPILER_VERSION
+char const* info_version = "INFO" ":" "compiler_version[" COMPILER_VERSION "]";
+
+/* Construct a string literal encoding the version number components. */
+#elif defined(COMPILER_VERSION_MAJOR)
+char const info_version[] = {
+  'I', 'N', 'F', 'O', ':',
+  'c','o','m','p','i','l','e','r','_','v','e','r','s','i','o','n','[',
+  COMPILER_VERSION_MAJOR,
+# ifdef COMPILER_VERSION_MINOR
+  '.', COMPILER_VERSION_MINOR,
+#  ifdef COMPILER_VERSION_PATCH
+   '.', COMPILER_VERSION_PATCH,
+#   ifdef COMPILER_VERSION_TWEAK
+    '.', COMPILER_VERSION_TWEAK,
+#   endif
+#  endif
+# endif
+  ']','\0'};
+#endif
+
+/* Construct a string literal encoding the internal version number. */
+#ifdef COMPILER_VERSION_INTERNAL
+char const info_version_internal[] = {
+  'I', 'N', 'F', 'O', ':',
+  'c','o','m','p','i','l','e','r','_','v','e','r','s','i','o','n','_',
+  'i','n','t','e','r','n','a','l','[',
+  COMPILER_VERSION_INTERNAL,']','\0'};
+#elif defined(COMPILER_VERSION_INTERNAL_STR)
+char const* info_version_internal = "INFO" ":" "compiler_version_internal[" COMPILER_VERSION_INTERNAL_STR "]";
+#endif
+
+/* Construct a string literal encoding the version number components. */
+#ifdef SIMULATE_VERSION_MAJOR
+char const info_simulate_version[] = {
+  'I', 'N', 'F', 'O', ':',
+  's','i','m','u','l','a','t','e','_','v','e','r','s','i','o','n','[',
+  SIMULATE_VERSION_MAJOR,
+# ifdef SIMULATE_VERSION_MINOR
+  '.', SIMULATE_VERSION_MINOR,
+#  ifdef SIMULATE_VERSION_PATCH
+   '.', SIMULATE_VERSION_PATCH,
+#   ifdef SIMULATE_VERSION_TWEAK
+    '.', SIMULATE_VERSION_TWEAK,
+#   endif
+#  endif
+# endif
+  ']','\0'};
+#endif
+
+/* Construct the string literal in pieces to prevent the source from
+   getting matched.  Store it in a pointer rather than an array
+   because some compilers will just produce instructions to fill the
+   array rather than assigning a pointer to a static array.  */
+char const* info_platform = "INFO" ":" "platform[" PLATFORM_ID "]";
+char const* info_arch = "INFO" ":" "arch[" ARCHITECTURE_ID "]";
+
 CMAKE_C_COMPILER_ID_RUN=1
+CMAKE_C_COMPILER_ID_TEST_FLAGS=-c;-Aa;-D__CLASSIC_C__;--target=arm-arm-none-eabi -mcpu=cortex-m3;-c -I__does_not_exist__
+CMAKE_C_COMPILER_ID_TOOL_MATCH_INDEX=2
+CMAKE_C_COMPILER_ID_TOOL_MATCH_REGEX=
+Ld[^
+]*(
+[ 	]+[^
+]*)*
+[ 	]+([^ 	
+]+)[^
+]*-o[^
+]*CompilerIdC/(\./)?(CompilerIdC.(framework|xctest|build/[^ 	
+]+)/)?CompilerIdC[ 	
+\"]
+CMAKE_C_COMPILER_ID_VENDORS=IAR
+CMAKE_C_COMPILER_ID_VENDOR_REGEX_IAR=IAR .+ Compiler
+CMAKE_C_COMPILER_LINKER=/usr/bin/ld
+CMAKE_C_COMPILER_LINKER_FRONTEND_VARIANT=GNU
+CMAKE_C_COMPILER_LINKER_ID=GNU
+CMAKE_C_COMPILER_LINKER_VERSION=2.42
 CMAKE_C_COMPILER_LOADED=1
+CMAKE_C_COMPILER_NAMES=cc
+CMAKE_C_COMPILER_PRODUCED_FILES=a.out
+CMAKE_C_COMPILER_PRODUCED_OUTPUT=
 CMAKE_C_COMPILER_RANLIB=/usr/bin/gcc-ranlib-13
 CMAKE_C_COMPILER_RANLIB=/usr/bin/gcc-ranlib-13
+CMAKE_C_COMPILER_SYSROOT=
 CMAKE_C_COMPILER_VERSION=13.3.0
 CMAKE_C_COMPILER_VERSION_INTERNAL=
 CMAKE_C_COMPILER_WORKS=TRUE
@@ -414,8 +1287,8 @@ CMAKE_C_COMPILE_OPTIONS_VISIBILITY=-fvisibility=
 CMAKE_C_COMPILE_OPTIONS_WARNING_AS_ERROR=-Werror
 CMAKE_C_CREATE_ASSEMBLY_SOURCE=<CMAKE_C_COMPILER> <DEFINES> <INCLUDES> <FLAGS> -S <SOURCE> -o <ASSEMBLY_SOURCE>
 CMAKE_C_CREATE_PREPROCESSED_SOURCE=<CMAKE_C_COMPILER> <DEFINES> <INCLUDES> <FLAGS> -E <SOURCE> > <PREPROCESSED_SOURCE>
-CMAKE_C_CREATE_SHARED_LIBRARY=<CMAKE_C_COMPILER> <CMAKE_SHARED_LIBRARY_C_FLAGS> <LANGUAGE_COMPILE_FLAGS> <LINK_FLAGS> <CMAKE_SHARED_LIBRARY_CREATE_C_FLAGS> <SONAME_FLAG><TARGET_SONAME> -o <TARGET> <OBJECTS> <LINK_LIBRARIES>
-CMAKE_C_CREATE_SHARED_MODULE=<CMAKE_C_COMPILER> <CMAKE_SHARED_LIBRARY_C_FLAGS> <LANGUAGE_COMPILE_FLAGS> <LINK_FLAGS> <CMAKE_SHARED_LIBRARY_CREATE_C_FLAGS> <SONAME_FLAG><TARGET_SONAME> -o <TARGET> <OBJECTS> <LINK_LIBRARIES>
+CMAKE_C_CREATE_SHARED_LIBRARY=<CMAKE_C_COMPILER> <CMAKE_SHARED_LIBRARY_C_FLAGS> <LANGUAGE_COMPILE_FLAGS> <LINK_FLAGS> <SONAME_FLAG><TARGET_SONAME> -o <TARGET> <OBJECTS> <LINK_LIBRARIES>
+CMAKE_C_CREATE_SHARED_MODULE=<CMAKE_C_COMPILER> <CMAKE_SHARED_LIBRARY_C_FLAGS> <LANGUAGE_COMPILE_FLAGS> <LINK_FLAGS> <SONAME_FLAG><TARGET_SONAME> -o <TARGET> <OBJECTS> <LINK_LIBRARIES>
 CMAKE_C_DEPENDS_USE_COMPILER=TRUE
 CMAKE_C_DEPFILE_FORMAT=gcc
 CMAKE_C_EXTENSIONS_COMPUTED_DEFAULT=ON
@@ -433,6 +1306,8 @@ CMAKE_C_FLAGS_RELEASE=-O3 -DNDEBUG  -DNDEBUG
 CMAKE_C_FLAGS_RELEASE_INIT= -O3 -DNDEBUG
 CMAKE_C_FLAGS_RELWITHDEBINFO=-O2 -g -DNDEBUG
 CMAKE_C_FLAGS_RELWITHDEBINFO_INIT= -O2 -g -DNDEBUG
+CMAKE_C_HOST_COMPILER_ID=
+CMAKE_C_HOST_COMPILER_VERSION=
 CMAKE_C_IGNORE_EXTENSIONS=h;H;o;O;obj;OBJ;def;DEF;rc;RC
 CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES=/usr/lib/gcc/aarch64-linux-gnu/13/include;/usr/local/include;/usr/include/aarch64-linux-gnu;/usr/include
 CMAKE_C_IMPLICIT_LINK_DIRECTORIES=/usr/lib/gcc/aarch64-linux-gnu/13;/usr/aarch64-linux-gnu/lib;/usr/lib/aarch64-linux-gnu;/usr/lib;/lib/aarch64-linux-gnu;/lib
@@ -440,26 +1315,44 @@ CMAKE_C_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES=
 CMAKE_C_IMPLICIT_LINK_LIBRARIES=gcc;gcc_s;c;gcc;gcc_s
 CMAKE_C_INFORMATION_LOADED=1
 CMAKE_C_LIBRARY_ARCHITECTURE=aarch64-linux-gnu
-CMAKE_C_LINKER_DEPFILE_FLAGS=LINKER:--dependency-file,<DEP_FILE>
+CMAKE_C_LINKER_DEPFILE_FLAGS=LINKER:--dependency-file=<DEP_FILE>
 CMAKE_C_LINKER_DEPFILE_FORMAT=gcc
 CMAKE_C_LINKER_DEPFILE_SUPPORTED=TRUE
+CMAKE_C_LINKER_INFORMATION_LOADED=1
 CMAKE_C_LINKER_PREFERENCE=10
+CMAKE_C_LINKER_PUSHPOP_STATE_SUPPORTED=TRUE
 CMAKE_C_LINKER_WRAPPER_FLAG=-Wl,
 CMAKE_C_LINKER_WRAPPER_FLAG_SEP=,
 CMAKE_C_LINK_DEPENDS_USE_LINKER=TRUE
-CMAKE_C_LINK_EXECUTABLE=<CMAKE_C_COMPILER> <FLAGS> <CMAKE_C_LINK_FLAGS> <LINK_FLAGS> <OBJECTS> -o <TARGET> <LINK_LIBRARIES>
+CMAKE_C_LINK_EXECUTABLE=<CMAKE_C_COMPILER> <FLAGS> <LINK_FLAGS> <OBJECTS> -o <TARGET> <LINK_LIBRARIES>
+CMAKE_C_LINK_LIBRARY_USING_WHOLE_ARCHIVE=LINKER:--push-state,--whole-archive;<LINK_ITEM>;LINKER:--pop-state
+CMAKE_C_LINK_LIBRARY_USING_WHOLE_ARCHIVE_SUPPORTED=TRUE
+CMAKE_C_LINK_LIBRARY_WHOLE_ARCHIVE_ATTRIBUTES=LIBRARY_TYPE=STATIC;DEDUPLICATION=YES;OVERRIDE=DEFAULT
+CMAKE_C_LINK_MODE=DRIVER
 CMAKE_C_LINK_OPTIONS_NO_PIE=-no-pie
 CMAKE_C_LINK_OPTIONS_PIE=-fPIE;-pie
+CMAKE_C_LINK_OPTIONS_WARNING_AS_ERROR=LINKER:--fatal-warnings
 CMAKE_C_LINK_WHAT_YOU_USE_FLAG=LINKER:--no-as-needed
 CMAKE_C_OUTPUT_EXTENSION=.o
 CMAKE_C_PLATFORM_ID=Linux
+CMAKE_C_PLATFORM_LINKER_ID=GNU
 CMAKE_C_SIMULATE_ID=
 CMAKE_C_SIMULATE_VERSION=
 CMAKE_C_SIZEOF_DATA_PTR=8
 CMAKE_C_SOURCE_FILE_EXTENSIONS=c;m
 CMAKE_C_STANDARD_COMPUTED_DEFAULT=17
 CMAKE_C_STANDARD_DEFAULT=17
+CMAKE_C_STANDARD_LATEST=23
+CMAKE_C_STANDARD_LIBRARY=
+CMAKE_C_USE_LINKER_INFORMATION=TRUE
+CMAKE_C_USING_LINKER_BFD=-fuse-ld=bfd
+CMAKE_C_USING_LINKER_GOLD=-fuse-ld=gold
+CMAKE_C_USING_LINKER_LLD=-fuse-ld=lld
+CMAKE_C_USING_LINKER_MOLD=-fuse-ld=mold
+CMAKE_C_USING_LINKER_SYSTEM=
 CMAKE_C_VERBOSE_FLAG=-v
+CMAKE_C_VERBOSE_LINK_FLAG=-Wl,-v
+CMAKE_C_XCODE_ARCHS=
 CMAKE_DEPFILE_FLAGS_ASM=-MD -MT <DEP_TARGET> -MF <DEP_FILE>
 CMAKE_DEPFILE_FLAGS_C=-MD -MT <DEP_TARGET> -MF <DEP_FILE>
 CMAKE_DEPFILE_FLAGS_CXX=-MD -MT <DEP_TARGET> -MF <DEP_FILE>
@@ -502,6 +1395,7 @@ CMAKE_GENERATOR_TOOLSET=
 CMAKE_HAVE_LIBC_PTHREAD=1
 CMAKE_HELPER_SCRIPT=/home/nerdstar/NerdStar/backend/opencv/opencv_build/OpenCVGenPkgConfig.info.cmake
 CMAKE_HOME_DIRECTORY=/home/nerdstar/NerdStar/backend/opencv/opencv
+CMAKE_HOST_EXECUTABLE_SUFFIX=
 CMAKE_HOST_LINUX=1
 CMAKE_HOST_SYSTEM=Linux-6.8.12-1021-tegra
 CMAKE_HOST_SYSTEM_NAME=Linux
@@ -559,12 +1453,14 @@ CMAKE_INSTALL_SO_NO_EXE=1
 CMAKE_INSTALL_SYSCONFDIR=etc
 CMAKE_INTERNAL_PLATFORM_ABI=ELF
 CMAKE_LIBRARY_ARCHITECTURE=aarch64-linux-gnu
-CMAKE_LIBRARY_ARCHITECTURE_REGEX=[a-z0-9_]+(-[a-z0-9_]+)?-linux-gnu[a-z0-9_]*
+CMAKE_LIBRARY_ARCHITECTURE_REGEX=[a-z0-9_]+(-[a-z0-9_]+)?-linux-[a-z0-9_]*
 CMAKE_LIBRARY_PATH_FLAG=-L
 CMAKE_LIBRARY_PATH_TERMINATOR=
 CMAKE_LINKER=/usr/bin/ld
 CMAKE_LINKER=/usr/bin/ld
-CMAKE_LINK_DEPENDS_USE_LINKER=FALSE
+CMAKE_LINKER_LINK=
+CMAKE_LINKER_LLD=
+CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED=TRUE
 CMAKE_LINK_GROUP_USING_RESCAN=LINKER:--start-group;LINKER:--end-group
 CMAKE_LINK_GROUP_USING_RESCAN_SUPPORTED=TRUE
 CMAKE_LINK_LIBRARY_FLAG=-l
@@ -572,8 +1468,10 @@ CMAKE_LINK_LIBRARY_SUFFIX=
 CMAKE_LINK_LIBRARY_USING_DEFAULT_SUPPORTED=TRUE
 CMAKE_LINK_LIBRARY_USING_WHOLE_ARCHIVE=LINKER:--push-state,--whole-archive;<LINK_ITEM>;LINKER:--pop-state
 CMAKE_LINK_LIBRARY_USING_WHOLE_ARCHIVE_SUPPORTED=TRUE
+CMAKE_LINK_LIBRARY_WHOLE_ARCHIVE_ATTRIBUTES=LIBRARY_TYPE=STATIC;DEDUPLICATION=YES;OVERRIDE=DEFAULT
 CMAKE_LINK_WHAT_YOU_USE_CHECK=ldd;-u;-r
-CMAKE_MAJOR_VERSION=3
+CMAKE_LIST_FILE_NAME=CMakeLists.txt
+CMAKE_MAJOR_VERSION=4
 CMAKE_MAKE_PROGRAM=/usr/bin/gmake
 CMAKE_MATCH_0=
 CMAKE_MATCH_1=
@@ -581,7 +1479,7 @@ CMAKE_MATCH_2=
 CMAKE_MATCH_3=
 CMAKE_MATCH_COUNT=0
 CMAKE_MINIMUM_REQUIRED_VERSION=3.13
-CMAKE_MINOR_VERSION=28
+CMAKE_MINOR_VERSION=3
 CMAKE_MODULE_LINKER_FLAGS=  -Wl,--gc-sections -Wl,--as-needed -Wl,--no-undefined
 CMAKE_MODULE_LINKER_FLAGS=  -Wl,--gc-sections -Wl,--as-needed -Wl,--no-undefined
 CMAKE_MODULE_LINKER_FLAGS_DEBUG= 
@@ -598,22 +1496,24 @@ CMAKE_NUMBER_OF_MAKEFILES=194
 CMAKE_OBJCOPY=/usr/bin/objcopy
 CMAKE_OBJDUMP=/usr/bin/objdump
 CMAKE_PARENT_LIST_FILE=/home/nerdstar/NerdStar/backend/opencv/opencv/CMakeLists.txt
-CMAKE_PATCH_VERSION=3
+CMAKE_PATCH_VERSION=4
 CMAKE_PCH_EXTENSION=.gch
 CMAKE_PCH_PROLOGUE=#pragma GCC system_header
 CMAKE_PLATFORM_IMPLICIT_LINK_DIRECTORIES=/lib;/lib32;/lib64;/usr/lib;/usr/lib32;/usr/lib64
-CMAKE_PLATFORM_INFO_DIR=/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/3.28.3
+CMAKE_PLATFORM_INFO_DIR=/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/4.3.4
 CMAKE_PLATFORM_INFO_INITIALIZED=1
 CMAKE_PLATFORM_USES_PATH_WHEN_NO_SONAME=1
 CMAKE_POSITION_INDEPENDENT_CODE=ON
+CMAKE_PROJECT_COMPAT_VERSION=
 CMAKE_PROJECT_DESCRIPTION=
 CMAKE_PROJECT_HOMEPAGE_URL=
 CMAKE_PROJECT_NAME=OpenCV
+CMAKE_PROJECT_SPDX_LICENSE=
 CMAKE_RANLIB=/usr/bin/ranlib
 CMAKE_RANLIB=/usr/bin/ranlib
 CMAKE_READELF=/usr/bin/readelf
 CMAKE_REQUIRED_QUIET=TRUE
-CMAKE_ROOT=/usr/share/cmake-3.28
+CMAKE_ROOT=/usr/share/cmake-4.3
 CMAKE_SHARED_LIBRARY_ASM_FLAGS=-fPIC
 CMAKE_SHARED_LIBRARY_CREATE_ASM_FLAGS=-shared
 CMAKE_SHARED_LIBRARY_CREATE_CXX_FLAGS=-shared
@@ -688,7 +1588,10 @@ CMAKE_TWEAK_VERSION=0
 CMAKE_UNAME=/usr/bin/uname
 CMAKE_USE_PTHREADS_INIT=1
 CMAKE_VERBOSE_MAKEFILE=FALSE
-CMAKE_VERSION=3.28.3
+CMAKE_VERSION=4.3.4
+COMPILER_BASENAME=cc
+CPACK_ARCHIVE_GID=-1
+CPACK_ARCHIVE_UID=-1
 CPACK_BINARY_DEB=OFF
 CPACK_BINARY_FREEBSD=OFF
 CPACK_BINARY_IFW=OFF
@@ -756,7 +1659,7 @@ CPACK_DEB_COMPONENT_INSTALL=TRUE
 CPACK_DEB_DEV_PACKAGE_DEPENDS=libtbb-dev
 CPACK_DEB_dev_PACKAGE_DEPENDS=cuda-cudart-dev-13-2, cuda-npp-dev-13-2, cuda-cufft-dev-13-2, cuda-cublas-dev-13-2
 CPACK_DEB_libs_PACKAGE_DEPENDS=cuda-cudart-13-2, cuda-npp-13-2, cuda-cufft-13-2, cuda-cublas-13-2
-CPACK_DEFAULT_PACKAGE_DESCRIPTION_FILE=/usr/share/cmake-3.28/Templates/CPack.GenericDescription.txt
+CPACK_DEFAULT_PACKAGE_DESCRIPTION_FILE=/usr/share/cmake-4.3/Templates/CPack.GenericDescription.txt
 CPACK_DEFAULT_PACKAGE_DESCRIPTION_SUMMARY=OpenCV built using CMake
 CPACK_DMG_SLA_USE_RESOURCE_FILE_LICENSE=ON
 CPACK_GENERATOR=TBZ2;TGZ;TXZ;TZ
@@ -782,7 +1685,7 @@ and machine learning software library. OpenCV was built to provide a common
 infrastructure for computer vision applications and to accelerate the use of
 machine perception in the commercial products. Being a Apache 2.0 -licensed product,
 OpenCV makes it easy for businesses to utilize and modify the code.
-CPACK_PACKAGE_DESCRIPTION_FILE=/usr/share/cmake-3.28/Templates/CPack.GenericDescription.txt
+CPACK_PACKAGE_DESCRIPTION_FILE=/usr/share/cmake-4.3/Templates/CPack.GenericDescription.txt
 CPACK_PACKAGE_DESCRIPTION_SUMMARY=Open Computer Vision Library
 CPACK_PACKAGE_FILE_NAME=OpenCV-5.0.0-71-g4ce2389a62-aarch64
 CPACK_PACKAGE_INSTALL_DIRECTORY=OpenCV 5.0.0-71-g4ce2389a62
@@ -796,8 +1699,8 @@ CPACK_PACKAGE_VERSION_MINOR=1
 CPACK_PACKAGE_VERSION_PATCH=0
 CPACK_READELF_EXECUTABLE=/usr/bin/readelf
 CPACK_RESOURCE_FILE_LICENSE=/home/nerdstar/NerdStar/backend/opencv/opencv/LICENSE
-CPACK_RESOURCE_FILE_README=/usr/share/cmake-3.28/Templates/CPack.GenericDescription.txt
-CPACK_RESOURCE_FILE_WELCOME=/usr/share/cmake-3.28/Templates/CPack.GenericWelcome.txt
+CPACK_RESOURCE_FILE_README=/usr/share/cmake-4.3/Templates/CPack.GenericDescription.txt
+CPACK_RESOURCE_FILE_WELCOME=/usr/share/cmake-4.3/Templates/CPack.GenericWelcome.txt
 CPACK_RPM_COMPONENT_INSTALL=TRUE
 CPACK_RPM_PACKAGE_ARCHITECTURE=aarch64
 CPACK_RPM_PACKAGE_DESCRIPTION=OpenCV (Open Source Computer Vision Library) is an open source computer vision
@@ -1002,7 +1905,7 @@ CUDA_cupti_LIBRARY=CUDA_cupti_LIBRARY-NOTFOUND
 CUDA_curand_LIBRARY=/usr/local/cuda-13.2/lib64/libcurand.so
 CUDA_cusolver_LIBRARY=/usr/local/cuda-13.2/lib64/libcusolver.so
 CUDA_cusparse_LIBRARY=/usr/local/cuda-13.2/lib64/libcusparse.so
-CUDA_make2cmake=/usr/share/cmake-3.28/Modules/FindCUDA/make2cmake.cmake
+CUDA_make2cmake=/usr/share/cmake-4.3/Modules/FindCUDA/make2cmake.cmake
 CUDA_npp_LIBRARY=nppc;nppial;nppicc;nppidei;nppif;nppig;nppim;nppist;nppisu;nppitc;npps
 CUDA_npp_LIBRARY_ABS=/usr/local/cuda-13.2/lib64/libnppc.so;/usr/local/cuda-13.2/lib64/libnppial.so;/usr/local/cuda-13.2/lib64/libnppicc.so;/usr/local/cuda-13.2/lib64/libnppidei.so;/usr/local/cuda-13.2/lib64/libnppif.so;/usr/local/cuda-13.2/lib64/libnppig.so;/usr/local/cuda-13.2/lib64/libnppim.so;/usr/local/cuda-13.2/lib64/libnppist.so;/usr/local/cuda-13.2/lib64/libnppisu.so;/usr/local/cuda-13.2/lib64/libnppitc.so;/usr/local/cuda-13.2/lib64/libnpps.so
 CUDA_nppc_LIBRARY=/usr/local/cuda-13.2/lib64/libnppc.so
@@ -1017,9 +1920,9 @@ CUDA_nppisu_LIBRARY=/usr/local/cuda-13.2/lib64/libnppisu.so
 CUDA_nppitc_LIBRARY=/usr/local/cuda-13.2/lib64/libnppitc.so
 CUDA_npps_LIBRARY=/usr/local/cuda-13.2/lib64/libnpps.so
 CUDA_nvToolsExt_LIBRARY=CUDA_nvToolsExt_LIBRARY-NOTFOUND
-CUDA_parse_cubin=/usr/share/cmake-3.28/Modules/FindCUDA/parse_cubin.cmake
+CUDA_parse_cubin=/usr/share/cmake-4.3/Modules/FindCUDA/parse_cubin.cmake
 CUDA_rt_LIBRARY=/usr/lib/aarch64-linux-gnu/librt.a
-CUDA_run_nvcc=/usr/share/cmake-3.28/Modules/FindCUDA/run_nvcc.cmake
+CUDA_run_nvcc=/usr/share/cmake-4.3/Modules/FindCUDA/run_nvcc.cmake
 CUDNN_FOUND=TRUE
 CUDNN_INCLUDE_DIR=/usr/include/aarch64-linux-gnu
 CUDNN_INCLUDE_DIRS=/usr/include/aarch64-linux-gnu
@@ -1101,7 +2004,8 @@ FFMPEG_INCLUDE_DIRS=/usr/include/aarch64-linux-gnu
 FFMPEG_LDFLAGS=-L/usr/lib/aarch64-linux-gnu;-lavcodec;-lavformat;-lavutil;-lswscale
 FFMPEG_LDFLAGS_OTHER=
 FFMPEG_LIBDIR=
-FFMPEG_LIBRARIES=/usr/lib/aarch64-linux-gnu/libavcodec.so;/usr/lib/aarch64-linux-gnu/libavformat.so;/usr/lib/aarch64-linux-gnu/libavutil.so;/usr/lib/aarch64-linux-gnu/libswscale.so
+FFMPEG_LIBRARIES=/usr/lib/aarch64-linux-gnu/libavcodec.so;/usr/lib/aarch64-linux-gnu/libavformat.so;/usr/lib/aarch64-linux-gnu/libavutil.so;/usr/lib/aarch64-linux-gnu/libswscale.so;/usr/lib/aarch64-linux-gnu/libavdevice.so
+FFMPEG_LIBRARIES=/usr/lib/aarch64-linux-gnu/libavcodec.so;/usr/lib/aarch64-linux-gnu/libavformat.so;/usr/lib/aarch64-linux-gnu/libavutil.so;/usr/lib/aarch64-linux-gnu/libswscale.so;/usr/lib/aarch64-linux-gnu/libavdevice.so
 FFMPEG_LIBRARY_DIRS=/usr/lib/aarch64-linux-gnu
 FFMPEG_LIBS=
 FFMPEG_LIBS_L=
@@ -1130,27 +2034,39 @@ FFMPEG_libavcodec_LIBDIR=/usr/lib/aarch64-linux-gnu
 FFMPEG_libavcodec_MODULE_NAME=libavcodec
 FFMPEG_libavcodec_PREFIX=/usr
 FFMPEG_libavcodec_VERSION=60.31.102
-FFMPEG_libavdevice_CFLAGS=
+FFMPEG_libavdevice_CFLAGS=-I/usr/include/aarch64-linux-gnu
 FFMPEG_libavdevice_CFLAGS_I=
 FFMPEG_libavdevice_CFLAGS_OTHER=
-FFMPEG_libavdevice_FOUND=
-FFMPEG_libavdevice_INCLUDEDIR=
-FFMPEG_libavdevice_LIBDIR=
+FFMPEG_libavdevice_FOUND=1
+FFMPEG_libavdevice_INCLUDEDIR=/usr/include/aarch64-linux-gnu
+FFMPEG_libavdevice_INCLUDE_DIRS=/usr/include/aarch64-linux-gnu
+FFMPEG_libavdevice_LDFLAGS=-L/usr/lib/aarch64-linux-gnu;-lavdevice
+FFMPEG_libavdevice_LDFLAGS_OTHER=
+FFMPEG_libavdevice_LIBDIR=/usr/lib/aarch64-linux-gnu
+FFMPEG_libavdevice_LIBRARIES=/usr/lib/aarch64-linux-gnu/libavdevice.so
+FFMPEG_libavdevice_LIBRARY_DIRS=/usr/lib/aarch64-linux-gnu
 FFMPEG_libavdevice_LIBS=
 FFMPEG_libavdevice_LIBS_L=
 FFMPEG_libavdevice_LIBS_OTHER=
 FFMPEG_libavdevice_LIBS_PATHS=
-FFMPEG_libavdevice_MODULE_NAME=
-FFMPEG_libavdevice_PREFIX=
-FFMPEG_libavdevice_STATIC_CFLAGS=
+FFMPEG_libavdevice_LINK_LIBRARIES=/usr/lib/aarch64-linux-gnu/libavdevice.so
+FFMPEG_libavdevice_MODULE_NAME=libavdevice
+FFMPEG_libavdevice_PREFIX=/usr
+FFMPEG_libavdevice_STATIC_CFLAGS=-I/usr/include/aarch64-linux-gnu
 FFMPEG_libavdevice_STATIC_CFLAGS_I=
 FFMPEG_libavdevice_STATIC_CFLAGS_OTHER=
+FFMPEG_libavdevice_STATIC_INCLUDE_DIRS=/usr/include/aarch64-linux-gnu
+FFMPEG_libavdevice_STATIC_LDFLAGS=-L/usr/lib/aarch64-linux-gnu;-lavdevice;-lm;-latomic;-lraw1394;-lavc1394;-lrom1394;-liec61883;-ljack;-ldrm;-lopenal;-lxcb;-lxcb-shm;-lxcb-shape;-lxcb-xfixes;-lcdio_paranoia;-lcdio_cdda;-lcdio;-lm;-ldc1394;-lasound;-lcaca;-lpulse;-pthread;-lsndio;-lv4l2;-lXv;-lX11;-lXext;-L/usr/lib/aarch64-linux-gnu;-lavfilter;-pthread;-lm;-latomic;-lpocketsphinx;-lsphinxbase;-lsphinxad;-lbs2b;-llilv-0;-lrubberband;-lfftw3;-lsamplerate;-lstdc++;-lmysofa;-lflite_cmu_time_awb;-lflite_cmu_us_awb;-lflite_cmu_us_kal;-lflite_cmu_us_kal16;-lflite_cmu_us_rms;-lflite_cmu_us_slt;-lflite_usenglish;-lflite_cmulex;-lflite;-lnvbufsurface;-lass;-lva;-lvidstab;-lm;-lgomp;-lzmq;-lzimg;-lOpenCL;-lfontconfig;-lfreetype;-lfreetype;-L/usr/lib/aarch64-linux-gnu;-lm;-latomic;-L/usr/lib/aarch64-linux-gnu;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lm;-latomic;-lxml2;-lbz2;-lgme;-lopenmpt;-lstdc++;-lchromaprint;-lbluray;-lz;-lgnutls;-lrabbitmq;-lsrt-gnutls;-lssh;-lzmq;-L/usr/lib/aarch64-linux-gnu;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lwebpmux;-lm;-latomic;-llzma;-ldav1d;-lrsvg-2;-lm;-lgio-2.0;-lgdk_pixbuf-2.0;-lgobject-2.0;-lglib-2.0;-lcairo;-lzvbi;-lpthread;-lm;-lpng;-lz;-lnvbufsurface;-lnvbufsurftransform;-lv4l2;-lsnappy;-lstdc++;-lnvjpeg;-laom;-lcodec2;-lgsm;-lmp3lame;-lm;-lopenjp2;-lopus;-lm;-lshine;-lspeex;-ltheoraenc;-ltheoradec;-logg;-ltwolame;-lvorbis;-lvorbisenc;-lwebp;-lx264;-lx265;-lxvidcore;-lnvbufsurface;-lz;-lva;-pthread;-L/usr/lib/aarch64-linux-gnu;-lm;-lsoxr;-latomic;-L/usr/lib/aarch64-linux-gnu;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lswresample;-lm;-lsoxr;-latomic;-L/usr/lib/aarch64-linux-gnu;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavcodec;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lwebpmux;-lm;-latomic;-llzma;-ldav1d;-lrsvg-2;-lm;-lgio-2.0;-lgdk_pixbuf-2.0;-lgobject-2.0;-lglib-2.0;-lcairo;-lzvbi;-lpthread;-lm;-lpng;-lz;-lnvbufsurface;-lnvbufsurftransform;-lv4l2;-lsnappy;-lstdc++;-lnvjpeg;-laom;-lcodec2;-lgsm;-lmp3lame;-lm;-lopenjp2;-lopus;-lm;-lshine;-lspeex;-ltheoraenc;-ltheoradec;-logg;-ltwolame;-lvorbis;-lvorbisenc;-lwebp;-lx264;-lx265;-lxvidcore;-lnvbufsurface;-lz;-lva;-pthread;-L/usr/lib/aarch64-linux-gnu;-lm;-lsoxr;-latomic;-L/usr/lib/aarch64-linux-gnu;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lswresample;-lm;-lsoxr;-latomic;-L/usr/lib/aarch64-linux-gnu;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lswscale;-lm;-latomic;-L/usr/lib/aarch64-linux-gnu;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavformat;-lm;-latomic;-lxml2;-lbz2;-lgme;-lopenmpt;-lstdc++;-lchromaprint;-lbluray;-lz;-lgnutls;-lrabbitmq;-lsrt-gnutls;-lssh;-lzmq;-L/usr/lib/aarch64-linux-gnu;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lwebpmux;-lm;-latomic;-llzma;-ldav1d;-lrsvg-2;-lm;-lgio-2.0;-lgdk_pixbuf-2.0;-lgobject-2.0;-lglib-2.0;-lcairo;-lzvbi;-lpthread;-lm;-lpng;-lz;-lnvbufsurface;-lnvbufsurftransform;-lv4l2;-lsnappy;-lstdc++;-lnvjpeg;-laom;-lcodec2;-lgsm;-lmp3lame;-lm;-lopenjp2;-lopus;-lm;-lshine;-lspeex;-ltheoraenc;-ltheoradec;-logg;-ltwolame;-lvorbis;-lvorbisenc;-lwebp;-lx264;-lx265;-lxvidcore;-lnvbufsurface;-lz;-lva;-pthread;-L/usr/lib/aarch64-linux-gnu;-lm;-lsoxr;-latomic;-L/usr/lib/aarch64-linux-gnu;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lswresample;-lm;-lsoxr;-latomic;-L/usr/lib/aarch64-linux-gnu;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavcodec;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lwebpmux;-lm;-latomic;-llzma;-ldav1d;-lrsvg-2;-lm;-lgio-2.0;-lgdk_pixbuf-2.0;-lgobject-2.0;-lglib-2.0;-lcairo;-lzvbi;-lpthread;-lm;-lpng;-lz;-lnvbufsurface;-lnvbufsurftransform;-lv4l2;-lsnappy;-lstdc++;-lnvjpeg;-laom;-lcodec2;-lgsm;-lmp3lame;-lm;-lopenjp2;-lopus;-lm;-lshine;-lspeex;-ltheoraenc;-ltheoradec;-logg;-ltwolame;-lvorbis;-lvorbisenc;-lwebp;-lx264;-lx265;-lxvidcore;-lnvbufsurface;-lz;-lva;-pthread;-L/usr/lib/aarch64-linux-gnu;-lm;-lsoxr;-latomic;-L/usr/lib/aarch64-linux-gnu;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lswresample;-lm;-lsoxr;-latomic;-L/usr/lib/aarch64-linux-gnu;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11
+FFMPEG_libavdevice_STATIC_LDFLAGS_OTHER=-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread
 FFMPEG_libavdevice_STATIC_LIBDIR=
+FFMPEG_libavdevice_STATIC_LIBRARIES=avdevice;m;atomic;raw1394;avc1394;rom1394;iec61883;jack;drm;openal;xcb;xcb-shm;xcb-shape;xcb-xfixes;cdio_paranoia;cdio_cdda;cdio;m;dc1394;asound;caca;pulse;sndio;v4l2;Xv;X11;Xext;avfilter;m;atomic;pocketsphinx;sphinxbase;sphinxad;bs2b;lilv-0;rubberband;fftw3;samplerate;stdc++;mysofa;flite_cmu_time_awb;flite_cmu_us_awb;flite_cmu_us_kal;flite_cmu_us_kal16;flite_cmu_us_rms;flite_cmu_us_slt;flite_usenglish;flite_cmulex;flite;nvbufsurface;ass;va;vidstab;m;gomp;zmq;zimg;OpenCL;fontconfig;freetype;freetype;m;atomic;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;m;atomic;xml2;bz2;gme;openmpt;stdc++;chromaprint;bluray;z;gnutls;rabbitmq;srt-gnutls;ssh;zmq;vpx;m;vpx;m;vpx;m;vpx;m;webpmux;m;atomic;lzma;dav1d;rsvg-2;m;gio-2.0;gdk_pixbuf-2.0;gobject-2.0;glib-2.0;cairo;zvbi;pthread;m;png;z;nvbufsurface;nvbufsurftransform;v4l2;snappy;stdc++;nvjpeg;aom;codec2;gsm;mp3lame;m;openjp2;opus;m;shine;speex;theoraenc;theoradec;ogg;twolame;vorbis;vorbisenc;webp;x264;x265;xvidcore;nvbufsurface;z;va;m;soxr;atomic;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;swresample;m;soxr;atomic;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avcodec;vpx;m;vpx;m;vpx;m;vpx;m;webpmux;m;atomic;lzma;dav1d;rsvg-2;m;gio-2.0;gdk_pixbuf-2.0;gobject-2.0;glib-2.0;cairo;zvbi;pthread;m;png;z;nvbufsurface;nvbufsurftransform;v4l2;snappy;stdc++;nvjpeg;aom;codec2;gsm;mp3lame;m;openjp2;opus;m;shine;speex;theoraenc;theoradec;ogg;twolame;vorbis;vorbisenc;webp;x264;x265;xvidcore;nvbufsurface;z;va;m;soxr;atomic;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;swresample;m;soxr;atomic;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;swscale;m;atomic;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avformat;m;atomic;xml2;bz2;gme;openmpt;stdc++;chromaprint;bluray;z;gnutls;rabbitmq;srt-gnutls;ssh;zmq;vpx;m;vpx;m;vpx;m;vpx;m;webpmux;m;atomic;lzma;dav1d;rsvg-2;m;gio-2.0;gdk_pixbuf-2.0;gobject-2.0;glib-2.0;cairo;zvbi;pthread;m;png;z;nvbufsurface;nvbufsurftransform;v4l2;snappy;stdc++;nvjpeg;aom;codec2;gsm;mp3lame;m;openjp2;opus;m;shine;speex;theoraenc;theoradec;ogg;twolame;vorbis;vorbisenc;webp;x264;x265;xvidcore;nvbufsurface;z;va;m;soxr;atomic;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;swresample;m;soxr;atomic;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avcodec;vpx;m;vpx;m;vpx;m;vpx;m;webpmux;m;atomic;lzma;dav1d;rsvg-2;m;gio-2.0;gdk_pixbuf-2.0;gobject-2.0;glib-2.0;cairo;zvbi;pthread;m;png;z;nvbufsurface;nvbufsurftransform;v4l2;snappy;stdc++;nvjpeg;aom;codec2;gsm;mp3lame;m;openjp2;opus;m;shine;speex;theoraenc;theoradec;ogg;twolame;vorbis;vorbisenc;webp;x264;x265;xvidcore;nvbufsurface;z;va;m;soxr;atomic;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;swresample;m;soxr;atomic;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11
+FFMPEG_libavdevice_STATIC_LIBRARY_DIRS=/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu
 FFMPEG_libavdevice_STATIC_LIBS=
 FFMPEG_libavdevice_STATIC_LIBS_L=
 FFMPEG_libavdevice_STATIC_LIBS_OTHER=
 FFMPEG_libavdevice_STATIC_LIBS_PATHS=
-FFMPEG_libavdevice_VERSION=
+FFMPEG_libavdevice_VERSION=62.1.100
+FFMPEG_libavdevice_libavdevice_FOUND=1
 FFMPEG_libavdevice_libavdevice_INCLUDEDIR=
 FFMPEG_libavdevice_libavdevice_LIBDIR=
 FFMPEG_libavdevice_libavdevice_PREFIX=
@@ -1175,15 +2091,15 @@ FFMPEG_libswscale_PREFIX=/usr
 FFMPEG_libswscale_VERSION=7.5.100
 FIND_PACKAGE_MESSAGE_DETAILS_BLAS=[/usr/lib/aarch64-linux-gnu/libblas.so;/usr/lib/aarch64-linux-gnu/libf77blas.so;/usr/lib/aarch64-linux-gnu/libatlas.so][v()]
 FIND_PACKAGE_MESSAGE_DETAILS_CUDNN=[/usr/lib/aarch64-linux-gnu/libcudnn.so][/usr/include/aarch64-linux-gnu][v9.20.0(7.5)]
-FIND_PACKAGE_MESSAGE_DETAILS_HDF5=[/usr/lib/aarch64-linux-gnu/hdf5/serial/libhdf5.so;/usr/lib/aarch64-linux-gnu/libcrypto.so;/usr/lib/aarch64-linux-gnu/libcurl.so;/usr/lib/aarch64-linux-gnu/libpthread.a;/usr/lib/aarch64-linux-gnu/libsz.so;/usr/lib/aarch64-linux-gnu/libz.so;/usr/lib/aarch64-linux-gnu/libdl.a;/usr/lib/aarch64-linux-gnu/libm.so][c ][v1.10.10()]
+FIND_PACKAGE_MESSAGE_DETAILS_HDF5=[/usr/lib/aarch64-linux-gnu/hdf5/serial/libhdf5.so;/usr/lib/aarch64-linux-gnu/libcrypto.so;/usr/lib/aarch64-linux-gnu/libcurl.so;/usr/lib/aarch64-linux-gnu/libpthread.a;/usr/lib/aarch64-linux-gnu/libsz.so;/usr/lib/aarch64-linux-gnu/libz.so;/usr/lib/aarch64-linux-gnu/libdl.a;/usr/lib/aarch64-linux-gnu/libm.so][ ][v1.10.10()]
 FIND_PACKAGE_MESSAGE_DETAILS_JPEG=[/usr/lib/aarch64-linux-gnu/libjpeg.so][/usr/include][v80()]
 FIND_PACKAGE_MESSAGE_DETAILS_LAPACK=[/usr/lib/aarch64-linux-gnu/liblapack.so;/usr/lib/aarch64-linux-gnu/libblas.so;/usr/lib/aarch64-linux-gnu/libf77blas.so;/usr/lib/aarch64-linux-gnu/libatlas.so][v()]
 FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp=[/usr/bin/python3][v3.12.3(3.2)]
 FIND_PACKAGE_MESSAGE_DETAILS_PythonLibs=[/usr/lib/aarch64-linux-gnu/libpython3.12.so][/usr/include/python3.12/][v3.12.3(3.12.3)]
-FIND_PACKAGE_MESSAGE_DETAILS_TIFF=[/usr/lib/aarch64-linux-gnu/libtiff.so][/usr/include/aarch64-linux-gnu][c ][v4.5.1()]
+FIND_PACKAGE_MESSAGE_DETAILS_TIFF=[/usr/lib/aarch64-linux-gnu/libtiff.so][/usr/include/aarch64-linux-gnu][ ][v4.5.1()]
 FIND_PACKAGE_MESSAGE_DETAILS_Threads=[TRUE][v()]
 FIND_PACKAGE_MESSAGE_DETAILS_WebP=[/usr/lib/aarch64-linux-gnu/libwebp.so][/usr/include][v()]
-FIND_PACKAGE_MESSAGE_DETAILS_ZLIB=[/usr/lib/aarch64-linux-gnu/libz.so][/usr/include][c ][v1.3(1.2.3)]
+FIND_PACKAGE_MESSAGE_DETAILS_ZLIB=[/usr/lib/aarch64-linux-gnu/libz.so][/usr/include][ ][v1.3(1.2.3)]
 FIXED_ORDER_MODULES=core;imgproc;imgcodecs;videoio;highgui;video;3d;stereo;features;calib;objdetect;dnn;ml;flann;photo;stitching
 FREETYPE_CFLAGS=-I/usr/include/freetype2;-I/usr/include;-I/usr/include/libpng16
 FREETYPE_CFLAGS_I=
@@ -1551,6 +2467,7 @@ GTKGLEXT_gtkglext-1.0_PREFIX=
 GTKGLEXT_gtkglext-1.0_VERSION=
 Gflags_DIR=/usr/lib/aarch64-linux-gnu/cmake/gflags
 Git_FOUND=TRUE
+Git_VERSION=2.43.0
 Glog_DIR=/usr/lib/aarch64-linux-gnu/cmake/glog
 HARFBUZZ_CFLAGS=-I/usr/include/harfbuzz;-I/usr/include/freetype2;-I/usr/include;-I/usr/include/libpng16;-I/usr/include/glib-2.0;-I/usr/lib/aarch64-linux-gnu/glib-2.0/include
 HARFBUZZ_CFLAGS_I=
@@ -1773,6 +2690,8 @@ HAVE_DL_LIBRARY=1
 HAVE_EIGEN=1
 HAVE_ELF_AUX_INFO=
 HAVE_FFMPEG=TRUE
+HAVE_FFMPEG_LIBAVDEVICE=TRUE
+HAVE_FFMPEG_libavdevice=1
 HAVE_FLATBUFFERS=1
 HAVE_FLOAT_H=1
 HAVE_GCD=0
@@ -2235,6 +3154,8 @@ MLAS_S390X=FALSE
 MLAS_WASM=FALSE
 MLAS_X86=FALSE
 MLAS_X86_64=FALSE
+MSVC_CXX_ARCHITECTURE_ID=
+MSVC_C_ARCHITECTURE_ID=
 NVCC_FLAGS_EXTRA=-gencode;arch=compute_87,code=sm_87;-D_FORCE_INLINES
 OBSENSOR_USE_ORBBEC_SDK=OFF
 OCV_CAN_BUILD_OPENJPEG=TRUE
@@ -3442,7 +4363,7 @@ OPENCV_MODULE_opencv_datasets_SOURCES=/home/nerdstar/NerdStar/backend/opencv/ope
 OPENCV_MODULE_opencv_datasets_WRAPPERS=python
 OPENCV_MODULE_opencv_dnn_BINARY_DIR=/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn
 OPENCV_MODULE_opencv_dnn_CLASS=PUBLIC
-OPENCV_MODULE_opencv_dnn_COMPILE_OPTIONS=PRIVATE;-ffast-math;PRIVATE;-fno-finite-math-only;PRIVATE;-ffast-math;PRIVATE;-fno-finite-math-only
+OPENCV_MODULE_opencv_dnn_COMPILE_OPTIONS=PRIVATE;-ffast-math;PRIVATE;-fno-finite-math-only;PRIVATE;-ffast-math;PRIVATE;-fno-finite-math-only;PRIVATE;-ffast-math;PRIVATE;-fno-finite-math-only
 OPENCV_MODULE_opencv_dnn_CUDA_OBJECTS=/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_activation_eltwise.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_activations.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_bias_activation.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_bias_activation_eltwise.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_bias_eltwise_activation.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_concat.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_crop_and_resize.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_detection_output.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_eltwise_activation.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_eltwise_ops.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_fill_copy.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_fp_conversion.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_grid_nms.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_max_unpooling.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_mvn.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_normalize.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_padding.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_permute.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_prior_box.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_region.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_resize.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_roi_pooling.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_scale_shift.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_shortcut.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_slice.cu.o
 OPENCV_MODULE_opencv_dnn_DEPS=opencv_cudev;opencv_core;opencv_flann;opencv_geometry;opencv_imgproc
 OPENCV_MODULE_opencv_dnn_DEPS_EXT=
@@ -4582,8 +5503,10 @@ OPENGL_FOUND=TRUE
 OPENGL_GLES2_INCLUDE_DIR=/usr/include
 OPENGL_GLES3_INCLUDE_DIR=/usr/include
 OPENGL_GLU_FOUND=YES
+OPENGL_GLU_INCLUDE_DIR=/usr/include
 OPENGL_GLX_INCLUDE_DIR=/usr/include
 OPENGL_INCLUDE_DIR=/usr/include
+OPENGL_INCLUDE_DIRS=/usr/include
 OPENGL_INCLUDE_PATH=/usr/include
 OPENGL_LIBRARIES=/usr/lib/aarch64-linux-gnu/libGL.so;/usr/lib/aarch64-linux-gnu/libGLU.so
 OPENGL_LIBRARY=/usr/lib/aarch64-linux-gnu/libGL.so;/usr/lib/aarch64-linux-gnu/libGLU.so
@@ -4616,6 +5539,7 @@ OpenBLAS_DIR=OpenBLAS_DIR-NOTFOUND
 OpenBLAS_LAPACKE_DIR=OpenBLAS_LAPACKE_DIR-NOTFOUND
 OpenCVModules_TARGETS=opencv_cudev;opencv_core;opencv_cudaarithm;opencv_flann;opencv_geometry;opencv_hdf;opencv_imgproc;opencv_intensity_transform;opencv_ml;opencv_phase_unwrapping;opencv_plot;opencv_ptcloud;opencv_quality;opencv_rapid;opencv_reg;opencv_rgbd;opencv_shape;opencv_signal;opencv_stereo;opencv_surface_matching;opencv_alphamat;opencv_cudafilters;opencv_cudaimgproc;opencv_cudastereo;opencv_cudawarping;opencv_dnn;opencv_dnn_superres;opencv_features;opencv_freetype;opencv_fuzzy;opencv_hfs;opencv_img_hash;opencv_imgcodecs;opencv_line_descriptor;opencv_objdetect;opencv_photo;opencv_saliency;opencv_text;opencv_video;opencv_videoio;opencv_wechat_qrcode;opencv_xfeatures2d;opencv_ximgproc;opencv_xobjdetect;opencv_xphoto;opencv_bgsegm;opencv_calib;opencv_cudabgsegm;opencv_cudacodec;opencv_cudafeatures2d;opencv_cudalegacy;opencv_cudaobjdetect;opencv_datasets;opencv_face;opencv_gapi;opencv_highgui;opencv_optflow;opencv_sfm;opencv.sfm.correspondence;opencv.sfm.multiview;opencv.sfm.numeric;opencv_stitching;opencv_structured_light;opencv_tracking;opencv_xstereo;opencv_bioinspired;opencv_ccalib;opencv_cudaoptflow;opencv_dnn_objdetect;opencv_dpm;opencv_superres;opencv_videostab
 OpenCV_BINARY_DIR=/home/nerdstar/NerdStar/backend/opencv/opencv_build
+OpenCV_COMPAT_VERSION=
 OpenCV_CUDA_CC=-gencode;arch=compute_87,code=sm_87;-D_FORCE_INLINES
 OpenCV_DESCRIPTION=
 OpenCV_HAL=carotene;kleidicv;OpenCV_HAL
@@ -4628,6 +5552,7 @@ OpenCV_INCLUDE_DIRS_CONFIGCMAKE="${OpenCV_INSTALL_PATH}/include/opencv5"
 OpenCV_INSTALL_PATH_RELATIVE_CONFIGCMAKE=../../../
 OpenCV_IS_TOP_LEVEL=ON
 OpenCV_SOURCE_DIR=/home/nerdstar/NerdStar/backend/opencv/opencv
+OpenCV_SPDX_LICENSE=
 OpenCV_STATIC=OFF
 OpenCV_USED_HAL=carotene (ver 0.0.1);KleidiCV (ver 26.03)
 OpenCV_USE_MANGLED_PATHS_CONFIGCMAKE=FALSE
@@ -4649,12 +5574,13 @@ OpenGL_GLES3_FOUND=TRUE
 OpenGL_GLX_FOUND=TRUE
 OpenGL_GL_PREFERENCE=LEGACY
 OpenGL_OpenGL_FOUND=TRUE
+OpenGL_glx_LIBRARY=/usr/lib/aarch64-linux-gnu/libGL.so
+OpenGL_opengl_LIBRARY=/usr/lib/aarch64-linux-gnu/libGL.so
 OpenJPEG_CONSIDERED_CONFIGS=
 OpenJPEG_CONSIDERED_VERSIONS=
 OpenJPEG_DIR=OpenJPEG_DIR-NOTFOUND
 OpenJPEG_FOUND=0
 P2=lib/python3.12/dist-packages
-PACKAGE_PREFIX_DIR=/usr
 PARALLEL_ENABLE_PLUGINS=ON
 PCHSupport_FOUND=TRUE
 PKGCONFIG_FOUND=TRUE
@@ -4672,13 +5598,16 @@ PNG_LIBRARY=/usr/lib/aarch64-linux-gnu/libpng.so
 PNG_LIBRARY_DEBUG=PNG_LIBRARY_DEBUG-NOTFOUND
 PNG_LIBRARY_RELEASE=/usr/lib/aarch64-linux-gnu/libpng.so
 PNG_PNG_INCLUDE_DIR=/usr/include
+PNG_VERSION=1.6.43
 PNG_VERSION_STRING=1.6.43
 PROJECT_BINARY_DIR=/home/nerdstar/NerdStar/backend/opencv/opencv_build
+PROJECT_COMPAT_VERSION=
 PROJECT_DESCRIPTION=
 PROJECT_HOMEPAGE_URL=
 PROJECT_IS_TOP_LEVEL=ON
 PROJECT_NAME=OpenCV
 PROJECT_SOURCE_DIR=/home/nerdstar/NerdStar/backend/opencv/opencv
+PROJECT_SPDX_LICENSE=
 PROTOBUF_UPDATE_FILES=OFF
 PTHREAD_C_CXX_TEST_SOURCE=#include <pthread.h>
 
@@ -4722,6 +5651,7 @@ PYTHON_DEFAULT_AVAILABLE=TRUE
 PYTHON_DEFAULT_EXECUTABLE=/usr/bin/python3
 PYTHON_DEFAULT_VERSION=3.12.3
 PkgConfig_FOUND=TRUE
+PkgConfig_VERSION=1.8.1
 Protobuf_LIBRARIES=libprotobuf
 Protobuf_VERSION=3.19.1
 RUN_CONFIGURE=ON
@@ -4751,15 +5681,15 @@ TIFF_VERSION_LINES=#define TIFF_VERSION_CLASSIC 42;#define TIFF_VERSION_BIG 43
 TIFF_VERSION_STRING=4.5.1
 TRY_OUT=Change Dir: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
 
-Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_6ba17/fast
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_1118c/fast
 gmake[1]: Entering directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
-/usr/bin/gmake  -f CMakeFiles/cmTC_6ba17.dir/build.make CMakeFiles/cmTC_6ba17.dir/build
+/usr/bin/gmake  -f CMakeFiles/cmTC_1118c.dir/build.make CMakeFiles/cmTC_1118c.dir/build
 gmake[2]: Entering directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_6ba17.dir/ffmpeg_test.cpp.o
-/usr/bin/c++   -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wuninitialized -Wsuggest-override -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -fvisibility=hidden -fvisibility-inlines-hidden  -O3 -DNDEBUG  -DNDEBUG -std=c++17 -fPIE -o CMakeFiles/cmTC_6ba17.dir/ffmpeg_test.cpp.o -c /home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/ffmpeg_test.cpp
-Linking CXX executable cmTC_6ba17
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6ba17.dir/link.txt --verbose=1
-/usr/bin/c++    -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wuninitialized -Wsuggest-override -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -fvisibility=hidden -fvisibility-inlines-hidden  -O3 -DNDEBUG  -DNDEBUG   -Wl,--gc-sections -Wl,--as-needed -Wl,--no-undefined  CMakeFiles/cmTC_6ba17.dir/ffmpeg_test.cpp.o -o cmTC_6ba17  /usr/lib/aarch64-linux-gnu/libavcodec.so /usr/lib/aarch64-linux-gnu/libavformat.so /usr/lib/aarch64-linux-gnu/libavutil.so /usr/lib/aarch64-linux-gnu/libswscale.so 
+Building CXX object CMakeFiles/cmTC_1118c.dir/ffmpeg_test.cpp.o
+/usr/bin/c++   -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wuninitialized -Wsuggest-override -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -fvisibility=hidden -fvisibility-inlines-hidden  -O3 -DNDEBUG  -DNDEBUG -std=c++17 -fPIE -o CMakeFiles/cmTC_1118c.dir/ffmpeg_test.cpp.o -c /home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/ffmpeg_test.cpp
+Linking CXX executable cmTC_1118c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1118c.dir/link.txt --verbose=1
+/usr/bin/c++    -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wuninitialized -Wsuggest-override -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -fvisibility=hidden -fvisibility-inlines-hidden  -O3 -DNDEBUG  -DNDEBUG   -Wl,--gc-sections -Wl,--as-needed -Wl,--no-undefined  CMakeFiles/cmTC_1118c.dir/ffmpeg_test.cpp.o -o cmTC_1118c  /usr/lib/aarch64-linux-gnu/libavcodec.so /usr/lib/aarch64-linux-gnu/libavformat.so /usr/lib/aarch64-linux-gnu/libavutil.so /usr/lib/aarch64-linux-gnu/libswscale.so /usr/lib/aarch64-linux-gnu/libavdevice.so
 gmake[2]: Leaving directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
 gmake[1]: Leaving directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
 
@@ -4795,6 +5725,10 @@ Tesseract_tesseract_LIBDIR=
 Tesseract_tesseract_PREFIX=
 Tesseract_tesseract_VERSION=
 Threads_FOUND=TRUE
+Tiff_CONSIDERED_CONFIGS=
+Tiff_CONSIDERED_VERSIONS=
+Tiff_DIR=Tiff_DIR-NOTFOUND
+Tiff_FOUND=0
 UNIX=1
 USE_FASTCV=FALSE
 USE_IPPICV=FALSE
@@ -4919,31 +5853,36 @@ ZLIB_VERSION_STRING=1.3
 ZLIB_VERSION_TWEAK=
 _=define CUDNN_PATCHLEVEL 0
 _3rdparty=
+_ASM_COMPILER_WORKS=1
+_CMAKE_ASM_CMP0194=
 _CMAKE_ASM_IPO_MAY_BE_SUPPORTED_BY_COMPILER=NO
 _CMAKE_ASM_IPO_SUPPORTED_BY_CMAKE=YES
 _CMAKE_ASM_PIE_MAY_BE_SUPPORTED_BY_LINKER=NO
 _CMAKE_CUDA_IMPLICIT_INCLUDE_DIRECTORIES_INIT=/usr/include
-_CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES_INIT=/usr/include/c++/13;/usr/include/aarch64-linux-gnu/c++/13;/usr/include/c++/13/backward;/usr/lib/gcc/aarch64-linux-gnu/13/include;/usr/local/include;/usr/include/aarch64-linux-gnu;/usr/include;/usr/include
+_CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES_INIT=/usr/include
 _CMAKE_CXX_IPO_MAY_BE_SUPPORTED_BY_COMPILER=YES
 _CMAKE_CXX_IPO_SUPPORTED_BY_CMAKE=YES
 _CMAKE_CXX_PIE_MAY_BE_SUPPORTED_BY_LINKER=YES
-_CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES_INIT=/usr/lib/gcc/aarch64-linux-gnu/13/include;/usr/local/include;/usr/include/aarch64-linux-gnu;/usr/include;/usr/include
+_CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES_INIT=/usr/include
 _CMAKE_C_IPO_MAY_BE_SUPPORTED_BY_COMPILER=YES
 _CMAKE_C_IPO_SUPPORTED_BY_CMAKE=YES
 _CMAKE_C_PIE_MAY_BE_SUPPORTED_BY_LINKER=YES
 _CMAKE_INSTALL_DIR=/usr
 _CMAKE_Imath_5f23ab404189a37d8cfbacff463f569d802a04c1a51158d71e72d52c46d6afb8_FOUND=1
-_CMAKE_Imath_HASH_STACK=
 _CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED=TRUE
 _CMAKE_SYSTEM_PREFIX_PATH_INSTALL_PREFIX_COUNT=2
 _CMAKE_SYSTEM_PREFIX_PATH_INSTALL_PREFIX_VALUE=/usr/local
 _CMAKE_SYSTEM_PREFIX_PATH_STAGING_PREFIX_COUNT=0
 _CMAKE_SYSTEM_PREFIX_PATH_STAGING_PREFIX_VALUE=
+_CMAKE_TOOLCHAIN_LOCATION=/usr/bin
 _CMAKE_Threads_0562a364433150cad4f895d584ad758bdc4015a51ed571d9db2fb467c7c7955a_FOUND=TRUE
-_CMAKE_Threads_HASH_STACK=
+_CMAKE_USER_ASM_COMPILER_PATH=/usr/bin
+_CMAKE_USER_CXX_COMPILER_PATH=/usr/bin
+_CMAKE_USER_C_COMPILER_PATH=/usr/bin
 _CMAKE_ZLIB_7935eb5e131f70520288b4c8e2f13bf6ff3abe9a246a70d9a309e40b33bb597f_FOUND=TRUE
-_CMAKE_ZLIB_HASH_STACK=
 _CPACK_OTHER_VARIABLES_=
+set(CPACK_ARCHIVE_GID "-1")
+set(CPACK_ARCHIVE_UID "-1")
 set(CPACK_BINARY_DEB "OFF")
 set(CPACK_BINARY_FREEBSD "OFF")
 set(CPACK_BINARY_IFW "OFF")
@@ -5011,7 +5950,7 @@ set(CPACK_DEB_COMPONENT_INSTALL "TRUE")
 set(CPACK_DEB_DEV_PACKAGE_DEPENDS "libtbb-dev")
 set(CPACK_DEB_dev_PACKAGE_DEPENDS "cuda-cudart-dev-13-2, cuda-npp-dev-13-2, cuda-cufft-dev-13-2, cuda-cublas-dev-13-2")
 set(CPACK_DEB_libs_PACKAGE_DEPENDS "cuda-cudart-13-2, cuda-npp-13-2, cuda-cufft-13-2, cuda-cublas-13-2")
-set(CPACK_DEFAULT_PACKAGE_DESCRIPTION_FILE "/usr/share/cmake-3.28/Templates/CPack.GenericDescription.txt")
+set(CPACK_DEFAULT_PACKAGE_DESCRIPTION_FILE "/usr/share/cmake-4.3/Templates/CPack.GenericDescription.txt")
 set(CPACK_DEFAULT_PACKAGE_DESCRIPTION_SUMMARY "OpenCV built using CMake")
 set(CPACK_DMG_SLA_USE_RESOURCE_FILE_LICENSE "ON")
 set(CPACK_GENERATOR "TBZ2;TGZ;TXZ;TZ")
@@ -5037,7 +5976,7 @@ and machine learning software library. OpenCV was built to provide a common
 infrastructure for computer vision applications and to accelerate the use of
 machine perception in the commercial products. Being a Apache 2.0 -licensed product,
 OpenCV makes it easy for businesses to utilize and modify the code.")
-set(CPACK_PACKAGE_DESCRIPTION_FILE "/usr/share/cmake-3.28/Templates/CPack.GenericDescription.txt")
+set(CPACK_PACKAGE_DESCRIPTION_FILE "/usr/share/cmake-4.3/Templates/CPack.GenericDescription.txt")
 set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Open Computer Vision Library")
 set(CPACK_PACKAGE_FILE_NAME "OpenCV-5.0.0-71-g4ce2389a62-aarch64")
 set(CPACK_PACKAGE_INSTALL_DIRECTORY "OpenCV 5.0.0-71-g4ce2389a62")
@@ -5051,8 +5990,8 @@ set(CPACK_PACKAGE_VERSION_MINOR "1")
 set(CPACK_PACKAGE_VERSION_PATCH "0")
 set(CPACK_READELF_EXECUTABLE "/usr/bin/readelf")
 set(CPACK_RESOURCE_FILE_LICENSE "/home/nerdstar/NerdStar/backend/opencv/opencv/LICENSE")
-set(CPACK_RESOURCE_FILE_README "/usr/share/cmake-3.28/Templates/CPack.GenericDescription.txt")
-set(CPACK_RESOURCE_FILE_WELCOME "/usr/share/cmake-3.28/Templates/CPack.GenericWelcome.txt")
+set(CPACK_RESOURCE_FILE_README "/usr/share/cmake-4.3/Templates/CPack.GenericDescription.txt")
+set(CPACK_RESOURCE_FILE_WELCOME "/usr/share/cmake-4.3/Templates/CPack.GenericWelcome.txt")
 set(CPACK_RPM_COMPONENT_INSTALL "TRUE")
 set(CPACK_RPM_PACKAGE_ARCHITECTURE "aarch64")
 set(CPACK_RPM_PACKAGE_DESCRIPTION "OpenCV (Open Source Computer Vision Library) is an open source computer vision
@@ -5087,14 +6026,14 @@ _CUDA_MAX_COMMON_ARCHITECTURE=8.6+PTX
 _FIND_ZLIB_ARG=QUIET
 _FindCUDA_CMP0146=OLD
 _GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX=/usr/local
-_INCLUDED_FILE=NOTFOUND
-_INCLUDED_SYSTEM_INFO_FILE=/usr/share/cmake-3.28/Modules/Platform/Linux.cmake
+_INCLUDED_FILE=0
+_INCLUDED_SYSTEM_INFO_FILE=/usr/share/cmake-4.3/Modules/Platform/Linux.cmake
 _IN_TC=0
 _JAVA_HOME=
 _JAVA_PATHS=/usr/lib/java/bin;/usr/share/java/bin;/usr/local/java/bin;/usr/local/java/share/bin;/usr/java/j2sdk1.4.2_04;/usr/lib/j2sdk1.4-sun/bin;/usr/java/j2sdk1.4.2_09/bin;/usr/lib/j2sdk1.5-sun/bin;/opt/sun-jdk-1.5.0.04/bin;/usr/local/jdk-1.7.0/bin;/usr/local/jdk-1.6.0/bin
-_JNI_JAVA_AWT_LIBRARY_TRIES=/usr/lib/jvm/java/jre/lib/{libarch};/usr/lib/jvm/java/jre/lib;/usr/lib/jvm/java/lib/{libarch};/usr/lib/jvm/java/lib;/usr/lib/jvm/java;/usr/lib/java/jre/lib/{libarch};/usr/lib/java/jre/lib;/usr/lib/java/lib/{libarch};/usr/lib/java/lib;/usr/lib/java;/usr/lib/jvm/jre/lib/{libarch};/usr/lib/jvm/jre/lib;/usr/lib/jvm/lib/{libarch};/usr/lib/jvm/lib;/usr/lib/jvm;/usr/local/lib/java/jre/lib/{libarch};/usr/local/lib/java/jre/lib;/usr/local/lib/java/lib/{libarch};/usr/local/lib/java/lib;/usr/local/lib/java;/usr/local/share/java/jre/lib/{libarch};/usr/local/share/java/jre/lib;/usr/local/share/java/lib/{libarch};/usr/local/share/java/lib;/usr/local/share/java;/usr/lib/j2sdk1.4-sun/jre/lib/{libarch};/usr/lib/j2sdk1.4-sun/jre/lib;/usr/lib/j2sdk1.4-sun/lib/{libarch};/usr/lib/j2sdk1.4-sun/lib;/usr/lib/j2sdk1.4-sun;/usr/lib/j2sdk1.5-sun/jre/lib/{libarch};/usr/lib/j2sdk1.5-sun/jre/lib;/usr/lib/j2sdk1.5-sun/lib/{libarch};/usr/lib/j2sdk1.5-sun/lib;/usr/lib/j2sdk1.5-sun;/opt/sun-jdk-1.5.0.04/jre/lib/{libarch};/opt/sun-jdk-1.5.0.04/jre/lib;/opt/sun-jdk-1.5.0.04/lib/{libarch};/opt/sun-jdk-1.5.0.04/lib;/opt/sun-jdk-1.5.0.04;/usr/lib/jvm/java-6-sun/jre/lib/{libarch};/usr/lib/jvm/java-6-sun/jre/lib;/usr/lib/jvm/java-6-sun/lib/{libarch};/usr/lib/jvm/java-6-sun/lib;/usr/lib/jvm/java-6-sun;/usr/lib/jvm/java-1.5.0-sun/jre/lib/{libarch};/usr/lib/jvm/java-1.5.0-sun/jre/lib;/usr/lib/jvm/java-1.5.0-sun/lib/{libarch};/usr/lib/jvm/java-1.5.0-sun/lib;/usr/lib/jvm/java-1.5.0-sun;/usr/lib/jvm/java-6-sun-1.6.0.00/jre/lib/{libarch};/usr/lib/jvm/java-6-sun-1.6.0.00/jre/lib;/usr/lib/jvm/java-6-sun-1.6.0.00/lib/{libarch};/usr/lib/jvm/java-6-sun-1.6.0.00/lib;/usr/lib/jvm/java-6-sun-1.6.0.00;/usr/lib/jvm/java-6-openjdk/jre/lib/{libarch};/usr/lib/jvm/java-6-openjdk/jre/lib;/usr/lib/jvm/java-6-openjdk/lib/{libarch};/usr/lib/jvm/java-6-openjdk/lib;/usr/lib/jvm/java-6-openjdk;/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0/jre/lib/{libarch};/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0/jre/lib;/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0/lib/{libarch};/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0/lib;/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0;/usr/lib/jvm/default-java/jre/lib/{libarch};/usr/lib/jvm/default-java/jre/lib;/usr/lib/jvm/default-java/lib/{libarch};/usr/lib/jvm/default-java/lib;/usr/lib/jvm/default-java;/usr/lib/jvm/default/jre/lib/{libarch};/usr/lib/jvm/default/jre/lib;/usr/lib/jvm/default/lib/{libarch};/usr/lib/jvm/default/lib;/usr/lib/jvm/default;/usr/lib/jvm/java-21-openjdk-{libarch}/jre/lib/{libarch};/usr/lib/jvm/java-21-openjdk-{libarch}/jre/lib;/usr/lib/jvm/java-21-openjdk-{libarch}/lib/{libarch};/usr/lib/jvm/java-21-openjdk-{libarch}/lib;/usr/lib/jvm/java-21-openjdk-{libarch};/usr/lib/jvm/java-20-openjdk-{libarch}/jre/lib/{libarch};/usr/lib/jvm/java-20-openjdk-{libarch}/jre/lib;/usr/lib/jvm/java-20-openjdk-{libarch}/lib/{libarch};/usr/lib/jvm/java-20-openjdk-{libarch}/lib;/usr/lib/jvm/java-20-openjdk-{libarch};/usr/lib/jvm/java-19-openjdk-{libarch}/jre/lib/{libarch};/usr/lib/jvm/java-19-openjdk-{libarch}/jre/lib;/usr/lib/jvm/java-19-openjdk-{libarch}/lib/{libarch};/usr/lib/jvm/java-19-openjdk-{libarch}/lib;/usr/lib/jvm/java-19-openjdk-{libarch};/usr/lib/jvm/java-18-openjdk-{libarch}/jre/lib/{libarch};/usr/lib/jvm/java-18-openjdk-{libarch}/jre/lib;/usr/lib/jvm/java-18-openjdk-{libarch}/lib/{libarch};/usr/lib/jvm/java-18-openjdk-{libarch}/lib;/usr/lib/jvm/java-18-openjdk-{libarch};/usr/lib/jvm/java-17-openjdk-{libarch}/jre/lib/{libarch};/usr/lib/jvm/java-17-openjdk-{libarch}/jre/lib;/usr/lib/jvm/java-17-openjdk-{libarch}/lib/{libarch};/usr/lib/jvm/java-17-openjdk-{libarch}/lib;/usr/lib/jvm/java-17-openjdk-{libarch};/usr/lib/jvm/java-16-openjdk-{libarch}/jre/lib/{libarch};/usr/lib/jvm/java-16-openjdk-{libarch}/jre/lib;/usr/lib/jvm/java-16-openjdk-{libarch}/lib/{libarch};/usr/lib/jvm/java-16-openjdk-{libarch}/lib;/usr/lib/jvm/java-16-openjdk-{libarch};/usr/lib/jvm/java-13-openjdk-{libarch}/jre/lib/{libarch};/usr/lib/jvm/java-13-openjdk-{libarch}/jre/lib;/usr/lib/jvm/java-13-openjdk-{libarch}/lib/{libarch};/usr/lib/jvm/java-13-openjdk-{libarch}/lib;/usr/lib/jvm/java-13-openjdk-{libarch};/usr/lib/jvm/java-11-openjdk-{libarch}/jre/lib/{libarch};/usr/lib/jvm/java-11-openjdk-{libarch}/jre/lib;/usr/lib/jvm/java-11-openjdk-{libarch}/lib/{libarch};/usr/lib/jvm/java-11-openjdk-{libarch}/lib;/usr/lib/jvm/java-11-openjdk-{libarch};/usr/lib/jvm/java-8-openjdk-{libarch}/jre/lib/{libarch};/usr/lib/jvm/java-8-openjdk-{libarch}/jre/lib;/usr/lib/jvm/java-8-openjdk-{libarch}/lib/{libarch};/usr/lib/jvm/java-8-openjdk-{libarch}/lib;/usr/lib/jvm/java-8-openjdk-{libarch};/usr/lib/jvm/java-7-openjdk-{libarch}/jre/lib/{libarch};/usr/lib/jvm/java-7-openjdk-{libarch}/jre/lib;/usr/lib/jvm/java-7-openjdk-{libarch}/lib/{libarch};/usr/lib/jvm/java-7-openjdk-{libarch}/lib;/usr/lib/jvm/java-7-openjdk-{libarch};/usr/lib/jvm/java-6-openjdk-{libarch}/jre/lib/{libarch};/usr/lib/jvm/java-6-openjdk-{libarch}/jre/lib;/usr/lib/jvm/java-6-openjdk-{libarch}/lib/{libarch};/usr/lib/jvm/java-6-openjdk-{libarch}/lib;/usr/lib/jvm/java-6-openjdk-{libarch};/usr/local/jdk-1.7.0/jre/lib/{libarch};/usr/local/jdk-1.7.0/jre/lib;/usr/local/jdk-1.7.0/lib/{libarch};/usr/local/jdk-1.7.0/lib;/usr/local/jdk-1.7.0;/usr/local/jre-1.7.0/jre/lib/{libarch};/usr/local/jre-1.7.0/jre/lib;/usr/local/jre-1.7.0/lib/{libarch};/usr/local/jre-1.7.0/lib;/usr/local/jre-1.7.0;/usr/local/jdk-1.6.0/jre/lib/{libarch};/usr/local/jdk-1.6.0/jre/lib;/usr/local/jdk-1.6.0/lib/{libarch};/usr/local/jdk-1.6.0/lib;/usr/local/jdk-1.6.0;/usr/local/jre-1.6.0/jre/lib/{libarch};/usr/local/jre-1.6.0/jre/lib;/usr/local/jre-1.6.0/lib/{libarch};/usr/local/jre-1.6.0/lib;/usr/local/jre-1.6.0;/usr/local/openjdk15/jre/lib/{libarch};/usr/local/openjdk15/jre/lib;/usr/local/openjdk15/lib/{libarch};/usr/local/openjdk15/lib;/usr/local/openjdk15;/usr/local/openjdk14/jre/lib/{libarch};/usr/local/openjdk14/jre/lib;/usr/local/openjdk14/lib/{libarch};/usr/local/openjdk14/lib;/usr/local/openjdk14;/usr/local/openjdk13/jre/lib/{libarch};/usr/local/openjdk13/jre/lib;/usr/local/openjdk13/lib/{libarch};/usr/local/openjdk13/lib;/usr/local/openjdk13;/usr/local/openjdk12/jre/lib/{libarch};/usr/local/openjdk12/jre/lib;/usr/local/openjdk12/lib/{libarch};/usr/local/openjdk12/lib;/usr/local/openjdk12;/usr/local/openjdk11/jre/lib/{libarch};/usr/local/openjdk11/jre/lib;/usr/local/openjdk11/lib/{libarch};/usr/local/openjdk11/lib;/usr/local/openjdk11;/usr/local/openjdk8/jre/lib/{libarch};/usr/local/openjdk8/jre/lib;/usr/local/openjdk8/lib/{libarch};/usr/local/openjdk8/lib;/usr/local/openjdk8;/usr/local/openjdk7/jre/lib/{libarch};/usr/local/openjdk7/jre/lib;/usr/local/openjdk7/lib/{libarch};/usr/local/openjdk7/lib;/usr/local/openjdk7;/usr/lib64/jvm/java/jre/lib/{libarch};/usr/lib64/jvm/java/jre/lib;/usr/lib64/jvm/java/lib/{libarch};/usr/lib64/jvm/java/lib;/usr/lib64/jvm/java;/usr/lib64/jvm/jre/jre/lib/{libarch};/usr/lib64/jvm/jre/jre/lib;/usr/lib64/jvm/jre/lib/{libarch};/usr/lib64/jvm/jre/lib;/usr/lib64/jvm/jre
-_JNI_JAVA_DIRECTORIES_BASE=/usr/lib/jvm/java;/usr/lib/java;/usr/lib/jvm;/usr/local/lib/java;/usr/local/share/java;/usr/lib/j2sdk1.4-sun;/usr/lib/j2sdk1.5-sun;/opt/sun-jdk-1.5.0.04;/usr/lib/jvm/java-6-sun;/usr/lib/jvm/java-1.5.0-sun;/usr/lib/jvm/java-6-sun-1.6.0.00;/usr/lib/jvm/java-6-openjdk;/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0;/usr/lib/jvm/default-java;/usr/lib/jvm/default;/usr/lib/jvm/java-21-openjdk-{libarch};/usr/lib/jvm/java-20-openjdk-{libarch};/usr/lib/jvm/java-19-openjdk-{libarch};/usr/lib/jvm/java-18-openjdk-{libarch};/usr/lib/jvm/java-17-openjdk-{libarch};/usr/lib/jvm/java-16-openjdk-{libarch};/usr/lib/jvm/java-13-openjdk-{libarch};/usr/lib/jvm/java-11-openjdk-{libarch};/usr/lib/jvm/java-8-openjdk-{libarch};/usr/lib/jvm/java-7-openjdk-{libarch};/usr/lib/jvm/java-6-openjdk-{libarch};/usr/local/jdk-1.7.0;/usr/local/jre-1.7.0;/usr/local/jdk-1.6.0;/usr/local/jre-1.6.0;/usr/local/openjdk15;/usr/local/openjdk14;/usr/local/openjdk13;/usr/local/openjdk12;/usr/local/openjdk11;/usr/local/openjdk8;/usr/local/openjdk7;/usr/lib64/jvm/java;/usr/lib64/jvm/jre
-_JNI_JAVA_INCLUDE_TRIES=/usr/lib/jvm/java/include;/usr/lib/java/include;/usr/lib/jvm/include;/usr/local/lib/java/include;/usr/local/share/java/include;/usr/lib/j2sdk1.4-sun/include;/usr/lib/j2sdk1.5-sun/include;/opt/sun-jdk-1.5.0.04/include;/usr/lib/jvm/java-6-sun/include;/usr/lib/jvm/java-1.5.0-sun/include;/usr/lib/jvm/java-6-sun-1.6.0.00/include;/usr/lib/jvm/java-6-openjdk/include;/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0/include;/usr/lib/jvm/default-java/include;/usr/lib/jvm/default/include;/usr/lib/jvm/java-21-openjdk-{libarch}/include;/usr/lib/jvm/java-20-openjdk-{libarch}/include;/usr/lib/jvm/java-19-openjdk-{libarch}/include;/usr/lib/jvm/java-18-openjdk-{libarch}/include;/usr/lib/jvm/java-17-openjdk-{libarch}/include;/usr/lib/jvm/java-16-openjdk-{libarch}/include;/usr/lib/jvm/java-13-openjdk-{libarch}/include;/usr/lib/jvm/java-11-openjdk-{libarch}/include;/usr/lib/jvm/java-8-openjdk-{libarch}/include;/usr/lib/jvm/java-7-openjdk-{libarch}/include;/usr/lib/jvm/java-6-openjdk-{libarch}/include;/usr/local/jdk-1.7.0/include;/usr/local/jre-1.7.0/include;/usr/local/jdk-1.6.0/include;/usr/local/jre-1.6.0/include;/usr/local/openjdk15/include;/usr/local/openjdk14/include;/usr/local/openjdk13/include;/usr/local/openjdk12/include;/usr/local/openjdk11/include;/usr/local/openjdk8/include;/usr/local/openjdk7/include;/usr/lib64/jvm/java/include;/usr/lib64/jvm/jre/include
+_JNI_JAVA_AWT_LIBRARY_TRIES=/usr/lib/jvm/java/jre/lib/{libarch};/usr/lib/jvm/java/jre/lib;/usr/lib/jvm/java/lib/{libarch};/usr/lib/jvm/java/lib;/usr/lib/jvm/java;/usr/lib/java/jre/lib/{libarch};/usr/lib/java/jre/lib;/usr/lib/java/lib/{libarch};/usr/lib/java/lib;/usr/lib/java;/usr/lib/jvm/jre/lib/{libarch};/usr/lib/jvm/jre/lib;/usr/lib/jvm/lib/{libarch};/usr/lib/jvm/lib;/usr/lib/jvm;/usr/local/lib/java/jre/lib/{libarch};/usr/local/lib/java/jre/lib;/usr/local/lib/java/lib/{libarch};/usr/local/lib/java/lib;/usr/local/lib/java;/usr/local/share/java/jre/lib/{libarch};/usr/local/share/java/jre/lib;/usr/local/share/java/lib/{libarch};/usr/local/share/java/lib;/usr/local/share/java;/usr/lib/j2sdk1.4-sun/jre/lib/{libarch};/usr/lib/j2sdk1.4-sun/jre/lib;/usr/lib/j2sdk1.4-sun/lib/{libarch};/usr/lib/j2sdk1.4-sun/lib;/usr/lib/j2sdk1.4-sun;/usr/lib/j2sdk1.5-sun/jre/lib/{libarch};/usr/lib/j2sdk1.5-sun/jre/lib;/usr/lib/j2sdk1.5-sun/lib/{libarch};/usr/lib/j2sdk1.5-sun/lib;/usr/lib/j2sdk1.5-sun;/opt/sun-jdk-1.5.0.04/jre/lib/{libarch};/opt/sun-jdk-1.5.0.04/jre/lib;/opt/sun-jdk-1.5.0.04/lib/{libarch};/opt/sun-jdk-1.5.0.04/lib;/opt/sun-jdk-1.5.0.04;/usr/lib/jvm/java-6-sun/jre/lib/{libarch};/usr/lib/jvm/java-6-sun/jre/lib;/usr/lib/jvm/java-6-sun/lib/{libarch};/usr/lib/jvm/java-6-sun/lib;/usr/lib/jvm/java-6-sun;/usr/lib/jvm/java-1.5.0-sun/jre/lib/{libarch};/usr/lib/jvm/java-1.5.0-sun/jre/lib;/usr/lib/jvm/java-1.5.0-sun/lib/{libarch};/usr/lib/jvm/java-1.5.0-sun/lib;/usr/lib/jvm/java-1.5.0-sun;/usr/lib/jvm/java-6-sun-1.6.0.00/jre/lib/{libarch};/usr/lib/jvm/java-6-sun-1.6.0.00/jre/lib;/usr/lib/jvm/java-6-sun-1.6.0.00/lib/{libarch};/usr/lib/jvm/java-6-sun-1.6.0.00/lib;/usr/lib/jvm/java-6-sun-1.6.0.00;/usr/lib/jvm/java-6-openjdk/jre/lib/{libarch};/usr/lib/jvm/java-6-openjdk/jre/lib;/usr/lib/jvm/java-6-openjdk/lib/{libarch};/usr/lib/jvm/java-6-openjdk/lib;/usr/lib/jvm/java-6-openjdk;/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0/jre/lib/{libarch};/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0/jre/lib;/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0/lib/{libarch};/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0/lib;/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0;/usr/lib/jvm/default-java/jre/lib/{libarch};/usr/lib/jvm/default-java/jre/lib;/usr/lib/jvm/default-java/lib/{libarch};/usr/lib/jvm/default-java/lib;/usr/lib/jvm/default-java;/usr/lib/jvm/default/jre/lib/{libarch};/usr/lib/jvm/default/jre/lib;/usr/lib/jvm/default/lib/{libarch};/usr/lib/jvm/default/lib;/usr/lib/jvm/default;/usr/lib/jvm/java-26-openjdk-{libarch}/jre/lib/{libarch};/usr/lib/jvm/java-26-openjdk-{libarch}/jre/lib;/usr/lib/jvm/java-26-openjdk-{libarch}/lib/{libarch};/usr/lib/jvm/java-26-openjdk-{libarch}/lib;/usr/lib/jvm/java-26-openjdk-{libarch};/usr/lib/jvm/java-25-openjdk-{libarch}/jre/lib/{libarch};/usr/lib/jvm/java-25-openjdk-{libarch}/jre/lib;/usr/lib/jvm/java-25-openjdk-{libarch}/lib/{libarch};/usr/lib/jvm/java-25-openjdk-{libarch}/lib;/usr/lib/jvm/java-25-openjdk-{libarch};/usr/lib/jvm/java-24-openjdk-{libarch}/jre/lib/{libarch};/usr/lib/jvm/java-24-openjdk-{libarch}/jre/lib;/usr/lib/jvm/java-24-openjdk-{libarch}/lib/{libarch};/usr/lib/jvm/java-24-openjdk-{libarch}/lib;/usr/lib/jvm/java-24-openjdk-{libarch};/usr/lib/jvm/java-23-openjdk-{libarch}/jre/lib/{libarch};/usr/lib/jvm/java-23-openjdk-{libarch}/jre/lib;/usr/lib/jvm/java-23-openjdk-{libarch}/lib/{libarch};/usr/lib/jvm/java-23-openjdk-{libarch}/lib;/usr/lib/jvm/java-23-openjdk-{libarch};/usr/lib/jvm/java-22-openjdk-{libarch}/jre/lib/{libarch};/usr/lib/jvm/java-22-openjdk-{libarch}/jre/lib;/usr/lib/jvm/java-22-openjdk-{libarch}/lib/{libarch};/usr/lib/jvm/java-22-openjdk-{libarch}/lib;/usr/lib/jvm/java-22-openjdk-{libarch};/usr/lib/jvm/java-21-openjdk-{libarch}/jre/lib/{libarch};/usr/lib/jvm/java-21-openjdk-{libarch}/jre/lib;/usr/lib/jvm/java-21-openjdk-{libarch}/lib/{libarch};/usr/lib/jvm/java-21-openjdk-{libarch}/lib;/usr/lib/jvm/java-21-openjdk-{libarch};/usr/lib/jvm/java-20-openjdk-{libarch}/jre/lib/{libarch};/usr/lib/jvm/java-20-openjdk-{libarch}/jre/lib;/usr/lib/jvm/java-20-openjdk-{libarch}/lib/{libarch};/usr/lib/jvm/java-20-openjdk-{libarch}/lib;/usr/lib/jvm/java-20-openjdk-{libarch};/usr/lib/jvm/java-19-openjdk-{libarch}/jre/lib/{libarch};/usr/lib/jvm/java-19-openjdk-{libarch}/jre/lib;/usr/lib/jvm/java-19-openjdk-{libarch}/lib/{libarch};/usr/lib/jvm/java-19-openjdk-{libarch}/lib;/usr/lib/jvm/java-19-openjdk-{libarch};/usr/lib/jvm/java-18-openjdk-{libarch}/jre/lib/{libarch};/usr/lib/jvm/java-18-openjdk-{libarch}/jre/lib;/usr/lib/jvm/java-18-openjdk-{libarch}/lib/{libarch};/usr/lib/jvm/java-18-openjdk-{libarch}/lib;/usr/lib/jvm/java-18-openjdk-{libarch};/usr/lib/jvm/java-17-openjdk-{libarch}/jre/lib/{libarch};/usr/lib/jvm/java-17-openjdk-{libarch}/jre/lib;/usr/lib/jvm/java-17-openjdk-{libarch}/lib/{libarch};/usr/lib/jvm/java-17-openjdk-{libarch}/lib;/usr/lib/jvm/java-17-openjdk-{libarch};/usr/lib/jvm/java-16-openjdk-{libarch}/jre/lib/{libarch};/usr/lib/jvm/java-16-openjdk-{libarch}/jre/lib;/usr/lib/jvm/java-16-openjdk-{libarch}/lib/{libarch};/usr/lib/jvm/java-16-openjdk-{libarch}/lib;/usr/lib/jvm/java-16-openjdk-{libarch};/usr/lib/jvm/java-13-openjdk-{libarch}/jre/lib/{libarch};/usr/lib/jvm/java-13-openjdk-{libarch}/jre/lib;/usr/lib/jvm/java-13-openjdk-{libarch}/lib/{libarch};/usr/lib/jvm/java-13-openjdk-{libarch}/lib;/usr/lib/jvm/java-13-openjdk-{libarch};/usr/lib/jvm/java-11-openjdk-{libarch}/jre/lib/{libarch};/usr/lib/jvm/java-11-openjdk-{libarch}/jre/lib;/usr/lib/jvm/java-11-openjdk-{libarch}/lib/{libarch};/usr/lib/jvm/java-11-openjdk-{libarch}/lib;/usr/lib/jvm/java-11-openjdk-{libarch};/usr/lib/jvm/java-8-openjdk-{libarch}/jre/lib/{libarch};/usr/lib/jvm/java-8-openjdk-{libarch}/jre/lib;/usr/lib/jvm/java-8-openjdk-{libarch}/lib/{libarch};/usr/lib/jvm/java-8-openjdk-{libarch}/lib;/usr/lib/jvm/java-8-openjdk-{libarch};/usr/lib/jvm/java-7-openjdk-{libarch}/jre/lib/{libarch};/usr/lib/jvm/java-7-openjdk-{libarch}/jre/lib;/usr/lib/jvm/java-7-openjdk-{libarch}/lib/{libarch};/usr/lib/jvm/java-7-openjdk-{libarch}/lib;/usr/lib/jvm/java-7-openjdk-{libarch};/usr/lib/jvm/java-6-openjdk-{libarch}/jre/lib/{libarch};/usr/lib/jvm/java-6-openjdk-{libarch}/jre/lib;/usr/lib/jvm/java-6-openjdk-{libarch}/lib/{libarch};/usr/lib/jvm/java-6-openjdk-{libarch}/lib;/usr/lib/jvm/java-6-openjdk-{libarch};/usr/local/jdk-1.7.0/jre/lib/{libarch};/usr/local/jdk-1.7.0/jre/lib;/usr/local/jdk-1.7.0/lib/{libarch};/usr/local/jdk-1.7.0/lib;/usr/local/jdk-1.7.0;/usr/local/jre-1.7.0/jre/lib/{libarch};/usr/local/jre-1.7.0/jre/lib;/usr/local/jre-1.7.0/lib/{libarch};/usr/local/jre-1.7.0/lib;/usr/local/jre-1.7.0;/usr/local/jdk-1.6.0/jre/lib/{libarch};/usr/local/jdk-1.6.0/jre/lib;/usr/local/jdk-1.6.0/lib/{libarch};/usr/local/jdk-1.6.0/lib;/usr/local/jdk-1.6.0;/usr/local/jre-1.6.0/jre/lib/{libarch};/usr/local/jre-1.6.0/jre/lib;/usr/local/jre-1.6.0/lib/{libarch};/usr/local/jre-1.6.0/lib;/usr/local/jre-1.6.0;/usr/local/openjdk15/jre/lib/{libarch};/usr/local/openjdk15/jre/lib;/usr/local/openjdk15/lib/{libarch};/usr/local/openjdk15/lib;/usr/local/openjdk15;/usr/local/openjdk14/jre/lib/{libarch};/usr/local/openjdk14/jre/lib;/usr/local/openjdk14/lib/{libarch};/usr/local/openjdk14/lib;/usr/local/openjdk14;/usr/local/openjdk13/jre/lib/{libarch};/usr/local/openjdk13/jre/lib;/usr/local/openjdk13/lib/{libarch};/usr/local/openjdk13/lib;/usr/local/openjdk13;/usr/local/openjdk12/jre/lib/{libarch};/usr/local/openjdk12/jre/lib;/usr/local/openjdk12/lib/{libarch};/usr/local/openjdk12/lib;/usr/local/openjdk12;/usr/local/openjdk11/jre/lib/{libarch};/usr/local/openjdk11/jre/lib;/usr/local/openjdk11/lib/{libarch};/usr/local/openjdk11/lib;/usr/local/openjdk11;/usr/local/openjdk8/jre/lib/{libarch};/usr/local/openjdk8/jre/lib;/usr/local/openjdk8/lib/{libarch};/usr/local/openjdk8/lib;/usr/local/openjdk8;/usr/local/openjdk7/jre/lib/{libarch};/usr/local/openjdk7/jre/lib;/usr/local/openjdk7/lib/{libarch};/usr/local/openjdk7/lib;/usr/local/openjdk7;/usr/lib64/jvm/java/jre/lib/{libarch};/usr/lib64/jvm/java/jre/lib;/usr/lib64/jvm/java/lib/{libarch};/usr/lib64/jvm/java/lib;/usr/lib64/jvm/java;/usr/lib64/jvm/jre/jre/lib/{libarch};/usr/lib64/jvm/jre/jre/lib;/usr/lib64/jvm/jre/lib/{libarch};/usr/lib64/jvm/jre/lib;/usr/lib64/jvm/jre
+_JNI_JAVA_DIRECTORIES_BASE=/usr/lib/jvm/java;/usr/lib/java;/usr/lib/jvm;/usr/local/lib/java;/usr/local/share/java;/usr/lib/j2sdk1.4-sun;/usr/lib/j2sdk1.5-sun;/opt/sun-jdk-1.5.0.04;/usr/lib/jvm/java-6-sun;/usr/lib/jvm/java-1.5.0-sun;/usr/lib/jvm/java-6-sun-1.6.0.00;/usr/lib/jvm/java-6-openjdk;/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0;/usr/lib/jvm/default-java;/usr/lib/jvm/default;/usr/lib/jvm/java-26-openjdk-{libarch};/usr/lib/jvm/java-25-openjdk-{libarch};/usr/lib/jvm/java-24-openjdk-{libarch};/usr/lib/jvm/java-23-openjdk-{libarch};/usr/lib/jvm/java-22-openjdk-{libarch};/usr/lib/jvm/java-21-openjdk-{libarch};/usr/lib/jvm/java-20-openjdk-{libarch};/usr/lib/jvm/java-19-openjdk-{libarch};/usr/lib/jvm/java-18-openjdk-{libarch};/usr/lib/jvm/java-17-openjdk-{libarch};/usr/lib/jvm/java-16-openjdk-{libarch};/usr/lib/jvm/java-13-openjdk-{libarch};/usr/lib/jvm/java-11-openjdk-{libarch};/usr/lib/jvm/java-8-openjdk-{libarch};/usr/lib/jvm/java-7-openjdk-{libarch};/usr/lib/jvm/java-6-openjdk-{libarch};/usr/local/jdk-1.7.0;/usr/local/jre-1.7.0;/usr/local/jdk-1.6.0;/usr/local/jre-1.6.0;/usr/local/openjdk15;/usr/local/openjdk14;/usr/local/openjdk13;/usr/local/openjdk12;/usr/local/openjdk11;/usr/local/openjdk8;/usr/local/openjdk7;/usr/lib64/jvm/java;/usr/lib64/jvm/jre
+_JNI_JAVA_INCLUDE_TRIES=/usr/lib/jvm/java/include;/usr/lib/java/include;/usr/lib/jvm/include;/usr/local/lib/java/include;/usr/local/share/java/include;/usr/lib/j2sdk1.4-sun/include;/usr/lib/j2sdk1.5-sun/include;/opt/sun-jdk-1.5.0.04/include;/usr/lib/jvm/java-6-sun/include;/usr/lib/jvm/java-1.5.0-sun/include;/usr/lib/jvm/java-6-sun-1.6.0.00/include;/usr/lib/jvm/java-6-openjdk/include;/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0/include;/usr/lib/jvm/default-java/include;/usr/lib/jvm/default/include;/usr/lib/jvm/java-26-openjdk-{libarch}/include;/usr/lib/jvm/java-25-openjdk-{libarch}/include;/usr/lib/jvm/java-24-openjdk-{libarch}/include;/usr/lib/jvm/java-23-openjdk-{libarch}/include;/usr/lib/jvm/java-22-openjdk-{libarch}/include;/usr/lib/jvm/java-21-openjdk-{libarch}/include;/usr/lib/jvm/java-20-openjdk-{libarch}/include;/usr/lib/jvm/java-19-openjdk-{libarch}/include;/usr/lib/jvm/java-18-openjdk-{libarch}/include;/usr/lib/jvm/java-17-openjdk-{libarch}/include;/usr/lib/jvm/java-16-openjdk-{libarch}/include;/usr/lib/jvm/java-13-openjdk-{libarch}/include;/usr/lib/jvm/java-11-openjdk-{libarch}/include;/usr/lib/jvm/java-8-openjdk-{libarch}/include;/usr/lib/jvm/java-7-openjdk-{libarch}/include;/usr/lib/jvm/java-6-openjdk-{libarch}/include;/usr/local/jdk-1.7.0/include;/usr/local/jre-1.7.0/include;/usr/local/jdk-1.6.0/include;/usr/local/jre-1.6.0/include;/usr/local/openjdk15/include;/usr/local/openjdk14/include;/usr/local/openjdk13/include;/usr/local/openjdk12/include;/usr/local/openjdk11/include;/usr/local/openjdk8/include;/usr/local/openjdk7/include;/usr/lib64/jvm/java/include;/usr/lib64/jvm/jre/include
 _OpenGL_EGL_IMPL=OpenGL::OpenGL
 _PCH_define_prefix=-D
 _PCH_include_prefix=-I
@@ -5103,6 +6042,10 @@ _PKG_CONFIG_FAILURE_MESSAGE=
 _PKG_CONFIG_VERSION_ERROR=
 _PNG_INCLUDE_SEARCH_NORMAL=/libpng;/libpng
 _PNG_LIB_SEARCH_NORMAL=/libpng/lib;/libpng/lib
+_SET_CMAKE_ASM_COMPILER_ID_VENDOR_MATCH=
+_SET_CMAKE_ASM_COMPILER_SYSROOT=
+_SET_CMAKE_CXX_COMPILER_SYSROOT=
+_SET_CMAKE_C_COMPILER_SYSROOT=
 _ZLIB_SEARCHES=_ZLIB_SEARCH_NORMAL
 _ZLIB_SEARCH_NORMAL=PATHS;[HKEY_LOCAL_MACHINE\SOFTWARE\GnuWin32\Zlib;InstallPath];/zlib;/zlib
 _apple_device_has_required_min_os_version=OFF
@@ -5181,13 +6124,29 @@ _pkg_check_modules_list=tesseract
 _pkg_check_modules_packages=tesseract
 _pkg_check_modules_pkg=
 _pkg_check_modules_pkg_name=tesseract
+_pkg_check_prefix=FFMPEG_libavdevice
 _pkg_is_required=0
 _pkg_is_silent=0
 _pkg_modules=tesseract
+_pkgconfig_CFLAGS=-I/usr/include/aarch64-linux-gnu
+_pkgconfig_INCLUDE_DIRS=/usr/include/aarch64-linux-gnu
+_pkgconfig_LDFLAGS=-L/usr/lib/aarch64-linux-gnu;-lavdevice
+_pkgconfig_LIBRARIES=avdevice
+_pkgconfig_LIBRARY_DIRS=/usr/lib/aarch64-linux-gnu
+_pkgconfig_STATIC_CFLAGS=-I/usr/include/aarch64-linux-gnu
+_pkgconfig_STATIC_INCLUDE_DIRS=/usr/include/aarch64-linux-gnu
+_pkgconfig_STATIC_LDFLAGS=-L/usr/lib/aarch64-linux-gnu;-lavdevice;-lm;-latomic;-lraw1394;-lavc1394;-lrom1394;-liec61883;-ljack;-ldrm;-lopenal;-lxcb;-lxcb-shm;-lxcb-shape;-lxcb-xfixes;-lcdio_paranoia;-lcdio_cdda;-lcdio;-lm;-ldc1394;-lasound;-lcaca;-lpulse;-pthread;-lsndio;-lv4l2;-lXv;-lX11;-lXext;-L/usr/lib/aarch64-linux-gnu;-lavfilter;-pthread;-lm;-latomic;-lpocketsphinx;-lsphinxbase;-lsphinxad;-lbs2b;-llilv-0;-lrubberband;-lfftw3;-lsamplerate;-lstdc++;-lmysofa;-lflite_cmu_time_awb;-lflite_cmu_us_awb;-lflite_cmu_us_kal;-lflite_cmu_us_kal16;-lflite_cmu_us_rms;-lflite_cmu_us_slt;-lflite_usenglish;-lflite_cmulex;-lflite;-lnvbufsurface;-lass;-lva;-lvidstab;-lm;-lgomp;-lzmq;-lzimg;-lOpenCL;-lfontconfig;-lfreetype;-lfreetype;-L/usr/lib/aarch64-linux-gnu;-lm;-latomic;-L/usr/lib/aarch64-linux-gnu;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lm;-latomic;-lxml2;-lbz2;-lgme;-lopenmpt;-lstdc++;-lchromaprint;-lbluray;-lz;-lgnutls;-lrabbitmq;-lsrt-gnutls;-lssh;-lzmq;-L/usr/lib/aarch64-linux-gnu;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lwebpmux;-lm;-latomic;-llzma;-ldav1d;-lrsvg-2;-lm;-lgio-2.0;-lgdk_pixbuf-2.0;-lgobject-2.0;-lglib-2.0;-lcairo;-lzvbi;-lpthread;-lm;-lpng;-lz;-lnvbufsurface;-lnvbufsurftransform;-lv4l2;-lsnappy;-lstdc++;-lnvjpeg;-laom;-lcodec2;-lgsm;-lmp3lame;-lm;-lopenjp2;-lopus;-lm;-lshine;-lspeex;-ltheoraenc;-ltheoradec;-logg;-ltwolame;-lvorbis;-lvorbisenc;-lwebp;-lx264;-lx265;-lxvidcore;-lnvbufsurface;-lz;-lva;-pthread;-L/usr/lib/aarch64-linux-gnu;-lm;-lsoxr;-latomic;-L/usr/lib/aarch64-linux-gnu;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lswresample;-lm;-lsoxr;-latomic;-L/usr/lib/aarch64-linux-gnu;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavcodec;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lwebpmux;-lm;-latomic;-llzma;-ldav1d;-lrsvg-2;-lm;-lgio-2.0;-lgdk_pixbuf-2.0;-lgobject-2.0;-lglib-2.0;-lcairo;-lzvbi;-lpthread;-lm;-lpng;-lz;-lnvbufsurface;-lnvbufsurftransform;-lv4l2;-lsnappy;-lstdc++;-lnvjpeg;-laom;-lcodec2;-lgsm;-lmp3lame;-lm;-lopenjp2;-lopus;-lm;-lshine;-lspeex;-ltheoraenc;-ltheoradec;-logg;-ltwolame;-lvorbis;-lvorbisenc;-lwebp;-lx264;-lx265;-lxvidcore;-lnvbufsurface;-lz;-lva;-pthread;-L/usr/lib/aarch64-linux-gnu;-lm;-lsoxr;-latomic;-L/usr/lib/aarch64-linux-gnu;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lswresample;-lm;-lsoxr;-latomic;-L/usr/lib/aarch64-linux-gnu;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lswscale;-lm;-latomic;-L/usr/lib/aarch64-linux-gnu;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavformat;-lm;-latomic;-lxml2;-lbz2;-lgme;-lopenmpt;-lstdc++;-lchromaprint;-lbluray;-lz;-lgnutls;-lrabbitmq;-lsrt-gnutls;-lssh;-lzmq;-L/usr/lib/aarch64-linux-gnu;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lwebpmux;-lm;-latomic;-llzma;-ldav1d;-lrsvg-2;-lm;-lgio-2.0;-lgdk_pixbuf-2.0;-lgobject-2.0;-lglib-2.0;-lcairo;-lzvbi;-lpthread;-lm;-lpng;-lz;-lnvbufsurface;-lnvbufsurftransform;-lv4l2;-lsnappy;-lstdc++;-lnvjpeg;-laom;-lcodec2;-lgsm;-lmp3lame;-lm;-lopenjp2;-lopus;-lm;-lshine;-lspeex;-ltheoraenc;-ltheoradec;-logg;-ltwolame;-lvorbis;-lvorbisenc;-lwebp;-lx264;-lx265;-lxvidcore;-lnvbufsurface;-lz;-lva;-pthread;-L/usr/lib/aarch64-linux-gnu;-lm;-lsoxr;-latomic;-L/usr/lib/aarch64-linux-gnu;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lswresample;-lm;-lsoxr;-latomic;-L/usr/lib/aarch64-linux-gnu;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavcodec;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lwebpmux;-lm;-latomic;-llzma;-ldav1d;-lrsvg-2;-lm;-lgio-2.0;-lgdk_pixbuf-2.0;-lgobject-2.0;-lglib-2.0;-lcairo;-lzvbi;-lpthread;-lm;-lpng;-lz;-lnvbufsurface;-lnvbufsurftransform;-lv4l2;-lsnappy;-lstdc++;-lnvjpeg;-laom;-lcodec2;-lgsm;-lmp3lame;-lm;-lopenjp2;-lopus;-lm;-lshine;-lspeex;-ltheoraenc;-ltheoradec;-logg;-ltwolame;-lvorbis;-lvorbisenc;-lwebp;-lx264;-lx265;-lxvidcore;-lnvbufsurface;-lz;-lva;-pthread;-L/usr/lib/aarch64-linux-gnu;-lm;-lsoxr;-latomic;-L/usr/lib/aarch64-linux-gnu;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lswresample;-lm;-lsoxr;-latomic;-L/usr/lib/aarch64-linux-gnu;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11
+_pkgconfig_STATIC_LDFLAGS_OTHER=-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread
+_pkgconfig_STATIC_LIBRARIES=avdevice;m;atomic;raw1394;avc1394;rom1394;iec61883;jack;drm;openal;xcb;xcb-shm;xcb-shape;xcb-xfixes;cdio_paranoia;cdio_cdda;cdio;m;dc1394;asound;caca;pulse;sndio;v4l2;Xv;X11;Xext;avfilter;m;atomic;pocketsphinx;sphinxbase;sphinxad;bs2b;lilv-0;rubberband;fftw3;samplerate;stdc++;mysofa;flite_cmu_time_awb;flite_cmu_us_awb;flite_cmu_us_kal;flite_cmu_us_kal16;flite_cmu_us_rms;flite_cmu_us_slt;flite_usenglish;flite_cmulex;flite;nvbufsurface;ass;va;vidstab;m;gomp;zmq;zimg;OpenCL;fontconfig;freetype;freetype;m;atomic;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;m;atomic;xml2;bz2;gme;openmpt;stdc++;chromaprint;bluray;z;gnutls;rabbitmq;srt-gnutls;ssh;zmq;vpx;m;vpx;m;vpx;m;vpx;m;webpmux;m;atomic;lzma;dav1d;rsvg-2;m;gio-2.0;gdk_pixbuf-2.0;gobject-2.0;glib-2.0;cairo;zvbi;pthread;m;png;z;nvbufsurface;nvbufsurftransform;v4l2;snappy;stdc++;nvjpeg;aom;codec2;gsm;mp3lame;m;openjp2;opus;m;shine;speex;theoraenc;theoradec;ogg;twolame;vorbis;vorbisenc;webp;x264;x265;xvidcore;nvbufsurface;z;va;m;soxr;atomic;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;swresample;m;soxr;atomic;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avcodec;vpx;m;vpx;m;vpx;m;vpx;m;webpmux;m;atomic;lzma;dav1d;rsvg-2;m;gio-2.0;gdk_pixbuf-2.0;gobject-2.0;glib-2.0;cairo;zvbi;pthread;m;png;z;nvbufsurface;nvbufsurftransform;v4l2;snappy;stdc++;nvjpeg;aom;codec2;gsm;mp3lame;m;openjp2;opus;m;shine;speex;theoraenc;theoradec;ogg;twolame;vorbis;vorbisenc;webp;x264;x265;xvidcore;nvbufsurface;z;va;m;soxr;atomic;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;swresample;m;soxr;atomic;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;swscale;m;atomic;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avformat;m;atomic;xml2;bz2;gme;openmpt;stdc++;chromaprint;bluray;z;gnutls;rabbitmq;srt-gnutls;ssh;zmq;vpx;m;vpx;m;vpx;m;vpx;m;webpmux;m;atomic;lzma;dav1d;rsvg-2;m;gio-2.0;gdk_pixbuf-2.0;gobject-2.0;glib-2.0;cairo;zvbi;pthread;m;png;z;nvbufsurface;nvbufsurftransform;v4l2;snappy;stdc++;nvjpeg;aom;codec2;gsm;mp3lame;m;openjp2;opus;m;shine;speex;theoraenc;theoradec;ogg;twolame;vorbis;vorbisenc;webp;x264;x265;xvidcore;nvbufsurface;z;va;m;soxr;atomic;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;swresample;m;soxr;atomic;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avcodec;vpx;m;vpx;m;vpx;m;vpx;m;webpmux;m;atomic;lzma;dav1d;rsvg-2;m;gio-2.0;gdk_pixbuf-2.0;gobject-2.0;glib-2.0;cairo;zvbi;pthread;m;png;z;nvbufsurface;nvbufsurftransform;v4l2;snappy;stdc++;nvjpeg;aom;codec2;gsm;mp3lame;m;openjp2;opus;m;shine;speex;theoraenc;theoradec;ogg;twolame;vorbis;vorbisenc;webp;x264;x265;xvidcore;nvbufsurface;z;va;m;soxr;atomic;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;swresample;m;soxr;atomic;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11
+_pkgconfig_STATIC_LIBRARY_DIRS=/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu
+_pkgconfig_VERSION=62.1.100
 _pkgconfig_error=Package 'tesseract', required by 'virtual:world', not found
+_pkgconfig_failed=0
+_pkgconfig_invoke_result=
 _pkgconfig_retval=1
 _rev_deps=opencv_xstereo;opencv_tracking;opencv_highgui;opencv_datasets;opencv_videoio;opencv_video;opencv_text;opencv_imgcodecs;opencv_features;opencv_dnn;opencv_stereo;opencv_plot;opencv_ml;opencv_imgproc;opencv_geometry;opencv_flann;opencv_core;opencv_cudev;opencv_tracking;opencv_highgui;opencv_datasets;opencv_videoio;opencv_video;opencv_text;opencv_imgcodecs;opencv_features;opencv_dnn;opencv_stereo;opencv_plot;opencv_ml;opencv_imgproc;opencv_geometry;opencv_flann;opencv_core;opencv_cudev
 _saved_CMAKE_EXE_LINKER_FLAGS=
+_tc_config=RELEASE
 _tmp=/usr/local/cuda-13.2/lib64
 _type=INTERFACE_LIBRARY
 _var=
@@ -5205,8 +6164,8 @@ clapack_BINARY_DIR=/home/nerdstar/NerdStar/backend/opencv/opencv_build/3rdparty/
 clapack_IS_TOP_LEVEL=OFF
 clapack_SOURCE_DIR=/home/nerdstar/NerdStar/backend/opencv/opencv/3rdparty/clapack
 component=
-cpack_input_file=/usr/share/cmake-3.28/Templates/CPackConfig.cmake.in
-cpack_source_input_file=/usr/share/cmake-3.28/Templates/CPackConfig.cmake.in
+cpack_input_file=/usr/share/cmake-4.3/Templates/CPackConfig.cmake.in
+cpack_source_input_file=/usr/share/cmake-4.3/Templates/CPackConfig.cmake.in
 cuda_clean_target_name=clean_cuda_depends
 cuda_features=CUFFT;CUBLAS;FAST_MATH
 cuda_toolkit_dirs=/usr/local/cuda-13.2;/usr/local/cuda-13.2
@@ -5224,6 +6183,7 @@ dlpack_CONSIDERED_VERSIONS=
 dlpack_DIR=dlpack_DIR-NOTFOUND
 dlpack_FOUND=0
 docs_status=NO
+extension=
 ffmpeg_lib=
 flag=
 flatbuffers_VERSION=25.9.23
@@ -5506,9 +6466,11 @@ openjpeg_SOURCE_DIR=/home/nerdstar/NerdStar/backend/opencv/opencv/3rdparty/openj
 opt=
 p=
 parallel_status=TBB (ver 2021.11 interface 12110)
+pkg_count=1
 pkgcfg_lib_FFMPEG_avcodec=/usr/lib/aarch64-linux-gnu/libavcodec.so
 pkgcfg_lib_FFMPEG_avformat=/usr/lib/aarch64-linux-gnu/libavformat.so
 pkgcfg_lib_FFMPEG_avutil=/usr/lib/aarch64-linux-gnu/libavutil.so
+pkgcfg_lib_FFMPEG_libavdevice_avdevice=/usr/lib/aarch64-linux-gnu/libavdevice.so
 pkgcfg_lib_FFMPEG_swscale=/usr/lib/aarch64-linux-gnu/libswscale.so
 pkgcfg_lib_FREETYPE_freetype=/usr/lib/aarch64-linux-gnu/libfreetype.so
 pkgcfg_lib_GSTREAMER_app_glib-2.0=/usr/lib/aarch64-linux-gnu/libglib-2.0.so
@@ -5574,14 +6536,13 @@ res=TRUE
 s=
 search=
 the_module=
-tiff_CONSIDERED_CONFIGS=
-tiff_CONSIDERED_VERSIONS=
 tiff_DIR=tiff_DIR-NOTFOUND
-tiff_FOUND=0
 trace_status=with Intel ITT(3.25.4)
 type=
 v=
 v4l_status=linux/videodev2.h
+val=0
 var=
 var_name=
+variable=
 vars_regex=TIFF_VERSION_CLASSIC|TIFF_VERSION_BIG|TIFF_VERSION|TIFF_BIGTIFF_VERSION

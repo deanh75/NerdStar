@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_cudalegacy.so"
   "../../lib/libopencv_cudalegacy.so.5.1.0"
   "../../lib/libopencv_cudalegacy.so.501"
+  "CMakeFiles/opencv_cudalegacy.dir/link.d"
   "CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_NCV.cu.o"
   "CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_NCVBroxOpticalFlow.cu.o"
   "CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_NCVHaarObjectDetection.cu.o"

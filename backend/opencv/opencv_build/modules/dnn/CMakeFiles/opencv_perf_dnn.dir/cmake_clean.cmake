@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../bin/opencv_perf_dnn"
   "../../bin/opencv_perf_dnn.pdb"
+  "CMakeFiles/opencv_perf_dnn.dir/link.d"
   "CMakeFiles/opencv_perf_dnn.dir/int8layers/layers_common.neon.cpp.o"
   "CMakeFiles/opencv_perf_dnn.dir/int8layers/layers_common.neon.cpp.o.d"
   "CMakeFiles/opencv_perf_dnn.dir/layers/cpu_kernels/activation_kernels.neon.cpp.o"

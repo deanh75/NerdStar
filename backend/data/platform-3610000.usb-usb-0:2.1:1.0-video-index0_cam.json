@@ -1,0 +1,32 @@
+{
+    "camera_id": "platform-3610000.usb-usb-0:2.1:1.0-video-index0",
+    "camera_name": "New Camera",
+    "camera_max_fps": 120,
+    "camera_resolution_width": 1280,
+    "camera_resolution_height": 720,
+    "camera_auto_white_balance": true,
+    "camera_white_balance": 200,
+    "camera_auto_exposure": false,
+    "camera_exposure": 100,
+    "camera_gain": 10,
+    "apriltags_enable": false,
+    "objdetect_enable": false,
+    "driverCam_enable": false,
+    "process_frames_enable": false,
+    "camera_transform": {
+        "translation": {
+            "x": 0.3,
+            "y": 0.0,
+            "z": 0.05
+        },
+        "rotation": {
+            "roll": 0.0,
+            "pitch": 0.0,
+            "yaw": 0.0
+        }
+    },
+    "camera_horiz_fov": 70,
+    "has_calibration": false,
+    "camera_matrix": null,
+    "distortion_coefficients": null
+}

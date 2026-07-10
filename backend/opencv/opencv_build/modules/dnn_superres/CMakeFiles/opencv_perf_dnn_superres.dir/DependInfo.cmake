@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/dnn_superres/perf/perf_dnn_superres.cpp" "modules/dnn_superres/CMakeFiles/opencv_perf_dnn_superres.dir/perf/perf_dnn_superres.cpp.o" "gcc" "modules/dnn_superres/CMakeFiles/opencv_perf_dnn_superres.dir/perf/perf_dnn_superres.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/dnn_superres/perf/perf_main.cpp" "modules/dnn_superres/CMakeFiles/opencv_perf_dnn_superres.dir/perf/perf_main.cpp.o" "gcc" "modules/dnn_superres/CMakeFiles/opencv_perf_dnn_superres.dir/perf/perf_main.cpp.o.d"
+  "" "bin/opencv_perf_dnn_superres" "gcc" "modules/dnn_superres/CMakeFiles/opencv_perf_dnn_superres.dir/link.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

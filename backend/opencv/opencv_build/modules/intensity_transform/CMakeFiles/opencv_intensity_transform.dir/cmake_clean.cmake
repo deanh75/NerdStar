@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_intensity_transform.so"
   "../../lib/libopencv_intensity_transform.so.5.1.0"
   "../../lib/libopencv_intensity_transform.so.501"
+  "CMakeFiles/opencv_intensity_transform.dir/link.d"
   "CMakeFiles/opencv_intensity_transform.dir/src/bimef.cpp.o"
   "CMakeFiles/opencv_intensity_transform.dir/src/bimef.cpp.o.d"
   "CMakeFiles/opencv_intensity_transform.dir/src/intensity_transform.cpp.o"

@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_ptcloud.so"
   "../../lib/libopencv_ptcloud.so.5.1.0"
   "../../lib/libopencv_ptcloud.so.501"
+  "CMakeFiles/opencv_ptcloud.dir/link.d"
   "CMakeFiles/opencv_ptcloud.dir/opencl_kernels_ptcloud.cpp.o"
   "CMakeFiles/opencv_ptcloud.dir/opencl_kernels_ptcloud.cpp.o.d"
   "CMakeFiles/opencv_ptcloud.dir/src/color_tsdf_functions.cpp.o"

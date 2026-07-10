@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_dnn_objdetect.so"
   "../../lib/libopencv_dnn_objdetect.so.5.1.0"
   "../../lib/libopencv_dnn_objdetect.so.501"
+  "CMakeFiles/opencv_dnn_objdetect.dir/link.d"
   "CMakeFiles/opencv_dnn_objdetect.dir/src/core_detect.cpp.o"
   "CMakeFiles/opencv_dnn_objdetect.dir/src/core_detect.cpp.o.d"
 )

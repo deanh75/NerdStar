@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_highgui.so"
   "../../lib/libopencv_highgui.so.5.1.0"
   "../../lib/libopencv_highgui.so.501"
+  "CMakeFiles/opencv_highgui.dir/link.d"
   "CMakeFiles/opencv_highgui.dir/src/backend.cpp.o"
   "CMakeFiles/opencv_highgui.dir/src/backend.cpp.o.d"
   "CMakeFiles/opencv_highgui.dir/src/roiSelector.cpp.o"

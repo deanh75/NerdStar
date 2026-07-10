@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_rgbd.so"
   "../../lib/libopencv_rgbd.so.5.1.0"
   "../../lib/libopencv_rgbd.so.501"
+  "CMakeFiles/opencv_rgbd.dir/link.d"
   "CMakeFiles/opencv_rgbd.dir/src/colored_kinfu.cpp.o"
   "CMakeFiles/opencv_rgbd.dir/src/colored_kinfu.cpp.o.d"
   "CMakeFiles/opencv_rgbd.dir/src/dqb.cpp.o"

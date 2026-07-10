@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../bin/opencv_perf_cudaimgproc"
   "../../bin/opencv_perf_cudaimgproc.pdb"
+  "CMakeFiles/opencv_perf_cudaimgproc.dir/link.d"
   "CMakeFiles/opencv_perf_cudaimgproc.dir/perf/perf_bilateral_filter.cpp.o"
   "CMakeFiles/opencv_perf_cudaimgproc.dir/perf/perf_bilateral_filter.cpp.o.d"
   "CMakeFiles/opencv_perf_cudaimgproc.dir/perf/perf_blend.cpp.o"

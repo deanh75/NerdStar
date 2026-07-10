@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_cudaobjdetect.so"
   "../../lib/libopencv_cudaobjdetect.so.5.1.0"
   "../../lib/libopencv_cudaobjdetect.so.501"
+  "CMakeFiles/opencv_cudaobjdetect.dir/link.d"
   "CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_hog.cu.o"
   "CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_lbp.cu.o"
   "CMakeFiles/opencv_cudaobjdetect.dir/src/cascadeclassifier.cpp.o"

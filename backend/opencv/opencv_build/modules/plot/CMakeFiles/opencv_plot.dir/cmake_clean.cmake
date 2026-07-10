@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_plot.so"
   "../../lib/libopencv_plot.so.5.1.0"
   "../../lib/libopencv_plot.so.501"
+  "CMakeFiles/opencv_plot.dir/link.d"
   "CMakeFiles/opencv_plot.dir/src/plot.cpp.o"
   "CMakeFiles/opencv_plot.dir/src/plot.cpp.o.d"
 )

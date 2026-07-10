@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../bin/opencv_test_rgbd"
   "../../bin/opencv_test_rgbd.pdb"
+  "CMakeFiles/opencv_test_rgbd.dir/link.d"
   "CMakeFiles/opencv_test_rgbd.dir/test/test_colored_kinfu.cpp.o"
   "CMakeFiles/opencv_test_rgbd.dir/test/test_colored_kinfu.cpp.o.d"
   "CMakeFiles/opencv_test_rgbd.dir/test/test_dynafu.cpp.o"

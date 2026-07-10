@@ -453,7 +453,7 @@ CMAKE_COLOR_MAKEFILE:BOOL=ON
 CMAKE_CONFIGURATION_TYPES:STRING=Debug;Release
 
 //CXX compiler
-CMAKE_CXX_COMPILER:FILEPATH=/usr/bin/c++
+CMAKE_CXX_COMPILER:STRING=/usr/bin/c++
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
@@ -479,7 +479,7 @@ CMAKE_CXX_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
 CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 
 //C compiler
-CMAKE_C_COMPILER:FILEPATH=/usr/bin/cc
+CMAKE_C_COMPILER:STRING=/usr/bin/cc
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
@@ -615,6 +615,9 @@ CMAKE_OBJCOPY:FILEPATH=/usr/bin/objcopy
 CMAKE_OBJDUMP:FILEPATH=/usr/bin/objdump
 
 //Value Computed by CMake
+CMAKE_PROJECT_COMPAT_VERSION:STATIC=
+
+//Value Computed by CMake
 CMAKE_PROJECT_DESCRIPTION:STATIC=
 
 //Value Computed by CMake
@@ -622,6 +625,9 @@ CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
 CMAKE_PROJECT_NAME:STATIC=OpenCV
+
+//Value Computed by CMake
+CMAKE_PROJECT_SPDX_LICENSE:STATIC=
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -1390,6 +1396,9 @@ OPENGL_GLES2_INCLUDE_DIR:PATH=/usr/include
 OPENGL_GLES3_INCLUDE_DIR:PATH=/usr/include
 
 //Path to a file.
+OPENGL_GLU_INCLUDE_DIR:PATH=/usr/include
+
+//Path to a file.
 OPENGL_GLX_INCLUDE_DIR:PATH=/usr/include
 
 //Path to a file.
@@ -1518,6 +1527,9 @@ Tesseract_INCLUDE_DIR:PATH=Tesseract_INCLUDE_DIR-NOTFOUND
 
 //Path to a library.
 Tesseract_LIBRARY:FILEPATH=Tesseract_LIBRARY-NOTFOUND
+
+//The directory containing a CMake configuration file for Tiff.
+Tiff_DIR:PATH=Tiff_DIR-NOTFOUND
 
 //Allow building and using of videoio plugins
 VIDEOIO_ENABLE_PLUGINS:BOOL=ON
@@ -2599,6 +2611,9 @@ pkgcfg_lib_FFMPEG_avformat:FILEPATH=/usr/lib/aarch64-linux-gnu/libavformat.so
 pkgcfg_lib_FFMPEG_avutil:FILEPATH=/usr/lib/aarch64-linux-gnu/libavutil.so
 
 //Path to a library.
+pkgcfg_lib_FFMPEG_libavdevice_avdevice:FILEPATH=/usr/lib/aarch64-linux-gnu/libavdevice.so
+
+//Path to a library.
 pkgcfg_lib_FFMPEG_swscale:FILEPATH=/usr/lib/aarch64-linux-gnu/libswscale.so
 
 //Path to a library.
@@ -2850,11 +2865,11 @@ CMAKE_BUILD_TYPE-STRINGS:INTERNAL=Debug;Release
 //This is the directory where this CMakeCache.txt was created
 CMAKE_CACHEFILE_DIR:INTERNAL=/home/nerdstar/NerdStar/backend/opencv/opencv_build
 //Major version of cmake used to create the current loaded cache
-CMAKE_CACHE_MAJOR_VERSION:INTERNAL=3
+CMAKE_CACHE_MAJOR_VERSION:INTERNAL=4
 //Minor version of cmake used to create the current loaded cache
-CMAKE_CACHE_MINOR_VERSION:INTERNAL=28
+CMAKE_CACHE_MINOR_VERSION:INTERNAL=3
 //Patch version of cmake used to create the current loaded cache
-CMAKE_CACHE_PATCH_VERSION:INTERNAL=3
+CMAKE_CACHE_PATCH_VERSION:INTERNAL=4
 //ADVANCED property for variable: CMAKE_COLOR_MAKEFILE
 CMAKE_COLOR_MAKEFILE-ADVANCED:INTERNAL=1
 //Path to CMake executable.
@@ -2962,6 +2977,8 @@ CMAKE_INSTALL_SO_NO_EXE:INTERNAL=1
 CMAKE_INSTALL_SYSCONFDIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_LINKER
 CMAKE_LINKER-ADVANCED:INTERNAL=1
+//Name of CMakeLists files to read
+CMAKE_LIST_FILE_NAME:INTERNAL=CMakeLists.txt
 //ADVANCED property for variable: CMAKE_MAKE_PROGRAM
 CMAKE_MAKE_PROGRAM-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_MODULE_LINKER_FLAGS
@@ -2989,7 +3006,7 @@ CMAKE_RANLIB-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_READELF
 CMAKE_READELF-ADVANCED:INTERNAL=1
 //Path to CMake installation.
-CMAKE_ROOT:INTERNAL=/usr/share/cmake-3.28
+CMAKE_ROOT:INTERNAL=/usr/share/cmake-4.3
 //ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS
 CMAKE_SHARED_LINKER_FLAGS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS_DEBUG
@@ -3137,7 +3154,7 @@ CUDA_cusolver_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CUDA_cusparse_LIBRARY
 CUDA_cusparse_LIBRARY-ADVANCED:INTERNAL=1
 //Location of make2cmake.cmake
-CUDA_make2cmake:INTERNAL=/usr/share/cmake-3.28/Modules/FindCUDA/make2cmake.cmake
+CUDA_make2cmake:INTERNAL=/usr/share/cmake-4.3/Modules/FindCUDA/make2cmake.cmake
 //ADVANCED property for variable: CUDA_nppc_LIBRARY
 CUDA_nppc_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CUDA_nppial_LIBRARY
@@ -3163,11 +3180,11 @@ CUDA_npps_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CUDA_nvToolsExt_LIBRARY
 CUDA_nvToolsExt_LIBRARY-ADVANCED:INTERNAL=1
 //Location of parse_cubin.cmake
-CUDA_parse_cubin:INTERNAL=/usr/share/cmake-3.28/Modules/FindCUDA/parse_cubin.cmake
+CUDA_parse_cubin:INTERNAL=/usr/share/cmake-4.3/Modules/FindCUDA/parse_cubin.cmake
 //ADVANCED property for variable: CUDA_rt_LIBRARY
 CUDA_rt_LIBRARY-ADVANCED:INTERNAL=1
 //Location of run_nvcc.cmake
-CUDA_run_nvcc:INTERNAL=/usr/share/cmake-3.28/Modules/FindCUDA/run_nvcc.cmake
+CUDA_run_nvcc:INTERNAL=/usr/share/cmake-4.3/Modules/FindCUDA/run_nvcc.cmake
 //ADVANCED property for variable: CUDNN_INCLUDE_DIR
 CUDNN_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CUDNN_LIBRARY
@@ -3215,27 +3232,37 @@ FFMPEG_libavcodec_LIBDIR:INTERNAL=/usr/lib/aarch64-linux-gnu
 FFMPEG_libavcodec_MODULE_NAME:INTERNAL=libavcodec
 FFMPEG_libavcodec_PREFIX:INTERNAL=/usr
 FFMPEG_libavcodec_VERSION:INTERNAL=60.31.102
-FFMPEG_libavdevice_CFLAGS:INTERNAL=
+FFMPEG_libavdevice_CFLAGS:INTERNAL=-I/usr/include/aarch64-linux-gnu
 FFMPEG_libavdevice_CFLAGS_I:INTERNAL=
 FFMPEG_libavdevice_CFLAGS_OTHER:INTERNAL=
-FFMPEG_libavdevice_FOUND:INTERNAL=
-FFMPEG_libavdevice_INCLUDEDIR:INTERNAL=
-FFMPEG_libavdevice_LIBDIR:INTERNAL=
+FFMPEG_libavdevice_FOUND:INTERNAL=1
+FFMPEG_libavdevice_INCLUDEDIR:INTERNAL=/usr/include/aarch64-linux-gnu
+FFMPEG_libavdevice_INCLUDE_DIRS:INTERNAL=/usr/include/aarch64-linux-gnu
+FFMPEG_libavdevice_LDFLAGS:INTERNAL=-L/usr/lib/aarch64-linux-gnu;-lavdevice
+FFMPEG_libavdevice_LDFLAGS_OTHER:INTERNAL=
+FFMPEG_libavdevice_LIBDIR:INTERNAL=/usr/lib/aarch64-linux-gnu
+FFMPEG_libavdevice_LIBRARIES:INTERNAL=/usr/lib/aarch64-linux-gnu/libavdevice.so
+FFMPEG_libavdevice_LIBRARY_DIRS:INTERNAL=/usr/lib/aarch64-linux-gnu
 FFMPEG_libavdevice_LIBS:INTERNAL=
 FFMPEG_libavdevice_LIBS_L:INTERNAL=
 FFMPEG_libavdevice_LIBS_OTHER:INTERNAL=
 FFMPEG_libavdevice_LIBS_PATHS:INTERNAL=
-FFMPEG_libavdevice_MODULE_NAME:INTERNAL=
-FFMPEG_libavdevice_PREFIX:INTERNAL=
-FFMPEG_libavdevice_STATIC_CFLAGS:INTERNAL=
+FFMPEG_libavdevice_MODULE_NAME:INTERNAL=libavdevice
+FFMPEG_libavdevice_PREFIX:INTERNAL=/usr
+FFMPEG_libavdevice_STATIC_CFLAGS:INTERNAL=-I/usr/include/aarch64-linux-gnu
 FFMPEG_libavdevice_STATIC_CFLAGS_I:INTERNAL=
 FFMPEG_libavdevice_STATIC_CFLAGS_OTHER:INTERNAL=
+FFMPEG_libavdevice_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include/aarch64-linux-gnu
+FFMPEG_libavdevice_STATIC_LDFLAGS:INTERNAL=-L/usr/lib/aarch64-linux-gnu;-lavdevice;-lm;-latomic;-lraw1394;-lavc1394;-lrom1394;-liec61883;-ljack;-ldrm;-lopenal;-lxcb;-lxcb-shm;-lxcb-shape;-lxcb-xfixes;-lcdio_paranoia;-lcdio_cdda;-lcdio;-lm;-ldc1394;-lasound;-lcaca;-lpulse;-pthread;-lsndio;-lv4l2;-lXv;-lX11;-lXext;-L/usr/lib/aarch64-linux-gnu;-lavfilter;-pthread;-lm;-latomic;-lpocketsphinx;-lsphinxbase;-lsphinxad;-lbs2b;-llilv-0;-lrubberband;-lfftw3;-lsamplerate;-lstdc++;-lmysofa;-lflite_cmu_time_awb;-lflite_cmu_us_awb;-lflite_cmu_us_kal;-lflite_cmu_us_kal16;-lflite_cmu_us_rms;-lflite_cmu_us_slt;-lflite_usenglish;-lflite_cmulex;-lflite;-lnvbufsurface;-lass;-lva;-lvidstab;-lm;-lgomp;-lzmq;-lzimg;-lOpenCL;-lfontconfig;-lfreetype;-lfreetype;-L/usr/lib/aarch64-linux-gnu;-lm;-latomic;-L/usr/lib/aarch64-linux-gnu;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lm;-latomic;-lxml2;-lbz2;-lgme;-lopenmpt;-lstdc++;-lchromaprint;-lbluray;-lz;-lgnutls;-lrabbitmq;-lsrt-gnutls;-lssh;-lzmq;-L/usr/lib/aarch64-linux-gnu;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lwebpmux;-lm;-latomic;-llzma;-ldav1d;-lrsvg-2;-lm;-lgio-2.0;-lgdk_pixbuf-2.0;-lgobject-2.0;-lglib-2.0;-lcairo;-lzvbi;-lpthread;-lm;-lpng;-lz;-lnvbufsurface;-lnvbufsurftransform;-lv4l2;-lsnappy;-lstdc++;-lnvjpeg;-laom;-lcodec2;-lgsm;-lmp3lame;-lm;-lopenjp2;-lopus;-lm;-lshine;-lspeex;-ltheoraenc;-ltheoradec;-logg;-ltwolame;-lvorbis;-lvorbisenc;-lwebp;-lx264;-lx265;-lxvidcore;-lnvbufsurface;-lz;-lva;-pthread;-L/usr/lib/aarch64-linux-gnu;-lm;-lsoxr;-latomic;-L/usr/lib/aarch64-linux-gnu;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lswresample;-lm;-lsoxr;-latomic;-L/usr/lib/aarch64-linux-gnu;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavcodec;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lwebpmux;-lm;-latomic;-llzma;-ldav1d;-lrsvg-2;-lm;-lgio-2.0;-lgdk_pixbuf-2.0;-lgobject-2.0;-lglib-2.0;-lcairo;-lzvbi;-lpthread;-lm;-lpng;-lz;-lnvbufsurface;-lnvbufsurftransform;-lv4l2;-lsnappy;-lstdc++;-lnvjpeg;-laom;-lcodec2;-lgsm;-lmp3lame;-lm;-lopenjp2;-lopus;-lm;-lshine;-lspeex;-ltheoraenc;-ltheoradec;-logg;-ltwolame;-lvorbis;-lvorbisenc;-lwebp;-lx264;-lx265;-lxvidcore;-lnvbufsurface;-lz;-lva;-pthread;-L/usr/lib/aarch64-linux-gnu;-lm;-lsoxr;-latomic;-L/usr/lib/aarch64-linux-gnu;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lswresample;-lm;-lsoxr;-latomic;-L/usr/lib/aarch64-linux-gnu;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lswscale;-lm;-latomic;-L/usr/lib/aarch64-linux-gnu;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavformat;-lm;-latomic;-lxml2;-lbz2;-lgme;-lopenmpt;-lstdc++;-lchromaprint;-lbluray;-lz;-lgnutls;-lrabbitmq;-lsrt-gnutls;-lssh;-lzmq;-L/usr/lib/aarch64-linux-gnu;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lwebpmux;-lm;-latomic;-llzma;-ldav1d;-lrsvg-2;-lm;-lgio-2.0;-lgdk_pixbuf-2.0;-lgobject-2.0;-lglib-2.0;-lcairo;-lzvbi;-lpthread;-lm;-lpng;-lz;-lnvbufsurface;-lnvbufsurftransform;-lv4l2;-lsnappy;-lstdc++;-lnvjpeg;-laom;-lcodec2;-lgsm;-lmp3lame;-lm;-lopenjp2;-lopus;-lm;-lshine;-lspeex;-ltheoraenc;-ltheoradec;-logg;-ltwolame;-lvorbis;-lvorbisenc;-lwebp;-lx264;-lx265;-lxvidcore;-lnvbufsurface;-lz;-lva;-pthread;-L/usr/lib/aarch64-linux-gnu;-lm;-lsoxr;-latomic;-L/usr/lib/aarch64-linux-gnu;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lswresample;-lm;-lsoxr;-latomic;-L/usr/lib/aarch64-linux-gnu;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavcodec;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lwebpmux;-lm;-latomic;-llzma;-ldav1d;-lrsvg-2;-lm;-lgio-2.0;-lgdk_pixbuf-2.0;-lgobject-2.0;-lglib-2.0;-lcairo;-lzvbi;-lpthread;-lm;-lpng;-lz;-lnvbufsurface;-lnvbufsurftransform;-lv4l2;-lsnappy;-lstdc++;-lnvjpeg;-laom;-lcodec2;-lgsm;-lmp3lame;-lm;-lopenjp2;-lopus;-lm;-lshine;-lspeex;-ltheoraenc;-ltheoradec;-logg;-ltwolame;-lvorbis;-lvorbisenc;-lwebp;-lx264;-lx265;-lxvidcore;-lnvbufsurface;-lz;-lva;-pthread;-L/usr/lib/aarch64-linux-gnu;-lm;-lsoxr;-latomic;-L/usr/lib/aarch64-linux-gnu;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lswresample;-lm;-lsoxr;-latomic;-L/usr/lib/aarch64-linux-gnu;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11
+FFMPEG_libavdevice_STATIC_LDFLAGS_OTHER:INTERNAL=-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread
 FFMPEG_libavdevice_STATIC_LIBDIR:INTERNAL=
+FFMPEG_libavdevice_STATIC_LIBRARIES:INTERNAL=avdevice;m;atomic;raw1394;avc1394;rom1394;iec61883;jack;drm;openal;xcb;xcb-shm;xcb-shape;xcb-xfixes;cdio_paranoia;cdio_cdda;cdio;m;dc1394;asound;caca;pulse;sndio;v4l2;Xv;X11;Xext;avfilter;m;atomic;pocketsphinx;sphinxbase;sphinxad;bs2b;lilv-0;rubberband;fftw3;samplerate;stdc++;mysofa;flite_cmu_time_awb;flite_cmu_us_awb;flite_cmu_us_kal;flite_cmu_us_kal16;flite_cmu_us_rms;flite_cmu_us_slt;flite_usenglish;flite_cmulex;flite;nvbufsurface;ass;va;vidstab;m;gomp;zmq;zimg;OpenCL;fontconfig;freetype;freetype;m;atomic;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;m;atomic;xml2;bz2;gme;openmpt;stdc++;chromaprint;bluray;z;gnutls;rabbitmq;srt-gnutls;ssh;zmq;vpx;m;vpx;m;vpx;m;vpx;m;webpmux;m;atomic;lzma;dav1d;rsvg-2;m;gio-2.0;gdk_pixbuf-2.0;gobject-2.0;glib-2.0;cairo;zvbi;pthread;m;png;z;nvbufsurface;nvbufsurftransform;v4l2;snappy;stdc++;nvjpeg;aom;codec2;gsm;mp3lame;m;openjp2;opus;m;shine;speex;theoraenc;theoradec;ogg;twolame;vorbis;vorbisenc;webp;x264;x265;xvidcore;nvbufsurface;z;va;m;soxr;atomic;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;swresample;m;soxr;atomic;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avcodec;vpx;m;vpx;m;vpx;m;vpx;m;webpmux;m;atomic;lzma;dav1d;rsvg-2;m;gio-2.0;gdk_pixbuf-2.0;gobject-2.0;glib-2.0;cairo;zvbi;pthread;m;png;z;nvbufsurface;nvbufsurftransform;v4l2;snappy;stdc++;nvjpeg;aom;codec2;gsm;mp3lame;m;openjp2;opus;m;shine;speex;theoraenc;theoradec;ogg;twolame;vorbis;vorbisenc;webp;x264;x265;xvidcore;nvbufsurface;z;va;m;soxr;atomic;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;swresample;m;soxr;atomic;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;swscale;m;atomic;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avformat;m;atomic;xml2;bz2;gme;openmpt;stdc++;chromaprint;bluray;z;gnutls;rabbitmq;srt-gnutls;ssh;zmq;vpx;m;vpx;m;vpx;m;vpx;m;webpmux;m;atomic;lzma;dav1d;rsvg-2;m;gio-2.0;gdk_pixbuf-2.0;gobject-2.0;glib-2.0;cairo;zvbi;pthread;m;png;z;nvbufsurface;nvbufsurftransform;v4l2;snappy;stdc++;nvjpeg;aom;codec2;gsm;mp3lame;m;openjp2;opus;m;shine;speex;theoraenc;theoradec;ogg;twolame;vorbis;vorbisenc;webp;x264;x265;xvidcore;nvbufsurface;z;va;m;soxr;atomic;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;swresample;m;soxr;atomic;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avcodec;vpx;m;vpx;m;vpx;m;vpx;m;webpmux;m;atomic;lzma;dav1d;rsvg-2;m;gio-2.0;gdk_pixbuf-2.0;gobject-2.0;glib-2.0;cairo;zvbi;pthread;m;png;z;nvbufsurface;nvbufsurftransform;v4l2;snappy;stdc++;nvjpeg;aom;codec2;gsm;mp3lame;m;openjp2;opus;m;shine;speex;theoraenc;theoradec;ogg;twolame;vorbis;vorbisenc;webp;x264;x265;xvidcore;nvbufsurface;z;va;m;soxr;atomic;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;swresample;m;soxr;atomic;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11
+FFMPEG_libavdevice_STATIC_LIBRARY_DIRS:INTERNAL=/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu
 FFMPEG_libavdevice_STATIC_LIBS:INTERNAL=
 FFMPEG_libavdevice_STATIC_LIBS_L:INTERNAL=
 FFMPEG_libavdevice_STATIC_LIBS_OTHER:INTERNAL=
 FFMPEG_libavdevice_STATIC_LIBS_PATHS:INTERNAL=
-FFMPEG_libavdevice_VERSION:INTERNAL=
+FFMPEG_libavdevice_VERSION:INTERNAL=62.1.100
 FFMPEG_libavdevice_libavdevice_INCLUDEDIR:INTERNAL=
 FFMPEG_libavdevice_libavdevice_LIBDIR:INTERNAL=
 FFMPEG_libavdevice_libavdevice_PREFIX:INTERNAL=
@@ -3260,7 +3287,7 @@ FIND_PACKAGE_MESSAGE_DETAILS_BLAS:INTERNAL=[/usr/lib/aarch64-linux-gnu/libblas.s
 //Details about finding CUDNN
 FIND_PACKAGE_MESSAGE_DETAILS_CUDNN:INTERNAL=[/usr/lib/aarch64-linux-gnu/libcudnn.so][/usr/include/aarch64-linux-gnu][v9.20.0(7.5)]
 //Details about finding HDF5
-FIND_PACKAGE_MESSAGE_DETAILS_HDF5:INTERNAL=[/usr/lib/aarch64-linux-gnu/hdf5/serial/libhdf5.so;/usr/lib/aarch64-linux-gnu/libcrypto.so;/usr/lib/aarch64-linux-gnu/libcurl.so;/usr/lib/aarch64-linux-gnu/libpthread.a;/usr/lib/aarch64-linux-gnu/libsz.so;/usr/lib/aarch64-linux-gnu/libz.so;/usr/lib/aarch64-linux-gnu/libdl.a;/usr/lib/aarch64-linux-gnu/libm.so][c ][v1.10.10()]
+FIND_PACKAGE_MESSAGE_DETAILS_HDF5:INTERNAL=[/usr/lib/aarch64-linux-gnu/hdf5/serial/libhdf5.so;/usr/lib/aarch64-linux-gnu/libcrypto.so;/usr/lib/aarch64-linux-gnu/libcurl.so;/usr/lib/aarch64-linux-gnu/libpthread.a;/usr/lib/aarch64-linux-gnu/libsz.so;/usr/lib/aarch64-linux-gnu/libz.so;/usr/lib/aarch64-linux-gnu/libdl.a;/usr/lib/aarch64-linux-gnu/libm.so][ ][v1.10.10()]
 //Details about finding JPEG
 FIND_PACKAGE_MESSAGE_DETAILS_JPEG:INTERNAL=[/usr/lib/aarch64-linux-gnu/libjpeg.so][/usr/include][v80()]
 //Details about finding LAPACK
@@ -3270,13 +3297,13 @@ FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/usr/bin/python3][v3.12.3(3.
 //Details about finding PythonLibs
 FIND_PACKAGE_MESSAGE_DETAILS_PythonLibs:INTERNAL=[/usr/lib/aarch64-linux-gnu/libpython3.12.so][/usr/include/python3.12/][v3.12.3(3.12.3)]
 //Details about finding TIFF
-FIND_PACKAGE_MESSAGE_DETAILS_TIFF:INTERNAL=[/usr/lib/aarch64-linux-gnu/libtiff.so][/usr/include/aarch64-linux-gnu][c ][v4.5.1()]
+FIND_PACKAGE_MESSAGE_DETAILS_TIFF:INTERNAL=[/usr/lib/aarch64-linux-gnu/libtiff.so][/usr/include/aarch64-linux-gnu][ ][v4.5.1()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //Details about finding WebP
 FIND_PACKAGE_MESSAGE_DETAILS_WebP:INTERNAL=[/usr/lib/aarch64-linux-gnu/libwebp.so][/usr/include][v()]
 //Details about finding ZLIB
-FIND_PACKAGE_MESSAGE_DETAILS_ZLIB:INTERNAL=[/usr/lib/aarch64-linux-gnu/libz.so][/usr/include][c ][v1.3(1.2.3)]
+FIND_PACKAGE_MESSAGE_DETAILS_ZLIB:INTERNAL=[/usr/lib/aarch64-linux-gnu/libz.so][/usr/include][ ][v1.3(1.2.3)]
 FREETYPE_CFLAGS:INTERNAL=-I/usr/include/freetype2;-I/usr/include;-I/usr/include/libpng16
 FREETYPE_CFLAGS_I:INTERNAL=
 FREETYPE_CFLAGS_OTHER:INTERNAL=
@@ -4918,7 +4945,7 @@ OPENCV_MODULE_opencv_datasets_WRAPPERS:INTERNAL=python
 OPENCV_MODULE_opencv_dnn_BINARY_DIR:INTERNAL=/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn
 //The category of the module
 OPENCV_MODULE_opencv_dnn_CLASS:INTERNAL=PUBLIC
-OPENCV_MODULE_opencv_dnn_COMPILE_OPTIONS:INTERNAL=PRIVATE;-ffast-math;PRIVATE;-fno-finite-math-only;PRIVATE;-ffast-math;PRIVATE;-fno-finite-math-only
+OPENCV_MODULE_opencv_dnn_COMPILE_OPTIONS:INTERNAL=PRIVATE;-ffast-math;PRIVATE;-fno-finite-math-only;PRIVATE;-ffast-math;PRIVATE;-fno-finite-math-only;PRIVATE;-ffast-math;PRIVATE;-fno-finite-math-only
 //Compiled CUDA object files
 OPENCV_MODULE_opencv_dnn_CUDA_OBJECTS:INTERNAL=/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_activation_eltwise.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_activations.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_bias_activation.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_bias_activation_eltwise.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_bias_eltwise_activation.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_concat.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_crop_and_resize.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_detection_output.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_eltwise_activation.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_eltwise_ops.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_fill_copy.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_fp_conversion.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_grid_nms.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_max_unpooling.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_mvn.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_normalize.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_padding.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_permute.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_prior_box.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_region.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_resize.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_roi_pooling.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_scale_shift.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_shortcut.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_slice.cu.o
 //Flattened dependencies of opencv_dnn module
@@ -6708,6 +6735,8 @@ OPENGL_EGL_INCLUDE_DIR-ADVANCED:INTERNAL=1
 OPENGL_GLES2_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: OPENGL_GLES3_INCLUDE_DIR
 OPENGL_GLES3_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OPENGL_GLU_INCLUDE_DIR
+OPENGL_GLU_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: OPENGL_GLX_INCLUDE_DIR
 OPENGL_GLX_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: OPENGL_INCLUDE_DIR
@@ -6831,6 +6860,7 @@ __VALID_LAPACK:INTERNAL=FALSE
 //Result of TRY_COMPILE
 __VALID_OPENCL:INTERNAL=FALSE
 __pkg_config_arguments_FFMPEG:INTERNAL=libavcodec;libavformat;libavutil;libswscale
+__pkg_config_arguments_FFMPEG_libavdevice:INTERNAL=libavdevice
 __pkg_config_arguments_FREETYPE:INTERNAL=freetype2
 __pkg_config_arguments_GSTREAMER_app:INTERNAL=gstreamer-app-1.0
 __pkg_config_arguments_GSTREAMER_audio:INTERNAL=gstreamer-audio-1.0
@@ -6862,6 +6892,8 @@ pkgcfg_lib_FFMPEG_avcodec-ADVANCED:INTERNAL=1
 pkgcfg_lib_FFMPEG_avformat-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_FFMPEG_avutil
 pkgcfg_lib_FFMPEG_avutil-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_FFMPEG_libavdevice_avdevice
+pkgcfg_lib_FFMPEG_libavdevice_avdevice-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_FFMPEG_swscale
 pkgcfg_lib_FFMPEG_swscale-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_FREETYPE_freetype

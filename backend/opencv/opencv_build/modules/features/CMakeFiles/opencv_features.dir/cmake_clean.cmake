@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_features.so"
   "../../lib/libopencv_features.so.5.1.0"
   "../../lib/libopencv_features.so.501"
+  "CMakeFiles/opencv_features.dir/link.d"
   "CMakeFiles/opencv_features.dir/opencl_kernels_features.cpp.o"
   "CMakeFiles/opencv_features.dir/opencl_kernels_features.cpp.o.d"
   "CMakeFiles/opencv_features.dir/src/affine_feature.cpp.o"

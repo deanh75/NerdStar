@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/reg/test/test_main.cpp" "modules/reg/CMakeFiles/opencv_test_reg.dir/test/test_main.cpp.o" "gcc" "modules/reg/CMakeFiles/opencv_test_reg.dir/test/test_main.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/reg/test/test_reg.cpp" "modules/reg/CMakeFiles/opencv_test_reg.dir/test/test_reg.cpp.o" "gcc" "modules/reg/CMakeFiles/opencv_test_reg.dir/test/test_reg.cpp.o.d"
+  "" "bin/opencv_test_reg" "gcc" "modules/reg/CMakeFiles/opencv_test_reg.dir/link.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

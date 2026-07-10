@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../lib/python3/cv2.cpython-312-aarch64-linux-gnu.so"
   "../../lib/python3/cv2.pdb"
+  "CMakeFiles/opencv_python3.dir/link.d"
   "CMakeFiles/opencv_python3.dir/__/src2/cv2.cpp.o"
   "CMakeFiles/opencv_python3.dir/__/src2/cv2.cpp.o.d"
   "CMakeFiles/opencv_python3.dir/__/src2/cv2_convert.cpp.o"

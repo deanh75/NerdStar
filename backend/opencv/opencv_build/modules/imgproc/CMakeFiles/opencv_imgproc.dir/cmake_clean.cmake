@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_imgproc.so"
   "../../lib/libopencv_imgproc.so.5.1.0"
   "../../lib/libopencv_imgproc.so.501"
+  "CMakeFiles/opencv_imgproc.dir/link.d"
   "CMakeFiles/opencv_imgproc.dir/opencl_kernels_imgproc.cpp.o"
   "CMakeFiles/opencv_imgproc.dir/opencl_kernels_imgproc.cpp.o.d"
   "CMakeFiles/opencv_imgproc.dir/src/accum.cpp.o"

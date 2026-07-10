@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_stitching.so"
   "../../lib/libopencv_stitching.so.5.1.0"
   "../../lib/libopencv_stitching.so.501"
+  "CMakeFiles/opencv_stitching.dir/link.d"
   "CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_build_warp_maps.cu.o"
   "CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_multiband_blend.cu.o"
   "CMakeFiles/opencv_stitching.dir/opencl_kernels_stitching.cpp.o"

@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_video.so"
   "../../lib/libopencv_video.so.5.1.0"
   "../../lib/libopencv_video.so.501"
+  "CMakeFiles/opencv_video.dir/link.d"
   "CMakeFiles/opencv_video.dir/opencl_kernels_video.cpp.o"
   "CMakeFiles/opencv_video.dir/opencl_kernels_video.cpp.o.d"
   "CMakeFiles/opencv_video.dir/src/bgfg_KNN.cpp.o"

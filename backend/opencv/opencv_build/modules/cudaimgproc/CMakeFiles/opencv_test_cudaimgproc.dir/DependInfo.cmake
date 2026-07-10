@@ -19,6 +19,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudaimgproc/test/test_match_template.cpp" "modules/cudaimgproc/CMakeFiles/opencv_test_cudaimgproc.dir/test/test_match_template.cpp.o" "gcc" "modules/cudaimgproc/CMakeFiles/opencv_test_cudaimgproc.dir/test/test_match_template.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudaimgproc/test/test_mean_shift.cpp" "modules/cudaimgproc/CMakeFiles/opencv_test_cudaimgproc.dir/test/test_mean_shift.cpp.o" "gcc" "modules/cudaimgproc/CMakeFiles/opencv_test_cudaimgproc.dir/test/test_mean_shift.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudaimgproc/test/test_moments.cpp" "modules/cudaimgproc/CMakeFiles/opencv_test_cudaimgproc.dir/test/test_moments.cpp.o" "gcc" "modules/cudaimgproc/CMakeFiles/opencv_test_cudaimgproc.dir/test/test_moments.cpp.o.d"
+  "" "bin/opencv_test_cudaimgproc" "gcc" "modules/cudaimgproc/CMakeFiles/opencv_test_cudaimgproc.dir/link.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

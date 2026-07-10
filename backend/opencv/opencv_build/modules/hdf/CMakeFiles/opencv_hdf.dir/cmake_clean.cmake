@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_hdf.so"
   "../../lib/libopencv_hdf.so.5.1.0"
   "../../lib/libopencv_hdf.so.501"
+  "CMakeFiles/opencv_hdf.dir/link.d"
   "CMakeFiles/opencv_hdf.dir/src/hdf5.cpp.o"
   "CMakeFiles/opencv_hdf.dir/src/hdf5.cpp.o.d"
 )

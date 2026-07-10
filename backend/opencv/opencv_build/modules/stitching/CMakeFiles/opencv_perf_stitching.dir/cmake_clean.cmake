@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../bin/opencv_perf_stitching"
   "../../bin/opencv_perf_stitching.pdb"
+  "CMakeFiles/opencv_perf_stitching.dir/link.d"
   "CMakeFiles/opencv_perf_stitching.dir/perf/opencl/perf_stitch.cpp.o"
   "CMakeFiles/opencv_perf_stitching.dir/perf/opencl/perf_stitch.cpp.o.d"
   "CMakeFiles/opencv_perf_stitching.dir/perf/opencl/perf_warpers.cpp.o"

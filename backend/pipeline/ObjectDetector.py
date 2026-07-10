@@ -5,7 +5,7 @@
 import math
 from typing import List, Union
 
-import coremltools
+from ultralytics import YOLO
 import cv2
 import numpy as np
 from backend.config.config import ConfigStore, LocalConfig
@@ -21,14 +21,14 @@ class ObjectDetector:
         raise NotImplementedError
 
 
-class CoreMLObjectDetector(ObjectDetector):
-    _model: Union[coremltools.models.MLModel, None] = None
+class YOLOObjectDetector(ObjectDetector):
+    _model: Union[YOLO, None] = None
 
     def __init__(self) -> None:
         self.last_model = None
         pass
 
-    def detect(self, image: cv2.Mat, config: ConfigStore, local_config: LocalConfig) -> List[ObjDetectObservation]:
+    def detect(self, image: cv2.cuda.GpuMat, config: ConfigStore, local_config: LocalConfig) -> List[ObjDetectObservation]:
         if local_config.obj_detect_model == "":
             return []
 
@@ -40,7 +40,7 @@ class CoreMLObjectDetector(ObjectDetector):
         if self._model == None:
             print("Loading object detection model")
             try:
-                self._model = coremltools.models.MLModel("backend/data/models/" + local_config.obj_detect_model)
+                self._model = YOLO("backend/data/models/" + local_config.obj_detect_model)
                 print("Finished loading object detection model")
             except Exception as e:
                 self._model = None
@@ -50,12 +50,11 @@ class CoreMLObjectDetector(ObjectDetector):
         self.last_model = local_config.obj_detect_model
 
         # Create scaled frame for model
-        if len(image.shape) == 2:
-            image = cv2.cvtColor(image, cv2.COLOR_GRAY2RGB)
         image_scaled = np.zeros((640, 640, 3), dtype=np.uint8)
-        scaled_height = int(640 / (image.shape[1] / image.shape[0]))
+        scaled_height = int(640 / (image.size()[0] / image.size()[1]))
         bar_height = int((640 - scaled_height) / 2)
-        image_scaled[bar_height: bar_height + scaled_height, 0:640] = cv2.resize(image, (640, scaled_height))
+        image_scaled[bar_height: bar_height + scaled_height, 0:640] = cv2.cuda.resize(image, (640, scaled_height))
+        
 
         # Run CoreML model
         image_coreml = Image.fromarray(image_scaled)

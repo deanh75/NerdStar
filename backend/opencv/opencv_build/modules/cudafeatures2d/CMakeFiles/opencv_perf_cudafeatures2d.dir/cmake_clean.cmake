@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../bin/opencv_perf_cudafeatures2d"
   "../../bin/opencv_perf_cudafeatures2d.pdb"
+  "CMakeFiles/opencv_perf_cudafeatures2d.dir/link.d"
   "CMakeFiles/opencv_perf_cudafeatures2d.dir/perf/perf_features2d.cpp.o"
   "CMakeFiles/opencv_perf_cudafeatures2d.dir/perf/perf_features2d.cpp.o.d"
   "CMakeFiles/opencv_perf_cudafeatures2d.dir/perf/perf_gftt.cpp.o"

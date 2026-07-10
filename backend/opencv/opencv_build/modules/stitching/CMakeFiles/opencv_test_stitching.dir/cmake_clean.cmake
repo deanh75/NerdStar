@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../bin/opencv_test_stitching"
   "../../bin/opencv_test_stitching.pdb"
+  "CMakeFiles/opencv_test_stitching.dir/link.d"
   "CMakeFiles/opencv_test_stitching.dir/test/ocl/test_warpers.cpp.o"
   "CMakeFiles/opencv_test_stitching.dir/test/ocl/test_warpers.cpp.o.d"
   "CMakeFiles/opencv_test_stitching.dir/test/test_blenders.cpp.o"

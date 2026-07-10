@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../bin/opencv_test_geometry"
   "../../bin/opencv_test_geometry.pdb"
+  "CMakeFiles/opencv_test_geometry.dir/link.d"
   "CMakeFiles/opencv_test_geometry.dir/test/test_affine2d_estimator.cpp.o"
   "CMakeFiles/opencv_test_geometry.dir/test/test_affine2d_estimator.cpp.o.d"
   "CMakeFiles/opencv_test_geometry.dir/test/test_affine3.cpp.o"

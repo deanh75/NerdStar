@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/xobjdetect/tools/waldboost_detector/waldboost_detector.cpp" "modules/xobjdetect/tools/waldboost_detector/CMakeFiles/opencv_waldboost_detector.dir/waldboost_detector.cpp.o" "gcc" "modules/xobjdetect/tools/waldboost_detector/CMakeFiles/opencv_waldboost_detector.dir/waldboost_detector.cpp.o.d"
+  "" "bin/opencv_waldboost_detector" "gcc" "modules/xobjdetect/tools/waldboost_detector/CMakeFiles/opencv_waldboost_detector.dir/link.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

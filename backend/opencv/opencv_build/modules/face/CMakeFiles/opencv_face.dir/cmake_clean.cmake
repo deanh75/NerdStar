@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_face.so"
   "../../lib/libopencv_face.so.5.1.0"
   "../../lib/libopencv_face.so.501"
+  "CMakeFiles/opencv_face.dir/link.d"
   "CMakeFiles/opencv_face.dir/src/bif.cpp.o"
   "CMakeFiles/opencv_face.dir/src/bif.cpp.o.d"
   "CMakeFiles/opencv_face.dir/src/eigen_faces.cpp.o"

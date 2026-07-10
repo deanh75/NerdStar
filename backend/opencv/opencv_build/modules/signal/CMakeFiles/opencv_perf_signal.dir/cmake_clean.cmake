@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../bin/opencv_perf_signal"
   "../../bin/opencv_perf_signal.pdb"
+  "CMakeFiles/opencv_perf_signal.dir/link.d"
   "CMakeFiles/opencv_perf_signal.dir/perf/perf_main.cpp.o"
   "CMakeFiles/opencv_perf_signal.dir/perf/perf_main.cpp.o.d"
   "CMakeFiles/opencv_perf_signal.dir/perf/perf_resample.cpp.o"

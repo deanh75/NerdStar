@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_xstereo.so"
   "../../lib/libopencv_xstereo.so.5.1.0"
   "../../lib/libopencv_xstereo.so.501"
+  "CMakeFiles/opencv_xstereo.dir/link.d"
   "CMakeFiles/opencv_xstereo.dir/src/descriptor.cpp.o"
   "CMakeFiles/opencv_xstereo.dir/src/descriptor.cpp.o.d"
   "CMakeFiles/opencv_xstereo.dir/src/quasi_dense_stereo.cpp.o"

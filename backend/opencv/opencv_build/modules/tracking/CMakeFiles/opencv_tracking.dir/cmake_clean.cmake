@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_tracking.so"
   "../../lib/libopencv_tracking.so.5.1.0"
   "../../lib/libopencv_tracking.so.501"
+  "CMakeFiles/opencv_tracking.dir/link.d"
   "CMakeFiles/opencv_tracking.dir/opencl_kernels_tracking.cpp.o"
   "CMakeFiles/opencv_tracking.dir/opencl_kernels_tracking.cpp.o.d"
   "CMakeFiles/opencv_tracking.dir/src/augmented_unscented_kalman.cpp.o"

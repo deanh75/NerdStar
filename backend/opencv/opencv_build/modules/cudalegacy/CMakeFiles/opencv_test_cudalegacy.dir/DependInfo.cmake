@@ -24,6 +24,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudalegacy/test/test_labeling.cpp" "modules/cudalegacy/CMakeFiles/opencv_test_cudalegacy.dir/test/test_labeling.cpp.o" "gcc" "modules/cudalegacy/CMakeFiles/opencv_test_cudalegacy.dir/test/test_labeling.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudalegacy/test/test_main.cpp" "modules/cudalegacy/CMakeFiles/opencv_test_cudalegacy.dir/test/test_main.cpp.o" "gcc" "modules/cudalegacy/CMakeFiles/opencv_test_cudalegacy.dir/test/test_main.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudalegacy/test/test_nvidia.cpp" "modules/cudalegacy/CMakeFiles/opencv_test_cudalegacy.dir/test/test_nvidia.cpp.o" "gcc" "modules/cudalegacy/CMakeFiles/opencv_test_cudalegacy.dir/test/test_nvidia.cpp.o.d"
+  "" "bin/opencv_test_cudalegacy" "gcc" "modules/cudalegacy/CMakeFiles/opencv_test_cudalegacy.dir/link.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

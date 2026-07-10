@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../bin/opencv_test_cudaarithm"
   "../../bin/opencv_test_cudaarithm.pdb"
+  "CMakeFiles/opencv_test_cudaarithm.dir/link.d"
   "CMakeFiles/opencv_test_cudaarithm.dir/test/test_arithm.cpp.o"
   "CMakeFiles/opencv_test_cudaarithm.dir/test/test_arithm.cpp.o.d"
   "CMakeFiles/opencv_test_cudaarithm.dir/test/test_buffer_pool.cpp.o"

@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_cudafilters.so"
   "../../lib/libopencv_cudafilters.so.5.1.0"
   "../../lib/libopencv_cudafilters.so.501"
+  "CMakeFiles/opencv_cudafilters.dir/link.d"
   "CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_column_filter.16sc1.cu.o"
   "CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_column_filter.16sc3.cu.o"
   "CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_column_filter.16sc4.cu.o"

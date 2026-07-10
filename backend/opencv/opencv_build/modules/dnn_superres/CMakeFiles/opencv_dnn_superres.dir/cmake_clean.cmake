@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_dnn_superres.so"
   "../../lib/libopencv_dnn_superres.so.5.1.0"
   "../../lib/libopencv_dnn_superres.so.501"
+  "CMakeFiles/opencv_dnn_superres.dir/link.d"
   "CMakeFiles/opencv_dnn_superres.dir/src/dnn_superres.cpp.o"
   "CMakeFiles/opencv_dnn_superres.dir/src/dnn_superres.cpp.o.d"
 )

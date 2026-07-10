@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_xfeatures2d.so"
   "../../lib/libopencv_xfeatures2d.so.5.1.0"
   "../../lib/libopencv_xfeatures2d.so.501"
+  "CMakeFiles/opencv_xfeatures2d.dir/link.d"
   "CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_surf.cu.o"
   "CMakeFiles/opencv_xfeatures2d.dir/opencl_kernels_xfeatures2d.cpp.o"
   "CMakeFiles/opencv_xfeatures2d.dir/opencl_kernels_xfeatures2d.cpp.o.d"

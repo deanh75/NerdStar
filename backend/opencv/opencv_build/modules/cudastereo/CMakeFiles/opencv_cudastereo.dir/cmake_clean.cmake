@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_cudastereo.so"
   "../../lib/libopencv_cudastereo.so.5.1.0"
   "../../lib/libopencv_cudastereo.so.501"
+  "CMakeFiles/opencv_cudastereo.dir/link.d"
   "CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_disparity_bilateral_filter.cu.o"
   "CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_stereobm.cu.o"
   "CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_stereobp.cu.o"

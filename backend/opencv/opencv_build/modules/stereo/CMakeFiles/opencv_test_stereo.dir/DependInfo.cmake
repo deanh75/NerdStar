@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/stereo/test/test_main.cpp" "modules/stereo/CMakeFiles/opencv_test_stereo.dir/test/test_main.cpp.o" "gcc" "modules/stereo/CMakeFiles/opencv_test_stereo.dir/test/test_main.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/stereo/test/test_reproject_image_to_3d.cpp" "modules/stereo/CMakeFiles/opencv_test_stereo.dir/test/test_reproject_image_to_3d.cpp.o" "gcc" "modules/stereo/CMakeFiles/opencv_test_stereo.dir/test/test_reproject_image_to_3d.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/stereo/test/test_stereomatching.cpp" "modules/stereo/CMakeFiles/opencv_test_stereo.dir/test/test_stereomatching.cpp.o" "gcc" "modules/stereo/CMakeFiles/opencv_test_stereo.dir/test/test_stereomatching.cpp.o.d"
+  "" "bin/opencv_test_stereo" "gcc" "modules/stereo/CMakeFiles/opencv_test_stereo.dir/link.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

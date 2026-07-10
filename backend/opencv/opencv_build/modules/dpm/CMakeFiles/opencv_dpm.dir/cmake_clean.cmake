@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_dpm.so"
   "../../lib/libopencv_dpm.so.5.1.0"
   "../../lib/libopencv_dpm.so.501"
+  "CMakeFiles/opencv_dpm.dir/link.d"
   "CMakeFiles/opencv_dpm.dir/src/dpm_cascade.cpp.o"
   "CMakeFiles/opencv_dpm.dir/src/dpm_cascade.cpp.o.d"
   "CMakeFiles/opencv_dpm.dir/src/dpm_cascade_detector.cpp.o"

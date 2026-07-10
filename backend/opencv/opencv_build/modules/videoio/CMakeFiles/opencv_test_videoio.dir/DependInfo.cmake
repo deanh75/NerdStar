@@ -22,6 +22,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/videoio/test/test_plugins.cpp" "modules/videoio/CMakeFiles/opencv_test_videoio.dir/test/test_plugins.cpp.o" "gcc" "modules/videoio/CMakeFiles/opencv_test_videoio.dir/test/test_plugins.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/videoio/test/test_v4l2.cpp" "modules/videoio/CMakeFiles/opencv_test_videoio.dir/test/test_v4l2.cpp.o" "gcc" "modules/videoio/CMakeFiles/opencv_test_videoio.dir/test/test_v4l2.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/videoio/test/test_video_io.cpp" "modules/videoio/CMakeFiles/opencv_test_videoio.dir/test/test_video_io.cpp.o" "gcc" "modules/videoio/CMakeFiles/opencv_test_videoio.dir/test/test_video_io.cpp.o.d"
+  "" "bin/opencv_test_videoio" "gcc" "modules/videoio/CMakeFiles/opencv_test_videoio.dir/link.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

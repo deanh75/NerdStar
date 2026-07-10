@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../bin/opencv_perf_geometry"
   "../../bin/opencv_perf_geometry.pdb"
+  "CMakeFiles/opencv_perf_geometry.dir/link.d"
   "CMakeFiles/opencv_perf_geometry.dir/perf/perf_2d.cpp.o"
   "CMakeFiles/opencv_perf_geometry.dir/perf/perf_2d.cpp.o.d"
   "CMakeFiles/opencv_perf_geometry.dir/perf/perf_affine2d.cpp.o"

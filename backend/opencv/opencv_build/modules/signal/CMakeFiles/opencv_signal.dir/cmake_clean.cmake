@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_signal.so"
   "../../lib/libopencv_signal.so.5.1.0"
   "../../lib/libopencv_signal.so.501"
+  "CMakeFiles/opencv_signal.dir/link.d"
   "CMakeFiles/opencv_signal.dir/src/signal_resample.cpp.o"
   "CMakeFiles/opencv_signal.dir/src/signal_resample.cpp.o.d"
 )

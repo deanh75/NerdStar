@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../bin/opencv_test_cudaimgproc"
   "../../bin/opencv_test_cudaimgproc.pdb"
+  "CMakeFiles/opencv_test_cudaimgproc.dir/link.d"
   "CMakeFiles/opencv_test_cudaimgproc.dir/test/test_bilateral_filter.cpp.o"
   "CMakeFiles/opencv_test_cudaimgproc.dir/test/test_bilateral_filter.cpp.o.d"
   "CMakeFiles/opencv_test_cudaimgproc.dir/test/test_blend.cpp.o"

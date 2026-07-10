@@ -50,8 +50,6 @@
 # generated_cubin_file:STRING=<> File to generate.  This argument must be passed
 #                                                   in if build_cubin is true.
 
-cmake_policy(PUSH)
-cmake_policy(SET CMP0007 NEW)
 if(NOT generated_file)
   message(FATAL_ERROR "You must specify generated_file on the command line")
 endif()
@@ -61,8 +59,8 @@ set(CMAKE_COMMAND "/usr/bin/cmake") # path
 set(source_file "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudafilters/src/cuda/column_filter.32sc3.cu") # path
 set(NVCC_generated_dependency_file "/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudafilters/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_column_filter.32sc3.cu.o.NVCC-depend") # path
 set(cmake_dependency_file "/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudafilters/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_column_filter.32sc3.cu.o.depend") # path
-set(CUDA_make2cmake "/usr/share/cmake-3.28/Modules/FindCUDA/make2cmake.cmake") # path
-set(CUDA_parse_cubin "/usr/share/cmake-3.28/Modules/FindCUDA/parse_cubin.cmake") # path
+set(CUDA_make2cmake "/usr/share/cmake-4.3/Modules/FindCUDA/make2cmake.cmake") # path
+set(CUDA_parse_cubin "/usr/share/cmake-4.3/Modules/FindCUDA/parse_cubin.cmake") # path
 set(build_cubin OFF) # bool
 set(CUDA_HOST_COMPILER "/usr/bin/cc") # path
 # We won't actually use these variables for now, but we need to set this, in
@@ -310,5 +308,3 @@ if( build_cubin )
     )
 
 endif()
-
-cmake_policy(POP)

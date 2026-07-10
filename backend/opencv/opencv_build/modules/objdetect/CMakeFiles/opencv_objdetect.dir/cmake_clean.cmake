@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_objdetect.so"
   "../../lib/libopencv_objdetect.so.5.1.0"
   "../../lib/libopencv_objdetect.so.501"
+  "CMakeFiles/opencv_objdetect.dir/link.d"
   "CMakeFiles/opencv_objdetect.dir/src/aruco/apriltag/apriltag_quad_thresh.cpp.o"
   "CMakeFiles/opencv_objdetect.dir/src/aruco/apriltag/apriltag_quad_thresh.cpp.o.d"
   "CMakeFiles/opencv_objdetect.dir/src/aruco/apriltag/zmaxheap.cpp.o"

@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_wechat_qrcode.so"
   "../../lib/libopencv_wechat_qrcode.so.5.1.0"
   "../../lib/libopencv_wechat_qrcode.so.501"
+  "CMakeFiles/opencv_wechat_qrcode.dir/link.d"
   "CMakeFiles/opencv_wechat_qrcode.dir/src/binarizermgr.cpp.o"
   "CMakeFiles/opencv_wechat_qrcode.dir/src/binarizermgr.cpp.o.d"
   "CMakeFiles/opencv_wechat_qrcode.dir/src/decodermgr.cpp.o"

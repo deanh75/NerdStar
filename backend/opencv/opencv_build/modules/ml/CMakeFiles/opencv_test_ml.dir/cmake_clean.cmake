@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../bin/opencv_test_ml"
   "../../bin/opencv_test_ml.pdb"
+  "CMakeFiles/opencv_test_ml.dir/link.d"
   "CMakeFiles/opencv_test_ml.dir/test/test_ann.cpp.o"
   "CMakeFiles/opencv_test_ml.dir/test/test_ann.cpp.o.d"
   "CMakeFiles/opencv_test_ml.dir/test/test_bayes.cpp.o"

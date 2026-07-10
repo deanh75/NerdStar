@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../bin/opencv_perf_cudacodec"
   "../../bin/opencv_perf_cudacodec.pdb"
+  "CMakeFiles/opencv_perf_cudacodec.dir/link.d"
   "CMakeFiles/opencv_perf_cudacodec.dir/perf/perf_main.cpp.o"
   "CMakeFiles/opencv_perf_cudacodec.dir/perf/perf_main.cpp.o.d"
   "CMakeFiles/opencv_perf_cudacodec.dir/perf/perf_video.cpp.o"

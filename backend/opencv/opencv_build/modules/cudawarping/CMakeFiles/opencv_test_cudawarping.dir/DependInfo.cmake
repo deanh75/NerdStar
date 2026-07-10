@@ -15,6 +15,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudawarping/test/test_resize.cpp" "modules/cudawarping/CMakeFiles/opencv_test_cudawarping.dir/test/test_resize.cpp.o" "gcc" "modules/cudawarping/CMakeFiles/opencv_test_cudawarping.dir/test/test_resize.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudawarping/test/test_warp_affine.cpp" "modules/cudawarping/CMakeFiles/opencv_test_cudawarping.dir/test/test_warp_affine.cpp.o" "gcc" "modules/cudawarping/CMakeFiles/opencv_test_cudawarping.dir/test/test_warp_affine.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudawarping/test/test_warp_perspective.cpp" "modules/cudawarping/CMakeFiles/opencv_test_cudawarping.dir/test/test_warp_perspective.cpp.o" "gcc" "modules/cudawarping/CMakeFiles/opencv_test_cudawarping.dir/test/test_warp_perspective.cpp.o.d"
+  "" "bin/opencv_test_cudawarping" "gcc" "modules/cudawarping/CMakeFiles/opencv_test_cudawarping.dir/link.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

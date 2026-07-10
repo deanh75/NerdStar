@@ -17,6 +17,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/stitching/test/test_reprojection.cpp" "modules/stitching/CMakeFiles/opencv_test_stitching.dir/test/test_reprojection.cpp.o" "gcc" "modules/stitching/CMakeFiles/opencv_test_stitching.dir/test/test_reprojection.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/stitching/test/test_stitcher.cpp" "modules/stitching/CMakeFiles/opencv_test_stitching.dir/test/test_stitcher.cpp.o" "gcc" "modules/stitching/CMakeFiles/opencv_test_stitching.dir/test/test_stitcher.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/stitching/test/test_wave_correction.cpp" "modules/stitching/CMakeFiles/opencv_test_stitching.dir/test/test_wave_correction.cpp.o" "gcc" "modules/stitching/CMakeFiles/opencv_test_stitching.dir/test/test_wave_correction.cpp.o.d"
+  "" "bin/opencv_test_stitching" "gcc" "modules/stitching/CMakeFiles/opencv_test_stitching.dir/link.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

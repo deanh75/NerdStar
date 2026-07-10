@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../bin/opencv_test_imgcodecs"
   "../../bin/opencv_test_imgcodecs.pdb"
+  "CMakeFiles/opencv_test_imgcodecs.dir/link.d"
   "CMakeFiles/opencv_test_imgcodecs.dir/test/test_animation.cpp.o"
   "CMakeFiles/opencv_test_imgcodecs.dir/test/test_animation.cpp.o.d"
   "CMakeFiles/opencv_test_imgcodecs.dir/test/test_avif.cpp.o"

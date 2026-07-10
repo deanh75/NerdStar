@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../bin/opencv_model_diagnostics"
   "../../bin/opencv_model_diagnostics.pdb"
+  "CMakeFiles/opencv_model_diagnostics.dir/link.d"
   "CMakeFiles/opencv_model_diagnostics.dir/model_diagnostics.cpp.o"
   "CMakeFiles/opencv_model_diagnostics.dir/model_diagnostics.cpp.o.d"
 )

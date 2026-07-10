@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_cudacodec.so"
   "../../lib/libopencv_cudacodec.so.5.1.0"
   "../../lib/libopencv_cudacodec.so.501"
+  "CMakeFiles/opencv_cudacodec.dir/link.d"
   "CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_ColorSpace.cu.o"
   "CMakeFiles/opencv_cudacodec.dir/src/NvEncoder.cpp.o"
   "CMakeFiles/opencv_cudacodec.dir/src/NvEncoder.cpp.o.d"

@@ -10,3 +10,10 @@ av
 jinja2
 python-multipart
 websockets
+pycuda
+cupy-cuda12x
+torch
+torchvision
+build
+ultralytics
+jetson-stats

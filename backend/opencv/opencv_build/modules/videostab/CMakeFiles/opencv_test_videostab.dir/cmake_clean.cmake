@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../bin/opencv_test_videostab"
   "../../bin/opencv_test_videostab.pdb"
+  "CMakeFiles/opencv_test_videostab.dir/link.d"
   "CMakeFiles/opencv_test_videostab.dir/test/test_main.cpp.o"
   "CMakeFiles/opencv_test_videostab.dir/test/test_main.cpp.o.d"
   "CMakeFiles/opencv_test_videostab.dir/test/test_motion_estimation.cpp.o"

@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_line_descriptor.so"
   "../../lib/libopencv_line_descriptor.so.5.1.0"
   "../../lib/libopencv_line_descriptor.so.501"
+  "CMakeFiles/opencv_line_descriptor.dir/link.d"
   "CMakeFiles/opencv_line_descriptor.dir/src/LSDDetector.cpp.o"
   "CMakeFiles/opencv_line_descriptor.dir/src/LSDDetector.cpp.o.d"
   "CMakeFiles/opencv_line_descriptor.dir/src/binary_descriptor.cpp.o"

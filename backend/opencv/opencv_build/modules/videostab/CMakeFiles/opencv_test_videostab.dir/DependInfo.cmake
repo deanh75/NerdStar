@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/videostab/test/test_main.cpp" "modules/videostab/CMakeFiles/opencv_test_videostab.dir/test/test_main.cpp.o" "gcc" "modules/videostab/CMakeFiles/opencv_test_videostab.dir/test/test_main.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/videostab/test/test_motion_estimation.cpp" "modules/videostab/CMakeFiles/opencv_test_videostab.dir/test/test_motion_estimation.cpp.o" "gcc" "modules/videostab/CMakeFiles/opencv_test_videostab.dir/test/test_motion_estimation.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/videostab/test/test_stabilizer.cpp" "modules/videostab/CMakeFiles/opencv_test_videostab.dir/test/test_stabilizer.cpp.o" "gcc" "modules/videostab/CMakeFiles/opencv_test_videostab.dir/test/test_stabilizer.cpp.o.d"
+  "" "bin/opencv_test_videostab" "gcc" "modules/videostab/CMakeFiles/opencv_test_videostab.dir/link.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

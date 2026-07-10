@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../bin/opencv_test_bgsegm"
   "../../bin/opencv_test_bgsegm.pdb"
+  "CMakeFiles/opencv_test_bgsegm.dir/link.d"
   "CMakeFiles/opencv_test_bgsegm.dir/test/test_backgroundsubtractor_gbh.cpp.o"
   "CMakeFiles/opencv_test_bgsegm.dir/test/test_backgroundsubtractor_gbh.cpp.o.d"
   "CMakeFiles/opencv_test_bgsegm.dir/test/test_backgroundsubtractor_lsbp.cpp.o"

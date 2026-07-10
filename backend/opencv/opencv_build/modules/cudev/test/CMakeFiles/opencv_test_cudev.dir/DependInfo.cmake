@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudev/test/test_main.cpp" "modules/cudev/test/CMakeFiles/opencv_test_cudev.dir/test_main.cpp.o" "gcc" "modules/cudev/test/CMakeFiles/opencv_test_cudev.dir/test_main.cpp.o.d"
+  "" "bin/opencv_test_cudev" "gcc" "modules/cudev/test/CMakeFiles/opencv_test_cudev.dir/link.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

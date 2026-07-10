@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../bin/opencv_test_features"
   "../../bin/opencv_test_features.pdb"
+  "CMakeFiles/opencv_test_features.dir/link.d"
   "CMakeFiles/opencv_test_features.dir/test/npy_blob.cpp.o"
   "CMakeFiles/opencv_test_features.dir/test/npy_blob.cpp.o.d"
   "CMakeFiles/opencv_test_features.dir/test/ocl/test_brute_force_matcher.cpp.o"

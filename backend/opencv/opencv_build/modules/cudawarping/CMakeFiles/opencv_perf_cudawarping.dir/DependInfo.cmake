@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudawarping/perf/perf_main.cpp" "modules/cudawarping/CMakeFiles/opencv_perf_cudawarping.dir/perf/perf_main.cpp.o" "gcc" "modules/cudawarping/CMakeFiles/opencv_perf_cudawarping.dir/perf/perf_main.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudawarping/perf/perf_warping.cpp" "modules/cudawarping/CMakeFiles/opencv_perf_cudawarping.dir/perf/perf_warping.cpp.o" "gcc" "modules/cudawarping/CMakeFiles/opencv_perf_cudawarping.dir/perf/perf_warping.cpp.o.d"
+  "" "bin/opencv_perf_cudawarping" "gcc" "modules/cudawarping/CMakeFiles/opencv_perf_cudawarping.dir/link.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

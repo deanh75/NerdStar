@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../bin/opencv_test_cudaobjdetect"
   "../../bin/opencv_test_cudaobjdetect.pdb"
+  "CMakeFiles/opencv_test_cudaobjdetect.dir/link.d"
   "CMakeFiles/opencv_test_cudaobjdetect.dir/test/test_main.cpp.o"
   "CMakeFiles/opencv_test_cudaobjdetect.dir/test/test_main.cpp.o.d"
   "CMakeFiles/opencv_test_cudaobjdetect.dir/test/test_objdetect.cpp.o"

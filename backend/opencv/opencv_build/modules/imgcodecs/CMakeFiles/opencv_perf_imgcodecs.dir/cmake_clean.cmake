@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../bin/opencv_perf_imgcodecs"
   "../../bin/opencv_perf_imgcodecs.pdb"
+  "CMakeFiles/opencv_perf_imgcodecs.dir/link.d"
   "CMakeFiles/opencv_perf_imgcodecs.dir/perf/perf_decode_encode.cpp.o"
   "CMakeFiles/opencv_perf_imgcodecs.dir/perf/perf_decode_encode.cpp.o.d"
   "CMakeFiles/opencv_perf_imgcodecs.dir/perf/perf_jpeg.cpp.o"

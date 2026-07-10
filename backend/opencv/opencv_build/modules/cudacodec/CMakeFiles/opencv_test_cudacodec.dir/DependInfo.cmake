@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/test/test_main.cpp" "modules/cudacodec/CMakeFiles/opencv_test_cudacodec.dir/test/test_main.cpp.o" "gcc" "modules/cudacodec/CMakeFiles/opencv_test_cudacodec.dir/test/test_main.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudacodec/test/test_video.cpp" "modules/cudacodec/CMakeFiles/opencv_test_cudacodec.dir/test/test_video.cpp.o" "gcc" "modules/cudacodec/CMakeFiles/opencv_test_cudacodec.dir/test/test_video.cpp.o.d"
+  "" "bin/opencv_test_cudacodec" "gcc" "modules/cudacodec/CMakeFiles/opencv_test_cudacodec.dir/link.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

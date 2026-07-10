@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_rapid.so"
   "../../lib/libopencv_rapid.so.5.1.0"
   "../../lib/libopencv_rapid.so.501"
+  "CMakeFiles/opencv_rapid.dir/link.d"
   "CMakeFiles/opencv_rapid.dir/src/histogram.cpp.o"
   "CMakeFiles/opencv_rapid.dir/src/histogram.cpp.o.d"
   "CMakeFiles/opencv_rapid.dir/src/rapid.cpp.o"

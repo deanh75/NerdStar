@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../bin/opencv_test_face"
   "../../bin/opencv_test_face.pdb"
+  "CMakeFiles/opencv_test_face.dir/link.d"
   "CMakeFiles/opencv_test_face.dir/test/test_bif.cpp.o"
   "CMakeFiles/opencv_test_face.dir/test/test_bif.cpp.o.d"
   "CMakeFiles/opencv_test_face.dir/test/test_face_align.cpp.o"

@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_videoio.so"
   "../../lib/libopencv_videoio.so.5.1.0"
   "../../lib/libopencv_videoio.so.501"
+  "CMakeFiles/opencv_videoio.dir/link.d"
   "CMakeFiles/opencv_videoio.dir/src/backend_plugin.cpp.o"
   "CMakeFiles/opencv_videoio.dir/src/backend_plugin.cpp.o.d"
   "CMakeFiles/opencv_videoio.dir/src/backend_static.cpp.o"

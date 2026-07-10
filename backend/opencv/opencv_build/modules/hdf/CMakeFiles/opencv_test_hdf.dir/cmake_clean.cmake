@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../bin/opencv_test_hdf"
   "../../bin/opencv_test_hdf.pdb"
+  "CMakeFiles/opencv_test_hdf.dir/link.d"
   "CMakeFiles/opencv_test_hdf.dir/test/test_hdf5.cpp.o"
   "CMakeFiles/opencv_test_hdf.dir/test/test_hdf5.cpp.o.d"
   "CMakeFiles/opencv_test_hdf.dir/test/test_main.cpp.o"

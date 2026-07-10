@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../../bin/opencv_test_cudev"
   "../../../bin/opencv_test_cudev.pdb"
+  "CMakeFiles/opencv_test_cudev.dir/link.d"
   "CMakeFiles/opencv_test_cudev.dir/opencv_test_cudev_generated_test_arithm_func.cu.o"
   "CMakeFiles/opencv_test_cudev.dir/opencv_test_cudev_generated_test_arithm_op.cu.o"
   "CMakeFiles/opencv_test_cudev.dir/opencv_test_cudev_generated_test_bitwize_op.cu.o"

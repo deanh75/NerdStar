@@ -42,6 +42,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/dnn/test/test_tf_importer.cpp" "modules/dnn/CMakeFiles/opencv_test_dnn.dir/test/test_tf_importer.cpp.o" "gcc" "modules/dnn/CMakeFiles/opencv_test_dnn.dir/test/test_tf_importer.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/dnn/test/test_tflite_importer.cpp" "modules/dnn/CMakeFiles/opencv_test_dnn.dir/test/test_tflite_importer.cpp.o" "gcc" "modules/dnn/CMakeFiles/opencv_test_dnn.dir/test/test_tflite_importer.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/dnn/test/test_tokenizer.cpp" "modules/dnn/CMakeFiles/opencv_test_dnn.dir/test/test_tokenizer.cpp.o" "gcc" "modules/dnn/CMakeFiles/opencv_test_dnn.dir/test/test_tokenizer.cpp.o.d"
+  "" "bin/opencv_test_dnn" "gcc" "modules/dnn/CMakeFiles/opencv_test_dnn.dir/link.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

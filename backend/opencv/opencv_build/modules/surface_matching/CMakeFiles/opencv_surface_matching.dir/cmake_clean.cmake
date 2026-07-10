@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_surface_matching.so"
   "../../lib/libopencv_surface_matching.so.5.1.0"
   "../../lib/libopencv_surface_matching.so.501"
+  "CMakeFiles/opencv_surface_matching.dir/link.d"
   "CMakeFiles/opencv_surface_matching.dir/src/icp.cpp.o"
   "CMakeFiles/opencv_surface_matching.dir/src/icp.cpp.o.d"
   "CMakeFiles/opencv_surface_matching.dir/src/pose_3d.cpp.o"

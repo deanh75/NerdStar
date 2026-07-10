@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_alphamat.so"
   "../../lib/libopencv_alphamat.so.5.1.0"
   "../../lib/libopencv_alphamat.so.501"
+  "CMakeFiles/opencv_alphamat.dir/link.d"
   "CMakeFiles/opencv_alphamat.dir/src/cm.cpp.o"
   "CMakeFiles/opencv_alphamat.dir/src/cm.cpp.o.d"
   "CMakeFiles/opencv_alphamat.dir/src/infoflow.cpp.o"

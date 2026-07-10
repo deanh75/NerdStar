@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_ximgproc.so"
   "../../lib/libopencv_ximgproc.so.5.1.0"
   "../../lib/libopencv_ximgproc.so.501"
+  "CMakeFiles/opencv_ximgproc.dir/link.d"
   "CMakeFiles/opencv_ximgproc.dir/opencl_kernels_ximgproc.cpp.o"
   "CMakeFiles/opencv_ximgproc.dir/opencl_kernels_ximgproc.cpp.o.d"
   "CMakeFiles/opencv_ximgproc.dir/src/adaptive_manifold_filter_n.cpp.o"

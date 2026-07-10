@@ -49,6 +49,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/core/test/test_umat.cpp" "modules/core/CMakeFiles/opencv_test_core.dir/test/test_umat.cpp.o" "gcc" "modules/core/CMakeFiles/opencv_test_core.dir/test/test_umat.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/core/test/test_utils.cpp" "modules/core/CMakeFiles/opencv_test_core.dir/test/test_utils.cpp.o" "gcc" "modules/core/CMakeFiles/opencv_test_core.dir/test/test_utils.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/core/transpose.neon.cpp" "modules/core/CMakeFiles/opencv_test_core.dir/transpose.neon.cpp.o" "gcc" "modules/core/CMakeFiles/opencv_test_core.dir/transpose.neon.cpp.o.d"
+  "" "bin/opencv_test_core" "gcc" "modules/core/CMakeFiles/opencv_test_core.dir/link.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

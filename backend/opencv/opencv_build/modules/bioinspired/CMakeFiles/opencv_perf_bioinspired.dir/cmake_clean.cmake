@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../bin/opencv_perf_bioinspired"
   "../../bin/opencv_perf_bioinspired.pdb"
+  "CMakeFiles/opencv_perf_bioinspired.dir/link.d"
   "CMakeFiles/opencv_perf_bioinspired.dir/perf/opencl/perf_retina.ocl.cpp.o"
   "CMakeFiles/opencv_perf_bioinspired.dir/perf/opencl/perf_retina.ocl.cpp.o.d"
   "CMakeFiles/opencv_perf_bioinspired.dir/perf/perf_main.cpp.o"

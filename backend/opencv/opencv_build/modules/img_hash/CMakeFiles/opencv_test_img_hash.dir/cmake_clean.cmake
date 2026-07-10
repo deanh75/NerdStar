@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../bin/opencv_test_img_hash"
   "../../bin/opencv_test_img_hash.pdb"
+  "CMakeFiles/opencv_test_img_hash.dir/link.d"
   "CMakeFiles/opencv_test_img_hash.dir/test/test_average_hash.cpp.o"
   "CMakeFiles/opencv_test_img_hash.dir/test/test_average_hash.cpp.o.d"
   "CMakeFiles/opencv_test_img_hash.dir/test/test_block_mean_hash.cpp.o"

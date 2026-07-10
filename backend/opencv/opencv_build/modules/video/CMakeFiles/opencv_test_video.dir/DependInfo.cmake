@@ -23,6 +23,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/video/test/test_main.cpp" "modules/video/CMakeFiles/opencv_test_video.dir/test/test_main.cpp.o" "gcc" "modules/video/CMakeFiles/opencv_test_video.dir/test/test_main.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/video/test/test_optflowpyrlk.cpp" "modules/video/CMakeFiles/opencv_test_video.dir/test/test_optflowpyrlk.cpp.o" "gcc" "modules/video/CMakeFiles/opencv_test_video.dir/test/test_optflowpyrlk.cpp.o.d"
   "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/video/test/test_trackers.cpp" "modules/video/CMakeFiles/opencv_test_video.dir/test/test_trackers.cpp.o" "gcc" "modules/video/CMakeFiles/opencv_test_video.dir/test/test_trackers.cpp.o.d"
+  "" "bin/opencv_test_video" "gcc" "modules/video/CMakeFiles/opencv_test_video.dir/link.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

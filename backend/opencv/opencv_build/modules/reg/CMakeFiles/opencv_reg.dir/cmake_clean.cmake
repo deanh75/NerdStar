@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "../../lib/libopencv_reg.so"
   "../../lib/libopencv_reg.so.5.1.0"
   "../../lib/libopencv_reg.so.501"
+  "CMakeFiles/opencv_reg.dir/link.d"
   "CMakeFiles/opencv_reg.dir/src/map.cpp.o"
   "CMakeFiles/opencv_reg.dir/src/map.cpp.o.d"
   "CMakeFiles/opencv_reg.dir/src/mapaffine.cpp.o"

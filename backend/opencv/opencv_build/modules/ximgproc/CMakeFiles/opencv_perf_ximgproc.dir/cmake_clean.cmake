@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../bin/opencv_perf_ximgproc"
   "../../bin/opencv_perf_ximgproc.pdb"
+  "CMakeFiles/opencv_perf_ximgproc.dir/link.d"
   "CMakeFiles/opencv_perf_ximgproc.dir/perf/perf_adaptive_manifold.cpp.o"
   "CMakeFiles/opencv_perf_ximgproc.dir/perf/perf_adaptive_manifold.cpp.o.d"
   "CMakeFiles/opencv_perf_ximgproc.dir/perf/perf_bilateral_texture_filter.cpp.o"

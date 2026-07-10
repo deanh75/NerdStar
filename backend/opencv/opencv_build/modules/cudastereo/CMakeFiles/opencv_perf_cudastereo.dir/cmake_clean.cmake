@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../bin/opencv_perf_cudastereo"
   "../../bin/opencv_perf_cudastereo.pdb"
+  "CMakeFiles/opencv_perf_cudastereo.dir/link.d"
   "CMakeFiles/opencv_perf_cudastereo.dir/perf/perf_main.cpp.o"
   "CMakeFiles/opencv_perf_cudastereo.dir/perf/perf_main.cpp.o.d"
   "CMakeFiles/opencv_perf_cudastereo.dir/perf/perf_stereo.cpp.o"

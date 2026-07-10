@@ -23,7 +23,7 @@ def apriltag_worker(
         ]
     ],
 ):
-    os.sched_setaffinity(0, {1, 2})
+    os.sched_setaffinity(0, {1, 2, 3})
     fiducial_detector = ArucoFiducialDetector(cv2.aruco.DICT_APRILTAG_36h11)
     camera_pose_estimator = MultiTargetCameraPoseEstimator()
 
