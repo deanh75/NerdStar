@@ -42,7 +42,7 @@ class Wrapper:
 
         self.setup_nt()
 
-        self._capture: JetsonCapture = JetsonCapture()
+        self._capture: JetsonCapture = JetsonCapture("by-id")
         for cam in self._capture.getCameras():
             camera_config_source: ConfigSource = FileConfigSource(cam)
             remote_config_source: ConfigSource = NTConfigSource()
@@ -54,11 +54,13 @@ class Wrapper:
         self.apriltag_lock = threading.Lock()
         self.obj_lock = threading.Lock()
         self.calib_lock = threading.Lock()
+        self.calib_frame_lock = threading.Lock()
         self.frame_lock = threading.Lock()
 
         self.latest_frames: list[ndarray[any, dtype[uint8]]] = [None] * len(self._configs)
 
         self.calib_done = None
+        self.calib_frame = None
 
         self.output_apriltag: list[ApriltagOutput] = [None] * len(self._configs)
         self.output_objdetect: list[ObjDetectionOutput] = [None] * len(self._configs)
@@ -235,6 +237,10 @@ class Wrapper:
         with self.calib_lock:
             return self.calib_done
         
+    def get_frame_count(self):
+        with self.calib_frame_lock:
+            return self.calib_frame
+        
     def get_apriltag_data(self, cam_supplier: callable) -> dict[str, any]:
         target = cam_supplier().strip()
         index = next((i for i, cam in enumerate(self._configs) if cam.camera_config.camera_name == target), -1)
@@ -302,8 +308,8 @@ class Wrapper:
             config = self._configs[index]
             config.remote_config_source.update(config, self.local_config)
             self._capture.get_frame(config)
-            image = self._capture.get_cpu(config.camera_config.camera_name)
-            gpu_image = self._capture.get_gpu(config.camera_config.camera_name)
+            image = self._capture.get_cpu(config.camera_config.camera_id)
+            gpu_image = self._capture.get_gpu(config.camera_config.camera_id)
             if image is None or gpu_image is None:
                 time.sleep(0.1)
                 print("No image found")
@@ -341,10 +347,11 @@ class Wrapper:
             if config.camera_config.is_calibrating:
                 # Calibration mode
                 was_calibrating = True
-                calib_session.process_frame(image)
+                calib_session.process_frame(rgbImg, cv2.COLOR_RGB2GRAY)
+                with self.calib_frame_lock:
+                    self.calib_frame = len(calib_session._all_charuco_corners)
                 with self.frame_lock:
-                    #TODO: May need to compress on gpu to save bandwidth
-                    self.latest_frames[index] = image
+                    self.latest_frames[index] = rgbImg
 
             elif was_calibrating:
                 # Just finished calibration, save results
@@ -467,13 +474,12 @@ class Wrapper:
             elif (config.camera_config.process_frames_enable 
                 and config.camera_config.has_calibration
                 and (config.camera_config.apriltags_enable or config.camera_config.objdetect_enable)):
-                img: cv2.Mat = rgbImg
                 if config.camera_config.apriltags_enable:
-                    [overlay_image_observation(img, x) for x in last_image_observations]
+                    [overlay_image_observation(rgbImg, x) for x in last_image_observations]
                 if config.camera_config.objdetect_enable:
-                    [overlay_obj_detect_observation(img, x) for x in last_objdetect_observations]
+                    [overlay_obj_detect_observation(rgbImg, x) for x in last_objdetect_observations]
                 with self.frame_lock:
-                    self.latest_frames[index] = img
+                    self.latest_frames[index] = rgbImg
             else:
                 with self.frame_lock:
                     self.latest_frames[index] = rgbImg

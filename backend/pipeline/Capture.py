@@ -105,13 +105,13 @@ class JetsonCapture(Capture):
         except Exception as e:
             print("Stop error:", e)
 
-    def get_frame(self, config: "ConfigStore") -> None:
-        cam_name = config.camera_config.camera_name if config else ""
-        last_config = self._last_configs.get(cam_name)
-        state = self._pipelines.get(cam_name)
+    def get_frame(self, config: ConfigStore) -> None:
+        cam_id = config.camera_config.camera_id if config else ""
+        last_config = self._last_configs.get(cam_id)
+        state = self._pipelines.get(cam_id)
     
         if config is None:
-            print(f"No config found for camera {cam_name}")
+            print(f"No config found for camera {cam_id}")
             return
     
         # -- restart if config changed --
@@ -120,21 +120,21 @@ class JetsonCapture(Capture):
             state["pipeline"].set_state(Gst.State.NULL)
             state["loop"].quit()
             state = None
-            self._pipelines[cam_name] = None
+            self._pipelines[cam_id] = None
             last_config = ConfigStore(
                 replace(config.camera_config),
                 replace(config.remote_config),
                 config.camera_config_source,
                 config.remote_config_source,
             )
-            self._last_configs[cam_name] = last_config
+            self._last_configs[cam_id] = last_config
     
         # -- restart if the pipeline thread died (GStreamer bus ERROR/EOS) --
         if state is not None and not state["thread"].is_alive():
             print("Capture session died, restarting")
             state["pipeline"].set_state(Gst.State.NULL)
             state = None
-            self._pipelines[cam_name] = None
+            self._pipelines[cam_id] = None
     
         # -- start a fresh pipeline if none is running --
         if state is None:
@@ -183,6 +183,7 @@ class JetsonCapture(Capture):
                         src = make("v4l2src", "usb-camera")
                         src.set_property("device", f"{self._base_dir}/{device}")
                         src.set_property("extra-controls", Gst.Structure.new_from_string(extra_controls))
+                        src.set_property("io-mode", 2) # mmap mode
     
                         src_caps = make("capsfilter", "src-caps")
                         # image/jpeg routes this to hardware MJPEG decode via nvv4l2decoder below
@@ -205,7 +206,8 @@ class JetsonCapture(Capture):
                         streammux.set_property("width", width)
                         streammux.set_property("height", height)
                         streammux.set_property("batch-size", 1)
-                        streammux.set_property("batched-push-timeout", 40000)
+                        streammux.set_property("batched-push-timeout", 8400)
+                        streammux.set_property("live-source", True)
     
                         #TODO: What is pgie????
                         pgie = None
@@ -221,6 +223,8 @@ class JetsonCapture(Capture):
                         queue_probe = make("queue", "queue-probe")
                         queue_probe.set_property("leaky", 1)
                         queue_probe.set_property("max-size-buffers", 1)
+                        queue_probe.set_property("max-size-bytes", 0)
+                        queue_probe.set_property("max-size-time", 0)
                         sink = make("appsink", "probe-sink")
                         sink.set_property("emit-signals", True)
                         sink.set_property("max-buffers", 1)
@@ -315,11 +319,11 @@ class JetsonCapture(Capture):
                         new_state["thread"] = thread
     
                         state = new_state
-                        self._pipelines[cam_name] = state
+                        self._pipelines[cam_id] = state
                     except RuntimeError as e:
-                        print(f"Failed to open pipeline for camera {cam_name}: {e}")
+                        print(f"Failed to open pipeline for camera {cam_id}: {e}")
                         state = None
-                        self._pipelines[cam_name] = None
+                        self._pipelines[cam_id] = None
     
         if last_config is None:
             last_config = ConfigStore(
@@ -328,10 +332,10 @@ class JetsonCapture(Capture):
                 config.camera_config_source,
                 config.remote_config_source,
             )
-            self._last_configs[cam_name] = last_config
+            self._last_configs[cam_id] = last_config
     
-    def get_cpu(self, cam_name: str) -> Optional[cv2.Mat]:
-        state = self._get_state(cam_name)
+    def get_cpu(self, cam_id: str) -> Optional[cv2.Mat]:
+        state = self._get_state(cam_id)
         if state is None:
             return None
         mat = state["mat"]
@@ -339,8 +343,8 @@ class JetsonCapture(Capture):
             return None
         return mat
     
-    def get_gpu(self, cam_name: str, target_format: int = cv2.COLOR_BGR2RGB) -> Optional[cv2.cuda.GpuMat]:
-        state = self._get_state(cam_name)
+    def get_gpu(self, cam_id: str, target_format: int = cv2.COLOR_BGR2RGB) -> Optional[cv2.cuda.GpuMat]:
+        state = self._get_state(cam_id)
         if state is None or state["mat"] is None:
             return None
         if cv2.cuda.getCudaEnabledDeviceCount() == 0:
@@ -357,8 +361,8 @@ class JetsonCapture(Capture):
         gpu_mat.upload(state["mat"])
         return cv2.cuda.cvtColor(gpu_mat, target_format)
     
-    def _get_state(self, cam_name: str) -> Optional[dict]:
-        pipe = self._pipelines.get(cam_name)
+    def _get_state(self, cam_id: str) -> Optional[dict]:
+        pipe = self._pipelines.get(cam_id)
         if pipe is None:
             return None
         return pipe

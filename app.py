@@ -8,6 +8,7 @@ import atexit
 import os
 import threading
 import time
+import cv2
 
 from fastapi import FastAPI, Query, Request, Form, UploadFile, File, WebSocket, WebSocketDisconnect
 from fastapi.responses import JSONResponse
@@ -34,14 +35,19 @@ init = False
 state = {"index": -1}
 
 def initialize():
-    global init, cameras, selected_camera
+    global init, cameras, selected_camera, stop_event, threads
     if not init:
+        cv2.setNumThreads(4)
         cameras = wrapper.get_cameras()
         selected_camera = cameras[0] if cameras else None
         estimator = RobotPoseEstimator(wrapper.local_config)
+        stop_event = threading.Event()
+        threads = [threading.Thread]
         
         for i in range(len(cameras)):
-            threading.Thread(target=wrapper.start_backend, args=(i,), daemon=True).start()
+            thread = threading.Thread(target=wrapper.start_backend, args=(i,), daemon=True)
+            thread.start()
+            threads.append(thread)
 
         threading.Thread(target=wrapper.estimate, args=(estimator,), daemon=True).start()
 
@@ -194,6 +200,10 @@ def calibration(request: Request):
 def get_calibration_status():
     return JSONResponse({"done": wrapper.get_done()})
 
+@app.get('/get_frame_count')
+def get_frame_count():
+    return JSONResponse({"frame_count": wrapper.get_frame_count()})
+
 @app.get("/settings")
 def settings(request: Request):
     return templates.TemplateResponse(request, "settings.html", {})
@@ -261,8 +271,12 @@ def start_app():
     threading.Thread(target=server.run, daemon=True).start()
 
 def stop_app():
-    global server
+    global server, stop_event, threads
     if server:
+        stop_event.set()
+        # for thread in threads:
+        #     thread.join(thread, timeout=5)
+        wrapper._capture.stop()
         server.should_exit = True
         server = None
 

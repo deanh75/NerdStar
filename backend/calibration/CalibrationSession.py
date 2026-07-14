@@ -18,7 +18,21 @@ class CalibrationSession:
     def __init__(self) -> None:
         self._aruco_dict = cv2.aruco.getPredefinedDictionary(cv2.aruco.DICT_5X5_1000)
         self._aruco_params = cv2.aruco.DetectorParameters()
+        self._aruco_params.cornerRefinementMethod = cv2.aruco.CORNER_REFINE_SUBPIX
+        self._aruco_params.cornerRefinementMaxIterations = 15
+        self._aruco_params.cornerRefinementMinAccuracy = 0.05
+        self._aruco_params.adaptiveThreshWinSizeMin = 5
+        self._aruco_params.adaptiveThreshWinSizeMax = 15
+        self._aruco_params.adaptiveThreshWinSizeStep = 10
+        self._aruco_params.minMarkerPerimeterRate = 0.03 
+        self._aruco_params.minCornerDistanceRate = 0.05
+        self._aruco_params.useAruco3Detection = True
+        self._aruco_params.minSideLengthCanonicalImg = 32
         self._charuco_board = cv2.aruco.CharucoBoard((12, 9), 0.030, 0.023, self._aruco_dict)
+        # self._aruco_detector = cv2.aruco.ArucoDetector(self._aruco_dict, self._aruco_params)
+        charuco_params = cv2.aruco.CharucoParameters()
+        charuco_params.tryRefineMarkers = False
+        self._charuco_detector = cv2.aruco.CharucoDetector(self._charuco_board, charuco_params, self._aruco_params)
         self._calib_flags = (
             cv2.CALIB_USE_QR |
             cv2.CALIB_FIX_ASPECT_RATIO |
@@ -32,30 +46,27 @@ class CalibrationSession:
             cv2.CALIB_FIX_K6
         )
 
-    def process_frame(self, image: cv2.Mat) -> None:
+    def process_frame(self, image: cv2.Mat, cvt: int) -> None:
         # Get image size
         if self._imsize == None:
             self._imsize = (image.shape[1], image.shape[0])
 
-        # Detect tags
-        (corners, ids, rejected) = cv2.aruco.detectMarkers(image, self._aruco_dict, parameters=self._aruco_params)
-        if len(corners) > 0:
-            cv2.aruco.drawDetectedMarkers(image, corners)
+        gray = cv2.cvtColor(image, cvt) if image.ndim == 3 else image
+        charuco_corners, charuco_ids, marker_corners, marker_ids = self._charuco_detector.detectBoard(gray)
 
-            # Find Charuco corners
-            (retval, charuco_corners, charuco_ids) = cv2.aruco.interpolateCornersCharuco(
-                corners, ids, image, self._charuco_board
-            )
-            if self._is_good_frame(charuco_corners, charuco_ids):
-                cv2.aruco.drawDetectedCornersCharuco(image, charuco_corners, charuco_ids)
+        if marker_ids is not None and len(marker_ids) > 0:
+            cv2.aruco.drawDetectedMarkers(image, marker_corners, marker_ids)
 
-                self._all_charuco_corners.append(charuco_corners)
-                self._all_charuco_ids.append(charuco_ids)
-            else: 
-                print("Frame rejected: Not enough corners detected")
+        if self._is_good_frame(charuco_corners, charuco_ids):
+            self._all_charuco_corners.append(charuco_corners)
+            self._all_charuco_ids.append(charuco_ids)
+        else: 
+            print("Frame rejected: Not enough corners detected")
 
     def _is_good_frame(self, charuco_corners, charuco_ids) -> bool:
         if charuco_corners is None or charuco_ids is None:
+            return False
+        if len(charuco_corners) != len(charuco_ids) or len(charuco_ids) == 0:
             return False
         if len(charuco_corners) < 12:
             return False
@@ -183,8 +194,26 @@ class CalibrationSession:
             os.remove(path)
 
         try:
-            retval, camera_matrix, distortion_coefficients, rvecs, tvecs = cv2.aruco.calibrateCameraCharuco(
-                valid_corners, valid_ids, self._charuco_board, self._imsize, None, None, flags=self._calib_flags
+            all_object_points = []
+            all_image_points = []
+
+            for charuco_corners, charuco_ids in zip(valid_corners, valid_ids):
+                obj_points, img_points = self._charuco_board.matchImagePoints(
+                    charuco_corners, charuco_ids
+                )
+                if obj_points is None or len(obj_points) < 4:
+                    continue  # not enough correspondences in this view — skip it
+
+                all_object_points.append(obj_points)
+                all_image_points.append(img_points)
+
+            retval, camera_matrix, distortion_coefficients, rvecs, tvecs = cv2.calibrateCamera(
+                all_object_points,
+                all_image_points,
+                self._imsize,
+                None,
+                None,
+                flags=self._calib_flags,
             )
         except cv2.error as e:
             return "OpenCV calibration error:" + e

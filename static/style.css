@@ -10,7 +10,7 @@ body {
 /* Sidebar */
 .sidebar {
     width: 300px;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #050505;
     border-right: 2px solid #39FF14;
     display: flex;
