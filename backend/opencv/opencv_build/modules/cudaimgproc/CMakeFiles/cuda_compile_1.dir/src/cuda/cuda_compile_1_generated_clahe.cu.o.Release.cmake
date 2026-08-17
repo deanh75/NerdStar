@@ -59,8 +59,8 @@ set(CMAKE_COMMAND "/usr/bin/cmake") # path
 set(source_file "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/cudaimgproc/src/cuda/clahe.cu") # path
 set(NVCC_generated_dependency_file "/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudaimgproc/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_clahe.cu.o.NVCC-depend") # path
 set(cmake_dependency_file "/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudaimgproc/CMakeFiles/cuda_compile_1.dir/src/cuda/cuda_compile_1_generated_clahe.cu.o.depend") # path
-set(CUDA_make2cmake "/usr/share/cmake-4.3/Modules/FindCUDA/make2cmake.cmake") # path
-set(CUDA_parse_cubin "/usr/share/cmake-4.3/Modules/FindCUDA/parse_cubin.cmake") # path
+set(CUDA_make2cmake "/usr/share/cmake-4.4/Modules/FindCUDA/make2cmake.cmake") # path
+set(CUDA_parse_cubin "/usr/share/cmake-4.4/Modules/FindCUDA/parse_cubin.cmake") # path
 set(build_cubin OFF) # bool
 set(CUDA_HOST_COMPILER "/usr/bin/cc") # path
 # We won't actually use these variables for now, but we need to set this, in
@@ -70,7 +70,7 @@ set(generated_file_internal "/home/nerdstar/NerdStar/backend/opencv/opencv_build
 set(generated_cubin_file_internal "/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudaimgproc/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_clahe.cu.o.cubin.txt") # path
 
 set(CUDA_NVCC_EXECUTABLE "/usr/local/cuda-13.2/bin/nvcc") # path
-set(CUDA_NVCC_FLAGS -gencode;arch=compute_87,code=sm_87;-D_FORCE_INLINES;--use_fast_math;-Xcompiler=-DCVAPI_EXPORTS;-Xcompiler=-fPIC;--std=c++17 ;; ) # list
+set(CUDA_NVCC_FLAGS -gencode;arch=compute_87,code=sm_87;-D_FORCE_INLINES;-gencode;arch=compute_87,code=compute_87;--use_fast_math;-Xcompiler=-DCVAPI_EXPORTS;-Xcompiler=-fPIC;--std=c++17 ;; ) # list
 # Build specific configuration flags
 set(CUDA_NVCC_FLAGS_DEBUG  ; )
 set(CUDA_NVCC_FLAGS_RELEASE  ; )

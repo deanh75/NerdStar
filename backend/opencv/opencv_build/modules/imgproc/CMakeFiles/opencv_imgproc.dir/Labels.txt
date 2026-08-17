@@ -562,7 +562,7 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/imgproc/warp_kernels.neon.cpp
  Main
  opencv_imgproc
- PerfTest
+ Module
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/imgproc/warp_kernels.neon_fp16.cpp
  Main
  opencv_imgproc

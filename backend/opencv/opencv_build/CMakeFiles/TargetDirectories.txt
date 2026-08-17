@@ -1,7 +1,5 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/uninstall.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/opencv_modules.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/opencv_tests.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/opencv_perf_tests.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/opencv_dnn_plugins.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/opencv_highgui_plugins.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/ade.dir
@@ -932,16 +930,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudev/CMakeFiles/install.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudev/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudev/CMakeFiles/install/strip.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudev/test/CMakeFiles/opencv_test_cudev.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudev/test/CMakeFiles/package.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudev/test/CMakeFiles/package_source.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudev/test/CMakeFiles/test.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudev/test/CMakeFiles/edit_cache.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudev/test/CMakeFiles/rebuild_cache.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudev/test/CMakeFiles/list_install_components.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudev/test/CMakeFiles/install.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudev/test/CMakeFiles/install/local.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudev/test/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/python_tests/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/python_tests/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/python_tests/CMakeFiles/test.dir
@@ -952,8 +940,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/python_tests/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/python_tests/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/core/CMakeFiles/opencv_core.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/core/CMakeFiles/opencv_test_core.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/core/CMakeFiles/opencv_perf_core.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/core/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/core/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/core/CMakeFiles/test.dir
@@ -964,8 +950,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/core/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/core/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudaarithm/CMakeFiles/opencv_cudaarithm.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudaarithm/CMakeFiles/opencv_test_cudaarithm.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudaarithm/CMakeFiles/opencv_perf_cudaarithm.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudaarithm/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudaarithm/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudaarithm/CMakeFiles/test.dir
@@ -976,7 +960,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudaarithm/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudaarithm/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/flann/CMakeFiles/opencv_flann.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/flann/CMakeFiles/opencv_test_flann.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/flann/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/flann/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/flann/CMakeFiles/test.dir
@@ -987,8 +970,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/flann/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/flann/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/geometry/CMakeFiles/opencv_geometry.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/geometry/CMakeFiles/opencv_test_geometry.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/geometry/CMakeFiles/opencv_perf_geometry.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/geometry/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/geometry/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/geometry/CMakeFiles/test.dir
@@ -999,7 +980,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/geometry/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/geometry/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/hdf/CMakeFiles/opencv_hdf.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/hdf/CMakeFiles/opencv_test_hdf.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/hdf/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/hdf/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/hdf/CMakeFiles/test.dir
@@ -1010,8 +990,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/hdf/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/hdf/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/imgproc/CMakeFiles/opencv_imgproc.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/imgproc/CMakeFiles/opencv_test_imgproc.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/imgproc/CMakeFiles/opencv_perf_imgproc.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/imgproc/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/imgproc/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/imgproc/CMakeFiles/test.dir
@@ -1022,7 +1000,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/imgproc/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/imgproc/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/intensity_transform/CMakeFiles/opencv_intensity_transform.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/intensity_transform/CMakeFiles/opencv_test_intensity_transform.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/intensity_transform/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/intensity_transform/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/intensity_transform/CMakeFiles/test.dir
@@ -1033,7 +1010,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/intensity_transform/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/intensity_transform/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/ml/CMakeFiles/opencv_ml.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/ml/CMakeFiles/opencv_test_ml.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/ml/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/ml/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/ml/CMakeFiles/test.dir
@@ -1044,7 +1020,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/ml/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/ml/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/phase_unwrapping/CMakeFiles/opencv_phase_unwrapping.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/phase_unwrapping/CMakeFiles/opencv_test_phase_unwrapping.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/phase_unwrapping/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/phase_unwrapping/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/phase_unwrapping/CMakeFiles/test.dir
@@ -1065,8 +1040,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/plot/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/plot/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/ptcloud/CMakeFiles/opencv_ptcloud.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/ptcloud/CMakeFiles/opencv_test_ptcloud.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/ptcloud/CMakeFiles/opencv_perf_ptcloud.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/ptcloud/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/ptcloud/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/ptcloud/CMakeFiles/test.dir
@@ -1077,7 +1050,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/ptcloud/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/ptcloud/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/quality/CMakeFiles/opencv_quality.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/quality/CMakeFiles/opencv_test_quality.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/quality/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/quality/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/quality/CMakeFiles/test.dir
@@ -1088,7 +1060,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/quality/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/quality/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/rapid/CMakeFiles/opencv_rapid.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/rapid/CMakeFiles/opencv_test_rapid.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/rapid/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/rapid/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/rapid/CMakeFiles/test.dir
@@ -1099,8 +1070,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/rapid/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/rapid/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/reg/CMakeFiles/opencv_reg.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/reg/CMakeFiles/opencv_test_reg.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/reg/CMakeFiles/opencv_perf_reg.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/reg/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/reg/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/reg/CMakeFiles/test.dir
@@ -1111,7 +1080,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/reg/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/reg/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/rgbd/CMakeFiles/opencv_rgbd.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/rgbd/CMakeFiles/opencv_test_rgbd.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/rgbd/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/rgbd/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/rgbd/CMakeFiles/test.dir
@@ -1122,7 +1090,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/rgbd/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/rgbd/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/shape/CMakeFiles/opencv_shape.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/shape/CMakeFiles/opencv_test_shape.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/shape/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/shape/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/shape/CMakeFiles/test.dir
@@ -1133,8 +1100,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/shape/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/shape/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/signal/CMakeFiles/opencv_signal.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/signal/CMakeFiles/opencv_test_signal.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/signal/CMakeFiles/opencv_perf_signal.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/signal/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/signal/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/signal/CMakeFiles/test.dir
@@ -1145,8 +1110,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/signal/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/signal/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/stereo/CMakeFiles/opencv_stereo.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/stereo/CMakeFiles/opencv_test_stereo.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/stereo/CMakeFiles/opencv_perf_stereo.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/stereo/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/stereo/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/stereo/CMakeFiles/test.dir
@@ -1177,8 +1140,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/alphamat/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/alphamat/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudafilters/CMakeFiles/opencv_cudafilters.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudafilters/CMakeFiles/opencv_test_cudafilters.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudafilters/CMakeFiles/opencv_perf_cudafilters.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudafilters/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudafilters/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudafilters/CMakeFiles/test.dir
@@ -1189,8 +1150,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudafilters/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudafilters/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudaimgproc/CMakeFiles/opencv_cudaimgproc.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudaimgproc/CMakeFiles/opencv_test_cudaimgproc.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudaimgproc/CMakeFiles/opencv_perf_cudaimgproc.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudaimgproc/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudaimgproc/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudaimgproc/CMakeFiles/test.dir
@@ -1201,8 +1160,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudaimgproc/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudaimgproc/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudastereo/CMakeFiles/opencv_cudastereo.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudastereo/CMakeFiles/opencv_test_cudastereo.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudastereo/CMakeFiles/opencv_perf_cudastereo.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudastereo/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudastereo/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudastereo/CMakeFiles/test.dir
@@ -1213,8 +1170,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudastereo/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudastereo/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudawarping/CMakeFiles/opencv_cudawarping.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudawarping/CMakeFiles/opencv_test_cudawarping.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudawarping/CMakeFiles/opencv_perf_cudawarping.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudawarping/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudawarping/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudawarping/CMakeFiles/test.dir
@@ -1225,8 +1180,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudawarping/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudawarping/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/opencv_dnn.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/opencv_test_dnn.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/opencv_perf_dnn.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/test.dir
@@ -1247,8 +1200,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/3rdparty/mlas/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/3rdparty/mlas/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn_superres/CMakeFiles/opencv_dnn_superres.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn_superres/CMakeFiles/opencv_test_dnn_superres.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn_superres/CMakeFiles/opencv_perf_dnn_superres.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn_superres/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn_superres/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn_superres/CMakeFiles/test.dir
@@ -1259,8 +1210,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn_superres/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn_superres/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/features/CMakeFiles/opencv_features.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/features/CMakeFiles/opencv_test_features.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/features/CMakeFiles/opencv_perf_features.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/features/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/features/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/features/CMakeFiles/test.dir
@@ -1271,7 +1220,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/features/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/features/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/freetype/CMakeFiles/opencv_freetype.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/freetype/CMakeFiles/opencv_test_freetype.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/freetype/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/freetype/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/freetype/CMakeFiles/test.dir
@@ -1282,7 +1230,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/freetype/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/freetype/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/fuzzy/CMakeFiles/opencv_fuzzy.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/fuzzy/CMakeFiles/opencv_test_fuzzy.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/fuzzy/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/fuzzy/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/fuzzy/CMakeFiles/test.dir
@@ -1303,7 +1250,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/hfs/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/hfs/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/img_hash/CMakeFiles/opencv_img_hash.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/img_hash/CMakeFiles/opencv_test_img_hash.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/img_hash/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/img_hash/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/img_hash/CMakeFiles/test.dir
@@ -1314,8 +1260,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/img_hash/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/img_hash/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/imgcodecs/CMakeFiles/opencv_imgcodecs.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/imgcodecs/CMakeFiles/opencv_test_imgcodecs.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/imgcodecs/CMakeFiles/opencv_perf_imgcodecs.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/imgcodecs/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/imgcodecs/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/imgcodecs/CMakeFiles/test.dir
@@ -1326,8 +1270,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/imgcodecs/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/imgcodecs/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/line_descriptor/CMakeFiles/opencv_line_descriptor.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/line_descriptor/CMakeFiles/opencv_test_line_descriptor.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/line_descriptor/CMakeFiles/opencv_perf_line_descriptor.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/line_descriptor/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/line_descriptor/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/line_descriptor/CMakeFiles/test.dir
@@ -1338,8 +1280,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/line_descriptor/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/line_descriptor/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/objdetect/CMakeFiles/opencv_objdetect.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/objdetect/CMakeFiles/opencv_test_objdetect.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/objdetect/CMakeFiles/opencv_perf_objdetect.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/objdetect/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/objdetect/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/objdetect/CMakeFiles/test.dir
@@ -1350,8 +1290,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/objdetect/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/objdetect/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/photo/CMakeFiles/opencv_photo.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/photo/CMakeFiles/opencv_test_photo.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/photo/CMakeFiles/opencv_perf_photo.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/photo/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/photo/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/photo/CMakeFiles/test.dir
@@ -1362,7 +1300,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/photo/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/photo/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/saliency/CMakeFiles/opencv_saliency.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/saliency/CMakeFiles/opencv_test_saliency.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/saliency/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/saliency/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/saliency/CMakeFiles/test.dir
@@ -1373,7 +1310,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/saliency/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/saliency/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/text/CMakeFiles/opencv_text.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/text/CMakeFiles/opencv_test_text.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/text/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/text/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/text/CMakeFiles/test.dir
@@ -1384,8 +1320,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/text/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/text/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/video/CMakeFiles/opencv_video.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/video/CMakeFiles/opencv_test_video.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/video/CMakeFiles/opencv_perf_video.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/video/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/video/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/video/CMakeFiles/test.dir
@@ -1396,8 +1330,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/video/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/video/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/videoio/CMakeFiles/opencv_videoio.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/videoio/CMakeFiles/opencv_test_videoio.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/videoio/CMakeFiles/opencv_perf_videoio.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/videoio/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/videoio/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/videoio/CMakeFiles/test.dir
@@ -1408,8 +1340,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/videoio/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/videoio/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/wechat_qrcode/CMakeFiles/opencv_wechat_qrcode.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/wechat_qrcode/CMakeFiles/opencv_test_wechat_qrcode.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/wechat_qrcode/CMakeFiles/opencv_perf_wechat_qrcode.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/wechat_qrcode/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/wechat_qrcode/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/wechat_qrcode/CMakeFiles/test.dir
@@ -1420,8 +1350,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/wechat_qrcode/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/wechat_qrcode/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/xfeatures2d/CMakeFiles/opencv_xfeatures2d.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/xfeatures2d/CMakeFiles/opencv_test_xfeatures2d.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/xfeatures2d/CMakeFiles/opencv_perf_xfeatures2d.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/xfeatures2d/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/xfeatures2d/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/xfeatures2d/CMakeFiles/test.dir
@@ -1432,8 +1360,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/xfeatures2d/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/xfeatures2d/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/ximgproc/CMakeFiles/opencv_ximgproc.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/ximgproc/CMakeFiles/opencv_test_ximgproc.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/ximgproc/CMakeFiles/opencv_perf_ximgproc.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/ximgproc/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/ximgproc/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/ximgproc/CMakeFiles/test.dir
@@ -1444,8 +1370,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/ximgproc/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/ximgproc/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/xobjdetect/CMakeFiles/opencv_xobjdetect.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/xobjdetect/CMakeFiles/opencv_test_xobjdetect.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/xobjdetect/CMakeFiles/opencv_perf_xobjdetect.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/xobjdetect/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/xobjdetect/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/xobjdetect/CMakeFiles/test.dir
@@ -1504,8 +1428,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/xobjdetect/data/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/xobjdetect/data/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/xphoto/CMakeFiles/opencv_xphoto.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/xphoto/CMakeFiles/opencv_test_xphoto.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/xphoto/CMakeFiles/opencv_perf_xphoto.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/xphoto/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/xphoto/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/xphoto/CMakeFiles/test.dir
@@ -1516,7 +1438,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/xphoto/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/xphoto/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/bgsegm/CMakeFiles/opencv_bgsegm.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/bgsegm/CMakeFiles/opencv_test_bgsegm.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/bgsegm/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/bgsegm/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/bgsegm/CMakeFiles/test.dir
@@ -1527,8 +1448,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/bgsegm/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/bgsegm/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/calib/CMakeFiles/opencv_calib.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/calib/CMakeFiles/opencv_test_calib.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/calib/CMakeFiles/opencv_perf_calib.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/calib/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/calib/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/calib/CMakeFiles/test.dir
@@ -1539,8 +1458,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/calib/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/calib/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudabgsegm/CMakeFiles/opencv_cudabgsegm.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudabgsegm/CMakeFiles/opencv_test_cudabgsegm.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudabgsegm/CMakeFiles/opencv_perf_cudabgsegm.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudabgsegm/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudabgsegm/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudabgsegm/CMakeFiles/test.dir
@@ -1551,8 +1468,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudabgsegm/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudabgsegm/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudacodec/CMakeFiles/opencv_cudacodec.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudacodec/CMakeFiles/opencv_test_cudacodec.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudacodec/CMakeFiles/opencv_perf_cudacodec.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudacodec/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudacodec/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudacodec/CMakeFiles/test.dir
@@ -1563,8 +1478,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudacodec/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudacodec/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudafeatures2d/CMakeFiles/opencv_cudafeatures2d.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudafeatures2d/CMakeFiles/opencv_test_cudafeatures2d.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudafeatures2d/CMakeFiles/opencv_perf_cudafeatures2d.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudafeatures2d/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudafeatures2d/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudafeatures2d/CMakeFiles/test.dir
@@ -1575,8 +1488,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudafeatures2d/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudafeatures2d/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudalegacy/CMakeFiles/opencv_cudalegacy.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudalegacy/CMakeFiles/opencv_test_cudalegacy.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudalegacy/CMakeFiles/opencv_perf_cudalegacy.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudalegacy/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudalegacy/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudalegacy/CMakeFiles/test.dir
@@ -1587,8 +1498,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudalegacy/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudalegacy/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudaobjdetect/CMakeFiles/opencv_cudaobjdetect.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudaobjdetect/CMakeFiles/opencv_test_cudaobjdetect.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudaobjdetect/CMakeFiles/opencv_perf_cudaobjdetect.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudaobjdetect/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudaobjdetect/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudaobjdetect/CMakeFiles/test.dir
@@ -1609,7 +1518,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/datasets/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/datasets/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/face/CMakeFiles/opencv_face.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/face/CMakeFiles/opencv_test_face.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/face/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/face/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/face/CMakeFiles/test.dir
@@ -1620,8 +1528,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/face/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/face/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/gapi/CMakeFiles/opencv_gapi.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/gapi/CMakeFiles/opencv_test_gapi.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/gapi/CMakeFiles/opencv_perf_gapi.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/gapi/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/gapi/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/gapi/CMakeFiles/test.dir
@@ -1632,7 +1538,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/gapi/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/gapi/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/highgui/CMakeFiles/opencv_highgui.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/highgui/CMakeFiles/opencv_test_highgui.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/highgui/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/highgui/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/highgui/CMakeFiles/test.dir
@@ -1653,8 +1558,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/js_bindings_generator/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/js_bindings_generator/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/optflow/CMakeFiles/opencv_optflow.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/optflow/CMakeFiles/opencv_test_optflow.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/optflow/CMakeFiles/opencv_perf_optflow.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/optflow/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/optflow/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/optflow/CMakeFiles/test.dir
@@ -1665,7 +1568,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/optflow/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/optflow/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/sfm/CMakeFiles/opencv_sfm.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/sfm/CMakeFiles/opencv_test_sfm.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/sfm/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/sfm/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/sfm/CMakeFiles/test.dir
@@ -1724,8 +1626,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/sfm/src/libmv/libmv/numeric/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/sfm/src/libmv/libmv/numeric/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/stitching/CMakeFiles/opencv_stitching.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/stitching/CMakeFiles/opencv_test_stitching.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/stitching/CMakeFiles/opencv_perf_stitching.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/stitching/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/stitching/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/stitching/CMakeFiles/test.dir
@@ -1736,7 +1636,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/stitching/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/stitching/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/structured_light/CMakeFiles/opencv_structured_light.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/structured_light/CMakeFiles/opencv_test_structured_light.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/structured_light/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/structured_light/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/structured_light/CMakeFiles/test.dir
@@ -1747,8 +1646,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/structured_light/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/structured_light/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/tracking/CMakeFiles/opencv_tracking.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/tracking/CMakeFiles/opencv_test_tracking.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/tracking/CMakeFiles/opencv_perf_tracking.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/tracking/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/tracking/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/tracking/CMakeFiles/test.dir
@@ -1758,19 +1655,7 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/tracking/CMakeFiles/install.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/tracking/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/tracking/CMakeFiles/install/strip.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/ts/CMakeFiles/opencv_ts.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/ts/CMakeFiles/package.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/ts/CMakeFiles/package_source.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/ts/CMakeFiles/test.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/ts/CMakeFiles/edit_cache.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/ts/CMakeFiles/rebuild_cache.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/ts/CMakeFiles/list_install_components.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/ts/CMakeFiles/install.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/ts/CMakeFiles/install/local.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/ts/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/xstereo/CMakeFiles/opencv_xstereo.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/xstereo/CMakeFiles/opencv_test_xstereo.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/xstereo/CMakeFiles/opencv_perf_xstereo.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/xstereo/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/xstereo/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/xstereo/CMakeFiles/test.dir
@@ -1781,8 +1666,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/xstereo/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/xstereo/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/bioinspired/CMakeFiles/opencv_bioinspired.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/bioinspired/CMakeFiles/opencv_test_bioinspired.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/bioinspired/CMakeFiles/opencv_perf_bioinspired.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/bioinspired/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/bioinspired/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/bioinspired/CMakeFiles/test.dir
@@ -1803,8 +1686,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/ccalib/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/ccalib/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudaoptflow/CMakeFiles/opencv_cudaoptflow.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudaoptflow/CMakeFiles/opencv_test_cudaoptflow.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudaoptflow/CMakeFiles/opencv_perf_cudaoptflow.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudaoptflow/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudaoptflow/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/cudaoptflow/CMakeFiles/test.dir
@@ -1858,8 +1739,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/objc_bindings_generator/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/objc_bindings_generator/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/superres/CMakeFiles/opencv_superres.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/superres/CMakeFiles/opencv_test_superres.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/superres/CMakeFiles/opencv_perf_superres.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/superres/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/superres/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/superres/CMakeFiles/test.dir
@@ -1870,7 +1749,6 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/superres/CMakeFiles/install/local.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/superres/CMakeFiles/install/strip.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/videostab/CMakeFiles/opencv_videostab.dir
-/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/videostab/CMakeFiles/opencv_test_videostab.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/videostab/CMakeFiles/package.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/videostab/CMakeFiles/package_source.dir
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/videostab/CMakeFiles/test.dir

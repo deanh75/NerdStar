@@ -1905,51 +1905,51 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/layers/layers_common.neon.cpp
  Main
  opencv_dnn
- PerfTest
+ Module
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/int8layers/layers_common.neon.cpp
  Main
  opencv_dnn
- PerfTest
+ Module
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/layers/cpu_kernels/conv_block.neon.cpp
  Main
  opencv_dnn
- PerfTest
+ Module
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/layers/cpu_kernels/conv_winograd_f63.neon.cpp
  Main
  opencv_dnn
- PerfTest
+ Module
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/layers/cpu_kernels/fast_gemm_kernels.neon.cpp
  Main
  opencv_dnn
- PerfTest
+ Module
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/layers/cpu_kernels/conv2_depthwise.neon.cpp
  Main
  opencv_dnn
- PerfTest
+ Module
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/layers/cpu_kernels/conv2_kernels.neon.cpp
  Main
  opencv_dnn
- PerfTest
+ Module
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/layers/cpu_kernels/activation_kernels.neon.cpp
  Main
  opencv_dnn
- PerfTest
+ Module
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/layers/cpu_kernels/reduce2_kernels.neon.cpp
  Main
  opencv_dnn
- PerfTest
+ Module
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/layers/cpu_kernels/transpose_kernels.neon.cpp
  Main
  opencv_dnn
- PerfTest
+ Module
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/layers/cpu_kernels/gridsample_kernels.neon.cpp
  Main
  opencv_dnn
- PerfTest
+ Module
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/layers/cpu_kernels/nary_eltwise_kernels.neon.cpp
  Main
  opencv_dnn
- PerfTest
+ Module
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/layers/cpu_kernels/conv_block.neon_fp16.cpp
  Main
  opencv_dnn

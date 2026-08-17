@@ -14,10 +14,10 @@
 #define CUDA_ARCH_BIN " 87"
 
 /* NVIDIA GPU features are used */
-#define CUDA_ARCH_FEATURES " 87"
+#define CUDA_ARCH_FEATURES " 87 87"
 
 /* Compile for 'virtual' NVIDIA PTX architectures */
-#define CUDA_ARCH_PTX ""
+#define CUDA_ARCH_PTX " 87"
 
 /* AMD's Basic Linear Algebra Subprograms Library*/
 /* #undef HAVE_CLAMDBLAS */

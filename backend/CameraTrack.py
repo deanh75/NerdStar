@@ -25,7 +25,7 @@ class CameraTrack(VideoStreamTrack):
         self.frame_interval = 1 / 70
         self.last_time = 0
 
-        self.fallback_frame = cv2.imread("static/Cam_Lost.png")
+        self.fallback_frame = cv2.cvtColor(cv2.imread("static/Cam_Lost.png"), cv2.COLOR_BGR2RGBA)
 
     async def recv(self):
         now = time.time()
@@ -58,7 +58,7 @@ class CameraTrack(VideoStreamTrack):
         except Exception:
             frame = self.fallback_frame
 
-        video_frame = av.VideoFrame.from_ndarray(frame, format='rgb24')
+        video_frame = av.VideoFrame.from_ndarray(frame, format='rgba')
         video_frame.pts = pts
         video_frame.time_base = time_base
 

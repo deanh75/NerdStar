@@ -114,7 +114,7 @@ BUILD_OPENJPEG:BOOL=OFF
 BUILD_PACKAGE:BOOL=ON
 
 //Build performance tests
-BUILD_PERF_TESTS:BOOL=ON
+BUILD_PERF_TESTS:BOOL=OFF
 
 //Build libpng from source
 BUILD_PNG:BOOL=OFF
@@ -129,7 +129,7 @@ BUILD_SHARED_LIBS:BOOL=ON
 BUILD_TBB:BOOL=OFF
 
 //Build accuracy & regression tests
-BUILD_TESTS:BOOL=ON
+BUILD_TESTS:BOOL=OFF
 
 //Build libtiff from source
 BUILD_TIFF:BOOL=OFF
@@ -302,6 +302,9 @@ BUILD_opencv_plot:BOOL=ON
 //Include opencv_ptcloud module into the OpenCV build
 BUILD_opencv_ptcloud:BOOL=ON
 
+//No help, variable specified on the command line.
+BUILD_opencv_python2:UNINITIALIZED=OFF
+
 //Include opencv_python3 module into the OpenCV build
 BUILD_opencv_python3:BOOL=ON
 
@@ -356,9 +359,6 @@ BUILD_opencv_text:BOOL=ON
 
 //Include opencv_tracking module into the OpenCV build
 BUILD_opencv_tracking:BOOL=ON
-
-//Include opencv_ts module into the OpenCV build
-BUILD_opencv_ts:BOOL=ON
 
 //Include opencv_video module into the OpenCV build
 BUILD_opencv_video:BOOL=ON
@@ -453,7 +453,7 @@ CMAKE_COLOR_MAKEFILE:BOOL=ON
 CMAKE_CONFIGURATION_TYPES:STRING=Debug;Release
 
 //CXX compiler
-CMAKE_CXX_COMPILER:STRING=/usr/bin/c++
+CMAKE_CXX_COMPILER:FILEPATH=/usr/bin/c++
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
@@ -479,7 +479,7 @@ CMAKE_CXX_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
 CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 
 //C compiler
-CMAKE_C_COMPILER:STRING=/usr/bin/cc
+CMAKE_C_COMPILER:FILEPATH=/usr/bin/cc
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
@@ -662,23 +662,23 @@ CMAKE_SKIP_INSTALL_RPATH:BOOL=NO
 //If set, runtime paths are not added when using shared libraries.
 CMAKE_SKIP_RPATH:BOOL=NO
 
-//Flags used by the linker during the creation of static libraries
+//Flags used by the archiver during the creation of static libraries
 // during all build types.
 CMAKE_STATIC_LINKER_FLAGS:STRING=
 
-//Flags used by the linker during the creation of static libraries
+//Flags used by the archiver during the creation of static libraries
 // during DEBUG builds.
 CMAKE_STATIC_LINKER_FLAGS_DEBUG:STRING=
 
-//Flags used by the linker during the creation of static libraries
+//Flags used by the archiver during the creation of static libraries
 // during MINSIZEREL builds.
 CMAKE_STATIC_LINKER_FLAGS_MINSIZEREL:STRING=
 
-//Flags used by the linker during the creation of static libraries
+//Flags used by the archiver during the creation of static libraries
 // during RELEASE builds.
 CMAKE_STATIC_LINKER_FLAGS_RELEASE:STRING=
 
-//Flags used by the linker during the creation of static libraries
+//Flags used by the archiver during the creation of static libraries
 // during RELWITHDEBINFO builds.
 CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
@@ -757,7 +757,7 @@ CUDA_ARCH_BIN:STRING=8.7
 
 //Specify 'virtual' PTX architectures to build PTX intermediate
 // code for (see https://docs.opencv.org/5.x/d2/dbc/cuda_intro.html)
-CUDA_ARCH_PTX:STRING=
+CUDA_ARCH_PTX:STRING=8.7
 
 //Attach the build rule to the CUDA source file.  Enable only when
 // the CUDA source file is added to at most one target.
@@ -1381,7 +1381,7 @@ OPENCV_TEST_DNN_TFLITE:BOOL=ON
 OPENCV_TEST_DNN_TIMVX:BOOL=OFF
 
 //Timestamp of OpenCV build configuration
-OPENCV_TIMESTAMP:STRING=2026-07-07T16:42:22Z
+OPENCV_TIMESTAMP:STRING=2026-08-13T01:27:43Z
 
 //Treat warnings as errors
 OPENCV_WARNINGS_ARE_ERRORS:BOOL=OFF
@@ -1479,17 +1479,17 @@ PNG_PNG_INCLUDE_DIR:PATH=/usr/include
 //Force rebuilding .proto files (protoc should be available)
 PROTOBUF_UPDATE_FILES:BOOL=OFF
 
-//No help, variable specified on the command line.
-PYTHON3_EXECUTABLE:UNINITIALIZED=/usr/bin/python3
+//Path to Python interpreter
+PYTHON3_EXECUTABLE:FILEPATH=/home/nerdstar/NerdStar/.venv/bin/python3
 
-//No help, variable specified on the command line.
-PYTHON3_INCLUDE_DIR:UNINITIALIZED=/usr/include/python3.12/
+//Python include dir
+PYTHON3_INCLUDE_DIR:PATH=/usr/include/python3.12
 
-//No help, variable specified on the command line.
-PYTHON3_INCLUDE_DIR2:UNINITIALIZED=/usr/include/aarch64-linux-gnu/python3.12/
+//Python include dir 2
+PYTHON3_INCLUDE_DIR2:PATH=
 
-//No help, variable specified on the command line.
-PYTHON3_LIBRARY:UNINITIALIZED=/usr/lib/aarch64-linux-gnu/libpython3.12.so
+//Path to Python library
+PYTHON3_LIBRARY:FILEPATH=/usr/lib/aarch64-linux-gnu/libpython3.12.so
 
 //Path to Python debug
 PYTHON3_LIBRARY_DEBUG:FILEPATH=
@@ -1498,11 +1498,11 @@ PYTHON3_LIBRARY_DEBUG:FILEPATH=
 // <1.17)
 PYTHON3_LIMITED_API:BOOL=OFF
 
-//No help, variable specified on the command line.
-PYTHON3_NUMPY_INCLUDE_DIRS:UNINITIALIZED=/usr/lib/python3/dist-packages/numpy/core/include/
+//Path to numpy headers
+PYTHON3_NUMPY_INCLUDE_DIRS:PATH=/home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages/numpy/_core/include
 
 //Where to install the python packages.
-PYTHON3_PACKAGES_PATH:STRING=lib/python3.12/dist-packages
+PYTHON3_PACKAGES_PATH:STRING=/home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages
 
 //The directory containing a CMake configuration file for TBB.
 TBB_DIR:PATH=/usr/lib/aarch64-linux-gnu/cmake/TBB
@@ -1862,6 +1862,9 @@ libprotobuf_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
 libprotobuf_SOURCE_DIR:STATIC=/home/nerdstar/NerdStar/backend/opencv/opencv/3rdparty/protobuf
+
+//The directory containing a CMake configuration file for nvpl.
+nvpl_DIR:PATH=nvpl_DIR-NOTFOUND
 
 //Value Computed by CMake
 opencv_alphamat_BINARY_DIR:STATIC=/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/alphamat
@@ -2476,15 +2479,6 @@ opencv_tracking_IS_TOP_LEVEL:STATIC=OFF
 opencv_tracking_SOURCE_DIR:STATIC=/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking
 
 //Value Computed by CMake
-opencv_ts_BINARY_DIR:STATIC=/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/ts
-
-//Value Computed by CMake
-opencv_ts_IS_TOP_LEVEL:STATIC=OFF
-
-//Value Computed by CMake
-opencv_ts_SOURCE_DIR:STATIC=/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ts
-
-//Value Computed by CMake
 opencv_version_BINARY_DIR:STATIC=/home/nerdstar/NerdStar/backend/opencv/opencv_build/apps/version
 
 //Value Computed by CMake
@@ -2793,9 +2787,6 @@ pkgcfg_lib_GTK3_z:FILEPATH=/usr/lib/aarch64-linux-gnu/libz.so
 //Path to a library.
 pkgcfg_lib_HARFBUZZ_harfbuzz:FILEPATH=/usr/lib/aarch64-linux-gnu/libharfbuzz.so
 
-//The directory containing a CMake configuration file for tiff.
-tiff_DIR:PATH=tiff_DIR-NOTFOUND
-
 
 ########################
 # INTERNAL cache entries
@@ -2867,9 +2858,9 @@ CMAKE_CACHEFILE_DIR:INTERNAL=/home/nerdstar/NerdStar/backend/opencv/opencv_build
 //Major version of cmake used to create the current loaded cache
 CMAKE_CACHE_MAJOR_VERSION:INTERNAL=4
 //Minor version of cmake used to create the current loaded cache
-CMAKE_CACHE_MINOR_VERSION:INTERNAL=3
+CMAKE_CACHE_MINOR_VERSION:INTERNAL=4
 //Patch version of cmake used to create the current loaded cache
-CMAKE_CACHE_PATCH_VERSION:INTERNAL=4
+CMAKE_CACHE_PATCH_VERSION:INTERNAL=2
 //ADVANCED property for variable: CMAKE_COLOR_MAKEFILE
 CMAKE_COLOR_MAKEFILE-ADVANCED:INTERNAL=1
 //Path to CMake executable.
@@ -2910,8 +2901,13 @@ CMAKE_C_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
 CMAKE_C_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_FLAGS_RELWITHDEBINFO
 CMAKE_C_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
+//Set initial state for CMake diagnostics; used to persist state
+// set by command-line options across invocations.
+CMAKE_DIAGNOSTIC_INIT:INTERNAL=CMD_AUTHOR=WARN;CMD_DEPRECATED=WARN;CMD_EXPERIMENTAL=WARN;CMD_INSTALL_ABSOLUTE_DESTINATION=IGNORE;CMD_POLICY=WARN;CMD_UNINITIALIZED=IGNORE;CMD_UNUSED_CLI=WARN
 //ADVANCED property for variable: CMAKE_DLLTOOL
 CMAKE_DLLTOOL-ADVANCED:INTERNAL=1
+//Deprecated.  Use -W[no-]error=deprecated instead.
+CMAKE_ERROR_DEPRECATED:INTERNAL=OFF
 //Executable file format
 CMAKE_EXECUTABLE_FORMAT:INTERNAL=ELF
 //ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS
@@ -2994,7 +2990,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=194
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=192
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -3006,7 +3002,7 @@ CMAKE_RANLIB-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_READELF
 CMAKE_READELF-ADVANCED:INTERNAL=1
 //Path to CMake installation.
-CMAKE_ROOT:INTERNAL=/usr/share/cmake-4.3
+CMAKE_ROOT:INTERNAL=/usr/share/cmake-4.4
 //ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS
 CMAKE_SHARED_LINKER_FLAGS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS_DEBUG
@@ -3039,6 +3035,8 @@ CMAKE_TAPI-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Deprecated.  Use -W[no-]deprecated instead.
+CMAKE_WARN_DEPRECATED:INTERNAL=ON
 //ADVANCED property for variable: CPACK_BINARY_DEB
 CPACK_BINARY_DEB-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CPACK_BINARY_FREEBSD
@@ -3154,7 +3152,7 @@ CUDA_cusolver_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CUDA_cusparse_LIBRARY
 CUDA_cusparse_LIBRARY-ADVANCED:INTERNAL=1
 //Location of make2cmake.cmake
-CUDA_make2cmake:INTERNAL=/usr/share/cmake-4.3/Modules/FindCUDA/make2cmake.cmake
+CUDA_make2cmake:INTERNAL=/usr/share/cmake-4.4/Modules/FindCUDA/make2cmake.cmake
 //ADVANCED property for variable: CUDA_nppc_LIBRARY
 CUDA_nppc_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CUDA_nppial_LIBRARY
@@ -3180,11 +3178,11 @@ CUDA_npps_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CUDA_nvToolsExt_LIBRARY
 CUDA_nvToolsExt_LIBRARY-ADVANCED:INTERNAL=1
 //Location of parse_cubin.cmake
-CUDA_parse_cubin:INTERNAL=/usr/share/cmake-4.3/Modules/FindCUDA/parse_cubin.cmake
+CUDA_parse_cubin:INTERNAL=/usr/share/cmake-4.4/Modules/FindCUDA/parse_cubin.cmake
 //ADVANCED property for variable: CUDA_rt_LIBRARY
 CUDA_rt_LIBRARY-ADVANCED:INTERNAL=1
 //Location of run_nvcc.cmake
-CUDA_run_nvcc:INTERNAL=/usr/share/cmake-4.3/Modules/FindCUDA/run_nvcc.cmake
+CUDA_run_nvcc:INTERNAL=/usr/share/cmake-4.4/Modules/FindCUDA/run_nvcc.cmake
 //ADVANCED property for variable: CUDNN_INCLUDE_DIR
 CUDNN_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CUDNN_LIBRARY
@@ -3217,10 +3215,10 @@ FFMPEG_STATIC_CFLAGS:INTERNAL=-I/usr/include/aarch64-linux-gnu
 FFMPEG_STATIC_CFLAGS_I:INTERNAL=
 FFMPEG_STATIC_CFLAGS_OTHER:INTERNAL=
 FFMPEG_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include/aarch64-linux-gnu
-FFMPEG_STATIC_LDFLAGS:INTERNAL=-L/usr/lib/aarch64-linux-gnu;-lavcodec;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lwebpmux;-pthread;-lm;-latomic;-llzma;-ldav1d;-lrsvg-2;-lm;-lgio-2.0;-lgdk_pixbuf-2.0;-lgobject-2.0;-lglib-2.0;-lcairo;-lzvbi;-lpthread;-lm;-lpng;-lz;-lsnappy;-lstdc++;-laom;-lcodec2;-lgsm;-ljxl;-ljxl_threads;-lmp3lame;-lm;-lopenjp2;-lopus;-lrav1e;-lm;-lshine;-lspeex;-lSvtAv1Enc;-ltheoraenc;-ltheoradec;-logg;-ltwolame;-lvorbis;-lvorbisenc;-lwebp;-lx264;-lx265;-lxvidcore;-lz;-lva;-L/usr/lib/aarch64-linux-gnu;-lswresample;-lm;-lsoxr;-latomic;-L/usr/lib/aarch64-linux-gnu;-pthread;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-lX11;-lavutil;-pthread;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-lX11;-lavformat;-lm;-latomic;-lxml2;-lbz2;-lgme;-lopenmpt;-lstdc++;-lchromaprint;-lbluray;-lz;-lgnutls;-lrabbitmq;-lrist;-lsrt-gnutls;-lssh;-lzmq;-L/usr/lib/aarch64-linux-gnu;-lavcodec;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lwebpmux;-pthread;-lm;-latomic;-llzma;-ldav1d;-lrsvg-2;-lm;-lgio-2.0;-lgdk_pixbuf-2.0;-lgobject-2.0;-lglib-2.0;-lcairo;-lzvbi;-lpthread;-lm;-lpng;-lz;-lsnappy;-lstdc++;-laom;-lcodec2;-lgsm;-ljxl;-ljxl_threads;-lmp3lame;-lm;-lopenjp2;-lopus;-lrav1e;-lm;-lshine;-lspeex;-lSvtAv1Enc;-ltheoraenc;-ltheoradec;-logg;-ltwolame;-lvorbis;-lvorbisenc;-lwebp;-lx264;-lx265;-lxvidcore;-lz;-lva;-L/usr/lib/aarch64-linux-gnu;-lm;-lsoxr;-latomic;-L/usr/lib/aarch64-linux-gnu;-pthread;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-lX11;-lavutil;-pthread;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-lX11;-lswresample;-lm;-lsoxr;-latomic;-L/usr/lib/aarch64-linux-gnu;-pthread;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-lX11;-pthread;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-lX11;-lavutil;-pthread;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-lX11;-lswscale;-lm;-latomic;-L/usr/lib/aarch64-linux-gnu;-lavutil;-pthread;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-lX11
+FFMPEG_STATIC_LDFLAGS:INTERNAL=-L/usr/lib/aarch64-linux-gnu;-lavcodec;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lwebpmux;-lm;-latomic;-llzma;-ldav1d;-lrsvg-2;-lm;-lgio-2.0;-lgdk_pixbuf-2.0;-lgobject-2.0;-lglib-2.0;-lcairo;-lzvbi;-lpthread;-lm;-lpng;-lz;-lnvbufsurface;-lnvbufsurftransform;-lv4l2;-lsnappy;-lstdc++;-lnvjpeg;-laom;-lcodec2;-lgsm;-lmp3lame;-lm;-lopenjp2;-lopus;-lm;-lshine;-lspeex;-ltheoraenc;-ltheoradec;-logg;-ltwolame;-lvorbis;-lvorbisenc;-lwebp;-lx264;-lx265;-lxvidcore;-lnvbufsurface;-lz;-lva;-pthread;-L/usr/lib/aarch64-linux-gnu;-lswresample;-lm;-lsoxr;-latomic;-L/usr/lib/aarch64-linux-gnu;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavformat;-lm;-latomic;-lxml2;-lbz2;-lgme;-lopenmpt;-lstdc++;-lchromaprint;-lbluray;-lz;-lgnutls;-lrabbitmq;-lsrt-gnutls;-lssh;-lzmq;-L/usr/lib/aarch64-linux-gnu;-lavcodec;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lwebpmux;-lm;-latomic;-llzma;-ldav1d;-lrsvg-2;-lm;-lgio-2.0;-lgdk_pixbuf-2.0;-lgobject-2.0;-lglib-2.0;-lcairo;-lzvbi;-lpthread;-lm;-lpng;-lz;-lnvbufsurface;-lnvbufsurftransform;-lv4l2;-lsnappy;-lstdc++;-lnvjpeg;-laom;-lcodec2;-lgsm;-lmp3lame;-lm;-lopenjp2;-lopus;-lm;-lshine;-lspeex;-ltheoraenc;-ltheoradec;-logg;-ltwolame;-lvorbis;-lvorbisenc;-lwebp;-lx264;-lx265;-lxvidcore;-lnvbufsurface;-lz;-lva;-pthread;-L/usr/lib/aarch64-linux-gnu;-lm;-lsoxr;-latomic;-L/usr/lib/aarch64-linux-gnu;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lswresample;-lm;-lsoxr;-latomic;-L/usr/lib/aarch64-linux-gnu;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lswscale;-lm;-latomic;-L/usr/lib/aarch64-linux-gnu;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11
 FFMPEG_STATIC_LDFLAGS_OTHER:INTERNAL=-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread
 FFMPEG_STATIC_LIBDIR:INTERNAL=
-FFMPEG_STATIC_LIBRARIES:INTERNAL=avcodec;vpx;m;vpx;m;vpx;m;vpx;m;webpmux;m;atomic;lzma;dav1d;rsvg-2;m;gio-2.0;gdk_pixbuf-2.0;gobject-2.0;glib-2.0;cairo;zvbi;pthread;m;png;z;snappy;stdc++;aom;codec2;gsm;jxl;jxl_threads;mp3lame;m;openjp2;opus;rav1e;m;shine;speex;SvtAv1Enc;theoraenc;theoradec;ogg;twolame;vorbis;vorbisenc;webp;x264;x265;xvidcore;z;va;swresample;m;soxr;atomic;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avformat;m;atomic;xml2;bz2;gme;openmpt;stdc++;chromaprint;bluray;z;gnutls;rabbitmq;rist;srt-gnutls;ssh;zmq;avcodec;vpx;m;vpx;m;vpx;m;vpx;m;webpmux;m;atomic;lzma;dav1d;rsvg-2;m;gio-2.0;gdk_pixbuf-2.0;gobject-2.0;glib-2.0;cairo;zvbi;pthread;m;png;z;snappy;stdc++;aom;codec2;gsm;jxl;jxl_threads;mp3lame;m;openjp2;opus;rav1e;m;shine;speex;SvtAv1Enc;theoraenc;theoradec;ogg;twolame;vorbis;vorbisenc;webp;x264;x265;xvidcore;z;va;m;soxr;atomic;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;swresample;m;soxr;atomic;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;swscale;m;atomic;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11
+FFMPEG_STATIC_LIBRARIES:INTERNAL=avcodec;vpx;m;vpx;m;vpx;m;vpx;m;webpmux;m;atomic;lzma;dav1d;rsvg-2;m;gio-2.0;gdk_pixbuf-2.0;gobject-2.0;glib-2.0;cairo;zvbi;pthread;m;png;z;nvbufsurface;nvbufsurftransform;v4l2;snappy;stdc++;nvjpeg;aom;codec2;gsm;mp3lame;m;openjp2;opus;m;shine;speex;theoraenc;theoradec;ogg;twolame;vorbis;vorbisenc;webp;x264;x265;xvidcore;nvbufsurface;z;va;swresample;m;soxr;atomic;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avformat;m;atomic;xml2;bz2;gme;openmpt;stdc++;chromaprint;bluray;z;gnutls;rabbitmq;srt-gnutls;ssh;zmq;avcodec;vpx;m;vpx;m;vpx;m;vpx;m;webpmux;m;atomic;lzma;dav1d;rsvg-2;m;gio-2.0;gdk_pixbuf-2.0;gobject-2.0;glib-2.0;cairo;zvbi;pthread;m;png;z;nvbufsurface;nvbufsurftransform;v4l2;snappy;stdc++;nvjpeg;aom;codec2;gsm;mp3lame;m;openjp2;opus;m;shine;speex;theoraenc;theoradec;ogg;twolame;vorbis;vorbisenc;webp;x264;x265;xvidcore;nvbufsurface;z;va;m;soxr;atomic;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;swresample;m;soxr;atomic;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;swscale;m;atomic;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11
 FFMPEG_STATIC_LIBRARY_DIRS:INTERNAL=/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu
 FFMPEG_STATIC_LIBS:INTERNAL=
 FFMPEG_STATIC_LIBS_L:INTERNAL=
@@ -3231,7 +3229,7 @@ FFMPEG_libavcodec_INCLUDEDIR:INTERNAL=/usr/include/aarch64-linux-gnu
 FFMPEG_libavcodec_LIBDIR:INTERNAL=/usr/lib/aarch64-linux-gnu
 FFMPEG_libavcodec_MODULE_NAME:INTERNAL=libavcodec
 FFMPEG_libavcodec_PREFIX:INTERNAL=/usr
-FFMPEG_libavcodec_VERSION:INTERNAL=60.31.102
+FFMPEG_libavcodec_VERSION:INTERNAL=62.11.100
 FFMPEG_libavdevice_CFLAGS:INTERNAL=-I/usr/include/aarch64-linux-gnu
 FFMPEG_libavdevice_CFLAGS_I:INTERNAL=
 FFMPEG_libavdevice_CFLAGS_OTHER:INTERNAL=
@@ -3271,17 +3269,17 @@ FFMPEG_libavformat_INCLUDEDIR:INTERNAL=/usr/include/aarch64-linux-gnu
 FFMPEG_libavformat_LIBDIR:INTERNAL=/usr/lib/aarch64-linux-gnu
 FFMPEG_libavformat_MODULE_NAME:INTERNAL=libavformat
 FFMPEG_libavformat_PREFIX:INTERNAL=/usr
-FFMPEG_libavformat_VERSION:INTERNAL=60.16.100
+FFMPEG_libavformat_VERSION:INTERNAL=62.3.100
 FFMPEG_libavutil_INCLUDEDIR:INTERNAL=/usr/include/aarch64-linux-gnu
 FFMPEG_libavutil_LIBDIR:INTERNAL=/usr/lib/aarch64-linux-gnu
 FFMPEG_libavutil_MODULE_NAME:INTERNAL=libavutil
 FFMPEG_libavutil_PREFIX:INTERNAL=/usr
-FFMPEG_libavutil_VERSION:INTERNAL=58.29.100
+FFMPEG_libavutil_VERSION:INTERNAL=60.8.100
 FFMPEG_libswscale_INCLUDEDIR:INTERNAL=/usr/include/aarch64-linux-gnu
 FFMPEG_libswscale_LIBDIR:INTERNAL=/usr/lib/aarch64-linux-gnu
 FFMPEG_libswscale_MODULE_NAME:INTERNAL=libswscale
 FFMPEG_libswscale_PREFIX:INTERNAL=/usr
-FFMPEG_libswscale_VERSION:INTERNAL=7.5.100
+FFMPEG_libswscale_VERSION:INTERNAL=9.1.100
 //Details about finding BLAS
 FIND_PACKAGE_MESSAGE_DETAILS_BLAS:INTERNAL=[/usr/lib/aarch64-linux-gnu/libblas.so;/usr/lib/aarch64-linux-gnu/libf77blas.so;/usr/lib/aarch64-linux-gnu/libatlas.so][v()]
 //Details about finding CUDNN
@@ -3293,9 +3291,9 @@ FIND_PACKAGE_MESSAGE_DETAILS_JPEG:INTERNAL=[/usr/lib/aarch64-linux-gnu/libjpeg.s
 //Details about finding LAPACK
 FIND_PACKAGE_MESSAGE_DETAILS_LAPACK:INTERNAL=[/usr/lib/aarch64-linux-gnu/liblapack.so;/usr/lib/aarch64-linux-gnu/libblas.so;/usr/lib/aarch64-linux-gnu/libf77blas.so;/usr/lib/aarch64-linux-gnu/libatlas.so][v()]
 //Details about finding PythonInterp
-FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/usr/bin/python3][v3.12.3(3.2)]
+FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/home/nerdstar/NerdStar/.venv/bin/python3][v3.12.3(3.2)]
 //Details about finding PythonLibs
-FIND_PACKAGE_MESSAGE_DETAILS_PythonLibs:INTERNAL=[/usr/lib/aarch64-linux-gnu/libpython3.12.so][/usr/include/python3.12/][v3.12.3(3.12.3)]
+FIND_PACKAGE_MESSAGE_DETAILS_PythonLibs:INTERNAL=[/usr/lib/aarch64-linux-gnu/libpython3.12.so][/usr/include/python3.12][v3.12.3(3.12.3)]
 //Details about finding TIFF
 FIND_PACKAGE_MESSAGE_DETAILS_TIFF:INTERNAL=[/usr/lib/aarch64-linux-gnu/libtiff.so][/usr/include/aarch64-linux-gnu][ ][v4.5.1()]
 //Details about finding Threads
@@ -4189,8 +4187,8 @@ HAVE_opencv_surface_matching:INTERNAL=ON
 HAVE_opencv_text:INTERNAL=ON
 //Module opencv_tracking will be built in current configuration
 HAVE_opencv_tracking:INTERNAL=ON
-//Module opencv_ts will be built in current configuration
-HAVE_opencv_ts:INTERNAL=ON
+//Module opencv_ts can not be built in current configuration
+HAVE_opencv_ts:INTERNAL=OFF
 //Module opencv_video will be built in current configuration
 HAVE_opencv_video:INTERNAL=ON
 //Module opencv_videoio will be built in current configuration
@@ -4331,11 +4329,11 @@ OPENCV_JAVA_BINDINGS_DIR:INTERNAL=/home/nerdstar/NerdStar/backend/opencv/opencv_
 OPENCV_JAVA_SIGNATURES_FILE:INTERNAL=/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/java_bindings_generator/opencv_java_signatures.json
 OPENCV_JS_BINDINGS_DIR:INTERNAL=/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/js_bindings_generator
 //List of OpenCV modules included into the build
-OPENCV_MODULES_BUILD:INTERNAL=opencv_cudev;opencv_python_tests;opencv_core;opencv_cudaarithm;opencv_flann;opencv_geometry;opencv_hdf;opencv_imgproc;opencv_intensity_transform;opencv_ml;opencv_phase_unwrapping;opencv_plot;opencv_ptcloud;opencv_quality;opencv_rapid;opencv_reg;opencv_rgbd;opencv_shape;opencv_signal;opencv_stereo;opencv_surface_matching;opencv_alphamat;opencv_cudafilters;opencv_cudaimgproc;opencv_cudastereo;opencv_cudawarping;opencv_dnn;opencv_dnn_superres;opencv_features;opencv_freetype;opencv_fuzzy;opencv_hfs;opencv_img_hash;opencv_imgcodecs;opencv_line_descriptor;opencv_objdetect;opencv_photo;opencv_saliency;opencv_text;opencv_video;opencv_videoio;opencv_wechat_qrcode;opencv_xfeatures2d;opencv_ximgproc;opencv_xobjdetect;opencv_xphoto;opencv_bgsegm;opencv_calib;opencv_cudabgsegm;opencv_cudacodec;opencv_cudafeatures2d;opencv_cudalegacy;opencv_cudaobjdetect;opencv_datasets;opencv_face;opencv_gapi;opencv_highgui;opencv_js_bindings_generator;opencv_optflow;opencv_sfm;opencv_stitching;opencv_structured_light;opencv_tracking;opencv_ts;opencv_xstereo;opencv_bioinspired;opencv_ccalib;opencv_cudaoptflow;opencv_dnn_objdetect;opencv_dpm;opencv_java_bindings_generator;opencv_objc_bindings_generator;opencv_superres;opencv_videostab;opencv_python_bindings_generator;opencv_python3
+OPENCV_MODULES_BUILD:INTERNAL=opencv_cudev;opencv_python_tests;opencv_core;opencv_cudaarithm;opencv_flann;opencv_geometry;opencv_hdf;opencv_imgproc;opencv_intensity_transform;opencv_ml;opencv_phase_unwrapping;opencv_plot;opencv_ptcloud;opencv_quality;opencv_rapid;opencv_reg;opencv_rgbd;opencv_shape;opencv_signal;opencv_stereo;opencv_surface_matching;opencv_alphamat;opencv_cudafilters;opencv_cudaimgproc;opencv_cudastereo;opencv_cudawarping;opencv_dnn;opencv_dnn_superres;opencv_features;opencv_freetype;opencv_fuzzy;opencv_hfs;opencv_img_hash;opencv_imgcodecs;opencv_line_descriptor;opencv_objdetect;opencv_photo;opencv_saliency;opencv_text;opencv_video;opencv_videoio;opencv_wechat_qrcode;opencv_xfeatures2d;opencv_ximgproc;opencv_xobjdetect;opencv_xphoto;opencv_bgsegm;opencv_calib;opencv_cudabgsegm;opencv_cudacodec;opencv_cudafeatures2d;opencv_cudalegacy;opencv_cudaobjdetect;opencv_datasets;opencv_face;opencv_gapi;opencv_highgui;opencv_js_bindings_generator;opencv_optflow;opencv_sfm;opencv_stitching;opencv_structured_light;opencv_tracking;opencv_xstereo;opencv_bioinspired;opencv_ccalib;opencv_cudaoptflow;opencv_dnn_objdetect;opencv_dpm;opencv_java_bindings_generator;opencv_objc_bindings_generator;opencv_superres;opencv_videostab;opencv_python_bindings_generator;opencv_python3
 //List of OpenCV modules implicitly disabled due to dependencies
 OPENCV_MODULES_DISABLED_AUTO:INTERNAL=
 //List of OpenCV modules which can not be build in current configuration
-OPENCV_MODULES_DISABLED_FORCE:INTERNAL=opencv_java;opencv_cannops;opencv_cvv;opencv_fastcv;opencv_julia;opencv_matlab;opencv_ovis;opencv_viz
+OPENCV_MODULES_DISABLED_FORCE:INTERNAL=opencv_java;opencv_ts;opencv_cannops;opencv_cvv;opencv_fastcv;opencv_julia;opencv_matlab;opencv_ovis;opencv_viz
 //List of OpenCV modules explicitly disabled by user
 OPENCV_MODULES_DISABLED_USER:INTERNAL=opencv_world
 //List of extra modules
@@ -4945,7 +4943,7 @@ OPENCV_MODULE_opencv_datasets_WRAPPERS:INTERNAL=python
 OPENCV_MODULE_opencv_dnn_BINARY_DIR:INTERNAL=/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn
 //The category of the module
 OPENCV_MODULE_opencv_dnn_CLASS:INTERNAL=PUBLIC
-OPENCV_MODULE_opencv_dnn_COMPILE_OPTIONS:INTERNAL=PRIVATE;-ffast-math;PRIVATE;-fno-finite-math-only;PRIVATE;-ffast-math;PRIVATE;-fno-finite-math-only;PRIVATE;-ffast-math;PRIVATE;-fno-finite-math-only
+OPENCV_MODULE_opencv_dnn_COMPILE_OPTIONS:INTERNAL=PRIVATE;-ffast-math;PRIVATE;-fno-finite-math-only;PRIVATE;-ffast-math;PRIVATE;-fno-finite-math-only
 //Compiled CUDA object files
 OPENCV_MODULE_opencv_dnn_CUDA_OBJECTS:INTERNAL=/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_activation_eltwise.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_activations.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_bias_activation.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_bias_activation_eltwise.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_bias_eltwise_activation.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_concat.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_crop_and_resize.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_detection_output.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_eltwise_activation.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_eltwise_ops.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_fill_copy.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_fp_conversion.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_grid_nms.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_max_unpooling.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_mvn.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_normalize.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_padding.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_permute.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_prior_box.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_region.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_resize.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_roi_pooling.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_scale_shift.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_shortcut.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_slice.cu.o
 //Flattened dependencies of opencv_dnn module
@@ -6396,36 +6394,8 @@ OPENCV_MODULE_opencv_tracking_REQ_DEPS:INTERNAL=opencv_imgproc;opencv_core;openc
 OPENCV_MODULE_opencv_tracking_SOURCES:INTERNAL=/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/augmented_unscented_kalman.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/feature.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/featureColorName.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/gtrUtils.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/kuhn_munkres.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/mosseTracker.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/multiTracker.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/multiTracker_alt.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/onlineBoosting.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/tldDataset.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/tldDetector.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/tldEnsembleClassifier.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/tldModel.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/tldTracker.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/tldUtils.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/tracker.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/trackerBoosting.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/trackerBoostingModel.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/trackerCSRT.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/trackerCSRTScaleEstimation.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/trackerCSRTSegmentation.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/trackerCSRTUtils.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/trackerFeature.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/trackerFeatureSet.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/trackerKCF.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/trackerMIL_legacy.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/trackerMedianFlow.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/trackerSampler.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/trackerSamplerAlgorithm.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/trackerStateEstimator.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/tracking_by_matching.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/tracking_utils.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/twist.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/unscented_kalman.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/opencl/tldDetector.cl;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/opencl/tmm.cl;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/tracking/opencl_kernels_tracking.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/tracking/opencl_kernels_tracking.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/PFSolver.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/TrackingFunctionPF.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/gtrUtils.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/kuhn_munkres.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/legacy/tracker.legacy.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/legacy/trackerCSRT.legacy.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/legacy/trackerKCF.legacy.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/multiTracker.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/precomp.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/tldDetector.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/tldEnsembleClassifier.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/tldModel.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/tldTracker.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/tldUtils.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/trackerBoostingModel.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/trackerCSRTScaleEstimation.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/trackerCSRTSegmentation.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/trackerCSRTUtils.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/tracking_utils.hpp
 //List of wrappers supporting module opencv_tracking
 OPENCV_MODULE_opencv_tracking_WRAPPERS:INTERNAL=java;python;objc
-OPENCV_MODULE_opencv_ts_BINARY_DIR:INTERNAL=/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/ts
-//The category of the module
-OPENCV_MODULE_opencv_ts_CLASS:INTERNAL=INTERNAL
-//Flattened dependencies of opencv_ts module
-OPENCV_MODULE_opencv_ts_DEPS:INTERNAL=opencv_cudev;opencv_core;opencv_flann;opencv_geometry;opencv_imgproc;opencv_imgcodecs;opencv_videoio;opencv_highgui
-//Extra dependencies of opencv_ts module
-OPENCV_MODULE_opencv_ts_DEPS_EXT:INTERNAL=
-//Flattened dependencies of opencv_ts module (for linker)
-OPENCV_MODULE_opencv_ts_DEPS_TO_LINK:INTERNAL=opencv_cudev;opencv_core;opencv_flann;opencv_geometry;opencv_imgproc;opencv_imgcodecs;opencv_videoio;opencv_highgui
-//Brief description of opencv_ts module
-OPENCV_MODULE_opencv_ts_DESCRIPTION:INTERNAL=The ts module
-//List of header files for opencv_ts
-OPENCV_MODULE_opencv_ts_HEADERS:INTERNAL=/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ts/include/opencv2/ts.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ts/include/opencv2/ts/cuda_perf.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ts/include/opencv2/ts/cuda_test.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ts/include/opencv2/ts/ocl_perf.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ts/include/opencv2/ts/ocl_test.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ts/include/opencv2/ts/ts_ext.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ts/include/opencv2/ts/ts_gtest.h;/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ts/include/opencv2/ts/ts_perf.hpp
-OPENCV_MODULE_opencv_ts_IS_PART_OF_WORLD:INTERNAL=OFF
-OPENCV_MODULE_opencv_ts_LABEL:INTERNAL=Main;opencv_ts
-OPENCV_MODULE_opencv_ts_LINK_DEPS:INTERNAL=
 //Location of opencv_ts module sources
 OPENCV_MODULE_opencv_ts_LOCATION:INTERNAL=/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ts
-//Optional dependencies of opencv_ts module
-OPENCV_MODULE_opencv_ts_OPT_DEPS:INTERNAL=
-//Optional private dependencies of opencv_ts module
-OPENCV_MODULE_opencv_ts_PRIVATE_OPT_DEPS:INTERNAL=
-//Required private dependencies of opencv_ts module
-OPENCV_MODULE_opencv_ts_PRIVATE_REQ_DEPS:INTERNAL=
-//Required dependencies of opencv_ts module
-OPENCV_MODULE_opencv_ts_REQ_DEPS:INTERNAL=opencv_core;opencv_imgproc;opencv_imgcodecs;opencv_videoio;opencv_highgui
-//List of source files for opencv_ts
-OPENCV_MODULE_opencv_ts_SOURCES:INTERNAL=/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ts/src/cuda_perf.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ts/src/cuda_test.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ts/src/ocl_perf.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ts/src/ocl_test.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ts/src/ts.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ts/src/ts_arrtest.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ts/src/ts_func.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ts/src/ts_gtest.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ts/src/ts_perf.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ts/src/ts_tags.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ts/src/precomp.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ts/src/ts_tags.hpp
-//List of wrappers supporting module opencv_ts
-OPENCV_MODULE_opencv_ts_WRAPPERS:INTERNAL=
 OPENCV_MODULE_opencv_video_BINARY_DIR:INTERNAL=/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/video
 //The category of the module
 OPENCV_MODULE_opencv_video_CLASS:INTERNAL=PUBLIC
@@ -6723,7 +6693,7 @@ OPENCV_MODULE_opencv_xstereo_SOURCES:INTERNAL=/home/nerdstar/NerdStar/backend/op
 OPENCV_MODULE_opencv_xstereo_WRAPPERS:INTERNAL=python
 OPENCV_OBJC_BINDINGS_DIR:INTERNAL=/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/objc_bindings_generator
 OPENCV_PYTHON_BINDINGS_DIR:INTERNAL=/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/python_bindings_generator
-OPENCV_PYTHON_INSTALL_PATH_SETUPVARS:INTERNAL=lib/python3.12/dist-packages
+OPENCV_PYTHON_INSTALL_PATH_SETUPVARS:INTERNAL=/home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages
 OPENCV_PYTHON_SIGNATURES_FILE:INTERNAL=/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/python_bindings_generator/pyopencv_signatures.json
 OPENCV_PYTHON_TESTS_CONFIG_FILE:INTERNAL=/home/nerdstar/NerdStar/backend/opencv/opencv_build/opencv_python_tests.cfg
 OPENCV_PYTHON_TESTS_CONFIG_FILE_DIR:INTERNAL=/home/nerdstar/NerdStar/backend/opencv/opencv_build
@@ -6787,10 +6757,10 @@ PYTHON3INTERP_FOUND:INTERNAL=TRUE
 PYTHON3LIBS_FOUND:INTERNAL=TRUE
 PYTHON3LIBS_VERSION_STRING:INTERNAL=3.12.3
 PYTHON3_DEBUG_LIBRARIES:INTERNAL=
-PYTHON3_INCLUDE_PATH:INTERNAL=/usr/include/python3.12/
+PYTHON3_INCLUDE_PATH:INTERNAL=/usr/include/python3.12
 //Python libraries
 PYTHON3_LIBRARIES:INTERNAL=/usr/lib/aarch64-linux-gnu/libpython3.12.so
-PYTHON3_NUMPY_VERSION:INTERNAL=1.26.4
+PYTHON3_NUMPY_VERSION:INTERNAL=2.5.2
 PYTHON3_VERSION_MAJOR:INTERNAL=3
 PYTHON3_VERSION_MINOR:INTERNAL=12
 PYTHON3_VERSION_STRING:INTERNAL=3.12.3
@@ -6846,11 +6816,9 @@ ZLIB_INCLUDE_DIR-ADVANCED:INTERNAL=1
 ZLIB_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: ZLIB_LIBRARY_RELEASE
 ZLIB_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
-//linker supports push/pop state
-_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=TRUE
 //CMAKE_INSTALL_PREFIX during last run
 _GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=/usr/local
-__INSTALL_PATH_PYTHON3:INTERNAL=lib/python3.12/dist-packages/cv2/python-3.12
+__INSTALL_PATH_PYTHON3:INTERNAL=/home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages/cv2/python-3.12
 __OPENCV_CMAKE_HOOKS_INIT_MODULE_SOURCES_opencv_dnn:INTERNAL=/home/nerdstar/NerdStar/backend/opencv/opencv/modules/dnn/cmake/hooks/INIT_MODULE_SOURCES_opencv_dnn.cmake
 __OPENCV_EXPORTED_EXTERNAL_TARGETS:INTERNAL=
 //Result of TRY_COMPILE

@@ -36,7 +36,7 @@ class YOLOObjectDetector(ObjectDetector):
             print("New model detected, reloading...")
             self._model = None
 
-        # Load CoreML model
+        # Load YOLO model
         if self._model == None:
             print("Loading object detection model")
             try:
@@ -56,7 +56,7 @@ class YOLOObjectDetector(ObjectDetector):
         image_scaled[bar_height: bar_height + scaled_height, 0:640] = cv2.cuda.resize(image, (640, scaled_height))
         
 
-        # Run CoreML model
+        # Run YOLO model
         image_coreml = Image.fromarray(image_scaled)
         prediction = self._model.predict({"image": image_coreml})
 

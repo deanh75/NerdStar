@@ -6,6 +6,7 @@ from dataclasses import replace
 import gc
 from glob import glob
 import threading
+import time
 from typing import Dict, List, Optional, Tuple
 import os
 from pathlib import Path
@@ -17,7 +18,7 @@ gi.require_version("Gst", "1.0")
 from gi.repository import Gst, GLib 
 import pyds
 
-from backend.config.config import ConfigStore
+from backend.config.config import CameraConfig, ConfigStore
 
 class Capture:
     """Interface for receiving camera frames."""
@@ -47,26 +48,26 @@ class Capture:
         camera_b = config_b.camera_config
 
         return (
-            camera_a.camera_id != camera_b.camera_id
-            or camera_a.camera_max_fps != camera_b.camera_max_fps
-            or camera_a.camera_resolution_width != camera_b.camera_resolution_width
-            or camera_a.camera_resolution_height != camera_b.camera_resolution_height
-            or camera_a.camera_auto_white_balance != camera_b.camera_auto_white_balance
+            camera_a.camera_auto_white_balance != camera_b.camera_auto_white_balance
             or camera_a.camera_white_balance != camera_b.camera_white_balance
             or camera_a.camera_auto_exposure != camera_b.camera_auto_exposure
             or camera_a.camera_exposure != camera_b.camera_exposure
             or camera_a.camera_gain != camera_b.camera_gain
         )
-
-# Hardcoded to match this camera's actual reported control names
-# (checked via `v4l2-ctl -d <device> -l`) -- no auto-detection.
-CONTROL_NAMES = {
-    "exposure_auto": "auto_exposure",
-    "exposure_abs": "exposure_time_absolute",
-    "gain": "gain",
-    "wb_auto": "white_balance_automatic",
-    "wb_temp": "white_balance_temperature",
-}
+    
+    @classmethod
+    def _res_changed(cls, config_a: CameraConfig, config_b: CameraConfig) -> bool:
+        if config_a == None and config_b == None:
+            return False
+        if config_a == None or config_b == None:
+            return True
+        
+        return (
+            config_a.camera_resolution_height != config_b.camera_resolution_height
+            or config_a.camera_resolution_width != config_b.camera_resolution_width
+            or config_a.camera_max_fps != config_b.camera_max_fps
+            or config_a.camera_id != config_b.camera_id
+        )
 
 class JetsonCapture(Capture):
     def __init__(self, method="by-path") -> None:
@@ -105,6 +106,56 @@ class JetsonCapture(Capture):
         except Exception as e:
             print("Stop error:", e)
 
+    def build_ctrls(self, cam_cfg: CameraConfig) -> str:
+        controls = [
+            f"auto_exposure={1 if not cam_cfg.camera_auto_exposure else 3}"
+        ]
+        if not cam_cfg.camera_auto_exposure and cam_cfg.camera_exposure is not None:
+            controls.append(f"exposure_time_absolute={cam_cfg.camera_exposure}")
+        if cam_cfg.camera_gain is not None:
+            controls.append(f"gain={cam_cfg.camera_gain}")
+        controls.append(
+            f"white_balance_automatic={1 if cam_cfg.camera_auto_white_balance else 0}"
+        )
+        if not cam_cfg.camera_auto_white_balance and cam_cfg.camera_white_balance is not None:
+            controls.append(f"white_balance_temperature={cam_cfg.camera_white_balance}")
+        return "c," + ",".join(controls)
+
+    def change_setting(self, cam_id: str, setting: str, value) -> None:
+        state = self._get_state(cam_id)
+        if state is None:
+            print(f"Camera {cam_id} not found")
+            return
+        
+        if setting == "camera_auto_exposure":
+            setting = "auto_exposure"
+            value = 1 if not value else 3
+        elif setting == "camera_exposure":
+            setting = "exposure_time_absolute"
+        elif setting == "camera_gain":
+            setting = "gain"
+        elif setting == "camera_auto_white_balance":
+            setting = "white_balance_automatic"
+            value = 1 if value else 0
+        elif setting == "camera_white_balance":
+            setting = "white_balance_temperature"
+        else:
+            print(f"Unknown setting {setting}")
+            return
+
+        ctrl = "c," + f"{setting}={value}"
+
+        iterator = state["pipeline"].iterate_elements()
+        while True:
+            success, el = iterator.next()
+            if not success:
+                break
+
+            factory = el.get_factory()
+            if factory is not None and factory.get_name() == "v4l2src":
+                el.set_property("extra-controls", Gst.Structure.new_from_string(ctrl))
+                break
+
     def get_frame(self, config: ConfigStore) -> None:
         cam_id = config.camera_config.camera_id if config else ""
         last_config = self._last_configs.get(cam_id)
@@ -113,11 +164,19 @@ class JetsonCapture(Capture):
         if config is None:
             print(f"No config found for camera {cam_id}")
             return
-    
-        # -- restart if config changed --
+
         if state is not None and self._config_changed(last_config, config):
+            diff = [k for k, v in config.camera_config.__dict__.items() if v != last_config.camera_config.__dict__.get(k)]
+            for setting in diff:
+                value = getattr(config.camera_config, setting)
+                self.change_setting(cam_id, setting, value)
+                last_config.camera_config.__dict__[setting] = value
+
+        # -- restart if config changed --
+        if state is not None and self._res_changed(last_config.camera_config, config.camera_config):
             print("Restarting capture session")
             state["pipeline"].set_state(Gst.State.NULL)
+            state["pipeline"].get_state(Gst.CLOCK_TIME_NONE)
             state["loop"].quit()
             state = None
             self._pipelines[cam_id] = None
@@ -128,6 +187,7 @@ class JetsonCapture(Capture):
                 config.remote_config_source,
             )
             self._last_configs[cam_id] = last_config
+            time.sleep(2.5)
     
         # -- restart if the pipeline thread died (GStreamer bus ERROR/EOS) --
         if state is not None and not state["thread"].is_alive():
@@ -135,6 +195,7 @@ class JetsonCapture(Capture):
             state["pipeline"].set_state(Gst.State.NULL)
             state = None
             self._pipelines[cam_id] = None
+            time.sleep(7.5)
     
         # -- start a fresh pipeline if none is running --
         if state is None:
@@ -156,19 +217,7 @@ class JetsonCapture(Capture):
                         height = cam_cfg.camera_resolution_height
                         fps = cam_cfg.camera_max_fps
     
-                        controls = [
-                            f"{CONTROL_NAMES['exposure_auto']}={1 if not cam_cfg.camera_auto_exposure else 3}"
-                        ]
-                        if not cam_cfg.camera_auto_exposure and cam_cfg.camera_exposure is not None:
-                            controls.append(f"{CONTROL_NAMES['exposure_abs']}={cam_cfg.camera_exposure}")
-                        if cam_cfg.camera_gain is not None:
-                            controls.append(f"{CONTROL_NAMES['gain']}={cam_cfg.camera_gain}")
-                        controls.append(
-                            f"{CONTROL_NAMES['wb_auto']}={1 if cam_cfg.camera_auto_white_balance else 0}"
-                        )
-                        if not cam_cfg.camera_auto_white_balance and cam_cfg.camera_white_balance is not None:
-                            controls.append(f"{CONTROL_NAMES['wb_temp']}={cam_cfg.camera_white_balance}")
-                        extra_controls = "c," + ",".join(controls)
+                        extra_controls = self.build_ctrls(cam_cfg)
     
                         Gst.init(None)
                         pipeline = Gst.Pipeline()
@@ -180,10 +229,10 @@ class JetsonCapture(Capture):
                             pipeline.add(el)
                             return el
     
-                        src = make("v4l2src", "usb-camera")
-                        src.set_property("device", f"{self._base_dir}/{device}")
-                        src.set_property("extra-controls", Gst.Structure.new_from_string(extra_controls))
-                        src.set_property("io-mode", 2) # mmap mode
+                        self.src = make("v4l2src", f"usb-camera-{config.camera_config.camera_id}")
+                        self.src.set_property("device", f"{self._base_dir}/{device}")
+                        self.src.set_property("extra-controls", Gst.Structure.new_from_string(extra_controls))
+                        self.src.set_property("io-mode", 2) # mmap mode
     
                         src_caps = make("capsfilter", "src-caps")
                         # image/jpeg routes this to hardware MJPEG decode via nvv4l2decoder below
@@ -232,7 +281,7 @@ class JetsonCapture(Capture):
                         sink.set_property("sync", False)
     
                         # -- link main chain --
-                        src.link(src_caps)
+                        self.src.link(src_caps)
                         src_caps.link(jpegparse)
                         jpegparse.link(decoder)
                         decoder.link(convert1)
@@ -278,12 +327,11 @@ class JetsonCapture(Capture):
                                 try:
                                     n_frame = pyds.get_nvds_buf_surface(hash(gst_buffer), frame_meta.batch_id)
                                     rgba = np.array(n_frame, copy=True, order="C")
-                                    bgr = cv2.cvtColor(rgba, cv2.COLOR_RGBA2BGR)
 
                                     if new_state["mat"] is None:
-                                        new_state["mat"] = bgr  # first frame: allocate
+                                        new_state["mat"] = rgba  # first frame: allocate
                                     else:
-                                        new_state["mat"][:] = bgr
+                                        new_state["mat"][:] = rgba
                                 except Exception as e:
                                     print(f"Error occurred while processing frame: {e}")
     
@@ -333,6 +381,18 @@ class JetsonCapture(Capture):
                 config.remote_config_source,
             )
             self._last_configs[cam_id] = last_config
+
+        if state is not None and self._config_changed(last_config, config):
+            ctrls = self.build_ctrls(config.camera_config)
+            self.src.set_property("extra-controls", Gst.Structure.new_from_string(ctrls))
+            last_config = ConfigStore(
+                replace(config.camera_config),
+                replace(config.remote_config),
+                config.camera_config_source,
+                config.remote_config_source,
+            )
+            self._last_configs[cam_id] = last_config
+            
     
     def get_cpu(self, cam_id: str) -> Optional[cv2.Mat]:
         state = self._get_state(cam_id)
@@ -341,9 +401,9 @@ class JetsonCapture(Capture):
         mat = state["mat"]
         if mat is None:
             return None
-        return mat
+        return cv2.cvtColor(mat, cv2.COLOR_RGBA2BGR)
     
-    def get_gpu(self, cam_id: str, target_format: int = cv2.COLOR_BGR2RGB) -> Optional[cv2.cuda.GpuMat]:
+    def get_gpu(self, cam_id: str) -> Optional[cv2.cuda.GpuMat]:
         state = self._get_state(cam_id)
         if state is None or state["mat"] is None:
             return None
@@ -359,7 +419,7 @@ class JetsonCapture(Capture):
 
         gpu_mat = cv2.cuda.GpuMat()
         gpu_mat.upload(state["mat"])
-        return cv2.cuda.cvtColor(gpu_mat, target_format)
+        return gpu_mat
     
     def _get_state(self, cam_id: str) -> Optional[dict]:
         pipe = self._pipelines.get(cam_id)

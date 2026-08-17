@@ -119,10 +119,10 @@
                 <span>Resolution</span>
                 <select id="resolutionDropdown" style="font-size: 14px;">
                     <option value="320x240">240p</option>
-                    <option value="640x480">360p</option>
-                    <option value="800x600">480p</option>
+                    <option value="640x480">480p</option>
+                    <option value="800x600">600p</option>
                     <option value="1280x720">720p</option>
-                    <option value="1280x800">1080p</option>
+                    <option value="1280x800">800p</option>
                 </select>
             </div>
         </div>
@@ -176,8 +176,19 @@ pc.ontrack = (event) => {
 
 async function startWebRTC() {
     const offer = await pc.createOffer();
-
     await pc.setLocalDescription(offer);
+
+    await new Promise((resolve) => {
+        if (pc.iceGatheringState === "complete") {
+            resolve();
+        } else {
+            pc.addEventListener("icegatheringstatechange", () => {
+                if (pc.iceGatheringState === "complete") {
+                    resolve();
+                }
+            });
+        }
+    });
 
     const res = await fetch("/offer", {
         method: "POST",

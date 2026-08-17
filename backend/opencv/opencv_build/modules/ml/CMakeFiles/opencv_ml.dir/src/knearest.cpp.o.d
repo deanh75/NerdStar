@@ -511,4 +511,9 @@ modules/ml/CMakeFiles/opencv_ml.dir/src/knearest.cpp.o: \
  /usr/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorIO.h \
  /usr/include/eigen3/Eigen/src/Core/util/ReenableStupidWarnings.h \
  /usr/include/c++/13/stdlib.h \
+ /home/nerdstar/NerdStar/backend/opencv/opencv/modules/core/include/opencv2/core/hal/intrin.hpp \
+ /home/nerdstar/NerdStar/backend/opencv/opencv/modules/core/include/opencv2/core/hal/intrin_forward.hpp \
+ /home/nerdstar/NerdStar/backend/opencv/opencv/modules/core/include/opencv2/core/hal/intrin_neon.hpp \
+ /home/nerdstar/NerdStar/backend/opencv/opencv/modules/core/include/opencv2/core/hal/intrin_math.hpp \
+ /home/nerdstar/NerdStar/backend/opencv/opencv/modules/core/include/opencv2/core/hal/simd_utils.impl.hpp \
  /home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/ml/src/kdtree.hpp

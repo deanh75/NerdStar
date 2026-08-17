@@ -311,8 +311,8 @@ class Wrapper:
             image = self._capture.get_cpu(config.camera_config.camera_id)
             gpu_image = self._capture.get_gpu(config.camera_config.camera_id)
             if image is None or gpu_image is None:
-                time.sleep(0.1)
                 print("No image found")
+                time.sleep(0.1)
                 continue
             rgbImg = gpu_image.download()
             timestamp = time.time()
@@ -352,6 +352,7 @@ class Wrapper:
                     self.calib_frame = len(calib_session._all_charuco_corners)
                 with self.frame_lock:
                     self.latest_frames[index] = rgbImg
+                continue
 
             elif was_calibrating:
                 # Just finished calibration, save results
@@ -471,7 +472,7 @@ class Wrapper:
                 else:
                     video_frame_cache = []
 
-            elif (config.camera_config.process_frames_enable 
+            if (config.camera_config.process_frames_enable 
                 and config.camera_config.has_calibration
                 and (config.camera_config.apriltags_enable or config.camera_config.objdetect_enable)):
                 if config.camera_config.apriltags_enable:

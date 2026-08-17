@@ -1,4 +1,4 @@
 {
     "swift.swiftEnvironmentVariables": {},
-    "cmake.sourceDirectory": "/Users/dean/NerdStar/backend/camera-ctrl"
+    "cmake.sourceDirectory": "/home/nerdstar/NerdStar/backend/apriltags/apriltag-src"
 }

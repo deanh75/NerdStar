@@ -5,8 +5,8 @@ ADE_root=/home/nerdstar/NerdStar/backend/opencv/opencv_build/3rdparty/ade/ade-0.
 ADE_sources=/home/nerdstar/NerdStar/backend/opencv/opencv_build/3rdparty/ade/ade-0.1.2e/sources/ade/source/alloc.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_build/3rdparty/ade/ade-0.1.2e/sources/ade/source/assert.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_build/3rdparty/ade/ade-0.1.2e/sources/ade/source/check_cycles.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_build/3rdparty/ade/ade-0.1.2e/sources/ade/source/edge.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_build/3rdparty/ade/ade-0.1.2e/sources/ade/source/execution_engine.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_build/3rdparty/ade/ade-0.1.2e/sources/ade/source/graph.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_build/3rdparty/ade/ade-0.1.2e/sources/ade/source/memory_accessor.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_build/3rdparty/ade/ade-0.1.2e/sources/ade/source/memory_descriptor.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_build/3rdparty/ade/ade-0.1.2e/sources/ade/source/memory_descriptor_ref.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_build/3rdparty/ade/ade-0.1.2e/sources/ade/source/memory_descriptor_view.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_build/3rdparty/ade/ade-0.1.2e/sources/ade/source/metadata.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_build/3rdparty/ade/ade-0.1.2e/sources/ade/source/metatypes.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_build/3rdparty/ade/ade-0.1.2e/sources/ade/source/node.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_build/3rdparty/ade/ade-0.1.2e/sources/ade/source/passes/communications.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_build/3rdparty/ade/ade-0.1.2e/sources/ade/source/search.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_build/3rdparty/ade/ade-0.1.2e/sources/ade/source/subgraphs.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_build/3rdparty/ade/ade-0.1.2e/sources/ade/source/topological_sort.cpp
 ARCH=
 ARCH_BIN_NO_POINTS=87
-ARCH_LIST=
-ARCH_PTX_NO_POINTS=
+ARCH_LIST=87
+ARCH_PTX_NO_POINTS=87
 ARGC=3
 ARGN=;TOFILE;CMakeVars.txt
 ARGV=;TOFILE;CMakeVars.txt
@@ -51,12 +51,12 @@ BUILD_JPEG=OFF
 BUILD_LIST=
 BUILD_OPENJPEG=OFF
 BUILD_PACKAGE=ON
-BUILD_PERF_TESTS=ON
+BUILD_PERF_TESTS=OFF
 BUILD_PNG=OFF
 BUILD_PROTOBUF=ON
 BUILD_SHARED_LIBS=ON
 BUILD_TBB=OFF
-BUILD_TESTS=ON
+BUILD_TESTS=OFF
 BUILD_TIFF=OFF
 BUILD_USE_SYMLINKS=OFF
 BUILD_WEBP=OFF
@@ -113,6 +113,7 @@ BUILD_opencv_phase_unwrapping=ON
 BUILD_opencv_photo=ON
 BUILD_opencv_plot=ON
 BUILD_opencv_ptcloud=ON
+BUILD_opencv_python2=OFF
 BUILD_opencv_python3=ON
 BUILD_opencv_python_bindings_generator=ON
 BUILD_opencv_python_tests=ON
@@ -131,7 +132,6 @@ BUILD_opencv_superres=ON
 BUILD_opencv_surface_matching=ON
 BUILD_opencv_text=ON
 BUILD_opencv_tracking=ON
-BUILD_opencv_ts=ON
 BUILD_opencv_video=ON
 BUILD_opencv_videoio=ON
 BUILD_opencv_videostab=ON
@@ -173,57 +173,14 @@ CMAKE_ASM_COMPILER_ARCHITECTURE_ID=
 CMAKE_ASM_COMPILER_ARG1=
 CMAKE_ASM_COMPILER_ENV_VAR=ASM
 CMAKE_ASM_COMPILER_ID=GNU
-CMAKE_ASM_COMPILER_ID_VENDORS=GNU;AppleClang;Clang;ARMClang;OrangeC;HP;Intel;IntelLLVM;SunPro;XL;MSVC;TI;TIClang;IAR;Diab;ARMCC;NASM;YASM;ADSP;QCC;Tasking;Renesas
-CMAKE_ASM_COMPILER_ID_VENDOR_FLAGS_ADSP=-version
-CMAKE_ASM_COMPILER_ID_VENDOR_FLAGS_ARMClang=--version
-CMAKE_ASM_COMPILER_ID_VENDOR_FLAGS_AppleClang=--version
-CMAKE_ASM_COMPILER_ID_VENDOR_FLAGS_Clang=--version
-CMAKE_ASM_COMPILER_ID_VENDOR_FLAGS_Diab=-V
-CMAKE_ASM_COMPILER_ID_VENDOR_FLAGS_GNU=--version
-CMAKE_ASM_COMPILER_ID_VENDOR_FLAGS_HP=-V
-CMAKE_ASM_COMPILER_ID_VENDOR_FLAGS_Intel=--version
-CMAKE_ASM_COMPILER_ID_VENDOR_FLAGS_IntelLLVM=--version
-CMAKE_ASM_COMPILER_ID_VENDOR_FLAGS_MSVC=-?
-CMAKE_ASM_COMPILER_ID_VENDOR_FLAGS_NASM=-v
-CMAKE_ASM_COMPILER_ID_VENDOR_FLAGS_OrangeC=--version
-CMAKE_ASM_COMPILER_ID_VENDOR_FLAGS_QCC=-V
-CMAKE_ASM_COMPILER_ID_VENDOR_FLAGS_Renesas=-v
-CMAKE_ASM_COMPILER_ID_VENDOR_FLAGS_SunPro=-V
-CMAKE_ASM_COMPILER_ID_VENDOR_FLAGS_TI=-h
-CMAKE_ASM_COMPILER_ID_VENDOR_FLAGS_TIClang=--version
-CMAKE_ASM_COMPILER_ID_VENDOR_FLAGS_Tasking=--version
-CMAKE_ASM_COMPILER_ID_VENDOR_FLAGS_XL=-qversion
-CMAKE_ASM_COMPILER_ID_VENDOR_FLAGS_YASM=--version
-CMAKE_ASM_COMPILER_ID_VENDOR_MATCH=
-CMAKE_ASM_COMPILER_ID_VENDOR_REGEX_ADSP=Analog Devices
-CMAKE_ASM_COMPILER_ID_VENDOR_REGEX_ARMCC=(ARM Compiler)|(ARM Assembler)|(Arm Compiler)
-CMAKE_ASM_COMPILER_ID_VENDOR_REGEX_ARMClang=armclang
-CMAKE_ASM_COMPILER_ID_VENDOR_REGEX_AppleClang=(Apple (clang|LLVM) version)
-CMAKE_ASM_COMPILER_ID_VENDOR_REGEX_Clang=(clang version)
-CMAKE_ASM_COMPILER_ID_VENDOR_REGEX_Diab=Wind River Systems
-CMAKE_ASM_COMPILER_ID_VENDOR_REGEX_GNU=(GNU assembler)|(GCC)|(Free Software Foundation)
-CMAKE_ASM_COMPILER_ID_VENDOR_REGEX_HP=HP C
-CMAKE_ASM_COMPILER_ID_VENDOR_REGEX_IAR=IAR Assembler
-CMAKE_ASM_COMPILER_ID_VENDOR_REGEX_Intel=(ICC)
-CMAKE_ASM_COMPILER_ID_VENDOR_REGEX_IntelLLVM=(Intel[^
-]+oneAPI)
-CMAKE_ASM_COMPILER_ID_VENDOR_REGEX_MSVC=Microsoft
-CMAKE_ASM_COMPILER_ID_VENDOR_REGEX_NASM=(NASM version)
-CMAKE_ASM_COMPILER_ID_VENDOR_REGEX_OrangeC=occ \(OrangeC\) Version
-CMAKE_ASM_COMPILER_ID_VENDOR_REGEX_QCC=gcc_nto
-CMAKE_ASM_COMPILER_ID_VENDOR_REGEX_Renesas=(RX Family C/C\+\+ Compiler)|(RL78 Family Compiler)|(RH850 Family Compiler)
-CMAKE_ASM_COMPILER_ID_VENDOR_REGEX_SunPro=Sun C
-CMAKE_ASM_COMPILER_ID_VENDOR_REGEX_TI=Texas Instruments
-CMAKE_ASM_COMPILER_ID_VENDOR_REGEX_TIClang=(TI (.*) Clang Compiler)
-CMAKE_ASM_COMPILER_ID_VENDOR_REGEX_Tasking=TASKING
-CMAKE_ASM_COMPILER_ID_VENDOR_REGEX_XL=XL C
-CMAKE_ASM_COMPILER_ID_VENDOR_REGEX_YASM=(yasm)
 CMAKE_ASM_COMPILER_LINKER=
+CMAKE_ASM_COMPILER_LINKER_ARCHITECTURE_FLAGS=
+CMAKE_ASM_COMPILER_LINKER_FRONTEND_VARIANT=
 CMAKE_ASM_COMPILER_LINKER_ID=
+CMAKE_ASM_COMPILER_LINKER_VERSION=
 CMAKE_ASM_COMPILER_LOADED=1
 CMAKE_ASM_COMPILER_RANLIB=/usr/bin/gcc-ranlib
 CMAKE_ASM_COMPILER_RANLIB=/usr/bin/gcc-ranlib
-CMAKE_ASM_COMPILER_SYSROOT=
 CMAKE_ASM_COMPILER_VERSION=
 CMAKE_ASM_COMPILER_WORKS=1
 CMAKE_ASM_COMPILE_OBJECT=<CMAKE_ASM_COMPILER> <DEFINES> <INCLUDES> <FLAGS> -o <OBJECT> -c <SOURCE>
@@ -286,9 +243,9 @@ CMAKE_C99_EXTENSION_COMPILE_OPTION=-std=gnu99
 CMAKE_C99_STANDARD_COMPILE_OPTION=-std=c99
 CMAKE_C99_STANDARD__HAS_FULL_SUPPORT=ON
 CMAKE_CACHEFILE_DIR=/home/nerdstar/NerdStar/backend/opencv/opencv_build
-CMAKE_CACHE_MAJOR_VERSION=3
-CMAKE_CACHE_MINOR_VERSION=28
-CMAKE_CACHE_PATCH_VERSION=3
+CMAKE_CACHE_MAJOR_VERSION=4
+CMAKE_CACHE_MINOR_VERSION=4
+CMAKE_CACHE_PATCH_VERSION=2
 CMAKE_CFG_INTDIR=.
 CMAKE_COLOR_MAKEFILE=ON
 CMAKE_COMMAND=/usr/bin/cmake
@@ -349,410 +306,18 @@ CMAKE_CXX_COMPILER_CLANG_RESOURCE_DIR=
 CMAKE_CXX_COMPILER_ENV_VAR=CXX
 CMAKE_CXX_COMPILER_FRONTEND_VARIANT=GNU
 CMAKE_CXX_COMPILER_ID=GNU
-CMAKE_CXX_COMPILER_ID_PLATFORM_CONTENT=#define STRINGIFY_HELPER(X) #X
-#define STRINGIFY(X) STRINGIFY_HELPER(X)
-
-/* Identify known platforms by name.  */
-#if defined(__linux) || defined(__linux__) || defined(linux)
-# define PLATFORM_ID "Linux"
-
-#elif defined(__MSYS__)
-# define PLATFORM_ID "MSYS"
-
-#elif defined(__CYGWIN__)
-# define PLATFORM_ID "Cygwin"
-
-#elif defined(__MINGW32__)
-# define PLATFORM_ID "MinGW"
-
-#elif defined(__APPLE__)
-# define PLATFORM_ID "Darwin"
-
-#elif defined(_WIN32) || defined(__WIN32__) || defined(WIN32)
-# define PLATFORM_ID "Windows"
-
-#elif defined(__FreeBSD__) || defined(__FreeBSD)
-# define PLATFORM_ID "FreeBSD"
-
-#elif defined(__NetBSD__) || defined(__NetBSD)
-# define PLATFORM_ID "NetBSD"
-
-#elif defined(__OpenBSD__) || defined(__OPENBSD)
-# define PLATFORM_ID "OpenBSD"
-
-#elif defined(__sun) || defined(sun)
-# define PLATFORM_ID "SunOS"
-
-#elif defined(_AIX) || defined(__AIX) || defined(__AIX__) || defined(__aix) || defined(__aix__)
-# define PLATFORM_ID "AIX"
-
-#elif defined(__hpux) || defined(__hpux__)
-# define PLATFORM_ID "HP-UX"
-
-#elif defined(__HAIKU__)
-# define PLATFORM_ID "Haiku"
-
-#elif defined(__BeOS) || defined(__BEOS__) || defined(_BEOS)
-# define PLATFORM_ID "BeOS"
-
-#elif defined(__QNX__) || defined(__QNXNTO__)
-# define PLATFORM_ID "QNX"
-
-#elif defined(__tru64) || defined(_tru64) || defined(__TRU64__)
-# define PLATFORM_ID "Tru64"
-
-#elif defined(__riscos) || defined(__riscos__)
-# define PLATFORM_ID "RISCos"
-
-#elif defined(__sinix) || defined(__sinix__) || defined(__SINIX__)
-# define PLATFORM_ID "SINIX"
-
-#elif defined(__UNIX_SV__)
-# define PLATFORM_ID "UNIX_SV"
-
-#elif defined(__bsdos__)
-# define PLATFORM_ID "BSDOS"
-
-#elif defined(_MPRAS) || defined(MPRAS)
-# define PLATFORM_ID "MP-RAS"
-
-#elif defined(__osf) || defined(__osf__)
-# define PLATFORM_ID "OSF1"
-
-#elif defined(_SCO_SV) || defined(SCO_SV) || defined(sco_sv)
-# define PLATFORM_ID "SCO_SV"
-
-#elif defined(__ultrix) || defined(__ultrix__) || defined(_ULTRIX)
-# define PLATFORM_ID "ULTRIX"
-
-#elif defined(__XENIX__) || defined(_XENIX) || defined(XENIX)
-# define PLATFORM_ID "Xenix"
-
-#elif defined(__WATCOMC__)
-# if defined(__LINUX__)
-#  define PLATFORM_ID "Linux"
-
-# elif defined(__DOS__)
-#  define PLATFORM_ID "DOS"
-
-# elif defined(__OS2__)
-#  define PLATFORM_ID "OS2"
-
-# elif defined(__WINDOWS__)
-#  define PLATFORM_ID "Windows3x"
-
-# elif defined(__VXWORKS__)
-#  define PLATFORM_ID "VxWorks"
-
-# else /* unknown platform */
-#  define PLATFORM_ID
-# endif
-
-#elif defined(__INTEGRITY)
-# if defined(INT_178B)
-#  define PLATFORM_ID "Integrity178"
-
-# else /* regular Integrity */
-#  define PLATFORM_ID "Integrity"
-# endif
-
-# elif defined(_ADI_COMPILER)
-#  define PLATFORM_ID "ADSP"
-
-#else /* unknown platform */
-# define PLATFORM_ID
-
-#endif
-
-/* For windows compilers MSVC and Intel we can determine
-   the architecture of the compiler being used.  This is because
-   the compilers do not have flags that can change the architecture,
-   but rather depend on which compiler is being used
-*/
-#if defined(_WIN32) && defined(_MSC_VER)
-# if defined(_M_IA64)
-#  define ARCHITECTURE_ID "IA64"
-
-# elif defined(_M_ARM64EC)
-#  define ARCHITECTURE_ID "ARM64EC"
-
-# elif defined(_M_X64) || defined(_M_AMD64)
-#  define ARCHITECTURE_ID "x64"
-
-# elif defined(_M_IX86)
-#  define ARCHITECTURE_ID "X86"
-
-# elif defined(_M_ARM64)
-#  define ARCHITECTURE_ID "ARM64"
-
-# elif defined(_M_ARM)
-#  if _M_ARM == 4
-#   define ARCHITECTURE_ID "ARMV4I"
-#  elif _M_ARM == 5
-#   define ARCHITECTURE_ID "ARMV5I"
-#  else
-#   define ARCHITECTURE_ID "ARMV" STRINGIFY(_M_ARM)
-#  endif
-
-# elif defined(_M_MIPS)
-#  define ARCHITECTURE_ID "MIPS"
-
-# elif defined(_M_SH)
-#  define ARCHITECTURE_ID "SHx"
-
-# else /* unknown architecture */
-#  define ARCHITECTURE_ID ""
-# endif
-
-#elif defined(__WATCOMC__)
-# if defined(_M_I86)
-#  define ARCHITECTURE_ID "I86"
-
-# elif defined(_M_IX86)
-#  define ARCHITECTURE_ID "X86"
-
-# else /* unknown architecture */
-#  define ARCHITECTURE_ID ""
-# endif
-
-#elif defined(__IAR_SYSTEMS_ICC__) || defined(__IAR_SYSTEMS_ICC)
-# if defined(__ICCARM__)
-#  define ARCHITECTURE_ID "ARM"
-
-# elif defined(__ICCRX__)
-#  define ARCHITECTURE_ID "RX"
-
-# elif defined(__ICCRH850__)
-#  define ARCHITECTURE_ID "RH850"
-
-# elif defined(__ICCRL78__)
-#  define ARCHITECTURE_ID "RL78"
-
-# elif defined(__ICCRISCV__)
-#  define ARCHITECTURE_ID "RISCV"
-
-# elif defined(__ICCAVR__)
-#  define ARCHITECTURE_ID "AVR"
-
-# elif defined(__ICC430__)
-#  define ARCHITECTURE_ID "MSP430"
-
-# elif defined(__ICCV850__)
-#  define ARCHITECTURE_ID "V850"
-
-# elif defined(__ICC8051__)
-#  define ARCHITECTURE_ID "8051"
-
-# elif defined(__ICCSTM8__)
-#  define ARCHITECTURE_ID "STM8"
-
-# else /* unknown architecture */
-#  define ARCHITECTURE_ID ""
-# endif
-
-#elif defined(__ghs__)
-# if defined(__PPC64__)
-#  define ARCHITECTURE_ID "PPC64"
-
-# elif defined(__ppc__)
-#  define ARCHITECTURE_ID "PPC"
-
-# elif defined(__ARM__)
-#  define ARCHITECTURE_ID "ARM"
-
-# elif defined(__x86_64__)
-#  define ARCHITECTURE_ID "x64"
-
-# elif defined(__i386__)
-#  define ARCHITECTURE_ID "X86"
-
-# else /* unknown architecture */
-#  define ARCHITECTURE_ID ""
-# endif
-
-#elif defined(__clang__) && defined(__ti__)
-# if defined(__ARM_ARCH)
-#  define ARCHITECTURE_ID "ARM"
-
-# else /* unknown architecture */
-#  define ARCHITECTURE_ID ""
-# endif
-
-#elif defined(__TI_COMPILER_VERSION__)
-# if defined(__TI_ARM__)
-#  define ARCHITECTURE_ID "ARM"
-
-# elif defined(__MSP430__)
-#  define ARCHITECTURE_ID "MSP430"
-
-# elif defined(__TMS320C28XX__)
-#  define ARCHITECTURE_ID "TMS320C28x"
-
-# elif defined(__TMS320C6X__) || defined(_TMS320C6X)
-#  define ARCHITECTURE_ID "TMS320C6x"
-
-# else /* unknown architecture */
-#  define ARCHITECTURE_ID ""
-# endif
-
-# elif defined(__ADSPSHARC__)
-#  define ARCHITECTURE_ID "SHARC"
-
-# elif defined(__ADSPBLACKFIN__)
-#  define ARCHITECTURE_ID "Blackfin"
-
-#elif defined(__TASKING__)
-
-# if defined(__CTC__) || defined(__CPTC__)
-#  define ARCHITECTURE_ID "TriCore"
-
-# elif defined(__CMCS__)
-#  define ARCHITECTURE_ID "MCS"
-
-# elif defined(__CARM__) || defined(__CPARM__)
-#  define ARCHITECTURE_ID "ARM"
-
-# elif defined(__CARC__)
-#  define ARCHITECTURE_ID "ARC"
-
-# elif defined(__C51__)
-#  define ARCHITECTURE_ID "8051"
-
-# elif defined(__CPCP__)
-#  define ARCHITECTURE_ID "PCP"
-
-# else
-#  define ARCHITECTURE_ID ""
-# endif
-
-#elif defined(__RENESAS__)
-# if defined(__CCRX__)
-#  define ARCHITECTURE_ID "RX"
-
-# elif defined(__CCRL__)
-#  define ARCHITECTURE_ID "RL78"
-
-# elif defined(__CCRH__)
-#  define ARCHITECTURE_ID "RH850"
-
-# else
-#  define ARCHITECTURE_ID ""
-# endif
-
-#else
-#  define ARCHITECTURE_ID
-#endif
-
-/* Convert integer to decimal digit literals.  */
-#define DEC(n)                   \
-  ('0' + (((n) / 10000000)%10)), \
-  ('0' + (((n) / 1000000)%10)),  \
-  ('0' + (((n) / 100000)%10)),   \
-  ('0' + (((n) / 10000)%10)),    \
-  ('0' + (((n) / 1000)%10)),     \
-  ('0' + (((n) / 100)%10)),      \
-  ('0' + (((n) / 10)%10)),       \
-  ('0' +  ((n) % 10))
-
-/* Convert integer to hex digit literals.  */
-#define HEX(n)             \
-  ('0' + ((n)>>28 & 0xF)), \
-  ('0' + ((n)>>24 & 0xF)), \
-  ('0' + ((n)>>20 & 0xF)), \
-  ('0' + ((n)>>16 & 0xF)), \
-  ('0' + ((n)>>12 & 0xF)), \
-  ('0' + ((n)>>8  & 0xF)), \
-  ('0' + ((n)>>4  & 0xF)), \
-  ('0' + ((n)     & 0xF))
-
-/* Construct a string literal encoding the version number. */
-#ifdef COMPILER_VERSION
-char const* info_version = "INFO" ":" "compiler_version[" COMPILER_VERSION "]";
-
-/* Construct a string literal encoding the version number components. */
-#elif defined(COMPILER_VERSION_MAJOR)
-char const info_version[] = {
-  'I', 'N', 'F', 'O', ':',
-  'c','o','m','p','i','l','e','r','_','v','e','r','s','i','o','n','[',
-  COMPILER_VERSION_MAJOR,
-# ifdef COMPILER_VERSION_MINOR
-  '.', COMPILER_VERSION_MINOR,
-#  ifdef COMPILER_VERSION_PATCH
-   '.', COMPILER_VERSION_PATCH,
-#   ifdef COMPILER_VERSION_TWEAK
-    '.', COMPILER_VERSION_TWEAK,
-#   endif
-#  endif
-# endif
-  ']','\0'};
-#endif
-
-/* Construct a string literal encoding the internal version number. */
-#ifdef COMPILER_VERSION_INTERNAL
-char const info_version_internal[] = {
-  'I', 'N', 'F', 'O', ':',
-  'c','o','m','p','i','l','e','r','_','v','e','r','s','i','o','n','_',
-  'i','n','t','e','r','n','a','l','[',
-  COMPILER_VERSION_INTERNAL,']','\0'};
-#elif defined(COMPILER_VERSION_INTERNAL_STR)
-char const* info_version_internal = "INFO" ":" "compiler_version_internal[" COMPILER_VERSION_INTERNAL_STR "]";
-#endif
-
-/* Construct a string literal encoding the version number components. */
-#ifdef SIMULATE_VERSION_MAJOR
-char const info_simulate_version[] = {
-  'I', 'N', 'F', 'O', ':',
-  's','i','m','u','l','a','t','e','_','v','e','r','s','i','o','n','[',
-  SIMULATE_VERSION_MAJOR,
-# ifdef SIMULATE_VERSION_MINOR
-  '.', SIMULATE_VERSION_MINOR,
-#  ifdef SIMULATE_VERSION_PATCH
-   '.', SIMULATE_VERSION_PATCH,
-#   ifdef SIMULATE_VERSION_TWEAK
-    '.', SIMULATE_VERSION_TWEAK,
-#   endif
-#  endif
-# endif
-  ']','\0'};
-#endif
-
-/* Construct the string literal in pieces to prevent the source from
-   getting matched.  Store it in a pointer rather than an array
-   because some compilers will just produce instructions to fill the
-   array rather than assigning a pointer to a static array.  */
-char const* info_platform = "INFO" ":" "platform[" PLATFORM_ID "]";
-char const* info_arch = "INFO" ":" "arch[" ARCHITECTURE_ID "]";
-
 CMAKE_CXX_COMPILER_ID_RUN=1
-CMAKE_CXX_COMPILER_ID_TEST_FLAGS=-c;--c++;--ec++;--target=arm-arm-none-eabi -mcpu=cortex-m3;-c -I__does_not_exist__
-CMAKE_CXX_COMPILER_ID_TOOL_MATCH_INDEX=2
-CMAKE_CXX_COMPILER_ID_TOOL_MATCH_REGEX=
-Ld[^
-]*(
-[ 	]+[^
-]*)*
-[ 	]+([^ 	
-]+)[^
-]*-o[^
-]*CompilerIdCXX/(\./)?(CompilerIdCXX.(framework|xctest|build/[^ 	
-]+)/)?CompilerIdCXX[ 	
-\"]
-CMAKE_CXX_COMPILER_ID_VENDORS=IAR
-CMAKE_CXX_COMPILER_ID_VENDOR_REGEX_IAR=IAR .+ Compiler
 CMAKE_CXX_COMPILER_IMPORT_STD=
 CMAKE_CXX_COMPILER_IMPORT_STD_ERROR_MESSAGE=Unsupported generator: Unix Makefiles
 CMAKE_CXX_COMPILER_LINKER=/usr/bin/ld
+CMAKE_CXX_COMPILER_LINKER_ARCHITECTURE_FLAGS=
 CMAKE_CXX_COMPILER_LINKER_FRONTEND_VARIANT=GNU
 CMAKE_CXX_COMPILER_LINKER_ID=GNU
 CMAKE_CXX_COMPILER_LINKER_VERSION=2.42
 CMAKE_CXX_COMPILER_LOADED=1
-CMAKE_CXX_COMPILER_NAMES=c++
-CMAKE_CXX_COMPILER_PREDEFINES_COMMAND=/usr/bin/c++;-w;-dM;-E;/usr/share/cmake-4.3/Modules/CMakeCXXCompilerABI.cpp
-CMAKE_CXX_COMPILER_PRODUCED_FILES=a.out
-CMAKE_CXX_COMPILER_PRODUCED_OUTPUT=
+CMAKE_CXX_COMPILER_PREDEFINES_COMMAND=/usr/bin/c++;-w;-dM;-E;/usr/share/cmake-4.4/Modules/CMakeCXXCompilerABI.cpp
 CMAKE_CXX_COMPILER_RANLIB=/usr/bin/gcc-ranlib-13
 CMAKE_CXX_COMPILER_RANLIB=/usr/bin/gcc-ranlib-13
-CMAKE_CXX_COMPILER_SYSROOT=
 CMAKE_CXX_COMPILER_VERSION=13.3.0
 CMAKE_CXX_COMPILER_VERSION_INTERNAL=
 CMAKE_CXX_COMPILER_WORKS=TRUE
@@ -794,8 +359,6 @@ CMAKE_CXX_FLAGS_RELEASE=-O3 -DNDEBUG  -DNDEBUG
 CMAKE_CXX_FLAGS_RELEASE_INIT= -O3 -DNDEBUG
 CMAKE_CXX_FLAGS_RELWITHDEBINFO=-O2 -g -DNDEBUG
 CMAKE_CXX_FLAGS_RELWITHDEBINFO_INIT= -O2 -g -DNDEBUG
-CMAKE_CXX_HOST_COMPILER_ID=
-CMAKE_CXX_HOST_COMPILER_VERSION=
 CMAKE_CXX_IGNORE_EXTENSIONS=inl;h;hpp;HPP;H;o;O;obj;OBJ;def;DEF;rc;RC
 CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES=/usr/include/c++/13;/usr/include/aarch64-linux-gnu/c++/13;/usr/include/c++/13/backward;/usr/lib/gcc/aarch64-linux-gnu/13/include;/usr/local/include;/usr/include/aarch64-linux-gnu;/usr/include
 CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES=/usr/lib/gcc/aarch64-linux-gnu/13;/usr/aarch64-linux-gnu/lib;/usr/lib/aarch64-linux-gnu;/usr/lib;/lib/aarch64-linux-gnu;/lib
@@ -828,12 +391,11 @@ CMAKE_CXX_PLATFORM_LINKER_ID=GNU
 CMAKE_CXX_SIMULATE_ID=
 CMAKE_CXX_SIMULATE_VERSION=
 CMAKE_CXX_SIZEOF_DATA_PTR=8
-CMAKE_CXX_SOURCE_FILE_EXTENSIONS=C;M;c++;cc;cpp;cxx;mm;mpp;CPP;ixx;cppm;ccm;cxxm;c++m
+CMAKE_CXX_SOURCE_FILE_EXTENSIONS=C;M;c++;cc;cpp;cxx;m;mm;mpp;CPP;ixx;cppm;ccm;cxxm;c++m
 CMAKE_CXX_STANDARD=17
 CMAKE_CXX_STANDARD_COMPUTED_DEFAULT=17
 CMAKE_CXX_STANDARD_DEFAULT=17
 CMAKE_CXX_STANDARD_LATEST=23
-CMAKE_CXX_STANDARD_LIBRARY=libstdc++
 CMAKE_CXX_STANDARD_REQUIRED=TRUE
 CMAKE_CXX_STDLIB_MODULES_JSON=
 CMAKE_CXX_USE_LINKER_INFORMATION=TRUE
@@ -844,7 +406,6 @@ CMAKE_CXX_USING_LINKER_MOLD=-fuse-ld=mold
 CMAKE_CXX_USING_LINKER_SYSTEM=
 CMAKE_CXX_VERBOSE_FLAG=-v
 CMAKE_CXX_VERBOSE_LINK_FLAG=-Wl,-v
-CMAKE_CXX_XCODE_ARCHS=
 CMAKE_C_ABI_COMPILED=TRUE
 CMAKE_C_ARCHIVE_APPEND=<CMAKE_AR> q <TARGET> <LINK_FLAGS> <OBJECTS>
 CMAKE_C_ARCHIVE_APPEND_IPO="/usr/bin/gcc-ar-13" q <TARGET> <LINK_FLAGS> <OBJECTS>
@@ -862,411 +423,18 @@ CMAKE_C_COMPILER_AR=/usr/bin/gcc-ar-13
 CMAKE_C_COMPILER_AR=/usr/bin/gcc-ar-13
 CMAKE_C_COMPILER_ARCHITECTURE_ID=aarch64
 CMAKE_C_COMPILER_ARG1=
-CMAKE_C_COMPILER_CLANG_RESOURCE_DIR=
 CMAKE_C_COMPILER_ENV_VAR=CC
 CMAKE_C_COMPILER_FRONTEND_VARIANT=GNU
 CMAKE_C_COMPILER_ID=GNU
-CMAKE_C_COMPILER_ID_PLATFORM_CONTENT=#define STRINGIFY_HELPER(X) #X
-#define STRINGIFY(X) STRINGIFY_HELPER(X)
-
-/* Identify known platforms by name.  */
-#if defined(__linux) || defined(__linux__) || defined(linux)
-# define PLATFORM_ID "Linux"
-
-#elif defined(__MSYS__)
-# define PLATFORM_ID "MSYS"
-
-#elif defined(__CYGWIN__)
-# define PLATFORM_ID "Cygwin"
-
-#elif defined(__MINGW32__)
-# define PLATFORM_ID "MinGW"
-
-#elif defined(__APPLE__)
-# define PLATFORM_ID "Darwin"
-
-#elif defined(_WIN32) || defined(__WIN32__) || defined(WIN32)
-# define PLATFORM_ID "Windows"
-
-#elif defined(__FreeBSD__) || defined(__FreeBSD)
-# define PLATFORM_ID "FreeBSD"
-
-#elif defined(__NetBSD__) || defined(__NetBSD)
-# define PLATFORM_ID "NetBSD"
-
-#elif defined(__OpenBSD__) || defined(__OPENBSD)
-# define PLATFORM_ID "OpenBSD"
-
-#elif defined(__sun) || defined(sun)
-# define PLATFORM_ID "SunOS"
-
-#elif defined(_AIX) || defined(__AIX) || defined(__AIX__) || defined(__aix) || defined(__aix__)
-# define PLATFORM_ID "AIX"
-
-#elif defined(__hpux) || defined(__hpux__)
-# define PLATFORM_ID "HP-UX"
-
-#elif defined(__HAIKU__)
-# define PLATFORM_ID "Haiku"
-
-#elif defined(__BeOS) || defined(__BEOS__) || defined(_BEOS)
-# define PLATFORM_ID "BeOS"
-
-#elif defined(__QNX__) || defined(__QNXNTO__)
-# define PLATFORM_ID "QNX"
-
-#elif defined(__tru64) || defined(_tru64) || defined(__TRU64__)
-# define PLATFORM_ID "Tru64"
-
-#elif defined(__riscos) || defined(__riscos__)
-# define PLATFORM_ID "RISCos"
-
-#elif defined(__sinix) || defined(__sinix__) || defined(__SINIX__)
-# define PLATFORM_ID "SINIX"
-
-#elif defined(__UNIX_SV__)
-# define PLATFORM_ID "UNIX_SV"
-
-#elif defined(__bsdos__)
-# define PLATFORM_ID "BSDOS"
-
-#elif defined(_MPRAS) || defined(MPRAS)
-# define PLATFORM_ID "MP-RAS"
-
-#elif defined(__osf) || defined(__osf__)
-# define PLATFORM_ID "OSF1"
-
-#elif defined(_SCO_SV) || defined(SCO_SV) || defined(sco_sv)
-# define PLATFORM_ID "SCO_SV"
-
-#elif defined(__ultrix) || defined(__ultrix__) || defined(_ULTRIX)
-# define PLATFORM_ID "ULTRIX"
-
-#elif defined(__XENIX__) || defined(_XENIX) || defined(XENIX)
-# define PLATFORM_ID "Xenix"
-
-#elif defined(__WATCOMC__)
-# if defined(__LINUX__)
-#  define PLATFORM_ID "Linux"
-
-# elif defined(__DOS__)
-#  define PLATFORM_ID "DOS"
-
-# elif defined(__OS2__)
-#  define PLATFORM_ID "OS2"
-
-# elif defined(__WINDOWS__)
-#  define PLATFORM_ID "Windows3x"
-
-# elif defined(__VXWORKS__)
-#  define PLATFORM_ID "VxWorks"
-
-# else /* unknown platform */
-#  define PLATFORM_ID
-# endif
-
-#elif defined(__INTEGRITY)
-# if defined(INT_178B)
-#  define PLATFORM_ID "Integrity178"
-
-# else /* regular Integrity */
-#  define PLATFORM_ID "Integrity"
-# endif
-
-# elif defined(_ADI_COMPILER)
-#  define PLATFORM_ID "ADSP"
-
-#else /* unknown platform */
-# define PLATFORM_ID
-
-#endif
-
-/* For windows compilers MSVC and Intel we can determine
-   the architecture of the compiler being used.  This is because
-   the compilers do not have flags that can change the architecture,
-   but rather depend on which compiler is being used
-*/
-#if defined(_WIN32) && defined(_MSC_VER)
-# if defined(_M_IA64)
-#  define ARCHITECTURE_ID "IA64"
-
-# elif defined(_M_ARM64EC)
-#  define ARCHITECTURE_ID "ARM64EC"
-
-# elif defined(_M_X64) || defined(_M_AMD64)
-#  define ARCHITECTURE_ID "x64"
-
-# elif defined(_M_IX86)
-#  define ARCHITECTURE_ID "X86"
-
-# elif defined(_M_ARM64)
-#  define ARCHITECTURE_ID "ARM64"
-
-# elif defined(_M_ARM)
-#  if _M_ARM == 4
-#   define ARCHITECTURE_ID "ARMV4I"
-#  elif _M_ARM == 5
-#   define ARCHITECTURE_ID "ARMV5I"
-#  else
-#   define ARCHITECTURE_ID "ARMV" STRINGIFY(_M_ARM)
-#  endif
-
-# elif defined(_M_MIPS)
-#  define ARCHITECTURE_ID "MIPS"
-
-# elif defined(_M_SH)
-#  define ARCHITECTURE_ID "SHx"
-
-# else /* unknown architecture */
-#  define ARCHITECTURE_ID ""
-# endif
-
-#elif defined(__WATCOMC__)
-# if defined(_M_I86)
-#  define ARCHITECTURE_ID "I86"
-
-# elif defined(_M_IX86)
-#  define ARCHITECTURE_ID "X86"
-
-# else /* unknown architecture */
-#  define ARCHITECTURE_ID ""
-# endif
-
-#elif defined(__IAR_SYSTEMS_ICC__) || defined(__IAR_SYSTEMS_ICC)
-# if defined(__ICCARM__)
-#  define ARCHITECTURE_ID "ARM"
-
-# elif defined(__ICCRX__)
-#  define ARCHITECTURE_ID "RX"
-
-# elif defined(__ICCRH850__)
-#  define ARCHITECTURE_ID "RH850"
-
-# elif defined(__ICCRL78__)
-#  define ARCHITECTURE_ID "RL78"
-
-# elif defined(__ICCRISCV__)
-#  define ARCHITECTURE_ID "RISCV"
-
-# elif defined(__ICCAVR__)
-#  define ARCHITECTURE_ID "AVR"
-
-# elif defined(__ICC430__)
-#  define ARCHITECTURE_ID "MSP430"
-
-# elif defined(__ICCV850__)
-#  define ARCHITECTURE_ID "V850"
-
-# elif defined(__ICC8051__)
-#  define ARCHITECTURE_ID "8051"
-
-# elif defined(__ICCSTM8__)
-#  define ARCHITECTURE_ID "STM8"
-
-# else /* unknown architecture */
-#  define ARCHITECTURE_ID ""
-# endif
-
-#elif defined(__ghs__)
-# if defined(__PPC64__)
-#  define ARCHITECTURE_ID "PPC64"
-
-# elif defined(__ppc__)
-#  define ARCHITECTURE_ID "PPC"
-
-# elif defined(__ARM__)
-#  define ARCHITECTURE_ID "ARM"
-
-# elif defined(__x86_64__)
-#  define ARCHITECTURE_ID "x64"
-
-# elif defined(__i386__)
-#  define ARCHITECTURE_ID "X86"
-
-# else /* unknown architecture */
-#  define ARCHITECTURE_ID ""
-# endif
-
-#elif defined(__clang__) && defined(__ti__)
-# if defined(__ARM_ARCH)
-#  define ARCHITECTURE_ID "ARM"
-
-# else /* unknown architecture */
-#  define ARCHITECTURE_ID ""
-# endif
-
-#elif defined(__TI_COMPILER_VERSION__)
-# if defined(__TI_ARM__)
-#  define ARCHITECTURE_ID "ARM"
-
-# elif defined(__MSP430__)
-#  define ARCHITECTURE_ID "MSP430"
-
-# elif defined(__TMS320C28XX__)
-#  define ARCHITECTURE_ID "TMS320C28x"
-
-# elif defined(__TMS320C6X__) || defined(_TMS320C6X)
-#  define ARCHITECTURE_ID "TMS320C6x"
-
-# else /* unknown architecture */
-#  define ARCHITECTURE_ID ""
-# endif
-
-# elif defined(__ADSPSHARC__)
-#  define ARCHITECTURE_ID "SHARC"
-
-# elif defined(__ADSPBLACKFIN__)
-#  define ARCHITECTURE_ID "Blackfin"
-
-#elif defined(__TASKING__)
-
-# if defined(__CTC__) || defined(__CPTC__)
-#  define ARCHITECTURE_ID "TriCore"
-
-# elif defined(__CMCS__)
-#  define ARCHITECTURE_ID "MCS"
-
-# elif defined(__CARM__) || defined(__CPARM__)
-#  define ARCHITECTURE_ID "ARM"
-
-# elif defined(__CARC__)
-#  define ARCHITECTURE_ID "ARC"
-
-# elif defined(__C51__)
-#  define ARCHITECTURE_ID "8051"
-
-# elif defined(__CPCP__)
-#  define ARCHITECTURE_ID "PCP"
-
-# else
-#  define ARCHITECTURE_ID ""
-# endif
-
-#elif defined(__RENESAS__)
-# if defined(__CCRX__)
-#  define ARCHITECTURE_ID "RX"
-
-# elif defined(__CCRL__)
-#  define ARCHITECTURE_ID "RL78"
-
-# elif defined(__CCRH__)
-#  define ARCHITECTURE_ID "RH850"
-
-# else
-#  define ARCHITECTURE_ID ""
-# endif
-
-#else
-#  define ARCHITECTURE_ID
-#endif
-
-/* Convert integer to decimal digit literals.  */
-#define DEC(n)                   \
-  ('0' + (((n) / 10000000)%10)), \
-  ('0' + (((n) / 1000000)%10)),  \
-  ('0' + (((n) / 100000)%10)),   \
-  ('0' + (((n) / 10000)%10)),    \
-  ('0' + (((n) / 1000)%10)),     \
-  ('0' + (((n) / 100)%10)),      \
-  ('0' + (((n) / 10)%10)),       \
-  ('0' +  ((n) % 10))
-
-/* Convert integer to hex digit literals.  */
-#define HEX(n)             \
-  ('0' + ((n)>>28 & 0xF)), \
-  ('0' + ((n)>>24 & 0xF)), \
-  ('0' + ((n)>>20 & 0xF)), \
-  ('0' + ((n)>>16 & 0xF)), \
-  ('0' + ((n)>>12 & 0xF)), \
-  ('0' + ((n)>>8  & 0xF)), \
-  ('0' + ((n)>>4  & 0xF)), \
-  ('0' + ((n)     & 0xF))
-
-/* Construct a string literal encoding the version number. */
-#ifdef COMPILER_VERSION
-char const* info_version = "INFO" ":" "compiler_version[" COMPILER_VERSION "]";
-
-/* Construct a string literal encoding the version number components. */
-#elif defined(COMPILER_VERSION_MAJOR)
-char const info_version[] = {
-  'I', 'N', 'F', 'O', ':',
-  'c','o','m','p','i','l','e','r','_','v','e','r','s','i','o','n','[',
-  COMPILER_VERSION_MAJOR,
-# ifdef COMPILER_VERSION_MINOR
-  '.', COMPILER_VERSION_MINOR,
-#  ifdef COMPILER_VERSION_PATCH
-   '.', COMPILER_VERSION_PATCH,
-#   ifdef COMPILER_VERSION_TWEAK
-    '.', COMPILER_VERSION_TWEAK,
-#   endif
-#  endif
-# endif
-  ']','\0'};
-#endif
-
-/* Construct a string literal encoding the internal version number. */
-#ifdef COMPILER_VERSION_INTERNAL
-char const info_version_internal[] = {
-  'I', 'N', 'F', 'O', ':',
-  'c','o','m','p','i','l','e','r','_','v','e','r','s','i','o','n','_',
-  'i','n','t','e','r','n','a','l','[',
-  COMPILER_VERSION_INTERNAL,']','\0'};
-#elif defined(COMPILER_VERSION_INTERNAL_STR)
-char const* info_version_internal = "INFO" ":" "compiler_version_internal[" COMPILER_VERSION_INTERNAL_STR "]";
-#endif
-
-/* Construct a string literal encoding the version number components. */
-#ifdef SIMULATE_VERSION_MAJOR
-char const info_simulate_version[] = {
-  'I', 'N', 'F', 'O', ':',
-  's','i','m','u','l','a','t','e','_','v','e','r','s','i','o','n','[',
-  SIMULATE_VERSION_MAJOR,
-# ifdef SIMULATE_VERSION_MINOR
-  '.', SIMULATE_VERSION_MINOR,
-#  ifdef SIMULATE_VERSION_PATCH
-   '.', SIMULATE_VERSION_PATCH,
-#   ifdef SIMULATE_VERSION_TWEAK
-    '.', SIMULATE_VERSION_TWEAK,
-#   endif
-#  endif
-# endif
-  ']','\0'};
-#endif
-
-/* Construct the string literal in pieces to prevent the source from
-   getting matched.  Store it in a pointer rather than an array
-   because some compilers will just produce instructions to fill the
-   array rather than assigning a pointer to a static array.  */
-char const* info_platform = "INFO" ":" "platform[" PLATFORM_ID "]";
-char const* info_arch = "INFO" ":" "arch[" ARCHITECTURE_ID "]";
-
 CMAKE_C_COMPILER_ID_RUN=1
-CMAKE_C_COMPILER_ID_TEST_FLAGS=-c;-Aa;-D__CLASSIC_C__;--target=arm-arm-none-eabi -mcpu=cortex-m3;-c -I__does_not_exist__
-CMAKE_C_COMPILER_ID_TOOL_MATCH_INDEX=2
-CMAKE_C_COMPILER_ID_TOOL_MATCH_REGEX=
-Ld[^
-]*(
-[ 	]+[^
-]*)*
-[ 	]+([^ 	
-]+)[^
-]*-o[^
-]*CompilerIdC/(\./)?(CompilerIdC.(framework|xctest|build/[^ 	
-]+)/)?CompilerIdC[ 	
-\"]
-CMAKE_C_COMPILER_ID_VENDORS=IAR
-CMAKE_C_COMPILER_ID_VENDOR_REGEX_IAR=IAR .+ Compiler
 CMAKE_C_COMPILER_LINKER=/usr/bin/ld
+CMAKE_C_COMPILER_LINKER_ARCHITECTURE_FLAGS=
 CMAKE_C_COMPILER_LINKER_FRONTEND_VARIANT=GNU
 CMAKE_C_COMPILER_LINKER_ID=GNU
 CMAKE_C_COMPILER_LINKER_VERSION=2.42
 CMAKE_C_COMPILER_LOADED=1
-CMAKE_C_COMPILER_NAMES=cc
-CMAKE_C_COMPILER_PRODUCED_FILES=a.out
-CMAKE_C_COMPILER_PRODUCED_OUTPUT=
 CMAKE_C_COMPILER_RANLIB=/usr/bin/gcc-ranlib-13
 CMAKE_C_COMPILER_RANLIB=/usr/bin/gcc-ranlib-13
-CMAKE_C_COMPILER_SYSROOT=
 CMAKE_C_COMPILER_VERSION=13.3.0
 CMAKE_C_COMPILER_VERSION_INTERNAL=
 CMAKE_C_COMPILER_WORKS=TRUE
@@ -1306,8 +474,6 @@ CMAKE_C_FLAGS_RELEASE=-O3 -DNDEBUG  -DNDEBUG
 CMAKE_C_FLAGS_RELEASE_INIT= -O3 -DNDEBUG
 CMAKE_C_FLAGS_RELWITHDEBINFO=-O2 -g -DNDEBUG
 CMAKE_C_FLAGS_RELWITHDEBINFO_INIT= -O2 -g -DNDEBUG
-CMAKE_C_HOST_COMPILER_ID=
-CMAKE_C_HOST_COMPILER_VERSION=
 CMAKE_C_IGNORE_EXTENSIONS=h;H;o;O;obj;OBJ;def;DEF;rc;RC
 CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES=/usr/lib/gcc/aarch64-linux-gnu/13/include;/usr/local/include;/usr/include/aarch64-linux-gnu;/usr/include
 CMAKE_C_IMPLICIT_LINK_DIRECTORIES=/usr/lib/gcc/aarch64-linux-gnu/13;/usr/aarch64-linux-gnu/lib;/usr/lib/aarch64-linux-gnu;/usr/lib;/lib/aarch64-linux-gnu;/lib
@@ -1343,7 +509,6 @@ CMAKE_C_SOURCE_FILE_EXTENSIONS=c;m
 CMAKE_C_STANDARD_COMPUTED_DEFAULT=17
 CMAKE_C_STANDARD_DEFAULT=17
 CMAKE_C_STANDARD_LATEST=23
-CMAKE_C_STANDARD_LIBRARY=
 CMAKE_C_USE_LINKER_INFORMATION=TRUE
 CMAKE_C_USING_LINKER_BFD=-fuse-ld=bfd
 CMAKE_C_USING_LINKER_GOLD=-fuse-ld=gold
@@ -1352,13 +517,14 @@ CMAKE_C_USING_LINKER_MOLD=-fuse-ld=mold
 CMAKE_C_USING_LINKER_SYSTEM=
 CMAKE_C_VERBOSE_FLAG=-v
 CMAKE_C_VERBOSE_LINK_FLAG=-Wl,-v
-CMAKE_C_XCODE_ARCHS=
 CMAKE_DEPFILE_FLAGS_ASM=-MD -MT <DEP_TARGET> -MF <DEP_FILE>
 CMAKE_DEPFILE_FLAGS_C=-MD -MT <DEP_TARGET> -MF <DEP_FILE>
 CMAKE_DEPFILE_FLAGS_CXX=-MD -MT <DEP_TARGET> -MF <DEP_FILE>
+CMAKE_DIAGNOSTIC_INIT=CMD_AUTHOR=WARN;CMD_DEPRECATED=WARN;CMD_EXPERIMENTAL=WARN;CMD_INSTALL_ABSOLUTE_DESTINATION=IGNORE;CMD_POLICY=WARN;CMD_UNINITIALIZED=IGNORE;CMD_UNUSED_CLI=WARN
 CMAKE_DLLTOOL=CMAKE_DLLTOOL-NOTFOUND
 CMAKE_DL_LIBS=dl
 CMAKE_EFFECTIVE_SYSTEM_NAME=Linux
+CMAKE_ERROR_DEPRECATED=OFF
 CMAKE_EXECUTABLE_FORMAT=ELF
 CMAKE_EXECUTABLE_RPATH_LINK_CXX_FLAG=-Wl,-rpath-link,
 CMAKE_EXECUTABLE_RPATH_LINK_C_FLAG=-Wl,-rpath-link,
@@ -1479,7 +645,7 @@ CMAKE_MATCH_2=
 CMAKE_MATCH_3=
 CMAKE_MATCH_COUNT=0
 CMAKE_MINIMUM_REQUIRED_VERSION=3.13
-CMAKE_MINOR_VERSION=3
+CMAKE_MINOR_VERSION=4
 CMAKE_MODULE_LINKER_FLAGS=  -Wl,--gc-sections -Wl,--as-needed -Wl,--no-undefined
 CMAKE_MODULE_LINKER_FLAGS=  -Wl,--gc-sections -Wl,--as-needed -Wl,--no-undefined
 CMAKE_MODULE_LINKER_FLAGS_DEBUG= 
@@ -1492,15 +658,15 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO=
 CMAKE_MODULE_PATH=
 CMAKE_MT=
 CMAKE_NM=/usr/bin/nm
-CMAKE_NUMBER_OF_MAKEFILES=194
+CMAKE_NUMBER_OF_MAKEFILES=192
 CMAKE_OBJCOPY=/usr/bin/objcopy
 CMAKE_OBJDUMP=/usr/bin/objdump
 CMAKE_PARENT_LIST_FILE=/home/nerdstar/NerdStar/backend/opencv/opencv/CMakeLists.txt
-CMAKE_PATCH_VERSION=4
+CMAKE_PATCH_VERSION=2
 CMAKE_PCH_EXTENSION=.gch
 CMAKE_PCH_PROLOGUE=#pragma GCC system_header
 CMAKE_PLATFORM_IMPLICIT_LINK_DIRECTORIES=/lib;/lib32;/lib64;/usr/lib;/usr/lib32;/usr/lib64
-CMAKE_PLATFORM_INFO_DIR=/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/4.3.4
+CMAKE_PLATFORM_INFO_DIR=/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/4.4.2
 CMAKE_PLATFORM_INFO_INITIALIZED=1
 CMAKE_PLATFORM_USES_PATH_WHEN_NO_SONAME=1
 CMAKE_POSITION_INDEPENDENT_CODE=ON
@@ -1513,7 +679,7 @@ CMAKE_RANLIB=/usr/bin/ranlib
 CMAKE_RANLIB=/usr/bin/ranlib
 CMAKE_READELF=/usr/bin/readelf
 CMAKE_REQUIRED_QUIET=TRUE
-CMAKE_ROOT=/usr/share/cmake-4.3
+CMAKE_ROOT=/usr/share/cmake-4.4
 CMAKE_SHARED_LIBRARY_ASM_FLAGS=-fPIC
 CMAKE_SHARED_LIBRARY_CREATE_ASM_FLAGS=-shared
 CMAKE_SHARED_LIBRARY_CREATE_CXX_FLAGS=-shared
@@ -1588,8 +754,8 @@ CMAKE_TWEAK_VERSION=0
 CMAKE_UNAME=/usr/bin/uname
 CMAKE_USE_PTHREADS_INIT=1
 CMAKE_VERBOSE_MAKEFILE=FALSE
-CMAKE_VERSION=4.3.4
-COMPILER_BASENAME=cc
+CMAKE_VERSION=4.4.2
+CMAKE_WARN_DEPRECATED=ON
 CPACK_ARCHIVE_GID=-1
 CPACK_ARCHIVE_UID=-1
 CPACK_BINARY_DEB=OFF
@@ -1605,12 +771,12 @@ CPACK_BINARY_TZ=ON
 CPACK_BUILD_SOURCE_DIRS=/home/nerdstar/NerdStar/backend/opencv/opencv;/home/nerdstar/NerdStar/backend/opencv/opencv_build
 CPACK_CMAKE_GENERATOR=Unix Makefiles
 CPACK_COMPONENTS_ALL=dev;libs;licenses;main;python;scripts
-CPACK_COMPONENT_DEV_CONFLICTS=libopencv-dev, libopencv-geometry-dev, libopencv-calib-dev, libopencv-core-dev, libopencv-dnn-dev, libopencv-features-dev, libopencv-flann-dev, libopencv-highgui-dev, libopencv-imgcodecs-dev, libopencv-imgproc-dev, libopencv-ml-dev, libopencv-objdetect-dev, libopencv-photo-dev, libopencv-stereo-dev, libopencv-stitching-dev, libopencv-ts-dev, libopencv-video-dev, libopencv-videoio-dev
+CPACK_COMPONENT_DEV_CONFLICTS=libopencv-dev, libopencv-geometry-dev, libopencv-calib-dev, libopencv-core-dev, libopencv-dnn-dev, libopencv-features-dev, libopencv-flann-dev, libopencv-highgui-dev, libopencv-imgcodecs-dev, libopencv-imgproc-dev, libopencv-ml-dev, libopencv-objdetect-dev, libopencv-photo-dev, libopencv-stereo-dev, libopencv-stitching-dev, libopencv-video-dev, libopencv-videoio-dev
 CPACK_COMPONENT_DEV_DEPENDS=libs
 CPACK_COMPONENT_DEV_DESCRIPTION=Development files for Open Source Computer Vision Library
 CPACK_COMPONENT_DEV_DISPLAY_NAME=Development files
-CPACK_COMPONENT_DEV_PROVIDES=libopencv-dev, libopencv-geometry-dev, libopencv-calib-dev, libopencv-core-dev, libopencv-dnn-dev, libopencv-features-dev, libopencv-flann-dev, libopencv-highgui-dev, libopencv-imgcodecs-dev, libopencv-imgproc-dev, libopencv-ml-dev, libopencv-objdetect-dev, libopencv-photo-dev, libopencv-stereo-dev, libopencv-stitching-dev, libopencv-ts-dev, libopencv-video-dev, libopencv-videoio-dev
-CPACK_COMPONENT_DEV_REPLACES=libopencv-dev, libopencv-geometry-dev, libopencv-calib-dev, libopencv-core-dev, libopencv-dnn-dev, libopencv-features-dev, libopencv-flann-dev, libopencv-highgui-dev, libopencv-imgcodecs-dev, libopencv-imgproc-dev, libopencv-ml-dev, libopencv-objdetect-dev, libopencv-photo-dev, libopencv-stereo-dev, libopencv-stitching-dev, libopencv-ts-dev, libopencv-video-dev, libopencv-videoio-dev
+CPACK_COMPONENT_DEV_PROVIDES=libopencv-dev, libopencv-geometry-dev, libopencv-calib-dev, libopencv-core-dev, libopencv-dnn-dev, libopencv-features-dev, libopencv-flann-dev, libopencv-highgui-dev, libopencv-imgcodecs-dev, libopencv-imgproc-dev, libopencv-ml-dev, libopencv-objdetect-dev, libopencv-photo-dev, libopencv-stereo-dev, libopencv-stitching-dev, libopencv-video-dev, libopencv-videoio-dev
+CPACK_COMPONENT_DEV_REPLACES=libopencv-dev, libopencv-geometry-dev, libopencv-calib-dev, libopencv-core-dev, libopencv-dnn-dev, libopencv-features-dev, libopencv-flann-dev, libopencv-highgui-dev, libopencv-imgcodecs-dev, libopencv-imgproc-dev, libopencv-ml-dev, libopencv-objdetect-dev, libopencv-photo-dev, libopencv-stereo-dev, libopencv-stitching-dev, libopencv-video-dev, libopencv-videoio-dev
 CPACK_COMPONENT_DOCS_CONFLICTS=opencv-doc
 CPACK_COMPONENT_DOCS_DEPENDS=libs
 CPACK_COMPONENT_DOCS_DESCRIPTION=Documentation for Open Source Computer Vision Library
@@ -1621,11 +787,11 @@ CPACK_COMPONENT_JAVA_DESCRIPTION=Java bindings for Open Source Computer Vision L
 CPACK_COMPONENT_JAVA_DISPLAY_NAME=Java bindings
 CPACK_COMPONENT_JAVA_PROVIDES=libopencv5.0-java, libopencv5.0-jni
 CPACK_COMPONENT_JAVA_REPLACES=libopencv5.0-java, libopencv5.0-jni
-CPACK_COMPONENT_LIBS_CONFLICTS=opencv-data, libopencv-geometry4.0, libopencv-calib4.0, libopencv-core4.0, libopencv-dnn4.0, libopencv-features4.0, libopencv-flann4.0, libopencv-highgui4.0, libopencv-imgcodecs4.0, libopencv-imgproc4.0, libopencv-ml4.0, libopencv-objdetect4.0, libopencv-photo4.0, libopencv-stereo4.0, libopencv-stitching4.0, libopencv-ts4.0, libopencv-video4.0, libopencv-videoio4.0
+CPACK_COMPONENT_LIBS_CONFLICTS=opencv-data, libopencv-geometry4.0, libopencv-calib4.0, libopencv-core4.0, libopencv-dnn4.0, libopencv-features4.0, libopencv-flann4.0, libopencv-highgui4.0, libopencv-imgcodecs4.0, libopencv-imgproc4.0, libopencv-ml4.0, libopencv-objdetect4.0, libopencv-photo4.0, libopencv-stereo4.0, libopencv-stitching4.0, libopencv-video4.0, libopencv-videoio4.0
 CPACK_COMPONENT_LIBS_DESCRIPTION=Open Computer Vision Library
 CPACK_COMPONENT_LIBS_DISPLAY_NAME=Libraries and data
-CPACK_COMPONENT_LIBS_PROVIDES=opencv-data, libopencv-geometry4.0, libopencv-calib4.0, libopencv-core4.0, libopencv-dnn4.0, libopencv-features4.0, libopencv-flann4.0, libopencv-highgui4.0, libopencv-imgcodecs4.0, libopencv-imgproc4.0, libopencv-ml4.0, libopencv-objdetect4.0, libopencv-photo4.0, libopencv-stereo4.0, libopencv-stitching4.0, libopencv-ts4.0, libopencv-video4.0, libopencv-videoio4.0
-CPACK_COMPONENT_LIBS_REPLACES=opencv-data, libopencv-geometry4.0, libopencv-calib4.0, libopencv-core4.0, libopencv-dnn4.0, libopencv-features4.0, libopencv-flann4.0, libopencv-highgui4.0, libopencv-imgcodecs4.0, libopencv-imgproc4.0, libopencv-ml4.0, libopencv-objdetect4.0, libopencv-photo4.0, libopencv-stereo4.0, libopencv-stitching4.0, libopencv-ts4.0, libopencv-video4.0, libopencv-videoio4.0
+CPACK_COMPONENT_LIBS_PROVIDES=opencv-data, libopencv-geometry4.0, libopencv-calib4.0, libopencv-core4.0, libopencv-dnn4.0, libopencv-features4.0, libopencv-flann4.0, libopencv-highgui4.0, libopencv-imgcodecs4.0, libopencv-imgproc4.0, libopencv-ml4.0, libopencv-objdetect4.0, libopencv-photo4.0, libopencv-stereo4.0, libopencv-stitching4.0, libopencv-video4.0, libopencv-videoio4.0
+CPACK_COMPONENT_LIBS_REPLACES=opencv-data, libopencv-geometry4.0, libopencv-calib4.0, libopencv-core4.0, libopencv-dnn4.0, libopencv-features4.0, libopencv-flann4.0, libopencv-highgui4.0, libopencv-imgcodecs4.0, libopencv-imgproc4.0, libopencv-ml4.0, libopencv-objdetect4.0, libopencv-photo4.0, libopencv-stereo4.0, libopencv-stitching4.0, libopencv-video4.0, libopencv-videoio4.0
 CPACK_COMPONENT_LIBS_REQUIRED=TRUE
 CPACK_COMPONENT_PYTHON_CONFLICTS=python-opencv
 CPACK_COMPONENT_PYTHON_DEPENDS=libs
@@ -1659,7 +825,7 @@ CPACK_DEB_COMPONENT_INSTALL=TRUE
 CPACK_DEB_DEV_PACKAGE_DEPENDS=libtbb-dev
 CPACK_DEB_dev_PACKAGE_DEPENDS=cuda-cudart-dev-13-2, cuda-npp-dev-13-2, cuda-cufft-dev-13-2, cuda-cublas-dev-13-2
 CPACK_DEB_libs_PACKAGE_DEPENDS=cuda-cudart-13-2, cuda-npp-13-2, cuda-cufft-13-2, cuda-cublas-13-2
-CPACK_DEFAULT_PACKAGE_DESCRIPTION_FILE=/usr/share/cmake-4.3/Templates/CPack.GenericDescription.txt
+CPACK_DEFAULT_PACKAGE_DESCRIPTION_FILE=/usr/share/cmake-4.4/Templates/CPack.GenericDescription.txt
 CPACK_DEFAULT_PACKAGE_DESCRIPTION_SUMMARY=OpenCV built using CMake
 CPACK_DMG_SLA_USE_RESOURCE_FILE_LICENSE=ON
 CPACK_GENERATOR=TBZ2;TGZ;TXZ;TZ
@@ -1685,7 +851,7 @@ and machine learning software library. OpenCV was built to provide a common
 infrastructure for computer vision applications and to accelerate the use of
 machine perception in the commercial products. Being a Apache 2.0 -licensed product,
 OpenCV makes it easy for businesses to utilize and modify the code.
-CPACK_PACKAGE_DESCRIPTION_FILE=/usr/share/cmake-4.3/Templates/CPack.GenericDescription.txt
+CPACK_PACKAGE_DESCRIPTION_FILE=/usr/share/cmake-4.4/Templates/CPack.GenericDescription.txt
 CPACK_PACKAGE_DESCRIPTION_SUMMARY=Open Computer Vision Library
 CPACK_PACKAGE_FILE_NAME=OpenCV-5.0.0-71-g4ce2389a62-aarch64
 CPACK_PACKAGE_INSTALL_DIRECTORY=OpenCV 5.0.0-71-g4ce2389a62
@@ -1699,8 +865,8 @@ CPACK_PACKAGE_VERSION_MINOR=1
 CPACK_PACKAGE_VERSION_PATCH=0
 CPACK_READELF_EXECUTABLE=/usr/bin/readelf
 CPACK_RESOURCE_FILE_LICENSE=/home/nerdstar/NerdStar/backend/opencv/opencv/LICENSE
-CPACK_RESOURCE_FILE_README=/usr/share/cmake-4.3/Templates/CPack.GenericDescription.txt
-CPACK_RESOURCE_FILE_WELCOME=/usr/share/cmake-4.3/Templates/CPack.GenericWelcome.txt
+CPACK_RESOURCE_FILE_README=/usr/share/cmake-4.4/Templates/CPack.GenericDescription.txt
+CPACK_RESOURCE_FILE_WELCOME=/usr/share/cmake-4.4/Templates/CPack.GenericWelcome.txt
 CPACK_RPM_COMPONENT_INSTALL=TRUE
 CPACK_RPM_PACKAGE_ARCHITECTURE=aarch64
 CPACK_RPM_PACKAGE_DESCRIPTION=OpenCV (Open Source Computer Vision Library) is an open source computer vision
@@ -1793,13 +959,13 @@ CUDA_64_BIT_DEVICE_CODE_DEFAULT=ON
 CUDA_ADDITIONAL_CLEAN_FILES=
 CUDA_ALL_GPU_ARCHITECTURES=3.5;3.7;5.0;5.2;5.3;6.0;6.1;6.2;7.0;7.2;7.5;8.0;8.6
 CUDA_ARCH_BIN=8.7
-CUDA_ARCH_PTX=
+CUDA_ARCH_PTX=8.7
 CUDA_ATTACH_VS_BUILD_RULE_TO_CUDA_FILE=ON
 CUDA_BUILD_CUBIN=OFF
 CUDA_BUILD_EMULATION=OFF
 CUDA_COMMON_GPU_ARCHITECTURES=5.3;6.0;6.1;7.0;7.5;8.0;8.6;8.6+PTX
 CUDA_CONFIGCMAKE=# Version Compute Capability from which OpenCV has been compiled is remembered
-set(OpenCV_COMPUTE_CAPABILITIES "-gencode;arch=compute_87,code=sm_87;-D_FORCE_INLINES")
+set(OpenCV_COMPUTE_CAPABILITIES "-gencode;arch=compute_87,code=sm_87;-D_FORCE_INLINES;-gencode;arch=compute_87,code=compute_87")
 
 set(OpenCV_CUDA_VERSION "13.2")
 set(OpenCV_USE_CUBLAS   "1")
@@ -1868,8 +1034,8 @@ CUDA_LIBS_PATH=/usr/local/cuda-13.2/lib64;/usr/lib/aarch64-linux-gnu
 CUDA_LIMIT_GPU_ARCHITECTURE=9.0
 CUDA_LINK_LIBRARIES_KEYWORD=PRIVATE
 CUDA_NVCC_EXECUTABLE=/usr/local/cuda-13.2/bin/nvcc
-CUDA_NVCC_FLAGS=-gencode;arch=compute_87,code=sm_87;-D_FORCE_INLINES;--use_fast_math
-CUDA_NVCC_FLAGS=-gencode;arch=compute_87,code=sm_87;-D_FORCE_INLINES;--use_fast_math
+CUDA_NVCC_FLAGS=-gencode;arch=compute_87,code=sm_87;-D_FORCE_INLINES;-gencode;arch=compute_87,code=compute_87;--use_fast_math
+CUDA_NVCC_FLAGS=-gencode;arch=compute_87,code=sm_87;-D_FORCE_INLINES;-gencode;arch=compute_87,code=compute_87;--use_fast_math
 CUDA_NVCC_FLAGS_DEBUG=
 CUDA_NVCC_FLAGS_MINSIZEREL=
 CUDA_NVCC_FLAGS_RELEASE=
@@ -1905,7 +1071,7 @@ CUDA_cupti_LIBRARY=CUDA_cupti_LIBRARY-NOTFOUND
 CUDA_curand_LIBRARY=/usr/local/cuda-13.2/lib64/libcurand.so
 CUDA_cusolver_LIBRARY=/usr/local/cuda-13.2/lib64/libcusolver.so
 CUDA_cusparse_LIBRARY=/usr/local/cuda-13.2/lib64/libcusparse.so
-CUDA_make2cmake=/usr/share/cmake-4.3/Modules/FindCUDA/make2cmake.cmake
+CUDA_make2cmake=/usr/share/cmake-4.4/Modules/FindCUDA/make2cmake.cmake
 CUDA_npp_LIBRARY=nppc;nppial;nppicc;nppidei;nppif;nppig;nppim;nppist;nppisu;nppitc;npps
 CUDA_npp_LIBRARY_ABS=/usr/local/cuda-13.2/lib64/libnppc.so;/usr/local/cuda-13.2/lib64/libnppial.so;/usr/local/cuda-13.2/lib64/libnppicc.so;/usr/local/cuda-13.2/lib64/libnppidei.so;/usr/local/cuda-13.2/lib64/libnppif.so;/usr/local/cuda-13.2/lib64/libnppig.so;/usr/local/cuda-13.2/lib64/libnppim.so;/usr/local/cuda-13.2/lib64/libnppist.so;/usr/local/cuda-13.2/lib64/libnppisu.so;/usr/local/cuda-13.2/lib64/libnppitc.so;/usr/local/cuda-13.2/lib64/libnpps.so
 CUDA_nppc_LIBRARY=/usr/local/cuda-13.2/lib64/libnppc.so
@@ -1920,9 +1086,9 @@ CUDA_nppisu_LIBRARY=/usr/local/cuda-13.2/lib64/libnppisu.so
 CUDA_nppitc_LIBRARY=/usr/local/cuda-13.2/lib64/libnppitc.so
 CUDA_npps_LIBRARY=/usr/local/cuda-13.2/lib64/libnpps.so
 CUDA_nvToolsExt_LIBRARY=CUDA_nvToolsExt_LIBRARY-NOTFOUND
-CUDA_parse_cubin=/usr/share/cmake-4.3/Modules/FindCUDA/parse_cubin.cmake
+CUDA_parse_cubin=/usr/share/cmake-4.4/Modules/FindCUDA/parse_cubin.cmake
 CUDA_rt_LIBRARY=/usr/lib/aarch64-linux-gnu/librt.a
-CUDA_run_nvcc=/usr/share/cmake-4.3/Modules/FindCUDA/run_nvcc.cmake
+CUDA_run_nvcc=/usr/share/cmake-4.4/Modules/FindCUDA/run_nvcc.cmake
 CUDNN_FOUND=TRUE
 CUDNN_INCLUDE_DIR=/usr/include/aarch64-linux-gnu
 CUDNN_INCLUDE_DIRS=/usr/include/aarch64-linux-gnu
@@ -1983,7 +1149,7 @@ ENABLE_PROFILING=OFF
 ENABLE_PYLINT=OFF
 ENABLE_SOLUTION_FOLDERS=OFF
 EXECUTABLE_OUTPUT_PATH=/home/nerdstar/NerdStar/backend/opencv/opencv_build/bin
-EXTRA_MODULES_VCSVERSION=5.0.0
+EXTRA_MODULES_VCSVERSION=5.0.0-13-gbf3d8fbf
 Eigen3_CONFIG=/usr/share/eigen3/cmake/Eigen3Config.cmake
 Eigen3_CONSIDERED_CONFIGS=/usr/share/eigen3/cmake/Eigen3Config.cmake
 Eigen3_CONSIDERED_VERSIONS=3.4.0
@@ -2018,10 +1184,10 @@ FFMPEG_STATIC_CFLAGS=-I/usr/include/aarch64-linux-gnu
 FFMPEG_STATIC_CFLAGS_I=
 FFMPEG_STATIC_CFLAGS_OTHER=
 FFMPEG_STATIC_INCLUDE_DIRS=/usr/include/aarch64-linux-gnu
-FFMPEG_STATIC_LDFLAGS=-L/usr/lib/aarch64-linux-gnu;-lavcodec;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lwebpmux;-pthread;-lm;-latomic;-llzma;-ldav1d;-lrsvg-2;-lm;-lgio-2.0;-lgdk_pixbuf-2.0;-lgobject-2.0;-lglib-2.0;-lcairo;-lzvbi;-lpthread;-lm;-lpng;-lz;-lsnappy;-lstdc++;-laom;-lcodec2;-lgsm;-ljxl;-ljxl_threads;-lmp3lame;-lm;-lopenjp2;-lopus;-lrav1e;-lm;-lshine;-lspeex;-lSvtAv1Enc;-ltheoraenc;-ltheoradec;-logg;-ltwolame;-lvorbis;-lvorbisenc;-lwebp;-lx264;-lx265;-lxvidcore;-lz;-lva;-L/usr/lib/aarch64-linux-gnu;-lswresample;-lm;-lsoxr;-latomic;-L/usr/lib/aarch64-linux-gnu;-pthread;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-lX11;-lavutil;-pthread;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-lX11;-lavformat;-lm;-latomic;-lxml2;-lbz2;-lgme;-lopenmpt;-lstdc++;-lchromaprint;-lbluray;-lz;-lgnutls;-lrabbitmq;-lrist;-lsrt-gnutls;-lssh;-lzmq;-L/usr/lib/aarch64-linux-gnu;-lavcodec;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lwebpmux;-pthread;-lm;-latomic;-llzma;-ldav1d;-lrsvg-2;-lm;-lgio-2.0;-lgdk_pixbuf-2.0;-lgobject-2.0;-lglib-2.0;-lcairo;-lzvbi;-lpthread;-lm;-lpng;-lz;-lsnappy;-lstdc++;-laom;-lcodec2;-lgsm;-ljxl;-ljxl_threads;-lmp3lame;-lm;-lopenjp2;-lopus;-lrav1e;-lm;-lshine;-lspeex;-lSvtAv1Enc;-ltheoraenc;-ltheoradec;-logg;-ltwolame;-lvorbis;-lvorbisenc;-lwebp;-lx264;-lx265;-lxvidcore;-lz;-lva;-L/usr/lib/aarch64-linux-gnu;-lm;-lsoxr;-latomic;-L/usr/lib/aarch64-linux-gnu;-pthread;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-lX11;-lavutil;-pthread;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-lX11;-lswresample;-lm;-lsoxr;-latomic;-L/usr/lib/aarch64-linux-gnu;-pthread;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-lX11;-pthread;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-lX11;-lavutil;-pthread;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-lX11;-lswscale;-lm;-latomic;-L/usr/lib/aarch64-linux-gnu;-lavutil;-pthread;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-lX11
+FFMPEG_STATIC_LDFLAGS=-L/usr/lib/aarch64-linux-gnu;-lavcodec;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lwebpmux;-lm;-latomic;-llzma;-ldav1d;-lrsvg-2;-lm;-lgio-2.0;-lgdk_pixbuf-2.0;-lgobject-2.0;-lglib-2.0;-lcairo;-lzvbi;-lpthread;-lm;-lpng;-lz;-lnvbufsurface;-lnvbufsurftransform;-lv4l2;-lsnappy;-lstdc++;-lnvjpeg;-laom;-lcodec2;-lgsm;-lmp3lame;-lm;-lopenjp2;-lopus;-lm;-lshine;-lspeex;-ltheoraenc;-ltheoradec;-logg;-ltwolame;-lvorbis;-lvorbisenc;-lwebp;-lx264;-lx265;-lxvidcore;-lnvbufsurface;-lz;-lva;-pthread;-L/usr/lib/aarch64-linux-gnu;-lswresample;-lm;-lsoxr;-latomic;-L/usr/lib/aarch64-linux-gnu;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavformat;-lm;-latomic;-lxml2;-lbz2;-lgme;-lopenmpt;-lstdc++;-lchromaprint;-lbluray;-lz;-lgnutls;-lrabbitmq;-lsrt-gnutls;-lssh;-lzmq;-L/usr/lib/aarch64-linux-gnu;-lavcodec;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lwebpmux;-lm;-latomic;-llzma;-ldav1d;-lrsvg-2;-lm;-lgio-2.0;-lgdk_pixbuf-2.0;-lgobject-2.0;-lglib-2.0;-lcairo;-lzvbi;-lpthread;-lm;-lpng;-lz;-lnvbufsurface;-lnvbufsurftransform;-lv4l2;-lsnappy;-lstdc++;-lnvjpeg;-laom;-lcodec2;-lgsm;-lmp3lame;-lm;-lopenjp2;-lopus;-lm;-lshine;-lspeex;-ltheoraenc;-ltheoradec;-logg;-ltwolame;-lvorbis;-lvorbisenc;-lwebp;-lx264;-lx265;-lxvidcore;-lnvbufsurface;-lz;-lva;-pthread;-L/usr/lib/aarch64-linux-gnu;-lm;-lsoxr;-latomic;-L/usr/lib/aarch64-linux-gnu;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lswresample;-lm;-lsoxr;-latomic;-L/usr/lib/aarch64-linux-gnu;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lswscale;-lm;-latomic;-L/usr/lib/aarch64-linux-gnu;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11
 FFMPEG_STATIC_LDFLAGS_OTHER=-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread
 FFMPEG_STATIC_LIBDIR=
-FFMPEG_STATIC_LIBRARIES=avcodec;vpx;m;vpx;m;vpx;m;vpx;m;webpmux;m;atomic;lzma;dav1d;rsvg-2;m;gio-2.0;gdk_pixbuf-2.0;gobject-2.0;glib-2.0;cairo;zvbi;pthread;m;png;z;snappy;stdc++;aom;codec2;gsm;jxl;jxl_threads;mp3lame;m;openjp2;opus;rav1e;m;shine;speex;SvtAv1Enc;theoraenc;theoradec;ogg;twolame;vorbis;vorbisenc;webp;x264;x265;xvidcore;z;va;swresample;m;soxr;atomic;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avformat;m;atomic;xml2;bz2;gme;openmpt;stdc++;chromaprint;bluray;z;gnutls;rabbitmq;rist;srt-gnutls;ssh;zmq;avcodec;vpx;m;vpx;m;vpx;m;vpx;m;webpmux;m;atomic;lzma;dav1d;rsvg-2;m;gio-2.0;gdk_pixbuf-2.0;gobject-2.0;glib-2.0;cairo;zvbi;pthread;m;png;z;snappy;stdc++;aom;codec2;gsm;jxl;jxl_threads;mp3lame;m;openjp2;opus;rav1e;m;shine;speex;SvtAv1Enc;theoraenc;theoradec;ogg;twolame;vorbis;vorbisenc;webp;x264;x265;xvidcore;z;va;m;soxr;atomic;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;swresample;m;soxr;atomic;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;swscale;m;atomic;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11
+FFMPEG_STATIC_LIBRARIES=avcodec;vpx;m;vpx;m;vpx;m;vpx;m;webpmux;m;atomic;lzma;dav1d;rsvg-2;m;gio-2.0;gdk_pixbuf-2.0;gobject-2.0;glib-2.0;cairo;zvbi;pthread;m;png;z;nvbufsurface;nvbufsurftransform;v4l2;snappy;stdc++;nvjpeg;aom;codec2;gsm;mp3lame;m;openjp2;opus;m;shine;speex;theoraenc;theoradec;ogg;twolame;vorbis;vorbisenc;webp;x264;x265;xvidcore;nvbufsurface;z;va;swresample;m;soxr;atomic;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avformat;m;atomic;xml2;bz2;gme;openmpt;stdc++;chromaprint;bluray;z;gnutls;rabbitmq;srt-gnutls;ssh;zmq;avcodec;vpx;m;vpx;m;vpx;m;vpx;m;webpmux;m;atomic;lzma;dav1d;rsvg-2;m;gio-2.0;gdk_pixbuf-2.0;gobject-2.0;glib-2.0;cairo;zvbi;pthread;m;png;z;nvbufsurface;nvbufsurftransform;v4l2;snappy;stdc++;nvjpeg;aom;codec2;gsm;mp3lame;m;openjp2;opus;m;shine;speex;theoraenc;theoradec;ogg;twolame;vorbis;vorbisenc;webp;x264;x265;xvidcore;nvbufsurface;z;va;m;soxr;atomic;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;swresample;m;soxr;atomic;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;swscale;m;atomic;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11
 FFMPEG_STATIC_LIBRARY_DIRS=/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu
 FFMPEG_STATIC_LIBS=
 FFMPEG_STATIC_LIBS_L=
@@ -2033,7 +1199,7 @@ FFMPEG_libavcodec_INCLUDEDIR=/usr/include/aarch64-linux-gnu
 FFMPEG_libavcodec_LIBDIR=/usr/lib/aarch64-linux-gnu
 FFMPEG_libavcodec_MODULE_NAME=libavcodec
 FFMPEG_libavcodec_PREFIX=/usr
-FFMPEG_libavcodec_VERSION=60.31.102
+FFMPEG_libavcodec_VERSION=62.11.100
 FFMPEG_libavdevice_CFLAGS=-I/usr/include/aarch64-linux-gnu
 FFMPEG_libavdevice_CFLAGS_I=
 FFMPEG_libavdevice_CFLAGS_OTHER=
@@ -2076,26 +1242,26 @@ FFMPEG_libavformat_INCLUDEDIR=/usr/include/aarch64-linux-gnu
 FFMPEG_libavformat_LIBDIR=/usr/lib/aarch64-linux-gnu
 FFMPEG_libavformat_MODULE_NAME=libavformat
 FFMPEG_libavformat_PREFIX=/usr
-FFMPEG_libavformat_VERSION=60.16.100
+FFMPEG_libavformat_VERSION=62.3.100
 FFMPEG_libavutil_FOUND=1
 FFMPEG_libavutil_INCLUDEDIR=/usr/include/aarch64-linux-gnu
 FFMPEG_libavutil_LIBDIR=/usr/lib/aarch64-linux-gnu
 FFMPEG_libavutil_MODULE_NAME=libavutil
 FFMPEG_libavutil_PREFIX=/usr
-FFMPEG_libavutil_VERSION=58.29.100
+FFMPEG_libavutil_VERSION=60.8.100
 FFMPEG_libswscale_FOUND=1
 FFMPEG_libswscale_INCLUDEDIR=/usr/include/aarch64-linux-gnu
 FFMPEG_libswscale_LIBDIR=/usr/lib/aarch64-linux-gnu
 FFMPEG_libswscale_MODULE_NAME=libswscale
 FFMPEG_libswscale_PREFIX=/usr
-FFMPEG_libswscale_VERSION=7.5.100
+FFMPEG_libswscale_VERSION=9.1.100
 FIND_PACKAGE_MESSAGE_DETAILS_BLAS=[/usr/lib/aarch64-linux-gnu/libblas.so;/usr/lib/aarch64-linux-gnu/libf77blas.so;/usr/lib/aarch64-linux-gnu/libatlas.so][v()]
 FIND_PACKAGE_MESSAGE_DETAILS_CUDNN=[/usr/lib/aarch64-linux-gnu/libcudnn.so][/usr/include/aarch64-linux-gnu][v9.20.0(7.5)]
 FIND_PACKAGE_MESSAGE_DETAILS_HDF5=[/usr/lib/aarch64-linux-gnu/hdf5/serial/libhdf5.so;/usr/lib/aarch64-linux-gnu/libcrypto.so;/usr/lib/aarch64-linux-gnu/libcurl.so;/usr/lib/aarch64-linux-gnu/libpthread.a;/usr/lib/aarch64-linux-gnu/libsz.so;/usr/lib/aarch64-linux-gnu/libz.so;/usr/lib/aarch64-linux-gnu/libdl.a;/usr/lib/aarch64-linux-gnu/libm.so][ ][v1.10.10()]
 FIND_PACKAGE_MESSAGE_DETAILS_JPEG=[/usr/lib/aarch64-linux-gnu/libjpeg.so][/usr/include][v80()]
 FIND_PACKAGE_MESSAGE_DETAILS_LAPACK=[/usr/lib/aarch64-linux-gnu/liblapack.so;/usr/lib/aarch64-linux-gnu/libblas.so;/usr/lib/aarch64-linux-gnu/libf77blas.so;/usr/lib/aarch64-linux-gnu/libatlas.so][v()]
-FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp=[/usr/bin/python3][v3.12.3(3.2)]
-FIND_PACKAGE_MESSAGE_DETAILS_PythonLibs=[/usr/lib/aarch64-linux-gnu/libpython3.12.so][/usr/include/python3.12/][v3.12.3(3.12.3)]
+FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp=[/home/nerdstar/NerdStar/.venv/bin/python3][v3.12.3(3.2)]
+FIND_PACKAGE_MESSAGE_DETAILS_PythonLibs=[/usr/lib/aarch64-linux-gnu/libpython3.12.so][/usr/include/python3.12][v3.12.3(3.12.3)]
 FIND_PACKAGE_MESSAGE_DETAILS_TIFF=[/usr/lib/aarch64-linux-gnu/libtiff.so][/usr/include/aarch64-linux-gnu][ ][v4.5.1()]
 FIND_PACKAGE_MESSAGE_DETAILS_Threads=[TRUE][v()]
 FIND_PACKAGE_MESSAGE_DETAILS_WebP=[/usr/lib/aarch64-linux-gnu/libwebp.so][/usr/include][v()]
@@ -2825,7 +1991,7 @@ HAVE_opencv_superres=ON
 HAVE_opencv_surface_matching=ON
 HAVE_opencv_text=ON
 HAVE_opencv_tracking=ON
-HAVE_opencv_ts=ON
+HAVE_opencv_ts=OFF
 HAVE_opencv_video=ON
 HAVE_opencv_videoio=ON
 HAVE_opencv_videostab=ON
@@ -3154,9 +2320,7 @@ MLAS_S390X=FALSE
 MLAS_WASM=FALSE
 MLAS_X86=FALSE
 MLAS_X86_64=FALSE
-MSVC_CXX_ARCHITECTURE_ID=
-MSVC_C_ARCHITECTURE_ID=
-NVCC_FLAGS_EXTRA=-gencode;arch=compute_87,code=sm_87;-D_FORCE_INLINES
+NVCC_FLAGS_EXTRA=-gencode;arch=compute_87,code=sm_87;-D_FORCE_INLINES;-gencode;arch=compute_87,code=compute_87
 OBSENSOR_USE_ORBBEC_SDK=OFF
 OCV_CAN_BUILD_OPENJPEG=TRUE
 OCV_COMPILER_FAIL_REGEX=argument .* is not valid;command[- ]line option .* is valid for .* but not for C\+\+;command[- ]line option .* is valid for .* but not for C;unrecognized .*option;unknown .*option;ignoring unknown option;warning D9002;option .*not supported;[Uu]nknown option;[Ww]arning: [Oo]ption;command option .* is not recognized;not supported in this configuration, ignored;File with unknown suffix passed to linker;WARNING: unknown flag:
@@ -3875,8 +3039,8 @@ OPENCV_CPU_DISPATCH_DEFINITIONS_CONFIGMAKE=
     , CV_CPU_NEON_BF16 \
 
 OPENCV_CUDA_ARCH_BIN= 87
-OPENCV_CUDA_ARCH_FEATURES= 87
-OPENCV_CUDA_ARCH_PTX=
+OPENCV_CUDA_ARCH_FEATURES= 87 87
+OPENCV_CUDA_ARCH_PTX= 87
 OPENCV_CUDA_DETECTION_NVCC_FLAGS=-ccbin;/usr/bin/aarch64-linux-gnu-g++-13
 OPENCV_DEBUG_POSTFIX=
 OPENCV_DEPHELPER=/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/dephelper
@@ -3940,13 +3104,13 @@ OPENCV_LICENSES_INSTALL_PATH=share/licenses/opencv5
 OPENCV_LICENSE_FILE=/home/nerdstar/NerdStar/backend/opencv/opencv/LICENSE
 OPENCV_LINKER_LIBS=dl;m;pthread;rt;cudart_static;Threads::Threads;dl;rt;nppc;nppial;nppicc;nppidei;nppif;nppig;nppim;nppist;nppisu;nppitc;npps;cublas;cudnn;cufft;-L/usr/local/cuda-13.2/lib64;-L/usr/lib/aarch64-linux-gnu;Eigen3::Eigen
 OPENCV_MATHJAX_RELPATH=https://cdn.jsdelivr.net/npm/mathjax@3.0.1
-OPENCV_MODULES_BUILD=opencv_cudev;opencv_python_tests;opencv_core;opencv_cudaarithm;opencv_flann;opencv_geometry;opencv_hdf;opencv_imgproc;opencv_intensity_transform;opencv_ml;opencv_phase_unwrapping;opencv_plot;opencv_ptcloud;opencv_quality;opencv_rapid;opencv_reg;opencv_rgbd;opencv_shape;opencv_signal;opencv_stereo;opencv_surface_matching;opencv_alphamat;opencv_cudafilters;opencv_cudaimgproc;opencv_cudastereo;opencv_cudawarping;opencv_dnn;opencv_dnn_superres;opencv_features;opencv_freetype;opencv_fuzzy;opencv_hfs;opencv_img_hash;opencv_imgcodecs;opencv_line_descriptor;opencv_objdetect;opencv_photo;opencv_saliency;opencv_text;opencv_video;opencv_videoio;opencv_wechat_qrcode;opencv_xfeatures2d;opencv_ximgproc;opencv_xobjdetect;opencv_xphoto;opencv_bgsegm;opencv_calib;opencv_cudabgsegm;opencv_cudacodec;opencv_cudafeatures2d;opencv_cudalegacy;opencv_cudaobjdetect;opencv_datasets;opencv_face;opencv_gapi;opencv_highgui;opencv_js_bindings_generator;opencv_optflow;opencv_sfm;opencv_stitching;opencv_structured_light;opencv_tracking;opencv_ts;opencv_xstereo;opencv_bioinspired;opencv_ccalib;opencv_cudaoptflow;opencv_dnn_objdetect;opencv_dpm;opencv_java_bindings_generator;opencv_objc_bindings_generator;opencv_superres;opencv_videostab;opencv_python_bindings_generator;opencv_python3
-OPENCV_MODULES_BUILD_ST=alphamat;bgsegm;bioinspired;calib;ccalib;core;cudaarithm;cudabgsegm;cudacodec;cudafeatures2d;cudafilters;cudaimgproc;cudalegacy;cudaobjdetect;cudaoptflow;cudastereo;cudawarping;cudev;datasets;dnn;dnn_objdetect;dnn_superres;dpm;face;features;flann;freetype;fuzzy;gapi;geometry;hdf;hfs;highgui;img_hash;imgcodecs;imgproc;intensity_transform;line_descriptor;ml;objdetect;optflow;phase_unwrapping;photo;plot;ptcloud;python3;quality;rapid;reg;rgbd;saliency;sfm;shape;signal;stereo;stitching;structured_light;superres;surface_matching;text;tracking;ts;video;videoio;videostab;wechat_qrcode;xfeatures2d;ximgproc;xobjdetect;xphoto;xstereo
+OPENCV_MODULES_BUILD=opencv_cudev;opencv_python_tests;opencv_core;opencv_cudaarithm;opencv_flann;opencv_geometry;opencv_hdf;opencv_imgproc;opencv_intensity_transform;opencv_ml;opencv_phase_unwrapping;opencv_plot;opencv_ptcloud;opencv_quality;opencv_rapid;opencv_reg;opencv_rgbd;opencv_shape;opencv_signal;opencv_stereo;opencv_surface_matching;opencv_alphamat;opencv_cudafilters;opencv_cudaimgproc;opencv_cudastereo;opencv_cudawarping;opencv_dnn;opencv_dnn_superres;opencv_features;opencv_freetype;opencv_fuzzy;opencv_hfs;opencv_img_hash;opencv_imgcodecs;opencv_line_descriptor;opencv_objdetect;opencv_photo;opencv_saliency;opencv_text;opencv_video;opencv_videoio;opencv_wechat_qrcode;opencv_xfeatures2d;opencv_ximgproc;opencv_xobjdetect;opencv_xphoto;opencv_bgsegm;opencv_calib;opencv_cudabgsegm;opencv_cudacodec;opencv_cudafeatures2d;opencv_cudalegacy;opencv_cudaobjdetect;opencv_datasets;opencv_face;opencv_gapi;opencv_highgui;opencv_js_bindings_generator;opencv_optflow;opencv_sfm;opencv_stitching;opencv_structured_light;opencv_tracking;opencv_xstereo;opencv_bioinspired;opencv_ccalib;opencv_cudaoptflow;opencv_dnn_objdetect;opencv_dpm;opencv_java_bindings_generator;opencv_objc_bindings_generator;opencv_superres;opencv_videostab;opencv_python_bindings_generator;opencv_python3
+OPENCV_MODULES_BUILD_ST=alphamat;bgsegm;bioinspired;calib;ccalib;core;cudaarithm;cudabgsegm;cudacodec;cudafeatures2d;cudafilters;cudaimgproc;cudalegacy;cudaobjdetect;cudaoptflow;cudastereo;cudawarping;cudev;datasets;dnn;dnn_objdetect;dnn_superres;dpm;face;features;flann;freetype;fuzzy;gapi;geometry;hdf;hfs;highgui;img_hash;imgcodecs;imgproc;intensity_transform;line_descriptor;ml;objdetect;optflow;phase_unwrapping;photo;plot;ptcloud;python3;quality;rapid;reg;rgbd;saliency;sfm;shape;signal;stereo;stitching;structured_light;superres;surface_matching;text;tracking;video;videoio;videostab;wechat_qrcode;xfeatures2d;ximgproc;xobjdetect;xphoto;xstereo
 OPENCV_MODULES_CONFIGCMAKE=opencv_calib;opencv_core;opencv_dnn;opencv_features;opencv_flann;opencv_geometry;opencv_highgui;opencv_imgcodecs;opencv_imgproc;opencv_objdetect;opencv_photo;opencv_ptcloud;opencv_stereo;opencv_stitching;opencv_video;opencv_videoio;opencv_alphamat;opencv_bgsegm;opencv_bioinspired;opencv_ccalib;opencv_cudaarithm;opencv_cudabgsegm;opencv_cudacodec;opencv_cudafeatures2d;opencv_cudafilters;opencv_cudaimgproc;opencv_cudalegacy;opencv_cudaobjdetect;opencv_cudaoptflow;opencv_cudastereo;opencv_cudawarping;opencv_cudev;opencv_datasets;opencv_dnn_objdetect;opencv_dnn_superres;opencv_dpm;opencv_face;opencv_freetype;opencv_fuzzy;opencv_gapi;opencv_hdf;opencv_hfs;opencv_img_hash;opencv_intensity_transform;opencv_line_descriptor;opencv_ml;opencv_optflow;opencv_phase_unwrapping;opencv_plot;opencv_quality;opencv_rapid;opencv_reg;opencv_rgbd;opencv_saliency;opencv_sfm;opencv_shape;opencv_signal;opencv_structured_light;opencv_superres;opencv_surface_matching;opencv_text;opencv_tracking;opencv_videostab;opencv_wechat_qrcode;opencv_xfeatures2d;opencv_ximgproc;opencv_xobjdetect;opencv_xphoto;opencv_xstereo
 OPENCV_MODULES_DISABLED_AUTO=
 OPENCV_MODULES_DISABLED_AUTO_ST=
-OPENCV_MODULES_DISABLED_FORCE=opencv_java;opencv_cannops;opencv_cvv;opencv_fastcv;opencv_julia;opencv_matlab;opencv_ovis;opencv_viz
-OPENCV_MODULES_DISABLED_FORCE_ST=cannops;cvv;fastcv;java;julia;matlab;ovis;viz
+OPENCV_MODULES_DISABLED_FORCE=opencv_java;opencv_ts;opencv_cannops;opencv_cvv;opencv_fastcv;opencv_julia;opencv_matlab;opencv_ovis;opencv_viz
+OPENCV_MODULES_DISABLED_FORCE_ST=cannops;cvv;fastcv;java;julia;matlab;ovis;ts;viz
 OPENCV_MODULES_DISABLED_USER=opencv_world
 OPENCV_MODULES_DISABLED_USER_ST=world
 OPENCV_MODULES_EXTRA=alphamat;bgsegm;bioinspired;cannops;ccalib;cudaarithm;cudabgsegm;cudacodec;cudafeatures2d;cudafilters;cudaimgproc;cudalegacy;cudaobjdetect;cudaoptflow;cudastereo;cudawarping;cudev;cvv;datasets;dnn_objdetect;dnn_superres;dpm;face;fastcv;freetype;fuzzy;gapi;hdf;hfs;img_hash;intensity_transform;java_bindings_generator;js_bindings_generator;julia;line_descriptor;matlab;ml;objc_bindings_generator;optflow;ovis;phase_unwrapping;plot;python3;python_bindings_generator;python_tests;quality;rapid;reg;rgbd;saliency;sfm;shape;signal;structured_light;superres;surface_matching;text;tracking;videostab;viz;wechat_qrcode;xfeatures2d;ximgproc;xobjdetect;xphoto;xstereo
@@ -4363,7 +3527,7 @@ OPENCV_MODULE_opencv_datasets_SOURCES=/home/nerdstar/NerdStar/backend/opencv/ope
 OPENCV_MODULE_opencv_datasets_WRAPPERS=python
 OPENCV_MODULE_opencv_dnn_BINARY_DIR=/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn
 OPENCV_MODULE_opencv_dnn_CLASS=PUBLIC
-OPENCV_MODULE_opencv_dnn_COMPILE_OPTIONS=PRIVATE;-ffast-math;PRIVATE;-fno-finite-math-only;PRIVATE;-ffast-math;PRIVATE;-fno-finite-math-only;PRIVATE;-ffast-math;PRIVATE;-fno-finite-math-only
+OPENCV_MODULE_opencv_dnn_COMPILE_OPTIONS=PRIVATE;-ffast-math;PRIVATE;-fno-finite-math-only;PRIVATE;-ffast-math;PRIVATE;-fno-finite-math-only
 OPENCV_MODULE_opencv_dnn_CUDA_OBJECTS=/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_activation_eltwise.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_activations.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_bias_activation.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_bias_activation_eltwise.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_bias_eltwise_activation.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_concat.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_crop_and_resize.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_detection_output.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_eltwise_activation.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_eltwise_ops.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_fill_copy.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_fp_conversion.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_grid_nms.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_max_unpooling.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_mvn.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_normalize.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_padding.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_permute.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_prior_box.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_region.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_resize.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_roi_pooling.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_scale_shift.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_shortcut.cu.o;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/dnn/CMakeFiles/cuda_compile_1.dir/src/cuda/./cuda_compile_1_generated_slice.cu.o
 OPENCV_MODULE_opencv_dnn_DEPS=opencv_cudev;opencv_core;opencv_flann;opencv_geometry;opencv_imgproc
 OPENCV_MODULE_opencv_dnn_DEPS_EXT=
@@ -5174,23 +4338,7 @@ OPENCV_MODULE_opencv_tracking_PRIVATE_REQ_DEPS=
 OPENCV_MODULE_opencv_tracking_REQ_DEPS=opencv_imgproc;opencv_core;opencv_video;opencv_plot
 OPENCV_MODULE_opencv_tracking_SOURCES=/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/augmented_unscented_kalman.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/feature.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/featureColorName.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/gtrUtils.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/kuhn_munkres.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/mosseTracker.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/multiTracker.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/multiTracker_alt.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/onlineBoosting.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/tldDataset.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/tldDetector.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/tldEnsembleClassifier.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/tldModel.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/tldTracker.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/tldUtils.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/tracker.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/trackerBoosting.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/trackerBoostingModel.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/trackerCSRT.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/trackerCSRTScaleEstimation.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/trackerCSRTSegmentation.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/trackerCSRTUtils.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/trackerFeature.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/trackerFeatureSet.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/trackerKCF.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/trackerMIL_legacy.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/trackerMedianFlow.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/trackerSampler.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/trackerSamplerAlgorithm.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/trackerStateEstimator.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/tracking_by_matching.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/tracking_utils.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/twist.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/unscented_kalman.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/opencl/tldDetector.cl;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/opencl/tmm.cl;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/tracking/opencl_kernels_tracking.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/tracking/opencl_kernels_tracking.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/PFSolver.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/TrackingFunctionPF.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/gtrUtils.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/kuhn_munkres.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/legacy/tracker.legacy.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/legacy/trackerCSRT.legacy.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/legacy/trackerKCF.legacy.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/multiTracker.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/precomp.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/tldDetector.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/tldEnsembleClassifier.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/tldModel.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/tldTracker.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/tldUtils.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/trackerBoostingModel.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/trackerCSRTScaleEstimation.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/trackerCSRTSegmentation.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/trackerCSRTUtils.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking/src/tracking_utils.hpp
 OPENCV_MODULE_opencv_tracking_WRAPPERS=java;python;objc
-OPENCV_MODULE_opencv_ts_BINARY_DIR=/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/ts
-OPENCV_MODULE_opencv_ts_CLASS=INTERNAL
-OPENCV_MODULE_opencv_ts_DEPS=opencv_cudev;opencv_core;opencv_flann;opencv_geometry;opencv_imgproc;opencv_imgcodecs;opencv_videoio;opencv_highgui
-OPENCV_MODULE_opencv_ts_DEPS_EXT=
-OPENCV_MODULE_opencv_ts_DEPS_TO_LINK=opencv_cudev;opencv_core;opencv_flann;opencv_geometry;opencv_imgproc;opencv_imgcodecs;opencv_videoio;opencv_highgui
-OPENCV_MODULE_opencv_ts_DESCRIPTION=The ts module
-OPENCV_MODULE_opencv_ts_HEADERS=/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ts/include/opencv2/ts.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ts/include/opencv2/ts/cuda_perf.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ts/include/opencv2/ts/cuda_test.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ts/include/opencv2/ts/ocl_perf.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ts/include/opencv2/ts/ocl_test.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ts/include/opencv2/ts/ts_ext.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ts/include/opencv2/ts/ts_gtest.h;/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ts/include/opencv2/ts/ts_perf.hpp
-OPENCV_MODULE_opencv_ts_IS_PART_OF_WORLD=OFF
-OPENCV_MODULE_opencv_ts_LABEL=Main;opencv_ts
-OPENCV_MODULE_opencv_ts_LINK_DEPS=
 OPENCV_MODULE_opencv_ts_LOCATION=/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ts
-OPENCV_MODULE_opencv_ts_OPT_DEPS=
-OPENCV_MODULE_opencv_ts_PRIVATE_OPT_DEPS=
-OPENCV_MODULE_opencv_ts_PRIVATE_REQ_DEPS=
-OPENCV_MODULE_opencv_ts_REQ_DEPS=opencv_core;opencv_imgproc;opencv_imgcodecs;opencv_videoio;opencv_highgui
-OPENCV_MODULE_opencv_ts_SOURCES=/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ts/src/cuda_perf.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ts/src/cuda_test.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ts/src/ocl_perf.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ts/src/ocl_test.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ts/src/ts.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ts/src/ts_arrtest.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ts/src/ts_func.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ts/src/ts_gtest.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ts/src/ts_perf.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ts/src/ts_tags.cpp;/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ts/src/precomp.hpp;/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ts/src/ts_tags.hpp
-OPENCV_MODULE_opencv_ts_WRAPPERS=
 OPENCV_MODULE_opencv_video_BINARY_DIR=/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/video
 OPENCV_MODULE_opencv_video_CLASS=PUBLIC
 OPENCV_MODULE_opencv_video_DEPS=opencv_cudev;opencv_core;opencv_flann;opencv_geometry;opencv_imgproc;opencv_dnn;opencv_features
@@ -5366,8 +4514,8 @@ OPENCV_PC_FILE_NAME=opencv.pc
 OPENCV_PROCESSING_EXTRA_MODULES=1
 OPENCV_PYTHON3_VERSION=OFF
 OPENCV_PYTHON_BINDINGS_DIR=/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/python_bindings_generator
-OPENCV_PYTHON_DIR_RELATIVE_CMAKECONFIG=../lib/python3.12/dist-packages
-OPENCV_PYTHON_INSTALL_PATH_SETUPVARS=lib/python3.12/dist-packages
+OPENCV_PYTHON_DIR_RELATIVE_CMAKECONFIG=/home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages
+OPENCV_PYTHON_INSTALL_PATH_SETUPVARS=/home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages
 OPENCV_PYTHON_SIGNATURES_FILE=/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/python_bindings_generator/pyopencv_signatures.json
 OPENCV_PYTHON_TESTS_CONFIG_FILE=/home/nerdstar/NerdStar/backend/opencv/opencv_build/opencv_python_tests.cfg
 OPENCV_PYTHON_TESTS_CONFIG_FILE_DIR=/home/nerdstar/NerdStar/backend/opencv/opencv_build
@@ -5386,7 +4534,7 @@ OPENCV_TEST_DNN_OPENVINO=OFF
 OPENCV_TEST_DNN_TFLITE=ON
 OPENCV_TEST_DNN_TIMVX=OFF
 OPENCV_TEST_INSTALL_PATH=bin
-OPENCV_TIMESTAMP=2026-07-07T16:42:22Z
+OPENCV_TIMESTAMP=2026-08-13T01:27:43Z
 OPENCV_TRACE=1
 OPENCV_VCSVERSION=5.0.0-71-g4ce2389a62
 OPENCV_VERIFICATIONS=WITH_1394;WITH_AVFOUNDATION;WITH_AVIF;WITH_CAP_IOS;WITH_CPUFEATURES;WITH_VTK;WITH_CUDA;WITH_CUFFT;WITH_CUBLAS;WITH_CUDNN;WITH_NVCUVID;WITH_NVCUVENC;WITH_EIGEN;WITH_FFMPEG;WITH_GSTREAMER;WITH_GTK;WITH_GTK_2_X;WITH_WAYLAND;WITH_IPP;WITH_ARMPL;WITH_VULKAN;WITH_OPENVINO;WITH_WEBNN;WITH_JASPER;WITH_OPENJPEG;WITH_JPEG;WITH_JPEGXL;WITH_WEBP;WITH_HARFBUZZ;WITH_OPENEXR;WITH_OPENGL;WITH_OPENNI;WITH_OPENNI2;WITH_PNG;WITH_SPNG;WITH_GDCM;WITH_PVAPI;WITH_ARAVIS;WITH_QT;WITH_WIN32UI;WITH_TBB;WITH_HPX;WITH_OPENMP;WITH_PTHREADS_PF;WITH_TIFF;WITH_V4L;WITH_DSHOW;WITH_MSMF;WITH_MSMF_DXVA;WITH_XIMEA;WITH_UEYE;WITH_XINE;WITH_CLP;WITH_OPENCL;WITH_OPENCL_SVM;WITH_OPENCLAMDFFT;WITH_OPENCLAMDBLAS;WITH_DIRECTX;WITH_DIRECTML;WITH_OPENCL_D3D11_NV;WITH_LIBREALSENSE;WITH_VA;WITH_VA_INTEL;WITH_MFX;WITH_GDAL;WITH_GPHOTO2;WITH_LAPACK;WITH_ITT;WITH_PROTOBUF;WITH_IMGCODEC_GIF;WITH_IMGCODEC_HDR;WITH_IMGCODEC_SUNRASTER;WITH_IMGCODEC_PXM;WITH_IMGCODEC_PFM;WITH_ANDROID_MEDIANDK;WITH_ANDROID_NATIVE_CAMERA;WITH_ONNXRUNTIME;WITH_TIMVX;WITH_OBSENSOR;WITH_CANN;WITH_FLATBUFFERS;WITH_ZLIB_NG;ENABLE_CUDA_FIRST_CLASS_LANGUAGE;WITH_UNIFONT;WITH_TESSERACT
@@ -5516,8 +4664,10 @@ OPENGL_gl_LIBRARY=/usr/lib/aarch64-linux-gnu/libGL.so
 OPENGL_gles2_LIBRARY=/usr/lib/aarch64-linux-gnu/libGLESv2.so
 OPENGL_gles3_LIBRARY=/usr/lib/aarch64-linux-gnu/libGLESv2.so
 OPENGL_glu_LIBRARY=/usr/lib/aarch64-linux-gnu/libGLU.so
-OPENGL_glx_LIBRARY=/usr/lib/aarch64-linux-gnu/libGLX.so
-OPENGL_opengl_LIBRARY=/usr/lib/aarch64-linux-gnu/libOpenGL.so
+OPENGL_glx_LIBRARY=/usr/lib/aarch64-linux-gnu/libGL.so
+OPENGL_glx_LIBRARY=/usr/lib/aarch64-linux-gnu/libGL.so
+OPENGL_opengl_LIBRARY=/usr/lib/aarch64-linux-gnu/libGL.so
+OPENGL_opengl_LIBRARY=/usr/lib/aarch64-linux-gnu/libGL.so
 OPENGL_xmesa_INCLUDE_DIR=OPENGL_xmesa_INCLUDE_DIR-NOTFOUND
 OPENJPEG_BUILD_VERSION=3
 OPENJPEG_INCLUDE_DIRS=/home/nerdstar/NerdStar/backend/opencv/opencv_build/3rdparty/openjpeg/openjp2;/home/nerdstar/NerdStar/backend/opencv/opencv/3rdparty/openjpeg/openjp2;/home/nerdstar/NerdStar/backend/opencv/opencv/3rdparty/dlpack/include;/home/nerdstar/NerdStar/backend/opencv/opencv_build
@@ -5540,7 +4690,7 @@ OpenBLAS_LAPACKE_DIR=OpenBLAS_LAPACKE_DIR-NOTFOUND
 OpenCVModules_TARGETS=opencv_cudev;opencv_core;opencv_cudaarithm;opencv_flann;opencv_geometry;opencv_hdf;opencv_imgproc;opencv_intensity_transform;opencv_ml;opencv_phase_unwrapping;opencv_plot;opencv_ptcloud;opencv_quality;opencv_rapid;opencv_reg;opencv_rgbd;opencv_shape;opencv_signal;opencv_stereo;opencv_surface_matching;opencv_alphamat;opencv_cudafilters;opencv_cudaimgproc;opencv_cudastereo;opencv_cudawarping;opencv_dnn;opencv_dnn_superres;opencv_features;opencv_freetype;opencv_fuzzy;opencv_hfs;opencv_img_hash;opencv_imgcodecs;opencv_line_descriptor;opencv_objdetect;opencv_photo;opencv_saliency;opencv_text;opencv_video;opencv_videoio;opencv_wechat_qrcode;opencv_xfeatures2d;opencv_ximgproc;opencv_xobjdetect;opencv_xphoto;opencv_bgsegm;opencv_calib;opencv_cudabgsegm;opencv_cudacodec;opencv_cudafeatures2d;opencv_cudalegacy;opencv_cudaobjdetect;opencv_datasets;opencv_face;opencv_gapi;opencv_highgui;opencv_optflow;opencv_sfm;opencv.sfm.correspondence;opencv.sfm.multiview;opencv.sfm.numeric;opencv_stitching;opencv_structured_light;opencv_tracking;opencv_xstereo;opencv_bioinspired;opencv_ccalib;opencv_cudaoptflow;opencv_dnn_objdetect;opencv_dpm;opencv_superres;opencv_videostab
 OpenCV_BINARY_DIR=/home/nerdstar/NerdStar/backend/opencv/opencv_build
 OpenCV_COMPAT_VERSION=
-OpenCV_CUDA_CC=-gencode;arch=compute_87,code=sm_87;-D_FORCE_INLINES
+OpenCV_CUDA_CC=-gencode;arch=compute_87,code=sm_87;-D_FORCE_INLINES;-gencode;arch=compute_87,code=compute_87
 OpenCV_DESCRIPTION=
 OpenCV_HAL=carotene;kleidicv;OpenCV_HAL
 OpenCV_HAL_CONSIDERED_CONFIGS=
@@ -5574,13 +4724,10 @@ OpenGL_GLES3_FOUND=TRUE
 OpenGL_GLX_FOUND=TRUE
 OpenGL_GL_PREFERENCE=LEGACY
 OpenGL_OpenGL_FOUND=TRUE
-OpenGL_glx_LIBRARY=/usr/lib/aarch64-linux-gnu/libGL.so
-OpenGL_opengl_LIBRARY=/usr/lib/aarch64-linux-gnu/libGL.so
 OpenJPEG_CONSIDERED_CONFIGS=
 OpenJPEG_CONSIDERED_VERSIONS=
 OpenJPEG_DIR=OpenJPEG_DIR-NOTFOUND
 OpenJPEG_FOUND=0
-P2=lib/python3.12/dist-packages
 PARALLEL_ENABLE_PLUGINS=ON
 PCHSupport_FOUND=TRUE
 PKGCONFIG_FOUND=TRUE
@@ -5633,22 +4780,22 @@ PYTHON3INTERP_FOUND=TRUE
 PYTHON3LIBS_FOUND=TRUE
 PYTHON3LIBS_VERSION_STRING=3.12.3
 PYTHON3_DEBUG_LIBRARIES=
-PYTHON3_EXECUTABLE=/usr/bin/python3
-PYTHON3_INCLUDE_DIR=/usr/include/python3.12/
-PYTHON3_INCLUDE_DIR2=/usr/include/aarch64-linux-gnu/python3.12/
-PYTHON3_INCLUDE_PATH=/usr/include/python3.12/
+PYTHON3_EXECUTABLE=/home/nerdstar/NerdStar/.venv/bin/python3
+PYTHON3_INCLUDE_DIR=/usr/include/python3.12
+PYTHON3_INCLUDE_DIR2=
+PYTHON3_INCLUDE_PATH=/usr/include/python3.12
 PYTHON3_LIBRARIES=/usr/lib/aarch64-linux-gnu/libpython3.12.so
 PYTHON3_LIBRARY=/usr/lib/aarch64-linux-gnu/libpython3.12.so
 PYTHON3_LIBRARY_DEBUG=
 PYTHON3_LIMITED_API=OFF
-PYTHON3_NUMPY_INCLUDE_DIRS=/usr/lib/python3/dist-packages/numpy/core/include/
-PYTHON3_NUMPY_VERSION=1.26.4
-PYTHON3_PACKAGES_PATH=lib/python3.12/dist-packages
+PYTHON3_NUMPY_INCLUDE_DIRS=/home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages/numpy/_core/include
+PYTHON3_NUMPY_VERSION=2.5.2
+PYTHON3_PACKAGES_PATH=/home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages
 PYTHON3_VERSION_MAJOR=3
 PYTHON3_VERSION_MINOR=12
 PYTHON3_VERSION_STRING=3.12.3
 PYTHON_DEFAULT_AVAILABLE=TRUE
-PYTHON_DEFAULT_EXECUTABLE=/usr/bin/python3
+PYTHON_DEFAULT_EXECUTABLE=/home/nerdstar/NerdStar/.venv/bin/python3
 PYTHON_DEFAULT_VERSION=3.12.3
 PkgConfig_FOUND=TRUE
 PkgConfig_VERSION=1.8.1
@@ -5657,8 +4804,8 @@ Protobuf_VERSION=3.19.1
 RUN_CONFIGURE=ON
 SFM_GLOG_GFLAGS_TEST=TRUE
 SFM_GLOG_GFLAGS_TEST_CACHE_KEY= ~ /usr/include ~ glog::glog ~ gflags_shared
-STD_OPENCV_DEV=libopencv-dev;libopencv-geometry-dev;libopencv-calib-dev;libopencv-core-dev;libopencv-dnn-dev;libopencv-features-dev;libopencv-flann-dev;libopencv-highgui-dev;libopencv-imgcodecs-dev;libopencv-imgproc-dev;libopencv-ml-dev;libopencv-objdetect-dev;libopencv-photo-dev;libopencv-stereo-dev;libopencv-stitching-dev;libopencv-ts-dev;libopencv-video-dev;libopencv-videoio-dev
-STD_OPENCV_LIBS=opencv-data;libopencv-geometry4.0;libopencv-calib4.0;libopencv-core4.0;libopencv-dnn4.0;libopencv-features4.0;libopencv-flann4.0;libopencv-highgui4.0;libopencv-imgcodecs4.0;libopencv-imgproc4.0;libopencv-ml4.0;libopencv-objdetect4.0;libopencv-photo4.0;libopencv-stereo4.0;libopencv-stitching4.0;libopencv-ts4.0;libopencv-video4.0;libopencv-videoio4.0
+STD_OPENCV_DEV=libopencv-dev;libopencv-geometry-dev;libopencv-calib-dev;libopencv-core-dev;libopencv-dnn-dev;libopencv-features-dev;libopencv-flann-dev;libopencv-highgui-dev;libopencv-imgcodecs-dev;libopencv-imgproc-dev;libopencv-ml-dev;libopencv-objdetect-dev;libopencv-photo-dev;libopencv-stereo-dev;libopencv-stitching-dev;libopencv-video-dev;libopencv-videoio-dev
+STD_OPENCV_LIBS=opencv-data;libopencv-geometry4.0;libopencv-calib4.0;libopencv-core4.0;libopencv-dnn4.0;libopencv-features4.0;libopencv-flann4.0;libopencv-highgui4.0;libopencv-imgcodecs4.0;libopencv-imgproc4.0;libopencv-ml4.0;libopencv-objdetect4.0;libopencv-photo4.0;libopencv-stereo4.0;libopencv-stitching4.0;libopencv-video4.0;libopencv-videoio4.0
 TBB_DIR=/usr/lib/aarch64-linux-gnu/cmake/TBB
 TBB_INTERFACE_VERSION=12110
 TBB_VERSION_MAJOR=2021
@@ -5681,15 +4828,15 @@ TIFF_VERSION_LINES=#define TIFF_VERSION_CLASSIC 42;#define TIFF_VERSION_BIG 43
 TIFF_VERSION_STRING=4.5.1
 TRY_OUT=Change Dir: '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
 
-Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_1118c/fast
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_17585/fast
 gmake[1]: Entering directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
-/usr/bin/gmake  -f CMakeFiles/cmTC_1118c.dir/build.make CMakeFiles/cmTC_1118c.dir/build
+/usr/bin/gmake  -f CMakeFiles/cmTC_17585.dir/build.make CMakeFiles/cmTC_17585.dir/build
 gmake[2]: Entering directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_1118c.dir/ffmpeg_test.cpp.o
-/usr/bin/c++   -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wuninitialized -Wsuggest-override -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -fvisibility=hidden -fvisibility-inlines-hidden  -O3 -DNDEBUG  -DNDEBUG -std=c++17 -fPIE -o CMakeFiles/cmTC_1118c.dir/ffmpeg_test.cpp.o -c /home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/ffmpeg_test.cpp
-Linking CXX executable cmTC_1118c
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1118c.dir/link.txt --verbose=1
-/usr/bin/c++    -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wuninitialized -Wsuggest-override -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -fvisibility=hidden -fvisibility-inlines-hidden  -O3 -DNDEBUG  -DNDEBUG   -Wl,--gc-sections -Wl,--as-needed -Wl,--no-undefined  CMakeFiles/cmTC_1118c.dir/ffmpeg_test.cpp.o -o cmTC_1118c  /usr/lib/aarch64-linux-gnu/libavcodec.so /usr/lib/aarch64-linux-gnu/libavformat.so /usr/lib/aarch64-linux-gnu/libavutil.so /usr/lib/aarch64-linux-gnu/libswscale.so /usr/lib/aarch64-linux-gnu/libavdevice.so
+Building CXX object CMakeFiles/cmTC_17585.dir/ffmpeg_test.cpp.o
+/usr/bin/c++   -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wuninitialized -Wsuggest-override -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -fvisibility=hidden -fvisibility-inlines-hidden  -O3 -DNDEBUG  -DNDEBUG -std=c++17 -fPIE -o CMakeFiles/cmTC_17585.dir/ffmpeg_test.cpp.o -c /home/nerdstar/NerdStar/backend/opencv/opencv/cmake/checks/ffmpeg_test.cpp
+Linking CXX executable cmTC_17585
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_17585.dir/link.txt --verbose=1
+/usr/bin/c++    -fsigned-char -ffast-math -fno-finite-math-only -W -Wall -Wreturn-type -Wnon-virtual-dtor -Waddress -Wsequence-point -Wformat -Wformat-security -Wmissing-declarations -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wuninitialized -Wsuggest-override -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections  -fvisibility=hidden -fvisibility-inlines-hidden  -O3 -DNDEBUG  -DNDEBUG   -Wl,--gc-sections -Wl,--as-needed -Wl,--no-undefined  CMakeFiles/cmTC_17585.dir/ffmpeg_test.cpp.o -o cmTC_17585  /usr/lib/aarch64-linux-gnu/libavcodec.so /usr/lib/aarch64-linux-gnu/libavformat.so /usr/lib/aarch64-linux-gnu/libavutil.so /usr/lib/aarch64-linux-gnu/libswscale.so /usr/lib/aarch64-linux-gnu/libavdevice.so
 gmake[2]: Leaving directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
 gmake[1]: Leaving directory '/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/CMakeTmp'
 
@@ -5853,32 +5000,25 @@ ZLIB_VERSION_STRING=1.3
 ZLIB_VERSION_TWEAK=
 _=define CUDNN_PATCHLEVEL 0
 _3rdparty=
-_ASM_COMPILER_WORKS=1
-_CMAKE_ASM_CMP0194=
 _CMAKE_ASM_IPO_MAY_BE_SUPPORTED_BY_COMPILER=NO
 _CMAKE_ASM_IPO_SUPPORTED_BY_CMAKE=YES
 _CMAKE_ASM_PIE_MAY_BE_SUPPORTED_BY_LINKER=NO
 _CMAKE_CUDA_IMPLICIT_INCLUDE_DIRECTORIES_INIT=/usr/include
-_CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES_INIT=/usr/include
+_CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES_INIT=/usr/include/c++/13;/usr/include/aarch64-linux-gnu/c++/13;/usr/include/c++/13/backward;/usr/lib/gcc/aarch64-linux-gnu/13/include;/usr/local/include;/usr/include/aarch64-linux-gnu;/usr/include;/usr/include
 _CMAKE_CXX_IPO_MAY_BE_SUPPORTED_BY_COMPILER=YES
 _CMAKE_CXX_IPO_SUPPORTED_BY_CMAKE=YES
 _CMAKE_CXX_PIE_MAY_BE_SUPPORTED_BY_LINKER=YES
-_CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES_INIT=/usr/include
+_CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES_INIT=/usr/lib/gcc/aarch64-linux-gnu/13/include;/usr/local/include;/usr/include/aarch64-linux-gnu;/usr/include;/usr/include
 _CMAKE_C_IPO_MAY_BE_SUPPORTED_BY_COMPILER=YES
 _CMAKE_C_IPO_SUPPORTED_BY_CMAKE=YES
 _CMAKE_C_PIE_MAY_BE_SUPPORTED_BY_LINKER=YES
 _CMAKE_INSTALL_DIR=/usr
 _CMAKE_Imath_5f23ab404189a37d8cfbacff463f569d802a04c1a51158d71e72d52c46d6afb8_FOUND=1
-_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED=TRUE
 _CMAKE_SYSTEM_PREFIX_PATH_INSTALL_PREFIX_COUNT=2
 _CMAKE_SYSTEM_PREFIX_PATH_INSTALL_PREFIX_VALUE=/usr/local
 _CMAKE_SYSTEM_PREFIX_PATH_STAGING_PREFIX_COUNT=0
 _CMAKE_SYSTEM_PREFIX_PATH_STAGING_PREFIX_VALUE=
-_CMAKE_TOOLCHAIN_LOCATION=/usr/bin
 _CMAKE_Threads_0562a364433150cad4f895d584ad758bdc4015a51ed571d9db2fb467c7c7955a_FOUND=TRUE
-_CMAKE_USER_ASM_COMPILER_PATH=/usr/bin
-_CMAKE_USER_CXX_COMPILER_PATH=/usr/bin
-_CMAKE_USER_C_COMPILER_PATH=/usr/bin
 _CMAKE_ZLIB_7935eb5e131f70520288b4c8e2f13bf6ff3abe9a246a70d9a309e40b33bb597f_FOUND=TRUE
 _CPACK_OTHER_VARIABLES_=
 set(CPACK_ARCHIVE_GID "-1")
@@ -5896,12 +5036,12 @@ set(CPACK_BINARY_TZ "ON")
 set(CPACK_BUILD_SOURCE_DIRS "/home/nerdstar/NerdStar/backend/opencv/opencv;/home/nerdstar/NerdStar/backend/opencv/opencv_build")
 set(CPACK_CMAKE_GENERATOR "Unix Makefiles")
 set(CPACK_COMPONENTS_ALL "dev;libs;licenses;main;python;scripts")
-set(CPACK_COMPONENT_DEV_CONFLICTS "libopencv-dev, libopencv-geometry-dev, libopencv-calib-dev, libopencv-core-dev, libopencv-dnn-dev, libopencv-features-dev, libopencv-flann-dev, libopencv-highgui-dev, libopencv-imgcodecs-dev, libopencv-imgproc-dev, libopencv-ml-dev, libopencv-objdetect-dev, libopencv-photo-dev, libopencv-stereo-dev, libopencv-stitching-dev, libopencv-ts-dev, libopencv-video-dev, libopencv-videoio-dev")
+set(CPACK_COMPONENT_DEV_CONFLICTS "libopencv-dev, libopencv-geometry-dev, libopencv-calib-dev, libopencv-core-dev, libopencv-dnn-dev, libopencv-features-dev, libopencv-flann-dev, libopencv-highgui-dev, libopencv-imgcodecs-dev, libopencv-imgproc-dev, libopencv-ml-dev, libopencv-objdetect-dev, libopencv-photo-dev, libopencv-stereo-dev, libopencv-stitching-dev, libopencv-video-dev, libopencv-videoio-dev")
 set(CPACK_COMPONENT_DEV_DEPENDS "libs")
 set(CPACK_COMPONENT_DEV_DESCRIPTION "Development files for Open Source Computer Vision Library")
 set(CPACK_COMPONENT_DEV_DISPLAY_NAME "Development files")
-set(CPACK_COMPONENT_DEV_PROVIDES "libopencv-dev, libopencv-geometry-dev, libopencv-calib-dev, libopencv-core-dev, libopencv-dnn-dev, libopencv-features-dev, libopencv-flann-dev, libopencv-highgui-dev, libopencv-imgcodecs-dev, libopencv-imgproc-dev, libopencv-ml-dev, libopencv-objdetect-dev, libopencv-photo-dev, libopencv-stereo-dev, libopencv-stitching-dev, libopencv-ts-dev, libopencv-video-dev, libopencv-videoio-dev")
-set(CPACK_COMPONENT_DEV_REPLACES "libopencv-dev, libopencv-geometry-dev, libopencv-calib-dev, libopencv-core-dev, libopencv-dnn-dev, libopencv-features-dev, libopencv-flann-dev, libopencv-highgui-dev, libopencv-imgcodecs-dev, libopencv-imgproc-dev, libopencv-ml-dev, libopencv-objdetect-dev, libopencv-photo-dev, libopencv-stereo-dev, libopencv-stitching-dev, libopencv-ts-dev, libopencv-video-dev, libopencv-videoio-dev")
+set(CPACK_COMPONENT_DEV_PROVIDES "libopencv-dev, libopencv-geometry-dev, libopencv-calib-dev, libopencv-core-dev, libopencv-dnn-dev, libopencv-features-dev, libopencv-flann-dev, libopencv-highgui-dev, libopencv-imgcodecs-dev, libopencv-imgproc-dev, libopencv-ml-dev, libopencv-objdetect-dev, libopencv-photo-dev, libopencv-stereo-dev, libopencv-stitching-dev, libopencv-video-dev, libopencv-videoio-dev")
+set(CPACK_COMPONENT_DEV_REPLACES "libopencv-dev, libopencv-geometry-dev, libopencv-calib-dev, libopencv-core-dev, libopencv-dnn-dev, libopencv-features-dev, libopencv-flann-dev, libopencv-highgui-dev, libopencv-imgcodecs-dev, libopencv-imgproc-dev, libopencv-ml-dev, libopencv-objdetect-dev, libopencv-photo-dev, libopencv-stereo-dev, libopencv-stitching-dev, libopencv-video-dev, libopencv-videoio-dev")
 set(CPACK_COMPONENT_DOCS_CONFLICTS "opencv-doc")
 set(CPACK_COMPONENT_DOCS_DEPENDS "libs")
 set(CPACK_COMPONENT_DOCS_DESCRIPTION "Documentation for Open Source Computer Vision Library")
@@ -5912,11 +5052,11 @@ set(CPACK_COMPONENT_JAVA_DESCRIPTION "Java bindings for Open Source Computer Vis
 set(CPACK_COMPONENT_JAVA_DISPLAY_NAME "Java bindings")
 set(CPACK_COMPONENT_JAVA_PROVIDES "libopencv5.0-java, libopencv5.0-jni")
 set(CPACK_COMPONENT_JAVA_REPLACES "libopencv5.0-java, libopencv5.0-jni")
-set(CPACK_COMPONENT_LIBS_CONFLICTS "opencv-data, libopencv-geometry4.0, libopencv-calib4.0, libopencv-core4.0, libopencv-dnn4.0, libopencv-features4.0, libopencv-flann4.0, libopencv-highgui4.0, libopencv-imgcodecs4.0, libopencv-imgproc4.0, libopencv-ml4.0, libopencv-objdetect4.0, libopencv-photo4.0, libopencv-stereo4.0, libopencv-stitching4.0, libopencv-ts4.0, libopencv-video4.0, libopencv-videoio4.0")
+set(CPACK_COMPONENT_LIBS_CONFLICTS "opencv-data, libopencv-geometry4.0, libopencv-calib4.0, libopencv-core4.0, libopencv-dnn4.0, libopencv-features4.0, libopencv-flann4.0, libopencv-highgui4.0, libopencv-imgcodecs4.0, libopencv-imgproc4.0, libopencv-ml4.0, libopencv-objdetect4.0, libopencv-photo4.0, libopencv-stereo4.0, libopencv-stitching4.0, libopencv-video4.0, libopencv-videoio4.0")
 set(CPACK_COMPONENT_LIBS_DESCRIPTION "Open Computer Vision Library")
 set(CPACK_COMPONENT_LIBS_DISPLAY_NAME "Libraries and data")
-set(CPACK_COMPONENT_LIBS_PROVIDES "opencv-data, libopencv-geometry4.0, libopencv-calib4.0, libopencv-core4.0, libopencv-dnn4.0, libopencv-features4.0, libopencv-flann4.0, libopencv-highgui4.0, libopencv-imgcodecs4.0, libopencv-imgproc4.0, libopencv-ml4.0, libopencv-objdetect4.0, libopencv-photo4.0, libopencv-stereo4.0, libopencv-stitching4.0, libopencv-ts4.0, libopencv-video4.0, libopencv-videoio4.0")
-set(CPACK_COMPONENT_LIBS_REPLACES "opencv-data, libopencv-geometry4.0, libopencv-calib4.0, libopencv-core4.0, libopencv-dnn4.0, libopencv-features4.0, libopencv-flann4.0, libopencv-highgui4.0, libopencv-imgcodecs4.0, libopencv-imgproc4.0, libopencv-ml4.0, libopencv-objdetect4.0, libopencv-photo4.0, libopencv-stereo4.0, libopencv-stitching4.0, libopencv-ts4.0, libopencv-video4.0, libopencv-videoio4.0")
+set(CPACK_COMPONENT_LIBS_PROVIDES "opencv-data, libopencv-geometry4.0, libopencv-calib4.0, libopencv-core4.0, libopencv-dnn4.0, libopencv-features4.0, libopencv-flann4.0, libopencv-highgui4.0, libopencv-imgcodecs4.0, libopencv-imgproc4.0, libopencv-ml4.0, libopencv-objdetect4.0, libopencv-photo4.0, libopencv-stereo4.0, libopencv-stitching4.0, libopencv-video4.0, libopencv-videoio4.0")
+set(CPACK_COMPONENT_LIBS_REPLACES "opencv-data, libopencv-geometry4.0, libopencv-calib4.0, libopencv-core4.0, libopencv-dnn4.0, libopencv-features4.0, libopencv-flann4.0, libopencv-highgui4.0, libopencv-imgcodecs4.0, libopencv-imgproc4.0, libopencv-ml4.0, libopencv-objdetect4.0, libopencv-photo4.0, libopencv-stereo4.0, libopencv-stitching4.0, libopencv-video4.0, libopencv-videoio4.0")
 set(CPACK_COMPONENT_LIBS_REQUIRED "TRUE")
 set(CPACK_COMPONENT_PYTHON_CONFLICTS "python-opencv")
 set(CPACK_COMPONENT_PYTHON_DEPENDS "libs")
@@ -5950,7 +5090,7 @@ set(CPACK_DEB_COMPONENT_INSTALL "TRUE")
 set(CPACK_DEB_DEV_PACKAGE_DEPENDS "libtbb-dev")
 set(CPACK_DEB_dev_PACKAGE_DEPENDS "cuda-cudart-dev-13-2, cuda-npp-dev-13-2, cuda-cufft-dev-13-2, cuda-cublas-dev-13-2")
 set(CPACK_DEB_libs_PACKAGE_DEPENDS "cuda-cudart-13-2, cuda-npp-13-2, cuda-cufft-13-2, cuda-cublas-13-2")
-set(CPACK_DEFAULT_PACKAGE_DESCRIPTION_FILE "/usr/share/cmake-4.3/Templates/CPack.GenericDescription.txt")
+set(CPACK_DEFAULT_PACKAGE_DESCRIPTION_FILE "/usr/share/cmake-4.4/Templates/CPack.GenericDescription.txt")
 set(CPACK_DEFAULT_PACKAGE_DESCRIPTION_SUMMARY "OpenCV built using CMake")
 set(CPACK_DMG_SLA_USE_RESOURCE_FILE_LICENSE "ON")
 set(CPACK_GENERATOR "TBZ2;TGZ;TXZ;TZ")
@@ -5976,7 +5116,7 @@ and machine learning software library. OpenCV was built to provide a common
 infrastructure for computer vision applications and to accelerate the use of
 machine perception in the commercial products. Being a Apache 2.0 -licensed product,
 OpenCV makes it easy for businesses to utilize and modify the code.")
-set(CPACK_PACKAGE_DESCRIPTION_FILE "/usr/share/cmake-4.3/Templates/CPack.GenericDescription.txt")
+set(CPACK_PACKAGE_DESCRIPTION_FILE "/usr/share/cmake-4.4/Templates/CPack.GenericDescription.txt")
 set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Open Computer Vision Library")
 set(CPACK_PACKAGE_FILE_NAME "OpenCV-5.0.0-71-g4ce2389a62-aarch64")
 set(CPACK_PACKAGE_INSTALL_DIRECTORY "OpenCV 5.0.0-71-g4ce2389a62")
@@ -5990,8 +5130,8 @@ set(CPACK_PACKAGE_VERSION_MINOR "1")
 set(CPACK_PACKAGE_VERSION_PATCH "0")
 set(CPACK_READELF_EXECUTABLE "/usr/bin/readelf")
 set(CPACK_RESOURCE_FILE_LICENSE "/home/nerdstar/NerdStar/backend/opencv/opencv/LICENSE")
-set(CPACK_RESOURCE_FILE_README "/usr/share/cmake-4.3/Templates/CPack.GenericDescription.txt")
-set(CPACK_RESOURCE_FILE_WELCOME "/usr/share/cmake-4.3/Templates/CPack.GenericWelcome.txt")
+set(CPACK_RESOURCE_FILE_README "/usr/share/cmake-4.4/Templates/CPack.GenericDescription.txt")
+set(CPACK_RESOURCE_FILE_WELCOME "/usr/share/cmake-4.4/Templates/CPack.GenericWelcome.txt")
 set(CPACK_RPM_COMPONENT_INSTALL "TRUE")
 set(CPACK_RPM_PACKAGE_ARCHITECTURE "aarch64")
 set(CPACK_RPM_PACKAGE_DESCRIPTION "OpenCV (Open Source Computer Vision Library) is an open source computer vision
@@ -6024,10 +5164,11 @@ set(CPACK_WIX_SIZEOF_VOID_P "8")
 set(CPACK_set_DESTDIR "on")
 _CUDA_MAX_COMMON_ARCHITECTURE=8.6+PTX
 _FIND_ZLIB_ARG=QUIET
+_FUNCTION_ARGNC=3
 _FindCUDA_CMP0146=OLD
 _GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX=/usr/local
 _INCLUDED_FILE=0
-_INCLUDED_SYSTEM_INFO_FILE=/usr/share/cmake-4.3/Modules/Platform/Linux.cmake
+_INCLUDED_SYSTEM_INFO_FILE=/usr/share/cmake-4.4/Modules/Platform/Linux.cmake
 _IN_TC=0
 _JAVA_HOME=
 _JAVA_PATHS=/usr/lib/java/bin;/usr/share/java/bin;/usr/local/java/bin;/usr/local/java/share/bin;/usr/java/j2sdk1.4.2_04;/usr/lib/j2sdk1.4-sun/bin;/usr/java/j2sdk1.4.2_09/bin;/usr/lib/j2sdk1.5-sun/bin;/opt/sun-jdk-1.5.0.04/bin;/usr/local/jdk-1.7.0/bin;/usr/local/jdk-1.6.0/bin
@@ -6042,10 +5183,6 @@ _PKG_CONFIG_FAILURE_MESSAGE=
 _PKG_CONFIG_VERSION_ERROR=
 _PNG_INCLUDE_SEARCH_NORMAL=/libpng;/libpng
 _PNG_LIB_SEARCH_NORMAL=/libpng/lib;/libpng/lib
-_SET_CMAKE_ASM_COMPILER_ID_VENDOR_MATCH=
-_SET_CMAKE_ASM_COMPILER_SYSROOT=
-_SET_CMAKE_CXX_COMPILER_SYSROOT=
-_SET_CMAKE_C_COMPILER_SYSROOT=
 _ZLIB_SEARCHES=_ZLIB_SEARCH_NORMAL
 _ZLIB_SEARCH_NORMAL=PATHS;[HKEY_LOCAL_MACHINE\SOFTWARE\GnuWin32\Zlib;InstallPath];/zlib;/zlib
 _apple_device_has_required_min_os_version=OFF
@@ -6065,6 +5202,7 @@ _extra=m;pthread;cudart_static;dl;rt;nppc;nppial;nppicc;nppidei;nppif;nppig;nppi
 _fname=
 _full_name=run_nvcc.cmake
 _generations=Maxwell;Pascal;Volta;Turing;Ampere;Lovelace;Hopper;Blackwell;Auto
+_git_res=0
 _hb_inc=/usr/include/harfbuzz;/usr/include/freetype2;/usr/include;/usr/include/libpng16;/usr/include/glib-2.0;/usr/lib/aarch64-linux-gnu/glib-2.0/include
 _hb_libs=
 _hb_version=14.2.1
@@ -6124,25 +5262,10 @@ _pkg_check_modules_list=tesseract
 _pkg_check_modules_packages=tesseract
 _pkg_check_modules_pkg=
 _pkg_check_modules_pkg_name=tesseract
-_pkg_check_prefix=FFMPEG_libavdevice
 _pkg_is_required=0
 _pkg_is_silent=0
 _pkg_modules=tesseract
-_pkgconfig_CFLAGS=-I/usr/include/aarch64-linux-gnu
-_pkgconfig_INCLUDE_DIRS=/usr/include/aarch64-linux-gnu
-_pkgconfig_LDFLAGS=-L/usr/lib/aarch64-linux-gnu;-lavdevice
-_pkgconfig_LIBRARIES=avdevice
-_pkgconfig_LIBRARY_DIRS=/usr/lib/aarch64-linux-gnu
-_pkgconfig_STATIC_CFLAGS=-I/usr/include/aarch64-linux-gnu
-_pkgconfig_STATIC_INCLUDE_DIRS=/usr/include/aarch64-linux-gnu
-_pkgconfig_STATIC_LDFLAGS=-L/usr/lib/aarch64-linux-gnu;-lavdevice;-lm;-latomic;-lraw1394;-lavc1394;-lrom1394;-liec61883;-ljack;-ldrm;-lopenal;-lxcb;-lxcb-shm;-lxcb-shape;-lxcb-xfixes;-lcdio_paranoia;-lcdio_cdda;-lcdio;-lm;-ldc1394;-lasound;-lcaca;-lpulse;-pthread;-lsndio;-lv4l2;-lXv;-lX11;-lXext;-L/usr/lib/aarch64-linux-gnu;-lavfilter;-pthread;-lm;-latomic;-lpocketsphinx;-lsphinxbase;-lsphinxad;-lbs2b;-llilv-0;-lrubberband;-lfftw3;-lsamplerate;-lstdc++;-lmysofa;-lflite_cmu_time_awb;-lflite_cmu_us_awb;-lflite_cmu_us_kal;-lflite_cmu_us_kal16;-lflite_cmu_us_rms;-lflite_cmu_us_slt;-lflite_usenglish;-lflite_cmulex;-lflite;-lnvbufsurface;-lass;-lva;-lvidstab;-lm;-lgomp;-lzmq;-lzimg;-lOpenCL;-lfontconfig;-lfreetype;-lfreetype;-L/usr/lib/aarch64-linux-gnu;-lm;-latomic;-L/usr/lib/aarch64-linux-gnu;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lm;-latomic;-lxml2;-lbz2;-lgme;-lopenmpt;-lstdc++;-lchromaprint;-lbluray;-lz;-lgnutls;-lrabbitmq;-lsrt-gnutls;-lssh;-lzmq;-L/usr/lib/aarch64-linux-gnu;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lwebpmux;-lm;-latomic;-llzma;-ldav1d;-lrsvg-2;-lm;-lgio-2.0;-lgdk_pixbuf-2.0;-lgobject-2.0;-lglib-2.0;-lcairo;-lzvbi;-lpthread;-lm;-lpng;-lz;-lnvbufsurface;-lnvbufsurftransform;-lv4l2;-lsnappy;-lstdc++;-lnvjpeg;-laom;-lcodec2;-lgsm;-lmp3lame;-lm;-lopenjp2;-lopus;-lm;-lshine;-lspeex;-ltheoraenc;-ltheoradec;-logg;-ltwolame;-lvorbis;-lvorbisenc;-lwebp;-lx264;-lx265;-lxvidcore;-lnvbufsurface;-lz;-lva;-pthread;-L/usr/lib/aarch64-linux-gnu;-lm;-lsoxr;-latomic;-L/usr/lib/aarch64-linux-gnu;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lswresample;-lm;-lsoxr;-latomic;-L/usr/lib/aarch64-linux-gnu;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavcodec;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lwebpmux;-lm;-latomic;-llzma;-ldav1d;-lrsvg-2;-lm;-lgio-2.0;-lgdk_pixbuf-2.0;-lgobject-2.0;-lglib-2.0;-lcairo;-lzvbi;-lpthread;-lm;-lpng;-lz;-lnvbufsurface;-lnvbufsurftransform;-lv4l2;-lsnappy;-lstdc++;-lnvjpeg;-laom;-lcodec2;-lgsm;-lmp3lame;-lm;-lopenjp2;-lopus;-lm;-lshine;-lspeex;-ltheoraenc;-ltheoradec;-logg;-ltwolame;-lvorbis;-lvorbisenc;-lwebp;-lx264;-lx265;-lxvidcore;-lnvbufsurface;-lz;-lva;-pthread;-L/usr/lib/aarch64-linux-gnu;-lm;-lsoxr;-latomic;-L/usr/lib/aarch64-linux-gnu;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lswresample;-lm;-lsoxr;-latomic;-L/usr/lib/aarch64-linux-gnu;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lswscale;-lm;-latomic;-L/usr/lib/aarch64-linux-gnu;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavformat;-lm;-latomic;-lxml2;-lbz2;-lgme;-lopenmpt;-lstdc++;-lchromaprint;-lbluray;-lz;-lgnutls;-lrabbitmq;-lsrt-gnutls;-lssh;-lzmq;-L/usr/lib/aarch64-linux-gnu;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lwebpmux;-lm;-latomic;-llzma;-ldav1d;-lrsvg-2;-lm;-lgio-2.0;-lgdk_pixbuf-2.0;-lgobject-2.0;-lglib-2.0;-lcairo;-lzvbi;-lpthread;-lm;-lpng;-lz;-lnvbufsurface;-lnvbufsurftransform;-lv4l2;-lsnappy;-lstdc++;-lnvjpeg;-laom;-lcodec2;-lgsm;-lmp3lame;-lm;-lopenjp2;-lopus;-lm;-lshine;-lspeex;-ltheoraenc;-ltheoradec;-logg;-ltwolame;-lvorbis;-lvorbisenc;-lwebp;-lx264;-lx265;-lxvidcore;-lnvbufsurface;-lz;-lva;-pthread;-L/usr/lib/aarch64-linux-gnu;-lm;-lsoxr;-latomic;-L/usr/lib/aarch64-linux-gnu;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lswresample;-lm;-lsoxr;-latomic;-L/usr/lib/aarch64-linux-gnu;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavcodec;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lwebpmux;-lm;-latomic;-llzma;-ldav1d;-lrsvg-2;-lm;-lgio-2.0;-lgdk_pixbuf-2.0;-lgobject-2.0;-lglib-2.0;-lcairo;-lzvbi;-lpthread;-lm;-lpng;-lz;-lnvbufsurface;-lnvbufsurftransform;-lv4l2;-lsnappy;-lstdc++;-lnvjpeg;-laom;-lcodec2;-lgsm;-lmp3lame;-lm;-lopenjp2;-lopus;-lm;-lshine;-lspeex;-ltheoraenc;-ltheoradec;-logg;-ltwolame;-lvorbis;-lvorbisenc;-lwebp;-lx264;-lx265;-lxvidcore;-lnvbufsurface;-lz;-lva;-pthread;-L/usr/lib/aarch64-linux-gnu;-lm;-lsoxr;-latomic;-L/usr/lib/aarch64-linux-gnu;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lswresample;-lm;-lsoxr;-latomic;-L/usr/lib/aarch64-linux-gnu;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11;-lavutil;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-latomic;-pthread;-lX11
-_pkgconfig_STATIC_LDFLAGS_OTHER=-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread;-pthread
-_pkgconfig_STATIC_LIBRARIES=avdevice;m;atomic;raw1394;avc1394;rom1394;iec61883;jack;drm;openal;xcb;xcb-shm;xcb-shape;xcb-xfixes;cdio_paranoia;cdio_cdda;cdio;m;dc1394;asound;caca;pulse;sndio;v4l2;Xv;X11;Xext;avfilter;m;atomic;pocketsphinx;sphinxbase;sphinxad;bs2b;lilv-0;rubberband;fftw3;samplerate;stdc++;mysofa;flite_cmu_time_awb;flite_cmu_us_awb;flite_cmu_us_kal;flite_cmu_us_kal16;flite_cmu_us_rms;flite_cmu_us_slt;flite_usenglish;flite_cmulex;flite;nvbufsurface;ass;va;vidstab;m;gomp;zmq;zimg;OpenCL;fontconfig;freetype;freetype;m;atomic;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;m;atomic;xml2;bz2;gme;openmpt;stdc++;chromaprint;bluray;z;gnutls;rabbitmq;srt-gnutls;ssh;zmq;vpx;m;vpx;m;vpx;m;vpx;m;webpmux;m;atomic;lzma;dav1d;rsvg-2;m;gio-2.0;gdk_pixbuf-2.0;gobject-2.0;glib-2.0;cairo;zvbi;pthread;m;png;z;nvbufsurface;nvbufsurftransform;v4l2;snappy;stdc++;nvjpeg;aom;codec2;gsm;mp3lame;m;openjp2;opus;m;shine;speex;theoraenc;theoradec;ogg;twolame;vorbis;vorbisenc;webp;x264;x265;xvidcore;nvbufsurface;z;va;m;soxr;atomic;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;swresample;m;soxr;atomic;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avcodec;vpx;m;vpx;m;vpx;m;vpx;m;webpmux;m;atomic;lzma;dav1d;rsvg-2;m;gio-2.0;gdk_pixbuf-2.0;gobject-2.0;glib-2.0;cairo;zvbi;pthread;m;png;z;nvbufsurface;nvbufsurftransform;v4l2;snappy;stdc++;nvjpeg;aom;codec2;gsm;mp3lame;m;openjp2;opus;m;shine;speex;theoraenc;theoradec;ogg;twolame;vorbis;vorbisenc;webp;x264;x265;xvidcore;nvbufsurface;z;va;m;soxr;atomic;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;swresample;m;soxr;atomic;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;swscale;m;atomic;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avformat;m;atomic;xml2;bz2;gme;openmpt;stdc++;chromaprint;bluray;z;gnutls;rabbitmq;srt-gnutls;ssh;zmq;vpx;m;vpx;m;vpx;m;vpx;m;webpmux;m;atomic;lzma;dav1d;rsvg-2;m;gio-2.0;gdk_pixbuf-2.0;gobject-2.0;glib-2.0;cairo;zvbi;pthread;m;png;z;nvbufsurface;nvbufsurftransform;v4l2;snappy;stdc++;nvjpeg;aom;codec2;gsm;mp3lame;m;openjp2;opus;m;shine;speex;theoraenc;theoradec;ogg;twolame;vorbis;vorbisenc;webp;x264;x265;xvidcore;nvbufsurface;z;va;m;soxr;atomic;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;swresample;m;soxr;atomic;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avcodec;vpx;m;vpx;m;vpx;m;vpx;m;webpmux;m;atomic;lzma;dav1d;rsvg-2;m;gio-2.0;gdk_pixbuf-2.0;gobject-2.0;glib-2.0;cairo;zvbi;pthread;m;png;z;nvbufsurface;nvbufsurftransform;v4l2;snappy;stdc++;nvjpeg;aom;codec2;gsm;mp3lame;m;openjp2;opus;m;shine;speex;theoraenc;theoradec;ogg;twolame;vorbis;vorbisenc;webp;x264;x265;xvidcore;nvbufsurface;z;va;m;soxr;atomic;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;swresample;m;soxr;atomic;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;atomic;X11
-_pkgconfig_STATIC_LIBRARY_DIRS=/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu;/usr/lib/aarch64-linux-gnu
-_pkgconfig_VERSION=62.1.100
 _pkgconfig_error=Package 'tesseract', required by 'virtual:world', not found
-_pkgconfig_failed=0
-_pkgconfig_invoke_result=
 _pkgconfig_retval=1
 _rev_deps=opencv_xstereo;opencv_tracking;opencv_highgui;opencv_datasets;opencv_videoio;opencv_video;opencv_text;opencv_imgcodecs;opencv_features;opencv_dnn;opencv_stereo;opencv_plot;opencv_ml;opencv_imgproc;opencv_geometry;opencv_flann;opencv_core;opencv_cudev;opencv_tracking;opencv_highgui;opencv_datasets;opencv_videoio;opencv_video;opencv_text;opencv_imgcodecs;opencv_features;opencv_dnn;opencv_stereo;opencv_plot;opencv_ml;opencv_imgproc;opencv_geometry;opencv_flann;opencv_core;opencv_cudev
 _saved_CMAKE_EXE_LINKER_FLAGS=
@@ -6157,15 +5280,15 @@ ade_filename=v0.1.2e.zip
 ade_md5=962ce79e0b95591f226431f7b5f152cd
 ade_src_dir=/home/nerdstar/NerdStar/backend/opencv/opencv_build/3rdparty/ade
 ade_subdir=ade-0.1.2e
-apps_status=tests;perf_tests;apps
+apps_status=apps
 arg=
 c_compiler_realpath=/usr/bin/aarch64-linux-gnu-gcc-13
 clapack_BINARY_DIR=/home/nerdstar/NerdStar/backend/opencv/opencv_build/3rdparty/clapack
 clapack_IS_TOP_LEVEL=OFF
 clapack_SOURCE_DIR=/home/nerdstar/NerdStar/backend/opencv/opencv/3rdparty/clapack
 component=
-cpack_input_file=/usr/share/cmake-4.3/Templates/CPackConfig.cmake.in
-cpack_source_input_file=/usr/share/cmake-4.3/Templates/CPackConfig.cmake.in
+cpack_input_file=/usr/share/cmake-4.4/Templates/CPackConfig.cmake.in
+cpack_source_input_file=/usr/share/cmake-4.4/Templates/CPackConfig.cmake.in
 cuda_clean_target_name=clean_cuda_depends
 cuda_features=CUFFT;CUBLAS;FAST_MATH
 cuda_toolkit_dirs=/usr/local/cuda-13.2;/usr/local/cuda-13.2
@@ -6183,7 +5306,6 @@ dlpack_CONSIDERED_VERSIONS=
 dlpack_DIR=dlpack_DIR-NOTFOUND
 dlpack_FOUND=0
 docs_status=NO
-extension=
 ffmpeg_lib=
 flag=
 flatbuffers_VERSION=25.9.23
@@ -6216,6 +5338,7 @@ m=
 mod=
 module=
 name=python3
+nvpl_DIR=nvpl_DIR-NOTFOUND
 opencl_features=no extra features
 opencv_alphamat_BINARY_DIR=/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/alphamat
 opencv_alphamat_IS_TOP_LEVEL=OFF
@@ -6421,9 +5544,6 @@ opencv_text_SOURCE_DIR=/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/mod
 opencv_tracking_BINARY_DIR=/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/tracking
 opencv_tracking_IS_TOP_LEVEL=OFF
 opencv_tracking_SOURCE_DIR=/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/tracking
-opencv_ts_BINARY_DIR=/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/ts
-opencv_ts_IS_TOP_LEVEL=OFF
-opencv_ts_SOURCE_DIR=/home/nerdstar/NerdStar/backend/opencv/opencv/modules/ts
 opencv_version_BINARY_DIR=/home/nerdstar/NerdStar/backend/opencv/opencv_build/apps/version
 opencv_version_IS_TOP_LEVEL=OFF
 opencv_version_SOURCE_DIR=/home/nerdstar/NerdStar/backend/opencv/opencv/apps/version
@@ -6466,7 +5586,6 @@ openjpeg_SOURCE_DIR=/home/nerdstar/NerdStar/backend/opencv/opencv/3rdparty/openj
 opt=
 p=
 parallel_status=TBB (ver 2021.11 interface 12110)
-pkg_count=1
 pkgcfg_lib_FFMPEG_avcodec=/usr/lib/aarch64-linux-gnu/libavcodec.so
 pkgcfg_lib_FFMPEG_avformat=/usr/lib/aarch64-linux-gnu/libavformat.so
 pkgcfg_lib_FFMPEG_avutil=/usr/lib/aarch64-linux-gnu/libavutil.so
@@ -6536,13 +5655,10 @@ res=TRUE
 s=
 search=
 the_module=
-tiff_DIR=tiff_DIR-NOTFOUND
 trace_status=with Intel ITT(3.25.4)
 type=
 v=
 v4l_status=linux/videodev2.h
-val=0
 var=
 var_name=
-variable=
 vars_regex=TIFF_VERSION_CLASSIC|TIFF_VERSION_BIG|TIFF_VERSION|TIFF_BIGTIFF_VERSION

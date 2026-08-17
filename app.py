@@ -37,7 +37,7 @@ state = {"index": -1}
 def initialize():
     global init, cameras, selected_camera, stop_event, threads
     if not init:
-        cv2.setNumThreads(4)
+        cv2.setNumThreads(6)
         cameras = wrapper.get_cameras()
         selected_camera = cameras[0] if cameras else None
         estimator = RobotPoseEstimator(wrapper.local_config)
@@ -96,6 +96,8 @@ async def offer(request: Request):
 
     while pc.iceGatheringState != "complete":
         await asyncio.sleep(0.1)
+
+    print(pc.localDescription.sdp)
 
     return {
         "sdp": pc.localDescription.sdp,

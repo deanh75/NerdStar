@@ -1238,7 +1238,7 @@
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/core/transpose.neon.cpp
  Main
  opencv_core
- PerfTest
+ Module
 /home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/core/matmul.neon_dotprod.cpp
  Main
  opencv_core

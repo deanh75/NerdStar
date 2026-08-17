@@ -43,67 +43,163 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "python" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.12/dist-packages/cv2" TYPE FILE FILES "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/python/package/cv2/__init__.py")
+  list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
+   "/home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages/cv2/__init__.py")
+  if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  file(INSTALL DESTINATION "/home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages/cv2" TYPE FILE FILES "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/python/package/cv2/__init__.py")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "python" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.12/dist-packages/cv2" TYPE FILE FILES "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/python/package/cv2/load_config_py2.py")
+  list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
+   "/home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages/cv2/load_config_py2.py")
+  if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  file(INSTALL DESTINATION "/home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages/cv2" TYPE FILE FILES "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/python/package/cv2/load_config_py2.py")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "python" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.12/dist-packages/cv2" TYPE FILE FILES "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/python/package/cv2/load_config_py3.py")
+  list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
+   "/home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages/cv2/load_config_py3.py")
+  if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  file(INSTALL DESTINATION "/home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages/cv2" TYPE FILE FILES "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/python/package/cv2/load_config_py3.py")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "python" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.12/dist-packages/cv2" TYPE FILE FILES "/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/install/python_loader//cv2/config.py")
+  list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
+   "/home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages/cv2/config.py")
+  if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  file(INSTALL DESTINATION "/home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages/cv2" TYPE FILE FILES "/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/install/python_loader//cv2/config.py")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "python" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.12/dist-packages/cv2/misc" TYPE FILE FILES "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/python/package/extra_modules/misc/__init__.py")
+  list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
+   "/home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages/cv2/misc/__init__.py")
+  if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  file(INSTALL DESTINATION "/home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages/cv2/misc" TYPE FILE FILES "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/python/package/extra_modules/misc/__init__.py")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "python" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.12/dist-packages/cv2/misc" TYPE FILE FILES "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/python/package/extra_modules/misc/version.py")
+  list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
+   "/home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages/cv2/misc/version.py")
+  if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  file(INSTALL DESTINATION "/home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages/cv2/misc" TYPE FILE FILES "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/python/package/extra_modules/misc/version.py")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "python" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.12/dist-packages/cv2/mat_wrapper" TYPE FILE FILES "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/core/misc/python/package/mat_wrapper/__init__.py")
+  list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
+   "/home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages/cv2/mat_wrapper/__init__.py")
+  if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  file(INSTALL DESTINATION "/home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages/cv2/mat_wrapper" TYPE FILE FILES "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/core/misc/python/package/mat_wrapper/__init__.py")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "python" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.12/dist-packages/cv2/utils" TYPE FILE FILES "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/core/misc/python/package/utils/__init__.py")
+  list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
+   "/home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages/cv2/utils/__init__.py")
+  if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  file(INSTALL DESTINATION "/home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages/cv2/utils" TYPE FILE FILES "/home/nerdstar/NerdStar/backend/opencv/opencv/modules/core/misc/python/package/utils/__init__.py")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "python" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.12/dist-packages/cv2/gapi" TYPE FILE FILES "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/misc/python/package/gapi/__init__.py")
+  list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
+   "/home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages/cv2/gapi/__init__.py")
+  if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  file(INSTALL DESTINATION "/home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages/cv2/gapi" TYPE FILE FILES "/home/nerdstar/NerdStar/backend/opencv/opencv_contrib/modules/gapi/misc/python/package/gapi/__init__.py")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "python" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.12/dist-packages" TYPE DIRECTORY FILES "/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/python_bindings_generator/cv2")
+  list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
+   "/home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages/cv2")
+  if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  file(INSTALL DESTINATION "/home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages" TYPE DIRECTORY FILES "/home/nerdstar/NerdStar/backend/opencv/opencv_build/modules/python_bindings_generator/cv2")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "python" OR NOT CMAKE_INSTALL_COMPONENT)
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.12/dist-packages/cv2/python-3.12/cv2.cpython-312-aarch64-linux-gnu.so" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.12/dist-packages/cv2/python-3.12/cv2.cpython-312-aarch64-linux-gnu.so")
+  if(EXISTS "$ENV{DESTDIR}/home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages/cv2/python-3.12/cv2.cpython-312-aarch64-linux-gnu.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages/cv2/python-3.12/cv2.cpython-312-aarch64-linux-gnu.so")
     file(RPATH_CHECK
-         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.12/dist-packages/cv2/python-3.12/cv2.cpython-312-aarch64-linux-gnu.so"
+         FILE "$ENV{DESTDIR}/home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages/cv2/python-3.12/cv2.cpython-312-aarch64-linux-gnu.so"
          RPATH "/usr/local/lib:/usr/local/cuda-13.2/lib64")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.12/dist-packages/cv2/python-3.12" TYPE MODULE FILES "/home/nerdstar/NerdStar/backend/opencv/opencv_build/lib/python3/cv2.cpython-312-aarch64-linux-gnu.so")
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.12/dist-packages/cv2/python-3.12/cv2.cpython-312-aarch64-linux-gnu.so" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.12/dist-packages/cv2/python-3.12/cv2.cpython-312-aarch64-linux-gnu.so")
+  list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
+   "/home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages/cv2/python-3.12/cv2.cpython-312-aarch64-linux-gnu.so")
+  if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  file(INSTALL DESTINATION "/home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages/cv2/python-3.12" TYPE MODULE FILES "/home/nerdstar/NerdStar/backend/opencv/opencv_build/lib/python3/cv2.cpython-312-aarch64-linux-gnu.so")
+  if(EXISTS "$ENV{DESTDIR}/home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages/cv2/python-3.12/cv2.cpython-312-aarch64-linux-gnu.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages/cv2/python-3.12/cv2.cpython-312-aarch64-linux-gnu.so")
     file(RPATH_CHANGE
-         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.12/dist-packages/cv2/python-3.12/cv2.cpython-312-aarch64-linux-gnu.so"
+         FILE "$ENV{DESTDIR}/home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages/cv2/python-3.12/cv2.cpython-312-aarch64-linux-gnu.so"
          OLD_RPATH "/usr/local/cuda-13.2/lib64:/home/nerdstar/NerdStar/backend/opencv/opencv_build/lib:"
          NEW_RPATH "/usr/local/lib:/usr/local/cuda-13.2/lib64")
     if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3.12/dist-packages/cv2/python-3.12/cv2.cpython-312-aarch64-linux-gnu.so")
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}/home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages/cv2/python-3.12/cv2.cpython-312-aarch64-linux-gnu.so")
     endif()
   endif()
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "python" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.12/dist-packages/cv2" TYPE FILE FILES "/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/install/python_loader//cv2/config-3.12.py")
+  list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
+   "/home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages/cv2/config-3.12.py")
+  if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  file(INSTALL DESTINATION "/home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages/cv2" TYPE FILE FILES "/home/nerdstar/NerdStar/backend/opencv/opencv_build/CMakeFiles/install/python_loader//cv2/config-3.12.py")
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT

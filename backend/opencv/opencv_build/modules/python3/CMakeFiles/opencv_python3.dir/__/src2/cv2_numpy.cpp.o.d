@@ -260,16 +260,19 @@ modules/python3/CMakeFiles/opencv_python3.dir/__/src2/cv2_numpy.cpp.o: \
  /usr/include/python3.12/cpython/fileutils.h \
  /usr/include/python3.12/cpython/pyfpe.h \
  /usr/include/python3.12/tracemalloc.h \
- /usr/lib/python3/dist-packages/numpy/core/include/numpy/ndarrayobject.h \
- /usr/lib/python3/dist-packages/numpy/core/include/numpy/ndarraytypes.h \
- /usr/lib/python3/dist-packages/numpy/core/include/numpy/npy_common.h \
- /usr/lib/python3/dist-packages/numpy/core/include/numpy/numpyconfig.h \
- /usr/lib/python3/dist-packages/numpy/core/include/numpy/_numpyconfig.h \
- /usr/lib/python3/dist-packages/numpy/core/include/numpy/npy_endian.h \
- /usr/lib/python3/dist-packages/numpy/core/include/numpy/npy_cpu.h \
- /usr/lib/python3/dist-packages/numpy/core/include/numpy/utils.h \
- /usr/lib/python3/dist-packages/numpy/core/include/numpy/_neighborhood_iterator_imp.h \
- /usr/lib/python3/dist-packages/numpy/core/include/numpy/__multiarray_api.h \
+ /home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages/numpy/_core/include/numpy/ndarrayobject.h \
+ /home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages/numpy/_core/include/numpy/ndarraytypes.h \
+ /home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages/numpy/_core/include/numpy/npy_common.h \
+ /home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages/numpy/_core/include/numpy/numpyconfig.h \
+ /home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages/numpy/_core/include/numpy/_numpyconfig.h \
+ /home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages/numpy/_core/include/numpy/npy_endian.h \
+ /home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages/numpy/_core/include/numpy/npy_cpu.h \
+ /home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages/numpy/_core/include/numpy/utils.h \
+ /home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages/numpy/_core/include/numpy/dtype_api.h \
+ /home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages/numpy/_core/include/numpy/__multiarray_api.h \
+ /home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages/numpy/_core/include/numpy/_public_dtype_api_table.h \
+ /home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages/numpy/_core/include/numpy/_neighborhood_iterator_imp.h \
+ /home/nerdstar/NerdStar/.venv/lib/python3.12/site-packages/numpy/_core/include/numpy/npy_2_compat.h \
  /home/nerdstar/NerdStar/backend/opencv/opencv/modules/python/src2/pycompat.hpp \
  /usr/include/c++/13/string /usr/include/c++/13/bits/stringfwd.h \
  /usr/include/c++/13/bits/memoryfwd.h \
