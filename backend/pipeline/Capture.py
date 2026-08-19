@@ -418,8 +418,8 @@ class JetsonCapture(Capture):
             weakref.finalize(mat, cv2.cuda.unregisterPageLocked, mat)
 
         gpu_mat = cv2.cuda.GpuMat()
-        gpu_mat.upload(state["mat"])
-        return gpu_mat
+        gpu_mat.upload(mat)
+        return cv2.cuda.cvtColor(gpu_mat, cv2.COLOR_RGBA2RGB)
     
     def _get_state(self, cam_id: str) -> Optional[dict]:
         pipe = self._pipelines.get(cam_id)

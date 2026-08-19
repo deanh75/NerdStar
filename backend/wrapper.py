@@ -347,11 +347,11 @@ class Wrapper:
             if config.camera_config.is_calibrating:
                 # Calibration mode
                 was_calibrating = True
-                calib_session.process_frame(rgbImg, cv2.COLOR_RGB2GRAY)
+                cal = calib_session.process_frame(rgbImg, cv2.COLOR_RGB2GRAY)
                 with self.calib_frame_lock:
                     self.calib_frame = len(calib_session._all_charuco_corners)
                 with self.frame_lock:
-                    self.latest_frames[index] = rgbImg
+                    self.latest_frames[index] = cal
                 continue
 
             elif was_calibrating:
@@ -407,8 +407,8 @@ class Wrapper:
 
                         # Measure FPS
                         apriltags_frame_count += 1
-                        if time.time() - apriltags_last_print > 1:
-                            apriltags_last_print = time.time()
+                        if (timestamp - apriltags_last_print) >= 1.0:
+                            apriltags_last_print = timestamp
                             with self.apriltag_lock:
                                 self.output_apriltag[index] = ApriltagOutput(
                                     fps=apriltags_frame_count,
@@ -451,8 +451,8 @@ class Wrapper:
 
                             # Measure FPS
                             objdetect_frame_count += 1
-                            if time.time() - objdetect_last_print > 1:
-                                objdetect_last_print = time.time()
+                            if (timestamp - objdetect_last_print) >= 1.0:
+                                objdetect_last_print = timestamp
                                 with self.obj_lock:
                                     self.output_objdetect[index] = ObjDetectionOutput(
                                         fps=objdetect_frame_count,

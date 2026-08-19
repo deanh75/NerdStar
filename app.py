@@ -97,8 +97,6 @@ async def offer(request: Request):
     while pc.iceGatheringState != "complete":
         await asyncio.sleep(0.1)
 
-    print(pc.localDescription.sdp)
-
     return {
         "sdp": pc.localDescription.sdp,
         "type": pc.localDescription.type

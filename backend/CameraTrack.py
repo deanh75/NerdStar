@@ -58,7 +58,7 @@ class CameraTrack(VideoStreamTrack):
         except Exception:
             frame = self.fallback_frame
 
-        video_frame = av.VideoFrame.from_ndarray(frame, format='rgba')
+        video_frame = av.VideoFrame.from_ndarray(frame, format='rgb24')
         video_frame.pts = pts
         video_frame.time_base = time_base
 

@@ -46,7 +46,7 @@ class CalibrationSession:
             cv2.CALIB_FIX_K6
         )
 
-    def process_frame(self, image: cv2.Mat, cvt: int) -> None:
+    def process_frame(self, image: cv2.Mat, cvt: int) -> cv2.Mat:
         # Get image size
         if self._imsize == None:
             self._imsize = (image.shape[1], image.shape[0])
@@ -55,13 +55,14 @@ class CalibrationSession:
         charuco_corners, charuco_ids, marker_corners, marker_ids = self._charuco_detector.detectBoard(gray)
 
         if marker_ids is not None and len(marker_ids) > 0:
-            cv2.aruco.drawDetectedMarkers(image, marker_corners, marker_ids)
+            cv2.aruco.drawDetectedMarkers(gray, marker_corners, marker_ids)
 
         if self._is_good_frame(charuco_corners, charuco_ids):
             self._all_charuco_corners.append(charuco_corners)
             self._all_charuco_ids.append(charuco_ids)
         else: 
             print("Frame rejected: Not enough corners detected")
+        return gray
 
     def _is_good_frame(self, charuco_corners, charuco_ids) -> bool:
         if charuco_corners is None or charuco_ids is None:

@@ -139,7 +139,7 @@ async function pollFrameCount() {
         if (data.frame_count) {
             framesCaptured.textContent = `Frames: ${data.frame_count}/250 (Min)`;
         }
-        await delay(1000/60)
+        await delay(1000/60);
     }
 }
 
@@ -149,6 +149,7 @@ async function pollCalibrationStatus() {
         const data = await res.json();
         if (!data.done) {
             calibrationStatus.textContent = "Saving calibration...";
+            await delay(1000/60);
         } else if (data.done == true) {
             calibrationStatus.textContent = "Calibration saved!";
             polling = false;
@@ -173,6 +174,18 @@ async function startWebRTC() {
     const offer = await pc.createOffer();
 
     await pc.setLocalDescription(offer);
+
+    await new Promise((resolve) => {
+        if (pc.iceGatheringState === "complete") {
+            resolve();
+        } else {
+            pc.addEventListener("icegatheringstatechange", () => {
+                if (pc.iceGatheringState === "complete") {
+                    resolve();
+                }
+            });
+        }
+    });
 
     const res = await fetch("/offer", {
         method: "POST",

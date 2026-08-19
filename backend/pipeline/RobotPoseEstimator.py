@@ -9,12 +9,10 @@ from backend.config.config import LocalConfig
 from backend.vision_types import CameraPoseObservation, PoseEstimate, RobotPoseEstimation
 
 class RobotPoseEstimator: 
-    def __init__(self, local_config: LocalConfig, xy_coeff=0.01, theta_coeff=0.03, ambiguity_threshold=0.4, 
-                 field_border_margin=0.5, z_min=-0.5, z_max=1):
+    def __init__(self, local_config: LocalConfig, xy_coeff=0.01, theta_coeff=0.03, field_border_margin=0.5, z_min=-0.5, z_max=1):
         self.local_config = local_config
         self.xy_coeff = xy_coeff
         self.theta_coeff = theta_coeff
-        self.ambiguity_threshold = ambiguity_threshold
         self.field_border_margin = field_border_margin
         self.z_min = z_min
         self.z_max = z_max

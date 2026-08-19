@@ -5,6 +5,7 @@
 from typing import List
 
 import cv2
+import numpy as np
 # import apriltag_cuda_py
 from backend.config.config import ConfigStore
 from backend.vision_types import FiducialImageObservation
@@ -31,7 +32,8 @@ class ArucoFiducialDetector(FiducialDetector):
         corners, ids, _ = self._detector.detectMarkers(image)
         if len(corners) == 0:
             return []
-        return [FiducialImageObservation(id[0], corner) for id, corner in zip(ids, corners)]
+        ids_flat = np.asarray(ids).flatten()
+        return [FiducialImageObservation(int(tag_id), corner) for tag_id, corner in zip(ids_flat, corners)]
 
 # class cudaFiducialDetector(FiducialDetector):
 #     def __init__(self, dictionary):
