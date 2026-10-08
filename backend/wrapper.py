@@ -4,6 +4,7 @@
 
 import math
 import queue
+import socket
 import threading
 import time
 from typing import List
@@ -14,6 +15,7 @@ import cv2
 import ntcore
 from numpy import dtype, ndarray, uint8
 from wpimath.geometry import Pose3d, Translation3d, Rotation3d
+from jtop import jtop
 
 from backend.calibration.CalibrationSession import CalibrationSession
 from backend.config.ConfigSource import ConfigSource, FileConfigSource, LocalConfigSource, NTConfigSource
@@ -260,6 +262,77 @@ class Wrapper:
                 with self.obj_lock:
                     return self.output_objdetect[index].to_dict()
         return {}
+
+    def get_hardware_data(self) -> dict[str, any]:
+        with jtop() as jetson:
+            while jetson.ok():
+                active_freq = [
+                    core['freq'] for core in jetson.cpu['cpu']
+                    if 'freq' in core and core['freq'] is not None
+                ]
+
+                engines = []
+                for eng_name, eng_data in jetson.engine.items():
+                    name = eng_name
+                    running = eng_data.get('online', False)
+                    speed_mhz = eng_data.get('cur', 0) / 1_000_000
+                    eng_item = {
+                        "name": name,
+                        "running": running,
+                        "detail": speed_mhz
+                    }
+                    engines.append(eng_item)
+
+                data = {
+                    "cpu": {
+                        "load": sum(100.0 - core['idle'] for core in jetson.cpu['cpus']) / len(jetson.cpu['cpu']),
+                        "speed_mhz": (sum(active_freq) / len(active_freq)) / 1_000_000 if active_freq else 0,
+                        "temp_c": jetson.temperature['cpu']['temp']
+                    },
+                    "gpu": {
+                        "load": jetson.gpu['gpu']['status']['load'],
+                        "speed_mhz": jetson.gpu['gpu']['freq']['cur'] / 1_000_000,
+                        "temp_c": jetson.temperature['gpu']['temp'],
+                        "ram_used_mb": jetson.memory['RAM']['shared'] / (1024 * 1024)
+                    },
+                    "fan": {
+                        "percent": jetson.fan['pwmfan']['speed'][0],
+                        "rpm": jetson.fan['pwmfan']['rpm'][0]
+                    },
+                    "ram": {
+                        "used_gb": round(jetson.memory['RAM']['used'] / (1024 * 1024 * 1024), 1),
+                        "total_gb": round(jetson.memory['RAM']['tot'] / (1024 * 1024 * 1024), 1)
+                    },
+                    "swap": {
+                        "used_gb": round(jetson.memory['SWAP']['used'] / (1024 * 1024 * 1024), 1),
+                        "total_gb": round(jetson.memory['SWAP']['tot'] / (1024 * 1024 * 1024), 1)
+                    },
+                    "emc": {
+                        "speed_mhz": jetson.memory['EMC']['cur'] / 1_000_000,
+                    },
+                    "disk": {
+                        "used_gb": round(jetson.disk['used'] / (1024 * 1024 * 1024), 1),
+                        "total_gb": round(jetson.disk['total'] / (1024 * 1024 * 1024), 1)
+                    },
+                    "power": {
+                        "watts": jetson.power['tot']['curr'] / 1000.0
+                    },
+                    "temps": {
+                        "cpu_c": jetson.temperature['cpu']['temp'],
+                        "gpu_c": jetson.temperature['gpu']['temp'],
+                        "soc_c": jetson.temperature['soc2']['temp'],
+                        "tj_c": jetson.temperature['tj']['temp']
+                    },
+                    "jetson_clocks": bool(jetson.jetson_clocks),
+                    "power_mode": {
+                        "current": jetson.nvpmodel.name,
+                        "options": [p for p in jetson.nvpmodel.models]
+                    },
+                    "uptime_seconds": jetson.uptime.seconds,
+                    "hostname": socket.gethostname(),
+                    "engines": engines
+                }
+                return data
     
     def estimate(self, estimator: RobotPoseEstimator):
         while True:

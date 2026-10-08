@@ -2,10 +2,460 @@
 
 {% block content %}
 <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 20px; width: 100%;">
-
+    <!-- ===================== TOP 4 SUMMARY BOXES ===================== -->
+    <section class="top-grid">
+ 
+        <div class="gauge-box">
+            <div class="gauge-label">CPU Load</div>
+            <div class="ring">
+                <svg viewBox="0 0 120 120">
+                    <circle class="ring-track" cx="60" cy="60" r="48"></circle>
+                    <circle id="cpuRingFill" class="ring-fill" cx="60" cy="60" r="48"></circle>
+                </svg>
+                <div class="ring-center" id="cpuLoadVal">0%</div>
+            </div>
+        </div>
+ 
+        <div class="gauge-box">
+            <div class="gauge-label">GPU Load</div>
+            <div class="ring">
+                <svg viewBox="0 0 120 120">
+                    <circle class="ring-track" cx="60" cy="60" r="48"></circle>
+                    <circle id="gpuRingFill" class="ring-fill" cx="60" cy="60" r="48"></circle>
+                </svg>
+                <div class="ring-center" id="gpuLoadVal">0%</div>
+            </div>
+        </div>
+ 
+        <div class="gauge-box">
+            <div class="gauge-label">Fan Speed</div>
+            <div class="ring">
+                <svg viewBox="0 0 120 120">
+                    <circle class="ring-track" cx="60" cy="60" r="48"></circle>
+                    <circle id="fanRingFill" class="ring-fill" cx="60" cy="60" r="48"></circle>
+                </svg>
+                <div class="ring-center" id="fanLoadVal">0%</div>
+            </div>
+            <div class="gauge-sub" id="fanRpm">&mdash; RPM</div>
+        </div>
+ 
+        <div class="mem-box">
+            <div class="gauge-label">Memory</div>
+ 
+            <div class="mem-row">
+                <div class="mem-row-top">
+                    <span>RAM</span>
+                    <span id="ramText">0.0 / 0.0 GB</span>
+                </div>
+                <div class="bar-track">
+                    <div class="bar-fill" id="ramBar"></div>
+                </div>
+            </div>
+ 
+            <div class="mem-row">
+                <div class="mem-row-top">
+                    <span>SWAP</span>
+                    <span id="swapText">0.0 / 0.0 GB</span>
+                </div>
+                <div class="bar-track">
+                    <div class="bar-fill" id="swapBar"></div>
+                </div>
+            </div>
+        </div>
+ 
+    </section>
+ 
+    <!-- ===================== SYSTEM STATUS ===================== -->
+    <div class="section-header">
+        <h2>System Status</h2>
+    </div>
+    <div class="divider"></div>
+ 
+    <section class="status-grid">
+ 
+        <div class="info-card">
+            <div class="info-label">Jetson Clocks</div>
+            <div class="info-value-row">
+                <span class="pill" id="jetsonClocksPill">UNKNOWN</span>
+                <button class="action-btn" id="jetsonClocksBtn">Enable</button>
+            </div>
+        </div>
+ 
+        <div class="info-card">
+            <div class="info-label">Power Mode (nvpmodel)</div>
+            <div class="info-value-row">
+                <select id="powerModeSelect" class="dark-select">
+                    <option value="">&mdash;</option>
+                </select>
+            </div>
+        </div>
+ 
+        <div class="info-card">
+            <div class="info-label">Uptime</div>
+            <div class="info-value-row">
+                <span class="info-big" id="uptimeVal">--:--:--</span>
+            </div>
+        </div>
+ 
+        <div class="info-card">
+            <div class="info-label">Total Power Draw</div>
+            <div class="info-value-row">
+                <span class="info-big" id="powerVal">0.0 W</span>
+            </div>
+        </div>
+ 
+    </section>
+ 
+    <!-- ===================== TEMPERATURES ===================== -->
+    <div class="section-header">
+        <h2>Temperatures</h2>
+    </div>
+    <div class="divider"></div>
+ 
+    <section class="stats-row" id="tempRow">
+        <div class="stat-box">
+            <div class="box-label">CPU</div>
+            <div class="box-value temp-value" id="tempCpu">0&deg;</div>
+        </div>
+        <div class="stat-box">
+            <div class="box-label">GPU</div>
+            <div class="box-value temp-value" id="tempGpu">0&deg;</div>
+        </div>
+        <div class="stat-box">
+            <div class="box-label">SOC</div>
+            <div class="box-value temp-value" id="tempSoc">0&deg;</div>
+        </div>
+        <div class="stat-box">
+            <div class="box-label">Tj (Junction)</div>
+            <div class="box-value temp-value" id="tempTj">0&deg;</div>
+        </div>
+    </section>
+ 
+    <!-- ===================== PERFORMANCE ===================== -->
+    <div class="section-header">
+        <h2>Performance</h2>
+    </div>
+    <div class="divider"></div>
+ 
+    <section class="stats-row">
+        <div class="stat-box">
+            <div class="box-label">CPU Speed</div>
+            <div class="box-value" id="cpuSpeedVal">0 MHz</div>
+        </div>
+        <div class="stat-box">
+            <div class="box-label">GPU Speed</div>
+            <div class="box-value" id="gpuSpeedVal">0 MHz</div>
+        </div>
+        <div class="stat-box">
+            <div class="box-label">GPU Memory</div>
+            <div class="box-value" id="gpuRamVal">0 MB</div>
+        </div>
+        <div class="stat-box">
+            <div class="box-label">EMC Speed</div>
+            <div class="box-value" id="emcSpeedVal">0 MHz</div>
+        </div>
+    </section>
+ 
+    <!-- ===================== STORAGE ===================== -->
+    <div class="section-header">
+        <h2>Storage</h2>
+    </div>
+    <div class="divider"></div>
+ 
+    <section class="disk-card">
+        <div class="disk-top">
+            <span id="diskText">0 GB / 0 GB used</span>
+            <span id="diskFreeText">0 GB free</span>
+        </div>
+        <div class="bar-track disk-track">
+            <div class="bar-fill" id="diskBar"></div>
+        </div>
+    </section>
+ 
+    <!-- ===================== HARDWARE ENGINES ===================== -->
+    <div class="section-header">
+        <h2>Hardware Engines</h2>
+    </div>
+    <div class="divider"></div>
+ 
+    <section class="engine-grid" id="engineGrid">
+        <!-- engine cards injected by the script below -->
+    </section>
 </div>
 
 <script>
+/* ============================================================
+   NerdStar Jetson Monitor
+   Frontend client for a jtop-backed stats server.
+ 
+   EXPECTED BACKEND CONTRACT
+   --------------------------------------------------------------
+   This page expects a WebSocket server (e.g. a small Python
+   service using the `jtop` library + `websockets`/FastAPI) at
+   WS_URL below. It should push a JSON message roughly every
+   1-2 seconds shaped like:
+ 
+   {
+     "cpu": { "load": 42, "speed_mhz": 1420, "temp_c": 51 },
+     "gpu": { "load": 18, "speed_mhz": 610, "temp_c": 49, "ram_used_mb": 512 },
+     "fan": { "percent": 35, "rpm": 2100 },
+     "ram": { "used_gb": 3.2, "total_gb": 8.0 },
+     "swap": { "used_gb": 0.4, "total_gb": 4.0 },
+     "emc": { "speed_mhz": 1600 },
+     "disk": { "used_gb": 21.4, "total_gb": 59.0 },
+     "power": { "watts": 8.7 },
+     "temps": { "cpu_c": 51, "gpu_c": 49, "soc_c": 47, "tj_c": 53 },
+     "jetson_clocks": true,
+     "power_mode": { "current": "MAXN_SUPER", "options": ["15W","25W","MAXN_SUPER"] },
+     "uptime_seconds": 51234,
+     "hostname": "nerdstar-jetson",
+     "engines": [
+       { "name": "NVENC", "running": false, "detail": "idle" },
+       { "name": "NVDEC", "running": true,  "detail": "1080p30" },
+       { "name": "NVJPG", "running": false, "detail": "idle" },
+       { "name": "VIC",   "running": true,  "detail": "1200 MHz" },
+       { "name": "OFA",   "running": false, "detail": "idle" },
+       { "name": "APE",   "running": true,  "detail": "audio proc" },
+       { "name": "DLA0",  "running": false, "detail": "idle" },
+       { "name": "DLA1",  "running": false, "detail": "idle" },
+       { "name": "PVA0",  "running": false, "detail": "idle" }
+     ]
+   }
+ 
+   Commands sent FROM this client TO the server (JSON over the
+   same socket):
+     { "cmd": "toggle_jetson_clocks" }
+     { "cmd": "set_power_mode", "mode": "MAXN_SUPER" }
+   The backend should apply these via `jetson_clocks` /
+   `nvpmodel` (sudo) and push back a refreshed stats frame.
+   ============================================================ */
+ 
+// ---- CONFIG -------------------------------------------------
+const WS_URL = `ws://${location.host}/ws/hardware`;
+ 
+const RING_CIRCUMFERENCE = 301.59; // 2 * PI * 48
+ 
+// ---- DOM CACHE -----------------------------------------------
+const el = {
+    hostLine: document.getElementById("hostLine"),
+    connDot: document.getElementById("connDot"),
+    connText: document.getElementById("connText"),
+ 
+    cpuRing: document.getElementById("cpuRingFill"),
+    cpuLoadVal: document.getElementById("cpuLoadVal"),
+    gpuRing: document.getElementById("gpuRingFill"),
+    gpuLoadVal: document.getElementById("gpuLoadVal"),
+    fanRing: document.getElementById("fanRingFill"),
+    fanLoadVal: document.getElementById("fanLoadVal"),
+    fanRpm: document.getElementById("fanRpm"),
+ 
+    ramBar: document.getElementById("ramBar"),
+    ramText: document.getElementById("ramText"),
+    swapBar: document.getElementById("swapBar"),
+    swapText: document.getElementById("swapText"),
+ 
+    jetsonClocksPill: document.getElementById("jetsonClocksPill"),
+    jetsonClocksBtn: document.getElementById("jetsonClocksBtn"),
+    powerModeSelect: document.getElementById("powerModeSelect"),
+    uptimeVal: document.getElementById("uptimeVal"),
+    powerVal: document.getElementById("powerVal"),
+ 
+    tempCpu: document.getElementById("tempCpu"),
+    tempGpu: document.getElementById("tempGpu"),
+    tempSoc: document.getElementById("tempSoc"),
+    tempTj: document.getElementById("tempTj"),
+ 
+    cpuSpeedVal: document.getElementById("cpuSpeedVal"),
+    gpuSpeedVal: document.getElementById("gpuSpeedVal"),
+    gpuRamVal: document.getElementById("gpuRamVal"),
+    emcSpeedVal: document.getElementById("emcSpeedVal"),
+ 
+    diskText: document.getElementById("diskText"),
+    diskFreeText: document.getElementById("diskFreeText"),
+    diskBar: document.getElementById("diskBar"),
+ 
+    engineGrid: document.getElementById("engineGrid"),
+};
+ 
+let socket = null;
+let latestJetsonClocksState = false;
+ 
+// ---- HELPERS ---------------------------------------------------
+function setRing(ringEl, valueEl, percent, suffix = "%") {
+    const clamped = Math.max(0, Math.min(100, percent));
+    const offset = RING_CIRCUMFERENCE - (clamped / 100) * RING_CIRCUMFERENCE;
+    ringEl.style.strokeDashoffset = offset;
+    valueEl.textContent = `${Math.round(clamped)}${suffix}`;
+}
+ 
+function setBar(barEl, percent) {
+    barEl.style.width = `${Math.max(0, Math.min(100, percent))}%`;
+}
+ 
+function formatUptime(totalSeconds) {
+    const h = Math.floor(totalSeconds / 3600);
+    const m = Math.floor((totalSeconds % 3600) / 60);
+    const s = Math.floor(totalSeconds % 60);
+    const pad = (n) => String(n).padStart(2, "0");
+    return `${pad(h)}:${pad(m)}:${pad(s)}`;
+}
+ 
+function tempClass(c) {
+    if (c >= 75) return "hot";
+    if (c >= 60) return "warn";
+    return "";
+}
+ 
+function setTemp(elRef, celsius) {
+    elRef.textContent = `${Math.round(celsius)}°C`;
+    elRef.classList.remove("warn", "hot");
+    const cls = tempClass(celsius);
+    if (cls) elRef.classList.add(cls);
+}
+ 
+function renderEngines(engines) {
+    el.engineGrid.innerHTML = "";
+    engines.forEach((eng) => {
+        const card = document.createElement("div");
+        card.className = "engine-card";
+        card.innerHTML = `
+            <div>
+                <div class="engine-name">${eng.name}</div>
+                <div class="engine-detail">${eng.detail || (eng.running ? "active" : "idle")}</div>
+            </div>
+            <div class="engine-status">
+                <span class="engine-dot ${eng.running ? "running" : ""}"></span>
+                ${eng.running ? "Running" : "Idle"}
+            </div>
+        `;
+        el.engineGrid.appendChild(card);
+    });
+}
+ 
+function populatePowerModes(options, current) {
+    const select = el.powerModeSelect;
+    const hasSameOptions =
+        select.dataset.options === JSON.stringify(options);
+ 
+    if (!hasSameOptions) {
+        select.innerHTML = "";
+        options.forEach((opt) => {
+            const o = document.createElement("option");
+            o.value = opt;
+            o.textContent = opt;
+            select.appendChild(o);
+        });
+        select.dataset.options = JSON.stringify(options);
+    }
+    select.value = current;
+}
+ 
+// ---- MAIN RENDER -------------------------------------------------
+function applyStats(data) {
+    el.hostLine.textContent = `${data.hostname || "jetson"} · live`;
+ 
+    setRing(el.cpuRing, el.cpuLoadVal, data.cpu.load);
+    setRing(el.gpuRing, el.gpuLoadVal, data.gpu.load);
+    setRing(el.fanRing, el.fanLoadVal, data.fan.percent);
+    el.fanRpm.textContent = `${data.fan.rpm.toLocaleString()} RPM`;
+ 
+    setBar(el.ramBar, (data.ram.used_gb / data.ram.total_gb) * 100);
+    el.ramText.textContent = `${data.ram.used_gb.toFixed(1)} / ${data.ram.total_gb.toFixed(1)} GB`;
+ 
+    setBar(el.swapBar, (data.swap.used_gb / data.swap.total_gb) * 100 || 0);
+    el.swapText.textContent = `${data.swap.used_gb.toFixed(1)} / ${data.swap.total_gb.toFixed(1)} GB`;
+ 
+    latestJetsonClocksState = !!data.jetson_clocks;
+    el.jetsonClocksPill.textContent = latestJetsonClocksState ? "ON" : "OFF";
+    el.jetsonClocksPill.className = `pill ${latestJetsonClocksState ? "on" : "off"}`;
+    el.jetsonClocksBtn.textContent = latestJetsonClocksState ? "Disable" : "Enable";
+ 
+    populatePowerModes(data.power_mode.options, data.power_mode.current);
+ 
+    el.uptimeVal.textContent = formatUptime(data.uptime_seconds);
+    el.powerVal.textContent = `${data.power.watts.toFixed(1)} W`;
+ 
+    setTemp(el.tempCpu, data.temps.cpu_c);
+    setTemp(el.tempGpu, data.temps.gpu_c);
+    setTemp(el.tempSoc, data.temps.soc_c);
+    setTemp(el.tempTj, data.temps.tj_c);
+ 
+    el.cpuSpeedVal.textContent = `${data.cpu.speed_mhz.toLocaleString()} MHz`;
+    el.gpuSpeedVal.textContent = `${data.gpu.speed_mhz.toLocaleString()} MHz`;
+    el.gpuRamVal.textContent = `${data.gpu.ram_used_mb.toLocaleString()} MB`;
+    el.emcSpeedVal.textContent = `${data.emc.speed_mhz.toLocaleString()} MHz`;
+ 
+    el.diskText.textContent = `${data.disk.used_gb.toFixed(0)} GB / ${data.disk.total_gb.toFixed(0)} GB used`;
+    el.diskFreeText.textContent = `${(data.disk.total_gb - data.disk.used_gb).toFixed(0)} GB free`;
+    setBar(el.diskBar, (data.disk.used_gb / data.disk.total_gb) * 100);
+ 
+    renderEngines(data.engines);
+}
+ 
+// ---- CONNECTION STATE -------------------------------------------------
+function setConnState(state) {
+    // state: "online" | "offline"
+    el.connDot.className = `conn-dot ${state === "online" ? "online" : ""}`;
+    el.connText.textContent = state === "online" ? "Connected" : "Disconnected";
+}
+ 
+// ---- WEBSOCKET CLIENT -------------------------------------------------
+function connectWebSocket() {
+    setConnState("offline");
+    el.hostLine.textContent = `connecting to ${WS_URL}\u2026`;
+ 
+    try {
+        socket = new WebSocket(WS_URL);
+    } catch (err) {
+        console.error("WebSocket init failed:", err);
+        scheduleReconnect();
+        return;
+    }
+ 
+    socket.addEventListener("open", () => setConnState("online"));
+ 
+    socket.addEventListener("message", (event) => {
+        try {
+            const data = JSON.parse(event.data);
+            applyStats(data);
+        } catch (err) {
+            console.error("Bad stats payload:", err);
+        }
+    });
+ 
+    socket.addEventListener("close", () => {
+        setConnState("offline");
+        scheduleReconnect();
+    });
+ 
+    socket.addEventListener("error", () => {
+        socket.close();
+    });
+}
+ 
+function scheduleReconnect() {
+    setTimeout(connectWebSocket, 3000);
+}
+ 
+function sendCommand(cmd) {
+    if (socket && socket.readyState === WebSocket.OPEN) {
+        socket.send(JSON.stringify(cmd));
+    } else {
+        console.warn("Socket not connected, command dropped:", cmd);
+    }
+}
+ 
+// ---- UI ACTIONS -------------------------------------------------
+el.jetsonClocksBtn.addEventListener("click", () => {
+    sendCommand({ cmd: "toggle_jetson_clocks" });
+});
+ 
+el.powerModeSelect.addEventListener("change", (e) => {
+    sendCommand({ cmd: "set_power_mode", mode: e.target.value });
+});
+ 
+// ---- BOOT -------------------------------------------------
+connectWebSocket();
 
 </script>
 {% endblock %}

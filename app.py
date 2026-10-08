@@ -257,6 +257,17 @@ def get_tag_layouts():
 def hardware(request: Request):
     return templates.TemplateResponse(request, "hardware.html", {})
 
+@app.websocket('/ws/hardware')
+async def hardware_ws(ws: WebSocket):
+    await ws.accept()
+    try:
+        while True:
+            data = wrapper.get_hardware_data()
+            await ws.send_json(data)
+            await asyncio.sleep(1 / 120)
+    except WebSocketDisconnect:
+        pass
+
 def set_hostname(hostname: str):
     print(f"Server started: {hostname}")
     subprocess.run(["sudo", "hostnamectl", "set-hostname", hostname], check=True)
